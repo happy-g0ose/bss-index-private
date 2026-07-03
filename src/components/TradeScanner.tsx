@@ -19,13 +19,13 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
 
   // Hardcoded coordinates and details for the user's specific test screenshot
   const testBoundingBoxes = [
-    { label: 'Red Toilet (Skin)', x: '7%', y: '23%', w: '16%', h: '22%', side: 'A' },
-    { label: 'Blue Toilet (Skin)', x: '25%', y: '23%', w: '16%', h: '22%', side: 'A' },
-    { label: 'Honey Dipper', x: '43%', y: '23%', w: '12%', h: '22%', side: 'A' },
-    { label: 'Scorpio Star Sign', x: '58%', y: '23%', w: '15%', h: '22%', side: 'A' },
-    { label: 'Gemini Star Sign', x: '7%', y: '48%', w: '15%', h: '22%', side: 'A' },
-    { label: 'Capricorn Star Sign', x: '25%', y: '48%', w: '15%', h: '22%', side: 'A' },
-    { label: 'Gingerbread Cub', x: '77%', y: '23%', w: '15%', h: '22%', side: 'B' },
+    { label: 'Red Port-O-Hive', x: '5%', y: '23%', w: '9%', h: '22%' },
+    { label: 'Blue Port-O-Hive', x: '16%', y: '23%', w: '9%', h: '22%' },
+    { label: 'Honey Dipper', x: '27%', y: '23%', w: '9%', h: '22%' },
+    { label: 'Scorpio Star Sign', x: '38%', y: '23%', w: '9%', h: '22%' },
+    { label: 'Gemini Star Sign', x: '5%', y: '48%', w: '9%', h: '22%' },
+    { label: 'Capricorn Star Sign', x: '16%', y: '48%', w: '9%', h: '22%' },
+    { label: 'Gingerbread Cub', x: '60%', y: '23%', w: '9%', h: '22%' },
   ];
 
   // Resolve item objects from bssItemsData
@@ -227,39 +227,48 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
 
             <div className="relative w-full max-w-2xl aspect-[2.2/1] rounded-xl bg-neutral-950 border border-white/10 overflow-hidden shadow-2xl">
               {/* Draw custom mockup trade screen */}
-              <div className="absolute inset-0 bg-[#ffd13b] flex">
-                {/* Left offer box */}
-                <div className="w-[50%] h-full border-r border-[#69c713] p-4 flex flex-wrap content-start gap-4 relative">
-                  <div className="absolute top-2 left-2 bg-red-600 text-white text-[9px] px-2 py-0.5 rounded font-black uppercase">Your Offer</div>
-                  
-                  {/* Mock items boxes matching screenshot layout */}
-                  <div className="absolute top-[23%] left-[7%] w-[16%] h-[22%] border-2 border-dashed border-neutral-800/40 rounded flex items-center justify-center bg-[#dbb530]/40"><span className="text-[8px] font-black text-neutral-800">Red Toilet</span></div>
-                  <div className="absolute top-[23%] left-[25%] w-[16%] h-[22%] border-2 border-dashed border-neutral-800/40 rounded flex items-center justify-center bg-[#dbb530]/40"><span className="text-[8px] font-black text-neutral-800">Blue Toilet</span></div>
-                  <div className="absolute top-[23%] left-[43%] w-[12%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                    <img src={getBssItem('honey-dipper-0')?.image} className="h-[80%] object-contain" />
-                  </div>
-                  <div className="absolute top-[23%] left-[58%] w-[15%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                    <img src={getBssItem('scorpio-star-sign-0')?.image} className="h-[85%] object-contain" />
-                  </div>
-                  <div className="absolute top-[48%] left-[7%] w-[15%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                    <img src={getBssItem('gemini-star-sign-0')?.image} className="h-[85%] object-contain" />
-                  </div>
-                  <div className="absolute top-[48%] left-[25%] w-[15%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                    <img src={getBssItem('capricorn-star-sign-0')?.image} className="h-[85%] object-contain" />
-                  </div>
+              <div className="absolute inset-0 bg-[#ffd13b] relative">
+                {/* Offer division line in the middle */}
+                <div className="absolute top-0 left-[50%] w-[4px] h-full bg-[#69c713]" />
+
+                {/* Offer Headers */}
+                <div className="absolute top-2 left-2 bg-red-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">Your Offer</div>
+                <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">SpeedSyndrome's Offer</div>
+                
+                {/* Mock items boxes matching screenshot layout */}
+                {/* Red Port-O-Hive */}
+                <div className="absolute top-[23%] left-[5%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
+                  <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Red Port-O-Hive</span>
+                </div>
+                {/* Blue Port-O-Hive */}
+                <div className="absolute top-[23%] left-[16%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
+                  <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Blue Port-O-Hive</span>
+                </div>
+                {/* Honey Dipper */}
+                <div className="absolute top-[23%] left-[27%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                  <img src={getBssItem('honey-dipper-0')?.image} className="h-[80%] object-contain" />
+                </div>
+                {/* Scorpio Star Sign */}
+                <div className="absolute top-[23%] left-[38%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                  <img src={getBssItem('scorpio-star-sign-0')?.image} className="h-[85%] object-contain" />
+                </div>
+                {/* Gemini Star Sign */}
+                <div className="absolute top-[48%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                  <img src={getBssItem('gemini-star-sign-0')?.image} className="h-[85%] object-contain" />
+                </div>
+                {/* Capricorn Star Sign */}
+                <div className="absolute top-[48%] left-[16%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                  <img src={getBssItem('capricorn-star-sign-0')?.image} className="h-[85%] object-contain" />
                 </div>
 
-                {/* Right offer box */}
-                <div className="w-[50%] h-full p-4 flex justify-center items-center relative">
-                  <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[9px] px-2 py-0.5 rounded font-black uppercase">Their Offer</div>
-                  <div className="absolute top-[23%] left-[77%] w-[15%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                    <img src={getBssItem('gingerbread-cub-0')?.image} className="h-[90%] object-contain" />
-                  </div>
+                {/* Gingerbread Cub */}
+                <div className="absolute top-[23%] left-[60%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                  <img src={getBssItem('gingerbread-cub-0')?.image} className="h-[90%] object-contain" />
                 </div>
 
-                {/* Acceptance checkmarks */}
-                <div className="absolute bottom-[20%] left-[10%] w-[35%] h-[35%] border-[10px] border-[#69c713] rounded-full pointer-events-none opacity-40"></div>
-                <div className="absolute bottom-[20%] right-[10%] w-[35%] h-[35%] border-[10px] border-[#69c713] rounded-full pointer-events-none opacity-40"></div>
+                {/* Acceptance checkmarks overlay */}
+                <div className="absolute bottom-[10%] left-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
+                <div className="absolute bottom-[10%] right-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
               </div>
 
               {/* Glowing Bounding Boxes with Labels overlay */}
@@ -301,13 +310,13 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                     </span>
                   </div>
                 ))}
-                {/* Toilet skins not in DB listed as TBD/0 */}
+                {/* Hive skins not in DB listed as TBD */}
                 <div className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5 opacity-65">
-                  <span className="font-semibold text-neutral-400">Red Toilet (Skin)</span>
+                  <span className="font-semibold text-neutral-400">Red Port-O-Hive</span>
                   <span className="font-mono font-bold text-neutral-500">TBD</span>
                 </div>
                 <div className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5 opacity-65">
-                  <span className="font-semibold text-neutral-400">Blue Toilet (Skin)</span>
+                  <span className="font-semibold text-neutral-400">Blue Port-O-Hive</span>
                   <span className="font-mono font-bold text-neutral-500">TBD</span>
                 </div>
               </div>
