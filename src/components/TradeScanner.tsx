@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, Camera, ArrowRight, Check } from 'lucide-react';
+import { Upload, Camera, ArrowRight, Check, Key, Settings, AlertCircle } from 'lucide-react';
 import type { BSSItem } from '../data/items';
 import { bssItemsData } from '../data/items';
 import type { Language } from '../locales';
@@ -10,7 +10,7 @@ interface TradeScannerProps {
   lang: Language;
 }
 
-type TradeType = 'trade-1' | 'trade-2';
+type TradeType = 'trade-1' | 'trade-2' | 'custom';
 
 export default function TradeScanner({ onImportToCalculator, lang }: TradeScannerProps) {
   const [image, setImage] = useState<string | null>(null);
@@ -18,9 +18,20 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
   const [scanStep, setScanStep] = useState(0); // 0: upload/select, 1: scanning, 2: results
   const [detectedSideA, setDetectedSideA] = useState<BSSItem[]>([]);
   const [detectedSideB, setDetectedSideB] = useState<BSSItem[]>([]);
+  
+  // API Key state
+  const [apiKey, setApiKey] = useState<string>('');
+  const [showSettings, setShowSettings] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Unified grid coordinates for items in standard BSS Trading screen
+  useEffect(() => {
+    // Load saved API key from localStorage
+    const savedKey = localStorage.getItem('gemini_api_key') || '';
+    setApiKey(savedKey);
+  }, []);
+
+  // Unified grid coordinates for items in preloaded test trades
   const boundingBoxesConfig = {
     'trade-1': [
       { label: 'Red Port-O-Hive', x: '5%', y: '23%', w: '9%', h: '22%' },
@@ -39,10 +50,38 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
       { label: 'Cub Voucher', x: '5%', y: '48%', w: '9%', h: '22%' },
       { label: 'Wavy Festive Hive Skin', x: '60%', y: '23%', w: '9%', h: '22%' },
     ],
+    'custom': [],
   };
 
   const getBssItem = (id: string): BSSItem | null => {
     return bssItemsData.find(item => item.id === id) || null;
+  };
+
+  // Fuzzy match item names from Gemini output with our database
+  const matchItemByName = (detectedName: string): BSSItem | null => {
+    const norm = detectedName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (!norm) return null;
+
+    // Try exact or close match first
+    let bestMatch = bssItemsData.find(item => {
+      const itemNorm = item.englishName.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const nameNorm = item.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+      return itemNorm === norm || nameNorm === norm;
+    });
+
+    if (bestMatch) return bestMatch;
+
+    // Try partial inclusion match
+    return bssItemsData.find(item => {
+      const itemNorm = item.englishName.toLowerCase().replace(/[^a-z0-9]/g, '');
+      return itemNorm.includes(norm) || norm.includes(itemNorm);
+    }) || null;
+  };
+
+  const saveApiKey = (key: string) => {
+    setApiKey(key);
+    localStorage.setItem('gemini_api_key', key);
+    setShowSettings(false);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,31 +89,133 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        setImage(reader.result as string);
-        // Automatically suggest Trade 2 if filename contains voucher/skin keywords
-        const lowerName = file.name.toLowerCase();
-        if (lowerName.includes('skin') || lowerName.includes('voucher') || lowerName.includes('sprinkle') || lowerName.includes('timzz')) {
-          setSelectedTrade('trade-2');
+        const base64Data = reader.result as string;
+        setImage(base64Data);
+        setSelectedTrade('custom');
+        
+        // If API Key is configured, run real AI scanning
+        if (apiKey) {
+          runRealAIScan(base64Data);
         } else {
-          setSelectedTrade('trade-1');
+          // Fallback to demo scan if no API key
+          setScanStep(1);
+          setTimeout(() => {
+            // Mock detect some random items to keep demo running
+            const star = getBssItem('shining-star-0');
+            const dipper = getBssItem('porcelain-dipper-0');
+            setDetectedSideA(star ? [star] : []);
+            setDetectedSideB(dipper ? [dipper] : []);
+            setScanStep(2);
+            setErrorMessage(lang === 'ru' 
+              ? 'Настроен демонстрационный режим. Для распознавания реальных скриншотов введите бесплатный ключ API Gemini в настройках.' 
+              : 'Demo mode active. Enter a free Gemini API key in settings to scan real screenshots.');
+          }, 3000);
         }
-        startScan();
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const loadTestTrade = (type: TradeType) => {
-    setSelectedTrade(type);
-    setImage(type === 'trade-1' ? 'test-trade-1' : 'test-trade-2');
-    startScan();
+  const runRealAIScan = async (base64Image: string) => {
+    setScanStep(1);
+    setErrorMessage(null);
+
+    try {
+      // Clean base64 header
+      const base64Clean = base64Image.split(',')[1];
+
+      // Prepare request payload for Gemini 1.5 Flash Vision API
+      const prompt = `You are a Roblox Bee Swarm Simulator trading assistant. Look at this screenshot of a Roblox BSS trade window. 
+Identify all stickers, vouchers, star signs, or beequips inside the offer slots:
+- Left side of the trade (Your Offer / Side A)
+- Right side of the trade (Their Offer / Side B)
+
+Output a JSON object strictly matching this format:
+{
+  "sideA": ["Exact English Item Name 1", "Exact English Item Name 2"],
+  "sideB": ["Exact English Item Name 3"]
+}
+
+Use the exact English names of BSS items. Examples:
+- "Scorpio Star Sign"
+- "Cub Voucher"
+- "Prismatic Mushroom"
+- "Black Hive Skin"
+- "White Hive Skin"
+- "Wavy Festive Hive Skin"
+- "Gingerbread Cub"
+- "Honey Dipper"
+
+Do not add any markdown formatting, only output raw JSON.`;
+
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                { text: prompt },
+                {
+                  inlineData: {
+                    mimeType: 'image/jpeg',
+                    data: base64Clean
+                  }
+                }
+              ]
+            }
+          ],
+          generationConfig: {
+            responseMimeType: 'application/json'
+          }
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(lang === 'ru' ? 'Ошибка API Gemini. Проверьте правильность ключа.' : 'Gemini API Error. Verify your API key.');
+      }
+
+      const resJson = await response.json();
+      const rawText = resJson.candidates?.[0]?.content?.parts?.[0]?.text;
+      
+      if (!rawText) {
+        throw new Error(lang === 'ru' ? 'Не удалось получить ответ от нейросети.' : 'Could not parse response from AI.');
+      }
+
+      // Parse JSON response
+      const parsedData = JSON.parse(rawText);
+      const rawSideA: string[] = parsedData.sideA || [];
+      const rawSideB: string[] = parsedData.sideB || [];
+
+      // Map names to database items
+      const sideAItems: BSSItem[] = rawSideA
+        .map(name => matchItemByName(name))
+        .filter((item): item is BSSItem => item !== null);
+
+      const sideBItems: BSSItem[] = rawSideB
+        .map(name => matchItemByName(name))
+        .filter((item): item is BSSItem => item !== null);
+
+      setDetectedSideA(sideAItems);
+      setDetectedSideB(sideBItems);
+      setScanStep(2);
+    } catch (err: any) {
+      console.error(err);
+      setScanStep(0);
+      setErrorMessage(err.message || (lang === 'ru' ? 'Неизвестная ошибка при сканировании.' : 'Unknown scanning error.'));
+    }
   };
 
-  const startScan = () => {
+  const loadTestTrade = (type: 'trade-1' | 'trade-2') => {
+    setSelectedTrade(type);
+    setImage(type === 'trade-1' ? 'test-trade-1' : 'test-trade-2');
     setScanStep(1);
+    setErrorMessage(null);
     
     setTimeout(() => {
-      if (selectedTrade === 'trade-1') {
+      if (type === 'trade-1') {
         const scorpio = getBssItem('scorpio-star-sign-0');
         const gemini = getBssItem('gemini-star-sign-0');
         const capricorn = getBssItem('capricorn-star-sign-0');
@@ -93,7 +234,6 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
         setDetectedSideA(sideA);
         setDetectedSideB(sideB);
       } else {
-        // Trade 2: Prismatic Mushroom, Black Hive, White Hive, 2 Cub Vouchers -> Wavy Festive Hive Skin
         const mushroom = getBssItem('prismatic-mushroom-0');
         const blackHive = getBssItem('black-hive-skin-0');
         const whiteHive = getBssItem('white-hive-skin-0');
@@ -106,7 +246,6 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
         if (whiteHive) sideA.push(whiteHive);
         if (cubVoucher) {
           sideA.push(cubVoucher);
-          // Add a clone to represent the second Cub Voucher
           sideA.push({ ...cubVoucher, id: 'cub-voucher-clone' });
         }
 
@@ -116,13 +255,11 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
         setDetectedSideA(sideA);
         setDetectedSideB(sideB);
       }
-
       setScanStep(2);
-    }, 3000); // 3 seconds scan
+    }, 2000);
   };
 
   const handleImport = () => {
-    // Un-clone the cub voucher clone for clean insertion in the calculator
     const cleanSideA = detectedSideA.map(item => 
       item.id === 'cub-voucher-clone' ? { ...item, id: 'cub-voucher-0' } : item
     );
@@ -139,19 +276,79 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6">
       {/* Title Header */}
-      <div className="text-center space-y-2">
+      <div className="text-center space-y-2 relative">
+        {/* Settings button */}
+        <button
+          onClick={() => setShowSettings(!showSettings)}
+          className="absolute right-0 top-0 p-2.5 rounded-xl border border-white/5 bg-neutral-900/60 text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900 transition-all cursor-pointer flex items-center gap-2 text-xs font-bold"
+        >
+          <Settings className="h-4 w-4" />
+          <span>{lang === 'ru' ? 'Настройки AI' : 'AI Settings'}</span>
+        </button>
+
         <span className="px-3 py-1 rounded-full text-xs font-black bg-amber-500/10 text-amber-400 border border-amber-500/25 uppercase tracking-widest select-none">
           {lang === 'ru' ? 'Тестовая Функция' : 'Beta Test Feature'}
         </span>
         <h2 className="text-2xl md:text-3xl font-black tracking-tight text-white font-sans uppercase">
-          {lang === 'ru' ? 'Сканер трейдов по скриншоту' : 'AI Trade Screenshot Scanner'}
+          {lang === 'ru' ? 'Умный AI-Сканер Трейдов' : 'Smart AI Trade Scanner'}
         </h2>
         <p className="text-sm text-neutral-400 max-w-xl mx-auto font-medium">
           {lang === 'ru' 
-            ? 'Загрузите скриншот окна обмена из Roblox BSS, и наш алгоритм автоматически определит предметы, их цены и перенесет сделку в калькулятор.'
-            : 'Upload a Roblox BSS trading GUI screenshot, and our algorithm will detect items, fetch their prices, and load them into the calculator.'}
+            ? 'Загрузите ЛЮБОЙ скриншот обмена. Нейросеть распознает предметы, сверит их с ценами базы данных и покажет точный W/F/L расчет.'
+            : 'Upload ANY screenshot of a trade. The AI will recognize items, compare them with database values, and show the exact W/F/L calculations.'}
         </p>
       </div>
+
+      {/* Settings Modal/Box */}
+      {showSettings && (
+        <div className="border border-amber-500/30 bg-amber-500/5 rounded-2xl p-5 space-y-4">
+          <div className="flex items-start gap-3">
+            <Key className="h-5 w-5 text-amber-400 mt-0.5" />
+            <div className="space-y-1">
+              <h3 className="font-bold text-neutral-200 text-sm">
+                {lang === 'ru' ? 'Настройка API-ключа Gemini AI' : 'Configure Gemini AI API Key'}
+              </h3>
+              <p className="text-xs text-neutral-400 leading-relaxed">
+                {lang === 'ru'
+                  ? 'Для распознавания произвольных скриншотов мы используем бесплатную модель Gemini. Ключ API можно получить бесплатно в 3 клика.'
+                  : 'For real-time scanning of any custom screenshot, we use the free Gemini model. You can generate an API key in 3 clicks.'}
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="password"
+              placeholder={lang === 'ru' ? 'Вставьте ваш API ключ (AIzaSy...)' : 'Paste your API key (AIzaSy...)'}
+              defaultValue={apiKey}
+              onChange={(e) => setApiKey(e.target.value)}
+              className="flex-1 px-4 py-2.5 rounded-xl bg-neutral-950 border border-white/10 text-xs text-neutral-200 placeholder-neutral-600 outline-none focus:border-amber-500/40"
+            />
+            <button
+              onClick={() => saveApiKey(apiKey)}
+              className="px-5 py-2.5 rounded-xl bg-amber-500 text-neutral-950 font-black text-xs uppercase tracking-wider cursor-pointer active:scale-95 transition-all"
+            >
+              {lang === 'ru' ? 'Сохранить' : 'Save Key'}
+            </button>
+          </div>
+          <p className="text-[10px] text-neutral-500 font-medium">
+            🔑 {lang === 'ru' ? 'Ваш ключ хранится только в вашем браузере (localStorage) и не передается третьим лицам.' : 'Your key is saved only in your local browser storage.'}{' '}
+            <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">
+              {lang === 'ru' ? 'Получить ключ бесплатно ->' : 'Get free key here ->'}
+            </a>
+          </p>
+        </div>
+      )}
+
+      {/* Error alert */}
+      {errorMessage && (
+        <div className="p-4 bg-red-500/10 border border-red-500/25 rounded-2xl flex items-start gap-3 text-red-400">
+          <AlertCircle className="h-5 w-5 mt-0.5 shrink-0" />
+          <div className="space-y-1">
+            <h4 className="text-xs font-black uppercase tracking-wider">{lang === 'ru' ? 'Ошибка сканирования' : 'Scan Error'}</h4>
+            <p className="text-xs font-medium leading-relaxed">{errorMessage}</p>
+          </div>
+        </div>
+      )}
 
       {scanStep === 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -171,12 +368,12 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
               <Upload className="h-7 w-7" />
             </div>
             <h3 className="font-bold text-neutral-200 mb-1 font-sans">
-              {lang === 'ru' ? 'Загрузить скриншот трейда' : 'Upload trade screenshot'}
+              {lang === 'ru' ? 'Загрузить любой скриншот трейда' : 'Upload any trade screenshot'}
             </h3>
-            <p className="text-xs text-neutral-500 max-w-xs font-medium font-sans">
+            <p className="text-xs text-neutral-500 max-w-xs font-medium">
               {lang === 'ru' 
-                ? 'Перетащите изображение сюда или кликните для выбора на компьютере' 
-                : 'Drag and drop an image here or click to browse files'}
+                ? 'Перетащите изображение или выберите файл. Нейросеть сама прочитает сделку!' 
+                : 'Drag and drop an image. The AI will parse the trade dynamically!'}
             </p>
           </div>
 
@@ -187,12 +384,12 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                 <Camera className="h-5 w-5" />
               </div>
               <h3 className="font-bold text-neutral-200 font-sans">
-                {lang === 'ru' ? 'Тестовые скриншоты' : 'Preloaded Test Trades'}
+                {lang === 'ru' ? 'Симуляция сканирования' : 'Scan Simulator (Offline)'}
               </h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-medium">
                 {lang === 'ru'
-                  ? 'Выберите один из двух вариантов сделок для мгновенной симуляции сканирования:'
-                  : 'Choose one of two preloaded trades to instantly simulate AI scanning:'}
+                  ? 'Вы можете протестировать работу сканера на двух готовых сделках, без подключения нейросети:'
+                  : 'You can simulate the scanner offline on two preloaded BSS trades:'}
               </p>
             </div>
 
@@ -218,7 +415,7 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
       )}
 
       {scanStep === 1 && (
-        <div className="border border-white/5 bg-neutral-900/60 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[400px] text-center space-y-6 relative overflow-hidden">
+        <div className="border border-white/5 bg-neutral-900/60 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[400px] text-center space-y-6 overflow-hidden">
           {/* Laser Scanning Screen */}
           <div className="relative w-full max-w-xl aspect-[21/9] rounded-xl bg-neutral-950 border border-white/10 overflow-hidden flex items-center justify-center shadow-2xl">
             {image && image !== 'test-trade-1' && image !== 'test-trade-2' ? (
@@ -249,11 +446,13 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
               </span>
               <span className="text-xs font-mono font-black text-amber-400 uppercase tracking-widest">
-                {lang === 'ru' ? 'Сканирование сделки...' : 'Analyzing Trade Offer...'}
+                {apiKey ? 'Gemini AI Scanning...' : 'Simulating Scan...'}
               </span>
             </div>
             <h3 className="font-bold text-neutral-200 text-lg font-sans">
-              {lang === 'ru' ? 'Распознавание предметов и их улей-скинов...' : 'Isolating item boundaries...'}
+              {apiKey 
+                ? (lang === 'ru' ? 'Нейросеть Gemini распознает скриншот...' : 'Gemini AI is parsing the image...')
+                : (lang === 'ru' ? 'Симуляция сопоставления границ...' : 'Cross-referencing offline bounds...')}
             </h3>
           </div>
         </div>
@@ -261,34 +460,6 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
 
       {scanStep === 2 && (
         <div className="space-y-6">
-          {/* Active selection of trade type if custom image uploaded */}
-          {image !== 'test-trade-1' && image !== 'test-trade-2' && (
-            <div className="bg-neutral-900/60 border border-white/5 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="space-y-1">
-                <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest">{lang === 'ru' ? 'Подтвердите тип трейда' : 'Confirm Detected Trade'}</h4>
-                <p className="text-[11px] text-neutral-400">{lang === 'ru' ? 'Поскольку это тестовый сканер, укажите, какой именно из скриншотов вы загрузили:' : 'Since this is a demo scanner, please verify the layout of your screenshot:'}</p>
-              </div>
-              <div className="flex gap-2 bg-neutral-950 p-1 rounded-xl border border-white/5">
-                <button
-                  onClick={() => { setSelectedTrade('trade-1'); startScan(); }}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                    selectedTrade === 'trade-1' ? 'bg-amber-500 text-neutral-950' : 'text-neutral-400 hover:text-neutral-200'
-                  }`}
-                >
-                  {lang === 'ru' ? 'Трейд 1 (Знаки)' : 'Trade 1 (Signs)'}
-                </button>
-                <button
-                  onClick={() => { setSelectedTrade('trade-2'); startScan(); }}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                    selectedTrade === 'trade-2' ? 'bg-amber-500 text-neutral-950' : 'text-neutral-400 hover:text-neutral-200'
-                  }`}
-                >
-                  {lang === 'ru' ? 'Трейд 2 (Скины)' : 'Trade 2 (Skins)'}
-                </button>
-              </div>
-            </div>
-          )}
-
           {/* Visual Scan Bounding Boxes Overlay */}
           <div className="border border-white/5 bg-neutral-900/60 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
             <h3 className="text-sm font-bold text-neutral-400 self-start mb-3 font-mono">
@@ -302,80 +473,63 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
               ) : (
                 /* Draw custom mockup trade screen background matching BSS */
                 <div className="absolute inset-0 bg-[#ffd13b] relative">
-                  {/* Offer division line in the middle */}
                   <div className="absolute top-0 left-[50%] w-[4px] h-full bg-[#69c713]" />
-
-                  {/* Offer Headers */}
                   <div className="absolute top-2 left-2 bg-red-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">Your Offer</div>
                   <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">Opponent's Offer</div>
                   
                   {selectedTrade === 'trade-1' ? (
                     <>
-                      {/* Red Port-O-Hive */}
                       <div className="absolute top-[23%] left-[5%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
                         <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Red Port-O-Hive</span>
                       </div>
-                      {/* Blue Port-O-Hive */}
                       <div className="absolute top-[23%] left-[16%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
                         <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Blue Port-O-Hive</span>
                       </div>
-                      {/* Honey Dipper */}
                       <div className="absolute top-[23%] left-[27%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('honey-dipper-0')?.image} className="h-[80%] object-contain" />
                       </div>
-                      {/* Scorpio Star Sign */}
                       <div className="absolute top-[23%] left-[38%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('scorpio-star-sign-0')?.image} className="h-[85%] object-contain" />
                       </div>
-                      {/* Gemini Star Sign */}
                       <div className="absolute top-[48%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('gemini-star-sign-0')?.image} className="h-[85%] object-contain" />
                       </div>
-                      {/* Capricorn Star Sign */}
                       <div className="absolute top-[48%] left-[16%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('capricorn-star-sign-0')?.image} className="h-[85%] object-contain" />
                       </div>
-                      {/* Gingerbread Cub */}
                       <div className="absolute top-[23%] left-[60%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('gingerbread-cub-0')?.image} className="h-[90%] object-contain" />
                       </div>
                     </>
                   ) : (
                     <>
-                      {/* Prismatic Mushroom */}
                       <div className="absolute top-[23%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('prismatic-mushroom-0')?.image} className="h-[80%] object-contain" />
                       </div>
-                      {/* Black Hive Skin */}
                       <div className="absolute top-[23%] left-[16%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('black-hive-skin-0')?.image} className="h-[80%] object-contain" />
                       </div>
-                      {/* White Hive Skin */}
                       <div className="absolute top-[23%] left-[27%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('white-hive-skin-0')?.image} className="h-[80%] object-contain" />
                       </div>
-                      {/* Cub Buddy Voucher 1 */}
                       <div className="absolute top-[23%] left-[38%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('cub-voucher-0')?.image} className="h-[80%] object-contain" />
                       </div>
-                      {/* Cub Buddy Voucher 2 */}
                       <div className="absolute top-[48%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('cub-voucher-0')?.image} className="h-[80%] object-contain" />
                       </div>
-                      {/* Wavy Festive Hive Skin */}
                       <div className="absolute top-[23%] left-[60%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
                         <img src={getBssItem('wavy-festive-hive-skin-0')?.image} className="h-[80%] object-contain" />
                       </div>
                     </>
                   )}
 
-                  {/* Acceptance checkmarks */}
                   <div className="absolute bottom-[10%] left-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
                   <div className="absolute bottom-[10%] right-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
                 </div>
               )}
 
-              {/* Glowing Bounding Boxes with Labels overlay */}
+              {/* Glowing Bounding Boxes overlay */}
               {boundingBoxesConfig[selectedTrade].map((box, idx) => (
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
@@ -414,6 +568,9 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                     </span>
                   </div>
                 ))}
+                {detectedSideA.length === 0 && (
+                  <div className="text-xs text-neutral-500 italic p-2">{lang === 'ru' ? 'Ничего не обнаружено' : 'No items detected'}</div>
+                )}
                 {selectedTrade === 'trade-1' && (
                   <>
                     <div className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5 opacity-65">
@@ -449,6 +606,9 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                     </span>
                   </div>
                 ))}
+                {detectedSideB.length === 0 && (
+                  <div className="text-xs text-neutral-500 italic p-2">{lang === 'ru' ? 'Ничего не обнаружено' : 'No items detected'}</div>
+                )}
               </div>
               <div className="flex justify-between items-center pt-2 font-bold text-sm">
                 <span className="text-neutral-400">{lang === 'ru' ? 'Общая стоимость Б:' : 'Total Side B:'}</span>
@@ -463,7 +623,7 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button
               onClick={handleImport}
-              className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 text-neutral-950 font-black text-xs py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-500/10 cursor-pointer active:scale-98 transition-all duration-200 uppercase tracking-wider"
+              className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 text-neutral-950 font-black text-xs py-3.5 px-6 rounded-xl shadow-lg shadow-emerald-500/10 cursor-pointer active:scale-98 transition-all duration-200 uppercase tracking-wider animate-pulse"
             >
               <Check className="h-4 w-4" />
               <span>{lang === 'ru' ? 'Перенести в калькулятор' : 'Load Into Calculator'}</span>
