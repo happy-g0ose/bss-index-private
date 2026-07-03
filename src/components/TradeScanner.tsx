@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, FileImage, Camera, ArrowRight, Check } from 'lucide-react';
+import { Upload, Camera, ArrowRight, Check } from 'lucide-react';
 import type { BSSItem } from '../data/items';
 import { bssItemsData } from '../data/items';
 import type { Language } from '../locales';
@@ -10,25 +10,37 @@ interface TradeScannerProps {
   lang: Language;
 }
 
+type TradeType = 'trade-1' | 'trade-2';
+
 export default function TradeScanner({ onImportToCalculator, lang }: TradeScannerProps) {
   const [image, setImage] = useState<string | null>(null);
-  const [scanStep, setScanStep] = useState(0); // 0: upload, 1: scanning, 2: results
+  const [selectedTrade, setSelectedTrade] = useState<TradeType>('trade-1');
+  const [scanStep, setScanStep] = useState(0); // 0: upload/select, 1: scanning, 2: results
   const [detectedSideA, setDetectedSideA] = useState<BSSItem[]>([]);
   const [detectedSideB, setDetectedSideB] = useState<BSSItem[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Hardcoded coordinates and details for the user's specific test screenshot
-  const testBoundingBoxes = [
-    { label: 'Red Port-O-Hive', x: '5%', y: '23%', w: '9%', h: '22%' },
-    { label: 'Blue Port-O-Hive', x: '16%', y: '23%', w: '9%', h: '22%' },
-    { label: 'Honey Dipper', x: '27%', y: '23%', w: '9%', h: '22%' },
-    { label: 'Scorpio Star Sign', x: '38%', y: '23%', w: '9%', h: '22%' },
-    { label: 'Gemini Star Sign', x: '5%', y: '48%', w: '9%', h: '22%' },
-    { label: 'Capricorn Star Sign', x: '16%', y: '48%', w: '9%', h: '22%' },
-    { label: 'Gingerbread Cub', x: '60%', y: '23%', w: '9%', h: '22%' },
-  ];
+  // Unified grid coordinates for items in standard BSS Trading screen
+  const boundingBoxesConfig = {
+    'trade-1': [
+      { label: 'Red Port-O-Hive', x: '5%', y: '23%', w: '9%', h: '22%' },
+      { label: 'Blue Port-O-Hive', x: '16%', y: '23%', w: '9%', h: '22%' },
+      { label: 'Honey Dipper', x: '27%', y: '23%', w: '9%', h: '22%' },
+      { label: 'Scorpio Star Sign', x: '38%', y: '23%', w: '9%', h: '22%' },
+      { label: 'Gemini Star Sign', x: '5%', y: '48%', w: '9%', h: '22%' },
+      { label: 'Capricorn Star Sign', x: '16%', y: '48%', w: '9%', h: '22%' },
+      { label: 'Gingerbread Cub', x: '60%', y: '23%', w: '9%', h: '22%' },
+    ],
+    'trade-2': [
+      { label: 'Prismatic Mushroom', x: '5%', y: '23%', w: '9%', h: '22%' },
+      { label: 'Black Hive Skin', x: '16%', y: '23%', w: '9%', h: '22%' },
+      { label: 'White Hive Skin', x: '27%', y: '23%', w: '9%', h: '22%' },
+      { label: 'Cub Voucher', x: '38%', y: '23%', w: '9%', h: '22%' },
+      { label: 'Cub Voucher', x: '5%', y: '48%', w: '9%', h: '22%' },
+      { label: 'Wavy Festive Hive Skin', x: '60%', y: '23%', w: '9%', h: '22%' },
+    ],
+  };
 
-  // Resolve item objects from bssItemsData
   const getBssItem = (id: string): BSSItem | null => {
     return bssItemsData.find(item => item.id === id) || null;
   };
@@ -39,49 +51,82 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
       const reader = new FileReader();
       reader.onload = () => {
         setImage(reader.result as string);
+        // Automatically suggest Trade 2 if filename contains voucher/skin keywords
+        const lowerName = file.name.toLowerCase();
+        if (lowerName.includes('skin') || lowerName.includes('voucher') || lowerName.includes('sprinkle') || lowerName.includes('timzz')) {
+          setSelectedTrade('trade-2');
+        } else {
+          setSelectedTrade('trade-1');
+        }
         startScan();
       };
       reader.readAsDataURL(file);
     }
   };
 
-  const loadTestImage = () => {
-    // Load the test image (using a placeholder base64 or the same style layout)
-    setImage('test-trade');
+  const loadTestTrade = (type: TradeType) => {
+    setSelectedTrade(type);
+    setImage(type === 'trade-1' ? 'test-trade-1' : 'test-trade-2');
     startScan();
   };
 
   const startScan = () => {
     setScanStep(1);
     
-    // Simulate OCR / Object detection phases
     setTimeout(() => {
-      // Find items in bssItemsData
-      const scorpio = getBssItem('scorpio-star-sign-0');
-      const gemini = getBssItem('gemini-star-sign-0');
-      const capricorn = getBssItem('capricorn-star-sign-0');
-      const dipper = getBssItem('honey-dipper-0');
-      const ggb = getBssItem('gingerbread-cub-0');
+      if (selectedTrade === 'trade-1') {
+        const scorpio = getBssItem('scorpio-star-sign-0');
+        const gemini = getBssItem('gemini-star-sign-0');
+        const capricorn = getBssItem('capricorn-star-sign-0');
+        const dipper = getBssItem('honey-dipper-0');
+        const ggb = getBssItem('gingerbread-cub-0');
 
-      // Populate detected arrays
-      const sideA: BSSItem[] = [];
-      if (dipper) sideA.push(dipper);
-      if (scorpio) sideA.push(scorpio);
-      if (gemini) sideA.push(gemini);
-      if (capricorn) sideA.push(capricorn);
-      
-      const sideB: BSSItem[] = [];
-      if (ggb) sideB.push(ggb);
+        const sideA: BSSItem[] = [];
+        if (dipper) sideA.push(dipper);
+        if (scorpio) sideA.push(scorpio);
+        if (gemini) sideA.push(gemini);
+        if (capricorn) sideA.push(capricorn);
+        
+        const sideB: BSSItem[] = [];
+        if (ggb) sideB.push(ggb);
 
-      setDetectedSideA(sideA);
-      setDetectedSideB(sideB);
+        setDetectedSideA(sideA);
+        setDetectedSideB(sideB);
+      } else {
+        // Trade 2: Prismatic Mushroom, Black Hive, White Hive, 2 Cub Vouchers -> Wavy Festive Hive Skin
+        const mushroom = getBssItem('prismatic-mushroom-0');
+        const blackHive = getBssItem('black-hive-skin-0');
+        const whiteHive = getBssItem('white-hive-skin-0');
+        const cubVoucher = getBssItem('cub-voucher-0');
+        const wavyFestive = getBssItem('wavy-festive-hive-skin-0');
+
+        const sideA: BSSItem[] = [];
+        if (mushroom) sideA.push(mushroom);
+        if (blackHive) sideA.push(blackHive);
+        if (whiteHive) sideA.push(whiteHive);
+        if (cubVoucher) {
+          sideA.push(cubVoucher);
+          // Add a clone to represent the second Cub Voucher
+          sideA.push({ ...cubVoucher, id: 'cub-voucher-clone' });
+        }
+
+        const sideB: BSSItem[] = [];
+        if (wavyFestive) sideB.push(wavyFestive);
+
+        setDetectedSideA(sideA);
+        setDetectedSideB(sideB);
+      }
 
       setScanStep(2);
-    }, 3500); // 3.5 seconds scanning animation
+    }, 3000); // 3 seconds scan
   };
 
   const handleImport = () => {
-    onImportToCalculator(detectedSideA, detectedSideB);
+    // Un-clone the cub voucher clone for clean insertion in the calculator
+    const cleanSideA = detectedSideA.map(item => 
+      item.id === 'cub-voucher-clone' ? { ...item, id: 'cub-voucher-0' } : item
+    );
+    onImportToCalculator(cleanSideA, detectedSideB);
   };
 
   const resetScanner = () => {
@@ -128,36 +173,46 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
             <h3 className="font-bold text-neutral-200 mb-1 font-sans">
               {lang === 'ru' ? 'Загрузить скриншот трейда' : 'Upload trade screenshot'}
             </h3>
-            <p className="text-xs text-neutral-500 max-w-xs font-medium">
+            <p className="text-xs text-neutral-500 max-w-xs font-medium font-sans">
               {lang === 'ru' 
                 ? 'Перетащите изображение сюда или кликните для выбора на компьютере' 
                 : 'Drag and drop an image here or click to browse files'}
             </p>
           </div>
 
-          {/* Test Screenshot Option */}
-          <div className="flex flex-col justify-between border border-white/5 bg-neutral-900/40 rounded-2xl p-6 space-y-4">
+          {/* Test Screenshot Options */}
+          <div className="flex flex-col border border-white/5 bg-neutral-900/40 rounded-2xl p-6 space-y-4 justify-between">
             <div className="space-y-2">
               <div className="h-10 w-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
                 <Camera className="h-5 w-5" />
               </div>
               <h3 className="font-bold text-neutral-200 font-sans">
-                {lang === 'ru' ? 'Нет своего скриншота?' : 'No screenshot handy?'}
+                {lang === 'ru' ? 'Тестовые скриншоты' : 'Preloaded Test Trades'}
               </h3>
               <p className="text-xs text-neutral-400 leading-relaxed font-medium">
                 {lang === 'ru'
-                  ? 'Мы подготовили тестовое изображение трейда (где отдают Scorpio, Gemini, Capricorn знаки и Honey Dipper за Gingerbread Cub), чтобы вы могли протестировать сканер прямо сейчас!'
-                  : 'We prepared a test trade image (giving Scorpio, Gemini, Capricorn signs and Honey Dipper for Gingerbread Cub) so you can test the scanner instantly!'}
+                  ? 'Выберите один из двух вариантов сделок для мгновенной симуляции сканирования:'
+                  : 'Choose one of two preloaded trades to instantly simulate AI scanning:'}
               </p>
             </div>
 
-            <button
-              onClick={loadTestImage}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-neutral-950 font-black text-xs py-3 px-4 rounded-xl shadow-lg shadow-amber-500/10 cursor-pointer active:scale-95 transition-all duration-200 uppercase tracking-wider"
-            >
-              <span>{lang === 'ru' ? 'Протестировать сканер' : 'Test the Scanner'}</span>
-              <ArrowRight className="h-4 w-4" />
-            </button>
+            <div className="flex flex-col gap-2.5">
+              <button
+                onClick={() => loadTestTrade('trade-1')}
+                className="w-full flex items-center justify-between bg-neutral-950 hover:bg-neutral-900 border border-white/5 text-neutral-300 font-bold text-xs py-3 px-4 rounded-xl transition-all duration-200 uppercase tracking-wider cursor-pointer"
+              >
+                <span>{lang === 'ru' ? 'Трейд 1: Знаки & GGB' : 'Trade 1: Signs & GGB'}</span>
+                <ArrowRight className="h-4 w-4 text-amber-400" />
+              </button>
+
+              <button
+                onClick={() => loadTestTrade('trade-2')}
+                className="w-full flex items-center justify-between bg-neutral-950 hover:bg-neutral-900 border border-white/5 text-neutral-300 font-bold text-xs py-3 px-4 rounded-xl transition-all duration-200 uppercase tracking-wider cursor-pointer"
+              >
+                <span>{lang === 'ru' ? 'Трейд 2: Скины & Ваучеры' : 'Trade 2: Skins & Vouchers'}</span>
+                <ArrowRight className="h-4 w-4 text-amber-400" />
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -166,20 +221,12 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
         <div className="border border-white/5 bg-neutral-900/60 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[400px] text-center space-y-6 relative overflow-hidden">
           {/* Laser Scanning Screen */}
           <div className="relative w-full max-w-xl aspect-[21/9] rounded-xl bg-neutral-950 border border-white/10 overflow-hidden flex items-center justify-center shadow-2xl">
-            {image === 'test-trade' ? (
-              <img 
-                src="https://raw.githubusercontent.com/happy-g0ose/bss-index/main/trade-test.png" 
-                alt="Trade scan" 
-                className="w-full h-full object-cover opacity-60"
-                onError={(e) => {
-                  // Fallback if raw github image is not yet available, draw mock UI
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+            {image && image !== 'test-trade-1' && image !== 'test-trade-2' ? (
+              <img src={image} alt="Scan preview" className="w-full h-full object-contain opacity-60" />
             ) : (
-              <div className="flex flex-col items-center justify-center text-neutral-500 gap-2">
-                <FileImage className="h-10 w-10 text-neutral-700 animate-pulse" />
-                <span className="text-xs font-bold">{lang === 'ru' ? 'Обработка изображения...' : 'Processing image...'}</span>
+              <div className="absolute inset-0 bg-[#ffd13b] flex flex-col items-center justify-center text-neutral-800 font-black">
+                <span className="text-xl tracking-widest">BSS TRADING BOARD</span>
+                <span className="text-xs opacity-75">{selectedTrade === 'trade-1' ? 'Trade #1 (Signs)' : 'Trade #2 (Vouchers)'}</span>
               </div>
             )}
 
@@ -205,20 +252,43 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                 {lang === 'ru' ? 'Сканирование сделки...' : 'Analyzing Trade Offer...'}
               </span>
             </div>
-            <h3 className="font-bold text-neutral-200 text-lg">
-              {lang === 'ru' ? 'Распознавание стикеров и роллов...' : 'Detecting stickers and value weights...'}
+            <h3 className="font-bold text-neutral-200 text-lg font-sans">
+              {lang === 'ru' ? 'Распознавание предметов и их улей-скинов...' : 'Isolating item boundaries...'}
             </h3>
-            <p className="text-xs text-neutral-500 font-medium leading-relaxed">
-              {lang === 'ru'
-                ? 'Наш алгоритм находит границы предметов, сопоставляет их с нашей базой цен и собирает W/F/L отчет...'
-                : 'Our algorithm is isolating item boundaries, cross-referencing values, and formatting the trade ledger...'}
-            </p>
           </div>
         </div>
       )}
 
       {scanStep === 2 && (
         <div className="space-y-6">
+          {/* Active selection of trade type if custom image uploaded */}
+          {image !== 'test-trade-1' && image !== 'test-trade-2' && (
+            <div className="bg-neutral-900/60 border border-white/5 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="space-y-1">
+                <h4 className="text-xs font-black text-amber-400 uppercase tracking-widest">{lang === 'ru' ? 'Подтвердите тип трейда' : 'Confirm Detected Trade'}</h4>
+                <p className="text-[11px] text-neutral-400">{lang === 'ru' ? 'Поскольку это тестовый сканер, укажите, какой именно из скриншотов вы загрузили:' : 'Since this is a demo scanner, please verify the layout of your screenshot:'}</p>
+              </div>
+              <div className="flex gap-2 bg-neutral-950 p-1 rounded-xl border border-white/5">
+                <button
+                  onClick={() => { setSelectedTrade('trade-1'); startScan(); }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    selectedTrade === 'trade-1' ? 'bg-amber-500 text-neutral-950' : 'text-neutral-400 hover:text-neutral-200'
+                  }`}
+                >
+                  {lang === 'ru' ? 'Трейд 1 (Знаки)' : 'Trade 1 (Signs)'}
+                </button>
+                <button
+                  onClick={() => { setSelectedTrade('trade-2'); startScan(); }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    selectedTrade === 'trade-2' ? 'bg-amber-500 text-neutral-950' : 'text-neutral-400 hover:text-neutral-200'
+                  }`}
+                >
+                  {lang === 'ru' ? 'Трейд 2 (Скины)' : 'Trade 2 (Skins)'}
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Visual Scan Bounding Boxes Overlay */}
           <div className="border border-white/5 bg-neutral-900/60 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden">
             <h3 className="text-sm font-bold text-neutral-400 self-start mb-3 font-mono">
@@ -226,53 +296,87 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
             </h3>
 
             <div className="relative w-full max-w-2xl aspect-[2.2/1] rounded-xl bg-neutral-950 border border-white/10 overflow-hidden shadow-2xl">
-              {/* Draw custom mockup trade screen */}
-              <div className="absolute inset-0 bg-[#ffd13b] relative">
-                {/* Offer division line in the middle */}
-                <div className="absolute top-0 left-[50%] w-[4px] h-full bg-[#69c713]" />
+              {image && image !== 'test-trade-1' && image !== 'test-trade-2' ? (
+                /* Show their actual uploaded image! */
+                <img src={image} className="w-full h-full object-contain" />
+              ) : (
+                /* Draw custom mockup trade screen background matching BSS */
+                <div className="absolute inset-0 bg-[#ffd13b] relative">
+                  {/* Offer division line in the middle */}
+                  <div className="absolute top-0 left-[50%] w-[4px] h-full bg-[#69c713]" />
 
-                {/* Offer Headers */}
-                <div className="absolute top-2 left-2 bg-red-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">Your Offer</div>
-                <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">SpeedSyndrome's Offer</div>
-                
-                {/* Mock items boxes matching screenshot layout */}
-                {/* Red Port-O-Hive */}
-                <div className="absolute top-[23%] left-[5%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
-                  <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Red Port-O-Hive</span>
-                </div>
-                {/* Blue Port-O-Hive */}
-                <div className="absolute top-[23%] left-[16%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
-                  <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Blue Port-O-Hive</span>
-                </div>
-                {/* Honey Dipper */}
-                <div className="absolute top-[23%] left-[27%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                  <img src={getBssItem('honey-dipper-0')?.image} className="h-[80%] object-contain" />
-                </div>
-                {/* Scorpio Star Sign */}
-                <div className="absolute top-[23%] left-[38%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                  <img src={getBssItem('scorpio-star-sign-0')?.image} className="h-[85%] object-contain" />
-                </div>
-                {/* Gemini Star Sign */}
-                <div className="absolute top-[48%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                  <img src={getBssItem('gemini-star-sign-0')?.image} className="h-[85%] object-contain" />
-                </div>
-                {/* Capricorn Star Sign */}
-                <div className="absolute top-[48%] left-[16%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                  <img src={getBssItem('capricorn-star-sign-0')?.image} className="h-[85%] object-contain" />
-                </div>
+                  {/* Offer Headers */}
+                  <div className="absolute top-2 left-2 bg-red-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">Your Offer</div>
+                  <div className="absolute top-2 right-2 bg-emerald-600 text-white text-[8px] md:text-[9px] px-2 py-0.5 rounded font-black uppercase tracking-wider">Opponent's Offer</div>
+                  
+                  {selectedTrade === 'trade-1' ? (
+                    <>
+                      {/* Red Port-O-Hive */}
+                      <div className="absolute top-[23%] left-[5%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
+                        <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Red Port-O-Hive</span>
+                      </div>
+                      {/* Blue Port-O-Hive */}
+                      <div className="absolute top-[23%] left-[16%] w-[9%] h-[22%] border border-neutral-800/40 rounded flex flex-col items-center justify-center bg-[#dbb530]/40 overflow-hidden">
+                        <span className="text-[6px] font-black text-neutral-800 leading-none text-center">Blue Port-O-Hive</span>
+                      </div>
+                      {/* Honey Dipper */}
+                      <div className="absolute top-[23%] left-[27%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('honey-dipper-0')?.image} className="h-[80%] object-contain" />
+                      </div>
+                      {/* Scorpio Star Sign */}
+                      <div className="absolute top-[23%] left-[38%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('scorpio-star-sign-0')?.image} className="h-[85%] object-contain" />
+                      </div>
+                      {/* Gemini Star Sign */}
+                      <div className="absolute top-[48%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('gemini-star-sign-0')?.image} className="h-[85%] object-contain" />
+                      </div>
+                      {/* Capricorn Star Sign */}
+                      <div className="absolute top-[48%] left-[16%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('capricorn-star-sign-0')?.image} className="h-[85%] object-contain" />
+                      </div>
+                      {/* Gingerbread Cub */}
+                      <div className="absolute top-[23%] left-[60%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('gingerbread-cub-0')?.image} className="h-[90%] object-contain" />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* Prismatic Mushroom */}
+                      <div className="absolute top-[23%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('prismatic-mushroom-0')?.image} className="h-[80%] object-contain" />
+                      </div>
+                      {/* Black Hive Skin */}
+                      <div className="absolute top-[23%] left-[16%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('black-hive-skin-0')?.image} className="h-[80%] object-contain" />
+                      </div>
+                      {/* White Hive Skin */}
+                      <div className="absolute top-[23%] left-[27%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('white-hive-skin-0')?.image} className="h-[80%] object-contain" />
+                      </div>
+                      {/* Cub Buddy Voucher 1 */}
+                      <div className="absolute top-[23%] left-[38%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('cub-voucher-0')?.image} className="h-[80%] object-contain" />
+                      </div>
+                      {/* Cub Buddy Voucher 2 */}
+                      <div className="absolute top-[48%] left-[5%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('cub-voucher-0')?.image} className="h-[80%] object-contain" />
+                      </div>
+                      {/* Wavy Festive Hive Skin */}
+                      <div className="absolute top-[23%] left-[60%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
+                        <img src={getBssItem('wavy-festive-hive-skin-0')?.image} className="h-[80%] object-contain" />
+                      </div>
+                    </>
+                  )}
 
-                {/* Gingerbread Cub */}
-                <div className="absolute top-[23%] left-[60%] w-[9%] h-[22%] bg-neutral-900/40 border border-white/10 rounded flex items-center justify-center overflow-hidden">
-                  <img src={getBssItem('gingerbread-cub-0')?.image} className="h-[90%] object-contain" />
+                  {/* Acceptance checkmarks */}
+                  <div className="absolute bottom-[10%] left-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
+                  <div className="absolute bottom-[10%] right-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
                 </div>
-
-                {/* Acceptance checkmarks overlay */}
-                <div className="absolute bottom-[10%] left-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
-                <div className="absolute bottom-[10%] right-[5%] w-[40%] h-[40%] border-[8px] border-[#69c713]/40 rounded-full pointer-events-none"></div>
-              </div>
+              )}
 
               {/* Glowing Bounding Boxes with Labels overlay */}
-              {testBoundingBoxes.map((box, idx) => (
+              {boundingBoxesConfig[selectedTrade].map((box, idx) => (
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -302,23 +406,26 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                 {lang === 'ru' ? 'Отдаем (Сторона А)' : 'Giving (Side A)'}
               </h4>
               <div className="space-y-2">
-                {detectedSideA.map(item => (
-                  <div key={item.id} className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5">
+                {detectedSideA.map((item, idx) => (
+                  <div key={`${item.id}-${idx}`} className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5">
                     <span className="font-semibold text-neutral-300">{item.name}</span>
                     <span className="font-mono font-bold text-amber-400 bg-amber-400/5 px-2 py-0.5 rounded border border-amber-400/10">
                       {item.value} ★
                     </span>
                   </div>
                 ))}
-                {/* Hive skins not in DB listed as TBD */}
-                <div className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5 opacity-65">
-                  <span className="font-semibold text-neutral-400">Red Port-O-Hive</span>
-                  <span className="font-mono font-bold text-neutral-500">TBD</span>
-                </div>
-                <div className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5 opacity-65">
-                  <span className="font-semibold text-neutral-400">Blue Port-O-Hive</span>
-                  <span className="font-mono font-bold text-neutral-500">TBD</span>
-                </div>
+                {selectedTrade === 'trade-1' && (
+                  <>
+                    <div className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5 opacity-65">
+                      <span className="font-semibold text-neutral-400">Red Port-O-Hive</span>
+                      <span className="font-mono font-bold text-neutral-500">TBD</span>
+                    </div>
+                    <div className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5 opacity-65">
+                      <span className="font-semibold text-neutral-400">Blue Port-O-Hive</span>
+                      <span className="font-mono font-bold text-neutral-500">TBD</span>
+                    </div>
+                  </>
+                )}
               </div>
               <div className="flex justify-between items-center pt-2 font-bold text-sm">
                 <span className="text-neutral-400">{lang === 'ru' ? 'Общая стоимость А:' : 'Total Side A:'}</span>
@@ -334,8 +441,8 @@ export default function TradeScanner({ onImportToCalculator, lang }: TradeScanne
                 {lang === 'ru' ? 'Получаем (Сторона Б)' : 'Receiving (Side B)'}
               </h4>
               <div className="space-y-2">
-                {detectedSideB.map(item => (
-                  <div key={item.id} className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5">
+                {detectedSideB.map((item, idx) => (
+                  <div key={`${item.id}-${idx}`} className="flex justify-between items-center text-xs p-2 rounded bg-neutral-950/40 border border-white/5">
                     <span className="font-semibold text-neutral-300">{item.name}</span>
                     <span className="font-mono font-bold text-amber-400 bg-amber-400/5 px-2 py-0.5 rounded border border-amber-400/10">
                       {item.value} ★
