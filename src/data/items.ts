@@ -51,13 +51,49 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      7.0,
+      7.25,
+      6.75,
+      7.25,
+      7.75,
+      8.5,
+      8.75,
+      7.75,
+      8.5,
+      8.75,
+      9.25,
+      9.5,
+      10.25,
+      11.25,
+      11.5,
+      11.5,
+      10.5,
+      10.5,
       10.25,
       10.25
     ],
     "image": "https://bssmvalues.com/images/Star_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-14",
+      "2025-06-19",
+      "2025-07-04",
+      "2026-01-08",
+      "2026-02-01",
+      "2026-02-05",
+      "2026-02-21",
+      "2026-03-09",
+      "2026-03-20",
+      "2026-04-05",
+      "2026-04-17",
+      "2026-04-22",
+      "2026-05-02",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-26",
+      "2026-06-03",
+      "2026-06-14",
+      "2026-06-18",
+      "2026-06-22"
     ]
   },
   {
@@ -65,10 +101,190 @@ const rawBssItemsData: any[] = [
     "name": "Robo Cub",
     "englishName": "Robo Cub",
     "category": "Скины на куба",
-    "value": 15.5,
-    "valueLow": 15.0,
-    "valueHigh": 16.0,
+    "value": 14.5,
+    "valueLow": 14.0,
+    "valueHigh": 15.0,
     "demand": "Высокий",
+    "stability": "Растет",
+    "rarity": "Эпический",
+    "glowColor": "rgba(168, 85, 247, 0.25)",
+    "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
+    "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
+    "textColor": "text-purple-400",
+    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "historicalPrices": [
+      6.0,
+      5.25,
+      5.25,
+      4.88,
+      4.75,
+      4.25,
+      4.5,
+      4.75,
+      5.5,
+      6.25,
+      6.5,
+      7.0,
+      11.0,
+      10.5,
+      9.5,
+      9.75,
+      10.0,
+      10.5,
+      11.5,
+      12.5,
+      15.5,
+      17.5,
+      21.5,
+      19.5,
+      21.5,
+      19.5,
+      17.5,
+      16.5,
+      15.5,
+      14.5
+    ],
+    "image": "https://bssmvalues.com/images/Robo_Cub.webp",
+    "historicalDates": [
+      "2025-05-14",
+      "2025-05-31",
+      "2025-06-19",
+      "2025-07-09",
+      "2025-07-13",
+      "2025-07-24",
+      "2025-09-20",
+      "2026-01-03",
+      "2026-01-20",
+      "2026-02-01",
+      "2026-02-03",
+      "2026-02-06",
+      "2026-02-21",
+      "2026-03-11",
+      "2026-03-18",
+      "2026-03-23",
+      "2026-04-02",
+      "2026-04-16",
+      "2026-04-26",
+      "2026-04-29",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-14",
+      "2026-05-31",
+      "2026-06-04",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-20",
+      "2026-06-29"
+    ]
+  },
+  {
+    "id": "stick-cub-0",
+    "name": "Stick Cub",
+    "englishName": "Stick Cub",
+    "category": "Скины на куба",
+    "value": 24.0,
+    "valueLow": 23.0,
+    "valueHigh": 25.0,
+    "demand": "Средний",
+    "stability": "Растет",
+    "rarity": "Эпический",
+    "glowColor": "rgba(168, 85, 247, 0.25)",
+    "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
+    "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
+    "textColor": "text-purple-400",
+    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "historicalPrices": [
+      8.0,
+      8.5,
+      8.25,
+      7.5,
+      7.5,
+      6.5,
+      5.75,
+      5.25,
+      4.75,
+      4.25,
+      4.75,
+      5.75,
+      7.25,
+      10.5,
+      9.5,
+      8.5,
+      13.5,
+      17.5,
+      20.5,
+      19.0,
+      17.5,
+      17.0,
+      18.0,
+      17.5,
+      22.0,
+      24.5,
+      26.0,
+      29.5,
+      31.5,
+      32.5,
+      32.5,
+      34.5,
+      35.5,
+      29.5,
+      28.5,
+      26.5,
+      23.5,
+      24.0
+    ],
+    "image": "https://bssmvalues.com/images/Stick_Cub.webp",
+    "historicalDates": [
+      "2025-05-14",
+      "2025-05-29",
+      "2025-05-31",
+      "2025-06-12",
+      "2025-06-19",
+      "2025-06-24",
+      "2025-07-02",
+      "2025-07-09",
+      "2025-07-13",
+      "2025-07-24",
+      "2025-08-27",
+      "2025-09-03",
+      "2025-09-20",
+      "2025-12-25",
+      "2026-01-21",
+      "2026-02-03",
+      "2026-02-21",
+      "2026-03-18",
+      "2026-03-19",
+      "2026-04-01",
+      "2026-04-02",
+      "2026-04-21",
+      "2026-04-24",
+      "2026-04-28",
+      "2026-05-07",
+      "2026-05-12",
+      "2026-05-17",
+      "2026-05-23",
+      "2026-05-25",
+      "2026-05-27",
+      "2026-06-03",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-20",
+      "2026-07-01"
+    ]
+  },
+  {
+    "id": "brown-cub-0",
+    "name": "Brown Cub",
+    "englishName": "Brown Cub",
+    "category": "Скины на куба",
+    "value": 30.0,
+    "valueLow": 29.0,
+    "valueHigh": 31.0,
+    "demand": "Средний",
     "stability": "Растет",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -78,64 +294,78 @@ const rawBssItemsData: any[] = [
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
       15.5,
-      15.5
-    ],
-    "image": "https://bssmvalues.com/images/Robo_Cub.webp",
-    "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
-    ]
-  },
-  {
-    "id": "stick-cub-0",
-    "name": "Stick Cub",
-    "englishName": "Stick Cub",
-    "category": "Скины на куба",
-    "value": 23.5,
-    "valueLow": 22.0,
-    "valueHigh": 25.0,
-    "demand": "Высокий",
-    "stability": "Растет",
-    "rarity": "Эпический",
-    "glowColor": "rgba(168, 85, 247, 0.25)",
-    "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
-    "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
-    "textColor": "text-purple-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
-    "historicalPrices": [
-      23.5,
-      23.5
-    ],
-    "image": "https://bssmvalues.com/images/Stick_Cub.webp",
-    "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
-    ]
-  },
-  {
-    "id": "brown-cub-0",
-    "name": "Brown Cub",
-    "englishName": "Brown Cub",
-    "category": "Скины на куба",
-    "value": 31.5,
-    "valueLow": 30.0,
-    "valueHigh": 33.0,
-    "demand": "Высокий",
-    "stability": "Растет",
-    "rarity": "Эпический",
-    "glowColor": "rgba(168, 85, 247, 0.25)",
-    "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
-    "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
-    "textColor": "text-purple-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
-    "historicalPrices": [
+      16.5,
+      16.25,
+      15.5,
+      15.5,
+      14.75,
+      14.25,
+      13.25,
+      12.25,
+      11.5,
+      10.75,
+      12.5,
+      26.5,
+      16.5,
+      18.5,
+      21.0,
+      19.5,
+      18.5,
+      17.0,
+      18.0,
+      19.5,
+      20.0,
+      22.0,
+      24.0,
+      29.0,
+      31.0,
+      37.5,
+      42.0,
+      42.0,
+      43.5,
+      39.5,
+      35.5,
+      35.5,
       31.5,
-      31.5
+      30.0
     ],
     "image": "https://bssmvalues.com/images/Brown_Cub.webp",
     "historicalDates": [
+      "2025-05-14",
+      "2025-05-31",
+      "2025-06-12",
+      "2025-06-16",
+      "2025-06-19",
+      "2025-06-24",
+      "2025-07-09",
+      "2025-07-30",
+      "2025-08-31",
+      "2025-09-20",
+      "2026-01-14",
+      "2026-02-01",
+      "2026-02-21",
+      "2026-03-08",
+      "2026-03-18",
+      "2026-03-19",
+      "2026-03-23",
+      "2026-03-26",
+      "2026-03-30",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-24",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-16",
+      "2026-05-17",
+      "2026-05-23",
+      "2026-05-27",
+      "2026-06-03",
+      "2026-06-08",
+      "2026-06-14",
+      "2026-06-18",
       "2026-06-20",
-      "2026-06-27"
+      "2026-06-22",
+      "2026-07-01"
     ]
   },
   {
@@ -143,10 +373,10 @@ const rawBssItemsData: any[] = [
     "name": "Doodle Cub (DDC)",
     "englishName": "Doodle Cub",
     "category": "Скины на куба",
-    "value": 42.5,
-    "valueLow": 40.0,
-    "valueHigh": 45.0,
-    "demand": "Низкий",
+    "value": 40.5,
+    "valueLow": 39.0,
+    "valueHigh": 42.0,
+    "demand": "Средний",
     "stability": "Падает",
     "rarity": "Легендарный",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -155,13 +385,87 @@ const rawBssItemsData: any[] = [
     "textColor": "text-amber-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      6.0,
+      6.25,
+      6.75,
+      7.25,
+      7.75,
+      8.5,
+      10.0,
+      19.0,
+      14.5,
+      17.5,
+      21.0,
+      20.0,
+      19.5,
+      18.5,
+      18.0,
+      20.0,
+      23.0,
+      24.0,
+      25.0,
+      26.0,
+      33.0,
+      37.0,
+      39.0,
+      47.0,
+      56.0,
+      66.0,
+      58.0,
+      57.5,
+      52.5,
+      54.0,
+      55.0,
+      57.5,
+      65.5,
+      67.5,
+      52.5,
+      50.5,
+      47.5,
       42.5,
-      42.5
+      40.5
     ],
     "image": "https://bssmvalues.com/images/Doodle_Cub.webp",
     "historicalDates": [
+      "2025-05-14",
+      "2025-06-19",
+      "2025-07-30",
+      "2025-08-05",
+      "2026-02-01",
+      "2026-02-05",
+      "2026-02-10",
+      "2026-02-21",
+      "2026-03-09",
+      "2026-03-18",
+      "2026-03-19",
+      "2026-03-20",
+      "2026-03-23",
+      "2026-04-01",
+      "2026-04-02",
+      "2026-04-18",
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-24",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-21",
+      "2026-05-23",
+      "2026-05-25",
+      "2026-05-27",
+      "2026-05-31",
+      "2026-06-04",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-18",
       "2026-06-20",
-      "2026-06-27"
+      "2026-07-01"
     ]
   },
   {
@@ -169,9 +473,9 @@ const rawBssItemsData: any[] = [
     "name": "Petal Cub",
     "englishName": "Petal Cub",
     "category": "Скины на куба",
-    "value": 57.5,
-    "valueLow": 55.0,
-    "valueHigh": 60.0,
+    "value": 54.5,
+    "valueLow": 52.0,
+    "valueHigh": 57.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -181,13 +485,47 @@ const rawBssItemsData: any[] = [
     "textColor": "text-amber-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      46.0,
+      48.0,
+      51.0,
       57.5,
-      57.5
+      59.5,
+      62.5,
+      92.5,
+      79.5,
+      83.5,
+      86.0,
+      94.0,
+      92.5,
+      90.5,
+      67.5,
+      57.5,
+      56.0,
+      56.0,
+      57.5,
+      54.5
     ],
     "image": "https://bssmvalues.com/images/Petal_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-05-12",
+      "2026-05-14",
+      "2026-05-16",
+      "2026-05-21",
+      "2026-05-24",
+      "2026-05-26",
+      "2026-05-31",
+      "2026-06-01",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-07-01"
     ]
   },
   {
@@ -195,9 +533,9 @@ const rawBssItemsData: any[] = [
     "name": "Gingerbread Cub (GGB)",
     "englishName": "Gingerbread Cub",
     "category": "Скины на куба",
-    "value": 60.5,
-    "valueLow": 58.0,
-    "valueHigh": 63.0,
+    "value": 59.5,
+    "valueLow": 57.0,
+    "valueHigh": 62.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -207,13 +545,91 @@ const rawBssItemsData: any[] = [
     "textColor": "text-amber-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      11.0,
+      11.75,
+      11.75,
+      13.0,
+      12.5,
+      12.25,
+      11.5,
+      11.75,
+      11.5,
+      12.5,
+      13.0,
+      14.0,
+      15.5,
+      32.5,
+      26.0,
+      23.5,
+      25.5,
+      26.5,
+      27.0,
+      28.0,
+      29.0,
+      31.0,
+      33.0,
+      35.0,
+      36.0,
+      43.0,
+      46.0,
+      48.0,
+      56.0,
+      75.0,
+      80.0,
+      78.0,
+      80.0,
+      84.0,
+      85.0,
+      71.5,
+      67.5,
+      57.5,
+      57.5,
       60.5,
-      60.5
+      59.5
     ],
     "image": "https://bssmvalues.com/images/Gingerbread_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-14",
+      "2025-06-12",
+      "2025-06-19",
+      "2025-06-24",
+      "2025-07-30",
+      "2025-08-15",
+      "2025-09-10",
+      "2025-09-26",
+      "2026-01-08",
+      "2026-01-27",
+      "2026-02-01",
+      "2026-02-03",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-09",
+      "2026-03-12",
+      "2026-03-20",
+      "2026-03-23",
+      "2026-04-02",
+      "2026-04-08",
+      "2026-04-14",
+      "2026-04-16",
+      "2026-04-18",
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-07",
+      "2026-06-03",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-07-01"
     ]
   },
   {
@@ -233,13 +649,97 @@ const rawBssItemsData: any[] = [
     "textColor": "text-amber-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      6.0,
+      6.5,
+      6.75,
+      6.75,
+      7.25,
+      7.75,
+      8.5,
+      9.5,
+      10.5,
+      13.0,
+      15.5,
+      18.0,
+      18.0,
+      17.5,
+      26.0,
+      34.0,
+      36.5,
+      39.0,
+      36.5,
+      37.5,
+      37.0,
+      38.0,
+      39.0,
+      43.0,
+      46.0,
+      50.0,
+      53.0,
+      64.0,
+      83.0,
+      98.0,
+      107.0,
+      102.5,
+      98.5,
+      106.5,
+      111.0,
+      121.5,
+      123.5,
+      130.5,
+      123.5,
+      109.5,
+      103.0,
+      97.5,
       82.5,
       82.5
     ],
     "image": "https://bssmvalues.com/images/Gloomy_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-14",
+      "2025-05-29",
+      "2025-05-31",
+      "2025-06-19",
+      "2025-08-05",
+      "2025-08-28",
+      "2025-09-20",
+      "2025-12-24",
+      "2026-01-08",
+      "2026-01-10",
+      "2026-01-12",
+      "2026-01-14",
+      "2026-01-20",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-09",
+      "2026-03-12",
+      "2026-03-13",
+      "2026-03-18",
+      "2026-04-01",
+      "2026-04-02",
+      "2026-04-17",
+      "2026-04-18",
+      "2026-04-22",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-08",
+      "2026-05-12",
+      "2026-05-23",
+      "2026-05-30",
+      "2026-05-31",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-11",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-18",
+      "2026-06-22",
+      "2026-06-23"
     ]
   },
   {
@@ -247,9 +747,9 @@ const rawBssItemsData: any[] = [
     "name": "Noob Cub",
     "englishName": "Noob Cub",
     "category": "Скины на куба",
-    "value": 82.5,
-    "valueLow": 80.0,
-    "valueHigh": 85.0,
+    "value": 80.5,
+    "valueLow": 78.0,
+    "valueHigh": 83.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -259,13 +759,109 @@ const rawBssItemsData: any[] = [
     "textColor": "text-amber-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      21.0,
+      19.5,
+      20.0,
+      18.5,
+      18.5,
+      19.0,
+      21.0,
+      20.5,
+      20.25,
+      19.5,
+      18.5,
+      17.75,
+      18.5,
+      19.5,
+      20.5,
+      22.5,
+      25.0,
+      28.5,
+      40.0,
+      41.0,
+      37.5,
+      34.5,
+      41.0,
+      45.5,
+      44.0,
+      42.0,
+      43.0,
+      46.0,
+      47.0,
+      48.0,
+      52.0,
+      57.0,
+      64.0,
+      81.0,
+      93.0,
+      107.0,
+      98.0,
+      96.5,
+      98.0,
+      102.5,
+      108.5,
+      119.5,
+      127.5,
+      130.5,
+      123.5,
+      109.5,
+      103.0,
+      87.0,
       82.5,
-      82.5
+      80.5
     ],
     "image": "https://bssmvalues.com/images/Noob_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-14",
+      "2025-05-29",
+      "2025-05-31",
+      "2025-07-09",
+      "2025-07-13",
+      "2025-07-30",
+      "2025-08-05",
+      "2025-08-09",
+      "2025-08-15",
+      "2025-08-19",
+      "2025-09-02",
+      "2025-12-24",
+      "2026-01-14",
+      "2026-01-20",
+      "2026-01-27",
+      "2026-02-01",
+      "2026-02-03",
+      "2026-02-09",
+      "2026-02-21",
+      "2026-03-12",
+      "2026-03-13",
+      "2026-03-18",
+      "2026-03-20",
+      "2026-03-23",
+      "2026-03-29",
+      "2026-03-31",
+      "2026-04-08",
+      "2026-04-18",
+      "2026-04-22",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-07",
+      "2026-05-12",
+      "2026-05-15",
+      "2026-05-22",
+      "2026-05-23",
+      "2026-05-31",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-11",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-18",
+      "2026-06-23",
+      "2026-07-01"
     ]
   },
   {
@@ -273,9 +869,9 @@ const rawBssItemsData: any[] = [
     "name": "Peppermint Cub (PPM)",
     "englishName": "Peppermint Cub",
     "category": "Скины на куба",
-    "value": 225.0,
-    "valueLow": 220.0,
-    "valueHigh": 230.0,
+    "value": 215.0,
+    "valueLow": 210.0,
+    "valueHigh": 220.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Мифический",
@@ -285,13 +881,95 @@ const rawBssItemsData: any[] = [
     "textColor": "text-rose-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      29.0,
+      32.5,
+      33.0,
+      33.0,
+      31.0,
+      29.0,
+      29.0,
+      29.75,
+      30.5,
+      32.0,
+      35.5,
+      39.5,
+      41.5,
+      45.5,
+      47.0,
+      61.5,
+      77.5,
+      87.5,
+      92.5,
+      97.5,
+      98.0,
+      103.0,
+      108.0,
+      112.0,
+      118.0,
+      130.0,
+      134.0,
+      145.0,
+      165.0,
+      227.5,
+      253.0,
+      255.0,
+      270.0,
+      285.0,
+      296.5,
+      329.0,
+      345.0,
+      320.0,
+      275.0,
+      245.0,
+      235.0,
       225.0,
-      225.0
+      215.0
     ],
     "image": "https://bssmvalues.com/images/Peppermint_Robo_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-14",
+      "2025-05-29",
+      "2025-05-31",
+      "2025-06-19",
+      "2025-07-09",
+      "2025-07-30",
+      "2025-08-11",
+      "2025-08-15",
+      "2025-08-19",
+      "2026-01-03",
+      "2026-01-14",
+      "2026-01-26",
+      "2026-02-01",
+      "2026-02-03",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-09",
+      "2026-03-11",
+      "2026-03-30",
+      "2026-03-31",
+      "2026-04-02",
+      "2026-04-06",
+      "2026-04-22",
+      "2026-04-25",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-07",
+      "2026-05-12",
+      "2026-05-16",
+      "2026-05-17",
+      "2026-05-21",
+      "2026-05-26",
+      "2026-05-31",
+      "2026-06-04",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-19",
+      "2026-06-27",
+      "2026-06-30"
     ]
   },
   {
@@ -299,9 +977,9 @@ const rawBssItemsData: any[] = [
     "name": "Snow Cub",
     "englishName": "Snow Cub",
     "category": "Скины на куба",
-    "value": 245.0,
-    "valueLow": 240.0,
-    "valueHigh": 250.0,
+    "value": 235.0,
+    "valueLow": 230.0,
+    "valueHigh": 240.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Мифический",
@@ -311,13 +989,103 @@ const rawBssItemsData: any[] = [
     "textColor": "text-rose-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      42.0,
+      43.75,
+      47.5,
+      51.5,
+      51.5,
+      53.5,
+      51.0,
+      51.0,
+      49.0,
+      47.0,
+      49.0,
+      47.5,
+      50.0,
+      52.5,
+      56.5,
+      61.5,
+      67.5,
+      78.0,
+      107.5,
+      112.5,
+      122.5,
+      114.5,
+      115.0,
+      120.0,
+      126.0,
+      136.0,
+      140.0,
+      152.0,
+      156.0,
+      177.5,
+      200.0,
+      277.5,
+      275.0,
+      288.5,
+      310.0,
+      320.0,
+      325.0,
+      355.0,
+      375.0,
+      385.0,
+      360.0,
+      305.0,
+      295.0,
+      275.0,
+      265.0,
       245.0,
-      245.0
+      235.0
     ],
     "image": "https://bssmvalues.com/images/Snow_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-14",
+      "2025-05-31",
+      "2025-06-12",
+      "2025-06-16",
+      "2025-06-19",
+      "2025-06-24",
+      "2025-07-30",
+      "2025-08-03",
+      "2025-08-05",
+      "2025-08-19",
+      "2026-01-08",
+      "2026-01-12",
+      "2026-01-20",
+      "2026-01-27",
+      "2026-02-01",
+      "2026-02-03",
+      "2026-02-10",
+      "2026-02-21",
+      "2026-03-09",
+      "2026-03-12",
+      "2026-03-18",
+      "2026-03-31",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-20",
+      "2026-04-22",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-02",
+      "2026-05-03",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-12",
+      "2026-05-16",
+      "2026-05-25",
+      "2026-05-27",
+      "2026-05-30",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-19",
+      "2026-06-27",
+      "2026-06-30"
     ]
   },
   {
@@ -325,9 +1093,9 @@ const rawBssItemsData: any[] = [
     "name": "Bee Cub",
     "englishName": "Bee Cub",
     "category": "Скины на куба",
-    "value": 405.0,
-    "valueLow": 400.0,
-    "valueHigh": 410.0,
+    "value": 385.0,
+    "valueLow": 380.0,
+    "valueHigh": 390.0,
     "demand": "Средний",
     "stability": "Растет",
     "rarity": "Мифический",
@@ -337,13 +1105,117 @@ const rawBssItemsData: any[] = [
     "textColor": "text-rose-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      65.0,
+      72.5,
+      77.0,
+      84.5,
+      91.5,
+      86.5,
+      86.5,
+      77.5,
+      75.5,
+      77.0,
+      81.5,
+      76.5,
+      73.5,
+      79.5,
+      86.5,
+      86.5,
+      97.5,
+      109.5,
+      122.5,
+      152.5,
+      185.0,
+      197.5,
+      195.0,
+      200.0,
+      205.0,
+      215.0,
+      226.0,
+      236.0,
+      244.0,
+      265.0,
+      315.0,
+      325.0,
+      330.0,
+      330.0,
+      440.0,
+      550.0,
+      537.5,
+      522.5,
+      505.0,
+      530.0,
+      540.0,
+      580.0,
+      590.0,
+      565.0,
+      505.0,
+      495.0,
+      455.0,
+      445.0,
+      435.0,
+      425.0,
+      415.0,
+      415.0,
       405.0,
-      405.0
+      385.0
     ],
     "image": "https://bssmvalues.com/images/Bee_Cub.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-14",
+      "2025-05-31",
+      "2025-06-12",
+      "2025-06-16",
+      "2025-06-19",
+      "2025-07-30",
+      "2025-08-03",
+      "2025-08-05",
+      "2025-08-19",
+      "2025-08-25",
+      "2025-08-31",
+      "2025-09-20",
+      "2025-09-24",
+      "2025-12-30",
+      "2026-01-14",
+      "2026-01-20",
+      "2026-01-27",
+      "2026-02-01",
+      "2026-02-09",
+      "2026-02-21",
+      "2026-03-08",
+      "2026-03-16",
+      "2026-03-18",
+      "2026-04-08",
+      "2026-04-14",
+      "2026-04-16",
+      "2026-04-18",
+      "2026-04-21",
+      "2026-04-24",
+      "2026-04-25",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-03",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-11",
+      "2026-05-14",
+      "2026-05-23",
+      "2026-05-27",
+      "2026-06-01",
+      "2026-06-03",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-19",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-30"
     ]
   },
   {
@@ -364,12 +1236,14 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.08,
+      0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hive_model_basic_blue.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-05-27",
+      "2026-06-14"
     ]
   },
   {
@@ -394,8 +1268,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hive_model_basic_green.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -420,8 +1294,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hive_model_basic_pink.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -446,8 +1320,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hive_model_basic_red.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -472,8 +1346,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hive_model_basic_black.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-17"
     ]
   },
   {
@@ -493,13 +1367,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.12,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hive_model_basic_white.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -519,13 +1391,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_festive.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -545,13 +1415,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
-      0.88
+      0.82
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_yellow.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -571,13 +1439,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      1.25,
+      1.25,
+      2.75,
+      2.25,
+      1.75,
+      2.25,
       2.75,
       2.75
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_cyan.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-20",
+      "2026-02-21",
+      "2026-04-06",
+      "2026-04-12",
+      "2026-04-14",
+      "2026-04-26",
+      "2026-05-07",
+      "2026-06-20"
     ]
   },
   {
@@ -597,13 +1477,85 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      2.38,
+      2.75,
+      3.25,
+      4.25,
+      5.5,
+      2.25,
+      2.5,
+      2.62,
+      2.62,
+      4.25,
+      3.25,
+      2.75,
+      3.25,
+      3.75,
+      3.25,
+      2.25,
+      4.5,
+      5.25,
+      5.75,
+      6.75,
+      7.75,
+      8.5,
+      9.5,
       14.5,
+      13.5,
+      16.0,
+      18.5,
+      20.5,
+      23.0,
+      25.5,
+      25.5,
+      24.5,
+      21.5,
+      19.5,
+      19.0,
+      17.5,
+      15.5,
       14.5
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_doodle.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-07-04",
+      "2025-07-09",
+      "2025-07-12",
+      "2025-07-13",
+      "2025-07-17",
+      "2025-07-30",
+      "2025-08-06",
+      "2025-08-10",
+      "2025-08-11",
+      "2025-08-15",
+      "2025-08-19",
+      "2025-08-31",
+      "2025-09-02",
+      "2026-01-10",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-04-08",
+      "2026-04-17",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-10",
+      "2026-05-14",
+      "2026-05-20",
+      "2026-05-21",
+      "2026-05-27",
+      "2026-06-01",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-17"
     ]
   },
   {
@@ -623,13 +1575,73 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      13.5,
+      13.5,
+      14.5,
+      15.5,
+      17.5,
+      20.5,
+      21.5,
+      22.25,
+      23.5,
+      18.0,
+      14.0,
+      13.0,
+      14.5,
+      15.5,
+      18.0,
+      19.0,
+      22.5,
+      24.0,
+      26.5,
       28.5,
+      30.0,
+      34.0,
+      34.5,
+      39.0,
+      42.0,
+      46.5,
+      48.5,
+      48.5,
+      41.5,
+      34.5,
+      30.5,
       28.5
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_purple.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-20",
+      "2026-01-21",
+      "2026-01-29",
+      "2026-02-01",
+      "2026-02-21",
+      "2026-03-26",
+      "2026-04-02",
+      "2026-04-06",
+      "2026-04-08",
+      "2026-04-09",
+      "2026-04-10",
+      "2026-04-12",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-25",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-11",
+      "2026-05-15",
+      "2026-05-21",
+      "2026-05-23",
+      "2026-05-25",
+      "2026-05-31",
+      "2026-06-03",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18"
     ]
   },
   {
@@ -637,9 +1649,9 @@ const rawBssItemsData: any[] = [
     "name": "Icy Crowned Hive Skin",
     "englishName": "Icy Crowned Hive Skin",
     "category": "Скины на улей",
-    "value": 67.5,
-    "valueLow": 65.0,
-    "valueHigh": 70.0,
+    "value": 62.5,
+    "valueLow": 60.0,
+    "valueHigh": 65.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -649,13 +1661,103 @@ const rawBssItemsData: any[] = [
     "textColor": "text-amber-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      3.75,
+      3.75,
+      4.25,
+      4.75,
+      5.25,
+      5.75,
+      6.25,
+      6.75,
+      7.25,
+      8.25,
+      9.5,
+      10.5,
+      11.0,
+      12.5,
+      14.5,
+      21.5,
+      26.5,
+      31.0,
+      35.5,
+      39.5,
+      38.5,
+      36.0,
+      34.0,
+      31.0,
+      33.0,
+      35.0,
+      37.0,
+      43.0,
+      47.0,
+      53.0,
+      68.0,
+      66.0,
+      84.0,
+      87.5,
+      121.5,
+      127.5,
+      111.0,
+      100.0,
+      94.0,
+      91.0,
+      91.0,
+      92.0,
+      92.5,
+      77.5,
+      72.5,
       67.5,
-      67.5
+      62.5
     ],
     "image": "https://bssmvalues.com/images/Hive_model_icy_crowned.webp",
     "historicalDates": [
+      "2025-06-20",
+      "2025-07-19",
+      "2025-07-30",
+      "2025-08-20",
+      "2025-08-26",
+      "2025-09-02",
+      "2025-09-08",
+      "2025-09-20",
+      "2026-01-10",
+      "2026-01-12",
+      "2026-01-21",
+      "2026-01-27",
+      "2026-02-01",
+      "2026-02-03",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-11",
+      "2026-03-16",
+      "2026-03-18",
+      "2026-03-23",
+      "2026-03-30",
+      "2026-04-02",
+      "2026-04-04",
+      "2026-04-07",
+      "2026-04-18",
+      "2026-04-22",
+      "2026-04-25",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-14",
+      "2026-05-15",
+      "2026-05-17",
+      "2026-05-20",
+      "2026-05-23",
+      "2026-05-25",
+      "2026-05-26",
+      "2026-05-27",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-07",
+      "2026-06-14",
+      "2026-06-17",
       "2026-06-20",
-      "2026-06-27"
+      "2026-07-02"
     ]
   },
   {
@@ -675,13 +1777,51 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells instantly or near instantly at full value or above. Индикаторы: Sells instantly, people overpay for it, multiple buyers at once.",
     "historicalPrices": [
-      0.72,
+      0.42,
+      0.23,
+      0.29,
+      0.36,
+      0.42,
+      0.45,
+      0.53,
+      0.65,
+      0.71,
+      0.78,
+      0.88,
+      1.0,
+      1.0,
+      0.95,
+      0.95,
+      0.75,
+      0.53,
+      0.55,
+      0.55,
+      0.65,
       0.72
     ],
     "image": "https://bssmvalues.com/images/Ticket_Voucher.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-27",
+      "2025-12-30",
+      "2026-01-20",
+      "2026-02-21",
+      "2026-03-12",
+      "2026-03-25",
+      "2026-03-26",
+      "2026-04-14",
+      "2026-04-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-07",
+      "2026-05-20",
+      "2026-05-25",
+      "2026-05-27",
+      "2026-06-01",
+      "2026-06-04",
+      "2026-06-07",
+      "2026-06-09",
+      "2026-06-13"
     ]
   },
   {
@@ -701,13 +1841,53 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      1.29,
+      1.54,
+      1.62,
+      1.75,
+      2.17,
+      2.42,
+      3.0,
+      3.12,
+      2.75,
+      3.0,
+      3.25,
+      3.5,
+      3.75,
       4.25,
+      5.25,
+      4.75,
+      5.38,
+      5.75,
+      4.25,
+      5.25,
+      4.75,
       4.25
     ],
     "image": "https://bssmvalues.com/images/X2_Convert_Speed_Voucher.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-07-13",
+      "2025-07-19",
+      "2026-02-21",
+      "2026-03-12",
+      "2026-03-18",
+      "2026-03-25",
+      "2026-03-29",
+      "2026-04-01",
+      "2026-04-12",
+      "2026-04-22",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-05-01",
+      "2026-05-07",
+      "2026-05-10",
+      "2026-05-16",
+      "2026-05-20",
+      "2026-06-01",
+      "2026-06-03",
+      "2026-06-14",
+      "2026-06-17"
     ]
   },
   {
@@ -715,9 +1895,9 @@ const rawBssItemsData: any[] = [
     "name": "Cub Voucher (CBV)",
     "englishName": "Cub Voucher",
     "category": "Ваучеры",
-    "value": 5.25,
-    "valueLow": 5.0,
-    "valueHigh": 5.5,
+    "value": 6.25,
+    "valueLow": 6.0,
+    "valueHigh": 6.5,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Редкий",
@@ -727,13 +1907,59 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      1.62,
+      2.25,
+      2.25,
+      2.25,
+      2.75,
+      2.25,
+      1.75,
+      1.5,
+      2.5,
+      2.75,
+      3.0,
+      2.75,
+      3.0,
+      3.25,
+      3.5,
+      3.75,
+      4.0,
+      4.25,
+      4.75,
       5.25,
-      5.25
+      5.75,
+      6.25,
+      5.75,
+      5.25,
+      6.25
     ],
     "image": "https://bssmvalues.com/images/Cub_Buddy_Voucher.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-06-12",
+      "2025-06-20",
+      "2025-07-09",
+      "2025-09-20",
+      "2025-12-30",
+      "2026-01-26",
+      "2026-02-21",
+      "2026-03-18",
+      "2026-03-21",
+      "2026-04-01",
+      "2026-04-02",
+      "2026-04-12",
+      "2026-04-17",
+      "2026-04-20",
+      "2026-04-21",
+      "2026-04-25",
+      "2026-04-28",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-07",
+      "2026-05-16",
+      "2026-06-01",
+      "2026-06-18",
+      "2026-07-02"
     ]
   },
   {
@@ -753,13 +1979,53 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      2.12,
+      2.12,
+      2.25,
+      2.5,
+      3.75,
+      4.0,
+      4.12,
+      4.5,
+      4.75,
+      5.25,
+      5.5,
+      5.75,
+      6.0,
       6.25,
+      7.25,
+      7.75,
+      8.5,
+      8.75,
+      9.25,
+      6.25,
+      6.75,
       6.25
     ],
     "image": "https://bssmvalues.com/images/X2_Bee_Gather_Voucher.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-20",
+      "2025-07-09",
+      "2025-07-13",
+      "2026-02-21",
+      "2026-03-18",
+      "2026-03-25",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-12",
+      "2026-04-22",
+      "2026-04-26",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-07",
+      "2026-05-11",
+      "2026-05-16",
+      "2026-05-25",
+      "2026-05-26",
+      "2026-06-01",
+      "2026-06-03",
+      "2026-06-23"
     ]
   },
   {
@@ -779,13 +2045,97 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item sells instantly or near instantly at full value or above. Индикаторы: Sells instantly, people overpay for it, multiple buyers at once.",
     "historicalPrices": [
-      10.0,
+      3.5,
+      3.75,
+      4.25,
+      4.5,
+      4.38,
+      4.25,
+      4.5,
+      4.25,
+      4.38,
+      4.25,
+      4.5,
+      5.25,
+      5.75,
+      7.25,
+      5.75,
+      6.25,
+      6.5,
+      6.75,
+      7.0,
+      7.62,
+      8.0,
+      8.12,
+      8.25,
+      8.5,
+      9.0,
+      9.5,
+      10.25,
+      13.75,
+      14.5,
+      15.0,
+      15.5,
+      15.75,
+      16.5,
+      17.25,
+      17.5,
+      17.75,
+      14.75,
+      13.5,
+      11.5,
+      10.75,
+      10.75,
+      10.5,
+      10.5,
       10.0
     ],
     "image": "https://bssmvalues.com/images/Bear_Bee_Voucher.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-06-20",
+      "2025-06-28",
+      "2025-07-09",
+      "2025-08-23",
+      "2025-08-26",
+      "2025-12-23",
+      "2025-12-30",
+      "2026-02-01",
+      "2026-02-10",
+      "2026-02-21",
+      "2026-03-11",
+      "2026-03-13",
+      "2026-03-18",
+      "2026-03-20",
+      "2026-03-23",
+      "2026-03-30",
+      "2026-04-02",
+      "2026-04-12",
+      "2026-04-14",
+      "2026-04-17",
+      "2026-04-18",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-10",
+      "2026-05-11",
+      "2026-05-12",
+      "2026-05-15",
+      "2026-05-16",
+      "2026-05-20",
+      "2026-05-23",
+      "2026-05-31",
+      "2026-06-01",
+      "2026-06-04",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-20"
     ]
   },
   {
@@ -793,10 +2143,10 @@ const rawBssItemsData: any[] = [
     "name": "Offline Voucher (OFV)",
     "englishName": "Offline Voucher",
     "category": "Ваучеры",
-    "value": 25.5,
+    "value": 25.0,
     "valueLow": 24.0,
-    "valueHigh": 27.0,
-    "demand": "Низкий",
+    "valueHigh": 26.0,
+    "demand": "Средний",
     "stability": "Падает",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -805,13 +2155,97 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      6.0,
+      7.0,
+      8.5,
+      8.0,
+      7.5,
+      7.25,
+      7.25,
+      8.5,
+      9.5,
+      10.5,
+      11.25,
+      12.0,
+      12.5,
+      11.75,
+      12.25,
+      12.5,
+      13.0,
+      13.5,
+      14.5,
+      15.0,
+      16.5,
+      17.0,
+      18.5,
+      20.5,
+      21.0,
       25.5,
-      25.5
+      27.0,
+      28.0,
+      28.5,
+      30.0,
+      32.0,
+      44.0,
+      42.5,
+      39.0,
+      31.0,
+      36.0,
+      38.0,
+      40.0,
+      36.5,
+      31.0,
+      26.5,
+      25.5,
+      25.5,
+      25.0
     ],
     "image": "https://bssmvalues.com/images/Offline_Voucher.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-27",
+      "2026-01-08",
+      "2026-01-12",
+      "2026-01-26",
+      "2026-01-28",
+      "2026-02-03",
+      "2026-02-21",
+      "2026-03-12",
+      "2026-03-18",
+      "2026-03-20",
+      "2026-03-21",
+      "2026-03-23",
+      "2026-03-29",
+      "2026-03-31",
+      "2026-04-14",
+      "2026-04-16",
+      "2026-04-21",
+      "2026-04-22",
+      "2026-04-23",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-05-01",
+      "2026-05-02",
+      "2026-05-07",
+      "2026-05-11",
+      "2026-05-15",
+      "2026-05-16",
+      "2026-05-17",
+      "2026-05-25",
+      "2026-06-01",
+      "2026-06-03",
+      "2026-06-05",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-14",
+      "2026-06-18",
+      "2026-06-22",
+      "2026-07-02"
     ]
   },
   {
@@ -832,12 +2266,20 @@ const rawBssItemsData: any[] = [
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
       0.08,
+      0.29,
+      0.12,
+      0.12,
+      0.12,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_fuzz_bomb.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -857,13 +2299,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      3.0,
+      0.08,
+      0.38,
+      0.29,
       0.17,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_brave_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-11",
+      "2025-06-19",
+      "2026-01-23",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -883,13 +2333,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.04,
+      0.38,
+      0.17,
+      0.17,
       0.17,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_ninja_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-23",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-05-12",
+      "2026-06-14"
     ]
   },
   {
@@ -909,13 +2367,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.04,
+      0.38,
+      0.17,
+      0.17,
       0.17,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_rad_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-23",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-05-12",
+      "2026-06-14"
     ]
   },
   {
@@ -935,13 +2401,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.29,
+      0.29,
       0.17,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tabby_scratch.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-05-12"
     ]
   },
   {
@@ -961,13 +2431,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.12,
+      0.04,
+      0.38,
+      0.17,
+      0.23,
+      0.23,
+      0.23,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blob_bumble_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-23",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-06-07",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -987,13 +2467,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.23,
+      0.29,
+      0.29,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_diamond_diamond_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14"
     ]
   },
   {
@@ -1013,13 +2495,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.12,
+      0.04,
+      0.38,
+      0.17,
+      0.23,
+      0.23,
+      0.23,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_round_rascal_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-23",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-06-07",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -1039,13 +2531,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.04,
+      0.38,
+      0.17,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_shocked_hive_slot.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-23",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-06-07"
     ]
   },
   {
@@ -1066,12 +2564,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.29,
+      0.29,
+      0.17,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_4_Pronged_Vector_Bee.png",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-06-20"
     ]
   },
   {
@@ -1092,12 +2594,24 @@ const rawBssItemsData: any[] = [
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
       0.29,
+      0.23,
+      0.42,
+      0.25,
+      0.25,
+      0.17,
+      0.75,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_precise_eye.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-28",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-04-26",
+      "2026-05-26"
     ]
   },
   {
@@ -1117,13 +2631,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.42,
+      0.29,
+      0.29,
       0.42
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_photon_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-05"
     ]
   },
   {
@@ -1143,13 +2659,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.58,
+      0.23,
+      0.62,
       0.58
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_drooping_stubborn_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-07",
+      "2026-06-24"
     ]
   },
   {
@@ -1169,13 +2687,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.38,
+      0.42,
       0.62,
+      0.23,
       0.62
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_wobbly_looker_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-01-23",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-06-07"
     ]
   },
   {
@@ -1186,7 +2710,7 @@ const rawBssItemsData: any[] = [
     "value": 2.25,
     "valueLow": 2.0,
     "valueHigh": 2.5,
-    "demand": "Высокий",
+    "demand": "Средний",
     "stability": "Растет",
     "rarity": "Обычный",
     "glowColor": "rgba(16, 185, 129, 0.2)",
@@ -1195,13 +2719,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      0.68,
+      0.68,
+      0.42,
+      0.88,
+      1.75,
       2.25,
       2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tabby_from_behind.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-03-18",
+      "2026-04-03",
+      "2026-04-26",
+      "2026-06-14",
+      "2026-07-02"
     ]
   },
   {
@@ -1221,13 +2755,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
-      2.75,
+      0.68,
+      0.68,
+      1.75,
+      2.5,
       2.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_bear_bee_offer.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-05-15",
+      "2026-06-24"
     ]
   },
   {
@@ -1247,13 +2787,37 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      10.5,
+      1.88,
+      1.88,
+      1.25,
+      1.25,
+      4.5,
+      5.0,
+      6.25,
+      9.5,
+      11.0,
+      12.0,
+      13.0,
+      17.5,
+      12.5,
       10.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_round_basic_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-06-19",
+      "2025-07-13",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-03",
+      "2026-05-02",
+      "2026-05-07",
+      "2026-05-11",
+      "2026-05-15",
+      "2026-05-20",
+      "2026-05-26",
+      "2026-06-05",
+      "2026-06-17"
     ]
   },
   {
@@ -1278,8 +2842,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_chef_hat_polar_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1304,8 +2868,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_honey_bee_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1330,8 +2894,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_panicked_science_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-13"
     ]
   },
   {
@@ -1356,8 +2920,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sitting_green_shirt_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1382,8 +2946,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_uplooking_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1404,12 +2968,14 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.08,
+      0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_bomber_bee_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-07",
+      "2026-06-14"
     ]
   },
   {
@@ -1434,8 +3000,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_squashed_head_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1460,8 +3026,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_stretched_head_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1481,13 +3047,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      0.68,
+      0.62,
+      0.29,
+      0.17,
       0.2,
       0.2
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sideways_spirit_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-09",
+      "2026-04-12",
+      "2026-06-07",
+      "2026-06-14"
     ]
   },
   {
@@ -1507,13 +3081,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.58,
+      0.55,
+      0.55,
+      0.42,
       0.58
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_dapper_from_above.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-06-24"
     ]
   },
   {
@@ -1534,12 +3112,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.62,
+      0.62,
+      0.88,
       0.62
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_shy_brown_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -1559,13 +3141,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      2.25,
+      0.62,
+      0.62,
+      1.75,
       2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sitting_mother_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-06-20"
     ]
   },
   {
@@ -1585,13 +3171,35 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      19.0,
+      0.9,
+      0.9,
+      5.0,
+      6.0,
+      10.5,
+      12.0,
+      14.5,
+      21.0,
+      26.0,
+      23.0,
+      21.0,
+      19.5,
       19.0
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_glowering_gummy_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-03",
+      "2026-04-12",
+      "2026-05-02",
+      "2026-05-08",
+      "2026-05-12",
+      "2026-05-20",
+      "2026-05-28",
+      "2026-06-04",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-18"
     ]
   },
   {
@@ -1599,8 +3207,8 @@ const rawBssItemsData: any[] = [
     "name": "Sunbear",
     "englishName": "Sunbear",
     "category": "Стикеры медведей",
-    "value": 29.0,
-    "valueLow": 28.0,
+    "value": 28.5,
+    "valueLow": 27.0,
     "valueHigh": 30.0,
     "demand": "Низкий",
     "stability": "Падает",
@@ -1611,13 +3219,55 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      1.62,
+      1.88,
+      2.5,
+      6.0,
+      10.5,
+      8.5,
+      7.5,
+      8.5,
+      9.5,
+      11.5,
+      14.0,
+      15.0,
+      16.0,
+      19.0,
+      22.0,
+      24.5,
       29.0,
-      29.0
+      48.0,
+      46.5,
+      33.5,
+      33.5,
+      29.0,
+      28.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_stranded_sun_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-08-15",
+      "2025-08-16",
+      "2026-02-21",
+      "2026-03-12",
+      "2026-03-13",
+      "2026-03-16",
+      "2026-04-12",
+      "2026-04-16",
+      "2026-04-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-04-28",
+      "2026-05-02",
+      "2026-05-08",
+      "2026-05-11",
+      "2026-05-14",
+      "2026-05-20",
+      "2026-06-01",
+      "2026-06-07",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-07-02"
     ]
   },
   {
@@ -1638,12 +3288,18 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.04,
+      0.17,
+      0.04,
+      0.17,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_coiled_snake.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -1668,8 +3324,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_forward_facing_aphid.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1694,8 +3350,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_happy_fish.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1715,13 +3371,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
+      0.08,
+      0.23,
+      0.08,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_menacing_mantis.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-05-23"
     ]
   },
   {
@@ -1741,13 +3401,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
+      0.17,
+      0.03,
+      0.08,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_standing_caterpillar.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-01-27",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -1772,8 +3436,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tadpole.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -1793,13 +3457,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.23,
       0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_forward_facing_spider.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -1819,13 +3485,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.17,
+      0.08,
+      0.17,
       0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_facing_ant.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-01-27",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-11",
+      "2026-06-14"
     ]
   },
   {
@@ -1846,12 +3518,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.08,
+      0.23,
+      0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_little_scorpion.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -1871,13 +3547,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.12,
+      0.04,
+      0.17,
       0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_facing_stump_snail.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-11",
+      "2026-06-14"
     ]
   },
   {
@@ -1897,13 +3579,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
+      0.04,
+      0.23,
+      0.23,
+      0.17,
+      0.12,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_magenta_critter.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-20",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-05-23",
+      "2026-06-24"
     ]
   },
   {
@@ -1923,13 +3613,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.17,
+      0.04,
+      0.23,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_triangle_critter.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-20",
+      "2026-02-21",
+      "2026-03-21"
     ]
   },
   {
@@ -1949,13 +3643,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.17,
+      0.04,
+      0.23,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_orange_leg_critter.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-20",
+      "2026-02-21",
+      "2026-03-21"
     ]
   },
   {
@@ -1975,13 +3673,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.17,
+      0.04,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_purple_pointed_critter.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-03-21"
     ]
   },
   {
@@ -2001,13 +3701,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.23,
+      2.0,
+      3.0,
+      2.5,
+      2.25,
+      1.88,
+      1.5,
+      0.75,
+      0.42,
       0.17,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_walking_stick_nymph.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-25",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-03",
+      "2026-01-05",
+      "2026-01-08",
+      "2026-01-14",
+      "2026-02-21",
+      "2026-04-12",
+      "2026-05-12"
     ]
   },
   {
@@ -2027,13 +3745,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.04,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_round_green_critter.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-20",
+      "2026-02-21"
     ]
   },
   {
@@ -2053,13 +3773,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      0.04,
+      0.17,
+      0.04,
+      0.42,
+      0.3,
+      0.75,
       0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_small_blue_chick.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-27",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-21",
+      "2026-04-26",
+      "2026-06-11",
+      "2026-06-14"
     ]
   },
   {
@@ -2080,12 +3812,14 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.29,
+      0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_standing_bean_bug.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -2105,13 +3839,43 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      75.0,
-      75.0
+      13.5,
+      13.5,
+      15.5,
+      18.0,
+      19.5,
+      18.5,
+      21.5,
+      42.5,
+      36.5,
+      32.0,
+      28.0,
+      32.0,
+      34.5,
+      45.0,
+      51.0,
+      57.0,
+      77.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_nessie.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-29",
+      "2025-06-19",
+      "2025-08-15",
+      "2025-08-25",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-11",
+      "2026-03-26",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-12",
+      "2026-04-28",
+      "2026-04-29",
+      "2026-05-11",
+      "2026-05-14",
+      "2026-05-17",
+      "2026-05-21"
     ]
   },
   {
@@ -2131,13 +3895,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.03,
+      0.08,
+      0.08,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_doodle_person.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -2162,8 +3928,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_moai.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-31",
+      "2026-02-21"
     ]
   },
   {
@@ -2183,13 +3949,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.08,
       0.12,
+      0.17,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_orange_step_array.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-14",
+      "2026-06-14"
     ]
   },
   {
@@ -2210,12 +3980,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
       0.17,
+      0.17,
+      0.12,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_orange_green_tri_deco.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -2235,13 +4009,35 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.75,
+      0.29,
+      0.62,
+      5.0,
+      7.0,
+      9.25,
+      13.5,
+      12.5,
+      15.0,
+      17.0,
+      3.0,
+      2.5,
+      1.5,
       0.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_banana_painting.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-14",
+      "2026-04-24",
+      "2026-04-29",
+      "2026-05-02",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-12",
+      "2026-05-21",
+      "2026-05-31",
+      "2026-06-01",
+      "2026-06-05",
+      "2026-06-16"
     ]
   },
   {
@@ -2261,13 +4057,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      0.15,
+      0.15,
+      0.17,
+      0.29,
       0.75,
       0.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pearl_girl.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-01",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-04-27",
+      "2026-05-10",
+      "2026-06-14"
     ]
   },
   {
@@ -2287,13 +4091,35 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.75,
+      0.29,
+      0.62,
+      5.0,
+      7.0,
+      9.25,
+      13.5,
+      12.5,
+      15.0,
+      17.0,
+      3.0,
+      2.5,
+      1.5,
       0.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_prism_painting.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-14",
+      "2026-04-24",
+      "2026-04-29",
+      "2026-05-02",
+      "2026-05-07",
+      "2026-05-08",
+      "2026-05-12",
+      "2026-05-21",
+      "2026-05-30",
+      "2026-06-01",
+      "2026-06-05",
+      "2026-06-16"
     ]
   },
   {
@@ -2313,13 +4139,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      0.62,
+      0.62,
+      1.75,
+      2.5,
+      3.5,
+      3.5,
       3.5,
       3.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_abstract_color_painting.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-01",
+      "2026-02-21",
+      "2026-04-24",
+      "2026-05-14",
+      "2026-05-28",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-21"
     ]
   },
   {
@@ -2339,13 +4177,29 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      5.5,
+      0.9,
+      1.12,
+      1.12,
+      1.5,
+      1.5,
+      3.75,
+      3.75,
+      4.25,
+      4.5,
       5.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ionic_column_middle.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-28",
+      "2026-01-29",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-04-25",
+      "2026-04-27",
+      "2026-05-02",
+      "2026-05-17",
+      "2026-05-21"
     ]
   },
   {
@@ -2365,13 +4219,49 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
+      2.25,
+      2.25,
+      2.75,
+      2.75,
+      4.25,
+      4.25,
+      9.5,
+      8.75,
+      11.5,
+      14.0,
+      15.0,
+      16.0,
+      21.0,
+      24.5,
+      31.5,
+      35.5,
+      35.5,
+      29.5,
       28.5,
       28.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ionic_column_base.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-29",
+      "2025-06-19",
+      "2026-01-28",
+      "2026-01-29",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-26",
+      "2026-04-03",
+      "2026-04-12",
+      "2026-04-14",
+      "2026-04-27",
+      "2026-05-02",
+      "2026-05-17",
+      "2026-05-21",
+      "2026-05-28",
+      "2026-06-01",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-21"
     ]
   },
   {
@@ -2391,13 +4281,47 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
-      28.5,
+      2.25,
+      2.25,
+      2.75,
+      2.75,
+      4.25,
+      4.25,
+      9.5,
+      8.75,
+      11.5,
+      14.0,
+      15.0,
+      16.0,
+      21.0,
+      24.5,
+      31.5,
+      35.5,
+      35.5,
+      29.5,
       28.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ionic_column_top.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-29",
+      "2025-06-19",
+      "2026-01-28",
+      "2026-01-29",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-26",
+      "2026-04-03",
+      "2026-04-12",
+      "2026-04-14",
+      "2026-04-27",
+      "2026-05-02",
+      "2026-05-17",
+      "2026-05-21",
+      "2026-05-28",
+      "2026-06-01",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-18"
     ]
   },
   {
@@ -2417,13 +4341,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.03,
+      0.08,
+      0.29,
+      0.75,
+      0.38,
+      0.08,
+      0.08,
+      0.08,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_and_green_marble.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-05-14",
+      "2026-06-07",
+      "2026-06-11",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -2443,13 +4379,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.03,
+      0.08,
+      0.08,
+      0.29,
+      0.75,
+      0.42,
+      0.04,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_diamond_cluster.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-05-25",
+      "2026-06-07",
+      "2026-06-24"
     ]
   },
   {
@@ -2469,13 +4415,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.03,
+      0.04,
+      0.04,
+      0.42,
+      0.75,
+      0.29,
+      0.08,
+      0.08,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_diamond_trim.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-05-14",
+      "2026-06-11",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -2495,13 +4453,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.03,
+      0.08,
+      0.29,
+      0.75,
+      0.38,
+      0.08,
+      0.08,
+      0.08,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_orange_swirled_marble.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-05-14",
+      "2026-06-07",
+      "2026-06-11",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -2521,13 +4491,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.03,
+      0.08,
+      0.29,
+      0.75,
+      0.38,
+      0.08,
+      0.08,
+      0.08,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_swirled_marble.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-05-14",
+      "2026-06-07",
+      "2026-06-11",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -2548,12 +4530,22 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.08,
+      0.08,
+      0.42,
+      0.75,
+      0.29,
+      0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cyan_decorative_border.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-05-14",
+      "2026-06-11",
+      "2026-06-14"
     ]
   },
   {
@@ -2574,12 +4566,18 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.29,
+      0.29,
+      0.17,
+      0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_mythic_m.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-05-20",
+      "2026-06-14"
     ]
   },
   {
@@ -2599,13 +4597,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.12,
+      0.04,
       0.29,
+      0.75,
+      0.38,
+      0.38,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_purple_fleuron.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-12",
+      "2026-04-24",
+      "2026-04-27",
+      "2026-06-07",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -2625,13 +4633,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      0.23,
+      0.29,
+      0.17,
       0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_royal_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-14",
+      "2026-05-20",
+      "2026-06-14"
     ]
   },
   {
@@ -2651,13 +4665,27 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.62,
+      0.62,
+      1.75,
+      2.75,
+      2.25,
+      1.25,
+      1.75,
       2.25,
       2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_mythic_gem_fleuron.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-06",
+      "2026-04-10",
+      "2026-04-14",
+      "2026-05-11",
+      "2026-06-05",
+      "2026-06-14"
     ]
   },
   {
@@ -2677,13 +4705,27 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.62,
+      0.62,
+      1.75,
+      2.75,
+      2.25,
+      1.25,
+      1.75,
       2.25,
       2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_mythic_gem_fleuron.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-06",
+      "2026-04-10",
+      "2026-04-14",
+      "2026-05-11",
+      "2026-06-05",
+      "2026-06-14"
     ]
   },
   {
@@ -2703,13 +4745,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.42,
+      0.44,
+      0.44,
+      1.25,
       2.25,
+      2.5,
+      2.5,
       2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_gold_swirl_fleuron.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-06-19",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-06",
+      "2026-05-11",
+      "2026-06-14",
+      "2026-06-26"
     ]
   },
   {
@@ -2729,13 +4783,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.42,
+      0.44,
+      0.44,
+      1.25,
       2.25,
+      2.5,
+      2.5,
       2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_gold_swirl_fleuron.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-06-19",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-06",
+      "2026-05-11",
+      "2026-06-14",
+      "2026-06-26"
     ]
   },
   {
@@ -2755,13 +4821,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.62,
+      1.75,
+      2.75,
+      2.25,
+      3.0,
       2.75,
       2.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_shining_diamond_fleuron.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-06",
+      "2026-04-10",
+      "2026-05-11",
+      "2026-06-07",
+      "2026-06-14"
     ]
   },
   {
@@ -2781,13 +4857,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.62,
+      1.75,
+      2.75,
+      2.25,
+      3.0,
       2.75,
       2.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_shining_diamond_fleuron.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-06",
+      "2026-04-10",
+      "2026-05-11",
+      "2026-06-07",
+      "2026-06-14"
     ]
   },
   {
@@ -2807,13 +4893,33 @@ const rawBssItemsData: any[] = [
     "textColor": "text-purple-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      14.5,
+      2.5,
+      3.5,
+      3.5,
+      4.25,
+      4.25,
+      8.0,
+      7.5,
+      9.5,
+      10.5,
+      11.0,
+      13.5,
       14.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_royal_symbol.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-01-28",
+      "2026-01-29",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-04-03",
+      "2026-04-27",
+      "2026-05-02",
+      "2026-05-14",
+      "2026-05-27",
+      "2026-06-24"
     ]
   },
   {
@@ -2834,12 +4940,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.23,
+      0.23,
+      0.29,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_comforting_nectar_icon.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-15",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -2860,12 +4970,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.23,
+      0.23,
+      0.29,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_invigorating_nectar_icon.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-15",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -2886,12 +5000,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.23,
+      0.23,
+      0.29,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_motivating_nectar_icon.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-15",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -2912,12 +5030,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.23,
+      0.23,
+      0.29,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_refreshing_nectar_icon.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-15",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -2938,12 +5060,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.23,
+      0.23,
+      0.29,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_satisfying_nectar_icon.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-15",
+      "2026-02-21",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -2963,13 +5089,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.08,
       0.04,
+      0.17,
+      0.29,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_small_dandelion.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-18",
+      "2026-04-24",
+      "2026-05-13",
+      "2026-06-07"
     ]
   },
   {
@@ -2989,13 +5121,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.08,
       0.04,
+      0.42,
+      0.29,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_small_pink_tulip.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-18",
+      "2026-04-24",
+      "2026-05-02",
+      "2026-06-07"
     ]
   },
   {
@@ -3015,13 +5153,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.08,
       0.04,
+      0.42,
+      0.29,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_small_tickseed.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-18",
+      "2026-04-24",
+      "2026-05-02",
+      "2026-06-07"
     ]
   },
   {
@@ -3041,13 +5185,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.08,
       0.04,
+      0.42,
+      0.29,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_small_white_daisy.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-18",
+      "2026-04-24",
+      "2026-05-02",
+      "2026-06-07"
     ]
   },
   {
@@ -3067,13 +5217,29 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.42,
+      0.25,
+      0.25,
       0.29,
+      0.17,
+      0.75,
+      1.25,
+      0.88,
+      0.38,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_purple_4-point_flower.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-04-04",
+      "2026-04-12",
+      "2026-04-24",
+      "2026-05-13",
+      "2026-05-26",
+      "2026-06-11",
+      "2026-06-20"
     ]
   },
   {
@@ -3093,13 +5259,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spore_covered_puffshroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -3124,8 +5288,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_white_button_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -3145,13 +5309,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.12,
+      0.42,
+      0.36,
+      0.23,
+      0.23,
+      0.17,
+      0.23,
+      0.08,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_black_truffle_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-05-31",
+      "2025-06-19",
+      "2025-08-16",
+      "2026-02-21",
+      "2026-05-17",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -3176,8 +5352,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_fly_agaric_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -3202,8 +5378,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_porcini_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -3223,13 +5399,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.12,
+      0.08,
+      0.08,
+      0.23,
       0.17,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_chanterelle_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-05-17",
+      "2026-06-13",
+      "2026-06-14"
     ]
   },
   {
@@ -3249,13 +5435,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.08,
+      0.08,
       0.17,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_morel_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-05-17",
+      "2026-06-13",
+      "2026-06-14"
     ]
   },
   {
@@ -3275,13 +5467,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.12,
       0.17,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_oiler_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-05-17",
+      "2026-06-13",
+      "2026-06-14"
     ]
   },
   {
@@ -3301,13 +5497,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.12,
+      0.08,
+      0.08,
       0.17,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_shiitake_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2026-02-21",
+      "2026-05-17",
+      "2026-06-13",
+      "2026-06-14"
     ]
   },
   {
@@ -3327,13 +5531,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      1.12,
+      0.9,
+      0.9,
+      0.62,
+      0.88,
+      0.88,
       1.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_prismatic_mushroom.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-05-11",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -3358,8 +5570,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blowing_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -3380,12 +5592,22 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.08,
+      0.32,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cordate_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-23",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3406,12 +5628,22 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.08,
+      0.05,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cunate_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-27",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-23",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3432,12 +5664,20 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.08,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_elliptic_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-23",
+      "2026-02-21"
     ]
   },
   {
@@ -3458,12 +5698,20 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.05,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_hastate_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3484,12 +5732,20 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.08,
+      0.05,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_lanceolate_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-28",
+      "2025-12-30",
+      "2026-01-23",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3510,12 +5766,22 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.08,
+      0.05,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_lyrate_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-23",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3536,12 +5802,18 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.17,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_oblique_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3562,12 +5834,22 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.08,
+      0.05,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_reniform_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-23",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3588,12 +5870,22 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.08,
+      0.05,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rhomboid_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-23",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3614,12 +5906,22 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.29,
+      0.17,
+      0.1,
+      0.08,
+      0.05,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spatulate_leaf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-23",
+      "2026-02-21",
+      "2026-05-13"
     ]
   },
   {
@@ -3639,13 +5941,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_petal_wand.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-06-07"
     ]
   },
   {
@@ -3670,8 +5974,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_dark_scythe.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -3691,13 +5995,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.04,
-      0.04
+      0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_porcelain_dipper.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -3722,8 +6024,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tide_popper.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -3743,13 +6045,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.08,
+      0.12,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_bubble_wand.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-05-14"
     ]
   },
   {
@@ -3769,13 +6071,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.12,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_golden_rake.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -3795,13 +6095,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.17,
+      0.62,
+      0.75,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_honey_dipper.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -3821,13 +6125,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.17,
+      0.12,
+      0.23,
+      0.23,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_scythe.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-13",
+      "2026-06-14"
     ]
   },
   {
@@ -3847,13 +6155,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.23,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_clippers.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-06-13",
+      "2026-06-14"
     ]
   },
   {
@@ -3873,13 +6189,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_electro-magnet.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -3899,13 +6221,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.29,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_magnet.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -3925,13 +6255,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.29,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pulsar.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -3951,13 +6289,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.29,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rake.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -3977,13 +6323,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.29,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_scissors.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -4003,13 +6357,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.29,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_scooper.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -4029,13 +6391,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.12,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spark_staff.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-13"
     ]
   },
   {
@@ -4055,13 +6419,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.29,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_super-scooper.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -4081,13 +6453,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.75,
+      0.23,
+      0.29,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_vacuum.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-01-08",
+      "2026-01-21",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -4107,13 +6487,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.29,
+      0.12,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_gummyballer.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-13"
     ]
   },
   {
@@ -4133,13 +6513,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.42,
+      0.12,
+      0.29,
+      0.38,
+      0.75,
+      0.58,
       0.42
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ant_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-02",
+      "2026-05-09",
+      "2026-06-07",
+      "2026-06-13",
+      "2026-06-19"
     ]
   },
   {
@@ -4159,13 +6547,23 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.29,
+      0.29,
+      0.45,
+      0.55,
       0.62,
+      0.88,
       0.62
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_hub_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-28",
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-05-09",
+      "2026-06-07",
+      "2026-06-13"
     ]
   },
   {
@@ -4185,13 +6583,35 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.35,
+      0.29,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_bamboo_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-01",
+      "2025-08-28",
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4211,13 +6631,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.5,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_flower_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4237,13 +6675,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cactus_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4263,13 +6719,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_clover_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4289,13 +6763,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_coconut_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-21",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4315,13 +6807,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.29,
       0.88,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_dandelion_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4341,13 +6851,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_mountain_top_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4367,13 +6895,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_mushroom_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4393,13 +6939,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pineapple_patch_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4419,13 +6983,31 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pumpkin_patch_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4445,13 +7027,33 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_strawberry_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-28",
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4471,13 +7073,33 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      2.12,
+      1.38,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_stump_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4497,13 +7119,29 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.88,
+      0.29,
+      0.45,
+      0.55,
+      1.0,
+      1.25,
+      1.75,
+      1.62,
+      1.75,
+      1.12,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sunflower_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-23",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-18",
+      "2026-06-22"
     ]
   },
   {
@@ -4523,13 +7161,27 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      1.12,
+      0.35,
+      0.88,
+      1.75,
+      2.0,
+      1.88,
+      2.25,
+      1.62,
+      1.38,
       1.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rose_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-14",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4549,13 +7201,27 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      1.12,
+      0.62,
+      0.88,
+      1.75,
+      2.0,
+      1.88,
+      2.25,
+      1.62,
+      1.38,
       1.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spider_field_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-14",
+      "2026-05-09",
+      "2026-05-22",
+      "2026-05-24",
+      "2026-06-13",
+      "2026-06-17",
+      "2026-06-22"
     ]
   },
   {
@@ -4563,8 +7229,8 @@ const rawBssItemsData: any[] = [
     "name": "Pepper Patch Stamp",
     "englishName": "Pepper Patch Stamp",
     "category": "Марки",
-    "value": 4.75,
-    "valueLow": 4.5,
+    "value": 4.5,
+    "valueLow": 4.0,
     "valueHigh": 5.0,
     "demand": "Средний",
     "stability": "Стабильно",
@@ -4575,13 +7241,33 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.8,
+      1.25,
+      2.25,
+      2.25,
+      4.5,
+      6.0,
+      6.5,
+      5.5,
+      5.5,
       4.75,
-      4.75
+      4.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pepper_patch_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-07-09",
+      "2026-01-26",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-05-09",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-18",
+      "2026-07-02"
     ]
   },
   {
@@ -4589,8 +7275,8 @@ const rawBssItemsData: any[] = [
     "name": "Pine Tree Forest Stamp",
     "englishName": "Pine Tree Forest Stamp",
     "category": "Марки",
-    "value": 4.75,
-    "valueLow": 4.5,
+    "value": 4.5,
+    "valueLow": 4.0,
     "valueHigh": 5.0,
     "demand": "Средний",
     "stability": "Стабильно",
@@ -4601,13 +7287,29 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
+      0.88,
+      0.82,
+      1.25,
+      2.25,
+      2.25,
+      4.5,
+      5.5,
+      5.5,
       4.75,
-      4.75
+      4.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pine_tree_forest_stamp.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-16",
+      "2026-01-26",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-29",
+      "2026-05-09",
+      "2026-06-14",
+      "2026-06-18",
+      "2026-07-02"
     ]
   },
   {
@@ -4627,13 +7329,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells instantly or near instantly at full value or above. Индикаторы: Sells instantly, people overpay for it, multiple buyers at once.",
     "historicalPrices": [
-      29.0,
-      29.0
+      8.5,
+      9.0,
+      7.5,
+      7.5,
+      17.0,
+      19.0,
+      24.0,
+      26.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_bbm_from_below.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-07-04",
+      "2025-07-09",
+      "2026-02-21",
+      "2026-03-26",
+      "2026-04-02",
+      "2026-04-14",
+      "2026-04-28"
     ]
   },
   {
@@ -4653,13 +7367,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.08,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_bee_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -4667,9 +7381,9 @@ const rawBssItemsData: any[] = [
     "name": "Blue Beesmas Light",
     "englishName": "Blue Beesmas Light",
     "category": "Стикеры Пчелождества",
-    "value": 0.17,
-    "valueLow": 0.15,
-    "valueHigh": 0.2,
+    "value": 0.12,
+    "valueLow": 0.1,
+    "valueHigh": 0.15,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4679,13 +7393,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.08,
+      0.11,
       0.17,
-      0.17
+      0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_beesmas_light.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-05-13",
+      "2026-06-24",
+      "2026-07-02"
     ]
   },
   {
@@ -4705,13 +7423,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.08,
+      0.12,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_critter_in_a_stocking.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-06-24"
     ]
   },
   {
@@ -4719,9 +7437,9 @@ const rawBssItemsData: any[] = [
     "name": "Green Beesmas Light",
     "englishName": "Green Beesmas Light",
     "category": "Стикеры Пчелождества",
-    "value": 0.17,
-    "valueLow": 0.15,
-    "valueHigh": 0.2,
+    "value": 0.12,
+    "valueLow": 0.1,
+    "valueHigh": 0.15,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4731,13 +7449,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.08,
+      0.11,
       0.17,
-      0.17
+      0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_beesmas_light.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-05-13",
+      "2026-06-24",
+      "2026-07-02"
     ]
   },
   {
@@ -4745,9 +7467,9 @@ const rawBssItemsData: any[] = [
     "name": "Red Beesmas Light",
     "englishName": "Red Beesmas Light",
     "category": "Стикеры Пчелождества",
-    "value": 0.17,
-    "valueLow": 0.15,
-    "valueHigh": 0.2,
+    "value": 0.12,
+    "valueLow": 0.1,
+    "valueHigh": 0.15,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4757,13 +7479,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.08,
+      0.11,
       0.17,
-      0.17
+      0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_beesmas_light.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-05-13",
+      "2026-06-24",
+      "2026-07-02"
     ]
   },
   {
@@ -4771,9 +7497,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Beesmas Light",
     "englishName": "Yellow Beesmas Light",
     "category": "Стикеры Пчелождества",
-    "value": 0.17,
-    "valueLow": 0.15,
-    "valueHigh": 0.2,
+    "value": 0.12,
+    "valueLow": 0.1,
+    "valueHigh": 0.15,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4783,13 +7509,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.08,
+      0.11,
       0.17,
-      0.17
+      0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_beesmas_light.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-05-13",
+      "2026-06-24",
+      "2026-07-02"
     ]
   },
   {
@@ -4809,13 +7539,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_festive_pufferfish.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -4835,13 +7563,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.42,
       0.42
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_festive_pea.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -4861,13 +7587,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      1.25,
+      1.12,
+      0.88,
+      0.88,
+      0.88,
       1.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_festive_bee.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-01",
+      "2026-02-21",
+      "2026-05-12",
+      "2026-06-24"
     ]
   },
   {
@@ -4887,13 +7619,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      1.12,
+      0.88,
+      3.25,
+      0.88,
       0.88,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_party_robo_bear.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-03-26",
+      "2026-03-29",
+      "2026-04-02",
+      "2026-06-14"
     ]
   },
   {
@@ -4918,8 +7658,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_alert_icon.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -4939,13 +7679,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_atom_symbol.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -4965,13 +7705,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_square.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-04"
     ]
   },
   {
@@ -4996,8 +7738,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_built_ship.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5022,8 +7764,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_classic_killroy.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5048,8 +7790,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_colorful_buttons.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5069,13 +7811,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cop_and_robber.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5100,8 +7842,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_desperate_booth.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5121,13 +7863,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_evil_pig.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5152,8 +7894,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_giraffe.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5178,8 +7920,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_check_mark.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5204,8 +7946,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_plus_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5230,8 +7972,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_sell.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5251,13 +7993,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_grey_shape_companion.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5277,13 +8019,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_interrobang_block.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-06-14"
     ]
   },
   {
@@ -5308,8 +8050,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_killroy_with_hair.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5334,8 +8076,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_launching_rocket.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5355,13 +8097,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_orphan_dog.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5381,13 +8123,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pizza_delivery_man.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5412,8 +8154,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pyramid.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5438,8 +8180,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_x.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5459,13 +8201,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
+      0.04,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rhubarb.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5490,8 +8232,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rubber_duck.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5512,12 +8254,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.01,
+      0.12,
+      0.1,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_simple_cloud.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21"
     ]
   },
   {
@@ -5542,8 +8288,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_simple_skyscraper.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5568,8 +8314,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_simple_sun.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5594,8 +8340,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sprout.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5620,8 +8366,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tough_potato.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5641,13 +8387,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_traffic_light.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -5672,8 +8416,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_hi.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5693,13 +8437,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
       0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_umbrella.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -5724,8 +8466,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_walking_wiggly_person.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-01-23",
+      "2026-02-21"
     ]
   },
   {
@@ -5750,8 +8492,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_young_elf.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5771,13 +8513,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.03,
+      0.04,
+      0.01,
+      0.62,
+      0.42,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_waving_townsperson.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-25",
+      "2026-05-14",
+      "2026-06-23"
     ]
   },
   {
@@ -5802,8 +8550,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_barcode.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5823,13 +8571,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
+      0.01,
+      0.12,
+      0.1,
+      0.08,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_baseball_swing.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -5854,8 +8608,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_doodle_s.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5880,8 +8634,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_eighth_note.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5906,8 +8660,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_fork_and_knife.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5932,8 +8686,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_circle.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5958,8 +8712,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_grey_diamond_logo.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -5984,8 +8738,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pale_heart.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6010,8 +8764,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_peace_sign_hand.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6036,8 +8790,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pink_chair.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6062,8 +8816,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pink_cupcake.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6083,13 +8837,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
+      0.12,
+      0.08,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_palm_hand.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-30",
+      "2026-02-21",
+      "2026-03-21"
     ]
   },
   {
@@ -6109,13 +8865,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.04,
+      0.01,
+      0.42,
+      0.1,
+      0.08,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_silly_tongue.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-03-21"
     ]
   },
   {
@@ -6140,8 +8902,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_simple_mountain.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6166,8 +8928,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_small_flame.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6192,8 +8954,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_theatrical_intruder.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6218,8 +8980,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_thumbs_up_hand.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6244,8 +9006,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_triple_exclamation.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6270,8 +9032,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_white_flag.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6296,8 +9058,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_window.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6317,13 +9079,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
+      0.01,
+      0.23,
+      0.08,
+      0.08,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_coffee_mug.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-26",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -6343,13 +9111,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
+      0.01,
+      0.23,
+      0.11,
+      0.12,
       0.04
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_right_arrow.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -6374,8 +9148,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_afk.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6400,8 +9174,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_grey_raining_cloud.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6421,13 +9195,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.04,
+      0.04,
       0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_lightning.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-05-18",
+      "2026-06-14"
     ]
   },
   {
@@ -6452,8 +9230,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_wailing_cry.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6473,13 +9251,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.23,
       0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_saturn.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2026-02-21"
     ]
   },
   {
@@ -6504,8 +9284,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_shrugging_heart.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6525,13 +9305,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_standing_beekeeper.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -6551,13 +9329,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tiny_house.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -6582,8 +9358,8 @@ const rawBssItemsData: any[] = [
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_waxing_crescent_moon.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21"
     ]
   },
   {
@@ -6603,13 +9379,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Разное.",
     "historicalPrices": [
-      0.08,
       0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_wishbone.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -6629,13 +9403,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.04,
+      0.23,
+      0.1,
       0.1,
       0.1
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tnt.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -6655,13 +9435,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.88,
+      0.12,
       0.12,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_small_shield.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-12-25",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -6681,13 +9465,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
+      0.01,
+      0.23,
+      0.11,
       0.12,
       0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_left_arrow.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-06-14"
     ]
   },
   {
@@ -6707,13 +9497,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.17,
+      0.23,
+      0.12,
       0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_shining_halo.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-04",
+      "2026-05-18"
     ]
   },
   {
@@ -6733,13 +9525,35 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.33,
+      0.08,
+      0.62,
+      1.25,
+      1.5,
+      1.25,
+      0.88,
+      0.62,
+      0.12,
+      0.12,
       0.23,
+      0.42,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cyan_star.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2025-12-25",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-05",
+      "2026-01-08",
+      "2026-01-14",
+      "2026-01-16",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-05-15",
+      "2026-06-24"
     ]
   },
   {
@@ -6759,13 +9573,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.29,
+      0.23,
       0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_palm_tree.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-16",
+      "2026-02-21",
+      "2026-05-18"
     ]
   },
   {
@@ -6785,13 +9603,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_prehistoric_boar.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -6811,13 +9627,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.23,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_prehistoric_hand.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21"
     ]
   },
   {
@@ -6837,13 +9651,37 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.17,
+      0.08,
+      0.62,
+      1.25,
+      1.5,
+      1.25,
+      0.88,
+      0.62,
+      0.12,
+      0.62,
+      0.62,
       0.23,
+      0.42,
       0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_shining_star.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2025-12-25",
+      "2025-12-26",
+      "2025-12-30",
+      "2026-01-05",
+      "2026-01-08",
+      "2026-01-14",
+      "2026-02-01",
+      "2026-02-07",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-05-15",
+      "2026-06-24"
     ]
   },
   {
@@ -6863,13 +9701,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
+      0.42,
+      0.42,
       0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cool_backpack.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-04",
+      "2026-06-14"
     ]
   },
   {
@@ -6889,13 +9731,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.29,
+      0.42,
+      0.17,
+      0.17,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_hourglass.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -6915,13 +9761,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.29,
+      0.08,
+      0.08,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_taunting_doodle_person.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-06-24"
     ]
   },
   {
@@ -6941,13 +9789,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
+      0.17,
+      0.42,
+      0.25,
+      0.25,
       0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_sticky_hand.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-04-04",
+      "2026-06-14"
     ]
   },
   {
@@ -6967,13 +9823,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.42,
+      0.12,
+      0.58,
+      0.25,
+      0.25,
+      0.23,
+      0.29,
+      0.38,
       0.42
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_black_diamond.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21",
+      "2026-04-04",
+      "2026-04-05",
+      "2026-05-28",
+      "2026-06-24"
     ]
   },
   {
@@ -6993,13 +9861,35 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.36,
+      0.17,
+      0.12,
+      0.62,
+      1.25,
+      1.75,
+      2.5,
+      1.75,
+      0.88,
+      0.88,
+      0.75,
+      0.88,
+      0.62,
       0.36
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_black_star.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2025-12-25",
+      "2025-12-26",
+      "2025-12-27",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-10",
+      "2026-02-21",
+      "2026-03-21",
+      "2026-05-15",
+      "2026-06-14",
+      "2026-06-24"
     ]
   },
   {
@@ -7019,13 +9909,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
-      0.42,
+      0.45,
+      0.36,
+      0.36,
+      0.29,
+      0.29,
       0.42
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_glowing_smile.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-28",
+      "2026-02-21",
+      "2026-04-04",
+      "2026-06-14",
+      "2026-06-20"
     ]
   },
   {
@@ -7046,12 +9944,16 @@ const rawBssItemsData: any[] = [
     "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       0.42,
+      0.29,
+      0.29,
       0.42
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_Jack_0_Lantern.png",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-16",
+      "2026-02-21",
+      "2026-06-14"
     ]
   },
   {
@@ -7071,13 +9973,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.42,
-      0.42
+      0.23,
+      0.12,
+      0.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_robot_head.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-08-31",
+      "2026-02-21"
     ]
   },
   {
@@ -7097,13 +10001,17 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      0.75,
+      0.55,
+      0.88,
+      0.5,
       0.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_dark_flame.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2025-12-30",
+      "2026-01-08",
+      "2026-02-21"
     ]
   },
   {
@@ -7123,13 +10031,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
-      0.88,
+      0.5,
+      0.5,
       0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tornado.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-08-28",
+      "2026-02-21",
+      "2026-06-20"
     ]
   },
   {
@@ -7149,13 +10059,19 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
-      1.25,
+      0.88,
+      0.62,
+      1.0,
+      1.12,
       1.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_eviction.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-05-15",
+      "2026-05-29",
+      "2026-06-20"
     ]
   },
   {
@@ -7175,13 +10091,15 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
-      1.5,
+      0.88,
+      1.25,
       1.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_auryn.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-02-21",
+      "2026-04-27",
+      "2026-05-29"
     ]
   },
   {
@@ -7201,13 +10119,21 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
-      4.5,
+      0.42,
+      0.42,
+      1.25,
+      1.5,
+      3.5,
       4.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_wall_crack.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-21",
+      "2026-04-14",
+      "2026-05-18",
+      "2026-06-04",
+      "2026-06-23"
     ]
   },
   {
@@ -7227,13 +10153,25 @@ const rawBssItemsData: any[] = [
     "textColor": "text-blue-400",
     "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
-      10.5,
+      0.88,
+      1.5,
+      1.5,
+      2.75,
+      3.75,
+      5.5,
+      9.5,
       10.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cyan_hilted_sword.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2025-06-19",
+      "2026-02-01",
+      "2026-02-21",
+      "2026-04-04",
+      "2026-04-21",
+      "2026-05-11",
+      "2026-06-05",
+      "2026-06-13"
     ]
   },
   {
@@ -7253,13 +10191,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/aquarius_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7279,13 +10215,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/aries_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7305,13 +10239,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/cancer_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7331,13 +10263,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/capricorn_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7357,13 +10287,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/gemini_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7383,13 +10311,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/leo_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7409,13 +10335,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/libra_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7435,13 +10359,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/pisces_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7461,13 +10383,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/sagittarius_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7487,13 +10407,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/scorpio_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7513,13 +10431,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/taurus_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7539,13 +10455,11 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Стикер из категории Звездные знаки.",
     "historicalPrices": [
-      1.0,
       1.0
     ],
     "image": "https://bssmvalues.com/images/virgo_star_sign.webp",
     "historicalDates": [
-      "2026-06-20",
-      "2026-06-27"
+      "2026-06-14"
     ]
   },
   {
@@ -7561,10 +10475,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       202.5,
+      202.5,
+      202.5,
+      202.5,
+      202.5,
       202.5
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Autumn_Sunhat.png",
@@ -7711,10 +10633,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       5.03,
+      5.03,
+      5.03,
+      5.03,
+      5.03,
       5.03
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Bandage.png",
@@ -7765,10 +10695,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       15.07,
+      15.07,
+      15.07,
+      15.07,
+      15.07,
       15.07
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Bang_Snap.png",
@@ -7855,10 +10793,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       800.0,
+      800.0,
+      800.0,
+      800.0,
+      800.0,
       800.0
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Bead_Lizard.png",
@@ -8198,10 +11144,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       122.58,
+      122.58,
+      122.58,
+      122.58,
+      122.58,
       122.58
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Beesmas_Top.png",
@@ -8266,10 +11220,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       32.5,
+      32.5,
+      32.5,
+      32.5,
+      32.5,
       32.5
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Beesmas_Tree_Hat.png",
@@ -8460,10 +11422,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       202.62,
+      202.62,
+      202.62,
+      202.62,
+      202.62,
       202.62
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Beret.png",
@@ -8641,10 +11611,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       1.52,
+      1.52,
+      1.52,
+      1.52,
+      1.52,
       1.52
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Bottle_Cap.png",
@@ -8688,10 +11666,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       82.58,
+      82.58,
+      82.58,
+      82.58,
+      82.58,
       82.58
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Bubble_Light.png",
@@ -8742,10 +11728,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       10.03,
+      10.03,
+      10.03,
+      10.03,
+      10.03,
       10.03
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Camo_Bandana.png",
@@ -8810,10 +11804,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       1500.05,
+      1500.05,
+      1500.05,
+      1500.05,
+      1500.05,
       1500.05
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Camphor_Lip_Balm.png",
@@ -9257,10 +12259,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       750.12,
+      750.12,
+      750.12,
+      750.12,
+      750.12,
       750.12
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Candy_Ring.png",
@@ -9461,10 +12471,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       140.38,
+      140.38,
+      140.38,
+      140.38,
+      140.38,
       140.38
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Charm_Bracelet.png",
@@ -9621,10 +12639,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       163.75,
+      163.75,
+      163.75,
+      163.75,
+      163.75,
       163.75
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/demon_talisman_1782076177517_45407b06.webp",
@@ -9689,10 +12715,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
       0.0
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Electric_Candle.png",
@@ -9736,10 +12770,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       300.12,
+      300.12,
+      300.12,
+      300.12,
+      300.12,
       300.12
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Elf_Cap.png",
@@ -9832,10 +12874,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       110.0,
+      110.0,
+      110.0,
+      110.0,
+      110.0,
       110.0
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Festive_Wreath.png",
@@ -10130,10 +13180,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       202.53,
+      202.53,
+      202.53,
+      202.53,
+      202.53,
       202.53
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Icicles.png",
@@ -10224,10 +13282,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       1000.25,
+      1000.25,
+      1000.25,
+      1000.25,
+      1000.25,
       1000.25
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Kazoo.png",
@@ -10510,10 +13576,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       7.12,
+      7.12,
+      7.12,
+      7.12,
+      7.12,
       7.12
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Lei.png",
@@ -10576,10 +13650,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       1.75,
+      1.75,
+      1.75,
+      1.75,
+      1.75,
       1.75
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Lump_of_Coal.png",
@@ -10630,10 +13712,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       607.5,
+      607.5,
+      607.5,
+      607.5,
+      607.5,
       607.5
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Paper_Angel.png",
@@ -10792,10 +13882,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
       500.0
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Paperclip.png",
@@ -11020,10 +14118,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       607.6,
+      607.6,
+      607.6,
+      607.6,
+      607.6,
       607.6
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Peppermint_Antennas.png",
@@ -11140,10 +14246,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       412.5,
+      412.5,
+      412.5,
+      412.5,
+      412.5,
       412.5
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Pinecone.png",
@@ -11979,10 +15093,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
       0.01
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Pink_Eraser.png",
@@ -12026,10 +15148,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       3502.0,
+      3502.0,
+      3502.0,
+      3502.0,
+      3502.0,
       3502.0
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Pink_Shades.png",
@@ -12471,10 +15601,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       730.25,
+      730.25,
+      730.25,
+      730.25,
+      730.25,
       730.25
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Poinsettia.png",
@@ -13200,10 +16338,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       1135.5,
+      1135.5,
+      1135.5,
+      1135.5,
+      1135.5,
       1135.5
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Reindeer_Antlers.png",
@@ -13346,10 +16492,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       112.55,
+      112.55,
+      112.55,
+      112.55,
+      112.55,
       112.55
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Rose_Headband.png",
@@ -13517,10 +16671,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       45.02,
+      45.02,
+      45.02,
+      45.02,
+      45.02,
       45.02
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Single_Mitten.png",
@@ -13606,10 +16768,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       607.66,
+      607.66,
+      607.66,
+      607.66,
+      607.66,
       607.66
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Smiley_Sticker.png",
@@ -13810,10 +16980,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       0.38,
+      0.38,
+      0.38,
+      0.38,
+      0.38,
       0.38
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Snow_Globe.png",
@@ -13852,10 +17030,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       325.25,
+      325.25,
+      325.25,
+      325.25,
+      325.25,
       325.25
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Snow_Tiara.png",
@@ -14088,10 +17274,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       500.07,
+      500.07,
+      500.07,
+      500.07,
+      500.07,
       500.07
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Sweatband.png",
@@ -14421,10 +17615,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
       10.0
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Thimble.png",
@@ -14517,10 +17719,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       212.62,
+      212.62,
+      212.62,
+      212.62,
+      212.62,
       212.62
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Thumbtack.png",
@@ -14639,10 +17849,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       1329.0,
+      1329.0,
+      1329.0,
+      1329.0,
+      1329.0,
       1329.0
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Toy_Drum.png",
@@ -14749,10 +17967,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       810.12,
+      810.12,
+      810.12,
+      810.12,
+      810.12,
       810.12
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Toy_Horn.png",
@@ -14857,10 +18083,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       0.51,
+      0.51,
+      0.51,
+      0.51,
+      0.51,
       0.51
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Warm_Scarf.png",
@@ -14904,10 +18138,18 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       3000.25,
+      3000.25,
+      3000.25,
+      3000.25,
+      3000.25,
       3000.25
     ],
     "historicalDates": [
-      "2026-06-20",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-12",
+      "2026-06-19",
       "2026-06-27"
     ],
     "image": "https://bssmvalues.com/images/Whistle.png",
