@@ -9,6 +9,7 @@ import ItemDetailModal from './components/ItemDetailModal';
 import CommandMenu from './components/CommandMenu';
 import AuthorsModal from './components/AuthorsModal';
 import BeequipsPage from './components/BeequipsPage';
+import TradeScanner from './components/TradeScanner';
 import { bssItemsData } from './data/items';
 import type { BSSItem } from './data/items';
 import type { Language } from './locales';
@@ -17,7 +18,7 @@ import { transliterate } from './components/BeequipsPage';
 
 type CategoryType = string;
 type SortType = 'value-desc' | 'value-asc' | 'demand-desc' | 'name-asc';
-type TabType = 'home' | 'catalog' | 'calculator' | 'beequips';
+type TabType = 'home' | 'catalog' | 'calculator' | 'beequips' | 'scanner';
 
 export default function App() {
   const [sideA, setSideA] = useState<BSSItem[]>([]);
@@ -192,7 +193,12 @@ export default function App() {
     });
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased grid-bg noise-overlay">
+    <div className="min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased grid-bg noise-overlay honeycomb-bg">
+      {/* Premium ambient background elements */}
+      <div className="absolute top-0 left-0 w-full h-[800px] overflow-hidden pointer-events-none z-0">
+        <div className="ambient-shape-1 absolute top-[-10%] left-[20%] w-[350px] h-[350px] rounded-full bg-amber-500/10 blur-[120px]" />
+        <div className="ambient-shape-2 absolute top-[20%] right-[15%] w-[400px] h-[400px] rounded-full bg-violet-600/5 blur-[150px]" />
+      </div>
       
       {/* Keyboard Shortcut Announcement Banner */}
       <div className="bg-gradient-to-r from-amber-500/80 to-yellow-600/80 text-neutral-950 text-[10px] font-extrabold py-1.5 px-4 text-center tracking-wider uppercase select-none flex items-center justify-center gap-2 shadow-md border-b border-amber-500/10 flex-wrap">
@@ -264,6 +270,17 @@ export default function App() {
           >
             {t('nav.tab.beequips', lang)}
           </button>
+
+          <button
+            onClick={() => setActiveTab('scanner')}
+            className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+              activeTab === 'scanner' 
+                ? 'bg-amber-500 text-neutral-950 shadow-md' 
+                : 'bg-neutral-900/40 text-neutral-400 hover:text-neutral-200 hover:bg-neutral-900/60 border border-white/5'
+            }`}
+          >
+            ✨ {lang === 'ru' ? 'Сканер [БЕТА]' : 'Scanner [BETA]'}
+          </button>
         </div>
 
         {activeTab === 'home' && (
@@ -296,6 +313,19 @@ export default function App() {
             onAddToSideB={handleAddToSideB}
             onSelectItem={setSelectedItem}
           />
+        )}
+
+        {activeTab === 'scanner' && (
+          <section className="animate-in fade-in duration-500">
+            <TradeScanner
+              lang={lang}
+              onImportToCalculator={(sideA, sideB) => {
+                setSideA(sideA);
+                setSideB(sideB);
+                setActiveTab('calculator');
+              }}
+            />
+          </section>
         )}
 
         {activeTab === 'catalog' && (
