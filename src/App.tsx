@@ -92,7 +92,20 @@ export default function App() {
           // Clean up search parameters so refreshing doesn't overwrite modifications
           const newUrl = window.location.origin + window.location.pathname;
           window.history.replaceState({}, document.title, newUrl);
-          return;
+        }
+      }
+
+      const itemQuery = params.get('item');
+      if (itemQuery) {
+        const queryLower = decodeURIComponent(itemQuery).toLowerCase().trim();
+        const found = bssItemsData.find(item => 
+          item.id.toLowerCase() === queryLower ||
+          item.englishName.toLowerCase() === queryLower ||
+          item.name.toLowerCase() === queryLower ||
+          item.id.toLowerCase().replace(/\s+/g, '-') === queryLower
+        );
+        if (found) {
+          setSelectedItem(found);
         }
       }
 

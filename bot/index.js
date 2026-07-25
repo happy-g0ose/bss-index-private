@@ -251,12 +251,15 @@ client.on('interactionCreate', async interaction => {
       embed.addFields({ name: 'ℹ️ Описание', value: item.description.split('Индикаторы:')[0].trim() });
     }
 
+    const itemSlug = encodeURIComponent(item.id || item.englishName || item.name);
+    const itemUrl = `https://happy-g0ose.github.io/bss-index/?item=${itemSlug}`;
+
     const row = new ActionRowBuilder()
       .addComponents(
         new ButtonBuilder()
           .setLabel('Открыть в BSS Index')
           .setStyle(ButtonStyle.Link)
-          .setURL('https://happy-g0ose.github.io/bss-index/')
+          .setURL(itemUrl)
       );
 
     await interaction.reply({ embeds: [embed], components: [row] });
