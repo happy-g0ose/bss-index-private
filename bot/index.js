@@ -87,7 +87,6 @@ const commands = [
   new SlashCommandBuilder()
     .setName('setup-server')
     .setDescription('Автоматически красиво оформить все каналы сервера красивыми Embed-сообщениями')
-    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
 ];
 
 const client = new Client({
@@ -113,7 +112,103 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-// Command handler
+// Helper function to format all channels
+async function executeServerSetup(guild, interaction) {
+  const channels = await guild.channels.fetch();
+  let createdCount = 0;
+  const processedChannels = [];
+
+  const setupChannel = async (keywords, embed, components = []) => {
+    const ch = channels.find(c => {
+      if (!c || !c.isTextBased()) return false;
+      const name = c.name.toLowerCase();
+      return keywords.some(kw => name.includes(kw.toLowerCase()));
+    });
+
+    if (ch) {
+      try {
+        await ch.send({ embeds: [embed], components });
+        createdCount++;
+        processedChannels.push(`#${ch.name}`);
+      } catch (err) {
+        console.error(`Error sending message to #${ch.name}:`, err.message);
+      }
+    }
+  };
+
+  // 1. #добро-пожаловать
+  const welcomeEmbed = new EmbedBuilder()
+    .setTitle('👋 Добро пожаловать на официальный Discord-сервер BSS Index!')
+    .setDescription(`Приветствуем тебя в главном русскоязычном трейдинг-сообществе **Bee Swarm Simulator**!\n\nЗдесь ты найдёшь самые свежие цены на стикеры, ульи и кубы, умный ИИ-сканер трейдов и интерактивный калькулятор обменов.`)
+    .setColor('#f59e0b')
+    .setThumbnail('https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png')
+    .addFields(
+      { name: '🌐 Наш веб-сайт:', value: '[https://happy-g0ose.github.io/bss-index/](https://happy-g0ose.github.io/bss-index/)', inline: false },
+      { name: '🤖 Основные команды бота в чате:', value: '• `/price [предмет]` — узнать точные цены и спрос любого стикера\n• `/calc [отдаю] [получаю]` — мгновенно рассчитать выгоду трейда (WIN/FAIR/LOSS)\n• `/site` — получить ссылку на наш портал', inline: false }
+    )
+    .setFooter({ text: 'BSS Index Community • Желаем успешных трейдов!' });
+
+  const welcomeRow = new ActionRowBuilder().addComponents(
+    new ButtonBuilder().setLabel('🌐 Открыть сайт BSS Index').setStyle(ButtonStyle.Link).setURL('https://happy-g0ose.github.io/bss-index/')
+  );
+
+  await setupChannel(['добро-пожаловать', 'welcome', 'добро'], welcomeEmbed, [welcomeRow]);
+
+  // 2. #правила
+  const rulesEmbed = new EmbedBuilder()
+    .setTitle('📜 Правила Сервера BSS Index')
+    .setDescription('Для комфортного общения и безопасных трейдов соблюдайте простые правила:')
+    .setColor('#eab308')
+    .addFields(
+      { name: '1. Уважение и вежливость', value: 'Запрещены оскорбления, токсичность, рознь и неадекватное поведение.' },
+      { name: '2. Честный трейдинг (Без скама)', value: 'Любые попытки обмана, скама или подмены предметов караются мгновенным баном.' },
+      { name: '3. Без спама и рекламы', value: 'Не флудите в чатах и не рекламируйте сторонние дискорд-серверы и услуги.' },
+      { name: '4. Безопасность аккаунтов', value: 'Никогда не передавайте свои пароли, файлы или сомнительные ссылки.' }
+    )
+    .setFooter({ text: 'Соблюдение правил обязательно для всех участников.' });
+
+  await setupChannel(['правила', 'rules'], rulesEmbed);
+
+  // 3. #обновления-сайта
+  const updatesEmbed = new EmbedBuilder()
+    .setTitle('🔄 Обновления Сайта BSS Index')
+    .setDescription('В этом канале публикуются все свежие обновления, новые фичи и изменения цен на нашем сайте!')
+    .setColor('#a855f7')
+    .addFields(
+      { name: '✨ Что нового на сайте:', value: '• ⚡ Мгновенная синхронизация цен с bssmvalues.com\n• 🎨 Фирменная система цветовой подсветки по категориям\n• 📸 Умный AI-сканер трейдов по скриншотам' }
+    )
+    .setFooter({ text: 'Следите за обновлениями!' });
+
+  await setupChannel(['обновления-сайта', 'новости', 'news', 'updates'], updatesEmbed);
+
+  // 4. #win-fair-lose
+  const wflEmbed = new EmbedBuilder()
+    .setTitle('⚖️ Канал проверки сделок Win / Fair / Loss')
+    .setDescription('Выкладывайте свои скриншоты трейдов или используйте бота для оценки выгоды сделки!\n\n👉 Напишите в чат `/calc` для мгновенного расчета выгоды трейда прямо в Discord!')
+    .setColor('#10b981');
+
+  await setupChannel(['win-fair-lose', 'wfl', 'трейдов'], wflEmbed);
+
+  // 5. #предложения
+  const suggestionsEmbed = new EmbedBuilder()
+    .setTitle('💡 Предложения и Идеи')
+    .setDescription('Есть идеи по улучшению сайта или Discord-бота? Пишите свои предложения в этот канал! Мы читаем каждое сообщение.')
+    .setColor('#06b6d4');
+
+  await setupChannel(['предложения', 'suggestions', 'идеи'], suggestionsEmbed);
+
+  // 6. #баги-сайта
+  const bugsEmbed = new EmbedBuilder()
+    .setTitle('🐛 Ошибки и Баги')
+    .setDescription('Нашли ошибку на сайте или в боте? Напишите подробности в этот канал, и мы оперативно исправим проблему!')
+    .setColor('#ef4444');
+
+  await setupChannel(['баги-сайта', 'баги', 'bugs'], bugsEmbed);
+
+  return { createdCount, processedChannels };
+}
+
+// Slash Command handler
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
@@ -235,98 +330,17 @@ client.on('interactionCreate', async interaction => {
   }
 
   else if (commandName === 'setup-server') {
-    if (!interaction.memberPermissions?.has(PermissionFlagsBits.Administrator)) {
-      return interaction.reply({ content: '❌ Эта команда доступна только администраторам.', ephemeral: true });
-    }
-
     await interaction.deferReply({ ephemeral: true });
 
-    const guild = interaction.guild;
-    const channels = await guild.channels.fetch();
-
-    let createdCount = 0;
-
-    // Helper to send or update message in named channel
-    const setupChannel = async (targetName, embed, components = []) => {
-      const ch = channels.find(c => c && c.isTextBased() && c.name.toLowerCase().includes(targetName.toLowerCase()));
-      if (ch) {
-        await ch.send({ embeds: [embed], components });
-        createdCount++;
-      }
-    };
-
-    // 1. #добро-пожаловать
-    const welcomeEmbed = new EmbedBuilder()
-      .setTitle('👋 Добро пожаловать на официальный Discord-сервер BSS Index!')
-      .setDescription(`Приветствуем тебя в главном русскоязычном трейдинг-сообществе **Bee Swarm Simulator**!\n\nЗдесь ты найдёшь самые свежие цены на стикеры, ульи и кубы, умный ИИ-сканер трейдов и интерактивный калькулятор обменов.`)
-      .setColor('#f59e0b')
-      .setThumbnail('https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png')
-      .addFields(
-        { name: '🌐 Наш веб-сайт:', value: '[https://happy-g0ose.github.io/bss-index/](https://happy-g0ose.github.io/bss-index/)', inline: false },
-        { name: '🤖 Основные команды бота в чате:', value: '• `/price [предмет]` — узнать точные цены и спрос любого стикера\n• `/calc [отдаю] [получаю]` — мгновенно рассчитать выгоду трейда (WIN/FAIR/LOSS)\n• `/site` — получить ссылку на наш портал', inline: false }
-      )
-      .setFooter({ text: 'BSS Index Community • Желаем успешных трейдов!' });
-
-    const welcomeRow = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setLabel('🌐 Открыть сайт BSS Index').setStyle(ButtonStyle.Link).setURL('https://happy-g0ose.github.io/bss-index/')
-    );
-
-    await setupChannel('добро-пожаловать', welcomeEmbed, [welcomeRow]);
-
-    // 2. #правила
-    const rulesEmbed = new EmbedBuilder()
-      .setTitle('📜 Правила Сервера BSS Index')
-      .setDescription('Для комфортного общения и безопасных трейдов соблюдайте простые правила:')
-      .setColor('#eab308')
-      .addFields(
-        { name: '1. Уважение и вежливость', value: 'Запрещены оскорбления, токсичность, рознь и неадекватное поведение.' },
-        { name: '2. Честный трейдинг (Без скама)', value: 'Любые попытки обмана, скама или подмены предметов караются мгновенным баном.' },
-        { name: '3. Без спама и рекламы', value: 'Не флудите в чатах и не рекламируйте сторонние дискорд-серверы и услуги.' },
-        { name: '4. Безопасность аккаунтов', value: 'Никогда не передавайте свои пароли, файлы или сомнительные ссылки.' }
-      )
-      .setFooter({ text: 'Соблюдение правил обязательно для всех участников.' });
-
-    await setupChannel('правила', rulesEmbed);
-
-    // 3. #обновления-сайта
-    const updatesEmbed = new EmbedBuilder()
-      .setTitle('🔄 Обновления Сайта BSS Index')
-      .setDescription('В этом канале публикуются все свежие обновления, новые фичи и изменения цен на нашем сайте!')
-      .setColor('#a855f7')
-      .addFields(
-        { name: '✨ Что нового на сайте:', value: '• ⚡ Мгновенная синхронизация цен с bssmvalues.com\n• 🎨 Фирменная система цветовой подсветки по категориям\n• 📸 Умный AI-сканер трейдов по скриншотам' }
-      )
-      .setFooter({ text: 'Следите за обновлениями!' });
-
-    await setupChannel('обновления-сайта', updatesEmbed);
-
-    // 4. #win-fair-lose
-    const wflEmbed = new EmbedBuilder()
-      .setTitle('⚖️ Канал проверки сделок Win / Fair / Loss')
-      .setDescription('Выкладывайте свои скриншоты трейдов или используйте бота для оценки выгоды сделки!\n\n👉 Напишите в чат `/calc` для мгновенного расчета выгоды трейда прямо в Discord!')
-      .setColor('#10b981');
-
-    await setupChannel('win-fair-lose', wflEmbed);
-
-    // 5. #предложения
-    const suggestionsEmbed = new EmbedBuilder()
-      .setTitle('💡 Предложения и Идеи')
-      .setDescription('Есть идеи по улучшению сайта или Discord-бота? Пишите свои предложения в этот канал! Мы читаем каждое сообщение.')
-      .setColor('#06b6d4');
-
-    await setupChannel('предложения', suggestionsEmbed);
-
-    // 6. #баги-сайта
-    const bugsEmbed = new EmbedBuilder()
-      .setTitle('🐛 Ошибки и Баги')
-      .setDescription('Нашли ошибку на сайте или в боте? Напишите подробности в этот канал, и мы оперативно исправим проблему!')
-      .setColor('#ef4444');
-
-    await setupChannel('баги-сайта', bugsEmbed);
-
-    await interaction.editReply({ 
-      content: `🎉 Сервер успешно оформлен! Отправлено баннеров в каналы: **${createdCount}**.` 
-    });
+    try {
+      const res = await executeServerSetup(interaction.guild, interaction);
+      await interaction.editReply({ 
+        content: `🎉 Сервер успешно оформлен! Отправлено баннеров в каналы: **${res.createdCount}** (${res.processedChannels.join(', ')}).` 
+      });
+    } catch (err) {
+      console.error(err);
+      await interaction.editReply({ content: `❌ Ошибка: ${err.message}` });
+    }
   }
 });
 
@@ -337,12 +351,11 @@ async function main() {
 
   if (!token || token === 'YOUR_DISCORD_BOT_TOKEN_HERE') {
     console.error('❌ ОШИБКА: В файле bot/.env не указан DISCORD_TOKEN!');
-    console.log('👉 Пожалуйста, создайте бота на https://discord.com/developers/applications, скопируйте Token и вставьте его в bot/.env');
     process.exit(1);
   }
 
   try {
-    console.log('🔄 Регистрация слэш-команд (/price, /calc, /site, /setup-server)...');
+    console.log('🔄 Регистрация слэш-команд...');
     const rest = new REST({ version: '10' }).setToken(token);
     
     if (clientId && clientId !== 'YOUR_CLIENT_ID_HERE') {
@@ -358,7 +371,7 @@ async function main() {
 
   client.once('ready', () => {
     console.log(`🤖 Бот BSS Index успешно запущен под именем: ${client.user.tag}`);
-    client.user.setActivity('BSS Prices & Trades | /price', { type: 3 }); // Watching
+    client.user.setActivity('BSS Prices & Trades | /price', { type: 3 });
   });
 
   client.login(token);
