@@ -26,6 +26,7 @@ export interface BSSItem {
   borderColor: string;
   badgeColor: string;
   textColor: string;
+  hexColor?: string;
   description: string;
   historicalPrices: number[];
   historicalDates?: string[];
@@ -18510,6 +18511,165 @@ const rawBssItemsData: any[] = [
   }
 ];;;;;;
 
+export interface CategoryStyle {
+  glowColor: string;
+  borderColor: string;
+  badgeColor: string;
+  textColor: string;
+  hexColor: string;
+}
+
+export function getCategoryStyles(category: string): CategoryStyle {
+  switch (category) {
+    case "Скины на каба":
+    case "Скины на куба":
+      return {
+        glowColor: "rgba(245, 158, 11, 0.35)",
+        borderColor: "border-amber-500/40 group-hover:border-amber-500/70",
+        badgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/30",
+        textColor: "text-amber-400",
+        hexColor: "#f59e0b",
+      };
+    case "Скины на улей":
+      return {
+        glowColor: "rgba(168, 85, 247, 0.35)",
+        borderColor: "border-purple-500/40 group-hover:border-purple-500/70",
+        badgeColor: "bg-purple-500/10 text-purple-400 border-purple-500/30",
+        textColor: "text-purple-400",
+        hexColor: "#a855f7",
+      };
+    case "Ваучеры":
+      return {
+        glowColor: "rgba(16, 185, 129, 0.35)",
+        borderColor: "border-emerald-500/40 group-hover:border-emerald-500/70",
+        badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+        textColor: "text-emerald-400",
+        hexColor: "#10b981",
+      };
+    case "Стикеры пчел":
+      return {
+        glowColor: "rgba(234, 179, 8, 0.35)",
+        borderColor: "border-yellow-500/40 group-hover:border-yellow-500/70",
+        badgeColor: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30",
+        textColor: "text-yellow-400",
+        hexColor: "#eab308",
+      };
+    case "Стикеры медведей":
+      return {
+        glowColor: "rgba(249, 115, 22, 0.35)",
+        borderColor: "border-orange-500/40 group-hover:border-orange-500/70",
+        badgeColor: "bg-orange-500/10 text-orange-400 border-orange-500/30",
+        textColor: "text-orange-400",
+        hexColor: "#f97316",
+      };
+    case "Стикеры мобов":
+      return {
+        glowColor: "rgba(239, 68, 68, 0.35)",
+        borderColor: "border-red-500/40 group-hover:border-red-500/70",
+        badgeColor: "bg-red-500/10 text-red-400 border-red-500/30",
+        textColor: "text-red-400",
+        hexColor: "#ef4444",
+      };
+    case "Искусство":
+      return {
+        glowColor: "rgba(236, 72, 153, 0.35)",
+        borderColor: "border-pink-500/40 group-hover:border-pink-500/70",
+        badgeColor: "bg-pink-500/10 text-pink-400 border-pink-500/30",
+        textColor: "text-pink-400",
+        hexColor: "#ec4899",
+      };
+    case "Драгоценности":
+      return {
+        glowColor: "rgba(6, 182, 212, 0.35)",
+        borderColor: "border-cyan-500/40 group-hover:border-cyan-500/70",
+        badgeColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
+        textColor: "text-cyan-400",
+        hexColor: "#06b6d4",
+      };
+    case "Иконки нектара":
+      return {
+        glowColor: "rgba(244, 63, 94, 0.35)",
+        borderColor: "border-rose-500/40 group-hover:border-rose-500/70",
+        badgeColor: "bg-rose-500/10 text-rose-400 border-rose-500/30",
+        textColor: "text-rose-400",
+        hexColor: "#f43f5e",
+      };
+    case "Цветы":
+      return {
+        glowColor: "rgba(217, 70, 239, 0.35)",
+        borderColor: "border-fuchsia-500/40 group-hover:border-fuchsia-500/70",
+        badgeColor: "bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/30",
+        textColor: "text-fuchsia-400",
+        hexColor: "#d946ef",
+      };
+    case "Грибы":
+      return {
+        glowColor: "rgba(251, 113, 133, 0.35)",
+        borderColor: "border-rose-400/40 group-hover:border-rose-400/70",
+        badgeColor: "bg-rose-400/10 text-rose-400 border-rose-400/30",
+        textColor: "text-rose-400",
+        hexColor: "#fb7185",
+      };
+    case "Листья":
+      return {
+        glowColor: "rgba(132, 204, 22, 0.35)",
+        borderColor: "border-lime-500/40 group-hover:border-lime-500/70",
+        badgeColor: "bg-lime-500/10 text-lime-400 border-lime-500/30",
+        textColor: "text-lime-400",
+        hexColor: "#84cc16",
+      };
+    case "Инструменты":
+      return {
+        glowColor: "rgba(14, 165, 233, 0.35)",
+        borderColor: "border-sky-500/40 group-hover:border-sky-500/70",
+        badgeColor: "bg-sky-500/10 text-sky-400 border-sky-500/30",
+        textColor: "text-sky-400",
+        hexColor: "#0ea5e9",
+      };
+    case "Марки":
+      return {
+        glowColor: "rgba(99, 102, 241, 0.35)",
+        borderColor: "border-indigo-500/40 group-hover:border-indigo-500/70",
+        badgeColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/30",
+        textColor: "text-indigo-400",
+        hexColor: "#6366f1",
+      };
+    case "Стикеры Пчелождества":
+      return {
+        glowColor: "rgba(20, 184, 166, 0.35)",
+        borderColor: "border-teal-500/40 group-hover:border-teal-500/70",
+        badgeColor: "bg-teal-500/10 text-teal-400 border-teal-500/30",
+        textColor: "text-teal-400",
+        hexColor: "#14b8a6",
+      };
+    case "Звездные знаки":
+      return {
+        glowColor: "rgba(192, 132, 252, 0.4)",
+        borderColor: "border-purple-400/50 group-hover:border-purple-400/80",
+        badgeColor: "bg-purple-500/15 text-purple-300 border-purple-400/40",
+        textColor: "text-purple-300",
+        hexColor: "#c084fc",
+      };
+    case "Биквипы":
+      return {
+        glowColor: "rgba(59, 130, 246, 0.35)",
+        borderColor: "border-blue-500/40 group-hover:border-blue-500/70",
+        badgeColor: "bg-blue-500/10 text-blue-400 border-blue-500/30",
+        textColor: "text-blue-400",
+        hexColor: "#3b82f6",
+      };
+    case "Разное":
+    default:
+      return {
+        glowColor: "rgba(148, 163, 184, 0.35)",
+        borderColor: "border-slate-400/40 group-hover:border-slate-400/70",
+        badgeColor: "bg-slate-500/10 text-slate-300 border-slate-400/30",
+        textColor: "text-slate-300",
+        hexColor: "#94a3b8",
+      };
+  }
+}
+
 export const bssItemsData: BSSItem[] = rawBssItemsData.map(item => {
   const isSign = item.category === "Звездные знаки";
   const value = isSign ? 1.0 : item.value;
@@ -18518,37 +18678,7 @@ export const bssItemsData: BSSItem[] = rawBssItemsData.map(item => {
   const historicalPrices = isSign ? item.historicalPrices.map(() => 1.0) : item.historicalPrices;
   const category = item.category === "Скины на куба" ? "Скины на каба" : item.category;
 
-  let rarity: BSSItem['rarity'] = "Обычный";
-  let glowColor = "rgba(16, 185, 129, 0.2)"; // Green
-  let borderColor = "border-emerald-500/20 group-hover:border-emerald-500/50";
-  let badgeColor = "bg-emerald-500/10 text-emerald-400 border-emerald-500/25";
-  let textColor = "text-emerald-400";
-
-  if (value >= 20.0) {
-    rarity = "Мифический";
-    glowColor = "rgba(244, 63, 94, 0.25)"; // Rose
-    borderColor = "border-rose-500/30 group-hover:border-rose-500/60";
-    badgeColor = "bg-rose-500/10 text-rose-400 border-rose-500/25";
-    textColor = "text-rose-400";
-  } else if (value >= 5.0) {
-    rarity = "Легендарный";
-    glowColor = "rgba(245, 158, 11, 0.25)"; // Amber
-    borderColor = "border-amber-500/30 group-hover:border-amber-500/60";
-    badgeColor = "bg-amber-500/10 text-amber-400 border-amber-500/25";
-    textColor = "text-amber-400";
-  } else if (value >= 1.0) {
-    rarity = "Эпический";
-    glowColor = "rgba(168, 85, 247, 0.25)"; // Purple
-    borderColor = "border-purple-500/30 group-hover:border-purple-500/60";
-    badgeColor = "bg-purple-500/10 text-purple-400 border-purple-500/25";
-    textColor = "text-purple-400";
-  } else if (value >= 0.2) {
-    rarity = "Редкий";
-    glowColor = "rgba(59, 130, 246, 0.25)"; // Blue
-    borderColor = "border-blue-500/30 group-hover:border-blue-500/60";
-    badgeColor = "bg-blue-500/10 text-blue-400 border-blue-500/25";
-    textColor = "text-blue-400";
-  }
+  const styles = getCategoryStyles(category);
 
   return {
     ...item,
@@ -18557,10 +18687,10 @@ export const bssItemsData: BSSItem[] = rawBssItemsData.map(item => {
     valueLow,
     valueHigh,
     historicalPrices,
-    rarity,
-    glowColor,
-    borderColor,
-    badgeColor,
-    textColor
+    glowColor: styles.glowColor,
+    borderColor: styles.borderColor,
+    badgeColor: styles.badgeColor,
+    textColor: styles.textColor,
+    hexColor: styles.hexColor
   };
 });

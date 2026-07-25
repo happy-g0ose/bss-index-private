@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Info, Clock, SlidersHorizontal } from 'lucide-react';
 import type { BSSItem } from '../data/items';
 import type { Language } from '../locales';
-import { t, translateDemand, translateStability, translateCategory, translateRarity } from '../locales';
+import { t, translateDemand, translateStability, translateCategory } from '../locales';
 
 interface ItemDetailModalProps {
   item: BSSItem | null;
@@ -145,10 +145,9 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/5 bg-neutral-950/40 backdrop-blur-md z-20">
             <div className="flex items-center gap-2">
-              <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border ${item.badgeColor}`}>
-                {translateRarity(item.rarity, lang)}
+              <span className={`text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded border ${item.badgeColor}`}>
+                {translateCategory(item.category, lang)}
               </span>
-              <span className="text-xs text-neutral-400 font-semibold">• &nbsp; {translateCategory(item.category, lang)}</span>
             </div>
             
             <button
@@ -361,8 +360,8 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                   >
                     <defs>
                       <linearGradient id="gradient-glow" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor={item.rarity === 'Мифический' ? '#f43f5e' : item.rarity === 'Легендарный' ? '#f59e0b' : '#a855f7'} stopOpacity="0.25" />
-                        <stop offset="100%" stopColor={item.rarity === 'Мифический' ? '#f43f5e' : item.rarity === 'Легендарный' ? '#f59e0b' : '#a855f7'} stopOpacity="0.0" />
+                        <stop offset="0%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.25" />
+                        <stop offset="100%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.0" />
                       </linearGradient>
                     </defs>
 
@@ -392,7 +391,7 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                     <motion.path 
                       d={sparkline.pathD} 
                       fill="none" 
-                      stroke={item.rarity === 'Мифический' ? '#f43f5e' : item.rarity === 'Легендарный' ? '#f59e0b' : '#a855f7'} 
+                      stroke={item.hexColor || '#a855f7'} 
                       strokeWidth="2.5" 
                     />
 
@@ -404,7 +403,7 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                           cy={p.y}
                           r={hoveredPointIndex === idx ? 6 : 4}
                           className="transition-all duration-150 cursor-pointer"
-                          fill={item.rarity === 'Мифический' ? '#f43f5e' : item.rarity === 'Легендарный' ? '#f59e0b' : '#a855f7'}
+                          fill={item.hexColor || '#a855f7'}
                           stroke="rgba(11, 15, 25, 0.9)"
                           strokeWidth="2"
                         />

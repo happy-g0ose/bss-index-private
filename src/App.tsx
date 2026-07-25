@@ -173,8 +173,7 @@ export default function App() {
         item.englishName.toLowerCase().includes(query) ||
         item.name.toLowerCase().includes(transQ) ||
         item.englishName.toLowerCase().includes(transQ) ||
-        item.category.toLowerCase().includes(query) ||
-        item.rarity.toLowerCase().includes(query)
+        item.category.toLowerCase().includes(query)
       );
     })
     .sort((a, b) => {

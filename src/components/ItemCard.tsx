@@ -5,7 +5,7 @@ import { TrendingUp, TrendingDown, Minus, Plus } from 'lucide-react';
 import { transliterate, resolveQuery, getStatBadgesForGroup } from './BeequipsPage';
 import type { BSSItem } from '../data/items';
 import type { Language } from '../locales';
-import { t, translateDemand, translateCategory, translateRarity } from '../locales';
+import { t, translateDemand, translateCategory } from '../locales';
 
 interface ItemCardProps {
   item: BSSItem;
@@ -147,12 +147,9 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
         }}
       />
 
-      {/* Rarity & Stats Header */}
+      {/* Category Header */}
       <div className="relative z-10 flex justify-between items-center w-full gap-2">
         <span className={`text-[10px] uppercase font-extrabold tracking-wider px-2.5 py-0.5 rounded border ${item.badgeColor}`}>
-          {translateRarity(item.rarity, lang)}
-        </span>
-        <span className="text-[10px] uppercase tracking-wider text-neutral-400 font-medium">
           {translateCategory(item.category, lang)}
         </span>
       </div>

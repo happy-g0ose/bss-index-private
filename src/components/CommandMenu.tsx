@@ -4,7 +4,7 @@ import { Search, Command, ChevronRight, FileText, SlidersHorizontal, X } from 'l
 import { bssItemsData } from '../data/items';
 import type { BSSItem } from '../data/items';
 import type { Language } from '../locales';
-import { translateRarity } from '../locales';
+import { translateCategory } from '../locales';
 import { STAT_ABBR_LABELS, RU_ABBR_MAP, transliterate, getStatBadgesForGroup } from './BeequipsPage';
 
 interface CommandMenuProps {
@@ -198,7 +198,7 @@ export default function CommandMenu({ isOpen, setIsOpen, onSelectItem, lang }: C
                             <span className="text-xs font-black text-amber-400 font-mono">
                               {item.valueLow !== item.valueHigh ? `${Number(item.valueLow.toFixed(2))}-${Number(item.valueHigh.toFixed(2))}` : Number(item.value.toFixed(2))}★
                             </span>
-                            <span className={`text-[8px] font-bold px-2 py-0.5 rounded border leading-none ${item.badgeColor}`}>{translateRarity(item.rarity, lang)}</span>
+                            <span className={`text-[8px] font-bold px-2 py-0.5 rounded border leading-none ${item.badgeColor}`}>{translateCategory(item.category, lang)}</span>
                             <ChevronRight className="h-4 w-4 opacity-45" />
                           </div>
                         </div>
