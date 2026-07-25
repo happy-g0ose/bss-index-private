@@ -101,10 +101,10 @@ const rawBssItemsData: any[] = [
     "name": "Robo Cub",
     "englishName": "Robo Cub",
     "category": "Скины на куба",
-    "value": 14.5,
-    "valueLow": 14.0,
-    "valueHigh": 15.0,
-    "demand": "Высокий",
+    "value": 13.5,
+    "valueLow": 13.0,
+    "valueHigh": 14.0,
+    "demand": "Средний",
     "stability": "Растет",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -142,7 +142,8 @@ const rawBssItemsData: any[] = [
       17.5,
       16.5,
       15.5,
-      14.5
+      14.5,
+      13.5
     ],
     "image": "https://bssmvalues.com/images/Robo_Cub.webp",
     "historicalDates": [
@@ -175,7 +176,8 @@ const rawBssItemsData: any[] = [
       "2026-06-17",
       "2026-06-18",
       "2026-06-20",
-      "2026-06-29"
+      "2026-06-29",
+      "2026-07-19"
     ]
   },
   {
@@ -183,9 +185,9 @@ const rawBssItemsData: any[] = [
     "name": "Stick Cub",
     "englishName": "Stick Cub",
     "category": "Скины на куба",
-    "value": 24.0,
-    "valueLow": 23.0,
-    "valueHigh": 25.0,
+    "value": 22.0,
+    "valueLow": 21.0,
+    "valueHigh": 23.0,
     "demand": "Средний",
     "stability": "Растет",
     "rarity": "Эпический",
@@ -232,7 +234,8 @@ const rawBssItemsData: any[] = [
       28.5,
       26.5,
       23.5,
-      24.0
+      24.0,
+      22.0
     ],
     "image": "https://bssmvalues.com/images/Stick_Cub.webp",
     "historicalDates": [
@@ -273,7 +276,8 @@ const rawBssItemsData: any[] = [
       "2026-06-17",
       "2026-06-18",
       "2026-06-20",
-      "2026-07-01"
+      "2026-07-01",
+      "2026-07-21"
     ]
   },
   {
@@ -281,9 +285,9 @@ const rawBssItemsData: any[] = [
     "name": "Brown Cub",
     "englishName": "Brown Cub",
     "category": "Скины на куба",
-    "value": 30.0,
-    "valueLow": 29.0,
-    "valueHigh": 31.0,
+    "value": 29.0,
+    "valueLow": 28.0,
+    "valueHigh": 30.0,
     "demand": "Средний",
     "stability": "Растет",
     "rarity": "Эпический",
@@ -327,7 +331,8 @@ const rawBssItemsData: any[] = [
       35.5,
       35.5,
       31.5,
-      30.0
+      30.0,
+      29.0
     ],
     "image": "https://bssmvalues.com/images/Brown_Cub.webp",
     "historicalDates": [
@@ -365,7 +370,8 @@ const rawBssItemsData: any[] = [
       "2026-06-18",
       "2026-06-20",
       "2026-06-22",
-      "2026-07-01"
+      "2026-07-01",
+      "2026-07-21"
     ]
   },
   {
@@ -473,9 +479,9 @@ const rawBssItemsData: any[] = [
     "name": "Petal Cub",
     "englishName": "Petal Cub",
     "category": "Скины на куба",
-    "value": 54.5,
-    "valueLow": 52.0,
-    "valueHigh": 57.0,
+    "value": 52.5,
+    "valueLow": 51.0,
+    "valueHigh": 54.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -503,7 +509,9 @@ const rawBssItemsData: any[] = [
       56.0,
       56.0,
       57.5,
-      54.5
+      54.5,
+      53.5,
+      52.5
     ],
     "image": "https://bssmvalues.com/images/Petal_Cub.webp",
     "historicalDates": [
@@ -525,7 +533,9 @@ const rawBssItemsData: any[] = [
       "2026-06-16",
       "2026-06-17",
       "2026-06-18",
-      "2026-07-01"
+      "2026-07-01",
+      "2026-07-10",
+      "2026-07-21"
     ]
   },
   {
@@ -533,9 +543,9 @@ const rawBssItemsData: any[] = [
     "name": "Gingerbread Cub (GGB)",
     "englishName": "Gingerbread Cub",
     "category": "Скины на куба",
-    "value": 59.5,
+    "value": 58.5,
     "valueLow": 57.0,
-    "valueHigh": 62.0,
+    "valueHigh": 60.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -585,7 +595,8 @@ const rawBssItemsData: any[] = [
       57.5,
       57.5,
       60.5,
-      59.5
+      59.5,
+      58.5
     ],
     "image": "https://bssmvalues.com/images/Gingerbread_Cub.webp",
     "historicalDates": [
@@ -629,7 +640,8 @@ const rawBssItemsData: any[] = [
       "2026-06-18",
       "2026-06-21",
       "2026-06-22",
-      "2026-07-01"
+      "2026-07-01",
+      "2026-07-10"
     ]
   },
   {
@@ -747,9 +759,9 @@ const rawBssItemsData: any[] = [
     "name": "Noob Cub",
     "englishName": "Noob Cub",
     "category": "Скины на куба",
-    "value": 80.5,
-    "valueLow": 78.0,
-    "valueHigh": 83.0,
+    "value": 77.5,
+    "valueLow": 75.0,
+    "valueHigh": 80.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -808,7 +820,9 @@ const rawBssItemsData: any[] = [
       103.0,
       87.0,
       82.5,
-      80.5
+      80.5,
+      78.0,
+      77.5
     ],
     "image": "https://bssmvalues.com/images/Noob_Cub.webp",
     "historicalDates": [
@@ -861,7 +875,9 @@ const rawBssItemsData: any[] = [
       "2026-06-16",
       "2026-06-18",
       "2026-06-23",
-      "2026-07-01"
+      "2026-07-01",
+      "2026-07-10",
+      "2026-07-21"
     ]
   },
   {
@@ -869,9 +885,9 @@ const rawBssItemsData: any[] = [
     "name": "Peppermint Cub (PPM)",
     "englishName": "Peppermint Cub",
     "category": "Скины на куба",
-    "value": 215.0,
-    "valueLow": 210.0,
-    "valueHigh": 220.0,
+    "value": 205.0,
+    "valueLow": 200.0,
+    "valueHigh": 210.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Мифический",
@@ -923,7 +939,8 @@ const rawBssItemsData: any[] = [
       245.0,
       235.0,
       225.0,
-      215.0
+      215.0,
+      205.0
     ],
     "image": "https://bssmvalues.com/images/Peppermint_Robo_Cub.webp",
     "historicalDates": [
@@ -969,7 +986,8 @@ const rawBssItemsData: any[] = [
       "2026-06-17",
       "2026-06-19",
       "2026-06-27",
-      "2026-06-30"
+      "2026-06-30",
+      "2026-07-19"
     ]
   },
   {
@@ -977,9 +995,9 @@ const rawBssItemsData: any[] = [
     "name": "Snow Cub",
     "englishName": "Snow Cub",
     "category": "Скины на куба",
-    "value": 235.0,
-    "valueLow": 230.0,
-    "valueHigh": 240.0,
+    "value": 225.0,
+    "valueLow": 220.0,
+    "valueHigh": 230.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Мифический",
@@ -1035,7 +1053,8 @@ const rawBssItemsData: any[] = [
       275.0,
       265.0,
       245.0,
-      235.0
+      235.0,
+      225.0
     ],
     "image": "https://bssmvalues.com/images/Snow_Cub.webp",
     "historicalDates": [
@@ -1085,7 +1104,8 @@ const rawBssItemsData: any[] = [
       "2026-06-17",
       "2026-06-19",
       "2026-06-27",
-      "2026-06-30"
+      "2026-06-30",
+      "2026-07-19"
     ]
   },
   {
@@ -1093,9 +1113,9 @@ const rawBssItemsData: any[] = [
     "name": "Bee Cub",
     "englishName": "Bee Cub",
     "category": "Скины на куба",
-    "value": 385.0,
-    "valueLow": 380.0,
-    "valueHigh": 390.0,
+    "value": 355.0,
+    "valueLow": 350.0,
+    "valueHigh": 360.0,
     "demand": "Средний",
     "stability": "Растет",
     "rarity": "Мифический",
@@ -1158,7 +1178,9 @@ const rawBssItemsData: any[] = [
       415.0,
       415.0,
       405.0,
-      385.0
+      385.0,
+      375.0,
+      355.0
     ],
     "image": "https://bssmvalues.com/images/Bee_Cub.webp",
     "historicalDates": [
@@ -1215,7 +1237,9 @@ const rawBssItemsData: any[] = [
       "2026-06-25",
       "2026-06-26",
       "2026-06-27",
-      "2026-06-30"
+      "2026-06-30",
+      "2026-07-06",
+      "2026-07-19"
     ]
   },
   {
@@ -1465,9 +1489,9 @@ const rawBssItemsData: any[] = [
     "name": "Doodle Hive Skin (DDH)",
     "englishName": "Doodle Hive Skin",
     "category": "Скины на улей",
-    "value": 14.5,
-    "valueLow": 14.0,
-    "valueHigh": 15.0,
+    "value": 13.5,
+    "valueLow": 13.0,
+    "valueHigh": 14.0,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Эпический",
@@ -1514,7 +1538,8 @@ const rawBssItemsData: any[] = [
       19.0,
       17.5,
       15.5,
-      14.5
+      14.5,
+      13.5
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_doodle.webp",
     "historicalDates": [
@@ -1555,7 +1580,8 @@ const rawBssItemsData: any[] = [
       "2026-06-11",
       "2026-06-12",
       "2026-06-14",
-      "2026-06-17"
+      "2026-06-17",
+      "2026-07-05"
     ]
   },
   {
@@ -1649,9 +1675,9 @@ const rawBssItemsData: any[] = [
     "name": "Icy Crowned Hive Skin",
     "englishName": "Icy Crowned Hive Skin",
     "category": "Скины на улей",
-    "value": 62.5,
+    "value": 62.0,
     "valueLow": 60.0,
-    "valueHigh": 65.0,
+    "valueHigh": 64.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Легендарный",
@@ -1707,7 +1733,8 @@ const rawBssItemsData: any[] = [
       77.5,
       72.5,
       67.5,
-      62.5
+      62.5,
+      62.0
     ],
     "image": "https://bssmvalues.com/images/Hive_model_icy_crowned.webp",
     "historicalDates": [
@@ -1757,7 +1784,8 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-17",
       "2026-06-20",
-      "2026-07-02"
+      "2026-07-02",
+      "2026-07-06"
     ]
   },
   {
@@ -1765,9 +1793,9 @@ const rawBssItemsData: any[] = [
     "name": "Ticket Voucher (TV)",
     "englishName": "Ticket Voucher",
     "category": "Ваучеры",
-    "value": 0.72,
+    "value": 0.75,
     "valueLow": 0.7,
-    "valueHigh": 0.75,
+    "valueHigh": 0.8,
     "demand": "Хайп",
     "stability": "Растет",
     "rarity": "Обычный",
@@ -1797,7 +1825,8 @@ const rawBssItemsData: any[] = [
       0.55,
       0.55,
       0.65,
-      0.72
+      0.72,
+      0.75
     ],
     "image": "https://bssmvalues.com/images/Ticket_Voucher.webp",
     "historicalDates": [
@@ -1821,7 +1850,8 @@ const rawBssItemsData: any[] = [
       "2026-06-04",
       "2026-06-07",
       "2026-06-09",
-      "2026-06-13"
+      "2026-06-13",
+      "2026-07-22"
     ]
   },
   {
@@ -1829,9 +1859,9 @@ const rawBssItemsData: any[] = [
     "name": "Convert Speed Voucher (CSV)",
     "englishName": "Convert Speed Voucher",
     "category": "Ваучеры",
-    "value": 4.25,
-    "valueLow": 4.0,
-    "valueHigh": 4.5,
+    "value": 4.62,
+    "valueLow": 4.5,
+    "valueHigh": 4.75,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Редкий",
@@ -1862,7 +1892,8 @@ const rawBssItemsData: any[] = [
       4.25,
       5.25,
       4.75,
-      4.25
+      4.25,
+      4.62
     ],
     "image": "https://bssmvalues.com/images/X2_Convert_Speed_Voucher.webp",
     "historicalDates": [
@@ -1887,7 +1918,8 @@ const rawBssItemsData: any[] = [
       "2026-06-01",
       "2026-06-03",
       "2026-06-14",
-      "2026-06-17"
+      "2026-06-17",
+      "2026-07-19"
     ]
   },
   {
@@ -1931,6 +1963,8 @@ const rawBssItemsData: any[] = [
       6.25,
       5.75,
       5.25,
+      6.25,
+      6.75,
       6.25
     ],
     "image": "https://bssmvalues.com/images/Cub_Buddy_Voucher.webp",
@@ -1959,7 +1993,9 @@ const rawBssItemsData: any[] = [
       "2026-05-16",
       "2026-06-01",
       "2026-06-18",
-      "2026-07-02"
+      "2026-07-02",
+      "2026-07-19",
+      "2026-07-21"
     ]
   },
   {
@@ -1967,9 +2003,9 @@ const rawBssItemsData: any[] = [
     "name": "Bee Gather Voucher (BGV)",
     "englishName": "Bee Gather Voucher",
     "category": "Ваучеры",
-    "value": 6.25,
-    "valueLow": 6.0,
-    "valueHigh": 6.5,
+    "value": 6.75,
+    "valueLow": 6.5,
+    "valueHigh": 7.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Редкий",
@@ -2000,7 +2036,8 @@ const rawBssItemsData: any[] = [
       9.25,
       6.25,
       6.75,
-      6.25
+      6.25,
+      6.75
     ],
     "image": "https://bssmvalues.com/images/X2_Bee_Gather_Voucher.webp",
     "historicalDates": [
@@ -2025,7 +2062,8 @@ const rawBssItemsData: any[] = [
       "2026-05-26",
       "2026-06-01",
       "2026-06-03",
-      "2026-06-23"
+      "2026-06-23",
+      "2026-07-21"
     ]
   },
   {
@@ -2033,8 +2071,8 @@ const rawBssItemsData: any[] = [
     "name": "Bear Bee Voucher (BBV)",
     "englishName": "Bear Bee Voucher",
     "category": "Ваучеры",
-    "value": 10.0,
-    "valueLow": 10.0,
+    "value": 9.75,
+    "valueLow": 9.5,
     "valueHigh": 10.0,
     "demand": "Хайп",
     "stability": "Растет",
@@ -2088,7 +2126,8 @@ const rawBssItemsData: any[] = [
       10.75,
       10.5,
       10.5,
-      10.0
+      10.0,
+      9.75
     ],
     "image": "https://bssmvalues.com/images/Bear_Bee_Voucher.webp",
     "historicalDates": [
@@ -2135,7 +2174,8 @@ const rawBssItemsData: any[] = [
       "2026-06-12",
       "2026-06-14",
       "2026-06-16",
-      "2026-06-20"
+      "2026-06-20",
+      "2026-07-19"
     ]
   },
   {
@@ -2143,9 +2183,9 @@ const rawBssItemsData: any[] = [
     "name": "Offline Voucher (OFV)",
     "englishName": "Offline Voucher",
     "category": "Ваучеры",
-    "value": 25.0,
-    "valueLow": 24.0,
-    "valueHigh": 26.0,
+    "value": 24.0,
+    "valueLow": 23.0,
+    "valueHigh": 25.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Эпический",
@@ -2198,7 +2238,8 @@ const rawBssItemsData: any[] = [
       26.5,
       25.5,
       25.5,
-      25.0
+      25.0,
+      24.0
     ],
     "image": "https://bssmvalues.com/images/Offline_Voucher.webp",
     "historicalDates": [
@@ -2245,7 +2286,8 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-18",
       "2026-06-22",
-      "2026-07-02"
+      "2026-07-02",
+      "2026-07-21"
     ]
   },
   {
@@ -2675,9 +2717,9 @@ const rawBssItemsData: any[] = [
     "name": "Wobbly Looker",
     "englishName": "Wobbly Looker",
     "category": "Стикеры пчел",
-    "value": 0.62,
+    "value": 0.58,
     "valueLow": 0.5,
-    "valueHigh": 0.75,
+    "valueHigh": 0.66,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Обычный",
@@ -2691,7 +2733,8 @@ const rawBssItemsData: any[] = [
       0.42,
       0.62,
       0.23,
-      0.62
+      0.62,
+      0.58
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_wobbly_looker_bee.webp",
     "historicalDates": [
@@ -2699,7 +2742,8 @@ const rawBssItemsData: any[] = [
       "2026-01-27",
       "2026-02-21",
       "2026-04-14",
-      "2026-06-07"
+      "2026-06-07",
+      "2026-07-22"
     ]
   },
   {
@@ -2775,9 +2819,9 @@ const rawBssItemsData: any[] = [
     "name": "Round Basic",
     "englishName": "Round Basic",
     "category": "Стикеры пчел",
-    "value": 10.5,
-    "valueLow": 10.0,
-    "valueHigh": 11.0,
+    "value": 10.0,
+    "valueLow": 9.5,
+    "valueHigh": 10.5,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Редкий",
@@ -2800,7 +2844,8 @@ const rawBssItemsData: any[] = [
       13.0,
       17.5,
       12.5,
-      10.5
+      10.5,
+      10.0
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_round_basic_bee.webp",
     "historicalDates": [
@@ -2817,7 +2862,8 @@ const rawBssItemsData: any[] = [
       "2026-05-20",
       "2026-05-26",
       "2026-06-05",
-      "2026-06-17"
+      "2026-06-17",
+      "2026-07-21"
     ]
   },
   {
@@ -3129,9 +3175,9 @@ const rawBssItemsData: any[] = [
     "name": "Sitting Mother Bear",
     "englishName": "Sitting Mother Bear",
     "category": "Стикеры медведей",
-    "value": 2.25,
+    "value": 2.12,
     "valueLow": 2.0,
-    "valueHigh": 2.5,
+    "valueHigh": 2.25,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Обычный",
@@ -3144,14 +3190,16 @@ const rawBssItemsData: any[] = [
       0.62,
       0.62,
       1.75,
-      2.25
+      2.25,
+      2.12
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sitting_mother_bear.webp",
     "historicalDates": [
       "2025-06-19",
       "2026-02-21",
       "2026-04-14",
-      "2026-06-20"
+      "2026-06-20",
+      "2026-07-22"
     ]
   },
   {
@@ -3207,9 +3255,9 @@ const rawBssItemsData: any[] = [
     "name": "Sunbear",
     "englishName": "Sunbear",
     "category": "Стикеры медведей",
-    "value": 28.5,
-    "valueLow": 27.0,
-    "valueHigh": 30.0,
+    "value": 26.5,
+    "valueLow": 25.0,
+    "valueHigh": 28.0,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Эпический",
@@ -3241,7 +3289,8 @@ const rawBssItemsData: any[] = [
       33.5,
       33.5,
       29.0,
-      28.5
+      28.5,
+      26.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_stranded_sun_bear.webp",
     "historicalDates": [
@@ -3267,7 +3316,8 @@ const rawBssItemsData: any[] = [
       "2026-06-07",
       "2026-06-13",
       "2026-06-14",
-      "2026-07-02"
+      "2026-07-02",
+      "2026-07-19"
     ]
   },
   {
@@ -3733,9 +3783,9 @@ const rawBssItemsData: any[] = [
     "name": "Round Green Critter",
     "englishName": "Round Green Critter",
     "category": "Стикеры мобов",
-    "value": 0.23,
+    "value": 0.2,
     "valueLow": 0.2,
-    "valueHigh": 0.25,
+    "valueHigh": 0.2,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -3747,13 +3797,15 @@ const rawBssItemsData: any[] = [
     "historicalPrices": [
       0.04,
       0.23,
-      0.23
+      0.23,
+      0.2
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_round_green_critter.webp",
     "historicalDates": [
       "2025-06-19",
       "2026-01-20",
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-22"
     ]
   },
   {
@@ -4127,8 +4179,8 @@ const rawBssItemsData: any[] = [
     "name": "Abstract Color Painting",
     "englishName": "Abstract Color Painting",
     "category": "Искусство",
-    "value": 3.5,
-    "valueLow": 3.0,
+    "value": 3.75,
+    "valueLow": 3.5,
     "valueHigh": 4.0,
     "demand": "Высокий",
     "stability": "Растет",
@@ -4146,7 +4198,8 @@ const rawBssItemsData: any[] = [
       3.5,
       3.5,
       3.5,
-      3.5
+      3.5,
+      3.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_abstract_color_painting.webp",
     "historicalDates": [
@@ -4157,7 +4210,8 @@ const rawBssItemsData: any[] = [
       "2026-05-28",
       "2026-06-07",
       "2026-06-08",
-      "2026-06-21"
+      "2026-06-21",
+      "2026-07-22"
     ]
   },
   {
@@ -4207,10 +4261,10 @@ const rawBssItemsData: any[] = [
     "name": "Ionic Column Base",
     "englishName": "Ionic Column Base",
     "category": "Искусство",
-    "value": 28.5,
-    "valueLow": 27.0,
-    "valueHigh": 30.0,
-    "demand": "Высокий",
+    "value": 25.0,
+    "valueLow": 24.0,
+    "valueHigh": 26.0,
+    "demand": "Средний",
     "stability": "Растет",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -4238,7 +4292,8 @@ const rawBssItemsData: any[] = [
       35.5,
       29.5,
       28.5,
-      28.5
+      28.5,
+      25.0
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ionic_column_base.webp",
     "historicalDates": [
@@ -4261,7 +4316,8 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-17",
       "2026-06-18",
-      "2026-06-21"
+      "2026-06-21",
+      "2026-07-22"
     ]
   },
   {
@@ -4269,10 +4325,10 @@ const rawBssItemsData: any[] = [
     "name": "Ionic Column Top",
     "englishName": "Ionic Column Top",
     "category": "Искусство",
-    "value": 28.5,
-    "valueLow": 27.0,
-    "valueHigh": 30.0,
-    "demand": "Высокий",
+    "value": 25.0,
+    "valueLow": 24.0,
+    "valueHigh": 26.0,
+    "demand": "Средний",
     "stability": "Растет",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -4299,7 +4355,8 @@ const rawBssItemsData: any[] = [
       35.5,
       35.5,
       29.5,
-      28.5
+      28.5,
+      25.0
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ionic_column_top.webp",
     "historicalDates": [
@@ -4321,7 +4378,8 @@ const rawBssItemsData: any[] = [
       "2026-06-01",
       "2026-06-14",
       "2026-06-17",
-      "2026-06-18"
+      "2026-06-18",
+      "2026-07-22"
     ]
   },
   {
@@ -4809,9 +4867,9 @@ const rawBssItemsData: any[] = [
     "name": "Left Shining Diamond Fleuron",
     "englishName": "Left Shining Diamond Fleuron",
     "category": "Драгоценности",
-    "value": 2.75,
-    "valueLow": 2.5,
-    "valueHigh": 3.0,
+    "value": 2.25,
+    "valueLow": 2.0,
+    "valueHigh": 2.5,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Обычный",
@@ -4827,7 +4885,8 @@ const rawBssItemsData: any[] = [
       2.25,
       3.0,
       2.75,
-      2.75
+      2.75,
+      2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_shining_diamond_fleuron.webp",
     "historicalDates": [
@@ -4837,7 +4896,8 @@ const rawBssItemsData: any[] = [
       "2026-04-10",
       "2026-05-11",
       "2026-06-07",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-07-22"
     ]
   },
   {
@@ -4845,9 +4905,9 @@ const rawBssItemsData: any[] = [
     "name": "Right Shining Diamond Fleuron",
     "englishName": "Right Shining Diamond Fleuron",
     "category": "Драгоценности",
-    "value": 2.75,
-    "valueLow": 2.5,
-    "valueHigh": 3.0,
+    "value": 2.25,
+    "valueLow": 2.0,
+    "valueHigh": 2.5,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Обычный",
@@ -4863,7 +4923,8 @@ const rawBssItemsData: any[] = [
       2.25,
       3.0,
       2.75,
-      2.75
+      2.75,
+      2.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_shining_diamond_fleuron.webp",
     "historicalDates": [
@@ -4873,7 +4934,8 @@ const rawBssItemsData: any[] = [
       "2026-04-10",
       "2026-05-11",
       "2026-06-07",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-07-22"
     ]
   },
   {
@@ -5208,7 +5270,7 @@ const rawBssItemsData: any[] = [
     "value": 0.29,
     "valueLow": 0.25,
     "valueHigh": 0.33,
-    "demand": "Средний",
+    "demand": "Низкий",
     "stability": "Стабильно",
     "rarity": "Обычный",
     "glowColor": "rgba(16, 185, 129, 0.2)",
@@ -5226,6 +5288,7 @@ const rawBssItemsData: any[] = [
       1.25,
       0.88,
       0.38,
+      0.29,
       0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_purple_4-point_flower.webp",
@@ -5239,7 +5302,8 @@ const rawBssItemsData: any[] = [
       "2026-05-13",
       "2026-05-26",
       "2026-06-11",
-      "2026-06-20"
+      "2026-06-20",
+      "2026-07-21"
     ]
   },
   {
@@ -5247,9 +5311,9 @@ const rawBssItemsData: any[] = [
     "name": "Spore Covered Puffshroom",
     "englishName": "Spore Covered Puffshroom",
     "category": "Грибы",
-    "value": 0.04,
-    "valueLow": 0.025,
-    "valueHigh": 0.05,
+    "value": 0.01,
+    "valueLow": 0.0,
+    "valueHigh": 0.025,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5259,11 +5323,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04
+      0.04,
+      0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spore_covered_puffshroom.webp",
     "historicalDates": [
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-23"
     ]
   },
   {
@@ -5519,9 +5585,9 @@ const rawBssItemsData: any[] = [
     "name": "Prismatic Mushroom",
     "englishName": "Prismatic Mushroom",
     "category": "Грибы",
-    "value": 1.12,
-    "valueLow": 1.0,
-    "valueHigh": 1.25,
+    "value": 0.88,
+    "valueLow": 0.75,
+    "valueHigh": 1.0,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Обычный",
@@ -5536,7 +5602,8 @@ const rawBssItemsData: any[] = [
       0.62,
       0.88,
       0.88,
-      1.12
+      1.12,
+      0.88
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_prismatic_mushroom.webp",
     "historicalDates": [
@@ -5545,7 +5612,8 @@ const rawBssItemsData: any[] = [
       "2026-04-14",
       "2026-05-11",
       "2026-06-14",
-      "2026-06-24"
+      "2026-06-24",
+      "2026-07-21"
     ]
   },
   {
@@ -6113,9 +6181,9 @@ const rawBssItemsData: any[] = [
     "name": "Scythe",
     "englishName": "Scythe",
     "category": "Инструменты",
-    "value": 0.17,
-    "valueLow": 0.15,
-    "valueHigh": 0.2,
+    "value": 0.23,
+    "valueLow": 0.2,
+    "valueHigh": 0.25,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6128,14 +6196,16 @@ const rawBssItemsData: any[] = [
       0.12,
       0.23,
       0.23,
-      0.17
+      0.17,
+      0.23
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_scythe.webp",
     "historicalDates": [
       "2026-02-21",
       "2026-03-21",
       "2026-06-13",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-07-23"
     ]
   },
   {
@@ -7229,9 +7299,9 @@ const rawBssItemsData: any[] = [
     "name": "Pepper Patch Stamp",
     "englishName": "Pepper Patch Stamp",
     "category": "Марки",
-    "value": 4.5,
-    "valueLow": 4.0,
-    "valueHigh": 5.0,
+    "value": 3.75,
+    "valueLow": 3.5,
+    "valueHigh": 4.0,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Редкий",
@@ -7252,7 +7322,8 @@ const rawBssItemsData: any[] = [
       5.5,
       5.5,
       4.75,
-      4.5
+      4.5,
+      3.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pepper_patch_stamp.webp",
     "historicalDates": [
@@ -7267,7 +7338,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-14",
       "2026-06-18",
-      "2026-07-02"
+      "2026-07-02",
+      "2026-07-19"
     ]
   },
   {
@@ -7275,9 +7347,9 @@ const rawBssItemsData: any[] = [
     "name": "Pine Tree Forest Stamp",
     "englishName": "Pine Tree Forest Stamp",
     "category": "Марки",
-    "value": 4.5,
-    "valueLow": 4.0,
-    "valueHigh": 5.0,
+    "value": 3.75,
+    "valueLow": 3.5,
+    "valueHigh": 4.0,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Редкий",
@@ -7296,7 +7368,8 @@ const rawBssItemsData: any[] = [
       5.5,
       5.5,
       4.75,
-      4.5
+      4.5,
+      3.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pine_tree_forest_stamp.webp",
     "historicalDates": [
@@ -7309,7 +7382,8 @@ const rawBssItemsData: any[] = [
       "2026-05-09",
       "2026-06-14",
       "2026-06-18",
-      "2026-07-02"
+      "2026-07-02",
+      "2026-07-19"
     ]
   },
   {
@@ -7320,7 +7394,7 @@ const rawBssItemsData: any[] = [
     "value": 29.0,
     "valueLow": 26.5,
     "valueHigh": 31.5,
-    "demand": "Хайп",
+    "demand": "Средний",
     "stability": "Растет",
     "rarity": "Обычный",
     "glowColor": "rgba(16, 185, 129, 0.2)",
@@ -8517,6 +8591,7 @@ const rawBssItemsData: any[] = [
       0.01,
       0.62,
       0.42,
+      0.03,
       0.03
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_waving_townsperson.webp",
@@ -8525,7 +8600,8 @@ const rawBssItemsData: any[] = [
       "2026-02-21",
       "2026-04-25",
       "2026-05-14",
-      "2026-06-23"
+      "2026-06-23",
+      "2026-07-23"
     ]
   },
   {
@@ -8559,9 +8635,9 @@ const rawBssItemsData: any[] = [
     "name": "Baseball Swing",
     "englishName": "Baseball Swing",
     "category": "Разное",
-    "value": 0.04,
-    "valueLow": 0.025,
-    "valueHigh": 0.05,
+    "value": 0.01,
+    "valueLow": 0.0,
+    "valueHigh": 0.025,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8575,7 +8651,8 @@ const rawBssItemsData: any[] = [
       0.12,
       0.1,
       0.08,
-      0.04
+      0.04,
+      0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_baseball_swing.webp",
     "historicalDates": [
@@ -8583,7 +8660,8 @@ const rawBssItemsData: any[] = [
       "2025-12-30",
       "2026-01-08",
       "2026-02-21",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-07-23"
     ]
   },
   {
@@ -8669,9 +8747,9 @@ const rawBssItemsData: any[] = [
     "name": "Green Circle",
     "englishName": "Green Circle",
     "category": "Разное",
-    "value": 0.04,
-    "valueLow": 0.025,
-    "valueHigh": 0.05,
+    "value": 0.01,
+    "valueLow": 0.0,
+    "valueHigh": 0.025,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8682,12 +8760,14 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.04,
-      0.04
+      0.04,
+      0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_circle.webp",
     "historicalDates": [
       "2025-06-19",
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-23"
     ]
   },
   {
@@ -9067,9 +9147,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Coffee Mug",
     "englishName": "Yellow Coffee Mug",
     "category": "Разное",
-    "value": 0.04,
-    "valueLow": 0.025,
-    "valueHigh": 0.05,
+    "value": 0.01,
+    "valueLow": 0.0,
+    "valueHigh": 0.025,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9083,7 +9163,8 @@ const rawBssItemsData: any[] = [
       0.23,
       0.08,
       0.08,
-      0.04
+      0.04,
+      0.01
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_coffee_mug.webp",
     "historicalDates": [
@@ -9091,7 +9172,8 @@ const rawBssItemsData: any[] = [
       "2025-12-26",
       "2026-01-08",
       "2026-02-21",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-07-23"
     ]
   },
   {
@@ -9213,9 +9295,9 @@ const rawBssItemsData: any[] = [
     "name": "Red Wailing Cry",
     "englishName": "Red Wailing Cry",
     "category": "Разное",
-    "value": 0.08,
+    "value": 0.06,
     "valueLow": 0.05,
-    "valueHigh": 0.1,
+    "valueHigh": 0.075,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9226,12 +9308,14 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.08,
-      0.08
+      0.08,
+      0.06
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_wailing_cry.webp",
     "historicalDates": [
       "2025-06-19",
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-21"
     ]
   },
   {
@@ -9267,9 +9351,9 @@ const rawBssItemsData: any[] = [
     "name": "Shrugging Heart",
     "englishName": "Shrugging Heart",
     "category": "Разное",
-    "value": 0.08,
+    "value": 0.06,
     "valueLow": 0.05,
-    "valueHigh": 0.1,
+    "valueHigh": 0.075,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9280,12 +9364,14 @@ const rawBssItemsData: any[] = [
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
       0.08,
-      0.08
+      0.08,
+      0.06
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_shrugging_heart.webp",
     "historicalDates": [
       "2025-06-19",
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-23"
     ]
   },
   {
@@ -9293,9 +9379,9 @@ const rawBssItemsData: any[] = [
     "name": "Standing Beekeeper",
     "englishName": "Standing Beekeeper",
     "category": "Разное",
-    "value": 0.08,
+    "value": 0.06,
     "valueLow": 0.05,
-    "valueHigh": 0.1,
+    "valueHigh": 0.075,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9305,11 +9391,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08
+      0.08,
+      0.06
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_standing_beekeeper.webp",
     "historicalDates": [
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-21"
     ]
   },
   {
@@ -9391,9 +9479,9 @@ const rawBssItemsData: any[] = [
     "name": "TNT",
     "englishName": "TNT",
     "category": "Разное",
-    "value": 0.1,
+    "value": 0.06,
     "valueLow": 0.05,
-    "valueHigh": 0.15,
+    "valueHigh": 0.075,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9407,7 +9495,8 @@ const rawBssItemsData: any[] = [
       0.23,
       0.1,
       0.1,
-      0.1
+      0.1,
+      0.06
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tnt.webp",
     "historicalDates": [
@@ -9415,7 +9504,8 @@ const rawBssItemsData: any[] = [
       "2025-12-30",
       "2026-01-08",
       "2026-02-21",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-07-21"
     ]
   },
   {
@@ -9453,9 +9543,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Left Arrow",
     "englishName": "Yellow Left Arrow",
     "category": "Разное",
-    "value": 0.12,
-    "valueLow": 0.1,
-    "valueHigh": 0.15,
+    "value": 0.08,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9469,7 +9559,8 @@ const rawBssItemsData: any[] = [
       0.23,
       0.11,
       0.12,
-      0.12
+      0.12,
+      0.08
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_left_arrow.webp",
     "historicalDates": [
@@ -9477,7 +9568,8 @@ const rawBssItemsData: any[] = [
       "2025-12-30",
       "2026-02-21",
       "2026-03-21",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-07-23"
     ]
   },
   {
@@ -9591,9 +9683,9 @@ const rawBssItemsData: any[] = [
     "name": "Prehistoric Boar",
     "englishName": "Prehistoric Boar",
     "category": "Разное",
-    "value": 0.23,
-    "valueLow": 0.2,
-    "valueHigh": 0.25,
+    "value": 0.17,
+    "valueLow": 0.15,
+    "valueHigh": 0.2,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9603,11 +9695,13 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.23
+      0.23,
+      0.17
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_prehistoric_boar.webp",
     "historicalDates": [
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-21"
     ]
   },
   {
@@ -9989,9 +10083,9 @@ const rawBssItemsData: any[] = [
     "name": "Dark Flame",
     "englishName": "Dark Flame",
     "category": "Разное",
-    "value": 0.75,
+    "value": 0.58,
     "valueLow": 0.5,
-    "valueHigh": 1.0,
+    "valueHigh": 0.66,
     "demand": "Средний",
     "stability": "Стабильно",
     "rarity": "Обычный",
@@ -10004,14 +10098,16 @@ const rawBssItemsData: any[] = [
       0.55,
       0.88,
       0.5,
-      0.75
+      0.75,
+      0.58
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_dark_flame.webp",
     "historicalDates": [
       "2025-06-19",
       "2025-12-30",
       "2026-01-08",
-      "2026-02-21"
+      "2026-02-21",
+      "2026-07-22"
     ]
   },
   {
@@ -10141,9 +10237,9 @@ const rawBssItemsData: any[] = [
     "name": "Cyan Hilted Sword",
     "englishName": "Cyan Hilted Sword",
     "category": "Разное",
-    "value": 10.5,
-    "valueLow": 10.0,
-    "valueHigh": 11.0,
+    "value": 9.75,
+    "valueLow": 9.5,
+    "valueHigh": 10.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Редкий",
@@ -10160,7 +10256,9 @@ const rawBssItemsData: any[] = [
       3.75,
       5.5,
       9.5,
-      10.5
+      10.5,
+      9.5,
+      9.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cyan_hilted_sword.webp",
     "historicalDates": [
@@ -10171,7 +10269,9 @@ const rawBssItemsData: any[] = [
       "2026-04-21",
       "2026-05-11",
       "2026-06-05",
-      "2026-06-13"
+      "2026-06-13",
+      "2026-07-19",
+      "2026-07-21"
     ]
   },
   {
