@@ -176,18 +176,75 @@ function transliterate(text) {
   return text.split('').map(char => translitMap[char] || char).join('');
 }
 
+let flattenedItems = [];
+
+function getFlattenedItems() {
+  if (flattenedItems.length > 0) return flattenedItems;
+  
+  const list = [];
+  for (const item of itemsData) {
+    if (item.category === 'Биквипы' && item.beequipData) {
+      // Add the base item itself
+      list.push(item);
+      // Flatten all its rolls into virtual searchable BSS items
+      for (const group of item.beequipData) {
+        for (const roll of group.rolls) {
+          list.push({
+            id: `${item.id}-${roll.rollName}`,
+            name: `${item.name} (${roll.rollName})`,
+            englishName: `${item.englishName} (${roll.rollName})`,
+            category: 'Биквипы',
+            value: roll.value,
+            valueLow: roll.valueLow,
+            valueHigh: roll.valueHigh,
+            demand: roll.demand,
+            image: item.image,
+            stability: item.stability,
+            description: `Ролл: ${roll.rollName} для экипировки ${item.name}.`
+          });
+        }
+      }
+    } else {
+      list.push(item);
+    }
+  }
+  flattenedItems = list;
+  return flattenedItems;
+}
+
 function findItems(query) {
   if (!query) return [];
-  const q = query.toLowerCase().trim();
-  const transQ = transliterate(q);
-  return itemsData.filter(item => 
-    item.name.toLowerCase().includes(q) || 
-    item.englishName.toLowerCase().includes(q) ||
-    item.name.toLowerCase().includes(transQ) || 
-    item.englishName.toLowerCase().includes(transQ) ||
-    item.category.toLowerCase().includes(q) ||
-    item.category.toLowerCase().includes(transQ)
-  );
+  
+  const cleanQuery = query.toLowerCase().trim();
+  const words = cleanQuery.split(/\s+/).filter(Boolean);
+  if (words.length === 0) return [];
+  
+  const list = getFlattenedItems();
+  
+  const matched = list.map(item => {
+    let score = 0;
+    const itemNameLower = item.name.toLowerCase();
+    const itemEngNameLower = item.englishName.toLowerCase();
+    const categoryLower = item.category.toLowerCase();
+    
+    for (const word of words) {
+      const transWord = transliterate(word);
+      if (itemNameLower.includes(word) || 
+          itemEngNameLower.includes(word) || 
+          itemNameLower.includes(transWord) || 
+          itemEngNameLower.includes(transWord) ||
+          categoryLower.includes(word) ||
+          categoryLower.includes(transWord)) {
+        score++;
+      }
+    }
+    return { item, score };
+  }).filter(res => res.score > 0);
+  
+  // Sort by score (descending)
+  matched.sort((a, b) => b.score - a.score);
+  
+  return matched.map(res => res.item);
 }
 
 // Build Slash Commands definitions
@@ -272,11 +329,16 @@ client.on('interactionCreate', async interaction => {
       const focusedValue = interaction.options.getFocused();
       const matches = findItems(focusedValue).slice(0, 25);
       await interaction.respond(
-        matches.map(item => ({
-          name: `${item.name} (${item.value} ★)`,
-          value: item.name
-        }))
-      );
+        matches.map(item => {
+          const valStr = item.valueLow !== item.valueHigh
+            ? `${item.valueLow}-${item.valueHigh}`
+            : `${item.value}`;
+          return {
+            name: `${item.name} (${valStr} ★)`,
+            value: item.name
+          };
+        })
+      ).catch(() => {});
     }
   }
 });
