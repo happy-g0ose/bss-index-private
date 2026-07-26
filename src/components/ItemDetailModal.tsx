@@ -491,29 +491,31 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
           </div>
 
           {/* Footer controls: Add directly to Trade side A/B */}
-          <div className="p-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 bg-neutral-950/40 z-10 text-xs">
-            <span className="text-neutral-500">BSS Value Guide • {lang === 'ru' ? 'Все цены обновляются еженедельно' : 'All prices are updated weekly'}</span>
-            <div className="flex items-center gap-2.5 w-full sm:w-auto">
-              <button
-                onClick={() => {
-                  onAddToSideA(item);
-                  onClose();
-                }}
-                className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold transition-all duration-200 cursor-pointer"
-              >
-                + {lang === 'ru' ? 'Отдать (А)' : 'Give (A)'}
-              </button>
-              <button
-                onClick={() => {
-                  onAddToSideB(item);
-                  onClose();
-                }}
-                className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition-all duration-200 cursor-pointer"
-              >
-                + {lang === 'ru' ? 'Получить (Б)' : 'Receive (B)'}
-              </button>
+          {item.category !== 'Биквипы' && (
+            <div className="p-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 bg-neutral-950/40 z-10 text-xs">
+              <span className="text-neutral-500">BSS Value Guide • {lang === 'ru' ? 'Все цены обновляются еженедельно' : 'All prices are updated weekly'}</span>
+              <div className="flex items-center gap-2.5 w-full sm:w-auto">
+                <button
+                  onClick={() => {
+                    onAddToSideA(item);
+                    onClose();
+                  }}
+                  className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-bold transition-all duration-200 cursor-pointer"
+                >
+                  + {lang === 'ru' ? 'Отдать (А)' : 'Give (A)'}
+                </button>
+                <button
+                  onClick={() => {
+                    onAddToSideB(item);
+                    onClose();
+                  }}
+                  className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition-all duration-200 cursor-pointer"
+                >
+                  + {lang === 'ru' ? 'Получить (Б)' : 'Receive (B)'}
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </div>
     </AnimatePresence>

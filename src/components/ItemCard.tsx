@@ -300,29 +300,31 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
         )}
 
         {/* Quick Add buttons */}
-        <div className="grid grid-cols-2 gap-2 select-none">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onAddToSideA(item);
-            }}
-            className="flex items-center justify-center gap-1 py-1.5 rounded-lg border border-violet-500/25 bg-violet-600/10 hover:bg-violet-600/25 hover:border-violet-500/50 text-[10px] font-bold text-violet-300 transition-all duration-200 cursor-pointer"
-          >
-            <Plus className="h-3 w-3" />
-            {t('item.addA', lang)}
-          </button>
-          
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onAddToSideB(item);
-            }}
-            className="flex items-center justify-center gap-1 py-1.5 rounded-lg border border-emerald-500/25 bg-emerald-600/10 hover:bg-emerald-600/25 hover:border-emerald-500/50 text-[10px] font-bold text-emerald-300 transition-all duration-200 cursor-pointer"
-          >
-            <Plus className="h-3 w-3" />
-            {t('item.addB', lang)}
-          </button>
-        </div>
+        {item.category !== 'Биквипы' && (
+          <div className="grid grid-cols-2 gap-2 select-none">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onAddToSideA(item);
+              }}
+              className="flex items-center justify-center gap-1 py-1.5 rounded-lg border border-violet-500/25 bg-violet-600/10 hover:bg-violet-600/25 hover:border-violet-500/50 text-[10px] font-bold text-violet-300 transition-all duration-200 cursor-pointer"
+            >
+              <Plus className="h-3 w-3" />
+              {t('item.addA', lang)}
+            </button>
+            
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onAddToSideB(item);
+              }}
+              className="flex items-center justify-center gap-1 py-1.5 rounded-lg border border-emerald-500/25 bg-emerald-600/10 hover:bg-emerald-600/25 hover:border-emerald-500/50 text-[10px] font-bold text-emerald-300 transition-all duration-200 cursor-pointer"
+            >
+              <Plus className="h-3 w-3" />
+              {t('item.addB', lang)}
+            </button>
+          </div>
+        )}
       </div>
     </motion.div>
   );

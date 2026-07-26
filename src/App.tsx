@@ -28,6 +28,7 @@ export default function App() {
   const [sortingOption, setSortingOption] = useState<SortType>('value-desc');
   const [isCommandMenuOpen, setIsCommandMenuOpen] = useState(false);
   const [isAuthorsModalOpen, setIsAuthorsModalOpen] = useState(false);
+  const [toast, setToast] = useState<{ show: boolean; message: string; side: 'A' | 'B' | null }>({ show: false, message: '', side: null });
   
   const [lang, setLangState] = useState<Language>(() => {
     const saved = localStorage.getItem('bss_lang') as Language;
@@ -41,6 +42,15 @@ export default function App() {
     setLangState(newLang);
   };
   const [activeTab, setActiveTab] = useState<TabType>('home');
+
+  useEffect(() => {
+    if (toast.show) {
+      const timer = setTimeout(() => {
+        setToast(prev => ({ ...prev, show: false }));
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast.show]);
 
   // Sync trade calculator data from localStorage (optional persistence for good UX)
   useEffect(() => {
@@ -127,12 +137,14 @@ export default function App() {
     const updated = [...sideA, item];
     setSideA(updated);
     saveTradeToLocal(updated, sideB);
+    setToast({ show: true, message: item.name, side: 'A' });
   };
 
   const handleAddToSideB = (item: BSSItem) => {
     const updated = [...sideB, item];
     setSideB(updated);
     saveTradeToLocal(sideA, updated);
+    setToast({ show: true, message: item.name, side: 'B' });
   };
 
   const handleRemoveFromSideA = (idx: number) => {
@@ -452,6 +464,51 @@ export default function App() {
         onClose={() => setIsAuthorsModalOpen(false)}
         lang={lang}
       />
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {toast.show && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4.5 py-3.5 rounded-2xl border bg-[#0b0f19]/95 backdrop-blur-md shadow-2xl min-w-[280px] max-w-sm pointer-events-auto ${
+              toast.side === 'A' 
+                ? 'border-violet-500/20 shadow-violet-500/10' 
+                : 'border-emerald-500/20 shadow-emerald-500/10'
+            }`}
+          >
+            <div className={`h-8 w-8 rounded-xl flex items-center justify-center shrink-0 ${
+              toast.side === 'A' 
+                ? 'bg-violet-500/10 text-violet-400' 
+                : 'bg-emerald-500/10 text-emerald-400'
+            }`}>
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div className="flex-1 text-left">
+              <div className="text-xs font-black text-white uppercase tracking-wider">
+                {toast.side === 'A' 
+                  ? (lang === 'ru' ? 'Вы отдаете (Сторона А)' : 'You Give (Side A)') 
+                  : (lang === 'ru' ? 'Вам отдают (Сторона Б)' : 'They Give (Side B)')}
+              </div>
+              <div className="text-[11px] text-neutral-300 font-bold mt-0.5 truncate max-w-[220px]">
+                {toast.message}
+              </div>
+            </div>
+            <button 
+              onClick={() => setToast(prev => ({ ...prev, show: false }))}
+              className="text-neutral-500 hover:text-white transition-colors p-1"
+            >
+              <svg className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
