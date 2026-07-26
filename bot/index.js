@@ -212,6 +212,74 @@ function getFlattenedItems() {
   return flattenedItems;
 }
 
+const STAT_ABBR_LABELS = {
+  AR: 'Ability Rate',
+  ATL: 'Ability Token Lifespan',
+  BAP: 'Bee Ability Pollen',
+  BAR: 'Bee Ability Rate',
+  BP: 'Blue Pollen',
+  BBP: 'Blue Bomb Pollen',
+  BFC: 'Blue Field Capacity',
+  BFT: 'Bond From Treats',
+  BGP: 'Bee Gather Pollen',
+  BMS: 'Bee Movespeed',
+  CC: 'Critical Power',
+  CR: 'Convert Rate',
+  CRAH: 'Convert Rate at Hive',
+  GBP: 'Gold Bubble Pollen',
+  HAH: 'Honey at Hive',
+  HFT: 'Honey From Tokens',
+  HM: 'Honeymark',
+  HPG: 'Honey Per Goo',
+  HFIC: 'Honey From Instant Conversion',
+  IC: 'Instant Conversion',
+  MD: 'Mark Duration',
+  MEL: 'Melody',
+  MRT: 'Monster Respawn Time',
+  PMS: 'Player Movespeed',
+  RBA: 'Red Bee Attack',
+  RP: 'Red Pollen',
+  SCC: 'Super-Crit Chance',
+  SCP: 'Super-Crit Power',
+  TL: 'Token Link',
+  WFC: 'White Field Capacity',
+  WP: 'White Pollen',
+  WGA: 'White Gather Amount',
+  CAP: 'Capacity'
+};
+
+const RU_ABBR_MAP = {
+  'хах': 'HAH',
+  'вфс': 'WFC',
+  'вп': 'WP',
+  'вга': 'WGA',
+  'бп': 'BP',
+  'ббп': 'BBP',
+  'бфс': 'BFC',
+  'бфт': 'BFT',
+  'бгп': 'BGP',
+  'бмс': 'BMS',
+  'кк': 'CC',
+  'кр': 'CR',
+  'крах': 'CRAH',
+  'гбп': 'GBP',
+  'хфт': 'HFT',
+  'хм': 'HM',
+  'хпг': 'HPG',
+  'хфик': 'HFIC',
+  'ик': 'IC',
+  'мд': 'MD',
+  'мел': 'MEL',
+  'мрт': 'MRT',
+  'пмс': 'PMS',
+  'рба': 'RBA',
+  'рп': 'RP',
+  'скк': 'SCC',
+  'скп': 'SCP',
+  'тл': 'TL',
+  'кап': 'CAP'
+};
+
 function findItems(query) {
   if (!query) return [];
   
@@ -229,19 +297,36 @@ function findItems(query) {
     
     for (const word of words) {
       const transWord = transliterate(word);
-      if (itemNameLower.includes(word) || 
-          itemEngNameLower.includes(word) || 
-          itemNameLower.includes(transWord) || 
-          itemEngNameLower.includes(transWord) ||
-          categoryLower.includes(word) ||
-          categoryLower.includes(transWord)) {
+      
+      let abbrValue = null;
+      let abbrName = null;
+      if (RU_ABBR_MAP[word]) {
+        abbrValue = RU_ABBR_MAP[word];
+        abbrName = STAT_ABBR_LABELS[abbrValue]?.toLowerCase();
+      } else {
+        const upperWord = word.toUpperCase();
+        if (STAT_ABBR_LABELS[upperWord]) {
+          abbrValue = upperWord;
+          abbrName = STAT_ABBR_LABELS[abbrValue]?.toLowerCase();
+        }
+      }
+      
+      const isMatch = itemNameLower.includes(word) || 
+                      itemEngNameLower.includes(word) || 
+                      itemNameLower.includes(transWord) || 
+                      itemEngNameLower.includes(transWord) ||
+                      categoryLower.includes(word) ||
+                      categoryLower.includes(transWord) ||
+                      (abbrValue && (itemNameLower.includes(abbrValue.toLowerCase()) || itemEngNameLower.includes(abbrValue.toLowerCase()))) ||
+                      (abbrName && (itemNameLower.includes(abbrName) || itemEngNameLower.includes(abbrName)));
+                      
+      if (isMatch) {
         score++;
       }
     }
     return { item, score };
   }).filter(res => res.score > 0);
   
-  // Sort by score (descending)
   matched.sort((a, b) => b.score - a.score);
   
   return matched.map(res => res.item);

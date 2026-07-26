@@ -46,6 +46,7 @@ export const STAT_ABBR_LABELS: Record<string, string> = {
   WFC: 'White Field Capacity',
   WP: 'White Pollen',
   WGA: 'White Gather Amount',
+  CAP: 'Capacity',
 };
 
 // Russian abbreviation aliases → EN abbreviation
@@ -165,13 +166,24 @@ export function getStatBadge(groupName: string): string | null {
 }
 
 export function resolveQuery(raw: string): { statAbbr: string | null; query: string } {
-  const q = raw.trim().toLowerCase();
-  // Check Russian aliases
-  if (RU_ABBR_MAP[q]) return { statAbbr: RU_ABBR_MAP[q], query: q };
-  // Check English abbreviations
-  const upper = q.toUpperCase();
-  if (STAT_ABBR_LABELS[upper]) return { statAbbr: upper, query: q };
-  return { statAbbr: null, query: q };
+  const clean = raw.trim().toLowerCase();
+  const words = clean.split(/\s+/).filter(Boolean);
+  
+  for (const word of words) {
+    if (RU_ABBR_MAP[word]) {
+      return { statAbbr: RU_ABBR_MAP[word], query: clean };
+    }
+    const upper = word.toUpperCase();
+    if (STAT_ABBR_LABELS[upper]) {
+      return { statAbbr: upper, query: clean };
+    }
+  }
+  
+  if (RU_ABBR_MAP[clean]) return { statAbbr: RU_ABBR_MAP[clean], query: clean };
+  const upperClean = clean.toUpperCase();
+  if (STAT_ABBR_LABELS[upperClean]) return { statAbbr: upperClean, query: clean };
+  
+  return { statAbbr: null, query: clean };
 }
 
 const translitMap: Record<string, string> = {

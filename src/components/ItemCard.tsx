@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { MouseEvent } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, TrendingDown, Minus, Plus } from 'lucide-react';
-import { transliterate, resolveQuery, getStatBadgesForGroup } from './BeequipsPage';
+import { transliterate, resolveQuery, getStatBadgesForGroup, RU_ABBR_MAP, STAT_ABBR_LABELS } from './BeequipsPage';
 import type { BSSItem } from '../data/items';
 import type { Language } from '../locales';
 import { t, translateDemand, translateCategory } from '../locales';
@@ -220,6 +220,12 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
             const { statAbbr } = resolveQuery(raw);
             if (!raw) return null;
             
+            const words = raw.split(/\s+/).filter(Boolean);
+            const remainingWords = words.filter(word => {
+              const upper = word.toUpperCase();
+              return !RU_ABBR_MAP[word] && !STAT_ABBR_LABELS[upper];
+            });
+
             const matches: any[] = [];
             item.beequipData.forEach(group => {
               const badges = getStatBadgesForGroup(group.groupName, group.rolls);
@@ -227,10 +233,29 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
               const isGroupMatch = group.groupName.toLowerCase().includes(raw) || group.groupName.toLowerCase().includes(transRaw);
 
               if (isStatMatch || isGroupMatch) {
-                matches.push(...group.rolls);
+                if (remainingWords.length > 0) {
+                  group.rolls.forEach(roll => {
+                    const rollLower = roll.rollName.toLowerCase();
+                    const groupLower = group.groupName.toLowerCase();
+                    const matchesAllRemaining = remainingWords.every(w => {
+                      const transW = transliterate(w);
+                      return rollLower.includes(w) || rollLower.includes(transW) || groupLower.includes(w) || groupLower.includes(transW);
+                    });
+                    if (matchesAllRemaining) {
+                      matches.push(roll);
+                    }
+                  });
+                } else {
+                  matches.push(...group.rolls);
+                }
               } else {
                 group.rolls.forEach(roll => {
-                  if (roll.rollName.toLowerCase().includes(raw) || roll.rollName.toLowerCase().includes(transRaw)) {
+                  const rollLower = roll.rollName.toLowerCase();
+                  const matchesAll = words.every(w => {
+                    const transW = transliterate(w);
+                    return rollLower.includes(w) || rollLower.includes(transW);
+                  });
+                  if (matchesAll) {
                     matches.push(roll);
                   }
                 });
