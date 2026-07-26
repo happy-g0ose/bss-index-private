@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/bss-index/',
+  base: process.env.VERCEL ? '/' : '/bss-index/',
   plugins: [
     react(),
     tailwindcss()
