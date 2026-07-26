@@ -1,6 +1,6 @@
 {
-  "timestamp": 1785073394150,
-  "message": "тест: проверка автоматической отправки новостей об обновлении сайта BSS Index",
+  "timestamp": 1785073897086,
+  "message": "style(bot): remove Vercel reference and Author field from updates embed notification",
   "author": "BSS Index Developer",
-  "sha": "d137cbab8eadd00eac6fb20f86715eb141bb93d2"
+  "sha": "e7aac73ea902b6edb578872dce65a0e9d793bad6"
 }
