@@ -72,11 +72,10 @@ async function startSiteUpdateDetector(client) {
           if (updateChannel) {
             const embed = new EmbedBuilder()
               .setTitle('📢 Обновление сайта BSS Index!')
-              .setDescription('Сайт [bss-index.vercel.app](https://bss-index.vercel.app/) был успешно обновлен и перезапущен Vercel!')
+              .setDescription('Сайт [bss-index.vercel.app](https://bss-index.vercel.app/) был успешно обновлен!')
               .setColor('#a855f7')
               .addFields(
                 { name: '📝 Описание изменений:', value: `\`\`\`${meta.message || 'Без описания коммита'}\`\`\`` },
-                { name: '👤 Автор:', value: meta.author || 'Разработчик', inline: true },
                 { name: '⚡ Версия (SHA):', value: `\`${meta.sha.substring(0, 7)}\``, inline: true }
               )
               .setTimestamp(new Date(meta.timestamp))
