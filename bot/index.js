@@ -205,8 +205,40 @@ const commands = [
     .setDescription('Ссылка на сайт BSS Index и информацию'),
 
   new SlashCommandBuilder()
-    .setName('setup-server')
-    .setDescription('Автоматически красиво оформить все каналы сервера красивыми Embed-сообщениями')
+    .setName('ban')
+    .setDescription('Забанить участника сервера')
+    .addUserOption(option => option.setName('user').setDescription('Пользователь для бана').setRequired(true))
+    .addStringOption(option => option.setName('reason').setDescription('Причина бана').setRequired(false)),
+
+  new SlashCommandBuilder()
+    .setName('kick')
+    .setDescription('Выгнать участника с сервера')
+    .addUserOption(option => option.setName('user').setDescription('Пользователь для кика').setRequired(true))
+    .addStringOption(option => option.setName('reason').setDescription('Причина кика').setRequired(false)),
+
+  new SlashCommandBuilder()
+    .setName('mute')
+    .setDescription('Отправить участника в мут (таймаут)')
+    .addUserOption(option => option.setName('user').setDescription('Пользователь для мута').setRequired(true))
+    .addIntegerOption(option => option.setName('duration').setDescription('Длительность мута в минутах').setRequired(true))
+    .addStringOption(option => option.setName('reason').setDescription('Причина мута').setRequired(false)),
+
+  new SlashCommandBuilder()
+    .setName('unmute')
+    .setDescription('Снять мут (таймаут) с участника')
+    .addUserOption(option => option.setName('user').setDescription('Пользователь для размута').setRequired(true)),
+
+  new SlashCommandBuilder()
+    .setName('add-role')
+    .setDescription('Выдать роль пользователю')
+    .addUserOption(option => option.setName('user').setDescription('Пользователь').setRequired(true))
+    .addRoleOption(option => option.setName('role').setDescription('Роль для выдачи').setRequired(true)),
+
+  new SlashCommandBuilder()
+    .setName('remove-role')
+    .setDescription('Снять роль с пользователя')
+    .addUserOption(option => option.setName('user').setDescription('Пользователь').setRequired(true))
+    .addRoleOption(option => option.setName('role').setDescription('Роль для снятия').setRequired(true))
 ];
 
 const client = new Client({
@@ -236,152 +268,7 @@ client.on('interactionCreate', async interaction => {
 // Helper function to format all channels
 // Helper function to format all channels
 // Helper function to format all channels
-async function executeServerSetup(guild, interaction) {
-  let createdCount = 0;
-  const processedChannels = [];
-  const keepChannelIds = new Set();
-  const keepCategoryIds = new Set();
 
-  if (interaction && interaction.channelId) {
-    keepChannelIds.add(interaction.channelId);
-  }
-
-  // 1. Create Category 1: 👋︱ИНФОРМАЦИЯ (Read-Only)
-  const infoCategory = await guild.channels.create({
-    name: '👋︱ИНФОРМАЦИЯ',
-    type: ChannelType.GuildCategory
-  });
-  keepCategoryIds.add(infoCategory.id);
-
-  // 2. Create Category 2: 💬︱ОБЩЕНИЕ И ТРЕЙДИНГ (Read-Write)
-  const chatCategory = await guild.channels.create({
-    name: '💬︱ОБЩЕНИЕ И ТРЕЙДИНГ',
-    type: ChannelType.GuildCategory
-  });
-  keepCategoryIds.add(chatCategory.id);
-
-  const setupChannel = async (name, categoryId, isReadOnly, isVoice, embed = null, components = []) => {
-    const permissionOverwrites = [
-      {
-        id: guild.roles.everyone.id,
-        allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.ReadMessageHistory],
-        deny: isReadOnly ? [PermissionFlagsBits.SendMessages] : []
-      },
-      {
-        id: guild.members.me.id,
-        allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.EmbedLinks, PermissionFlagsBits.ManageChannels]
-      }
-    ];
-
-    const ch = await guild.channels.create({
-      name,
-      type: isVoice ? ChannelType.GuildVoice : ChannelType.GuildText,
-      parent: categoryId,
-      permissionOverwrites
-    });
-
-    keepChannelIds.add(ch.id);
-
-    if (embed) {
-      try {
-        await ch.send({ embeds: [embed], components });
-        createdCount++;
-        processedChannels.push(`#${ch.name}`);
-      } catch (err) {
-        console.error(`Error sending message to #${ch.name}:`, err.message);
-      }
-    } else if (!isVoice) {
-      createdCount++;
-      processedChannels.push(`#${ch.name}`);
-    }
-    return ch;
-  };
-
-  // Define Embeds
-  const welcomeEmbed = new EmbedBuilder()
-    .setTitle('👋 Добро пожаловать на официальный Discord-сервер BSS Index!')
-    .setDescription(`Приветствуем тебя в главном русскоязычном трейдинг-сообществе **Bee Swarm Simulator**!\n\nЗдесь ты найдёшь самые свежие цены на стикеры, ульи и кубы, а также интерактивный калькулятор обменов.`)
-    .setColor('#f59e0b')
-    .setThumbnail('https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png')
-    .addFields(
-      { name: '🌐 Наш веб-сайт:', value: '[https://bss-index.vercel.app/](https://bss-index.vercel.app/)', inline: false },
-      { name: '🤖 Основные команды бота в чате:', value: '• `/price [предмет]` — узнать точные цены и спрос любого стикера\n• `/calc [отдаю] [получаю]` — мгновенно рассчитать выгоду трейда (WIN/FAIR/LOSS)\n• `/site` — получить ссылку на наш портал', inline: false }
-    )
-    .setFooter({ text: 'BSS Index Community • Желаем успешных трейдов!' });
-
-  const welcomeRow = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setLabel('🌐 Открыть сайт BSS Index').setStyle(ButtonStyle.Link).setURL('https://bss-index.vercel.app/')
-  );
-
-  const rulesEmbed = new EmbedBuilder()
-    .setTitle('📜 Правила Сервера BSS Index')
-    .setDescription('Для комфортного общения и безопасных трейдов соблюдайте простые правила:')
-    .setColor('#eab308')
-    .addFields(
-      { name: '1. Уважение и вежливость', value: 'Запрещены оскорбления, токсичность, рознь и неадекватное поведение.' },
-      { name: '2. Честный трейдинг (Без скама)', value: 'Любые попытки обмана, скама или подмены предметов караются мгновенным баном.' },
-      { name: '3. Без спама и рекламы', value: 'Не флудите в чатах и не рекламируйте сторонние дискорд-серверы и услуги.' },
-      { name: '4. Безопасность аккаунтов', value: 'Никогда не передавайте свои пароли, файлы или сомнительные ссылки.' }
-    )
-    .setFooter({ text: 'Соблюдение правил обязательно для всех участников.' });
-
-  const updatesEmbed = new EmbedBuilder()
-    .setTitle('🔄 Обновления Сайта BSS Index')
-    .setDescription('В этом канале публикуются все свежие обновления, новые фичи и изменения цен на нашем сайте!')
-    .setColor('#a855f7')
-    .addFields(
-      { name: '✨ Что нового на сайте:', value: '• ⚡ Мгновенная синхронизация цен с bssmvalues.com\n• 🎨 Фирменная система цветовой подсветки по категориям' }
-    )
-    .setFooter({ text: 'Следите за обновлениями!' });
-
-  const wflEmbed = new EmbedBuilder()
-    .setTitle('⚖️ Канал проверки сделок Win / Fair / Loss')
-    .setDescription('Выкладывайте свои скриншоты трейдов или используйте бота для оценки выгоды сделки!\n\n👉 Напишите в чат `/calc` для мгновенного расчета выгоды трейда прямо в Discord!')
-    .setColor('#10b981');
-
-  const suggestionsEmbed = new EmbedBuilder()
-    .setTitle('💡 Предложения и Идеи')
-    .setDescription('Есть идеи по улучшению сайта или Discord-бота? Пишите свои предложения в этот канал! Мы читаем каждое сообщение.')
-    .setColor('#06b6d4');
-
-  const bugsEmbed = new EmbedBuilder()
-    .setTitle('🐛 Ошибки и Баги')
-    .setDescription('Нашли ошибку на сайте или в боте? Напишите подробности в этот канал, и мы оперативно исправим проблему!')
-    .setColor('#ef4444');
-
-  // Create channels under Category 1
-  await setupChannel('👋︱добро-пожаловать', infoCategory.id, true, false, welcomeEmbed, [welcomeRow]);
-  await setupChannel('📜︱правила', infoCategory.id, true, false, rulesEmbed);
-  await setupChannel('📢︱обновления-сайта', infoCategory.id, true, false, updatesEmbed);
-
-  // Create channels under Category 2
-  const generalText = await setupChannel('💬︱основной-чат', chatCategory.id, false, false);
-  await setupChannel('⚖︱win-fair-lose', chatCategory.id, false, false, wflEmbed);
-  await setupChannel('💡︱предложения', chatCategory.id, false, false, suggestionsEmbed);
-  await setupChannel('🐛︱баги-сайта', chatCategory.id, false, false, bugsEmbed);
-  await setupChannel('🔊︱основной-voice', chatCategory.id, false, true);
-
-  // Send initial welcome message to general text chat
-  const generalWelcomeEmbed = new EmbedBuilder()
-    .setTitle('🎉 Сервер успешно настроен!')
-    .setDescription('Основной чат сервера успешно создан и настроен ботом **BSS Index Helper** под ключ! Все старые каналы удалены.')
-    .setColor('#06b6d4')
-    .setTimestamp();
-  await generalText.send({ embeds: [generalWelcomeEmbed] }).catch(() => null);
-
-  // Delete all old channels
-  const allChannels = await guild.channels.fetch();
-  for (const [id, ch] of allChannels) {
-    if (keepChannelIds.has(ch.id) || keepCategoryIds.has(ch.id)) continue;
-    try {
-      await ch.delete();
-    } catch (err) {
-      console.error(`Could not delete channel/category #${ch.name}:`, err.message);
-    }
-  }
-
-  return { createdCount, processedChannels };
-}
 
 // Slash Command handler
 client.on('interactionCreate', async interaction => {
@@ -509,17 +396,136 @@ client.on('interactionCreate', async interaction => {
     await interaction.reply({ embeds: [embed], components: [row] }).catch(err => console.error("Site command reply error:", err.message));
   }
 
-  else if (commandName === 'setup-server') {
-    await interaction.deferReply({ ephemeral: true });
+  else if (commandName === 'ban') {
+    if (!interaction.member.permissions.has(PermissionFlagsBits.BanMembers)) {
+      return interaction.reply({ content: '❌ У вас нет прав на бан участников!', ephemeral: true }).catch(() => {});
+    }
+    const target = interaction.options.getMember('user');
+    const reason = interaction.options.getString('reason') || 'Без указания причины';
+
+    if (!target) {
+      return interaction.reply({ content: '❌ Пользователь не найден на сервере.', ephemeral: true }).catch(() => {});
+    }
+    if (!target.bannable) {
+      return interaction.reply({ content: '❌ Я не могу забанить этого пользователя (он выше меня по роли или у меня нет прав администратора).', ephemeral: true }).catch(() => {});
+    }
 
     try {
-      const res = await executeServerSetup(interaction.guild, interaction);
-      await interaction.editReply({ 
-        content: `🎉 Сервер успешно оформлен! Отправлено баннеров в каналы: **${res.createdCount}** (${res.processedChannels.join(', ')}).` 
-      }).catch(err => console.error("Error editing interaction reply:", err.message));
+      await target.ban({ reason });
+      await interaction.reply({ content: `✅ Пользователь **${target.user.tag}** успешно забанен!\n📝 Причина: *${reason}*` }).catch(() => {});
     } catch (err) {
-      console.error("Setup server error:", err);
-      await interaction.editReply({ content: `❌ Ошибка: ${err.message}` }).catch(e => {});
+      await interaction.reply({ content: `❌ Ошибка при бане: ${err.message}`, ephemeral: true }).catch(() => {});
+    }
+  }
+
+  else if (commandName === 'kick') {
+    if (!interaction.member.permissions.has(PermissionFlagsBits.KickMembers)) {
+      return interaction.reply({ content: '❌ У вас нет прав на кик участников!', ephemeral: true }).catch(() => {});
+    }
+    const target = interaction.options.getMember('user');
+    const reason = interaction.options.getString('reason') || 'Без указания причины';
+
+    if (!target) {
+      return interaction.reply({ content: '❌ Пользователь не найден на сервере.', ephemeral: true }).catch(() => {});
+    }
+    if (!target.kickable) {
+      return interaction.reply({ content: '❌ Я не могу кикнуть этого пользователя.', ephemeral: true }).catch(() => {});
+    }
+
+    try {
+      await target.kick(reason);
+      await interaction.reply({ content: `✅ Пользователь **${target.user.tag}** успешно кикнут!\n📝 Причина: *${reason}*` }).catch(() => {});
+    } catch (err) {
+      await interaction.reply({ content: `❌ Ошибка при кике: ${err.message}`, ephemeral: true }).catch(() => {});
+    }
+  }
+
+  else if (commandName === 'mute') {
+    if (!interaction.member.permissions.has(PermissionFlagsBits.ModerateMembers)) {
+      return interaction.reply({ content: '❌ У вас нет прав на мут участников!', ephemeral: true }).catch(() => {});
+    }
+    const target = interaction.options.getMember('user');
+    const duration = interaction.options.getInteger('duration');
+    const reason = interaction.options.getString('reason') || 'Без указания причины';
+
+    if (!target) {
+      return interaction.reply({ content: '❌ Пользователь не найден на сервере.', ephemeral: true }).catch(() => {});
+    }
+    if (!target.moderatable) {
+      return interaction.reply({ content: '❌ Я не могу выдать мут этому пользователю.', ephemeral: true }).catch(() => {});
+    }
+
+    try {
+      const durationMs = duration * 60 * 1000;
+      await target.timeout(durationMs, reason);
+      await interaction.reply({ content: `✅ Пользователь **${target.user.tag}** отправлен в мут на **${duration} мин.**!\n📝 Причина: *${reason}*` }).catch(() => {});
+    } catch (err) {
+      await interaction.reply({ content: `❌ Ошибка при выдаче мута: ${err.message}`, ephemeral: true }).catch(() => {});
+    }
+  }
+
+  else if (commandName === 'unmute') {
+    if (!interaction.member.permissions.has(PermissionFlagsBits.ModerateMembers)) {
+      return interaction.reply({ content: '❌ У вас нет прав на снятие мута!', ephemeral: true }).catch(() => {});
+    }
+    const target = interaction.options.getMember('user');
+
+    if (!target) {
+      return interaction.reply({ content: '❌ Пользователь не найден на сервере.', ephemeral: true }).catch(() => {});
+    }
+    if (!target.isCommunicationDisabled()) {
+      return interaction.reply({ content: '❌ У этого пользователя нет активного мута.', ephemeral: true }).catch(() => {});
+    }
+
+    try {
+      await target.timeout(null);
+      await interaction.reply({ content: `✅ Мут с пользователя **${target.user.tag}** успешно снят!` }).catch(() => {});
+    } catch (err) {
+      await interaction.reply({ content: `❌ Ошибка при снятии мута: ${err.message}`, ephemeral: true }).catch(() => {});
+    }
+  }
+
+  else if (commandName === 'add-role') {
+    if (!interaction.member.permissions.has(PermissionFlagsBits.ManageRoles)) {
+      return interaction.reply({ content: '❌ У вас нет прав на выдачу ролей!', ephemeral: true }).catch(() => {});
+    }
+    const target = interaction.options.getMember('user');
+    const role = interaction.options.getRole('role');
+
+    if (!target) {
+      return interaction.reply({ content: '❌ Пользователь не найден.', ephemeral: true }).catch(() => {});
+    }
+    if (target.roles.cache.has(role.id)) {
+      return interaction.reply({ content: '❌ У этого пользователя уже есть эта роль.', ephemeral: true }).catch(() => {});
+    }
+
+    try {
+      await target.roles.add(role);
+      await interaction.reply({ content: `✅ Роль **${role.name}** успешно выдана пользователю **${target.user.tag}**!` }).catch(() => {});
+    } catch (err) {
+      await interaction.reply({ content: `❌ Ошибка при выдаче роли: ${err.message}`, ephemeral: true }).catch(() => {});
+    }
+  }
+
+  else if (commandName === 'remove-role') {
+    if (!interaction.member.permissions.has(PermissionFlagsBits.ManageRoles)) {
+      return interaction.reply({ content: '❌ У вас нет прав на снятие ролей!', ephemeral: true }).catch(() => {});
+    }
+    const target = interaction.options.getMember('user');
+    const role = interaction.options.getRole('role');
+
+    if (!target) {
+      return interaction.reply({ content: '❌ Пользователь не найден.', ephemeral: true }).catch(() => {});
+    }
+    if (!target.roles.cache.has(role.id)) {
+      return interaction.reply({ content: '❌ У этого пользователя нет этой роли.', ephemeral: true }).catch(() => {});
+    }
+
+    try {
+      await target.roles.remove(role);
+      await interaction.reply({ content: `✅ Роль **${role.name}** успешно снята с пользователя **${target.user.tag}**!` }).catch(() => {});
+    } catch (err) {
+      await interaction.reply({ content: `❌ Ошибка при снятии роли: ${err.message}`, ephemeral: true }).catch(() => {});
     }
   }
 });
