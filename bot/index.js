@@ -164,13 +164,29 @@ function getCategoryColor(category) {
   return CATEGORY_COLORS[category] || "#94a3b8";
 }
 
+const translitMap = {
+  'а': 'a', 'б': 'b', 'в': 'w', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'e',
+  'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm',
+  'н': 'n', 'о': 'o', 'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u',
+  'ф': 'f', 'х': 'h', 'ц': 'c', 'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ъ': '',
+  'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya'
+};
+
+function transliterate(text) {
+  return text.split('').map(char => translitMap[char] || char).join('');
+}
+
 function findItems(query) {
   if (!query) return [];
   const q = query.toLowerCase().trim();
+  const transQ = transliterate(q);
   return itemsData.filter(item => 
     item.name.toLowerCase().includes(q) || 
     item.englishName.toLowerCase().includes(q) ||
-    item.category.toLowerCase().includes(q)
+    item.name.toLowerCase().includes(transQ) || 
+    item.englishName.toLowerCase().includes(transQ) ||
+    item.category.toLowerCase().includes(q) ||
+    item.category.toLowerCase().includes(transQ)
   );
 }
 
