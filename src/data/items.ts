@@ -3936,9 +3936,9 @@ const rawBssItemsData: any[] = [
     "name": "Red Doodle Person",
     "englishName": "Red Doodle Person",
     "category": "Искусство",
-    "value": 0.03,
-    "valueLow": 0.0,
-    "valueHigh": 0.05,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -3948,9 +3948,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
-      0.08,
-      0.03
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_doodle_person.webp",
     "historicalDates": [
@@ -4388,9 +4389,9 @@ const rawBssItemsData: any[] = [
     "name": "Blue And Green Marble",
     "englishName": "Blue And Green Marble",
     "category": "Драгоценности",
-    "value": 0.03,
-    "valueLow": 0.0,
-    "valueHigh": 0.05,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4400,14 +4401,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
-      0.29,
-      0.75,
-      0.38,
-      0.08,
-      0.08,
-      0.08,
-      0.03
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_and_green_marble.webp",
     "historicalDates": [
@@ -4426,9 +4423,9 @@ const rawBssItemsData: any[] = [
     "name": "Diamond Cluster",
     "englishName": "Diamond Cluster",
     "category": "Драгоценности",
-    "value": 0.03,
-    "valueLow": 0.0,
-    "valueHigh": 0.05,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4438,13 +4435,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
-      0.08,
-      0.29,
-      0.75,
-      0.42,
-      0.04,
-      0.03
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_diamond_cluster.webp",
     "historicalDates": [
@@ -4462,9 +4456,9 @@ const rawBssItemsData: any[] = [
     "name": "Diamond Trim",
     "englishName": "Diamond Trim",
     "category": "Драгоценности",
-    "value": 0.03,
-    "valueLow": 0.0,
-    "valueHigh": 0.05,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4474,14 +4468,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.04,
-      0.42,
-      0.75,
-      0.29,
-      0.08,
-      0.08,
-      0.03
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_diamond_trim.webp",
     "historicalDates": [
@@ -4500,9 +4490,9 @@ const rawBssItemsData: any[] = [
     "name": "Orange Swirled Marble",
     "englishName": "Orange Swirled Marble",
     "category": "Драгоценности",
-    "value": 0.03,
-    "valueLow": 0.0,
-    "valueHigh": 0.05,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4512,14 +4502,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
-      0.29,
-      0.75,
-      0.38,
-      0.08,
-      0.08,
-      0.08,
-      0.03
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_orange_swirled_marble.webp",
     "historicalDates": [
@@ -4538,9 +4524,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Swirled Marble",
     "englishName": "Yellow Swirled Marble",
     "category": "Драгоценности",
-    "value": 0.03,
-    "valueLow": 0.0,
-    "valueHigh": 0.05,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4550,14 +4536,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
-      0.29,
-      0.75,
-      0.38,
-      0.08,
-      0.08,
-      0.08,
-      0.03
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_swirled_marble.webp",
     "historicalDates": [
@@ -5312,9 +5294,9 @@ const rawBssItemsData: any[] = [
     "name": "Spore Covered Puffshroom",
     "englishName": "Spore Covered Puffshroom",
     "category": "Грибы",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5324,8 +5306,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spore_covered_puffshroom.webp",
     "historicalDates": [
@@ -5622,9 +5606,9 @@ const rawBssItemsData: any[] = [
     "name": "Blowing Leaf",
     "englishName": "Blowing Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5634,8 +5618,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blowing_leaf.webp",
     "historicalDates": [
@@ -5648,9 +5634,9 @@ const rawBssItemsData: any[] = [
     "name": "Cordate Leaf",
     "englishName": "Cordate Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5660,13 +5646,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
-      0.08,
-      0.32,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cordate_leaf.webp",
     "historicalDates": [
@@ -5684,9 +5667,9 @@ const rawBssItemsData: any[] = [
     "name": "Cunate Leaf",
     "englishName": "Cunate Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5696,13 +5679,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
-      0.08,
       0.05,
-      0.01
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cunate_leaf.webp",
     "historicalDates": [
@@ -5720,9 +5700,9 @@ const rawBssItemsData: any[] = [
     "name": "Elliptic Leaf",
     "englishName": "Elliptic Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5732,12 +5712,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
-      0.08,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_elliptic_leaf.webp",
     "historicalDates": [
@@ -5754,9 +5732,9 @@ const rawBssItemsData: any[] = [
     "name": "Hastate Leaf",
     "englishName": "Hastate Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5766,12 +5744,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
       0.05,
-      0.01
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_hastate_leaf.webp",
     "historicalDates": [
@@ -5788,9 +5764,9 @@ const rawBssItemsData: any[] = [
     "name": "Lanceolate Leaf",
     "englishName": "Lanceolate Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5800,12 +5776,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.08,
       0.05,
-      0.01
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_lanceolate_leaf.webp",
     "historicalDates": [
@@ -5822,9 +5796,9 @@ const rawBssItemsData: any[] = [
     "name": "Lyrate Leaf",
     "englishName": "Lyrate Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5834,13 +5808,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
-      0.08,
       0.05,
-      0.01
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_lyrate_leaf.webp",
     "historicalDates": [
@@ -5858,9 +5829,9 @@ const rawBssItemsData: any[] = [
     "name": "Oblique Leaf",
     "englishName": "Oblique Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5870,11 +5841,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.17,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_oblique_leaf.webp",
     "historicalDates": [
@@ -5890,9 +5860,9 @@ const rawBssItemsData: any[] = [
     "name": "Reniform Leaf",
     "englishName": "Reniform Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5902,13 +5872,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
-      0.08,
       0.05,
-      0.01
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_reniform_leaf.webp",
     "historicalDates": [
@@ -5926,9 +5893,9 @@ const rawBssItemsData: any[] = [
     "name": "Rhomboid Leaf",
     "englishName": "Rhomboid Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5938,13 +5905,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
-      0.08,
       0.05,
-      0.01
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rhomboid_leaf.webp",
     "historicalDates": [
@@ -5962,9 +5926,9 @@ const rawBssItemsData: any[] = [
     "name": "Spatulate Leaf",
     "englishName": "Spatulate Leaf",
     "category": "Листья",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5974,13 +5938,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.29,
-      0.17,
-      0.1,
-      0.08,
       0.05,
-      0.01
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spatulate_leaf.webp",
     "historicalDates": [
@@ -5998,9 +5959,9 @@ const rawBssItemsData: any[] = [
     "name": "Petal Wand",
     "englishName": "Petal Wand",
     "category": "Инструменты",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6010,9 +5971,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_petal_wand.webp",
     "historicalDates": [
@@ -7430,9 +7392,9 @@ const rawBssItemsData: any[] = [
     "name": "Flying Bee Bear",
     "englishName": "Flying Bee Bear",
     "category": "Стикеры Пчелождества",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7442,8 +7404,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.08,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_flying_bee_bear.webp",
     "historicalDates": [
@@ -7716,9 +7680,9 @@ const rawBssItemsData: any[] = [
     "name": "Alert Icon",
     "englishName": "Alert Icon",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7728,8 +7692,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_alert_icon.webp",
     "historicalDates": [
@@ -7742,9 +7708,9 @@ const rawBssItemsData: any[] = [
     "name": "Atom Symbol",
     "englishName": "Atom Symbol",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7754,8 +7720,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_atom_symbol.webp",
     "historicalDates": [
@@ -7768,9 +7736,9 @@ const rawBssItemsData: any[] = [
     "name": "Blue Square",
     "englishName": "Blue Square",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7780,9 +7748,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_square.webp",
     "historicalDates": [
@@ -7796,9 +7765,9 @@ const rawBssItemsData: any[] = [
     "name": "Built Ship",
     "englishName": "Built Ship",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7808,8 +7777,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_built_ship.webp",
     "historicalDates": [
@@ -7822,9 +7793,9 @@ const rawBssItemsData: any[] = [
     "name": "Classic Killroy",
     "englishName": "Classic Killroy",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7834,8 +7805,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_classic_killroy.webp",
     "historicalDates": [
@@ -7848,9 +7821,9 @@ const rawBssItemsData: any[] = [
     "name": "Colorful Buttons",
     "englishName": "Colorful Buttons",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7860,8 +7833,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_colorful_buttons.webp",
     "historicalDates": [
@@ -7874,9 +7849,9 @@ const rawBssItemsData: any[] = [
     "name": "Cop And Robber",
     "englishName": "Cop And Robber",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7886,8 +7861,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cop_and_robber.webp",
     "historicalDates": [
@@ -7900,9 +7877,9 @@ const rawBssItemsData: any[] = [
     "name": "Desperate Booth",
     "englishName": "Desperate Booth",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7912,8 +7889,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_desperate_booth.webp",
     "historicalDates": [
@@ -7926,9 +7905,9 @@ const rawBssItemsData: any[] = [
     "name": "Evil Pig",
     "englishName": "Evil Pig",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7938,8 +7917,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_evil_pig.webp",
     "historicalDates": [
@@ -7952,9 +7933,9 @@ const rawBssItemsData: any[] = [
     "name": "Giraffe",
     "englishName": "Giraffe",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7964,8 +7945,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_giraffe.webp",
     "historicalDates": [
@@ -7978,9 +7961,9 @@ const rawBssItemsData: any[] = [
     "name": "Green Check Mark",
     "englishName": "Green Check Mark",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7990,8 +7973,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_check_mark.webp",
     "historicalDates": [
@@ -8004,9 +7989,9 @@ const rawBssItemsData: any[] = [
     "name": "Green Plus Sign",
     "englishName": "Green Plus Sign",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8016,8 +8001,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_plus_sign.webp",
     "historicalDates": [
@@ -8030,9 +8017,9 @@ const rawBssItemsData: any[] = [
     "name": "Green Sell",
     "englishName": "Green Sell",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8042,8 +8029,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_sell.webp",
     "historicalDates": [
@@ -8056,9 +8045,9 @@ const rawBssItemsData: any[] = [
     "name": "Grey Shape Companion",
     "englishName": "Grey Shape Companion",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8068,8 +8057,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_grey_shape_companion.webp",
     "historicalDates": [
@@ -8082,9 +8073,9 @@ const rawBssItemsData: any[] = [
     "name": "Interrobang Block",
     "englishName": "Interrobang Block",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8094,8 +8085,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_interrobang_block.webp",
     "historicalDates": [
@@ -8108,9 +8101,9 @@ const rawBssItemsData: any[] = [
     "name": "Killroy With Hair",
     "englishName": "Killroy With Hair",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8120,8 +8113,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_killroy_with_hair.webp",
     "historicalDates": [
@@ -8134,9 +8129,9 @@ const rawBssItemsData: any[] = [
     "name": "Launching Rocket",
     "englishName": "Launching Rocket",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8146,8 +8141,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_launching_rocket.webp",
     "historicalDates": [
@@ -8160,9 +8157,9 @@ const rawBssItemsData: any[] = [
     "name": "Orphan Dog",
     "englishName": "Orphan Dog",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8172,8 +8169,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_orphan_dog.webp",
     "historicalDates": [
@@ -8186,9 +8185,9 @@ const rawBssItemsData: any[] = [
     "name": "Pizza Delivery Man",
     "englishName": "Pizza Delivery Man",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8198,8 +8197,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pizza_delivery_man.webp",
     "historicalDates": [
@@ -8212,9 +8213,9 @@ const rawBssItemsData: any[] = [
     "name": "Pyramid",
     "englishName": "Pyramid",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8224,8 +8225,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pyramid.webp",
     "historicalDates": [
@@ -8238,9 +8241,9 @@ const rawBssItemsData: any[] = [
     "name": "Red X",
     "englishName": "Red X",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8250,8 +8253,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_red_x.webp",
     "historicalDates": [
@@ -8264,9 +8269,9 @@ const rawBssItemsData: any[] = [
     "name": "Rhubarb",
     "englishName": "Rhubarb",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8276,8 +8281,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rhubarb.webp",
     "historicalDates": [
@@ -8290,9 +8297,9 @@ const rawBssItemsData: any[] = [
     "name": "Rubber Duck",
     "englishName": "Rubber Duck",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8302,8 +8309,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rubber_duck.webp",
     "historicalDates": [
@@ -8316,9 +8325,9 @@ const rawBssItemsData: any[] = [
     "name": "Simple Cloud",
     "englishName": "Simple Cloud",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8328,10 +8337,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.12,
-      0.1,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_simple_cloud.webp",
     "historicalDates": [
@@ -8346,9 +8355,9 @@ const rawBssItemsData: any[] = [
     "name": "Simple Skyscraper",
     "englishName": "Simple Skyscraper",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8358,8 +8367,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_simple_skyscraper.webp",
     "historicalDates": [
@@ -8372,9 +8383,9 @@ const rawBssItemsData: any[] = [
     "name": "Simple Sun",
     "englishName": "Simple Sun",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8384,8 +8395,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_simple_sun.webp",
     "historicalDates": [
@@ -8398,9 +8411,9 @@ const rawBssItemsData: any[] = [
     "name": "Sprout",
     "englishName": "Sprout",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8410,8 +8423,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sprout.webp",
     "historicalDates": [
@@ -8424,9 +8439,9 @@ const rawBssItemsData: any[] = [
     "name": "Tough Potato",
     "englishName": "Tough Potato",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8436,8 +8451,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_tough_potato.webp",
     "historicalDates": [
@@ -8450,9 +8467,9 @@ const rawBssItemsData: any[] = [
     "name": "Traffic Light",
     "englishName": "Traffic Light",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8462,7 +8479,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_traffic_light.webp",
     "historicalDates": [
@@ -8474,9 +8494,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Hi",
     "englishName": "Yellow Hi",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8486,8 +8506,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_hi.webp",
     "historicalDates": [
@@ -8500,9 +8522,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Umbrella",
     "englishName": "Yellow Umbrella",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8512,7 +8534,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_umbrella.webp",
     "historicalDates": [
@@ -8524,9 +8549,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Walking Wiggly Person",
     "englishName": "Yellow Walking Wiggly Person",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8536,8 +8561,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_walking_wiggly_person.webp",
     "historicalDates": [
@@ -8550,9 +8577,9 @@ const rawBssItemsData: any[] = [
     "name": "Young Elf",
     "englishName": "Young Elf",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8562,8 +8589,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_young_elf.webp",
     "historicalDates": [
@@ -8576,9 +8605,9 @@ const rawBssItemsData: any[] = [
     "name": "Waving Townsperson",
     "englishName": "Waving Townsperson",
     "category": "Разное",
-    "value": 0.03,
-    "valueLow": 0.0,
-    "valueHigh": 0.05,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8588,12 +8617,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is unwanted by most players and only sells to niche collectors. Индикаторы: Almost no buyers, only niche players want it, often traded below value.",
     "historicalPrices": [
-      0.04,
-      0.01,
-      0.62,
-      0.42,
-      0.03,
-      0.03
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_waving_townsperson.webp",
     "historicalDates": [
@@ -8636,9 +8663,9 @@ const rawBssItemsData: any[] = [
     "name": "Baseball Swing",
     "englishName": "Baseball Swing",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8648,12 +8675,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.12,
-      0.1,
-      0.08,
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_baseball_swing.webp",
     "historicalDates": [
@@ -8748,9 +8773,9 @@ const rawBssItemsData: any[] = [
     "name": "Green Circle",
     "englishName": "Green Circle",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -8760,9 +8785,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.04,
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_green_circle.webp",
     "historicalDates": [
@@ -9148,9 +9174,9 @@ const rawBssItemsData: any[] = [
     "name": "Yellow Coffee Mug",
     "englishName": "Yellow Coffee Mug",
     "category": "Разное",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.05,
+    "valueLow": 0.05,
+    "valueHigh": 0.1,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -9160,12 +9186,10 @@ const rawBssItemsData: any[] = [
     "textColor": "text-emerald-400",
     "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, only moves with massive underpays, basically dead in the market.",
     "historicalPrices": [
-      0.01,
-      0.23,
-      0.08,
-      0.08,
-      0.04,
-      0.01
+      0.05,
+      0.05,
+      0.05,
+      0.05
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_yellow_coffee_mug.webp",
     "historicalDates": [
@@ -10568,19 +10592,17 @@ const rawBssItemsData: any[] = [
     "name": "Осенняя панама",
     "englishName": "Autumn Sunhat",
     "category": "Биквипы",
-    "value": 202.5,
-    "valueLow": 0.0,
-    "valueHigh": 405.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      202.5,
-      202.5,
-      202.5,
-      202.5,
-      202.5,
-      202.5
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -10886,19 +10908,17 @@ const rawBssItemsData: any[] = [
     "name": "Ящерица из бисера",
     "englishName": "Bead Lizard",
     "category": "Биквипы",
-    "value": 800.0,
-    "valueLow": 0.0,
-    "valueHigh": 1600.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      800.0,
-      800.0,
-      800.0,
-      800.0,
-      800.0,
-      800.0
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -11313,19 +11333,17 @@ const rawBssItemsData: any[] = [
     "name": "Шапка в виде ёлки",
     "englishName": "Beesmas Tree Hat",
     "category": "Биквипы",
-    "value": 32.5,
-    "valueLow": 0.0,
-    "valueHigh": 65.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      32.5,
-      32.5,
-      32.5,
-      32.5,
-      32.5,
-      32.5
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -12732,19 +12750,17 @@ const rawBssItemsData: any[] = [
     "name": "Талисман демона",
     "englishName": "Demon Talisman",
     "category": "Биквипы",
-    "value": 163.75,
-    "valueLow": 0.0,
-    "valueHigh": 327.5,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      163.75,
-      163.75,
-      163.75,
-      163.75,
-      163.75,
-      163.75
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -12808,19 +12824,17 @@ const rawBssItemsData: any[] = [
     "name": "Электрическая свеча",
     "englishName": "Electric Candle",
     "category": "Биквипы",
-    "value": 0.0,
-    "valueLow": 0.0,
-    "valueHigh": 0.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -12967,19 +12981,17 @@ const rawBssItemsData: any[] = [
     "name": "Праздничный венок",
     "englishName": "Festive Wreath",
     "category": "Биквипы",
-    "value": 110.0,
-    "valueLow": 0.0,
-    "valueHigh": 220.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      110.0,
-      110.0,
-      110.0,
-      110.0,
-      110.0,
-      110.0
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -13805,19 +13817,17 @@ const rawBssItemsData: any[] = [
     "name": "Бумажный ангел",
     "englishName": "Paper Angel",
     "category": "Биквипы",
-    "value": 607.5,
-    "valueLow": 0.0,
-    "valueHigh": 1215.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      607.5,
-      607.5,
-      607.5,
-      607.5,
-      607.5,
-      607.5
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -13975,19 +13985,17 @@ const rawBssItemsData: any[] = [
     "name": "Скрепка",
     "englishName": "Paperclip",
     "category": "Биквипы",
-    "value": 500.0,
-    "valueLow": 0.0,
-    "valueHigh": 1000.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      500.0,
-      500.0,
-      500.0,
-      500.0,
-      500.0,
-      500.0
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -14339,19 +14347,17 @@ const rawBssItemsData: any[] = [
     "name": "Шишка",
     "englishName": "Pinecone",
     "category": "Биквипы",
-    "value": 412.5,
-    "valueLow": 0.0,
-    "valueHigh": 825.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      412.5,
-      412.5,
-      412.5,
-      412.5,
-      412.5,
-      412.5
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -15186,19 +15192,17 @@ const rawBssItemsData: any[] = [
     "name": "Розовая стёрка",
     "englishName": "Pink Eraser",
     "category": "Биквипы",
-    "value": 0.01,
-    "valueLow": 0.0,
-    "valueHigh": 0.025,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      0.01,
-      0.01,
-      0.01,
-      0.01,
-      0.01,
-      0.01
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
@@ -17708,19 +17712,17 @@ const rawBssItemsData: any[] = [
     "name": "Напёрсток",
     "englishName": "Thimble",
     "category": "Биквипы",
-    "value": 10.0,
-    "valueLow": 0.0,
-    "valueHigh": 20.0,
+    "value": 0.2,
+    "valueLow": 0.15,
+    "valueHigh": 0.3,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
-      10.0,
-      10.0,
-      10.0,
-      10.0,
-      10.0,
-      10.0
+      0.2,
+      0.2,
+      0.2,
+      0.2
     ],
     "historicalDates": [
       "2026-05-22",
