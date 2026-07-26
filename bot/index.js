@@ -9,6 +9,120 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+// User Stats Database for auto-roles
+const statsPath = path.join(__dirname, 'user_stats.json');
+let userStats = {};
+try {
+  if (fs.existsSync(statsPath)) {
+    userStats = JSON.parse(fs.readFileSync(statsPath, 'utf-8'));
+  }
+} catch (e) {
+  console.error('Could not load user_stats.json:', e.message);
+}
+
+function saveUserStats() {
+  try {
+    fs.writeFileSync(statsPath, JSON.stringify(userStats, null, 2), 'utf-8');
+  } catch (e) {
+    console.error('Could not save user_stats.json:', e.message);
+  }
+}
+
+// Ensure the automatic BSS roles exist on the server
+async function ensureBssRoles(guild) {
+  const rolesConfig = [
+    { name: '🐝 Трейдер', color: '#f59e0b', reason: 'Начальная роль при входе на сервер BSS Index' },
+    { name: '🍯 Опытный Трейдер', color: '#eab308', reason: 'Выдается за 10 проверок цен на BSS Index' },
+    { name: '👑 Легендарный Трейдер', color: '#a855f7', reason: 'Выдается за 30 проверок цен на BSS Index' }
+  ];
+
+  const createdRoles = {};
+  for (const rConf of rolesConfig) {
+    let role = guild.roles.cache.find(r => r.name === rConf.name);
+    if (!role) {
+      try {
+        role = await guild.roles.create({
+          name: rConf.name,
+          color: rConf.color,
+          reason: rConf.reason
+        });
+        console.log(`[Roles] Создана роль: ${rConf.name}`);
+      } catch (err) {
+        console.error(`[Roles] Ошибка создания роли ${rConf.name}:`, err.message);
+      }
+    }
+    createdRoles[rConf.name] = role;
+  }
+  return createdRoles;
+}
+
+// Update stats and assign roles based on command activity
+async function updateUserActivity(userId, guild, channel) {
+  if (!guild) return;
+  
+  if (!userStats[userId]) {
+    userStats[userId] = { count: 0 };
+  }
+  userStats[userId].count += 1;
+  saveUserStats();
+
+  const count = userStats[userId].count;
+  const roles = await ensureBssRoles(guild);
+  const member = await guild.members.fetch(userId).catch(() => null);
+  if (!member) return;
+
+  // Fallback: If they don't have any BSS role yet and count is less than 10, assign them the starter role!
+  const starterRole = roles['🐝 Трейдер'];
+  const activeRole = roles['🍯 Опытный Трейдер'];
+  const legendaryRole = roles['👑 Легендарный Трейдер'];
+  
+  if (count < 10) {
+    if (starterRole && !member.roles.cache.has(starterRole.id) && 
+        (!activeRole || !member.roles.cache.has(activeRole.id)) && 
+        (!legendaryRole || !member.roles.cache.has(legendaryRole.id))) {
+      await member.roles.add(starterRole).catch(() => null);
+    }
+  }
+
+  // Level 1: 10 commands -> Opytny Trader
+  if (count === 10) {
+    const activeRole = roles['🍯 Опытный Трейдер'];
+    const starterRole = roles['🐝 Трейдер'];
+    if (activeRole) {
+      await member.roles.add(activeRole);
+      if (starterRole) await member.roles.remove(starterRole).catch(() => null);
+      
+      const levelEmbed = new EmbedBuilder()
+        .setTitle('🎉 Повышение ранга трейдера!')
+        .setDescription(`Поздравляем <@${userId}>! Ты выполнил 10 проверок цен/сделок и получаешь роль **🍯 Опытный Трейдер**!`)
+        .setColor('#eab308')
+        .setFooter({ text: 'Продолжай использовать бота, чтобы получить Легендарного Трейдера!' });
+      
+      await channel.send({ embeds: [levelEmbed] }).catch(() => null);
+    }
+  }
+  
+  // Level 2: 30 commands -> Legendary Trader
+  if (count === 30) {
+    const legendaryRole = roles['👑 Легендарный Трейдер'];
+    const activeRole = roles['🍯 Опытный Трейдер'];
+    if (legendaryRole) {
+      await member.roles.add(legendaryRole);
+      if (activeRole) await member.roles.remove(activeRole).catch(() => null);
+      
+      const levelEmbed = new EmbedBuilder()
+        .setTitle('👑 Легендарный Трейдер сервера!')
+        .setDescription(`Невероятно! <@${userId}> совершил 30 проверок цен/сделок и удостоен высшего звания **👑 Легендарный Трейдер**!`)
+        .setColor('#a855f7')
+        .setFooter({ text: 'Настоящий мастер обменов BSS Index!' });
+      
+      await channel.send({ embeds: [levelEmbed] }).catch(() => null);
+    }
+  }
+}
+
+
 // Load items database
 const itemsPath = path.join(__dirname, 'items.json');
 let itemsData = [];
@@ -288,6 +402,7 @@ client.on('interactionCreate', async interaction => {
           .setURL(itemUrl)
       );
 
+    await updateUserActivity(interaction.user.id, interaction.guild, interaction.channel);
     await interaction.reply({ embeds: [embed], components: [row] });
   }
 
@@ -337,6 +452,7 @@ client.on('interactionCreate', async interaction => {
       )
       .setFooter({ text: 'BSS Index Trade Calculator' });
 
+    await updateUserActivity(interaction.user.id, interaction.guild, interaction.channel);
     await interaction.reply({ embeds: [embed] });
   }
 
@@ -398,7 +514,23 @@ async function main() {
     console.error('⚠️ Предупреждение при регистрации команд:', error.message);
   }
 
-  client.once('ready', () => {
+  
+// Auto-role assignment when a member joins the server
+client.on('guildMemberAdd', async member => {
+  console.log(`[Join] Пользователь ${member.user.tag} зашел на сервер.`);
+  try {
+    const roles = await ensureBssRoles(member.guild);
+    const starterRole = roles['🐝 Трейдер'];
+    if (starterRole) {
+      await member.roles.add(starterRole);
+      console.log(`[Join] Выдана роль '🐝 Трейдер' для ${member.user.tag}`);
+    }
+  } catch (err) {
+    console.error(`[Join] Не удалось выдать роль при входе:`, err.message);
+  }
+});
+
+client.once('ready', () => {
     console.log(`🤖 Бот BSS Index успешно запущен под именем: ${client.user.tag}`);
     client.user.setActivity('BSS Prices & Trades | /price', { type: 3 });
   });
