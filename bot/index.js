@@ -235,55 +235,65 @@ client.on('interactionCreate', async interaction => {
 
 // Helper function to format all channels
 // Helper function to format all channels
+// Helper function to format all channels
 async function executeServerSetup(guild, interaction) {
   let createdCount = 0;
   const processedChannels = [];
+  const keepChannelIds = new Set();
+  const keepCategoryIds = new Set();
 
-  // Find or create Category
-  let category = guild.channels.cache.find(c => c.name === '🎯 BSS INDEX' && c.type === ChannelType.GuildCategory);
-  if (!category) {
-    category = await guild.channels.create({
-      name: '🎯 BSS INDEX',
-      type: ChannelType.GuildCategory
+  // 1. Create Category 1: 👋︱ИНФОРМАЦИЯ (Read-Only)
+  const infoCategory = await guild.channels.create({
+    name: '👋︱ИНФОРМАЦИЯ',
+    type: ChannelType.GuildCategory
+  });
+  keepCategoryIds.add(infoCategory.id);
+
+  // 2. Create Category 2: 💬︱ОБЩЕНИЕ И ТРЕЙДИНГ (Read-Write)
+  const chatCategory = await guild.channels.create({
+    name: '💬︱ОБЩЕНИЕ И ТРЕЙДИНГ',
+    type: ChannelType.GuildCategory
+  });
+  keepCategoryIds.add(chatCategory.id);
+
+  const setupChannel = async (name, categoryId, isReadOnly, isVoice, embed = null, components = []) => {
+    const permissionOverwrites = [
+      {
+        id: guild.roles.everyone.id,
+        allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.ReadMessageHistory],
+        deny: isReadOnly ? [PermissionFlagsBits.SendMessages] : []
+      },
+      {
+        id: guild.members.me.id,
+        allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.EmbedLinks, PermissionFlagsBits.ManageChannels]
+      }
+    ];
+
+    const ch = await guild.channels.create({
+      name,
+      type: isVoice ? ChannelType.GuildVoice : ChannelType.GuildText,
+      parent: categoryId,
+      permissionOverwrites
     });
-  }
 
-  const setupChannel = async (name, isReadOnly, embed, components = []) => {
-    // Look for existing channel in this category or guild
-    let ch = guild.channels.cache.find(c => c.name === name && c.type === ChannelType.GuildText);
-    
-    if (!ch) {
-      // Permission Overwrites
-      const permissionOverwrites = [
-        {
-          id: guild.roles.everyone.id,
-          allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.ReadMessageHistory],
-          deny: isReadOnly ? [PermissionFlagsBits.SendMessages] : []
-        },
-        {
-          id: guild.members.me.id,
-          allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.EmbedLinks, PermissionFlagsBits.ManageChannels]
-        }
-      ];
+    keepChannelIds.add(ch.id);
 
-      ch = await guild.channels.create({
-        name,
-        type: ChannelType.GuildText,
-        parent: category.id,
-        permissionOverwrites
-      });
-    }
-
-    try {
-      await ch.send({ embeds: [embed], components });
+    if (embed) {
+      try {
+        await ch.send({ embeds: [embed], components });
+        createdCount++;
+        processedChannels.push(`#${ch.name}`);
+      } catch (err) {
+        console.error(`Error sending message to #${ch.name}:`, err.message);
+      }
+    } else if (!isVoice) {
       createdCount++;
       processedChannels.push(`#${ch.name}`);
-    } catch (err) {
-      console.error(`Error sending message to #${ch.name}:`, err.message);
     }
+    return ch;
   };
 
-  // 1. #👋︱добро-пожаловать
+  // Define Embeds
   const welcomeEmbed = new EmbedBuilder()
     .setTitle('👋 Добро пожаловать на официальный Discord-сервер BSS Index!')
     .setDescription(`Приветствуем тебя в главном русскоязычном трейдинг-сообществе **Bee Swarm Simulator**!\n\nЗдесь ты найдёшь самые свежие цены на стикеры, ульи и кубы, умный ИИ-сканер трейдов и интерактивный калькулятор обменов.`)
@@ -299,9 +309,6 @@ async function executeServerSetup(guild, interaction) {
     new ButtonBuilder().setLabel('🌐 Открыть сайт BSS Index').setStyle(ButtonStyle.Link).setURL('https://bss-index.vercel.app/')
   );
 
-  await setupChannel('👋︱добро-пожаловать', true, welcomeEmbed, [welcomeRow]);
-
-  // 2. #📜︱правила
   const rulesEmbed = new EmbedBuilder()
     .setTitle('📜 Правила Сервера BSS Index')
     .setDescription('Для комфортного общения и безопасных трейдов соблюдайте простые правила:')
@@ -314,9 +321,6 @@ async function executeServerSetup(guild, interaction) {
     )
     .setFooter({ text: 'Соблюдение правил обязательно для всех участников.' });
 
-  await setupChannel('📜︱правила', true, rulesEmbed);
-
-  // 3. #📢︱обновления-сайта
   const updatesEmbed = new EmbedBuilder()
     .setTitle('🔄 Обновления Сайта BSS Index')
     .setDescription('В этом канале публикуются все свежие обновления, новые фичи и изменения цен на нашем сайте!')
@@ -326,31 +330,51 @@ async function executeServerSetup(guild, interaction) {
     )
     .setFooter({ text: 'Следите за обновлениями!' });
 
-  await setupChannel('📢︱обновления-сайта', true, updatesEmbed);
-
-  // 4. #⚖︱win-fair-lose
   const wflEmbed = new EmbedBuilder()
     .setTitle('⚖️ Канал проверки сделок Win / Fair / Loss')
     .setDescription('Выкладывайте свои скриншоты трейдов или используйте бота для оценки выгоды сделки!\n\n👉 Напишите в чат `/calc` для мгновенного расчета выгоды трейда прямо в Discord!')
     .setColor('#10b981');
 
-  await setupChannel('⚖︱win-fair-lose', false, wflEmbed);
-
-  // 5. #💡︱предложения
   const suggestionsEmbed = new EmbedBuilder()
     .setTitle('💡 Предложения и Идеи')
     .setDescription('Есть идеи по улучшению сайта или Discord-бота? Пишите свои предложения в этот канал! Мы читаем каждое сообщение.')
     .setColor('#06b6d4');
 
-  await setupChannel('💡︱предложения', false, suggestionsEmbed);
-
-  // 6. #🐛︱баги-сайта
   const bugsEmbed = new EmbedBuilder()
     .setTitle('🐛 Ошибки и Баги')
     .setDescription('Нашли ошибку на сайте или в боте? Напишите подробности в этот канал, и мы оперативно исправим проблему!')
     .setColor('#ef4444');
 
-  await setupChannel('🐛︱баги-сайта', false, bugsEmbed);
+  // Create channels under Category 1
+  await setupChannel('👋︱добро-пожаловать', infoCategory.id, true, false, welcomeEmbed, [welcomeRow]);
+  await setupChannel('📜︱правила', infoCategory.id, true, false, rulesEmbed);
+  await setupChannel('📢︱обновления-сайта', infoCategory.id, true, false, updatesEmbed);
+
+  // Create channels under Category 2
+  const generalText = await setupChannel('💬︱основной-чат', chatCategory.id, false, false);
+  await setupChannel('⚖︱win-fair-lose', chatCategory.id, false, false, wflEmbed);
+  await setupChannel('💡︱предложения', chatCategory.id, false, false, suggestionsEmbed);
+  await setupChannel('🐛︱баги-сайта', chatCategory.id, false, false, bugsEmbed);
+  await setupChannel('🔊︱основной-voice', chatCategory.id, false, true);
+
+  // Send initial welcome message to general text chat
+  const generalWelcomeEmbed = new EmbedBuilder()
+    .setTitle('🎉 Сервер успешно настроен!')
+    .setDescription('Основной чат сервера успешно создан и настроен ботом **BSS Index Helper** под ключ! Все старые каналы удалены.')
+    .setColor('#06b6d4')
+    .setTimestamp();
+  await generalText.send({ embeds: [generalWelcomeEmbed] }).catch(() => null);
+
+  // Delete all old channels
+  const allChannels = await guild.channels.fetch();
+  for (const [id, ch] of allChannels) {
+    if (keepChannelIds.has(ch.id) || keepCategoryIds.has(ch.id)) continue;
+    try {
+      await ch.delete();
+    } catch (err) {
+      console.error(`Could not delete channel/category #${ch.name}:`, err.message);
+    }
+  }
 
   return { createdCount, processedChannels };
 }
