@@ -300,7 +300,7 @@ async function executeServerSetup(guild, interaction) {
   // Define Embeds
   const welcomeEmbed = new EmbedBuilder()
     .setTitle('👋 Добро пожаловать на официальный Discord-сервер BSS Index!')
-    .setDescription(`Приветствуем тебя в главном русскоязычном трейдинг-сообществе **Bee Swarm Simulator**!\n\nЗдесь ты найдёшь самые свежие цены на стикеры, ульи и кубы, умный ИИ-сканер трейдов и интерактивный калькулятор обменов.`)
+    .setDescription(`Приветствуем тебя в главном русскоязычном трейдинг-сообществе **Bee Swarm Simulator**!\n\nЗдесь ты найдёшь самые свежие цены на стикеры, ульи и кубы, а также интерактивный калькулятор обменов.`)
     .setColor('#f59e0b')
     .setThumbnail('https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png')
     .addFields(
@@ -330,7 +330,7 @@ async function executeServerSetup(guild, interaction) {
     .setDescription('В этом канале публикуются все свежие обновления, новые фичи и изменения цен на нашем сайте!')
     .setColor('#a855f7')
     .addFields(
-      { name: '✨ Что нового на сайте:', value: '• ⚡ Мгновенная синхронизация цен с bssmvalues.com\n• 🎨 Фирменная система цветовой подсветки по категориям\n• 📸 Умный AI-сканер трейдов по скриншотам' }
+      { name: '✨ Что нового на сайте:', value: '• ⚡ Мгновенная синхронизация цен с bssmvalues.com\n• 🎨 Фирменная система цветовой подсветки по категориям' }
     )
     .setFooter({ text: 'Следите за обновлениями!' });
 
@@ -494,7 +494,7 @@ client.on('interactionCreate', async interaction => {
   else if (commandName === 'site') {
     const embed = new EmbedBuilder()
       .setTitle('🐝 BSS Index — Лучшая База Цен и Калькулятор BSS')
-      .setDescription('BSS Index — это современный русскоязычный сайт цен и калькулятор трейдов для Bee Swarm Simulator!\n\n✨ **Возможности:**\n• Цены на 330+ предметов, стикеров и биквипов\n• Интерактивный W/F/L Калькулятор обмена\n• 📸 AI-Сканер трейдов по скриншотам!\n• История динамики цен и графики')
+      .setDescription('BSS Index — это современный русскоязычный сайт цен и калькулятор трейдов для Bee Swarm Simulator!\n\n✨ **Возможности:**\n• Цены на 330+ предметов, стикеров и биквипов\n• Интерактивный W/F/L Калькулятор обмена\n• История динамики цен и графики')
       .setColor('#f59e0b')
       .setThumbnail('https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png');
 
