@@ -1,3 +1,4 @@
+// Test comment to trigger automated deployment notification check
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
