@@ -32,6 +32,7 @@ export default function TradeCalculator({
   const [pickerTarget, setPickerTarget] = useState<'A' | 'B' | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [copiedImage, setCopiedImage] = useState(false);
+  const [hidePrices, setHidePrices] = useState(false);
 
   const totalA = sideA.reduce((sum, item) => sum + item.value, 0);
   const totalB = sideB.reduce((sum, item) => sum + item.value, 0);
@@ -199,6 +200,19 @@ export default function TradeCalculator({
               {copiedImage ? <Check className="h-3.5 w-3.5" /> : <Camera className="h-3.5 w-3.5 text-blue-400" />}
               <span>{t(copiedImage ? 'calc.share.image.copied' : 'calc.share.image', lang)}</span>
             </button>
+
+            {/* Hide Prices Toggle */}
+            <button
+              onClick={() => setHidePrices(!hidePrices)}
+              className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                hidePrices 
+                  ? 'bg-rose-500/15 text-rose-400 border-rose-500/30' 
+                  : 'bg-neutral-900 border-white/5 hover:border-white/10 text-neutral-400 hover:text-neutral-200'
+              }`}
+            >
+              <span>{lang === 'ru' ? (hidePrices ? 'Показать цены' : 'Скрыть цены') : (hidePrices ? 'Show Prices' : 'Hide Prices')}</span>
+            </button>
+
             {(sideA.length > 0 || sideB.length > 0) && (
               <button
                 onClick={onClearTrade}
@@ -252,8 +266,8 @@ export default function TradeCalculator({
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
                       <div className="flex flex-col items-end leading-none text-right px-1">
-                        <span className="text-xs font-black text-amber-400 font-mono">
-                          {Number(item.value.toFixed(2))}★
+                        <span className={`text-xs font-mono ${hidePrices ? 'text-neutral-500 font-semibold' : 'font-black text-amber-400'}`}>
+                          {hidePrices ? '???' : `${Number(item.value.toFixed(2))}★`}
                         </span>
                       </div>
                       <button
@@ -283,8 +297,8 @@ export default function TradeCalculator({
 
             <div className="mt-4 pt-3 border-t border-white/5 flex justify-between items-center text-xs font-bold font-mono">
               <span className="text-neutral-400">{t('calc.total', lang)}</span>
-              <span className="text-base text-violet-400 whitespace-nowrap">
-                {Number(totalA.toFixed(2))}★
+              <span className={`text-base whitespace-nowrap ${hidePrices ? 'text-neutral-500' : 'text-violet-400'}`}>
+                {hidePrices ? '???' : `${Number(totalA.toFixed(2))}★`}
               </span>
             </div>
           </div>
@@ -324,8 +338,8 @@ export default function TradeCalculator({
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
                       <div className="flex flex-col items-end leading-none text-right px-1">
-                        <span className="text-xs font-black text-amber-400 font-mono">
-                          {Number(item.value.toFixed(2))}★
+                        <span className={`text-xs font-mono ${hidePrices ? 'text-neutral-500 font-semibold' : 'font-black text-amber-400'}`}>
+                          {hidePrices ? '???' : `${Number(item.value.toFixed(2))}★`}
                         </span>
                       </div>
                       <button
@@ -355,32 +369,53 @@ export default function TradeCalculator({
 
             <div className="mt-4 pt-3 border-t border-white/5 flex justify-between items-center text-xs font-bold font-mono">
               <span className="text-neutral-400">{t('calc.total', lang)}</span>
-              <span className="text-base text-emerald-400 whitespace-nowrap">
-                {Number(totalB.toFixed(2))}★
+              <span className={`text-base whitespace-nowrap ${hidePrices ? 'text-neutral-500' : 'text-emerald-400'}`}>
+                {hidePrices ? '???' : `${Number(totalB.toFixed(2))}★`}
               </span>
             </div>
           </div>
         </div>
 
         {/* Verdict Panel */}
-        <div className={`p-4 rounded-xl border flex flex-col sm:flex-row items-center justify-between gap-4 transition-all duration-300 ${verdict.style}`}>
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-lg bg-neutral-950 flex items-center justify-center border border-white/5 shadow-inner shrink-0">
-              <ArrowLeftRight className="h-5 w-5 text-amber-400" />
+        {hidePrices ? (
+          <div className="p-4 rounded-xl border border-white/5 bg-neutral-900/40 text-neutral-400 flex flex-col sm:flex-row items-center justify-between gap-4 transition-all duration-300">
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-lg bg-neutral-950 flex items-center justify-center border border-white/5 shadow-inner shrink-0">
+                <ArrowLeftRight className="h-5 w-5 text-neutral-500" />
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="text-[10px] text-neutral-500 uppercase tracking-widest font-semibold">
+                  {lang === 'ru' ? 'Статус обмена' : 'Trade Status'}
+                </div>
+                <h4 className="text-base font-bold tracking-tight uppercase leading-tight font-sans text-neutral-300">
+                  {lang === 'ru' ? 'Оцените обмен в Discord' : 'Judge trade in Discord'}
+                </h4>
+              </div>
             </div>
-            <div className="text-center sm:text-left">
-              <div className="text-[10px] text-neutral-500 uppercase tracking-widest font-semibold">{t('calc.verdict.title', lang)}</div>
-              <h4 className="text-lg font-black tracking-tight uppercase leading-tight font-sans">
-                {verdict.text}
-              </h4>
-            </div>
-          </div>
-          {verdict.diffText && (
-            <span className="text-xs font-bold px-3 py-1.5 rounded-lg bg-neutral-950/50 border border-white/5 text-neutral-300 font-mono text-center sm:text-right shrink-0">
-              {verdict.diffText}
+            <span className="text-xs font-bold px-3 py-1.5 rounded-lg bg-neutral-950/50 border border-white/5 text-neutral-400 font-mono text-center sm:text-right shrink-0">
+              W/F/L?
             </span>
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className={`p-4 rounded-xl border flex flex-col sm:flex-row items-center justify-between gap-4 transition-all duration-300 ${verdict.style}`}>
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-lg bg-neutral-950 flex items-center justify-center border border-white/5 shadow-inner shrink-0">
+                <ArrowLeftRight className="h-5 w-5 text-amber-400" />
+              </div>
+              <div className="text-center sm:text-left">
+                <div className="text-[10px] text-neutral-500 uppercase tracking-widest font-semibold">{t('calc.verdict.title', lang)}</div>
+                <h4 className="text-lg font-black tracking-tight uppercase leading-tight font-sans">
+                  {verdict.text}
+                </h4>
+              </div>
+            </div>
+            {verdict.diffText && (
+              <span className="text-xs font-bold px-3 py-1.5 rounded-lg bg-neutral-950/50 border border-white/5 text-neutral-300 font-mono text-center sm:text-right shrink-0">
+                {verdict.diffText}
+              </span>
+            )}
+          </div>
+        )}
       </section>
 
       <ItemPickerModal
