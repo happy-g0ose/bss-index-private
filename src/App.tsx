@@ -428,7 +428,7 @@ export default function App() {
               </svg>
             </div>
             <span className="font-extrabold tracking-widest text-neutral-400">BSS INDEX</span>
-            <span>• {lang === 'ru' ? 'Гайд ценников стикеров Roblox' : 'Roblox Sticker Value Guide'}</span>
+            <span>• {lang === 'ru' ? 'Валют лист ценников Bee Swarm Simulator' : 'Bee Swarm Simulator Value List'}</span>
           </div>
           <div className="flex flex-col sm:items-end gap-1">
             <p className="flex items-center gap-1">
