@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, REST, Routes, SlashCommandBuilder, PermissionFlagsBits } from 'discord.js';
+import { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, REST, Routes, SlashCommandBuilder, PermissionFlagsBits, ChannelType } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -113,48 +113,74 @@ client.on('interactionCreate', async interaction => {
 });
 
 // Helper function to format all channels
+// Helper function to format all channels
 async function executeServerSetup(guild, interaction) {
-  const channels = await guild.channels.fetch();
   let createdCount = 0;
   const processedChannels = [];
 
-  const setupChannel = async (keywords, embed, components = []) => {
-    const ch = channels.find(c => {
-      if (!c || !c.isTextBased()) return false;
-      const name = c.name.toLowerCase();
-      return keywords.some(kw => name.includes(kw.toLowerCase()));
+  // Find or create Category
+  let category = guild.channels.cache.find(c => c.name === '🎯 BSS INDEX' && c.type === ChannelType.GuildCategory);
+  if (!category) {
+    category = await guild.channels.create({
+      name: '🎯 BSS INDEX',
+      type: ChannelType.GuildCategory
     });
+  }
 
-    if (ch) {
-      try {
-        await ch.send({ embeds: [embed], components });
-        createdCount++;
-        processedChannels.push(`#${ch.name}`);
-      } catch (err) {
-        console.error(`Error sending message to #${ch.name}:`, err.message);
-      }
+  const setupChannel = async (name, isReadOnly, embed, components = []) => {
+    // Look for existing channel in this category or guild
+    let ch = guild.channels.cache.find(c => c.name === name && c.type === ChannelType.GuildText);
+    
+    if (!ch) {
+      // Permission Overwrites
+      const permissionOverwrites = [
+        {
+          id: guild.roles.everyone.id,
+          allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.ReadMessageHistory],
+          deny: isReadOnly ? [PermissionFlagsBits.SendMessages] : []
+        },
+        {
+          id: guild.members.me.id,
+          allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.EmbedLinks, PermissionFlagsBits.ManageChannels]
+        }
+      ];
+
+      ch = await guild.channels.create({
+        name,
+        type: ChannelType.GuildText,
+        parent: category.id,
+        permissionOverwrites
+      });
+    }
+
+    try {
+      await ch.send({ embeds: [embed], components });
+      createdCount++;
+      processedChannels.push(`#${ch.name}`);
+    } catch (err) {
+      console.error(`Error sending message to #${ch.name}:`, err.message);
     }
   };
 
-  // 1. #добро-пожаловать
+  // 1. #👋︱добро-пожаловать
   const welcomeEmbed = new EmbedBuilder()
     .setTitle('👋 Добро пожаловать на официальный Discord-сервер BSS Index!')
     .setDescription(`Приветствуем тебя в главном русскоязычном трейдинг-сообществе **Bee Swarm Simulator**!\n\nЗдесь ты найдёшь самые свежие цены на стикеры, ульи и кубы, умный ИИ-сканер трейдов и интерактивный калькулятор обменов.`)
     .setColor('#f59e0b')
     .setThumbnail('https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png')
     .addFields(
-      { name: '🌐 Наш веб-сайт:', value: '[https://happy-g0ose.github.io/bss-index/](https://happy-g0ose.github.io/bss-index/)', inline: false },
+      { name: '🌐 Наш веб-сайт:', value: '[https://bss-index.vercel.app/](https://bss-index.vercel.app/)', inline: false },
       { name: '🤖 Основные команды бота в чате:', value: '• `/price [предмет]` — узнать точные цены и спрос любого стикера\n• `/calc [отдаю] [получаю]` — мгновенно рассчитать выгоду трейда (WIN/FAIR/LOSS)\n• `/site` — получить ссылку на наш портал', inline: false }
     )
     .setFooter({ text: 'BSS Index Community • Желаем успешных трейдов!' });
 
   const welcomeRow = new ActionRowBuilder().addComponents(
-    new ButtonBuilder().setLabel('🌐 Открыть сайт BSS Index').setStyle(ButtonStyle.Link).setURL('https://happy-g0ose.github.io/bss-index/')
+    new ButtonBuilder().setLabel('🌐 Открыть сайт BSS Index').setStyle(ButtonStyle.Link).setURL('https://bss-index.vercel.app/')
   );
 
-  await setupChannel(['добро-пожаловать', 'welcome', 'добро'], welcomeEmbed, [welcomeRow]);
+  await setupChannel('👋︱добро-пожаловать', true, welcomeEmbed, [welcomeRow]);
 
-  // 2. #правила
+  // 2. #📜︱правила
   const rulesEmbed = new EmbedBuilder()
     .setTitle('📜 Правила Сервера BSS Index')
     .setDescription('Для комфортного общения и безопасных трейдов соблюдайте простые правила:')
@@ -167,9 +193,9 @@ async function executeServerSetup(guild, interaction) {
     )
     .setFooter({ text: 'Соблюдение правил обязательно для всех участников.' });
 
-  await setupChannel(['правила', 'rules'], rulesEmbed);
+  await setupChannel('📜︱правила', true, rulesEmbed);
 
-  // 3. #обновления-сайта
+  // 3. #📢︱обновления-сайта
   const updatesEmbed = new EmbedBuilder()
     .setTitle('🔄 Обновления Сайта BSS Index')
     .setDescription('В этом канале публикуются все свежие обновления, новые фичи и изменения цен на нашем сайте!')
@@ -179,31 +205,31 @@ async function executeServerSetup(guild, interaction) {
     )
     .setFooter({ text: 'Следите за обновлениями!' });
 
-  await setupChannel(['обновления-сайта', 'новости', 'news', 'updates'], updatesEmbed);
+  await setupChannel('📢︱обновления-сайта', true, updatesEmbed);
 
-  // 4. #win-fair-lose
+  // 4. #⚖︱win-fair-lose
   const wflEmbed = new EmbedBuilder()
     .setTitle('⚖️ Канал проверки сделок Win / Fair / Loss')
     .setDescription('Выкладывайте свои скриншоты трейдов или используйте бота для оценки выгоды сделки!\n\n👉 Напишите в чат `/calc` для мгновенного расчета выгоды трейда прямо в Discord!')
     .setColor('#10b981');
 
-  await setupChannel(['win-fair-lose', 'wfl', 'трейдов'], wflEmbed);
+  await setupChannel('⚖︱win-fair-lose', false, wflEmbed);
 
-  // 5. #предложения
+  // 5. #💡︱предложения
   const suggestionsEmbed = new EmbedBuilder()
     .setTitle('💡 Предложения и Идеи')
     .setDescription('Есть идеи по улучшению сайта или Discord-бота? Пишите свои предложения в этот канал! Мы читаем каждое сообщение.')
     .setColor('#06b6d4');
 
-  await setupChannel(['предложения', 'suggestions', 'идеи'], suggestionsEmbed);
+  await setupChannel('💡︱предложения', false, suggestionsEmbed);
 
-  // 6. #баги-сайта
+  // 6. #🐛︱баги-сайта
   const bugsEmbed = new EmbedBuilder()
     .setTitle('🐛 Ошибки и Баги')
     .setDescription('Нашли ошибку на сайте или в боте? Напишите подробности в этот канал, и мы оперативно исправим проблему!')
     .setColor('#ef4444');
 
-  await setupChannel(['баги-сайта', 'баги', 'bugs'], bugsEmbed);
+  await setupChannel('🐛︱баги-сайта', false, bugsEmbed);
 
   return { createdCount, processedChannels };
 }
@@ -252,7 +278,7 @@ client.on('interactionCreate', async interaction => {
     }
 
     const itemSlug = encodeURIComponent(item.id || item.englishName || item.name);
-    const itemUrl = `https://happy-g0ose.github.io/bss-index/?item=${itemSlug}`;
+    const itemUrl = `https://bss-index.vercel.app/?item=${itemSlug}`;
 
     const row = new ActionRowBuilder()
       .addComponents(
@@ -326,7 +352,7 @@ client.on('interactionCreate', async interaction => {
         new ButtonBuilder()
           .setLabel('Перейти на сайт BSS Index')
           .setStyle(ButtonStyle.Link)
-          .setURL('https://happy-g0ose.github.io/bss-index/')
+          .setURL('https://bss-index.vercel.app/')
       );
 
     await interaction.reply({ embeds: [embed], components: [row] });
