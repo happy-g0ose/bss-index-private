@@ -33,8 +33,9 @@ function saveUserStats() {
 async function ensureBssRoles(guild) {
   const rolesConfig = [
     { name: '🐝 Трейдер', color: '#f59e0b', reason: 'Начальная роль при входе на сервер BSS Index' },
-    { name: '🍯 Опытный Трейдер', color: '#eab308', reason: 'Выдается за 10 проверок цен на BSS Index' },
-    { name: '👑 Легендарный Трейдер', color: '#a855f7', reason: 'Выдается за 30 проверок цен на BSS Index' }
+    { name: '🍯 Опытный Трейдер', color: '#eab308', reason: 'Выдается за 50 проверок цен на BSS Index' },
+    { name: '👑 Легендарный Трейдер', color: '#a855f7', reason: 'Выдается за 150 проверок цен на BSS Index' },
+    { name: '👑 Создатель BSS Index', color: '#06b6d4', reason: 'Особая роль создателя проекта BSS Index' }
   ];
 
   const createdRoles = {};
@@ -72,12 +73,21 @@ async function updateUserActivity(userId, guild, channel) {
   const member = await guild.members.fetch(userId).catch(() => null);
   if (!member) return;
 
-  // Fallback: If they don't have any BSS role yet and count is less than 10, assign them the starter role!
+  // Special Auto-Role for the Creator (User ID 1193225483932930159)
+  if (userId === '1193225483932930159') {
+    const creatorRole = roles['👑 Создатель BSS Index'];
+    if (creatorRole && !member.roles.cache.has(creatorRole.id)) {
+      await member.roles.add(creatorRole).catch(() => null);
+      console.log(`[Roles] Успешно выдана роль Создателя пользователю happy goose (${userId})`);
+    }
+  }
+
+  // Fallback: If they don't have any BSS role yet and count is less than 50, assign them the starter role!
   const starterRole = roles['🐝 Трейдер'];
   const activeRole = roles['🍯 Опытный Трейдер'];
   const legendaryRole = roles['👑 Легендарный Трейдер'];
   
-  if (count < 10) {
+  if (count < 50) {
     if (starterRole && !member.roles.cache.has(starterRole.id) && 
         (!activeRole || !member.roles.cache.has(activeRole.id)) && 
         (!legendaryRole || !member.roles.cache.has(legendaryRole.id))) {
@@ -85,17 +95,15 @@ async function updateUserActivity(userId, guild, channel) {
     }
   }
 
-  // Level 1: 10 commands -> Opytny Trader
-  if (count === 10) {
-    const activeRole = roles['🍯 Опытный Трейдер'];
-    const starterRole = roles['🐝 Трейдер'];
+  // Level 1: 50 commands -> Opytny Trader
+  if (count === 50) {
     if (activeRole) {
       await member.roles.add(activeRole);
       if (starterRole) await member.roles.remove(starterRole).catch(() => null);
       
       const levelEmbed = new EmbedBuilder()
         .setTitle('🎉 Повышение ранга трейдера!')
-        .setDescription(`Поздравляем <@${userId}>! Ты выполнил 10 проверок цен/сделок и получаешь роль **🍯 Опытный Трейдер**!`)
+        .setDescription(`Поздравляем <@${userId}>! Ты выполнил 50 проверок цен/сделок и получаешь роль **🍯 Опытный Трейдер**!`)
         .setColor('#eab308')
         .setFooter({ text: 'Продолжай использовать бота, чтобы получить Легендарного Трейдера!' });
       
@@ -103,17 +111,15 @@ async function updateUserActivity(userId, guild, channel) {
     }
   }
   
-  // Level 2: 30 commands -> Legendary Trader
-  if (count === 30) {
-    const legendaryRole = roles['👑 Легендарный Трейдер'];
-    const activeRole = roles['🍯 Опытный Трейдер'];
+  // Level 2: 150 commands -> Legendary Trader
+  if (count === 150) {
     if (legendaryRole) {
       await member.roles.add(legendaryRole);
       if (activeRole) await member.roles.remove(activeRole).catch(() => null);
       
       const levelEmbed = new EmbedBuilder()
         .setTitle('👑 Легендарный Трейдер сервера!')
-        .setDescription(`Невероятно! <@${userId}> совершил 30 проверок цен/сделок и удостоен высшего звания **👑 Легендарный Трейдер**!`)
+        .setDescription(`Невероятно! <@${userId}> совершил 150 проверок цен/сделок и удостоен высшего звания **👑 Легендарный Трейдер**!`)
         .setColor('#a855f7')
         .setFooter({ text: 'Настоящий мастер обменов BSS Index!' });
       
@@ -206,7 +212,8 @@ const commands = [
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMembers
   ]
 });
 
