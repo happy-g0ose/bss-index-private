@@ -242,6 +242,10 @@ async function executeServerSetup(guild, interaction) {
   const keepChannelIds = new Set();
   const keepCategoryIds = new Set();
 
+  if (interaction && interaction.channelId) {
+    keepChannelIds.add(interaction.channelId);
+  }
+
   // 1. Create Category 1: 👋︱ИНФОРМАЦИЯ (Read-Only)
   const infoCategory = await guild.channels.create({
     name: '👋︱ИНФОРМАЦИЯ',
@@ -512,10 +516,10 @@ client.on('interactionCreate', async interaction => {
       const res = await executeServerSetup(interaction.guild, interaction);
       await interaction.editReply({ 
         content: `🎉 Сервер успешно оформлен! Отправлено баннеров в каналы: **${res.createdCount}** (${res.processedChannels.join(', ')}).` 
-      });
+      }).catch(err => console.error("Error editing interaction reply:", err.message));
     } catch (err) {
-      console.error(err);
-      await interaction.editReply({ content: `❌ Ошибка: ${err.message}` });
+      console.error("Setup server error:", err);
+      await interaction.editReply({ content: `❌ Ошибка: ${err.message}` }).catch(e => {});
     }
   }
 });
