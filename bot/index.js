@@ -437,8 +437,8 @@ client.on('interactionCreate', async interaction => {
           .setURL(itemUrl)
       );
 
-    await updateUserActivity(interaction.user.id, interaction.guild, interaction.channel);
-    await interaction.reply({ embeds: [embed], components: [row] });
+    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel).catch(err => console.error("Error updating user activity:", err.message));
+    await interaction.reply({ embeds: [embed], components: [row] }).catch(err => console.error("Price command reply error:", err.message));
   }
 
   else if (commandName === 'calc') {
@@ -487,8 +487,8 @@ client.on('interactionCreate', async interaction => {
       )
       .setFooter({ text: 'BSS Index Trade Calculator' });
 
-    await updateUserActivity(interaction.user.id, interaction.guild, interaction.channel);
-    await interaction.reply({ embeds: [embed] });
+    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel).catch(err => console.error("Error updating user activity:", err.message));
+    await interaction.reply({ embeds: [embed] }).catch(err => console.error("Calc command reply error:", err.message));
   }
 
   else if (commandName === 'site') {
@@ -506,7 +506,7 @@ client.on('interactionCreate', async interaction => {
           .setURL('https://bss-index.vercel.app/')
       );
 
-    await interaction.reply({ embeds: [embed], components: [row] });
+    await interaction.reply({ embeds: [embed], components: [row] }).catch(err => console.error("Site command reply error:", err.message));
   }
 
   else if (commandName === 'setup-server') {
