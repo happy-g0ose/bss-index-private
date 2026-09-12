@@ -182,18 +182,23 @@ with open("bot/items.json", "w", encoding="utf-8") as f:
 with open("src/data/items.ts", "r", encoding="utf-8") as f:
     ts_content = f.read()
 
-prefix = ts_content[:ts_content.find("const rawBssItemsData: any[] = [")]
+array_start = ts_content.find("const rawBssItemsData: any[] = [")
+prefix = ts_content[:array_start]
 prefix += "const rawBssItemsData: any[] = "
 
-suffix_idx = ts_content.rfind("];")
-if suffix_idx == -1:
-    suffix_idx = ts_content.rfind("];\n")
-# Find export default or whatever follows the array
-end_of_array = ts_content.find("export const bssItemsData", suffix_idx)
-if end_of_array == -1:
-    end_of_array = ts_content.find("export", suffix_idx)
+# Bracket-match to find the exact end of the array, keep everything after it as suffix
+bracket_idx = ts_content.find("[", ts_content.find("=", array_start))
+depth = 1
+i = bracket_idx + 1
+while depth > 0 and i < len(ts_content):
+    ch = ts_content[i]
+    if ch == '[':
+        depth += 1
+    elif ch == ']':
+        depth -= 1
+    i += 1
 
-suffix = "\n\n" + ts_content[end_of_array:]
+suffix = "\n\n" + ts_content[i:]
 
 items_json_formatted = json.dumps(items, ensure_ascii=False, indent=2)
 new_ts_content = prefix + items_json_formatted + ";\n" + suffix

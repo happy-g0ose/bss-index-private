@@ -26,3 +26,4 @@ dist-ssr
 .vercel
 bot/node_modules
 bot/.env
+values_live.json
