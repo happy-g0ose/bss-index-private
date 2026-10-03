@@ -1,6 +1,6 @@
 {
-  "timestamp": 1791000195253,
-  "message": "feat(prices): update sticker and beequip values from bssmvalues.com API; fix suffix handling in update_prices.py",
+  "timestamp": 1791000527992,
+  "message": "feat(prices): update sticker values from bssmvalues.com; fix name mismatches\n\n- 54 items refreshed from live API (data through 2026-10-02)\n\n- add NAME_ALIASES in scratch/update_prices.py: cub voucher -> cub buddy voucher, round basic -> round basic bee, wobbly looker -> wobbly looker bee\n\n- rename Sunbear -> Stranded Sun Bear (16-17)",
   "author": "BSS Index Developer",
-  "sha": "2794d33551ea33e22211f771e884ccab46ceb685"
+  "sha": "7fe345ddc9c8fad6190896b17e1808a30de708b6"
 }

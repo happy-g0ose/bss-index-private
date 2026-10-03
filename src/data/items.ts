@@ -2037,8 +2037,8 @@ const rawBssItemsData: any[] = [
   },
   {
     "id": "cub-voucher-0",
-    "name": "Cub Voucher (CBV)",
-    "englishName": "Cub Voucher",
+    "name": "Cub Buddy Voucher (CBV)",
+    "englishName": "Cub Buddy Voucher",
     "category": "Ваучеры",
     "value": 7.375,
     "valueLow": 7.25,
@@ -2863,8 +2863,8 @@ const rawBssItemsData: any[] = [
   },
   {
     "id": "wobbly-looker-0",
-    "name": "Wobbly Looker",
-    "englishName": "Wobbly Looker",
+    "name": "Wobbly Looker Bee",
+    "englishName": "Wobbly Looker Bee",
     "category": "Стикеры пчел",
     "value": 0.58,
     "valueLow": 0.5,
@@ -2965,8 +2965,8 @@ const rawBssItemsData: any[] = [
   },
   {
     "id": "round-basic-0",
-    "name": "Round Basic",
-    "englishName": "Round Basic",
+    "name": "Round Basic Bee",
+    "englishName": "Round Basic Bee",
     "category": "Стикеры пчел",
     "value": 7.75,
     "valueLow": 7.5,
@@ -18514,6 +18514,9 @@ const rawBssItemsData: any[] = [
     ]
   }
 ];
+
+
+;
 
 
 ;
