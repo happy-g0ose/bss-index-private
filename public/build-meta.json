@@ -1,6 +1,6 @@
 {
-  "timestamp": 1786802594977,
-  "message": "feat(prices): synchronize all sticker and beequip values with latest BSS Values database",
+  "timestamp": 1791000195253,
+  "message": "feat(prices): update sticker and beequip values from bssmvalues.com API; fix suffix handling in update_prices.py",
   "author": "BSS Index Developer",
-  "sha": "d681b45191aaabcf4bb8a83f56980b175ce63e0f"
+  "sha": "2794d33551ea33e22211f771e884ccab46ceb685"
 }

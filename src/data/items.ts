@@ -40,11 +40,11 @@ const rawBssItemsData: any[] = [
     "name": "Star Cub",
     "englishName": "Star Cub",
     "category": "Скины на куба",
-    "value": 10.25,
-    "valueLow": 10.0,
-    "valueHigh": 10.5,
+    "value": 9.75,
+    "valueLow": 9.5,
+    "valueHigh": 10.0,
     "demand": "Средний",
-    "stability": "Стабильно",
+    "stability": "Падает",
     "rarity": "Редкий",
     "glowColor": "rgba(59, 130, 246, 0.25)",
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
@@ -71,7 +71,8 @@ const rawBssItemsData: any[] = [
       10.5,
       10.5,
       10.25,
-      10.25
+      10.25,
+      9.75
     ],
     "image": "https://bssmvalues.com/images/Star_Cub.webp",
     "historicalDates": [
@@ -94,7 +95,8 @@ const rawBssItemsData: any[] = [
       "2026-06-03",
       "2026-06-14",
       "2026-06-18",
-      "2026-06-22"
+      "2026-06-22",
+      "2026-09-16"
     ]
   },
   {
@@ -102,17 +104,17 @@ const rawBssItemsData: any[] = [
     "name": "Robo Cub",
     "englishName": "Robo Cub",
     "category": "Скины на куба",
-    "value": 10.25,
-    "valueLow": 10.0,
-    "valueHigh": 10.5,
-    "demand": "Средний",
-    "stability": "Падает",
+    "value": 9.75,
+    "valueLow": 9.5,
+    "valueHigh": 10.0,
+    "demand": "Низкий",
+    "stability": "Стабильно",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       6.0,
       5.25,
@@ -147,7 +149,9 @@ const rawBssItemsData: any[] = [
       13.5,
       12.5,
       11.5,
-      10.25
+      10.25,
+      9.75,
+      9.75
     ],
     "image": "https://bssmvalues.com/images/Robo_Cub.webp",
     "historicalDates": [
@@ -184,7 +188,9 @@ const rawBssItemsData: any[] = [
       "2026-07-19",
       "2026-08-17",
       "2026-08-21",
-      "2026-08-24"
+      "2026-08-24",
+      "2026-09-15",
+      "2026-10-02"
     ]
   },
   {
@@ -192,17 +198,17 @@ const rawBssItemsData: any[] = [
     "name": "Stick Cub",
     "englishName": "Stick Cub",
     "category": "Скины на куба",
-    "value": 17.0,
+    "value": 16.5,
     "valueLow": 16.0,
-    "valueHigh": 18.0,
-    "demand": "Средний",
-    "stability": "Падает",
+    "valueHigh": 17.0,
+    "demand": "Низкий",
+    "stability": "Стабильно",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       8.0,
       8.5,
@@ -244,7 +250,9 @@ const rawBssItemsData: any[] = [
       24.0,
       22.0,
       19.0,
-      17.0
+      17.0,
+      16.5,
+      16.5
     ],
     "image": "https://bssmvalues.com/images/Stick_Cub.webp",
     "historicalDates": [
@@ -288,7 +296,9 @@ const rawBssItemsData: any[] = [
       "2026-07-01",
       "2026-07-21",
       "2026-08-24",
-      "2026-08-28"
+      "2026-08-28",
+      "2026-09-22",
+      "2026-09-24"
     ]
   },
   {
@@ -296,17 +306,17 @@ const rawBssItemsData: any[] = [
     "name": "Brown Cub",
     "englishName": "Brown Cub",
     "category": "Скины на куба",
-    "value": 29.0,
-    "valueLow": 28.0,
-    "valueHigh": 30.0,
-    "demand": "Средний",
-    "stability": "Падает",
+    "value": 23.5,
+    "valueLow": 23.0,
+    "valueHigh": 24.0,
+    "demand": "Низкий",
+    "stability": "Стабильно",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       15.5,
       16.5,
@@ -343,7 +353,11 @@ const rawBssItemsData: any[] = [
       35.5,
       31.5,
       30.0,
-      29.0
+      29.0,
+      25.0,
+      24.0,
+      23.5,
+      23.5
     ],
     "image": "https://bssmvalues.com/images/Brown_Cub.webp",
     "historicalDates": [
@@ -382,7 +396,11 @@ const rawBssItemsData: any[] = [
       "2026-06-20",
       "2026-06-22",
       "2026-07-01",
-      "2026-07-21"
+      "2026-07-21",
+      "2026-09-19",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-24"
     ]
   },
   {
@@ -390,17 +408,17 @@ const rawBssItemsData: any[] = [
     "name": "Doodle Cub (DDC)",
     "englishName": "Doodle Cub",
     "category": "Скины на куба",
-    "value": 36.0,
-    "valueLow": 35.0,
-    "valueHigh": 37.0,
-    "demand": "Средний",
+    "value": 29.0,
+    "valueLow": 28.0,
+    "valueHigh": 30.0,
+    "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Легендарный",
     "glowColor": "rgba(245, 158, 11, 0.25)",
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       6.0,
       6.25,
@@ -441,7 +459,11 @@ const rawBssItemsData: any[] = [
       47.5,
       42.5,
       40.5,
-      36.0
+      36.0,
+      34.0,
+      34.0,
+      31.0,
+      29.0
     ],
     "image": "https://bssmvalues.com/images/Doodle_Cub.webp",
     "historicalDates": [
@@ -484,7 +506,11 @@ const rawBssItemsData: any[] = [
       "2026-06-18",
       "2026-06-20",
       "2026-07-01",
-      "2026-08-24"
+      "2026-08-24",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-19",
+      "2026-09-28"
     ]
   },
   {
@@ -492,17 +518,17 @@ const rawBssItemsData: any[] = [
     "name": "Petal Cub",
     "englishName": "Petal Cub",
     "category": "Скины на куба",
-    "value": 45.0,
-    "valueLow": 44.0,
-    "valueHigh": 46.0,
-    "demand": "Высокий",
-    "stability": "Падает",
+    "value": 44.0,
+    "valueLow": 43.0,
+    "valueHigh": 45.0,
+    "demand": "Средний",
+    "stability": "Стабильно",
     "rarity": "Легендарный",
     "glowColor": "rgba(245, 158, 11, 0.25)",
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
       46.0,
       48.0,
@@ -525,7 +551,9 @@ const rawBssItemsData: any[] = [
       54.5,
       53.5,
       52.5,
-      45.0
+      45.0,
+      44.0,
+      44.0
     ],
     "image": "https://bssmvalues.com/images/Petal_Cub.webp",
     "historicalDates": [
@@ -550,7 +578,9 @@ const rawBssItemsData: any[] = [
       "2026-07-01",
       "2026-07-10",
       "2026-07-21",
-      "2026-08-24"
+      "2026-08-24",
+      "2026-09-15",
+      "2026-09-29"
     ]
   },
   {
@@ -558,17 +588,17 @@ const rawBssItemsData: any[] = [
     "name": "Gingerbread Cub (GGB)",
     "englishName": "Gingerbread Cub",
     "category": "Скины на куба",
-    "value": 50.5,
-    "valueLow": 49.0,
-    "valueHigh": 52.0,
-    "demand": "Высокий",
+    "value": 46.5,
+    "valueLow": 45.0,
+    "valueHigh": 48.0,
+    "demand": "Средний",
     "stability": "Падает",
     "rarity": "Легендарный",
     "glowColor": "rgba(245, 158, 11, 0.25)",
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
       11.0,
       11.75,
@@ -612,7 +642,9 @@ const rawBssItemsData: any[] = [
       60.5,
       59.5,
       58.5,
-      50.5
+      50.5,
+      50.5,
+      46.5
     ],
     "image": "https://bssmvalues.com/images/Gingerbread_Cub.webp",
     "historicalDates": [
@@ -658,7 +690,9 @@ const rawBssItemsData: any[] = [
       "2026-06-22",
       "2026-07-01",
       "2026-07-10",
-      "2026-08-24"
+      "2026-08-24",
+      "2026-09-29",
+      "2026-10-02"
     ]
   },
   {
@@ -666,9 +700,9 @@ const rawBssItemsData: any[] = [
     "name": "Gloomy Cub",
     "englishName": "Gloomy Cub",
     "category": "Скины на куба",
-    "value": 75.5,
-    "valueLow": 73.0,
-    "valueHigh": 78.0,
+    "value": 73.5,
+    "valueLow": 71.0,
+    "valueHigh": 76.0,
     "demand": "Высокий",
     "stability": "Падает",
     "rarity": "Легендарный",
@@ -723,7 +757,8 @@ const rawBssItemsData: any[] = [
       82.5,
       82.5,
       77.5,
-      75.5
+      75.5,
+      73.5
     ],
     "image": "https://bssmvalues.com/images/Gloomy_Cub.webp",
     "historicalDates": [
@@ -772,7 +807,8 @@ const rawBssItemsData: any[] = [
       "2026-06-22",
       "2026-06-23",
       "2026-08-24",
-      "2026-09-03"
+      "2026-09-03",
+      "2026-10-02"
     ]
   },
   {
@@ -783,14 +819,14 @@ const rawBssItemsData: any[] = [
     "value": 60.5,
     "valueLow": 59.0,
     "valueHigh": 62.0,
-    "demand": "Средний",
+    "demand": "Высокий",
     "stability": "Падает",
     "rarity": "Легендарный",
     "glowColor": "rgba(245, 158, 11, 0.25)",
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
     "historicalPrices": [
       21.0,
       19.5,
@@ -845,6 +881,9 @@ const rawBssItemsData: any[] = [
       78.0,
       77.5,
       72.5,
+      62.5,
+      60.5,
+      62.5,
       62.5,
       60.5
     ],
@@ -904,7 +943,10 @@ const rawBssItemsData: any[] = [
       "2026-07-21",
       "2026-08-20",
       "2026-08-24",
-      "2026-08-29"
+      "2026-08-29",
+      "2026-09-15",
+      "2026-09-29",
+      "2026-10-02"
     ]
   },
   {
@@ -1534,17 +1576,17 @@ const rawBssItemsData: any[] = [
     "name": "Doodle Hive Skin (DDH)",
     "englishName": "Doodle Hive Skin",
     "category": "Скины на улей",
-    "value": 12.5,
-    "valueLow": 12.0,
-    "valueHigh": 13.0,
-    "demand": "Средний",
+    "value": 10.5,
+    "valueLow": 10.0,
+    "valueHigh": 11.0,
+    "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
     "historicalPrices": [
       2.375,
       2.75,
@@ -1585,7 +1627,8 @@ const rawBssItemsData: any[] = [
       15.5,
       14.5,
       13.5,
-      12.5
+      12.5,
+      10.5
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_doodle.webp",
     "historicalDates": [
@@ -1628,7 +1671,8 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-17",
       "2026-07-05",
-      "2026-08-17"
+      "2026-08-17",
+      "2026-09-23"
     ]
   },
   {
@@ -1724,9 +1768,9 @@ const rawBssItemsData: any[] = [
     "name": "Icy Crowned Hive Skin",
     "englishName": "Icy Crowned Hive Skin",
     "category": "Скины на улей",
-    "value": 56.0,
-    "valueLow": 54.0,
-    "valueHigh": 58.0,
+    "value": 50.5,
+    "valueLow": 49.0,
+    "valueHigh": 52.0,
     "demand": "Высокий",
     "stability": "Падает",
     "rarity": "Легендарный",
@@ -1784,7 +1828,9 @@ const rawBssItemsData: any[] = [
       67.5,
       62.5,
       62.0,
-      56.0
+      56.0,
+      53.5,
+      50.5
     ],
     "image": "https://bssmvalues.com/images/Hive_model_icy_crowned.webp",
     "historicalDates": [
@@ -1836,7 +1882,9 @@ const rawBssItemsData: any[] = [
       "2026-06-20",
       "2026-07-02",
       "2026-07-06",
-      "2026-08-24"
+      "2026-08-24",
+      "2026-09-23",
+      "2026-10-02"
     ]
   },
   {
@@ -1844,11 +1892,11 @@ const rawBssItemsData: any[] = [
     "name": "Ticket Voucher (TV)",
     "englishName": "Ticket Voucher",
     "category": "Ваучеры",
-    "value": 0.825,
-    "valueLow": 0.8,
-    "valueHigh": 0.85,
+    "value": 1.0,
+    "valueLow": 1.0,
+    "valueHigh": 1.0,
     "demand": "Хайп",
-    "stability": "Растет",
+    "stability": "Стабильно",
     "rarity": "Обычный",
     "glowColor": "rgba(16, 185, 129, 0.2)",
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
@@ -1878,7 +1926,11 @@ const rawBssItemsData: any[] = [
       0.65,
       0.725,
       0.75,
-      0.825
+      0.825,
+      0.925,
+      1.0,
+      1.0,
+      1.0
     ],
     "image": "https://bssmvalues.com/images/Ticket_Voucher.webp",
     "historicalDates": [
@@ -1904,7 +1956,11 @@ const rawBssItemsData: any[] = [
       "2026-06-09",
       "2026-06-13",
       "2026-07-22",
-      "2026-08-17"
+      "2026-08-17",
+      "2026-09-15",
+      "2026-09-20",
+      "2026-09-23",
+      "2026-09-26"
     ]
   },
   {
@@ -1912,9 +1968,9 @@ const rawBssItemsData: any[] = [
     "name": "Convert Speed Voucher (CSV)",
     "englishName": "Convert Speed Voucher",
     "category": "Ваучеры",
-    "value": 4.415,
-    "valueLow": 4.33,
-    "valueHigh": 4.5,
+    "value": 4.125,
+    "valueLow": 4.0,
+    "valueHigh": 4.25,
     "demand": "Высокий",
     "stability": "Падает",
     "rarity": "Редкий",
@@ -1947,7 +2003,8 @@ const rawBssItemsData: any[] = [
       4.75,
       4.25,
       4.625,
-      4.415
+      4.415,
+      4.125
     ],
     "image": "https://bssmvalues.com/images/X2_Convert_Speed_Voucher.webp",
     "historicalDates": [
@@ -1974,7 +2031,8 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-17",
       "2026-07-19",
-      "2026-08-16"
+      "2026-08-16",
+      "2026-09-27"
     ]
   },
   {
@@ -1982,9 +2040,9 @@ const rawBssItemsData: any[] = [
     "name": "Cub Voucher (CBV)",
     "englishName": "Cub Voucher",
     "category": "Ваучеры",
-    "value": 6.875,
-    "valueLow": 6.75,
-    "valueHigh": 7.0,
+    "value": 7.375,
+    "valueLow": 7.25,
+    "valueHigh": 7.5,
     "demand": "Хайп",
     "stability": "Растет",
     "rarity": "Редкий",
@@ -2023,7 +2081,8 @@ const rawBssItemsData: any[] = [
       6.25,
       6.125,
       6.125,
-      6.875
+      6.875,
+      7.375
     ],
     "image": "https://bssmvalues.com/images/Cub_Buddy_Voucher.webp",
     "historicalDates": [
@@ -2056,7 +2115,8 @@ const rawBssItemsData: any[] = [
       "2026-07-21",
       "2026-08-15",
       "2026-08-23",
-      "2026-08-24"
+      "2026-08-24",
+      "2026-10-02"
     ]
   },
   {
@@ -2067,14 +2127,14 @@ const rawBssItemsData: any[] = [
     "value": 6.625,
     "valueLow": 6.5,
     "valueHigh": 6.75,
-    "demand": "Высокий",
-    "stability": "Падает",
+    "demand": "Хайп",
+    "stability": "Стабильно",
     "rarity": "Редкий",
     "glowColor": "rgba(59, 130, 246, 0.25)",
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
     "historicalPrices": [
       2.125,
       2.125,
@@ -2099,6 +2159,7 @@ const rawBssItemsData: any[] = [
       6.75,
       6.25,
       6.75,
+      6.625,
       6.625
     ],
     "image": "https://bssmvalues.com/images/X2_Bee_Gather_Voucher.webp",
@@ -2126,7 +2187,8 @@ const rawBssItemsData: any[] = [
       "2026-06-03",
       "2026-06-23",
       "2026-07-21",
-      "2026-08-15"
+      "2026-08-15",
+      "2026-10-02"
     ]
   },
   {
@@ -2248,11 +2310,11 @@ const rawBssItemsData: any[] = [
     "name": "Offline Voucher (OFV)",
     "englishName": "Offline Voucher",
     "category": "Ваучеры",
-    "value": 23.0,
-    "valueLow": 22.0,
-    "valueHigh": 24.0,
+    "value": 34.0,
+    "valueLow": 33.0,
+    "valueHigh": 35.0,
     "demand": "Высокий",
-    "stability": "Растет",
+    "stability": "Падает",
     "rarity": "Эпический",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
@@ -2308,7 +2370,13 @@ const rawBssItemsData: any[] = [
       24.0,
       24.0,
       21.0,
-      23.0
+      23.0,
+      24.0,
+      27.0,
+      29.0,
+      32.0,
+      36.0,
+      34.0
     ],
     "image": "https://bssmvalues.com/images/Offline_Voucher.webp",
     "historicalDates": [
@@ -2360,7 +2428,13 @@ const rawBssItemsData: any[] = [
       "2026-07-21",
       "2026-08-20",
       "2026-08-24",
-      "2026-09-07"
+      "2026-09-07",
+      "2026-09-13",
+      "2026-09-20",
+      "2026-09-24",
+      "2026-09-28",
+      "2026-10-01",
+      "2026-10-02"
     ]
   },
   {
@@ -2894,9 +2968,9 @@ const rawBssItemsData: any[] = [
     "name": "Round Basic",
     "englishName": "Round Basic",
     "category": "Стикеры пчел",
-    "value": 8.75,
-    "valueLow": 8.5,
-    "valueHigh": 9.0,
+    "value": 7.75,
+    "valueLow": 7.5,
+    "valueHigh": 8.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Редкий",
@@ -2921,7 +2995,8 @@ const rawBssItemsData: any[] = [
       12.5,
       10.5,
       10.0,
-      8.75
+      8.75,
+      7.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_round_basic_bee.webp",
     "historicalDates": [
@@ -2940,7 +3015,8 @@ const rawBssItemsData: any[] = [
       "2026-06-05",
       "2026-06-17",
       "2026-07-21",
-      "2026-08-20"
+      "2026-08-20",
+      "2026-09-29"
     ]
   },
   {
@@ -3284,9 +3360,9 @@ const rawBssItemsData: any[] = [
     "name": "Glowering Gummy Bear",
     "englishName": "Glowering Gummy Bear",
     "category": "Стикеры медведей",
-    "value": 17.0,
-    "valueLow": 16.0,
-    "valueHigh": 18.0,
+    "value": 14.5,
+    "valueLow": 14.0,
+    "valueHigh": 15.0,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Эпический",
@@ -3310,7 +3386,9 @@ const rawBssItemsData: any[] = [
       21.0,
       19.5,
       19.0,
-      17.0
+      17.0,
+      15.5,
+      14.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_glowering_gummy_bear.webp",
     "historicalDates": [
@@ -3328,17 +3406,19 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-17",
       "2026-06-18",
-      "2026-08-23"
+      "2026-08-23",
+      "2026-09-19",
+      "2026-09-20"
     ]
   },
   {
     "id": "sunbear-0",
-    "name": "Sunbear",
-    "englishName": "Sunbear",
+    "name": "Stranded Sun Bear",
+    "englishName": "Stranded Sun Bear",
     "category": "Стикеры медведей",
-    "value": 22.0,
-    "valueLow": 21.0,
-    "valueHigh": 23.0,
+    "value": 16.5,
+    "valueLow": 16.0,
+    "valueHigh": 17.0,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Эпический",
@@ -3374,7 +3454,9 @@ const rawBssItemsData: any[] = [
       28.5,
       26.5,
       23.5,
-      22.0
+      22.0,
+      18.5,
+      16.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_stranded_sun_bear.webp",
     "historicalDates": [
@@ -3404,7 +3486,9 @@ const rawBssItemsData: any[] = [
       "2026-07-02",
       "2026-07-19",
       "2026-08-29",
-      "2026-09-02"
+      "2026-09-02",
+      "2026-09-22",
+      "2026-10-02"
     ]
   },
   {
@@ -4148,9 +4232,9 @@ const rawBssItemsData: any[] = [
     "name": "Banana Painting",
     "englishName": "Banana Painting",
     "category": "Искусство",
-    "value": 0.75,
+    "value": 0.58,
     "valueLow": 0.5,
-    "valueHigh": 1.0,
+    "valueHigh": 0.66,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4173,7 +4257,8 @@ const rawBssItemsData: any[] = [
       3.0,
       2.5,
       1.5,
-      0.75
+      0.75,
+      0.58
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_banana_painting.webp",
     "historicalDates": [
@@ -4190,7 +4275,8 @@ const rawBssItemsData: any[] = [
       "2026-05-31",
       "2026-06-01",
       "2026-06-05",
-      "2026-06-16"
+      "2026-06-16",
+      "2026-09-19"
     ]
   },
   {
@@ -4232,9 +4318,9 @@ const rawBssItemsData: any[] = [
     "name": "Prism Painting",
     "englishName": "Prism Painting",
     "category": "Искусство",
-    "value": 0.75,
+    "value": 0.58,
     "valueLow": 0.5,
-    "valueHigh": 1.0,
+    "valueHigh": 0.66,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4256,7 +4342,8 @@ const rawBssItemsData: any[] = [
       3.0,
       2.5,
       1.5,
-      0.75
+      0.75,
+      0.58
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_prism_painting.webp",
     "historicalDates": [
@@ -4272,7 +4359,8 @@ const rawBssItemsData: any[] = [
       "2026-05-30",
       "2026-06-01",
       "2026-06-05",
-      "2026-06-16"
+      "2026-06-16",
+      "2026-09-19"
     ]
   },
   {
@@ -4362,9 +4450,9 @@ const rawBssItemsData: any[] = [
     "name": "Ionic Column Base",
     "englishName": "Ionic Column Base",
     "category": "Искусство",
-    "value": 25.0,
-    "valueLow": 24.0,
-    "valueHigh": 26.0,
+    "value": 21.0,
+    "valueLow": 20.0,
+    "valueHigh": 22.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Эпический",
@@ -4394,7 +4482,8 @@ const rawBssItemsData: any[] = [
       29.5,
       28.5,
       28.5,
-      25.0
+      25.0,
+      21.0
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ionic_column_base.webp",
     "historicalDates": [
@@ -4418,7 +4507,8 @@ const rawBssItemsData: any[] = [
       "2026-06-17",
       "2026-06-18",
       "2026-06-21",
-      "2026-07-22"
+      "2026-07-22",
+      "2026-09-29"
     ]
   },
   {
@@ -4426,9 +4516,9 @@ const rawBssItemsData: any[] = [
     "name": "Ionic Column Top",
     "englishName": "Ionic Column Top",
     "category": "Искусство",
-    "value": 25.0,
-    "valueLow": 24.0,
-    "valueHigh": 26.0,
+    "value": 21.0,
+    "valueLow": 20.0,
+    "valueHigh": 22.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Эпический",
@@ -4457,7 +4547,8 @@ const rawBssItemsData: any[] = [
       35.5,
       29.5,
       28.5,
-      25.0
+      25.0,
+      21.0
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ionic_column_top.webp",
     "historicalDates": [
@@ -4480,7 +4571,8 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-17",
       "2026-06-18",
-      "2026-07-22"
+      "2026-07-22",
+      "2026-09-29"
     ]
   },
   {
@@ -4812,11 +4904,11 @@ const rawBssItemsData: any[] = [
     "name": "Left Mythic Gem Fleuron",
     "englishName": "Left Mythic Gem Fleuron",
     "category": "Драгоценности",
-    "value": 2.25,
-    "valueLow": 2.0,
-    "valueHigh": 2.5,
+    "value": 1.75,
+    "valueLow": 1.5,
+    "valueHigh": 2.0,
     "demand": "Средний",
-    "stability": "Стабильно",
+    "stability": "Падает",
     "rarity": "Обычный",
     "glowColor": "rgba(16, 185, 129, 0.2)",
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
@@ -4832,7 +4924,8 @@ const rawBssItemsData: any[] = [
       1.25,
       1.75,
       2.25,
-      2.25
+      2.25,
+      1.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_mythic_gem_fleuron.webp",
     "historicalDates": [
@@ -4844,7 +4937,8 @@ const rawBssItemsData: any[] = [
       "2026-04-14",
       "2026-05-11",
       "2026-06-05",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-09-29"
     ]
   },
   {
@@ -4852,11 +4946,11 @@ const rawBssItemsData: any[] = [
     "name": "Right Mythic Gem Fleuron",
     "englishName": "Right Mythic Gem Fleuron",
     "category": "Драгоценности",
-    "value": 2.25,
-    "valueLow": 2.0,
-    "valueHigh": 2.5,
+    "value": 1.75,
+    "valueLow": 1.5,
+    "valueHigh": 2.0,
     "demand": "Средний",
-    "stability": "Стабильно",
+    "stability": "Падает",
     "rarity": "Обычный",
     "glowColor": "rgba(16, 185, 129, 0.2)",
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
@@ -4872,7 +4966,8 @@ const rawBssItemsData: any[] = [
       1.25,
       1.75,
       2.25,
-      2.25
+      2.25,
+      1.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_mythic_gem_fleuron.webp",
     "historicalDates": [
@@ -4884,7 +4979,8 @@ const rawBssItemsData: any[] = [
       "2026-04-14",
       "2026-05-11",
       "2026-06-05",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-09-29"
     ]
   },
   {
@@ -4892,9 +4988,9 @@ const rawBssItemsData: any[] = [
     "name": "Left Gold Swirl Fleuron",
     "englishName": "Left Gold Swirl Fleuron",
     "category": "Драгоценности",
-    "value": 2.25,
-    "valueLow": 2.0,
-    "valueHigh": 2.5,
+    "value": 1.75,
+    "valueLow": 1.5,
+    "valueHigh": 2.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4911,7 +5007,8 @@ const rawBssItemsData: any[] = [
       2.25,
       2.5,
       2.5,
-      2.25
+      2.25,
+      1.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_gold_swirl_fleuron.webp",
     "historicalDates": [
@@ -4922,7 +5019,8 @@ const rawBssItemsData: any[] = [
       "2026-04-06",
       "2026-05-11",
       "2026-06-14",
-      "2026-06-26"
+      "2026-06-26",
+      "2026-09-29"
     ]
   },
   {
@@ -4930,9 +5028,9 @@ const rawBssItemsData: any[] = [
     "name": "Right Gold Swirl Fleuron",
     "englishName": "Right Gold Swirl Fleuron",
     "category": "Драгоценности",
-    "value": 2.25,
-    "valueLow": 2.0,
-    "valueHigh": 2.5,
+    "value": 1.75,
+    "valueLow": 1.5,
+    "valueHigh": 2.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4949,7 +5047,8 @@ const rawBssItemsData: any[] = [
       2.25,
       2.5,
       2.5,
-      2.25
+      2.25,
+      1.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_gold_swirl_fleuron.webp",
     "historicalDates": [
@@ -4960,7 +5059,8 @@ const rawBssItemsData: any[] = [
       "2026-04-06",
       "2026-05-11",
       "2026-06-14",
-      "2026-06-26"
+      "2026-06-26",
+      "2026-09-29"
     ]
   },
   {
@@ -4968,9 +5068,9 @@ const rawBssItemsData: any[] = [
     "name": "Left Shining Diamond Fleuron",
     "englishName": "Left Shining Diamond Fleuron",
     "category": "Драгоценности",
-    "value": 2.25,
-    "valueLow": 2.0,
-    "valueHigh": 2.5,
+    "value": 1.75,
+    "valueLow": 1.5,
+    "valueHigh": 2.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -4987,7 +5087,8 @@ const rawBssItemsData: any[] = [
       3.0,
       2.75,
       2.75,
-      2.25
+      2.25,
+      1.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_left_shining_diamond_fleuron.webp",
     "historicalDates": [
@@ -4998,7 +5099,8 @@ const rawBssItemsData: any[] = [
       "2026-05-11",
       "2026-06-07",
       "2026-06-14",
-      "2026-07-22"
+      "2026-07-22",
+      "2026-09-29"
     ]
   },
   {
@@ -5006,9 +5108,9 @@ const rawBssItemsData: any[] = [
     "name": "Right Shining Diamond Fleuron",
     "englishName": "Right Shining Diamond Fleuron",
     "category": "Драгоценности",
-    "value": 2.25,
-    "valueLow": 2.0,
-    "valueHigh": 2.5,
+    "value": 1.75,
+    "valueLow": 1.5,
+    "valueHigh": 2.0,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -5025,7 +5127,8 @@ const rawBssItemsData: any[] = [
       3.0,
       2.75,
       2.75,
-      2.25
+      2.25,
+      1.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_right_shining_diamond_fleuron.webp",
     "historicalDates": [
@@ -5036,7 +5139,8 @@ const rawBssItemsData: any[] = [
       "2026-05-11",
       "2026-06-07",
       "2026-06-14",
-      "2026-07-22"
+      "2026-07-22",
+      "2026-09-29"
     ]
   },
   {
@@ -6674,9 +6778,9 @@ const rawBssItemsData: any[] = [
     "name": "Ant Field Stamp",
     "englishName": "Ant Field Stamp",
     "category": "Марки",
-    "value": 0.29,
-    "valueLow": 0.25,
-    "valueHigh": 0.33,
+    "value": 0.225,
+    "valueLow": 0.2,
+    "valueHigh": 0.25,
     "demand": "Низкий",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6692,7 +6796,8 @@ const rawBssItemsData: any[] = [
       0.75,
       0.58,
       0.415,
-      0.29
+      0.29,
+      0.225
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_ant_field_stamp.webp",
     "historicalDates": [
@@ -6702,7 +6807,8 @@ const rawBssItemsData: any[] = [
       "2026-06-07",
       "2026-06-13",
       "2026-06-19",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -6710,9 +6816,9 @@ const rawBssItemsData: any[] = [
     "name": "Hub Field Stamp",
     "englishName": "Hub Field Stamp",
     "category": "Марки",
-    "value": 0.415,
-    "valueLow": 0.33,
-    "valueHigh": 0.5,
+    "value": 0.29,
+    "valueLow": 0.25,
+    "valueHigh": 0.33,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6729,7 +6835,8 @@ const rawBssItemsData: any[] = [
       0.625,
       0.875,
       0.625,
-      0.415
+      0.415,
+      0.29
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_hub_field_stamp.webp",
     "historicalDates": [
@@ -6740,7 +6847,8 @@ const rawBssItemsData: any[] = [
       "2026-05-09",
       "2026-06-07",
       "2026-06-13",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -6748,9 +6856,9 @@ const rawBssItemsData: any[] = [
     "name": "Bamboo Field Stamp",
     "englishName": "Bamboo Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6773,7 +6881,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_bamboo_field_stamp.webp",
     "historicalDates": [
@@ -6790,7 +6899,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -6798,9 +6908,9 @@ const rawBssItemsData: any[] = [
     "name": "Blue Flower Field Stamp",
     "englishName": "Blue Flower Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6821,7 +6931,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_blue_flower_field_stamp.webp",
     "historicalDates": [
@@ -6836,7 +6947,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -6844,9 +6956,9 @@ const rawBssItemsData: any[] = [
     "name": "Cactus Field Stamp",
     "englishName": "Cactus Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6867,7 +6979,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cactus_field_stamp.webp",
     "historicalDates": [
@@ -6882,7 +6995,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -6890,9 +7004,9 @@ const rawBssItemsData: any[] = [
     "name": "Clover Field Stamp",
     "englishName": "Clover Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6913,7 +7027,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_clover_field_stamp.webp",
     "historicalDates": [
@@ -6928,7 +7043,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -6936,9 +7052,9 @@ const rawBssItemsData: any[] = [
     "name": "Coconut Field Stamp",
     "englishName": "Coconut Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -6959,7 +7075,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_coconut_field_stamp.webp",
     "historicalDates": [
@@ -6974,7 +7091,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -6982,9 +7100,9 @@ const rawBssItemsData: any[] = [
     "name": "Dandelion Field Stamp",
     "englishName": "Dandelion Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7005,7 +7123,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_dandelion_field_stamp.webp",
     "historicalDates": [
@@ -7020,7 +7139,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7028,9 +7148,9 @@ const rawBssItemsData: any[] = [
     "name": "Mountain Top Field Stamp",
     "englishName": "Mountain Top Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7051,7 +7171,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_mountain_top_field_stamp.webp",
     "historicalDates": [
@@ -7066,7 +7187,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7074,9 +7196,9 @@ const rawBssItemsData: any[] = [
     "name": "Mushroom Field Stamp",
     "englishName": "Mushroom Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7097,7 +7219,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_mushroom_field_stamp.webp",
     "historicalDates": [
@@ -7112,7 +7235,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7120,9 +7244,9 @@ const rawBssItemsData: any[] = [
     "name": "Pineapple Patch Stamp",
     "englishName": "Pineapple Patch Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7143,7 +7267,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pineapple_patch_stamp.webp",
     "historicalDates": [
@@ -7158,7 +7283,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7166,9 +7292,9 @@ const rawBssItemsData: any[] = [
     "name": "Pumpkin Patch Stamp",
     "englishName": "Pumpkin Patch Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7189,7 +7315,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_pumpkin_patch_stamp.webp",
     "historicalDates": [
@@ -7204,7 +7331,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7212,9 +7340,9 @@ const rawBssItemsData: any[] = [
     "name": "Strawberry Field Stamp",
     "englishName": "Strawberry Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7236,7 +7364,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_strawberry_field_stamp.webp",
     "historicalDates": [
@@ -7252,7 +7381,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7260,9 +7390,9 @@ const rawBssItemsData: any[] = [
     "name": "Stump Field Stamp",
     "englishName": "Stump Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7284,7 +7414,8 @@ const rawBssItemsData: any[] = [
       1.375,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_stump_field_stamp.webp",
     "historicalDates": [
@@ -7300,7 +7431,8 @@ const rawBssItemsData: any[] = [
       "2026-06-14",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7308,9 +7440,9 @@ const rawBssItemsData: any[] = [
     "name": "Sunflower Field Stamp",
     "englishName": "Sunflower Field Stamp",
     "category": "Марки",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7330,7 +7462,8 @@ const rawBssItemsData: any[] = [
       1.75,
       1.125,
       0.875,
-      0.58
+      0.58,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sunflower_field_stamp.webp",
     "historicalDates": [
@@ -7344,7 +7477,8 @@ const rawBssItemsData: any[] = [
       "2026-05-24",
       "2026-06-18",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7352,9 +7486,9 @@ const rawBssItemsData: any[] = [
     "name": "Rose Field Stamp",
     "englishName": "Rose Field Stamp",
     "category": "Марки",
-    "value": 0.875,
-    "valueLow": 0.75,
-    "valueHigh": 1.0,
+    "value": 0.625,
+    "valueLow": 0.5,
+    "valueHigh": 0.75,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7373,7 +7507,8 @@ const rawBssItemsData: any[] = [
       1.625,
       1.375,
       1.125,
-      0.875
+      0.875,
+      0.625
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_rose_field_stamp.webp",
     "historicalDates": [
@@ -7386,7 +7521,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -7394,9 +7530,9 @@ const rawBssItemsData: any[] = [
     "name": "Spider Field Stamp",
     "englishName": "Spider Field Stamp",
     "category": "Марки",
-    "value": 0.875,
-    "valueLow": 0.75,
-    "valueHigh": 1.0,
+    "value": 0.625,
+    "valueLow": 0.5,
+    "valueHigh": 0.75,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -7415,7 +7551,8 @@ const rawBssItemsData: any[] = [
       1.625,
       1.375,
       1.125,
-      0.875
+      0.875,
+      0.625
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_spider_field_stamp.webp",
     "historicalDates": [
@@ -7428,7 +7565,8 @@ const rawBssItemsData: any[] = [
       "2026-06-13",
       "2026-06-17",
       "2026-06-22",
-      "2026-09-10"
+      "2026-09-10",
+      "2026-10-01"
     ]
   },
   {
@@ -10236,9 +10374,9 @@ const rawBssItemsData: any[] = [
     "name": "Dark Flame",
     "englishName": "Dark Flame",
     "category": "Разное",
-    "value": 0.58,
-    "valueLow": 0.5,
-    "valueHigh": 0.66,
+    "value": 0.365,
+    "valueLow": 0.33,
+    "valueHigh": 0.4,
     "demand": "Средний",
     "stability": "Падает",
     "rarity": "Обычный",
@@ -10252,7 +10390,8 @@ const rawBssItemsData: any[] = [
       0.875,
       0.5,
       0.75,
-      0.58
+      0.58,
+      0.365
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_dark_flame.webp",
     "historicalDates": [
@@ -10260,7 +10399,8 @@ const rawBssItemsData: any[] = [
       "2025-12-30",
       "2026-01-08",
       "2026-02-21",
-      "2026-07-22"
+      "2026-07-22",
+      "2026-09-20"
     ]
   },
   {
@@ -10296,9 +10436,9 @@ const rawBssItemsData: any[] = [
     "name": "Eviction",
     "englishName": "Eviction",
     "category": "Разное",
-    "value": 1.25,
-    "valueLow": 1.0,
-    "valueHigh": 1.5,
+    "value": 1.75,
+    "valueLow": 1.5,
+    "valueHigh": 2.0,
     "demand": "Высокий",
     "stability": "Растет",
     "rarity": "Обычный",
@@ -10312,7 +10452,8 @@ const rawBssItemsData: any[] = [
       0.625,
       1.0,
       1.125,
-      1.25
+      1.25,
+      1.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_eviction.webp",
     "historicalDates": [
@@ -10320,7 +10461,8 @@ const rawBssItemsData: any[] = [
       "2026-02-21",
       "2026-05-15",
       "2026-05-29",
-      "2026-06-20"
+      "2026-06-20",
+      "2026-09-19"
     ]
   },
   {
@@ -10356,24 +10498,25 @@ const rawBssItemsData: any[] = [
     "name": "Wall Crack",
     "englishName": "Wall Crack",
     "category": "Разное",
-    "value": 4.5,
-    "valueLow": 4.0,
-    "valueHigh": 5.0,
-    "demand": "Высокий",
-    "stability": "Растет",
+    "value": 2.5,
+    "valueLow": 2.0,
+    "valueHigh": 3.0,
+    "demand": "Средний",
+    "stability": "Падает",
     "rarity": "Редкий",
     "glowColor": "rgba(59, 130, 246, 0.25)",
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
     "historicalPrices": [
       0.415,
       0.415,
       1.25,
       1.5,
       3.5,
-      4.5
+      4.5,
+      2.5
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_wall_crack.webp",
     "historicalDates": [
@@ -10382,7 +10525,8 @@ const rawBssItemsData: any[] = [
       "2026-04-14",
       "2026-05-18",
       "2026-06-04",
-      "2026-06-23"
+      "2026-06-23",
+      "2026-09-21"
     ]
   },
   {
@@ -11046,11 +11190,13 @@ const rawBssItemsData: any[] = [
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       1.415,
-      1.625
+      1.625,
+      1.75
     ],
     "historicalDates": [
       "2026-06-20",
-      "2026-07-02"
+      "2026-07-02",
+      "2026-09-19"
     ],
     "image": "https://bssmvalues.com/images/Bead_Lizard.png",
     "beequipData": [
@@ -11060,15 +11206,15 @@ const rawBssItemsData: any[] = [
           {
             "rollName": "3★ Pot",
             "valueLow": 1.5,
-            "valueHigh": 1.75,
-            "value": 1.625,
+            "valueHigh": 2.0,
+            "value": 1.75,
             "demand": "Средний"
           },
           {
             "rollName": "4★ Pot",
-            "valueLow": 3.0,
-            "valueHigh": 3.5,
-            "value": 3.25,
+            "valueLow": 3.5,
+            "valueHigh": 4.0,
+            "value": 3.75,
             "demand": "Высокий"
           },
           {
@@ -11636,12 +11782,16 @@ const rawBssItemsData: any[] = [
     "historicalPrices": [
       6.0,
       11.0,
-      12.0
+      12.0,
+      14.5,
+      15.0
     ],
     "historicalDates": [
       "2026-03-09",
       "2026-06-11",
-      "2026-06-20"
+      "2026-06-20",
+      "2026-09-25",
+      "2026-09-27"
     ],
     "image": "https://bssmvalues.com/images/Beret.png",
     "beequipData": [
@@ -11650,9 +11800,9 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{+Ability from wax} Blue Boost",
-            "valueLow": 11.0,
-            "valueHigh": 13.0,
-            "value": 12.0,
+            "valueLow": 14.0,
+            "valueHigh": 16.0,
+            "value": 15.0,
             "demand": "Средний"
           }
         ]
@@ -11710,29 +11860,29 @@ const rawBssItemsData: any[] = [
           {
             "rollName": "{HB} 1 Bfc + {HB} 2 Cap",
             "valueLow": 10.0,
-            "valueHigh": 11.0,
-            "value": 10.5,
+            "valueHigh": 12.0,
+            "value": 11.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 1 Bfc + {HB} 3 Cap",
-            "valueLow": 27.0,
-            "valueHigh": 30.0,
-            "value": 28.5,
+            "valueLow": 22.0,
+            "valueHigh": 24.0,
+            "value": 23.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 2 Bfc + {HB} 1 Cap",
-            "valueLow": 12.0,
-            "valueHigh": 14.0,
-            "value": 13.0,
+            "valueLow": 13.0,
+            "valueHigh": 15.0,
+            "value": 14.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 2 Bfc + {HB} 2 Cap",
-            "valueLow": 44.0,
-            "valueHigh": 48.0,
-            "value": 46.0,
+            "valueLow": 35.0,
+            "valueHigh": 38.0,
+            "value": 36.5,
             "demand": "Низкий"
           },
           {
@@ -11744,17 +11894,17 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 3 Bfc + {HB} 1 Cap",
-            "valueLow": 60.0,
-            "valueHigh": 65.0,
-            "value": 62.5,
-            "demand": "Средний"
+            "valueLow": 40.0,
+            "valueHigh": 45.0,
+            "value": 42.5,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 3 Bfc + {HB} 2 Cap",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Средний"
+            "demand": "Низкий"
           }
         ]
       },
@@ -11777,9 +11927,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 3 Cap",
-            "valueLow": 13.0,
-            "valueHigh": 15.0,
-            "value": 14.0,
+            "valueLow": 8.0,
+            "valueHigh": 9.0,
+            "value": 8.5,
             "demand": "Низкий"
           }
         ]
@@ -11979,9 +12129,9 @@ const rawBssItemsData: any[] = [
     "name": "Камфорный бальзам",
     "englishName": "Camphor Lip Balm",
     "category": "Биквипы",
-    "value": 475.0,
+    "value": 350.0,
     "valueLow": 0.0,
-    "valueHigh": 950.0,
+    "valueHigh": 700.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -12044,129 +12194,171 @@ const rawBssItemsData: any[] = [
         "groupName": "Bubble Pollen + Gold Bubble Pollen (Full Waxed)",
         "rolls": [
           {
-            "rollName": "{HB} 14 Bp + 3 Gbp",
-            "valueLow": 11.0,
+            "rollName": "{HB} 13 Bp + 2 Gbp",
+            "valueLow": 0.5,
+            "valueHigh": 1.0,
+            "value": 0.75,
+            "demand": "Низкий"
+          },
+          {
+            "rollName": "{HB} 13 Bp + 3 Gbp",
+            "valueLow": 4.0,
+            "valueHigh": 5.0,
+            "value": 4.5,
+            "demand": "Низкий"
+          },
+          {
+            "rollName": "{HB} 13 Bp + 4 Gbp",
+            "valueLow": 10.0,
             "valueHigh": 12.0,
-            "value": 11.5,
+            "value": 11.0,
+            "demand": "Низкий"
+          },
+          {
+            "rollName": "{HB} 13 Bp + 5 Gbp",
+            "valueLow": 25.0,
+            "valueHigh": 28.0,
+            "value": 26.5,
+            "demand": "Средний"
+          },
+          {
+            "rollName": "{HB} 13 Bp + 6 Gbp",
+            "valueLow": 50.0,
+            "valueHigh": 55.0,
+            "value": 52.5,
+            "demand": "Высокий"
+          },
+          {
+            "rollName": "{HB} 14 Bp + 2 Gbp",
+            "valueLow": 1.0,
+            "valueHigh": 2.0,
+            "value": 1.5,
+            "demand": "Низкий"
+          },
+          {
+            "rollName": "{HB} 14 Bp + 3 Gbp",
+            "valueLow": 8.0,
+            "valueHigh": 10.0,
+            "value": 9.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 14 Bp + 4 Gbp",
-            "valueLow": 20.0,
-            "valueHigh": 22.0,
-            "value": 21.0,
+            "valueLow": 19.0,
+            "valueHigh": 21.0,
+            "value": 20.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 14 Bp + 5 Gbp",
-            "valueLow": 42.0,
-            "valueHigh": 45.0,
-            "value": 43.5,
+            "valueLow": 40.0,
+            "valueHigh": 43.0,
+            "value": 41.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 14 Bp + 6 Gbp",
-            "valueLow": 90.0,
-            "valueHigh": 95.0,
-            "value": 92.5,
+            "valueLow": 87.0,
+            "valueHigh": 92.0,
+            "value": 89.5,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 15 Bp + 2 Gbp",
-            "valueLow": 7.0,
-            "valueHigh": 8.0,
-            "value": 7.5,
-            "demand": "Средний"
+            "valueLow": 5.0,
+            "valueHigh": 6.0,
+            "value": 5.5,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 15 Bp + 3 Gbp",
-            "valueLow": 17.0,
-            "valueHigh": 19.0,
-            "value": 18.0,
+            "valueLow": 14.0,
+            "valueHigh": 16.0,
+            "value": 15.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 15 Bp + 4 Gbp",
-            "valueLow": 37.0,
-            "valueHigh": 40.0,
-            "value": 38.5,
+            "valueLow": 35.0,
+            "valueHigh": 38.0,
+            "value": 36.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 15 Bp + 5 Gbp",
-            "valueLow": 82.0,
-            "valueHigh": 86.0,
-            "value": 84.0,
+            "valueLow": 72.0,
+            "valueHigh": 76.0,
+            "value": 74.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 15 Bp + 6 Gbp",
-            "valueLow": 175.0,
-            "valueHigh": 185.0,
-            "value": 180.0,
+            "valueLow": 165.0,
+            "valueHigh": 175.0,
+            "value": 170.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 16 Bp + 2 Gbp",
-            "valueLow": 14.0,
-            "valueHigh": 15.0,
-            "value": 14.5,
+            "valueLow": 12.0,
+            "valueHigh": 14.0,
+            "value": 13.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 16 Bp + 3 Gbp",
-            "valueLow": 30.0,
-            "valueHigh": 32.0,
-            "value": 31.0,
+            "valueLow": 26.0,
+            "valueHigh": 28.0,
+            "value": 27.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 16 Bp + 4 Gbp",
-            "valueLow": 68.0,
-            "valueHigh": 72.0,
-            "value": 70.0,
+            "valueLow": 66.0,
+            "valueHigh": 70.0,
+            "value": 68.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 16 Bp + 5 Gbp",
             "valueLow": 150.0,
-            "valueHigh": 160.0,
-            "value": 155.0,
+            "valueHigh": 155.0,
+            "value": 152.5,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 16 Bp + 6 Gbp",
-            "valueLow": 300.0,
-            "valueHigh": 310.0,
-            "value": 305.0,
+            "valueLow": 280.0,
+            "valueHigh": 290.0,
+            "value": 285.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 17 Bp + 2 Gbp",
-            "valueLow": 28.0,
-            "valueHigh": 30.0,
-            "value": 29.0,
+            "valueLow": 26.0,
+            "valueHigh": 28.0,
+            "value": 27.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 17 Bp + 3 Gbp",
-            "valueLow": 60.0,
-            "valueHigh": 65.0,
-            "value": 62.5,
+            "valueLow": 54.0,
+            "valueHigh": 58.0,
+            "value": 56.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 17 Bp + 4 Gbp",
-            "valueLow": 135.0,
-            "valueHigh": 140.0,
-            "value": 137.5,
+            "valueLow": 125.0,
+            "valueHigh": 130.0,
+            "value": 127.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 17 Bp + 5 Gbp",
-            "valueLow": 280.0,
-            "valueHigh": 290.0,
-            "value": 285.0,
+            "valueLow": 250.0,
+            "valueHigh": 260.0,
+            "value": 255.0,
             "demand": "Хайп"
           },
           {
@@ -12185,23 +12377,23 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 18 Bp + 3 Gbp",
-            "valueLow": 120.0,
-            "valueHigh": 130.0,
-            "value": 125.0,
+            "valueLow": 105.0,
+            "valueHigh": 115.0,
+            "value": 110.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 18 Bp + 4 Gbp",
-            "valueLow": 250.0,
-            "valueHigh": 260.0,
-            "value": 255.0,
+            "valueLow": 235.0,
+            "valueHigh": 245.0,
+            "value": 240.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 18 Bp + 5 Gbp",
-            "valueLow": 500.0,
-            "valueHigh": 525.0,
-            "value": 512.5,
+            "valueLow": 375.0,
+            "valueHigh": 400.0,
+            "value": 387.5,
             "demand": "Хайп"
           },
           {
@@ -12213,30 +12405,30 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 19 Bp + 2 Gbp",
-            "valueLow": 40.0,
-            "valueHigh": 44.0,
-            "value": 42.0,
+            "valueLow": 70.0,
+            "valueHigh": 75.0,
+            "value": 72.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 19 Bp + 3 Gbp",
-            "valueLow": 220.0,
-            "valueHigh": 235.0,
-            "value": 227.5,
+            "valueLow": 180.0,
+            "valueHigh": 190.0,
+            "value": 185.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 19 Bp + 4 Gbp",
-            "valueLow": 465.0,
-            "valueHigh": 480.0,
-            "value": 472.5,
+            "valueLow": 320.0,
+            "valueHigh": 340.0,
+            "value": 330.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 19 Bp + 5 Gbp",
-            "valueLow": 925.0,
-            "valueHigh": 950.0,
-            "value": 937.5,
+            "valueLow": 650.0,
+            "valueHigh": 700.0,
+            "value": 675.0,
             "demand": "Хайп"
           },
           {
@@ -12245,13 +12437,6 @@ const rawBssItemsData: any[] = [
             "valueHigh": 0.0,
             "value": 0.0,
             "demand": "Хайп"
-          },
-          {
-            "rollName": "{HB} ≤ 14 Bp + 2 Gbp",
-            "valueLow": 2.0,
-            "valueHigh": 3.0,
-            "value": 2.5,
-            "demand": "Низкий"
           }
         ]
       },
@@ -12288,9 +12473,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 1.07 Pepper Patch Pollen + {HB} Honey From Instant Conversion",
-            "valueLow": 340.0,
-            "valueHigh": 360.0,
-            "value": 350.0,
+            "valueLow": 365.0,
+            "valueHigh": 385.0,
+            "value": 375.0,
             "demand": "Хайп"
           },
           {
@@ -12410,9 +12595,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 1.08 Pepper Patch Pollen",
-            "valueLow": 430.0,
-            "valueHigh": 450.0,
-            "value": 440.0,
+            "valueLow": 380.0,
+            "valueHigh": 400.0,
+            "value": 390.0,
             "demand": "Хайп"
           }
         ]
@@ -12462,9 +12647,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 11 HaH",
-            "valueLow": 170.0,
-            "valueHigh": 180.0,
-            "value": 175.0,
+            "valueLow": 165.0,
+            "valueHigh": 175.0,
+            "value": 170.0,
             "demand": "Высокий"
           },
           {
@@ -12638,25 +12823,27 @@ const rawBssItemsData: any[] = [
     "name": "Браслет с шармами",
     "englishName": "Charm Bracelet",
     "category": "Биквипы",
-    "value": 122.5,
+    "value": 77.5,
     "valueLow": 0.0,
-    "valueHigh": 245.0,
+    "valueHigh": 155.0,
     "demand": "Низкий",
-    "stability": "Стабильно",
+    "stability": "Падает",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       107.5,
       92.5,
       132.5,
       127.5,
-      127.5
+      127.5,
+      72.5
     ],
     "historicalDates": [
       "2026-03-09",
       "2026-04-02",
       "2026-05-27",
       "2026-05-28",
-      "2026-08-13"
+      "2026-08-13",
+      "2026-10-02"
     ],
     "image": "https://bssmvalues.com/images/Charm_Bracelet.png",
     "beequipData": [
@@ -12665,23 +12852,23 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + 3 Ar",
-            "valueLow": 125.0,
-            "valueHigh": 130.0,
-            "value": 127.5,
+            "valueLow": 70.0,
+            "valueHigh": 75.0,
+            "value": 72.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Melody + 4 Ar",
-            "valueLow": 135.0,
-            "valueHigh": 140.0,
-            "value": 137.5,
+            "valueLow": 80.0,
+            "valueHigh": 85.0,
+            "value": 82.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Melody + 5 Ar",
-            "valueLow": 145.0,
-            "valueHigh": 150.0,
-            "value": 147.5,
+            "valueLow": 90.0,
+            "valueHigh": 95.0,
+            "value": 92.5,
             "demand": "Низкий"
           },
           {
@@ -12698,9 +12885,9 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + 5 Ar",
-            "valueLow": 180.0,
-            "valueHigh": 185.0,
-            "value": 182.5,
+            "valueLow": 120.0,
+            "valueHigh": 125.0,
+            "value": 122.5,
             "demand": "Низкий"
           },
           {
@@ -12712,9 +12899,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + ≤ 4 Ar",
-            "valueLow": 160.0,
-            "valueHigh": 165.0,
-            "value": 162.5,
+            "valueLow": 105.0,
+            "valueHigh": 110.0,
+            "value": 107.5,
             "demand": "Низкий"
           }
         ]
@@ -12724,9 +12911,9 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + {HB} Crah + 5 Ar",
-            "valueLow": 240.0,
-            "valueHigh": 245.0,
-            "value": 242.5,
+            "valueLow": 145.0,
+            "valueHigh": 155.0,
+            "value": 150.0,
             "demand": "Низкий"
           },
           {
@@ -12738,9 +12925,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + {HB} Crah ≤ + 4 Ar",
-            "valueLow": 220.0,
-            "valueHigh": 225.0,
-            "value": 222.5,
+            "valueLow": 125.0,
+            "valueHigh": 130.0,
+            "value": 127.5,
             "demand": "Низкий"
           }
         ]
@@ -12750,9 +12937,9 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + Hft + 5 Ar",
-            "valueLow": 180.0,
-            "valueHigh": 200.0,
-            "value": 190.0,
+            "valueLow": 120.0,
+            "valueHigh": 125.0,
+            "value": 122.5,
             "demand": "Низкий"
           },
           {
@@ -12764,9 +12951,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{+Ability from wax} Melody + Hft + ≤ 4 Ar",
-            "valueLow": 160.0,
-            "valueHigh": 165.0,
-            "value": 162.5,
+            "valueLow": 105.0,
+            "valueHigh": 110.0,
+            "value": 107.5,
             "demand": "Низкий"
           }
         ]
@@ -12949,16 +13136,16 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 3 HaH",
-            "valueLow": 1.5,
-            "valueHigh": 2.0,
-            "value": 1.75,
+            "valueLow": 2.0,
+            "valueHigh": 2.5,
+            "value": 2.25,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 4 HaH",
-            "valueLow": 4.0,
-            "valueHigh": 5.0,
-            "value": 4.5,
+            "valueLow": 5.0,
+            "valueHigh": 6.0,
+            "value": 5.5,
             "demand": "Высокий"
           },
           {
@@ -13349,9 +13536,9 @@ const rawBssItemsData: any[] = [
     "name": "Казу",
     "englishName": "Kazoo",
     "category": "Биквипы",
-    "value": 80.0,
+    "value": 125.0,
     "valueLow": 0.0,
-    "valueHigh": 160.0,
+    "valueHigh": 250.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -13429,37 +13616,37 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{HB} 3 Ctp",
-            "valueLow": 1.0,
-            "valueHigh": 2.0,
-            "value": 1.5,
+            "valueLow": 4.0,
+            "valueHigh": 5.0,
+            "value": 4.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 4 Ctp",
-            "valueLow": 3.0,
-            "valueHigh": 4.0,
-            "value": 3.5,
+            "valueLow": 9.0,
+            "valueHigh": 10.0,
+            "value": 9.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 5 Ctp",
-            "valueLow": 7.0,
-            "valueHigh": 8.0,
-            "value": 7.5,
+            "valueLow": 18.0,
+            "valueHigh": 20.0,
+            "value": 19.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 6 Ctp",
-            "valueLow": 30.0,
-            "valueHigh": 33.0,
-            "value": 31.5,
+            "valueLow": 50.0,
+            "valueHigh": 53.0,
+            "value": 51.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 7 Ctp",
-            "valueLow": 0.0,
-            "valueHigh": 0.0,
-            "value": 0.0,
+            "valueLow": 110.0,
+            "valueHigh": 115.0,
+            "value": 112.5,
             "demand": "Хайп"
           }
         ]
@@ -13495,24 +13682,24 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{HB} 1 Scp",
-            "valueLow": 1.5,
-            "valueHigh": 2.0,
-            "value": 1.75,
-            "demand": "Средний"
+            "valueLow": 1.0,
+            "valueHigh": 1.5,
+            "value": 1.25,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 2 Scp",
-            "valueLow": 45.0,
-            "valueHigh": 50.0,
-            "value": 47.5,
-            "demand": "Хайп"
+            "valueLow": 14.0,
+            "valueHigh": 15.0,
+            "value": 14.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 3 Scp",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп"
+            "demand": "Высокий"
           }
         ]
       },
@@ -13521,108 +13708,122 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{HB} 1 Scp + {HB} 1 Ctp",
-            "valueLow": 30.0,
-            "valueHigh": 35.0,
-            "value": 32.5,
-            "demand": "Высокий"
+            "valueLow": 5.0,
+            "valueHigh": 6.0,
+            "value": 5.5,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 1 Scp + {HB} 2 Ctp",
-            "valueLow": 50.0,
-            "valueHigh": 55.0,
-            "value": 52.5,
-            "demand": "Высокий"
+            "valueLow": 10.0,
+            "valueHigh": 12.0,
+            "value": 11.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 1 Scp + {HB} 3 Ctp",
-            "valueLow": 70.0,
-            "valueHigh": 75.0,
-            "value": 72.5,
-            "demand": "Хайп"
+            "valueLow": 22.0,
+            "valueHigh": 25.0,
+            "value": 23.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 1 Scp + {HB} 4 Ctp",
-            "valueLow": 105.0,
-            "valueHigh": 115.0,
-            "value": 110.0,
-            "demand": "Хайп"
+            "valueLow": 56.0,
+            "valueHigh": 60.0,
+            "value": 58.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Scp + {HB} 5 Ctp",
-            "valueLow": 0.0,
-            "valueHigh": 0.0,
-            "value": 0.0,
-            "demand": "Хайп"
+            "valueLow": 118.0,
+            "valueHigh": 124.0,
+            "value": 121.0,
+            "demand": "Высокий"
+          },
+          {
+            "rollName": "{HB} 1 Scp + {HB} 6 Ctp",
+            "valueLow": 220.0,
+            "valueHigh": 230.0,
+            "value": 225.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 2 Scp + {HB} 1 Ctp",
-            "valueLow": 80.0,
-            "valueHigh": 90.0,
-            "value": 85.0,
-            "demand": "Хайп"
+            "valueLow": 22.0,
+            "valueHigh": 25.0,
+            "value": 23.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 2 Scp + {HB} 2 Ctp",
-            "valueLow": 155.0,
-            "valueHigh": 160.0,
-            "value": 157.5,
-            "demand": "Хайп"
+            "valueLow": 56.0,
+            "valueHigh": 60.0,
+            "value": 58.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 2 Scp + {HB} 3 Ctp",
-            "valueLow": 0.0,
-            "valueHigh": 0.0,
-            "value": 0.0,
-            "demand": "Хайп"
+            "valueLow": 123.0,
+            "valueHigh": 127.0,
+            "value": 125.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 2 Scp + {HB} 4 Ctp",
-            "valueLow": 0.0,
-            "valueHigh": 0.0,
-            "value": 0.0,
-            "demand": "Хайп"
+            "valueLow": 240.0,
+            "valueHigh": 250.0,
+            "value": 245.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 2 Scp + {HB} 5 Ctp",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп"
+            "demand": "Высокий"
+          },
+          {
+            "rollName": "{HB} 2 Scp + {HB} 6 Ctp",
+            "valueLow": 0.0,
+            "valueHigh": 0.0,
+            "value": 0.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 3 Scp + {HB} 1 Ctp",
-            "valueLow": 0.0,
-            "valueHigh": 0.0,
-            "value": 0.0,
-            "demand": "Хайп"
+            "valueLow": 135.0,
+            "valueHigh": 145.0,
+            "value": 140.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 3 Scp + {HB} 2 Ctp",
-            "valueLow": 0.0,
-            "valueHigh": 0.0,
-            "value": 0.0,
-            "demand": "Хайп"
+            "valueLow": 240.0,
+            "valueHigh": 250.0,
+            "value": 245.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 3 Scp + {HB} 3 Ctp",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 3 Scp + {HB} 4 Ctp",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 3 Scp + {HB} 5 Ctp",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп"
+            "demand": "Высокий"
           }
         ]
       }
@@ -13633,9 +13834,9 @@ const rawBssItemsData: any[] = [
     "name": "Гавайские бусы (Лей)",
     "englishName": "Lei",
     "category": "Биквипы",
-    "value": 0.375,
+    "value": 1.0,
     "valueLow": 0.0,
-    "valueHigh": 0.75,
+    "valueHigh": 2.0,
     "demand": "Низкий",
     "stability": "Падает",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -13674,16 +13875,16 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "4★ Pot",
-            "valueLow": 0.25,
-            "valueHigh": 0.5,
-            "value": 0.375,
+            "valueLow": 0.5,
+            "valueHigh": 0.75,
+            "value": 0.625,
             "demand": "Низкий"
           },
           {
             "rollName": "5★ Pot",
-            "valueLow": 0.5,
-            "valueHigh": 0.75,
-            "value": 0.625,
+            "valueLow": 1.5,
+            "valueHigh": 2.0,
+            "value": 1.75,
             "demand": "Низкий"
           }
         ]
@@ -13789,9 +13990,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 3 Atl",
-            "valueLow": 7.0,
-            "valueHigh": 8.0,
-            "value": 7.5,
+            "valueLow": 19.0,
+            "valueHigh": 21.0,
+            "value": 20.0,
             "demand": "Средний"
           }
         ]
@@ -13848,9 +14049,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 2 Bap + 1 Atl",
-            "valueLow": 80.0,
-            "valueHigh": 85.0,
-            "value": 82.5,
+            "valueLow": 95.0,
+            "valueHigh": 100.0,
+            "value": 97.5,
             "demand": "Хайп"
           },
           {
@@ -14295,9 +14496,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "14 Ptc + 10 Pp 5★ Pot",
-            "valueLow": 25.0,
-            "valueHigh": 30.0,
-            "value": 27.5,
+            "valueLow": 20.0,
+            "valueHigh": 23.0,
+            "value": 21.5,
             "demand": "Средний"
           },
           {
@@ -14316,9 +14517,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "14 Ptc + ≤ 9 Pp 5★ Pot",
-            "valueLow": 9.0,
-            "valueHigh": 10.0,
-            "value": 9.5,
+            "valueLow": 10.0,
+            "valueHigh": 12.0,
+            "value": 11.0,
             "demand": "Средний"
           },
           {
@@ -14337,9 +14538,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "15 Ptc + 10 Pp 5★ Pot",
-            "valueLow": 55.0,
-            "valueHigh": 60.0,
-            "value": 57.5,
+            "valueLow": 43.0,
+            "valueHigh": 48.0,
+            "value": 45.5,
             "demand": "Хайп"
           },
           {
@@ -14358,9 +14559,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "15 Ptc + ≤ 9 Pp 5★ Pot",
-            "valueLow": 30.0,
-            "valueHigh": 35.0,
-            "value": 32.5,
+            "valueLow": 25.0,
+            "valueHigh": 30.0,
+            "value": 27.5,
             "demand": "Высокий"
           },
           {
@@ -14433,9 +14634,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "14 Ptc + 10 Pp + 1 Ar 5★ Pot",
-            "valueLow": 50.0,
-            "valueHigh": 55.0,
-            "value": 52.5,
+            "valueLow": 35.0,
+            "valueHigh": 40.0,
+            "value": 37.5,
             "demand": "Хайп"
           },
           {
@@ -14454,8 +14655,8 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "14 Ptc + ≤ 9 Pp + 1 Ar 5★ Pot (Unwaxed)",
-            "valueLow": 22.0,
-            "valueHigh": 27.0,
+            "valueLow": 23.0,
+            "valueHigh": 26.0,
             "value": 24.5,
             "demand": "Средний"
           },
@@ -14475,9 +14676,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "15 Ptc + 10 Pp + 1 Ar 5★ Pot",
-            "valueLow": 100.0,
-            "valueHigh": 105.0,
-            "value": 102.5,
+            "valueLow": 67.0,
+            "valueHigh": 75.0,
+            "value": 71.0,
             "demand": "Хайп"
           },
           {
@@ -14496,9 +14697,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "15 Ptc + ≤ 9 Pp + 1 Ar 5★ Pot",
-            "valueLow": 60.0,
-            "valueHigh": 70.0,
-            "value": 65.0,
+            "valueLow": 50.0,
+            "valueHigh": 55.0,
+            "value": 52.5,
             "demand": "Хайп"
           }
         ]
@@ -15183,37 +15384,37 @@ const rawBssItemsData: any[] = [
           {
             "rollName": "2★ Pot",
             "valueLow": 3.0,
-            "valueHigh": 4.0,
-            "value": 3.5,
-            "demand": "Высокий"
+            "valueHigh": 3.5,
+            "value": 3.25,
+            "demand": "Средний"
           },
           {
             "rollName": "3★ Pot",
-            "valueLow": 7.5,
-            "valueHigh": 8.0,
-            "value": 7.75,
-            "demand": "Хайп"
+            "valueLow": 6.5,
+            "valueHigh": 7.0,
+            "value": 6.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "4★ Pot",
-            "valueLow": 18.0,
-            "valueHigh": 19.0,
-            "value": 18.5,
-            "demand": "Хайп"
+            "valueLow": 14.0,
+            "valueHigh": 15.0,
+            "value": 14.5,
+            "demand": "Высокий"
           },
           {
             "rollName": "5★ Pot",
-            "valueLow": 38.0,
-            "valueHigh": 40.0,
-            "value": 39.0,
+            "valueLow": 29.0,
+            "valueHigh": 31.0,
+            "value": 30.0,
             "demand": "Хайп"
           },
           {
             "rollName": "≤1★Pot",
             "valueLow": 1.0,
-            "valueHigh": 2.0,
-            "value": 1.5,
-            "demand": "Средний"
+            "valueHigh": 1.5,
+            "value": 1.25,
+            "demand": "Низкий"
           }
         ]
       },
@@ -16321,9 +16522,9 @@ const rawBssItemsData: any[] = [
     "name": "Оленьи рога",
     "englishName": "Reindeer Antlers",
     "category": "Биквипы",
-    "value": 112.5,
+    "value": 107.5,
     "valueLow": 0.0,
-    "valueHigh": 225.0,
+    "valueHigh": 215.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -16398,30 +16599,30 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 3 Cap",
-            "valueLow": 19.0,
-            "valueHigh": 21.0,
-            "value": 20.0,
+            "valueLow": 17.0,
+            "valueHigh": 19.0,
+            "value": 18.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 4 Cap",
-            "valueLow": 44.0,
-            "valueHigh": 48.0,
-            "value": 46.0,
+            "valueLow": 40.0,
+            "valueHigh": 44.0,
+            "value": 42.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 5 Cap",
-            "valueLow": 95.0,
-            "valueHigh": 100.0,
-            "value": 97.5,
+            "valueLow": 90.0,
+            "valueHigh": 95.0,
+            "value": 92.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6 Cap",
-            "valueLow": 215.0,
-            "valueHigh": 225.0,
-            "value": 220.0,
+            "valueLow": 205.0,
+            "valueHigh": 215.0,
+            "value": 210.0,
             "demand": "Высокий"
           },
           {
@@ -16459,9 +16660,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "≤3★ Pot",
-            "valueLow": 1.5,
+            "valueLow": 2.5,
             "valueHigh": 3.5,
-            "value": 2.5,
+            "value": 3.0,
             "demand": "Средний"
           }
         ]
@@ -16760,58 +16961,58 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{+Ability from wax} Honey Mark + 10 Md",
-            "valueLow": 130.0,
-            "valueHigh": 134.0,
-            "value": 132.0,
+            "valueLow": 121.0,
+            "valueHigh": 125.0,
+            "value": 123.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + 11 Md",
-            "valueLow": 135.0,
-            "valueHigh": 139.0,
-            "value": 137.0,
+            "valueLow": 126.0,
+            "valueHigh": 130.0,
+            "value": 128.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + 12 Md",
-            "valueLow": 140.0,
-            "valueHigh": 145.0,
-            "value": 142.5,
+            "valueLow": 131.0,
+            "valueHigh": 135.0,
+            "value": 133.0,
             "demand": "Средний"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + 13 Md",
+            "valueLow": 136.0,
+            "valueHigh": 145.0,
+            "value": 140.5,
+            "demand": "Средний"
+          },
+          {
+            "rollName": "{+Ability from wax} Honey Mark + 14 Md",
             "valueLow": 150.0,
             "valueHigh": 160.0,
             "value": 155.0,
             "demand": "Средний"
           },
           {
-            "rollName": "{+Ability from wax} Honey Mark + 14 Md",
-            "valueLow": 185.0,
-            "valueHigh": 195.0,
-            "value": 190.0,
-            "demand": "Средний"
-          },
-          {
             "rollName": "{+Ability from wax} Honey Mark + 7 Md",
-            "valueLow": 115.0,
-            "valueHigh": 119.0,
-            "value": 117.0,
+            "valueLow": 106.0,
+            "valueHigh": 110.0,
+            "value": 108.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + 8 Md",
-            "valueLow": 120.0,
-            "valueHigh": 124.0,
-            "value": 122.0,
+            "valueLow": 111.0,
+            "valueHigh": 115.0,
+            "value": 113.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + 9 Md",
-            "valueLow": 125.0,
-            "valueHigh": 129.0,
-            "value": 127.0,
+            "valueLow": 116.0,
+            "valueHigh": 120.0,
+            "value": 118.0,
             "demand": "Хайп"
           },
           {
@@ -16931,8 +17132,8 @@ const rawBssItemsData: any[] = [
     "name": "Снежный шар",
     "englishName": "Snow Globe",
     "category": "Биквипы",
-    "value": 0.375,
-    "valueLow": 0.25,
+    "value": 0.415,
+    "valueLow": 0.33,
     "valueHigh": 0.5,
     "demand": "Низкий",
     "stability": "Стабильно",
@@ -16949,17 +17150,10 @@ const rawBssItemsData: any[] = [
         "groupName": "Potential (Unwaxed)",
         "rolls": [
           {
-            "rollName": "5★ Pot",
+            "rollName": "≤5★ Pot",
             "valueLow": 0.33,
             "valueHigh": 0.5,
             "value": 0.415,
-            "demand": "Низкий"
-          },
-          {
-            "rollName": "≤4★ Pot",
-            "valueLow": 0.25,
-            "valueHigh": 0.33,
-            "value": 0.29,
             "demand": "Низкий"
           }
         ]
@@ -16971,9 +17165,9 @@ const rawBssItemsData: any[] = [
     "name": "Снежная тиара",
     "englishName": "Snow Tiara",
     "category": "Биквипы",
-    "value": 180.0,
+    "value": 160.0,
     "valueLow": 0.0,
-    "valueHigh": 360.0,
+    "valueHigh": 320.0,
     "demand": "Низкий",
     "stability": "Падает",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -16981,13 +17175,15 @@ const rawBssItemsData: any[] = [
       5.0,
       15.0,
       27.0,
-      15.0
+      15.0,
+      13.0
     ],
     "historicalDates": [
       "2026-04-14",
       "2026-05-24",
       "2026-06-03",
-      "2026-07-20"
+      "2026-07-20",
+      "2026-09-25"
     ],
     "image": "https://bssmvalues.com/images/Snow_Tiara.png",
     "beequipData": [
@@ -16996,114 +17192,114 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{HB} 5.6-5.9 Bfc",
-            "valueLow": 12.0,
-            "valueHigh": 18.0,
-            "value": 15.0,
+            "valueLow": 10.0,
+            "valueHigh": 16.0,
+            "value": 13.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6 Bfc",
-            "valueLow": 25.0,
-            "valueHigh": 30.0,
-            "value": 27.5,
+            "valueLow": 24.0,
+            "valueHigh": 28.0,
+            "value": 26.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 6.1 Bfc",
-            "valueLow": 40.0,
-            "valueHigh": 45.0,
-            "value": 42.5,
+            "valueLow": 38.0,
+            "valueHigh": 42.0,
+            "value": 40.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 6.2 Bfc",
-            "valueLow": 55.0,
-            "valueHigh": 60.0,
-            "value": 57.5,
+            "valueLow": 50.0,
+            "valueHigh": 55.0,
+            "value": 52.5,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 6.3 Bfc",
-            "valueLow": 70.0,
-            "valueHigh": 75.0,
-            "value": 72.5,
+            "valueLow": 65.0,
+            "valueHigh": 70.0,
+            "value": 67.5,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 6.4 Bfc",
-            "valueLow": 90.0,
-            "valueHigh": 95.0,
-            "value": 92.5,
+            "valueLow": 80.0,
+            "valueHigh": 85.0,
+            "value": 82.5,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 6.5 Bfc",
-            "valueLow": 115.0,
-            "valueHigh": 120.0,
-            "value": 117.5,
+            "valueLow": 100.0,
+            "valueHigh": 110.0,
+            "value": 105.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 6.6 Bfc",
-            "valueLow": 135.0,
-            "valueHigh": 140.0,
-            "value": 137.5,
+            "valueLow": 120.0,
+            "valueHigh": 130.0,
+            "value": 125.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6.7 Bfc",
-            "valueLow": 155.0,
-            "valueHigh": 160.0,
-            "value": 157.5,
+            "valueLow": 140.0,
+            "valueHigh": 150.0,
+            "value": 145.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6.8 Bfc",
-            "valueLow": 175.0,
-            "valueHigh": 180.0,
-            "value": 177.5,
+            "valueLow": 165.0,
+            "valueHigh": 175.0,
+            "value": 170.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6.9 Bfc",
-            "valueLow": 195.0,
-            "valueHigh": 200.0,
-            "value": 197.5,
+            "valueLow": 185.0,
+            "valueHigh": 190.0,
+            "value": 187.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 7 Bfc",
-            "valueLow": 215.0,
-            "valueHigh": 225.0,
-            "value": 220.0,
+            "valueLow": 200.0,
+            "valueHigh": 210.0,
+            "value": 205.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 7.1 Bfc",
-            "valueLow": 245.0,
-            "valueHigh": 255.0,
-            "value": 250.0,
+            "valueLow": 225.0,
+            "valueHigh": 235.0,
+            "value": 230.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 7.2 Bfc",
+            "valueLow": 250.0,
+            "valueHigh": 260.0,
+            "value": 255.0,
+            "demand": "Средний"
+          },
+          {
+            "rollName": "{HB} 7.3 Bfc",
             "valueLow": 280.0,
             "valueHigh": 290.0,
             "value": 285.0,
             "demand": "Средний"
           },
           {
-            "rollName": "{HB} 7.3 Bfc",
-            "valueLow": 315.0,
-            "valueHigh": 325.0,
-            "value": 320.0,
-            "demand": "Средний"
-          },
-          {
             "rollName": "{HB} 7.4 Bfc",
-            "valueLow": 350.0,
-            "valueHigh": 360.0,
-            "value": 355.0,
+            "valueLow": 300.0,
+            "valueHigh": 320.0,
+            "value": 310.0,
             "demand": "Средний"
           },
           {
@@ -17211,9 +17407,9 @@ const rawBssItemsData: any[] = [
     "name": "Повязка от пота",
     "englishName": "Sweatband",
     "category": "Биквипы",
-    "value": 100.0,
+    "value": 87.5,
     "valueLow": 0.0,
-    "valueHigh": 200.0,
+    "valueHigh": 175.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -17251,30 +17447,30 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "26 Red Gather Amount",
-            "valueLow": 13.0,
-            "valueHigh": 14.0,
-            "value": 13.5,
+            "valueLow": 20.0,
+            "valueHigh": 22.0,
+            "value": 21.0,
             "demand": "Средний"
           },
           {
             "rollName": "27 Red Gather Amount",
-            "valueLow": 31.0,
-            "valueHigh": 33.0,
-            "value": 32.0,
+            "valueLow": 32.0,
+            "valueHigh": 36.0,
+            "value": 34.0,
             "demand": "Высокий"
           },
           {
             "rollName": "28 Red Gather Amount",
-            "valueLow": 75.0,
-            "valueHigh": 80.0,
-            "value": 77.5,
+            "valueLow": 72.0,
+            "valueHigh": 78.0,
+            "value": 75.0,
             "demand": "Высокий"
           },
           {
             "rollName": "29 Red Gather Amount",
-            "valueLow": 190.0,
-            "valueHigh": 200.0,
-            "value": 195.0,
+            "valueLow": 165.0,
+            "valueHigh": 175.0,
+            "value": 170.0,
             "demand": "Высокий"
           },
           {
@@ -17373,23 +17569,23 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "26 Red Gather Amount + {HB} 1 Red Pollen",
-            "valueLow": 40.0,
-            "valueHigh": 44.0,
-            "value": 42.0,
+            "valueLow": 32.0,
+            "valueHigh": 36.0,
+            "value": 34.0,
             "demand": "Высокий"
           },
           {
             "rollName": "27 Red Gather Amount + {HB} 1 Red Pollen",
-            "valueLow": 120.0,
-            "valueHigh": 130.0,
-            "value": 125.0,
+            "valueLow": 72.0,
+            "valueHigh": 78.0,
+            "value": 75.0,
             "demand": "Хайп"
           },
           {
             "rollName": "28 Red Gather Amount + {HB} 1 Red Pollen",
-            "valueLow": 0.0,
-            "valueHigh": 0.0,
-            "value": 0.0,
+            "valueLow": 165.0,
+            "valueHigh": 175.0,
+            "value": 170.0,
             "demand": "Хайп"
           },
           {
@@ -17630,7 +17826,7 @@ const rawBssItemsData: any[] = [
         "groupName": "Potential (Unwaxed)",
         "rolls": [
           {
-            "rollName": "5★ Pot (Unwaxed)",
+            "rollName": "5★ Pot",
             "valueLow": 0.0,
             "valueHigh": 0.05,
             "value": 0.025,
@@ -17867,9 +18063,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "5★ Pot",
-            "valueLow": 23.0,
-            "valueHigh": 26.0,
-            "value": 24.5,
+            "valueLow": 19.0,
+            "valueHigh": 22.0,
+            "value": 20.5,
             "demand": "Хайп"
           },
           {
@@ -17916,9 +18112,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 2 Bap",
-            "valueLow": 36.0,
-            "valueHigh": 40.0,
-            "value": 38.0,
+            "valueLow": 34.0,
+            "valueHigh": 38.0,
+            "value": 36.0,
             "demand": "Высокий"
           },
           {
@@ -17976,8 +18172,8 @@ const rawBssItemsData: any[] = [
           {
             "rollName": "5★ Pot",
             "valueLow": 4.0,
-            "valueHigh": 5.0,
-            "value": 4.5,
+            "valueHigh": 4.5,
+            "value": 4.25,
             "demand": "Высокий"
           },
           {
@@ -18049,15 +18245,17 @@ const rawBssItemsData: any[] = [
     "valueLow": 0.0,
     "valueHigh": 560.0,
     "demand": "Низкий",
-    "stability": "Падает",
+    "stability": "Растет",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       7.5,
-      2.5
+      2.5,
+      7.0
     ],
     "historicalDates": [
       "2026-06-10",
-      "2026-08-14"
+      "2026-08-14",
+      "2026-09-23"
     ],
     "image": "https://bssmvalues.com/images/Whistle.png",
     "beequipData": [
@@ -18066,37 +18264,37 @@ const rawBssItemsData: any[] = [
         "rolls": [
           {
             "rollName": "{HB} 1 Bms + {HB} 1 Scp",
-            "valueLow": 2.0,
-            "valueHigh": 3.0,
-            "value": 2.5,
+            "valueLow": 6.0,
+            "valueHigh": 8.0,
+            "value": 7.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 1 Bms + {HB} 2 Scp",
-            "valueLow": 12.0,
-            "valueHigh": 13.0,
-            "value": 12.5,
+            "valueLow": 20.0,
+            "valueHigh": 24.0,
+            "value": 22.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 1 Bms + {HB} 3 Scp",
-            "valueLow": 34.0,
-            "valueHigh": 38.0,
-            "value": 36.0,
+            "valueLow": 55.0,
+            "valueHigh": 60.0,
+            "value": 57.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Bms + {HB} 4 Scp",
-            "valueLow": 70.0,
-            "valueHigh": 75.0,
-            "value": 72.5,
+            "valueLow": 145.0,
+            "valueHigh": 155.0,
+            "value": 150.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Bms + {HB} 5 Scp",
-            "valueLow": 175.0,
-            "valueHigh": 180.0,
-            "value": 177.5,
+            "valueLow": 250.0,
+            "valueHigh": 260.0,
+            "value": 255.0,
             "demand": "Высокий"
           },
           {
@@ -18257,23 +18455,23 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 2 Scp",
-            "valueLow": 1.5,
-            "valueHigh": 2.0,
-            "value": 1.75,
+            "valueLow": 1.0,
+            "valueHigh": 1.5,
+            "value": 1.25,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 3 Scp",
-            "valueLow": 11.0,
-            "valueHigh": 13.0,
-            "value": 12.0,
+            "valueLow": 9.0,
+            "valueHigh": 11.0,
+            "value": 10.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 4 Scp",
-            "valueLow": 32.0,
-            "valueHigh": 36.0,
-            "value": 34.0,
+            "valueLow": 27.0,
+            "valueHigh": 30.0,
+            "value": 28.5,
             "demand": "Высокий"
           },
           {
@@ -18292,9 +18490,9 @@ const rawBssItemsData: any[] = [
           },
           {
             "rollName": "{HB} 7 Scp",
-            "valueLow": 325.0,
-            "valueHigh": 340.0,
-            "value": 332.5,
+            "valueLow": 0.0,
+            "valueHigh": 0.0,
+            "value": 0.0,
             "demand": "Высокий"
           },
           {
@@ -18316,6 +18514,15 @@ const rawBssItemsData: any[] = [
     ]
   }
 ];
+
+
+;
+
+
+;
+
+
+;
 
 
 ;

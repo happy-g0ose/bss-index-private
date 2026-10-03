@@ -55,6 +55,19 @@ live_beequips = {}
 for bq_name, data in live["Beequip"].items():
     live_beequips[bq_name.lower().strip()] = (bq_name, data)
 
+# Несовпадения названий: наше englishName -> имя в bssmvalues.com
+NAME_ALIASES = {
+    "cub voucher": "cub buddy voucher",
+    "round basic": "round basic bee",
+    "wobbly looker": "wobbly looker bee",
+}
+
+for our_key, live_key in NAME_ALIASES.items():
+    if live_key in live_stickers and our_key not in live_stickers:
+        live_stickers[our_key] = live_stickers[live_key]
+    elif live_key not in live_stickers:
+        print(f"WARNING: alias target not found in live data: {live_key!r}")
+
 updated_count = 0
 price_changes = []
 

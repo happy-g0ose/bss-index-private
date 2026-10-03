@@ -1,6 +1,6 @@
 {
-  "timestamp": 1786801094758,
-  "message": "feat(prices): synchronize all sticker and beequip values with latest BSS Values database",
+  "timestamp": 1786802629243,
+  "message": "fix(values): provide accurate market price estimates for all TBD stickers and beequip rolls",
   "author": "BSS Index Developer",
-  "sha": "d681b45191aaabcf4bb8a83f56980b175ce63e0f"
+  "sha": "75458882d357af4c0927c6d7c6734db4c0cb86d5"
 }
