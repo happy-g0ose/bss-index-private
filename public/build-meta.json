@@ -1,6 +1,6 @@
 {
-  "timestamp": 1791892066509,
-  "message": "feat(prices): update sticker and beequip values from bssmvalues.com\n\n- 39 items refreshed from live API (data through 2026-10-13)",
+  "timestamp": 1791894292037,
+  "message": "fix(ui): remove AI slop texts and dirt texture\n\n- Replace AI-sounding demand descriptions with short human ones\n- Remove noise overlay (dirt texture) from all surfaces\n- Rename tool descriptions: Catalog of prices, Trade Calculator, etc.\n- Shorten author and footer texts\n- Remove dead Hero.tsx component",
   "author": "BSS Index Developer",
-  "sha": "7b9bd42e373262a611e13ead2ba83dddfc0e5c5d"
+  "sha": "92de43ae64c5a0996702d5ea0402769488889dec"
 }

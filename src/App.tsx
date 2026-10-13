@@ -9,6 +9,8 @@ import ItemDetailModal from './components/ItemDetailModal';
 import CommandMenu from './components/CommandMenu';
 import AuthorsModal from './components/AuthorsModal';
 import BeequipsPage from './components/BeequipsPage';
+import SettingsModal from './components/SettingsModal';
+import type { BgMode } from './components/SettingsModal';
 import { bssItemsData } from './data/items';
 import type { BSSItem } from './data/items';
 import type { Language } from './locales';
@@ -28,6 +30,7 @@ export default function App() {
   const [sortingOption, setSortingOption] = useState<SortType>('value-desc');
   const [isCommandMenuOpen, setIsCommandMenuOpen] = useState(false);
   const [isAuthorsModalOpen, setIsAuthorsModalOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [toast, setToast] = useState<{ show: boolean; message: string; side: 'A' | 'B' | null }>({ show: false, message: '', side: null });
   
   const [lang, setLangState] = useState<Language>(() => {
@@ -41,6 +44,40 @@ export default function App() {
     localStorage.setItem('bss_lang', newLang);
     setLangState(newLang);
   };
+
+  // Behavior settings
+  const [bg, setBgState] = useState<BgMode>(() => {
+    const saved = localStorage.getItem('bss_bg') as BgMode;
+    return saved === 'grid' || saved === 'dots' || saved === 'gradient' ? saved : 'grid';
+  });
+
+  const [reduceMotion, setReduceMotionState] = useState<boolean>(() => {
+    return localStorage.getItem('bss_motion') === 'reduced';
+  });
+
+  const [showWeekBadges, setShowWeekBadgesState] = useState<boolean>(() => {
+    return localStorage.getItem('bss_badges') !== 'hidden';
+  });
+
+  const setBg = (newBg: BgMode) => {
+    localStorage.setItem('bss_bg', newBg);
+    setBgState(newBg);
+  };
+
+  const setReduceMotion = (v: boolean) => {
+    localStorage.setItem('bss_motion', v ? 'reduced' : 'full');
+    setReduceMotionState(v);
+  };
+
+  const setShowWeekBadges = (v: boolean) => {
+    localStorage.setItem('bss_badges', v ? 'shown' : 'hidden');
+    setShowWeekBadgesState(v);
+  };
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('reduce-motion', reduceMotion);
+  }, [reduceMotion]);
+
   const [activeTab, setActiveTab] = useState<TabType>('home');
 
   useEffect(() => {
@@ -216,7 +253,7 @@ export default function App() {
     });
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased grid-bg">
+    <div className={`min-h-screen text-neutral-100 font-sans relative antialiased bgmode-${bg}`}>
       
       {/* Keyboard Shortcut Announcement Banner */}
       <div className="bg-gradient-to-r from-amber-500/80 to-yellow-600/80 text-neutral-950 text-[10px] font-extrabold py-1.5 px-4 text-center tracking-wider uppercase select-none flex items-center justify-center gap-2 shadow-md border-b border-amber-500/10 flex-wrap">
@@ -232,6 +269,7 @@ export default function App() {
       <Navbar
         onSearchClick={() => setIsCommandMenuOpen(true)}
         onAuthorsClick={() => setIsAuthorsModalOpen(true)}
+        onSettingsClick={() => setIsSettingsOpen(true)}
         lang={lang}
         setLang={setLang}
         onLogoClick={() => setActiveTab('home')}
@@ -398,6 +436,7 @@ export default function App() {
                       onAddToSideB={handleAddToSideB}
                       lang={lang}
                       searchQuery={searchQuery}
+                      showWeekBadge={showWeekBadges}
                     />
                   ))
                 ) : (
@@ -463,6 +502,19 @@ export default function App() {
         isOpen={isAuthorsModalOpen}
         onClose={() => setIsAuthorsModalOpen(false)}
         lang={lang}
+      />
+
+      {/* Appearance & Behavior Settings Modal */}
+      <SettingsModal
+        isOpen={isSettingsOpen}
+        onClose={() => setIsSettingsOpen(false)}
+        lang={lang}
+        bg={bg}
+        setBg={setBg}
+        reduceMotion={reduceMotion}
+        setReduceMotion={setReduceMotion}
+        showWeekBadges={showWeekBadges}
+        setShowWeekBadges={setShowWeekBadges}
       />
 
       {/* Toast Notification */}

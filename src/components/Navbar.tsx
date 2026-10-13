@@ -1,16 +1,17 @@
-import { Search, Globe } from 'lucide-react';
+import { Search, Globe, Settings } from 'lucide-react';
 import type { Language } from '../locales';
 import { t } from '../locales';
 
 interface NavbarProps {
   onSearchClick: () => void;
   onAuthorsClick: () => void;
+  onSettingsClick: () => void;
   lang: Language;
   setLang: (lang: Language) => void;
   onLogoClick?: () => void;
 }
 
-export default function Navbar({ onSearchClick, onAuthorsClick, lang, setLang, onLogoClick }: NavbarProps) {
+export default function Navbar({ onSearchClick, onAuthorsClick, onSettingsClick, lang, setLang, onLogoClick }: NavbarProps) {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-[#0b0f19]/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-18 flex items-center justify-between">
@@ -87,6 +88,15 @@ export default function Navbar({ onSearchClick, onAuthorsClick, lang, setLang, o
           >
             <Globe className="h-3.5 w-3.5 text-blue-400" />
             <span>{lang}</span>
+          </button>
+
+          {/* Settings button */}
+          <button
+            onClick={onSettingsClick}
+            title={t('settings.title', lang)}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-white/5 bg-neutral-900/40 hover:bg-neutral-900/80 transition-all duration-300 text-neutral-400 hover:text-white text-xs select-none cursor-pointer"
+          >
+            <Settings className="h-3.5 w-3.5" />
           </button>
         </div>
 

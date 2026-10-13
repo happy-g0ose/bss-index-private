@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { MouseEvent } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { TrendingUp, TrendingDown, Minus, Plus } from 'lucide-react';
 import { transliterate, resolveQuery, getStatBadgesForGroup, RU_ABBR_MAP, STAT_ABBR_LABELS } from './BeequipsPage';
 import type { BSSItem } from '../data/items';
@@ -15,9 +15,10 @@ interface ItemCardProps {
   index: number;
   lang: Language;
   searchQuery?: string;
+  showWeekBadge?: boolean;
 }
 
-export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, index: _index, lang, searchQuery }: ItemCardProps) {
+export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, index: _index, lang, searchQuery, showWeekBadge = true }: ItemCardProps) {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -67,27 +68,53 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
   };
 
   // Card staggered animation entrance
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.96, y: 15 },
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 12 },
     visible: {
       opacity: 1,
-      scale: 1,
       y: 0,
       transition: {
-        type: 'spring' as const,
-        stiffness: 150,
-        damping: 20,
+        duration: 0.4,
+        ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
     exit: {
       opacity: 0,
-      scale: 0.96,
-      y: 10,
+      y: 8,
       transition: {
-        duration: 0.15,
+        duration: 0.18,
       },
     },
   };
+
+  // Week-over-week price change derived from the item's history
+  const getWeekChange = (item: BSSItem): number | null => {
+    const prices = item.historicalPrices;
+    const dates = item.historicalDates;
+    if (!prices || prices.length < 2 || !dates || dates.length < 2) return null;
+    const n = Math.min(prices.length, dates.length);
+    const lastDate = new Date(dates[n - 1]);
+    if (isNaN(lastDate.getTime())) return null;
+    const lastPrice = prices[n - 1];
+    const target = lastDate.getTime() - 7 * 86400000;
+    let bestIdx = -1;
+    let bestDiff = Infinity;
+    for (let i = 0; i < n - 1; i++) {
+      const d = new Date(dates[i]);
+      if (isNaN(d.getTime())) continue;
+      const diff = Math.abs(d.getTime() - target);
+      if (diff < bestDiff) {
+        bestDiff = diff;
+        bestIdx = i;
+      }
+    }
+    if (bestIdx === -1) return null;
+    const prev = prices[bestIdx];
+    if (!prev) return null;
+    return ((lastPrice - prev) / prev) * 100;
+  };
+
+  const weekChange = showWeekBadge ? getWeekChange(item) : null;
 
   // Custom vector background illustration matching categories
   const renderItemIllustration = () => {
@@ -152,6 +179,19 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
         <span className={`text-[10px] uppercase font-extrabold tracking-wider px-2.5 py-0.5 rounded border ${item.badgeColor}`}>
           {translateCategory(item.category, lang)}
         </span>
+        {weekChange !== null && Math.abs(weekChange) >= 1 && (
+          <span
+            title={t('item.change.week', lang)}
+            className={`flex items-center gap-1 text-[10px] font-black px-2 py-0.5 rounded border select-none ${
+              weekChange > 0
+                ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/25'
+                : 'bg-red-500/10 text-red-500 border-red-500/25'
+            }`}
+          >
+            {weekChange > 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
+            {weekChange > 0 ? '+' : ''}{weekChange.toFixed(0)}%
+          </span>
+        )}
       </div>
 
       {/* Center Layout: Visual SVG + Info */}
