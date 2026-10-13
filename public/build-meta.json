@@ -1,6 +1,6 @@
 {
-  "timestamp": 1791894292037,
-  "message": "fix(ui): remove AI slop texts and dirt texture\n\n- Replace AI-sounding demand descriptions with short human ones\n- Remove noise overlay (dirt texture) from all surfaces\n- Rename tool descriptions: Catalog of prices, Trade Calculator, etc.\n- Shorten author and footer texts\n- Remove dead Hero.tsx component",
+  "timestamp": 1791895364192,
+  "message": "feat(settings): add appearance and behavior settings modal\n\n- Background presets: Solid, Grid, Dots, Gradient (saved to localStorage)\n- Behavior toggles: Reduce Motion (disables animations/transitions)\n- Behavior toggles: Price change badges (show/hide 7-day % on cards)\n- Smoother card entrance animations (gentler ease instead of spring)\n- Smooth theme/background transitions via CSS variables",
   "author": "BSS Index Developer",
-  "sha": "92de43ae64c5a0996702d5ea0402769488889dec"
+  "sha": "09595fc063ea3f98c6b81b2630c267781de304c2"
 }

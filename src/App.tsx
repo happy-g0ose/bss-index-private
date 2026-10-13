@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import { Filter, SlidersHorizontal, AlertCircle, Search } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -253,6 +253,7 @@ export default function App() {
     });
 
   return (
+    <MotionConfig reducedMotion={reduceMotion ? 'always' : 'never'}>
     <div className={`min-h-screen text-neutral-100 font-sans relative antialiased bgmode-${bg}`}>
       
       {/* Keyboard Shortcut Announcement Banner */}
@@ -562,5 +563,6 @@ export default function App() {
         )}
       </AnimatePresence>
     </div>
+    </MotionConfig>
   );
 }

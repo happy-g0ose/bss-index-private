@@ -147,27 +147,29 @@ export default function SettingsModal({
                 {/* Reduce motion */}
                 <button
                   onClick={() => setReduceMotion(!reduceMotion)}
-                  className="w-full flex items-center justify-between p-3.5 rounded-xl border border-white/5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all cursor-pointer"
+                  role="switch"
+                  aria-checked={reduceMotion}
+                  className="w-full flex items-center justify-between gap-3 p-3.5 rounded-xl border border-white/5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all cursor-pointer"
                 >
-                  <div className="flex items-center gap-2.5">
-                    <Eye className="h-4 w-4 text-neutral-400" />
-                    <div className="text-left">
-                      <div className="text-xs font-bold text-neutral-200">
+                  <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                    <Eye className="h-4 w-4 text-neutral-400 shrink-0" />
+                    <div className="text-left min-w-0">
+                      <div className="text-xs font-bold text-neutral-200 truncate">
                         {t('settings.reduceMotion', lang)}
                       </div>
-                      <div className="text-[10px] text-neutral-500">
+                      <div className="text-[10px] text-neutral-500 truncate">
                         {t('settings.reduceMotionDesc', lang)}
                       </div>
                     </div>
                   </div>
                   <span
-                    className={`relative h-5 w-9 rounded-full transition-colors ${
+                    className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${
                       reduceMotion ? 'bg-amber-500' : 'bg-neutral-700'
                     }`}
                   >
                     <span
-                      className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform ${
-                        reduceMotion ? 'translate-x-4.5' : 'translate-x-0.5'
+                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 ${
+                        reduceMotion ? 'translate-x-5' : 'translate-x-0'
                       }`}
                     />
                   </span>
@@ -176,27 +178,29 @@ export default function SettingsModal({
                 {/* Week change badges */}
                 <button
                   onClick={() => setShowWeekBadges(!showWeekBadges)}
-                  className="w-full flex items-center justify-between p-3.5 rounded-xl border border-white/5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all cursor-pointer"
+                  role="switch"
+                  aria-checked={showWeekBadges}
+                  className="w-full flex items-center justify-between gap-3 p-3.5 rounded-xl border border-white/5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all cursor-pointer"
                 >
-                  <div className="flex items-center gap-2.5">
-                    <Zap className="h-4 w-4 text-neutral-400" />
-                    <div className="text-left">
-                      <div className="text-xs font-bold text-neutral-200">
+                  <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                    <Zap className="h-4 w-4 text-neutral-400 shrink-0" />
+                    <div className="text-left min-w-0">
+                      <div className="text-xs font-bold text-neutral-200 truncate">
                         {t('settings.weekBadges', lang)}
                       </div>
-                      <div className="text-[10px] text-neutral-500">
+                      <div className="text-[10px] text-neutral-500 truncate">
                         {t('settings.weekBadgesDesc', lang)}
                       </div>
                     </div>
                   </div>
                   <span
-                    className={`relative h-5 w-9 rounded-full transition-colors ${
+                    className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${
                       showWeekBadges ? 'bg-amber-500' : 'bg-neutral-700'
                     }`}
                   >
                     <span
-                      className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow transition-transform ${
-                        showWeekBadges ? 'translate-x-4.5' : 'translate-x-0.5'
+                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 ${
+                        showWeekBadges ? 'translate-x-5' : 'translate-x-0'
                       }`}
                     />
                   </span>
