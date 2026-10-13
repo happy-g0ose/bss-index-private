@@ -1,6 +1,6 @@
 {
-  "timestamp": 1791887919900,
-  "message": "fix(names): rename items to original bssmvalues names\n\n- Cub Voucher -> Cub Buddy Voucher (CBV)\n\n- Round Basic -> Round Basic Bee\n\n- Wobbly Looker -> Wobbly Looker Bee\n\n- Stranded Sun Bear already renamed in previous commit\n\n- ids kept unchanged to avoid breaking saved state",
+  "timestamp": 1791892066509,
+  "message": "feat(prices): update sticker and beequip values from bssmvalues.com\n\n- 39 items refreshed from live API (data through 2026-10-13)",
   "author": "BSS Index Developer",
-  "sha": "dc1f9542ba2899a516b511dae108f3f111daf944"
+  "sha": "7b9bd42e373262a611e13ead2ba83dddfc0e5c5d"
 }

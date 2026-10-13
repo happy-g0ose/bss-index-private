@@ -216,7 +216,7 @@ export default function App() {
     });
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased grid-bg noise-overlay">
+    <div className="min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased grid-bg">
       
       {/* Keyboard Shortcut Announcement Banner */}
       <div className="bg-gradient-to-r from-amber-500/80 to-yellow-600/80 text-neutral-950 text-[10px] font-extrabold py-1.5 px-4 text-center tracking-wider uppercase select-none flex items-center justify-center gap-2 shadow-md border-b border-amber-500/10 flex-wrap">

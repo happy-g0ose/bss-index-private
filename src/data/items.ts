@@ -50,7 +50,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       7.0,
       7.25,
@@ -114,7 +114,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       6.0,
       5.25,
@@ -210,7 +210,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       8.0,
       8.5,
@@ -320,7 +320,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       15.5,
       16.5,
@@ -422,7 +422,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       6.0,
       6.25,
@@ -532,7 +532,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       46.0,
       48.0,
@@ -606,7 +606,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       11.0,
       11.75,
@@ -718,7 +718,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       6.0,
       6.5,
@@ -834,7 +834,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       21.0,
       19.5,
@@ -976,7 +976,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-rose-500/30 group-hover:border-rose-500/60",
     "badgeColor": "bg-rose-500/10 text-rose-400 border-rose-500/25",
     "textColor": "text-rose-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       29.0,
       32.5,
@@ -1090,7 +1090,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-rose-500/30 group-hover:border-rose-500/60",
     "badgeColor": "bg-rose-500/10 text-rose-400 border-rose-500/25",
     "textColor": "text-rose-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       42.0,
       43.75,
@@ -1212,7 +1212,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-rose-500/30 group-hover:border-rose-500/60",
     "badgeColor": "bg-rose-500/10 text-rose-400 border-rose-500/25",
     "textColor": "text-rose-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       65.0,
       72.5,
@@ -1352,7 +1352,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -1380,7 +1380,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -1406,7 +1406,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0,
       0.075,
@@ -1434,7 +1434,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -1460,7 +1460,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.125,
       0.125
@@ -1486,7 +1486,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.125
     ],
@@ -1510,7 +1510,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.29
     ],
@@ -1534,7 +1534,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.825
     ],
@@ -1558,7 +1558,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       1.25,
       1.25,
@@ -1598,7 +1598,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       2.375,
       2.75,
@@ -1702,7 +1702,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       13.5,
       13.5,
@@ -1790,7 +1790,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       3.75,
       3.75,
@@ -1916,7 +1916,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       0.415,
       0.225,
@@ -1992,7 +1992,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       1.29,
       1.54,
@@ -2064,7 +2064,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.625,
       2.25,
@@ -2148,7 +2148,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       2.125,
       2.125,
@@ -2220,7 +2220,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       3.5,
       3.75,
@@ -2334,7 +2334,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       6.0,
       7.0,
@@ -2476,7 +2476,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.29,
@@ -2512,7 +2512,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       3.0,
       0.075,
@@ -2546,7 +2546,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.0375,
       0.375,
@@ -2580,7 +2580,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.0375,
       0.375,
@@ -2614,7 +2614,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -2644,7 +2644,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.0375,
       0.375,
@@ -2680,7 +2680,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -2708,7 +2708,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.0375,
       0.375,
@@ -2744,7 +2744,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.0375,
       0.375,
@@ -2776,7 +2776,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -2806,7 +2806,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.29,
       0.225,
@@ -2844,7 +2844,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -2872,7 +2872,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.225,
       0.625,
@@ -2900,7 +2900,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.375,
       0.415,
@@ -2934,7 +2934,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.675,
       0.675,
@@ -2970,7 +2970,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       0.675,
       0.675,
@@ -3002,7 +3002,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       1.875,
       1.875,
@@ -3058,7 +3058,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3084,7 +3084,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3110,7 +3110,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3136,7 +3136,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3162,7 +3162,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3188,7 +3188,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -3216,7 +3216,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -3242,7 +3242,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -3268,7 +3268,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.675,
       0.625,
@@ -3302,7 +3302,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.55,
       0.55,
@@ -3332,7 +3332,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.625,
       0.625,
@@ -3362,7 +3362,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.625,
       0.625,
@@ -3396,7 +3396,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.9,
       0.9,
@@ -3454,7 +3454,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       1.625,
       1.875,
@@ -3534,7 +3534,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.175,
@@ -3566,7 +3566,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3592,7 +3592,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3618,7 +3618,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.225,
@@ -3648,7 +3648,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.175,
       0.0325,
@@ -3678,7 +3678,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -3704,7 +3704,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.225,
       0.075,
@@ -3732,7 +3732,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.175,
       0.075,
@@ -3764,7 +3764,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.225,
@@ -3794,7 +3794,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.125,
       0.0375,
@@ -3826,7 +3826,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.225,
@@ -3860,7 +3860,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.225,
@@ -3890,7 +3890,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.225,
@@ -3920,7 +3920,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.225,
@@ -3948,7 +3948,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.225,
       2.0,
@@ -3992,7 +3992,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.225,
@@ -4024,7 +4024,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.0375,
       0.175,
@@ -4064,7 +4064,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -4094,7 +4094,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       13.5,
       13.5,
@@ -4162,7 +4162,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -4190,7 +4190,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -4216,7 +4216,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.125,
@@ -4246,7 +4246,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.175,
       0.175,
@@ -4276,7 +4276,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.29,
       0.625,
@@ -4332,7 +4332,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.15,
       0.15,
@@ -4366,7 +4366,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.29,
       0.625,
@@ -4420,7 +4420,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       0.625,
       0.625,
@@ -4460,7 +4460,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.9,
       1.125,
@@ -4502,7 +4502,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       2.25,
       2.25,
@@ -4568,7 +4568,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       2.25,
       2.25,
@@ -4632,7 +4632,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.29,
@@ -4670,7 +4670,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -4706,7 +4706,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375,
@@ -4744,7 +4744,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.29,
@@ -4782,7 +4782,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.29,
@@ -4820,7 +4820,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -4856,7 +4856,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -4890,7 +4890,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125,
       0.0375,
@@ -4928,7 +4928,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.225,
       0.29,
@@ -4962,7 +4962,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.625,
       0.625,
@@ -5004,7 +5004,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.625,
       0.625,
@@ -5046,7 +5046,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.425,
       0.44,
@@ -5086,7 +5086,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.425,
       0.44,
@@ -5126,7 +5126,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.625,
       1.75,
@@ -5166,7 +5166,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.625,
       1.75,
@@ -5206,7 +5206,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       2.5,
       3.5,
@@ -5254,7 +5254,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.225,
       0.225,
@@ -5286,7 +5286,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.225,
       0.225,
@@ -5318,7 +5318,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.225,
       0.225,
@@ -5350,7 +5350,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.225,
       0.225,
@@ -5382,7 +5382,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.225,
       0.225,
@@ -5414,7 +5414,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.0375,
@@ -5446,7 +5446,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.0375,
@@ -5478,7 +5478,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.0375,
@@ -5510,7 +5510,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.0375,
@@ -5542,7 +5542,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.415,
       0.25,
@@ -5586,7 +5586,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -5612,7 +5612,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -5638,7 +5638,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.415,
       0.365,
@@ -5676,7 +5676,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -5702,7 +5702,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -5728,7 +5728,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125,
       0.075,
@@ -5764,7 +5764,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -5796,7 +5796,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125,
       0.175,
@@ -5826,7 +5826,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125,
       0.075,
@@ -5860,7 +5860,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.9,
       0.9,
@@ -5896,7 +5896,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -5922,7 +5922,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -5958,7 +5958,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -5994,7 +5994,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6028,7 +6028,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6062,7 +6062,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6096,7 +6096,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6132,7 +6132,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6164,7 +6164,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6200,7 +6200,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6236,7 +6236,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.29,
@@ -6272,7 +6272,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375,
@@ -6300,7 +6300,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -6326,7 +6326,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125
     ],
@@ -6350,7 +6350,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -6376,7 +6376,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125,
       0.075
@@ -6402,7 +6402,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125
     ],
@@ -6426,7 +6426,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.625,
       0.75,
@@ -6456,7 +6456,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.125,
       0.225,
@@ -6488,7 +6488,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6522,7 +6522,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6554,7 +6554,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6588,7 +6588,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6622,7 +6622,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6656,7 +6656,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6690,7 +6690,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6724,7 +6724,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.125,
       0.225,
@@ -6752,7 +6752,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6786,7 +6786,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.75,
@@ -6820,7 +6820,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.125,
       0.29
@@ -6846,7 +6846,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.125,
       0.29,
@@ -6884,7 +6884,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -6924,7 +6924,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.35,
       0.29,
@@ -6976,7 +6976,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7024,7 +7024,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7072,7 +7072,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7120,7 +7120,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7168,7 +7168,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.875,
@@ -7216,7 +7216,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7264,7 +7264,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7312,7 +7312,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7360,7 +7360,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7408,7 +7408,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.29,
@@ -7458,7 +7458,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7508,7 +7508,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.29,
       0.45,
@@ -7554,7 +7554,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.35,
       0.875,
@@ -7598,7 +7598,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.625,
       0.875,
@@ -7642,7 +7642,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.8,
@@ -7696,7 +7696,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       0.825,
@@ -7746,7 +7746,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       8.5,
       9.0,
@@ -7788,7 +7788,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.0125
@@ -7814,7 +7814,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.1125,
@@ -7844,7 +7844,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.125,
       0.075
@@ -7870,7 +7870,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.1125,
@@ -7900,7 +7900,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.1125,
@@ -7930,7 +7930,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.1125,
@@ -7960,7 +7960,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.225
     ],
@@ -7984,7 +7984,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.415
     ],
@@ -8008,7 +8008,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       1.125,
       0.875,
@@ -8042,7 +8042,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       1.125,
       0.0,
@@ -8078,7 +8078,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8104,7 +8104,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -8130,7 +8130,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375,
@@ -8158,7 +8158,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8184,7 +8184,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8210,7 +8210,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8236,7 +8236,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -8262,7 +8262,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8288,7 +8288,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -8314,7 +8314,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8340,7 +8340,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8366,7 +8366,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8392,7 +8392,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8418,7 +8418,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -8444,7 +8444,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0,
@@ -8472,7 +8472,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8498,7 +8498,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8524,7 +8524,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -8550,7 +8550,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -8576,7 +8576,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8602,7 +8602,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8628,7 +8628,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125
@@ -8654,7 +8654,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8680,7 +8680,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.125,
@@ -8710,7 +8710,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8736,7 +8736,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8762,7 +8762,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8788,7 +8788,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8814,7 +8814,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125
     ],
@@ -8838,7 +8838,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8864,7 +8864,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125
     ],
@@ -8888,7 +8888,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.015,
       0.0125
@@ -8914,7 +8914,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.0125
@@ -8940,7 +8940,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0125,
@@ -8974,7 +8974,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9000,7 +9000,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.125,
@@ -9034,7 +9034,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9060,7 +9060,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9086,7 +9086,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9112,7 +9112,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375,
@@ -9140,7 +9140,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9166,7 +9166,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9192,7 +9192,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9218,7 +9218,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9244,7 +9244,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9270,7 +9270,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.125,
       0.075,
@@ -9298,7 +9298,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.0125,
       0.415,
@@ -9330,7 +9330,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9356,7 +9356,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9382,7 +9382,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9408,7 +9408,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9434,7 +9434,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9460,7 +9460,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9486,7 +9486,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.0375
@@ -9512,7 +9512,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.225,
@@ -9546,7 +9546,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.225,
@@ -9578,7 +9578,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -9604,7 +9604,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -9630,7 +9630,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.0375,
       0.0375,
@@ -9660,7 +9660,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -9688,7 +9688,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.225,
       0.075,
@@ -9716,7 +9716,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -9744,7 +9744,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.0625
@@ -9770,7 +9770,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075
     ],
@@ -9794,7 +9794,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.075,
       0.075
@@ -9844,7 +9844,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0375,
       0.225,
@@ -9878,7 +9878,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.875,
       0.125,
@@ -9910,7 +9910,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.0125,
       0.225,
@@ -9944,7 +9944,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.225,
       0.125,
@@ -9972,7 +9972,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.325,
       0.075,
@@ -10020,7 +10020,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.29,
       0.225,
@@ -10050,7 +10050,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.225,
       0.175,
@@ -10078,7 +10078,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
+    "description": "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
     "historicalPrices": [
       0.225
     ],
@@ -10102,7 +10102,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.175,
       0.075,
@@ -10152,7 +10152,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.415,
       0.415,
@@ -10182,7 +10182,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.415,
       0.175,
@@ -10212,7 +10212,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.075,
       0.075,
@@ -10240,7 +10240,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.175,
       0.415,
@@ -10274,7 +10274,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.125,
       0.58,
@@ -10314,7 +10314,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.175,
       0.125,
@@ -10362,7 +10362,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.45,
       0.365,
@@ -10396,7 +10396,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
+    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
     "historicalPrices": [
       0.415,
       0.29,
@@ -10428,7 +10428,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
+    "description": "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
     "historicalPrices": [
       0.225,
       0.125,
@@ -10458,7 +10458,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.55,
       0.875,
@@ -10492,7 +10492,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       0.5,
       0.5,
@@ -10520,7 +10520,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       0.875,
       0.625,
@@ -10554,7 +10554,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       1.25,
@@ -10582,7 +10582,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.415,
       0.415,
@@ -10618,7 +10618,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
+    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
     "historicalPrices": [
       0.875,
       1.5,
@@ -10660,7 +10660,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10686,7 +10686,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10712,7 +10712,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10738,7 +10738,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10764,7 +10764,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10790,7 +10790,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10816,7 +10816,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10842,7 +10842,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10868,7 +10868,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10894,7 +10894,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10920,7 +10920,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -10946,7 +10946,7 @@ const rawBssItemsData: any[] = [
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     "textColor": "text-emerald-400",
-    "description": "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid.",
+    "description": "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают.",
     "historicalPrices": [
       1.0,
       1.0
@@ -18591,6 +18591,9 @@ const rawBssItemsData: any[] = [
     ]
   }
 ];
+
+
+;
 
 
 ;

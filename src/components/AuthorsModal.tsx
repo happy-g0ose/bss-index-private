@@ -51,7 +51,7 @@ export default function AuthorsModal({ isOpen, onClose, lang }: AuthorsModalProp
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 30 }}
             transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-            className="relative w-full max-w-lg rounded-2xl bg-[#0b0f19] border border-white/5 shadow-2xl overflow-hidden z-10 flex flex-col noise-overlay"
+            className="relative w-full max-w-lg rounded-2xl bg-[#0b0f19] border border-white/5 shadow-2xl overflow-hidden z-10 flex flex-col"
           >
             {/* Golden ambient background glow */}
             <div className="absolute top-0 right-0 w-72 h-72 rounded-full pointer-events-none blur-3xl opacity-10 bg-gradient-to-tr from-amber-500 to-yellow-400" />

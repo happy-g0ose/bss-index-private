@@ -137,7 +137,7 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
           exit={{ opacity: 0, scale: 0.95, y: 30 }}
           transition={{ type: 'spring', damping: 25, stiffness: 220 }}
           style={{ '--hover-glow': item.glowColor } as any}
-          className="relative w-full max-w-3xl rounded-2xl bg-[#0b0f19] border border-white/5 shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col noise-overlay"
+          className="relative w-full max-w-3xl rounded-2xl bg-[#0b0f19] border border-white/5 shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col"
         >
           {/* Neon Corner Glow */}
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none blur-3xl opacity-10" style={{ background: `radial-gradient(circle, ${item.glowColor} 0%, transparent 70%)` }} />

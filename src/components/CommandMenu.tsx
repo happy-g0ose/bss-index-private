@@ -123,7 +123,7 @@ export default function CommandMenu({ isOpen, setIsOpen, onSelectItem, lang }: C
     <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm" />
-        <Dialog.Content className="fixed top-[20%] left-[50%] -translate-x-[50%] z-50 w-full max-w-xl bg-[#0b0f19] rounded-2xl overflow-hidden shadow-2xl border border-white/5 noise-overlay">
+        <Dialog.Content className="fixed top-[20%] left-[50%] -translate-x-[50%] z-50 w-full max-w-xl bg-[#0b0f19] rounded-2xl overflow-hidden shadow-2xl border border-white/5">
           <Dialog.Title className="sr-only">Поиск</Dialog.Title>
           <Dialog.Description className="sr-only">Введите название предмета или аббревиатуру стата.</Dialog.Description>
 

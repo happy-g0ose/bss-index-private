@@ -12,12 +12,12 @@ DEMAND_MAP = {
 }
 
 DEMAND_DESC_MAP = {
-    0: "Item is effectively unsellable at its listed value. Индикаторы: No one wants it, no offers, extreme lowballs only.",
-    1: "Item is difficult to sell and heavily underpaid. Индикаторы: Low buyer interest, frequent lowballs, takes long time to trade.",
-    2: "Item is slow to sell and often receives lowballs. Индикаторы: Slow to sell, mostly lowballs, few real buyers.",
-    3: "Item sells, but not quickly, and value acceptance varies. Индикаторы: Sells, but not quickly, mix of fair offers and lowballs, needs some patience.",
-    4: "Item usually sells at or near its listed value without struggle. Индикаторы: Sells fast, gets fair offers, lowballs are rare.",
-    5: "Item has massive hype and high trade velocity. Индикаторы: High demand, sells instantly, often overpaid."
+    0: "Почти не продаётся. Никому не нужен, предложений нет, только очень низкие цены.",
+    1: "Продать сложно, цену сильно занижают. Мало покупателей, частые заниженные предложения, продаётся долго.",
+    2: "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
+    3: "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
+    4: "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
+    5: "Огромный спрос и высокая скорость продаж. Высокий спрос, продаётся мгновенно, часто переплачивают."
 }
 
 def clean_float(val):
