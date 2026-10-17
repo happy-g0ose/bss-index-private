@@ -34,8 +34,13 @@ export function itemUrl(item: { englishName?: string; id?: string; name?: string
   return `/item/${slugify(item.englishName || item.id || item.name || '')}/`;
 }
 
-/** Extract the slug from a /item/<slug> path, or null if it is not one. */
+/** Extract the slug from a /item/<slug> or /en/item/<slug> path, or null. */
 export function slugFromPath(pathname: string): string | null {
-  const m = pathname.match(/^\/item\/([^/]+)\/?$/);
+  const m = pathname.match(/^\/(?:en\/)?item\/([^/]+)\/?$/);
   return m ? decodeURIComponent(m[1]) : null;
+}
+
+/** True when the current path belongs to the English mirror. */
+export function isEnglishPath(pathname: string): boolean {
+  return pathname === '/en' || pathname.startsWith('/en/');
 }

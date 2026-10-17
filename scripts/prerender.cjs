@@ -98,46 +98,70 @@ function fmtValue(v) {
   return String(Number(v.toFixed(2)));
 }
 
-function buildSeoFields(item) {
+function buildSeoFields(item, lang) {
+  const en = lang === 'en';
   const isBeequip = item.category === 'Биквипы';
   const displayName = item.name;
   const categoryRu = item.category;
   const categoryEn = CATEGORY_EN[item.category] || item.category;
-
-  const title = isBeequip
-    ? `${displayName} — цена и роллы биквипа Bee Swarm Simulator`
-    : `${displayName} — цена в Bee Swarm Simulator`;
-
   const demandRu = item.demand;
   const demandEn = DEMAND_EN[item.demand] || item.demand;
   const rarityRu = item.rarity;
   const rarityEn = RARITY_EN[item.rarity] || item.rarity;
 
+  const title = en
+    ? isBeequip
+      ? `${item.englishName} — beequip value & rolls in Bee Swarm Simulator`
+      : `${item.englishName} — price in Bee Swarm Simulator (${item.value > 0 ? fmtValue(item.value) : 'TBD'}★)`
+    : isBeequip
+      ? `${displayName} — цена и роллы биквипа Bee Swarm Simulator`
+      : `${displayName} — цена в Bee Swarm Simulator`;
+
   let description;
-  if (isBeequip) {
-    description = `${displayName}: значения всех роллов биквипа в Bee Swarm Simulator. Категория: ${categoryRu}. Полный список роллов и их цен.`;
+  if (en) {
+    description = isBeequip
+      ? `${item.englishName}: values for every roll of this beequip in Bee Swarm Simulator. Category: ${categoryEn}. Full roll list and prices.`
+      : `${item.englishName} price in Bee Swarm Simulator: ${fmtValue(item.value)}★${
+          item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''
+        }. Demand: ${demandEn}. Category: ${categoryEn}. 6-week price history.`;
   } else {
-    const range = item.valueLow !== item.valueHigh
-      ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})`
-      : '';
-    description = `${displayName}: цена ${fmtValue(item.value)}★${range} в Bee Swarm Simulator. Спрос: ${demandRu}. Категория: ${categoryRu}. Динамика цены за 6 недель.`;
+    description = isBeequip
+      ? `${displayName}: значения всех роллов биквипа в Bee Swarm Simulator. Категория: ${categoryRu}. Полный список роллов и их цен.`
+      : `${displayName}: цена ${fmtValue(item.value)}★${
+          item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''
+        } в Bee Swarm Simulator. Спрос: ${demandRu}. Категория: ${categoryRu}. Динамика цены за 6 недель.`;
   }
 
-  const keywords = [
-    displayName,
-    item.englishName,
-    'Bee Swarm Simulator',
-    'BSS',
-    isBeequip ? 'биквип цена' : 'стикер цена',
-    categoryRu,
-    rarityRu,
-    ...(isBeequip ? ['биквипы'] : ['стикеры', 'цены']),
-  ]
-    .filter(Boolean)
-    .filter((v, i, a) => a.indexOf(v) === i)
-    .join(', ');
+  const keywords = en
+    ? [item.englishName, item.name, 'Bee Swarm Simulator', 'BSS', isBeequip ? 'beequip value' : 'sticker price', categoryEn, rarityEn, isBeequip ? 'beequip rolls' : 'sticker prices', 'value list']
+        .filter(Boolean)
+        .filter((v, i, a) => a.indexOf(v) === i)
+        .join(', ')
+    : [displayName, item.englishName, 'Bee Swarm Simulator', 'BSS', isBeequip ? 'биквип цена' : 'стикер цена', categoryRu, rarityRu, ...(isBeequip ? ['биквипы'] : ['стикеры', 'цены'])]
+        .filter(Boolean)
+        .filter((v, i, a) => a.indexOf(v) === i)
+        .join(', ');
 
-  return { title, description, keywords, isBeequip, categoryRu, categoryEn, demandRu, demandEn, rarityRu, rarityEn };
+  return {
+    lang,
+    en,
+    title,
+    description,
+    keywords,
+    isBeequip,
+    displayName,
+    categoryRu,
+    categoryEn,
+    category: en ? categoryEn : categoryRu,
+    demandRu,
+    demandEn,
+    demand: en ? demandEn : demandRu,
+    rarityRu,
+    rarityEn,
+    rarity: en ? rarityEn : rarityRu,
+    stability: en ? ({ 'Растет': 'Rising', 'Падает': 'Falling', 'Стабильно': 'Stable' }[item.stability] || item.stability) : item.stability,
+    valueLowText: item.valueLow !== item.valueHigh ? `${fmtValue(item.valueLow)} – ${fmtValue(item.valueHigh)}★` : '',
+  };
 }
 
 /** Build JSON-LD structured data for an item page. */
@@ -183,10 +207,11 @@ function countRolls(item) {
 }
 
 /** Render the visible, indexable body content for an item page. */
-function renderBody(item, seo, url) {
+function renderBody(item, seo, url, altUrl) {
   const isBeequip = item.category === 'Биквипы';
+  const en = seo.en;
 
-  // Value history as a tiny sparkline-ish list of week labels + values
+  // Value history as a tiny week-by-week table
   const history = Array.isArray(item.historicalPrices) ? item.historicalPrices : [];
   const dates = Array.isArray(item.historicalDates) ? item.historicalDates : [];
 
@@ -194,14 +219,16 @@ function renderBody(item, seo, url) {
   if (history.length > 0) {
     const rows = history
       .map((v, i) => {
-        const d = dates[i] ? dates[i].split('-').reverse().join('.') : `week ${history.length - i}`;
+        const d = dates[i]
+          ? dates[i].split('-').reverse().join(en ? '-' : '.')
+          : `${en ? 'Week' : 'неделя'} ${history.length - i}`;
         return `<tr><td>${esc(d)}</td><td>${esc(fmtValue(v))}★</td></tr>`;
       })
       .join('');
     historyBlock = `
       <section class="card">
-        <h2>Динамика цены (6 недель)</h2>
-        <table><thead><tr><th>Дата</th><th>Цена</th></tr></thead><tbody>${rows}</tbody></table>
+        <h2>${en ? 'Price history (6 weeks)' : 'Динамика цены (6 недель)'}</h2>
+        <table><thead><tr><th>${en ? 'Date' : 'Дата'}</th><th>${en ? 'Price' : 'Цена'}</th></tr></thead><tbody>${rows}</tbody></table>
       </section>`;
   }
 
@@ -215,17 +242,17 @@ function renderBody(item, seo, url) {
               r.valueLow !== r.valueHigh
                 ? `${esc(fmtValue(r.valueLow))}–${esc(fmtValue(r.valueHigh))}★`
                 : ''
-            }</td><td>${esc(DEMAND_EN[r.demand] || r.demand)}</td></tr>`
+            }</td><td>${esc(en ? DEMAND_EN[r.demand] || r.demand : r.demand)}</td></tr>`
           )
           .join('');
         return `
           <section class="card">
             <h2>${esc(g.groupName)}</h2>
-            <table><thead><tr><th>Ролл</th><th>Цена</th><th>Диапазон</th><th>Спрос</th></tr></thead><tbody>${rolls}</tbody></table>
+            <table><thead><tr><th>${en ? 'Roll' : 'Ролл'}</th><th>${en ? 'Price' : 'Цена'}</th><th>${en ? 'Range' : 'Диапазон'}</th><th>${en ? 'Demand' : 'Спрос'}</th></tr></thead><tbody>${rolls}</tbody></table>
           </section>`;
       })
       .join('');
-    rollsBlock = rollsBlock || '<section class="card"><h2>Роллы</h2><p>Нет данных о роллах.</p></section>';
+    rollsBlock = rollsBlock || `<section class="card"><h2>${en ? 'Rolls' : 'Роллы'}</h2><p>${en ? 'No roll data available.' : 'Нет данных о роллах.'}</p></section>`;
   }
 
   const demandChip = { 'Хайп': 'c-red', 'Высокий': 'c-amber', 'Средний': 'c-blue' }[item.demand] || 'c-green';
@@ -244,54 +271,57 @@ function renderBody(item, seo, url) {
 
   const statsBlock = `
     <section class="card">
-      <h2>Характеристики</h2>
+      <h2>${en ? 'Stats' : 'Характеристики'}</h2>
       <div class="stats">
         <div class="stat">
-          <div class="stat-k">Ценность</div>
-          <div class="stat-v price">${item.value > 0 ? esc(fmtValue(item.value)) + '★' : '—'}</div>
-          ${
-            item.valueLow !== item.valueHigh && item.value > 0
-              ? `<div class="stat-n">${esc(fmtValue(item.valueLow))} – ${esc(fmtValue(item.valueHigh))}★</div>`
-              : '<div class="stat-n">&nbsp;</div>'
-          }
+          <div class="stat-k">${en ? 'Value' : 'Ценность'}</div>
+          <div class="stat-v price">${item.value > 0 ? esc(fmtValue(item.value)) + '★' : (en ? 'TBD' : '—')}</div>
+          <div class="stat-n">${seo.valueLowText || '&nbsp;'}</div>
         </div>
         <div class="stat">
-          <div class="stat-k">Спрос</div>
-          <div class="stat-v"><span class="chip ${demandChip}">${esc(seo.demandRu)}</span></div>
+          <div class="stat-k">${en ? 'Demand' : 'Спрос'}</div>
+          <div class="stat-v"><span class="chip ${demandChip}">${esc(seo.demand)}</span></div>
           <div class="stat-n">&nbsp;</div>
         </div>
         <div class="stat">
-          <div class="stat-k">Динамика</div>
-          <div class="stat-v"><span class="chip ${stabilityChip}">${esc(item.stability || '—')}</span></div>
+          <div class="stat-k">${en ? 'Trend' : 'Динамика'}</div>
+          <div class="stat-v"><span class="chip ${stabilityChip}">${esc(seo.stability || '—')}</span></div>
           <div class="stat-n">${changeChip || '&nbsp;'}</div>
         </div>
       </div>
       <table class="meta"><tbody>
-        <tr><th>Категория</th><td>${esc(seo.categoryRu)}</td></tr>
-        <tr><th>Редкость</th><td>${esc(seo.rarityRu)}</td></tr>
+        <tr><th>${en ? 'Category' : 'Категория'}</th><td>${esc(seo.category)}</td></tr>
+        <tr><th>${en ? 'Rarity' : 'Редкость'}</th><td>${esc(seo.rarity)}</td></tr>
       </tbody></table>
     </section>`;
 
   return `
   <main class="wrap">
-    <nav class="crumbs"><a href="/">← BSS Index</a> <span>/</span> <a href="/">${esc(seo.categoryRu)}</a></nav>
+    <nav class="crumbs">
+      <a href="${en ? '/en/' : '/'}">← BSS Index</a> <span>/</span> <a href="${en ? '/en/' : '/'}">${esc(seo.category)}</a>
+      <span class="langswitch">
+        ${en ? `<a href="${esc(altUrl)}">RU</a>` : `<a href="${esc(altUrl)}">EN</a>`}
+      </span>
+    </nav>
 
     <header class="hero">
-      ${item.image ? `<img class="icon" src="${esc(item.image)}" alt="${esc(item.name)}" loading="eager" width="96" height="96">` : ''}
+      ${item.image ? `<img class="icon" src="${esc(item.image)}" alt="${esc(en ? item.englishName : item.name)}" loading="eager" width="96" height="96">` : ''}
       <div>
-        <h1>${esc(item.name)}</h1>
-        ${item.englishName && item.englishName !== item.name ? `<p class="alt">${esc(item.englishName)}</p>` : ''}
-        <p class="tag">${esc(seo.categoryRu)} · ${esc(seo.rarityRu)}</p>
+        <h1>${esc(en ? item.englishName : item.name)}</h1>
+        ${en
+          ? (item.name && item.name !== item.englishName ? `<p class="alt">${esc(item.name)}</p>` : '')
+          : (item.englishName && item.englishName !== item.name ? `<p class="alt">${esc(item.englishName)}</p>` : '')}
+        <p class="tag">${esc(seo.category)} · ${esc(seo.rarity)}</p>
       </div>
     </header>
 
     <p class="lead">${esc(seo.description)}</p>
 
     <div class="cta">
-      <a href="#app">${seo.isBeequip
-        ? (seo.title.includes('ролл') ? 'Открыть биквип в приложении' : 'Открыть в приложении')
-        : 'Открыть в калькуляторе обменов'} ↓</a>
-      <a href="/" class="ghost">Все предметы</a>
+      <a href="#app">${en
+        ? (seo.isBeequip ? 'Open beequip in the app' : 'Open in the trade calculator')
+        : (seo.isBeequip ? 'Открыть биквип в приложении' : 'Открыть в калькуляторе обменов')} ↓</a>
+      <a href="${en ? '/en/' : '/'}" class="ghost">${en ? 'All items' : 'Все предметы'}</a>
     </div>
 
     ${isBeequip ? '' : statsBlock}
@@ -300,12 +330,101 @@ function renderBody(item, seo, url) {
     ${historyBlock}
 
     <footer class="foot">
-      <p class="upd">Цены обновляются ежедневно</p>
-      <p><a href="/">Все предметы и калькулятор обменов →</a></p>
+      <p class="upd">${en ? 'Prices update daily' : 'Цены обновляются ежедневно'}</p>
+      <p><a href="${en ? '/en/' : '/'}">${en ? 'All items and the trade calculator →' : 'Все предметы и калькулятор обменов →'}</a></p>
     </footer>
   </main>
 
-  <style>
+  <style></style>`;
+}
+
+/**
+ * Inject item-specific SEO tags into the built index.html template.
+ *
+ * We keep the original app bundle (module script, stylesheet, analytics) so the
+ * SPA still boots on item pages, but rewrite its asset paths to absolute ones:
+ * `vite.config.ts` uses `base: './'` and item pages live one directory deeper.
+ */
+function injectIntoTemplate(template, item, seo, url, altUrl) {
+  const ogImage = item.image ? item.image : `${SITE_ORIGIN}/logo.png`;
+  const jsonLd = buildJsonLd(item, url, seo);
+
+  // Pull the parts of the original <head> that must survive.
+  const gtagLoader =
+    (template.match(/<script async src="https:\/\/www\.googletagmanager\.com[^>]*><\/script>/i) || [])[0] || '';
+  const gtagInline =
+    (template.match(/<script>\s*window\.dataLayer[\s\S]*?<\/script>/i) || [])[0] || '';
+  const moduleScript = (template.match(/<script type="module"[^>]*><\/script>/i) || [])[0] || '';
+  const cssLink =
+    (template.match(/<link rel="stylesheet"[^>]*href="\.\/assets\/[^"]*"[^>]*>/i) || [])[0] || '';
+
+  const absolutise = (tag) => tag.replace(/(src|href)="\.\//g, '$1="/');
+
+  const headTags = `
+    ${gtagLoader}
+    ${gtagInline}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>${esc(seo.title)}</title>
+    <meta name="description" content="${esc(seo.description)}" />
+    <meta name="keywords" content="${esc(seo.keywords)}" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="${esc(url)}" />
+    <link rel="alternate" hreflang="ru" href="${esc(seo.en ? altUrl : url)}" />
+    <link rel="alternate" hreflang="en" href="${esc(seo.en ? url : altUrl)}" />
+    <link rel="alternate" hreflang="x-default" href="${esc(seo.en ? altUrl : url)}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="BSS Index" />
+    <meta property="og:locale" content="${seo.en ? 'en_US' : 'ru_RU'}" />
+    <meta property="og:title" content="${esc(seo.title)}" />
+    <meta property="og:description" content="${esc(seo.description)}" />
+    <meta property="og:url" content="${esc(url)}" />
+    <meta property="og:image" content="${esc(ogImage)}" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${esc(seo.title)}" />
+    <meta name="twitter:description" content="${esc(seo.description)}" />
+    <meta name="twitter:image" content="${esc(ogImage)}" />
+
+    <script type="application/ld+json">${escJson(jsonLd)}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    ${absolutise(cssLink)}
+    ${absolutise(moduleScript)}
+    ${THEME_BOOT}
+`;
+
+  // Replace the original <head>...</head> with our generated head.
+  const html = template.replace(/<head>[\s\S]*?<\/head>/i, `<head>${headTags}  </head>`);
+
+  // IMPORTANT: the static block is a SIBLING of #app, not a child.
+  // React wipes #app on mount, so content inside it would be erased for crawlers
+  // that execute JS. Outside it, the <h1>, price tables and internal links survive
+  // for both visitors and Google.
+  const body = renderBody(item, seo, url);
+  return html.replace('<div id="app"></div>', `${body}\n<div id="app"></div>`);
+}
+
+/** Restore the visitor's saved theme / background before first paint. */
+const THEME_BOOT = `
+    <script>
+      (function () {
+        try {
+          var r = document.documentElement;
+          if (localStorage.getItem('bss_theme') === 'light') r.classList.add('light');
+          r.setAttribute('data-bsbg', localStorage.getItem('bss_bg') || 'grid');
+        } catch (e) {}
+      })();
+    <\/script>`;
+
+/** Stylesheet shared by item pages and the English landing page. */
+const ITEM_PAGE_CSS = `
     :root { color-scheme: dark; }
     * { box-sizing: border-box; }
 
@@ -385,7 +504,7 @@ function renderBody(item, seo, url) {
         repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(15,23,42,.05) 48px, rgba(15,23,42,.05) 50px);
     }
 
-    .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 24px; display: flex; gap: 8px; }
+    .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 24px; display: flex; gap: 8px; align-items: center; }
     .crumbs a { color: #fbbf24; text-decoration: none; font-weight: 700; }
     .crumbs a:hover { text-decoration: underline; }
     .hero { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
@@ -403,6 +522,8 @@ function renderBody(item, seo, url) {
     thead th { color: #fbbf24; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
     tbody th { font-weight: 700; color: #fbbf24; width: 45%; }
     tbody td { font-family: ui-monospace, monospace; color: var(--text); font-weight: 700; }
+    tbody td a { color: #fbbf24; text-decoration: none; font-weight: 700; }
+    tbody td a:hover { text-decoration: underline; }
     .foot { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--faint); }
     .foot a { color: #fbbf24; text-decoration: none; font-weight: 700; }
     .foot a:hover { text-decoration: underline; }
@@ -420,30 +541,29 @@ function renderBody(item, seo, url) {
     .c-green { background: rgba(52,211,153,.12); color: #34d399; border-color: rgba(52,211,153,.25); }
     .c-gray { background: rgba(161,161,170,.12); color: #a1a1aa; border-color: rgba(161,161,170,.25); }
     table.meta { margin-top: 4px; }
-    table.meta tbody td { color: #d4d4d8; font-weight: 600; }
+    table.meta tbody td { color: var(--text); font-weight: 600; }
+    .langswitch { margin-left: auto; display: inline-flex; gap: 8px; }
+    .langswitch a { padding: 2px 9px; border: 1px solid var(--border); border-radius: 6px; font-size: 11px; letter-spacing: .08em; }
+    .langswitch a:hover { border-color: #fbbf24; }
 
-    .upd { display: inline-flex; align-items: center; gap: 7px; color: #fbbf24; font-weight: 700; font-size: 12px; margin: 0; }
-    .upd::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399; }
     .cta { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
     .cta a { display: inline-block; background: #f59e0b; color: #0b0f19; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; padding: 12px 20px; border-radius: 12px; text-decoration: none; }
     .cta a:hover { background: #fbbf24; }
     .cta a.ghost { background: transparent; color: #d4d4d8; border: 1px solid rgba(255,255,255,.14); }
     .cta a.ghost:hover { background: rgba(255,255,255,.06); color: #fbbf24; }
-  </style>`;
+    .upd { display: inline-flex; align-items: center; gap: 7px; color: #fbbf24; font-weight: 700; font-size: 12px; margin: 0; }
+    .upd::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399; }
+`;
+
+function buildSitemap(urls) {
+  const entries = urls
+    .map((u) => `  <url><loc>${esc(u.loc)}</loc><changefreq>daily</changefreq><priority>${u.priority}</priority></url>`)
+    .join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>`;
 }
 
-/**
- * Inject item-specific SEO tags into the built index.html template.
- *
- * We keep the original app bundle (module script, stylesheet, analytics) so the
- * SPA still boots on item pages, but rewrite its asset paths to absolute ones:
- * `vite.config.ts` uses `base: './'` and item pages live one directory deeper.
- */
-function injectIntoTemplate(template, item, seo, url) {
-  const ogImage = item.image ? item.image : `${SITE_ORIGIN}/logo.png`;
-  const jsonLd = buildJsonLd(item, url, seo);
-
-  // Pull the parts of the original <head> that must survive.
+/** Build the English landing page at /en/. */
+function buildEnglishLanding(template, enList) {
   const gtagLoader =
     (template.match(/<script async src="https:\/\/www\.googletagmanager\.com[^>]*><\/script>/i) || [])[0] || '';
   const gtagInline =
@@ -451,75 +571,77 @@ function injectIntoTemplate(template, item, seo, url) {
   const moduleScript = (template.match(/<script type="module"[^>]*><\/script>/i) || [])[0] || '';
   const cssLink =
     (template.match(/<link rel="stylesheet"[^>]*href="\.\/assets\/[^"]*"[^>]*>/i) || [])[0] || '';
-
   const absolutise = (tag) => tag.replace(/(src|href)="\.\//g, '$1="/');
 
-  // Restore the visitor's saved theme / background before first paint, so the
-  // prerendered block matches the app shell instead of flashing the default.
-  const themeBoot = `
-    <script>
-      (function () {
-        try {
-          var r = document.documentElement;
-          if (localStorage.getItem('bss_theme') === 'light') r.classList.add('light');
-          r.setAttribute('data-bsbg', localStorage.getItem('bss_bg') || 'grid');
-        } catch (e) {}
-      })();
-    <\/script>`;
+  const title = 'BSS Index — Sticker, Voucher & Beequip Values in Bee Swarm Simulator';
+  const description =
+    'Live prices for every sticker, voucher and beequip in Roblox Bee Swarm Simulator. Check values, compare demand and plan trades with the calculator.';
 
-  const headTags = `
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'BSS Index',
+    url: `${SITE_ORIGIN}/en/`,
+    inLanguage: 'en',
+    description,
+  };
+
+  const head = `
     ${gtagLoader}
     ${gtagInline}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>${esc(seo.title)}</title>
-    <meta name="description" content="${esc(seo.description)}" />
-    <meta name="keywords" content="${esc(seo.keywords)}" />
+    <title>${esc(title)}</title>
+    <meta name="description" content="${esc(description)}" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="${esc(url)}" />
-
+    <link rel="canonical" href="${esc(`${SITE_ORIGIN}/en/`)}" />
+    <link rel="alternate" hreflang="ru" href="${esc(`${SITE_ORIGIN}/`)}" />
+    <link rel="alternate" hreflang="en" href="${esc(`${SITE_ORIGIN}/en/`)}" />
+    <link rel="alternate" hreflang="x-default" href="${esc(`${SITE_ORIGIN}/`)}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="BSS Index" />
-    <meta property="og:locale" content="ru_RU" />
-    <meta property="og:title" content="${esc(seo.title)}" />
-    <meta property="og:description" content="${esc(seo.description)}" />
-    <meta property="og:url" content="${esc(url)}" />
-    <meta property="og:image" content="${esc(ogImage)}" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="${esc(title)}" />
+    <meta property="og:description" content="${esc(description)}" />
+    <meta property="og:url" content="${esc(`${SITE_ORIGIN}/en/`)}" />
+    <meta property="og:image" content="${esc(`${SITE_ORIGIN}/logo.png`)}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${esc(seo.title)}" />
-    <meta name="twitter:description" content="${esc(seo.description)}" />
-    <meta name="twitter:image" content="${esc(ogImage)}" />
-
     <script type="application/ld+json">${escJson(jsonLd)}</script>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
     ${absolutise(cssLink)}
     ${absolutise(moduleScript)}
-    ${themeBoot}
-`;
+    ${THEME_BOOT}`;
 
-  // Replace the original <head>...</head> with our generated head.
-  const html = template.replace(/<head>[\s\S]*?<\/head>/i, `<head>${headTags}  </head>`);
+  const body = `
+  <main class="wrap">
+    <nav class="crumbs"><a href="/">← BSS Index</a> <span class="langswitch"><a href="/">RU</a></span></nav>
+    <h1>BSS VALUES</h1>
+    <p class="tag">Stickers · Vouchers · Beequips</p>
+    <p class="lead">${esc(description)}</p>
+    <div class="cta">
+      <a href="#app">Open the app ↓</a>
+      <a href="/" class="ghost">Русская версия</a>
+    </div>
+    <section class="card">
+      <h2>Highest value items</h2>
+      <table><thead><tr><th>Item</th><th>Price</th></tr></thead><tbody>${enList}</tbody></table>
+    </section>
+    <footer class="foot">
+      <p class="upd">Prices update daily</p>
+      <p><a href="/">Полный каталог и калькулятор обменов →</a></p>
+    </footer>
+  </main>
 
-  // IMPORTANT: the static block is a SIBLING of #app, not a child.
-  // React wipes #app on mount, so content inside it would be erased for crawlers
-  // that execute JS. Outside it, the <h1>, price tables and internal links survive
-  // for both visitors and Google.
-  const body = renderBody(item, seo, url);
-  return html.replace('<div id="app"></div>', `${body}\n<div id="app"></div>`);
-}
+  <style>${ITEM_PAGE_CSS}</style>`;
 
-function buildSitemap(urls) {
-  const entries = urls
-    .map((u) => `  <url><loc>${esc(u.loc)}</loc><changefreq>daily</changefreq><priority>${u.priority}</priority></url>`)
-    .join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>`;
+  return template
+    .replace(/<html lang="[a-z]{2}">/i, '<html lang="en">')
+    .replace(/<head>[\s\S]*?<\/head>/i, `<head>${head}  </head>`)
+    .replace('<div id="app"></div>', `${body}\n<div id="app"></div>`);
 }
 
 function main() {
@@ -535,7 +657,10 @@ function main() {
   const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
   const items = JSON.parse(fs.readFileSync(ITEMS_SRC, 'utf8'));
 
-  const urls = [{ loc: `${SITE_ORIGIN}/`, changefreq: 'daily', priority: '1.0' }];
+  const urls = [
+    { loc: `${SITE_ORIGIN}/`, changefreq: 'daily', priority: '1.0' },
+    { loc: `${SITE_ORIGIN}/en/`, changefreq: 'daily', priority: '1.0' },
+  ];
   const usedSlugs = new Map();
   let written = 0;
 
@@ -552,23 +677,44 @@ function main() {
     } else {
       usedSlugs.set(slug, 0);
     }
-    const url = `${SITE_ORIGIN}/item/${slug}`;
-    const seo = buildSeoFields(item);
-    const html = injectIntoTemplate(template, item, seo, url);
 
-    const dir = path.join(DIST, 'item', slug);
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+    const ruUrl = `${SITE_ORIGIN}/item/${slug}`;
+    const enUrl = `${SITE_ORIGIN}/en/item/${slug}`;
+    const priority = item.category === 'Биквипы' ? '0.6' : '0.8';
 
-    urls.push({
-      loc: `${SITE_ORIGIN}/item/${slug}`,
-      changefreq: 'weekly',
-      priority: item.category === 'Биквипы' ? '0.6' : '0.8',
-    });
-    written++;
+    // Russian is the default at /item/<slug>; English lives under /en/.
+    for (const lang of ['ru', 'en']) {
+      const isEn = lang === 'en';
+      const url = isEn ? enUrl : ruUrl;
+      const altUrl = isEn ? ruUrl : enUrl;
+      const seo = buildSeoFields(item, lang);
+      const html = injectIntoTemplate(template, item, seo, url, altUrl)
+        // Match the document language so screen readers and Google agree.
+        .replace(/<html lang="[a-z]{2}">/i, `<html lang="${isEn ? 'en' : 'ru'}">`);
+
+      const dir = isEn ? path.join(DIST, 'en', 'item', slug) : path.join(DIST, 'item', slug);
+      fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+
+      urls.push({ loc: url, changefreq: 'weekly', priority });
+      written++;
+    }
   }
 
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'), buildSitemap(urls), 'utf8');
+
+  // English landing page at /en/ — a short static entry point that mirrors the
+  // root page, points at the app and links into the English item pages.
+  const enDir = path.join(DIST, 'en');
+  fs.mkdirSync(enDir, { recursive: true });
+  const topItems = [...items]
+    .filter((i) => i.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 24);
+  const enList = topItems
+    .map((i) => `<tr><td><a href="/en/item/${slugify(i.englishName || i.id || i.name)}/">${esc(i.englishName)}</a></td><td>${esc(fmtValue(i.value))}★</td></tr>`)
+    .join('');
+  fs.writeFileSync(path.join(enDir, 'index.html'), buildEnglishLanding(template, enList), 'utf8');
 
   // Point robots.txt at the sitemap.
   const robotsPath = path.join(DIST, 'robots.txt');

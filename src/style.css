@@ -5,26 +5,10 @@
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* ============ Dark (default) ============ */
-
-/* Darker text in dark theme */
-body {
-  color: #a1a1aa;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #d4d4d8;
-}
-
-p, span, div, li, a, label, button {
-  color: inherit;
-}
-
-.text-neutral-100 { color: #a1a1aa !important; }
-.text-neutral-200 { color: #a1a1aa !important; }
-.text-neutral-300 { color: #71717a !important; }
-.text-neutral-400 { color: #52525b !important; }
-.text-neutral-500 { color: #3f3f46 !important; }
+/* ============ Dark (default) ============
+   Text colours come straight from Tailwind's neutral scale (text-neutral-100 …
+   text-neutral-500), so the dark theme stays bright and high-contrast.
+   Only component surfaces are themed below. */
 
 /* Glass cards */
 .glass-card {

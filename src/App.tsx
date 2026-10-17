@@ -16,7 +16,7 @@ import type { BSSItem } from './data/items';
 import type { Language } from './locales';
 import { t, translateCategory } from './locales';
 import { transliterate } from './components/BeequipsPage';
-import { slugFromPath, slugify } from './itemSlug';
+import { slugFromPath, slugify, isEnglishPath } from './itemSlug';
 
 type CategoryType = string;
 type SortType = 'value-desc' | 'value-asc' | 'demand-desc' | 'name-asc';
@@ -35,6 +35,11 @@ export default function App() {
   const [toast, setToast] = useState<{ show: boolean; message: string; side: 'A' | 'B' | null }>({ show: false, message: '', side: null });
 
   const [lang, setLangState] = useState<Language>(() => {
+    // /en/... pages are the English mirror of the site, so they win over the
+    // stored preference / browser language.
+    if (isEnglishPath(window.location.pathname)) {
+      return 'en';
+    }
     const saved = localStorage.getItem('bss_lang') as Language;
     if (saved === 'ru' || saved === 'en') return saved;
     const browserLang = navigator.language || '';

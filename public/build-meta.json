@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792211209513,
-  "message": "style(seo): colour the prerendered stat tiles and shorten the footer line\n\n- stats become three colour-coded tiles (price / demand / stability) instead of\n  a flat table, using the same palette as the catalog cards\n- adds a 7-day change chip (green up / red down) computed from price history\n- footer credit shortened to a coloured 'Цены обновляются ежедневно' line and\n  the third-party source name dropped from the rendered page",
+  "timestamp": 1792211642825,
+  "message": "feat(seo): bright accent colours + theme/background sync on item pages\n\n- labels, table headers and links on the prerendered block are now accent\n  amber instead of grey, matching the catalog cards\n- prerendered block moved onto CSS custom properties so it follows the saved\n  theme; h1 colour set explicitly because the app stylesheet pins h1-h6 dark\n- background presets (grid / dots / gradient / waves) now apply to the static\n  block too, via data-bsbg on <html>, with light-theme pattern variants\n- App writes data-bsbg alongside the existing bgmode-* class",
   "author": "BSS Index Developer",
-  "sha": "44049712484b912194751bd7dc7c73d4e3d58278"
+  "sha": "b1281e8f0d59526fde276dd2fe5dce9230367a82"
 }
