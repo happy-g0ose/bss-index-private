@@ -228,20 +228,47 @@ function renderBody(item, seo, url) {
     rollsBlock = rollsBlock || '<section class="card"><h2>Роллы</h2><p>Нет данных о роллах.</p></section>';
   }
 
+  const demandChip = { 'Хайп': 'c-red', 'Высокий': 'c-amber', 'Средний': 'c-blue' }[item.demand] || 'c-green';
+  const stabilityChip = { 'Растет': 'c-green', 'Падает': 'c-red' }[item.stability] || 'c-gray';
+
+  // 7-day change from the price history, same rule as the catalog card badge.
+  let changeChip = '';
+  const hist = Array.isArray(item.historicalPrices) ? item.historicalPrices : [];
+  if (hist.length >= 2 && hist[hist.length - 2] > 0) {
+    const pct = ((hist[hist.length - 1] - hist[hist.length - 2]) / hist[hist.length - 2]) * 100;
+    if (Math.abs(pct) >= 1) {
+      const up = pct > 0;
+      changeChip = `<span class="chip ${up ? 'c-green' : 'c-red'}">${up ? '↗ +' : '↘ '}${pct.toFixed(0)}%</span>`;
+    }
+  }
+
   const statsBlock = `
     <section class="card">
       <h2>Характеристики</h2>
-      <table><tbody>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-k">Ценность</div>
+          <div class="stat-v price">${item.value > 0 ? esc(fmtValue(item.value)) + '★' : '—'}</div>
+          ${
+            item.valueLow !== item.valueHigh && item.value > 0
+              ? `<div class="stat-n">${esc(fmtValue(item.valueLow))} – ${esc(fmtValue(item.valueHigh))}★</div>`
+              : '<div class="stat-n">&nbsp;</div>'
+          }
+        </div>
+        <div class="stat">
+          <div class="stat-k">Спрос</div>
+          <div class="stat-v"><span class="chip ${demandChip}">${esc(seo.demandRu)}</span></div>
+          <div class="stat-n">&nbsp;</div>
+        </div>
+        <div class="stat">
+          <div class="stat-k">Динамика</div>
+          <div class="stat-v"><span class="chip ${stabilityChip}">${esc(item.stability || '—')}</span></div>
+          <div class="stat-n">${changeChip || '&nbsp;'}</div>
+        </div>
+      </div>
+      <table class="meta"><tbody>
         <tr><th>Категория</th><td>${esc(seo.categoryRu)}</td></tr>
         <tr><th>Редкость</th><td>${esc(seo.rarityRu)}</td></tr>
-        <tr><th>Спрос</th><td>${esc(seo.demandRu)}</td></tr>
-        ${item.stability ? `<tr><th>Стабильность</th><td>${esc(item.stability)}</td></tr>` : ''}
-        <tr><th>Текущая цена</th><td>${item.value > 0 ? esc(fmtValue(item.value)) + '★' : '—'}</td></tr>
-        ${
-          item.valueLow !== item.valueHigh && item.value > 0
-            ? `<tr><th>Диапазон</th><td>${esc(fmtValue(item.valueLow))}–${esc(fmtValue(item.valueHigh))}★</td></tr>`
-            : ''
-        }
       </tbody></table>
     </section>`;
 
@@ -273,7 +300,7 @@ function renderBody(item, seo, url) {
     ${historyBlock}
 
     <footer class="foot">
-      <p>Данные обновляются ежедневно. Источник: bssmvalues.com</p>
+      <p class="upd">Цены обновляются ежедневно</p>
       <p><a href="/">Все предметы и калькулятор обменов →</a></p>
     </footer>
   </main>
@@ -308,6 +335,24 @@ function renderBody(item, seo, url) {
     .foot { margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.06); font-size: 13px; color: #71717a; }
     .foot a { color: #fbbf24; text-decoration: none; }
     .foot a:hover { text-decoration: underline; }
+
+    /* Colour-coded stat tiles */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 20px; }
+    .stat-k { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: #71717a; font-weight: 700; margin-bottom: 8px; }
+    .stat-v { font-size: 20px; font-weight: 800; line-height: 1.1; }
+    .stat-v.price { color: #fbbf24; font-family: ui-monospace, monospace; }
+    .stat-n { font-size: 11px; color: #52525b; margin-top: 6px; font-family: ui-monospace, monospace; }
+    .chip { display: inline-block; font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 6px; border: 1px solid; }
+    .c-red { background: rgba(248,113,113,.12); color: #f87171; border-color: rgba(248,113,113,.25); }
+    .c-amber { background: rgba(251,191,36,.12); color: #fbbf24; border-color: rgba(251,191,36,.25); }
+    .c-blue { background: rgba(96,165,250,.12); color: #60a5fa; border-color: rgba(96,165,250,.25); }
+    .c-green { background: rgba(52,211,153,.12); color: #34d399; border-color: rgba(52,211,153,.25); }
+    .c-gray { background: rgba(161,161,170,.12); color: #a1a1aa; border-color: rgba(161,161,170,.25); }
+    table.meta { margin-top: 4px; }
+    table.meta tbody td { color: #d4d4d8; font-weight: 600; }
+
+    .upd { display: inline-flex; align-items: center; gap: 7px; color: #fbbf24; font-weight: 700; font-size: 12px; margin: 0; }
+    .upd::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399; }
     .cta { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
     .cta a { display: inline-block; background: #f59e0b; color: #0b0f19; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; padding: 12px 20px; border-radius: 12px; text-decoration: none; }
     .cta a:hover { background: #fbbf24; }
