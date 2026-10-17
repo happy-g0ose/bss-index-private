@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792214736146,
-  "message": "feat(i18n): make English the primary language of the site\n\n- app now defaults to English; only an explicit /ru/... path forces Russian\n- root item pages are now English (canonical); Russian mirror moved to\n  /ru/item/<slug>/, and the Russian landing page to /ru/\n- hreflang alternates and x-default updated accordingly (x-default -> English)\n- index.html: lang=en plus English title, description, keywords and OG tags\n- item-page share/link URLs respect the active language\n- 330 English pages at the root + 330 Russian under /ru/",
+  "timestamp": 1792214937658,
+  "message": "revert(ui): drop the diagonal hatch fill from catalog cards\n\nThe pattern was meant for the item-page icon frame only; applying it to the\nwhole card made every sticker look striped and dirty. Cards are back to the\nsingle hover-only radial glow, the item-page icon keeps its tinted hatch.",
   "author": "BSS Index Developer",
-  "sha": "d04cdd861dd2ff05d869a20470fe7b4721df04ad"
+  "sha": "22355f84b15b163efefd8570cb1ecc3abd8367d6"
 }

@@ -559,10 +559,8 @@ const ITEM_PAGE_CSS = `
     .iconbox::before {
       content: "";
       position: absolute; inset: 0;
-      background-image:
-        repeating-linear-gradient(45deg, var(--glow) 0 2px, transparent 2px 10px),
-        radial-gradient(circle at 50% 38%, var(--glow), transparent 72%);
-      opacity: .6;
+      background: radial-gradient(circle at 50% 38%, var(--glow), transparent 72%);
+      opacity: .75;
     }
     .iconbox::after {
       content: "";
