@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Info, Clock, SlidersHorizontal } from 'lucide-react';
+import { X, Clock, SlidersHorizontal } from 'lucide-react';
 import type { BSSItem } from '../data/items';
 import type { Language } from '../locales';
 import { t, translateDemand, translateStability, translateCategory } from '../locales';
@@ -221,21 +221,6 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                 </div>
               </div>
             )}
-
-            {/* Description */}
-            <div className="space-y-2">
-              <h4 className="text-xs uppercase font-bold tracking-widest text-neutral-400 flex items-center gap-1.5 select-none">
-                <Info className="h-4 w-4 text-amber-400" />
-                {t('item.desc', lang)}
-              </h4>
-              <p className="text-sm md:text-base text-neutral-300 leading-relaxed font-sans font-medium">
-                {lang === 'en' 
-                  ? item.description
-                      .replace('Индикаторы:', 'Indicators:')
-                      .replace('Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.', 'Bee equipment. Click to view all rolls and their values in detail.')
-                  : item.description}
-              </p>
-            </div>
 
             {/* Price Chart Graphic or Beequip Stats and Rolls */}
             {item.beequipData ? (

@@ -164,7 +164,7 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
       onMouseMove={handleMouseMove}
       onClick={onClick}
       style={{ '--hover-glow': item.glowColor } as any}
-      className={`break-inside-avoid mb-4 group relative rounded-2xl p-5 md:p-6 flex flex-col justify-between overflow-hidden cursor-pointer glass-card glass-card-hover border ${item.borderColor}`}
+      className={`break-inside-avoid mb-4 group relative rounded-2xl p-5 md:p-6 flex flex-col justify-between overflow-hidden cursor-pointer glass-card glass-card-hover border ${item.borderColor} ring-1 ring-black/10 dark:ring-white/15`}
     >
       {/* Dynamic mouse glow overlay */}
       <div

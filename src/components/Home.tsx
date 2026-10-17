@@ -306,7 +306,7 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
                 <img 
                   src={sticker.image} 
                   alt={sticker.name} 
-                  className="h-12 w-12 object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.3)]" 
+                  className="h-12 w-12 object-contain drop-shadow-[_4px_10px_rgba(0,0,0,0.3)]" 
                 />
               </div>
 

@@ -4,12 +4,16 @@ import { X, Settings, Image, Zap, Eye } from 'lucide-react';
 import type { Language } from '../locales';
 import { t } from '../locales';
 
-export type BgMode = 'solid' | 'grid' | 'dots' | 'gradient';
+export type Theme = 'dark' | 'light';
+export type BgMode = 'grid' | 'dots' | 'gradient' | 'waves' | 'hex' | 'aurora' | 'carbon' | 'custom';
+
 
 interface SettingsModalProps {
   isOpen: boolean;
   onClose: () => void;
   lang: Language;
+  theme: 'dark' | 'light';
+  setTheme: (theme: 'dark' | 'light') => void;
   bg: BgMode;
   setBg: (bg: BgMode) => void;
   reduceMotion: boolean;
@@ -18,20 +22,15 @@ interface SettingsModalProps {
   setShowWeekBadges: (v: boolean) => void;
 }
 
-const BG_MODES: BgMode[] = ['solid', 'grid', 'dots', 'gradient'];
-
 export default function SettingsModal({
   isOpen,
   onClose,
   lang,
-  bg,
-  setBg,
+  theme,
+  setTheme,
   reduceMotion,
   setReduceMotion,
-  showWeekBadges,
-  setShowWeekBadges,
 }: SettingsModalProps) {
-  // Lock body scroll when open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -43,7 +42,6 @@ export default function SettingsModal({
     };
   }, [isOpen]);
 
-  // Handle escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -51,13 +49,6 @@ export default function SettingsModal({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
-
-  const bgPreviewClass: Record<BgMode, string> = {
-    grid: 'bgmode-grid',
-    dots: 'bgmode-dots',
-    gradient: 'bgmode-gradient',
-    solid: 'bgmode-solid',
-  };
 
   return (
     <AnimatePresence>
@@ -97,38 +88,30 @@ export default function SettingsModal({
             </div>
 
             {/* Body */}
-            <div className="p-6 space-y-6">
-              {/* Background picker */}
+            <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+              {/* Theme picker */}
               <div className="space-y-2.5">
                 <div className="flex items-center gap-1.5">
                   <Image className="h-3.5 w-3.5 text-neutral-500" />
                   <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest">
-                    {t('settings.bg', lang)}
+                    {t('settings.theme', lang)}
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
-                  {BG_MODES.map((mode) => {
-                    const active = bg === mode;
+                  {(['dark', 'light'] as const).map((mode) => {
+                    const active = theme === mode;
                     return (
                       <button
                         key={mode}
-                        onClick={() => setBg(mode)}
-                        className={`group relative h-16 rounded-xl border overflow-hidden transition-all cursor-pointer ${
+                        onClick={() => setTheme(mode)}
+                        className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                           active
-                            ? 'border-amber-500 shadow-md'
-                            : 'border-white/5 hover:border-white/15'
+                            ? 'bg-amber-500 border-amber-500 text-neutral-950 shadow-md'
+                            : 'bg-neutral-900/40 border-white/5 text-neutral-400 hover:text-neutral-200 hover:border-white/10'
                         }`}
                       >
-                        <span className={`absolute inset-0 ${bgPreviewClass[mode]}`} />
-                        <span className="absolute inset-0 flex items-center justify-center">
-                          <span
-                            className={`text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded ${
-                              active ? 'bg-amber-500 text-neutral-950' : 'bg-neutral-950/60 text-neutral-300'
-                            }`}
-                          >
-                            {t(`settings.bg.${mode}`, lang)}
-                          </span>
-                        </span>
+                        {mode === 'dark' ? '🌙 Dark' : '☀️ Light'}
+                        {active && <span className="text-[10px]">✓</span>}
                       </button>
                     );
                   })}
@@ -151,13 +134,13 @@ export default function SettingsModal({
                   aria-checked={reduceMotion}
                   className="w-full flex items-center justify-between gap-3 p-3.5 rounded-xl border border-white/5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all cursor-pointer"
                 >
-                  <div className="flex items-center gap-2.5 flex-1 min-w-0">
+                  <div className="flex items-center gap-2.5 text-left">
                     <Eye className="h-4 w-4 text-neutral-400 shrink-0" />
-                    <div className="text-left min-w-0">
-                      <div className="text-xs font-bold text-neutral-200 truncate">
+                    <div>
+                      <div className="text-xs font-bold text-neutral-200">
                         {t('settings.reduceMotion', lang)}
                       </div>
-                      <div className="text-[10px] text-neutral-500 truncate">
+                      <div className="text-[10px] text-neutral-500 mt-0.5">
                         {t('settings.reduceMotionDesc', lang)}
                       </div>
                     </div>
@@ -170,37 +153,6 @@ export default function SettingsModal({
                     <span
                       className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 ${
                         reduceMotion ? 'translate-x-5' : 'translate-x-0'
-                      }`}
-                    />
-                  </span>
-                </button>
-
-                {/* Week change badges */}
-                <button
-                  onClick={() => setShowWeekBadges(!showWeekBadges)}
-                  role="switch"
-                  aria-checked={showWeekBadges}
-                  className="w-full flex items-center justify-between gap-3 p-3.5 rounded-xl border border-white/5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all cursor-pointer"
-                >
-                  <div className="flex items-center gap-2.5 flex-1 min-w-0">
-                    <Zap className="h-4 w-4 text-neutral-400 shrink-0" />
-                    <div className="text-left min-w-0">
-                      <div className="text-xs font-bold text-neutral-200 truncate">
-                        {t('settings.weekBadges', lang)}
-                      </div>
-                      <div className="text-[10px] text-neutral-500 truncate">
-                        {t('settings.weekBadgesDesc', lang)}
-                      </div>
-                    </div>
-                  </div>
-                  <span
-                    className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${
-                      showWeekBadges ? 'bg-amber-500' : 'bg-neutral-700'
-                    }`}
-                  >
-                    <span
-                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 ${
-                        showWeekBadges ? 'translate-x-5' : 'translate-x-0'
                       }`}
                     />
                   </span>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, SlidersHorizontal, AlertCircle, Search } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -10,7 +10,7 @@ import CommandMenu from './components/CommandMenu';
 import AuthorsModal from './components/AuthorsModal';
 import BeequipsPage from './components/BeequipsPage';
 import SettingsModal from './components/SettingsModal';
-import type { BgMode } from './components/SettingsModal';
+import type { BgMode, Theme } from './components/SettingsModal';
 import { bssItemsData } from './data/items';
 import type { BSSItem } from './data/items';
 import type { Language } from './locales';
@@ -32,7 +32,7 @@ export default function App() {
   const [isAuthorsModalOpen, setIsAuthorsModalOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [toast, setToast] = useState<{ show: boolean; message: string; side: 'A' | 'B' | null }>({ show: false, message: '', side: null });
-  
+
   const [lang, setLangState] = useState<Language>(() => {
     const saved = localStorage.getItem('bss_lang') as Language;
     if (saved === 'ru' || saved === 'en') return saved;
@@ -44,41 +44,40 @@ export default function App() {
     localStorage.setItem('bss_lang', newLang);
     setLangState(newLang);
   };
+  const [activeTab, setActiveTab] = useState<TabType>('home');
 
-  // Behavior settings
-  const [bg, setBgState] = useState<BgMode>(() => {
-    const saved = localStorage.getItem('bss_bg') as BgMode;
-    return saved === 'grid' || saved === 'dots' || saved === 'gradient' ? saved : 'grid';
+  // Appearance settings
+  const [theme, setThemeState] = useState<Theme>(() => {
+    return localStorage.getItem('bss_theme') === 'light' ? 'light' : 'dark';
   });
 
-  const [reduceMotion, setReduceMotionState] = useState<boolean>(() => {
+  const [bg, setBgState] = useState<BgMode>(() => {
+    const saved = localStorage.getItem('bss_bg') as BgMode;
+    return saved === 'grid' || saved === 'dots' || saved === 'gradient' || saved === 'waves' || saved === 'hex' || saved === 'aurora' || saved === 'carbon' || saved === 'custom' ? saved : 'grid';
+  });
+
+  const [reduceMotion, setReduceMotion] = useState<boolean>(() => {
     return localStorage.getItem('bss_motion') === 'reduced';
   });
 
-  const [showWeekBadges, setShowWeekBadgesState] = useState<boolean>(() => {
+  const [showWeekBadges, setShowWeekBadges] = useState<boolean>(() => {
     return localStorage.getItem('bss_badges') !== 'hidden';
   });
+
+  const setTheme = (t: Theme) => {
+    localStorage.setItem('bss_theme', t);
+    setThemeState(t);
+  };
 
   const setBg = (newBg: BgMode) => {
     localStorage.setItem('bss_bg', newBg);
     setBgState(newBg);
   };
 
-  const setReduceMotion = (v: boolean) => {
-    localStorage.setItem('bss_motion', v ? 'reduced' : 'full');
-    setReduceMotionState(v);
-  };
-
-  const setShowWeekBadges = (v: boolean) => {
-    localStorage.setItem('bss_badges', v ? 'shown' : 'hidden');
-    setShowWeekBadgesState(v);
-  };
-
   useEffect(() => {
-    document.documentElement.classList.toggle('reduce-motion', reduceMotion);
-  }, [reduceMotion]);
-
-  const [activeTab, setActiveTab] = useState<TabType>('home');
+    const root = document.documentElement;
+    root.classList.toggle('light', theme === 'light');
+  }, [theme]);
 
   useEffect(() => {
     if (toast.show) {
@@ -89,111 +88,26 @@ export default function App() {
     }
   }, [toast.show]);
 
-  // Sync trade calculator data from localStorage (optional persistence for good UX)
-  useEffect(() => {
-    try {
-      // Check if URL has shared trade parameters
-      const params = new URLSearchParams(window.location.search);
-      const sharedTrade = params.get('trade');
-      if (sharedTrade) {
-        const [partA, partB] = sharedTrade.split('|');
-        const idsA = partA ? partA.split(',') : [];
-        const idsB = partB ? partB.split(',') : [];
-
-        // Helper to resolve items by ID, including dynamically generated Beequip rolls
-        const resolveItem = (id: string): BSSItem | undefined => {
-          if (id.includes('-roll-')) {
-            const [baseId, rollNameSlug] = id.split('-roll-');
-            const baseItem = bssItemsData.find(item => item.id === baseId);
-            if (baseItem && baseItem.beequipData) {
-              for (const group of baseItem.beequipData) {
-                const roll = group.rolls.find(r => r.rollName.replace(/\s+/g, '-') === rollNameSlug);
-                if (roll) {
-                  return {
-                    ...baseItem,
-                    id: id,
-                    name: `${baseItem.name} (${roll.rollName})`,
-                    englishName: `${baseItem.englishName} (${roll.rollName})`,
-                    value: roll.value,
-                    valueLow: roll.valueLow,
-                    valueHigh: roll.valueHigh,
-                    demand: roll.demand,
-                  };
-                }
-              }
-            }
-            return undefined;
-          }
-          return bssItemsData.find(item => item.id === id);
-        };
-
-        const newSideA = idsA.map(resolveItem).filter(Boolean) as BSSItem[];
-        const newSideB = idsB.map(resolveItem).filter(Boolean) as BSSItem[];
-
-        if (newSideA.length > 0 || newSideB.length > 0) {
-          setSideA(newSideA);
-          setSideB(newSideB);
-          saveTradeToLocal(newSideA, newSideB);
-          setActiveTab('calculator'); // automatically open calculator tab to show the trade!
-          
-          // Clean up search parameters so refreshing doesn't overwrite modifications
-          const newUrl = window.location.origin + window.location.pathname;
-          window.history.replaceState({}, document.title, newUrl);
-        }
-      }
-
-      const itemQuery = params.get('item');
-      if (itemQuery) {
-        const queryLower = decodeURIComponent(itemQuery).toLowerCase().trim();
-        const found = bssItemsData.find(item => 
-          item.id.toLowerCase() === queryLower ||
-          item.englishName.toLowerCase() === queryLower ||
-          item.name.toLowerCase() === queryLower ||
-          item.id.toLowerCase().replace(/\s+/g, '-') === queryLower
-        );
-        if (found) {
-          setSelectedItem(found);
-        }
-      }
-
-      const savedA = localStorage.getItem('bss-trade-sideA');
-      const savedB = localStorage.getItem('bss-trade-sideB');
-      if (savedA) setSideA(JSON.parse(savedA));
-      if (savedB) setSideB(JSON.parse(savedB));
-    } catch (e) {
-      console.error('Failed to load trades', e);
-    }
-  }, []);
-
-  const saveTradeToLocal = (newSideA: BSSItem[], newSideB: BSSItem[]) => {
-    localStorage.setItem('bss-trade-sideA', JSON.stringify(newSideA));
-    localStorage.setItem('bss-trade-sideB', JSON.stringify(newSideB));
-  };
-
   const handleAddToSideA = (item: BSSItem) => {
     const updated = [...sideA, item];
     setSideA(updated);
-    saveTradeToLocal(updated, sideB);
     setToast({ show: true, message: item.name, side: 'A' });
   };
 
   const handleAddToSideB = (item: BSSItem) => {
     const updated = [...sideB, item];
     setSideB(updated);
-    saveTradeToLocal(sideA, updated);
     setToast({ show: true, message: item.name, side: 'B' });
   };
 
   const handleRemoveFromSideA = (idx: number) => {
     const updated = sideA.filter((_, i) => i !== idx);
     setSideA(updated);
-    saveTradeToLocal(updated, sideB);
   };
 
   const handleRemoveFromSideB = (idx: number) => {
     const updated = sideB.filter((_, i) => i !== idx);
     setSideB(updated);
-    saveTradeToLocal(sideA, updated);
   };
 
   const handleClearTrade = () => {
@@ -253,9 +167,8 @@ export default function App() {
     });
 
   return (
-    <MotionConfig reducedMotion={reduceMotion ? 'always' : 'never'}>
-    <div className={`min-h-screen text-neutral-100 font-sans relative antialiased bgmode-${bg}`}>
-      
+    <div className={`min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased bgmode-${bg}`}>
+
       {/* Keyboard Shortcut Announcement Banner */}
       <div className="bg-gradient-to-r from-amber-500/80 to-yellow-600/80 text-neutral-950 text-[10px] font-extrabold py-1.5 px-4 text-center tracking-wider uppercase select-none flex items-center justify-center gap-2 shadow-md border-b border-amber-500/10 flex-wrap">
         <span className="bg-neutral-950 text-amber-500 px-1.5 py-0.5 rounded text-[8px] font-black border border-amber-500/20 tracking-normal inline-block">
@@ -316,7 +229,6 @@ export default function App() {
               </span>
             )}
           </button>
-
           <button
             onClick={() => setActiveTab('beequips')}
             className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
@@ -332,7 +244,9 @@ export default function App() {
         {activeTab === 'home' && (
           <Home
             onNavigate={setActiveTab}
-            onSearchClick={() => setIsCommandMenuOpen(true)}
+            onSearchClick={() => {
+              // open command menu
+            }}
             lang={lang}
           />
         )}
@@ -374,9 +288,9 @@ export default function App() {
                   <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral-500" />
                   <input
                     type="text"
-                    placeholder={t('catalog.search.placeholder', lang)}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder={t('catalog.search.placeholder', lang)}
                     className="w-full pl-10 pr-4 py-2 rounded-xl bg-neutral-900/50 border border-white/5 placeholder-neutral-500 text-xs outline-none focus:border-amber-500/40 focus:ring-1 focus:ring-amber-500/20 text-neutral-100 transition-all"
                   />
                 </div>
@@ -437,7 +351,6 @@ export default function App() {
                       onAddToSideB={handleAddToSideB}
                       lang={lang}
                       searchQuery={searchQuery}
-                      showWeekBadge={showWeekBadges}
                     />
                   ))
                 ) : (
@@ -510,6 +423,8 @@ export default function App() {
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
         lang={lang}
+        theme={theme}
+        setTheme={setTheme}
         bg={bg}
         setBg={setBg}
         reduceMotion={reduceMotion}
@@ -526,15 +441,15 @@ export default function App() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4.5 py-3.5 rounded-2xl border bg-[#0b0f19]/95 backdrop-blur-md shadow-2xl min-w-[280px] max-w-sm pointer-events-auto ${
-              toast.side === 'A' 
-                ? 'border-violet-500/20 shadow-violet-500/10' 
+            className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-2xl border bg-[#0b0f19]/95 backdrop-blur-md shadow-2xl min-w-[280px] max-w-sm pointer-events-auto ${
+              toast.side === 'A'
+                ? 'border-violet-500/20 shadow-violet-500/10'
                 : 'border-emerald-500/20 shadow-emerald-500/10'
             }`}
           >
             <div className={`h-8 w-8 rounded-xl flex items-center justify-center shrink-0 ${
-              toast.side === 'A' 
-                ? 'bg-violet-500/10 text-violet-400' 
+              toast.side === 'A'
+                ? 'bg-violet-500/10 text-violet-400'
                 : 'bg-emerald-500/10 text-emerald-400'
             }`}>
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -543,19 +458,19 @@ export default function App() {
             </div>
             <div className="flex-1 text-left">
               <div className="text-xs font-black text-white uppercase tracking-wider">
-                {toast.side === 'A' 
-                  ? (lang === 'ru' ? 'Вы отдаете (Сторона А)' : 'You Give (Side A)') 
+                {toast.side === 'A'
+                  ? (lang === 'ru' ? 'Вы отдаете (Сторона А)' : 'You Give (Side A)')
                   : (lang === 'ru' ? 'Вам отдают (Сторона Б)' : 'They Give (Side B)')}
               </div>
               <div className="text-[11px] text-neutral-300 font-bold mt-0.5 truncate max-w-[220px]">
                 {toast.message}
               </div>
             </div>
-            <button 
+            <button
               onClick={() => setToast(prev => ({ ...prev, show: false }))}
               className="text-neutral-500 hover:text-white transition-colors p-1"
             >
-              <svg className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -563,6 +478,5 @@ export default function App() {
         )}
       </AnimatePresence>
     </div>
-    </MotionConfig>
   );
 }
