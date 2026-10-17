@@ -308,6 +308,28 @@ function renderBody(item, seo, url) {
   <style>
     :root { color-scheme: dark; }
     * { box-sizing: border-box; }
+
+    /* Theme tokens — swapped wholesale for the light theme. */
+    .wrap {
+      --bg: #0b0f19;
+      --bg-img: none;
+      --card: rgba(11, 15, 25, .65);
+      --border: rgba(255, 255, 255, .07);
+      --text: #e5e5e5;
+      --muted: #a1a1aa;
+      --faint: #71717a;
+      --icon-bg: rgba(255, 255, 255, .04);
+    }
+    html.light .wrap {
+      --bg: #f4f5f7;
+      --card: #ffffff;
+      --border: rgba(15, 23, 42, .12);
+      --text: #18181b;
+      --muted: #52525b;
+      --faint: #a1a1aa;
+      --icon-bg: rgba(15, 23, 42, .04);
+    }
+
     body {
       margin: 0;
       background: #0b0f19;
@@ -315,33 +337,82 @@ function renderBody(item, seo, url) {
       font-family: Inter, system-ui, -apple-system, sans-serif;
       line-height: 1.6;
     }
-    .wrap { max-width: 720px; margin: 0 auto; padding: 24px 20px 64px; }
-    .crumbs { font-size: 13px; color: #a1a1aa; margin-bottom: 24px; display: flex; gap: 8px; }
-    .crumbs a { color: #fbbf24; text-decoration: none; }
+    html.light body { background: #f4f5f7; color: #18181b; }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 20px 64px;
+      background-color: var(--bg);
+      background-image: var(--bg-img);
+      color: var(--text);
+    }
+
+    /* Background presets — mirror the ones offered in the app settings. */
+    html[data-bsbg="grid"] .wrap {
+      --bg-img:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+    html[data-bsbg="dots"] .wrap {
+      --bg-img: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1.5px);
+      background-size: 26px 26px;
+    }
+    html[data-bsbg="gradient"] .wrap {
+      --bg-img:
+        radial-gradient(ellipse 60% 50% at 20% 10%, rgba(245,158,11,.10), transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(59,130,246,.08), transparent 60%),
+        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(168,85,247,.08), transparent 60%);
+    }
+    html[data-bsbg="waves"] .wrap {
+      --bg-img:
+        radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59,130,246,.10), transparent 55%),
+        repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(255,255,255,.02) 48px, rgba(255,255,255,.02) 50px);
+    }
+    /* Light theme needs darker pattern strokes, otherwise white-on-white. */
+    html.light[data-bsbg="grid"] .wrap {
+      --bg-img:
+        linear-gradient(rgba(15,23,42,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,23,42,.06) 1px, transparent 1px);
+    }
+    html.light[data-bsbg="dots"] .wrap {
+      --bg-img: radial-gradient(rgba(15,23,42,.16) 1px, transparent 1.5px);
+    }
+    html.light[data-bsbg="waves"] .wrap {
+      --bg-img:
+        radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59,130,246,.10), transparent 55%),
+        repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(15,23,42,.05) 48px, rgba(15,23,42,.05) 50px);
+    }
+
+    .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 24px; display: flex; gap: 8px; }
+    .crumbs a { color: #fbbf24; text-decoration: none; font-weight: 700; }
     .crumbs a:hover { text-decoration: underline; }
     .hero { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-    .hero .icon { width: 96px; height: 96px; object-fit: contain; background: rgba(255,255,255,.04); border-radius: 16px; padding: 10px; border: 1px solid rgba(255,255,255,.08); }
-    h1 { margin: 0; font-size: clamp(26px, 5vw, 40px); font-weight: 900; line-height: 1.1; text-transform: uppercase; }
-    .alt { margin: 4px 0 0; color: #a1a1aa; font-size: 14px; font-family: ui-monospace, monospace; }
-    .tag { margin: 8px 0 0; color: #fbbf24; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
-    .lead { margin: 28px 0; font-size: 16px; color: #d4d4d8; }
-    .card { background: rgba(11,15,25,.65); border: 1px solid rgba(255,255,255,.06); border-radius: 16px; padding: 20px; margin: 20px 0; }
-    .card h2 { margin: 0 0 14px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: #fbbf24; }
+    .hero .icon { width: 96px; height: 96px; object-fit: contain; background: var(--icon-bg); border-radius: 16px; padding: 10px; border: 1px solid var(--border); }
+    /* color is set explicitly because the app's global stylesheet forces a
+       fixed dark colour on every h1-h6, which breaks the light theme. */
+    h1 { margin: 0; color: var(--text); font-size: clamp(26px, 5vw, 40px); font-weight: 900; line-height: 1.1; text-transform: uppercase; }
+    .alt { margin: 4px 0 0; color: var(--faint); font-size: 14px; font-family: ui-monospace, monospace; }
+    .tag { margin: 8px 0 0; color: #fbbf24; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .lead { margin: 28px 0; font-size: 16px; color: var(--muted); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin: 20px 0; }
+    .card h2 { margin: 0 0 14px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; color: #fbbf24; }
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid rgba(255,255,255,.06); }
-    thead th { color: #a1a1aa; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
-    tbody th { font-weight: 600; color: #a1a1aa; width: 45%; }
-    tbody td { font-family: ui-monospace, monospace; color: #fbbf24; font-weight: 700; }
-    .foot { margin-top: 48px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.06); font-size: 13px; color: #71717a; }
-    .foot a { color: #fbbf24; text-decoration: none; }
+    th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--border); }
+    thead th { color: #fbbf24; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    tbody th { font-weight: 700; color: #fbbf24; width: 45%; }
+    tbody td { font-family: ui-monospace, monospace; color: var(--text); font-weight: 700; }
+    .foot { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--faint); }
+    .foot a { color: #fbbf24; text-decoration: none; font-weight: 700; }
     .foot a:hover { text-decoration: underline; }
 
     /* Colour-coded stat tiles */
     .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 20px; }
-    .stat-k { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: #71717a; font-weight: 700; margin-bottom: 8px; }
+    .stat-k { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: #fbbf24; font-weight: 800; margin-bottom: 8px; }
     .stat-v { font-size: 20px; font-weight: 800; line-height: 1.1; }
     .stat-v.price { color: #fbbf24; font-family: ui-monospace, monospace; }
-    .stat-n { font-size: 11px; color: #52525b; margin-top: 6px; font-family: ui-monospace, monospace; }
+    .stat-n { font-size: 11px; color: var(--faint); margin-top: 6px; font-family: ui-monospace, monospace; }
     .chip { display: inline-block; font-size: 12px; font-weight: 800; padding: 3px 9px; border-radius: 6px; border: 1px solid; }
     .c-red { background: rgba(248,113,113,.12); color: #f87171; border-color: rgba(248,113,113,.25); }
     .c-amber { background: rgba(251,191,36,.12); color: #fbbf24; border-color: rgba(251,191,36,.25); }
@@ -383,6 +454,19 @@ function injectIntoTemplate(template, item, seo, url) {
 
   const absolutise = (tag) => tag.replace(/(src|href)="\.\//g, '$1="/');
 
+  // Restore the visitor's saved theme / background before first paint, so the
+  // prerendered block matches the app shell instead of flashing the default.
+  const themeBoot = `
+    <script>
+      (function () {
+        try {
+          var r = document.documentElement;
+          if (localStorage.getItem('bss_theme') === 'light') r.classList.add('light');
+          r.setAttribute('data-bsbg', localStorage.getItem('bss_bg') || 'grid');
+        } catch (e) {}
+      })();
+    <\/script>`;
+
   const headTags = `
     ${gtagLoader}
     ${gtagInline}
@@ -417,6 +501,7 @@ function injectIntoTemplate(template, item, seo, url) {
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     ${absolutise(cssLink)}
     ${absolutise(moduleScript)}
+    ${themeBoot}
 `;
 
   // Replace the original <head>...</head> with our generated head.

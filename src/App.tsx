@@ -78,7 +78,10 @@ export default function App() {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle('light', theme === 'light');
-  }, [theme]);
+    // The prerendered block on /item/<slug> pages sits outside #app, so it reads
+    // this attribute instead of the app's own bgmode-* class.
+    root.setAttribute('data-bsbg', bg);
+  }, [theme, bg]);
 
   // Resolve /item/<slug> (the prerendered SEO pages) back to an item and open it.
   // Opening the modal in place keeps the static page useful for crawlers while

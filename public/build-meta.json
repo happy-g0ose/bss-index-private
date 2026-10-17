@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792210938123,
-  "message": "chore: remove preview log artifacts from tracking",
+  "timestamp": 1792211209513,
+  "message": "style(seo): colour the prerendered stat tiles and shorten the footer line\n\n- stats become three colour-coded tiles (price / demand / stability) instead of\n  a flat table, using the same palette as the catalog cards\n- adds a 7-day change chip (green up / red down) computed from price history\n- footer credit shortened to a coloured 'Цены обновляются ежедневно' line and\n  the third-party source name dropped from the rendered page",
   "author": "BSS Index Developer",
-  "sha": "c712740efd0c71c1bc3407cacc8114ac90cae45e"
+  "sha": "44049712484b912194751bd7dc7c73d4e3d58278"
 }
