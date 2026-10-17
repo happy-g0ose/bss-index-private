@@ -1,11 +1,23 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Settings, Image, Zap, Eye } from 'lucide-react';
+import { X, Settings, Image, Zap, Eye, TrendingUp } from 'lucide-react';
 import type { Language } from '../locales';
 import { t } from '../locales';
 
 export type Theme = 'dark' | 'light';
-export type BgMode = 'grid' | 'dots' | 'gradient' | 'waves' | 'hex' | 'aurora' | 'carbon' | 'custom';
+export type BgMode = 'grid' | 'dots' | 'gradient' | 'waves' | 'solid' | 'hex' | 'aurora' | 'carbon' | 'custom';
+
+/** Background presets offered in the settings UI, with their i18n key + swatch. */
+const BG_PRESETS: { id: BgMode; key: string }[] = [
+  { id: 'grid', key: 'settings.bg.grid' },
+  { id: 'dots', key: 'settings.bg.dots' },
+  { id: 'gradient', key: 'settings.bg.gradient' },
+  { id: 'waves', key: 'settings.bg.waves' },
+  { id: 'solid', key: 'settings.bg.solid' },
+  { id: 'hex', key: 'settings.bg.hex' },
+  { id: 'aurora', key: 'settings.bg.aurora' },
+  { id: 'carbon', key: 'settings.bg.carbon' },
+];
 
 
 interface SettingsModalProps {
@@ -28,8 +40,12 @@ export default function SettingsModal({
   lang,
   theme,
   setTheme,
+  bg,
+  setBg,
   reduceMotion,
   setReduceMotion,
+  showWeekBadges,
+  setShowWeekBadges,
 }: SettingsModalProps) {
   useEffect(() => {
     if (isOpen) {
@@ -118,6 +134,39 @@ export default function SettingsModal({
                 </div>
               </div>
 
+              {/* Background picker */}
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-1.5">
+                  <Image className="h-3.5 w-3.5 text-neutral-500" />
+                  <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">
+                    {t('settings.bg', lang)}
+                  </span>
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  {BG_PRESETS.map((preset) => {
+                    const active = bg === preset.id;
+                    return (
+                      <button
+                        key={preset.id}
+                        onClick={() => setBg(preset.id)}
+                        title={t(preset.key, lang)}
+                        className={`flex flex-col items-center gap-1.5 px-2 py-2.5 rounded-xl border transition-all cursor-pointer ${
+                          active
+                            ? 'border-amber-500 bg-amber-500/10 text-amber-400'
+                            : 'bg-neutral-900/40 border-white/5 text-neutral-400 hover:border-white/15 hover:text-neutral-200'
+                        }`}
+                      >
+                        {/* live swatch: the real background preset, rendered small */}
+                        <span className={`h-7 w-full rounded-md border border-white/10 bgmode-${preset.id} shrink-0`} />
+                        <span className="text-[10px] font-bold leading-tight text-center">
+                          {t(preset.key, lang)}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* Behavior toggles */}
               <div className="space-y-2.5">
                 <div className="flex items-center gap-1.5">
@@ -153,6 +202,37 @@ export default function SettingsModal({
                     <span
                       className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 ${
                         reduceMotion ? 'translate-x-5' : 'translate-x-0'
+                      }`}
+                    />
+                  </span>
+                </button>
+
+                {/* Weekly change badges */}
+                <button
+                  onClick={() => setShowWeekBadges(!showWeekBadges)}
+                  role="switch"
+                  aria-checked={showWeekBadges}
+                  className="w-full flex items-center justify-between gap-3 p-3.5 rounded-xl border border-white/5 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all cursor-pointer"
+                >
+                  <div className="flex items-center gap-2.5 text-left">
+                    <TrendingUp className="h-4 w-4 text-neutral-400 shrink-0" />
+                    <div>
+                      <div className="text-xs font-bold text-neutral-200">
+                        {t('settings.weekBadges', lang)}
+                      </div>
+                      <div className="text-[10px] text-neutral-500 mt-0.5">
+                        {t('settings.weekBadgesDesc', lang)}
+                      </div>
+                    </div>
+                  </div>
+                  <span
+                    className={`relative h-6 w-11 shrink-0 rounded-full transition-colors duration-300 ${
+                      showWeekBadges ? 'bg-amber-500' : 'bg-neutral-700'
+                    }`}
+                  >
+                    <span
+                      className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-300 ${
+                        showWeekBadges ? 'translate-x-5' : 'translate-x-0'
                       }`}
                     />
                   </span>

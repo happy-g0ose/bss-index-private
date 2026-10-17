@@ -59,7 +59,8 @@ export default function App() {
 
   const [bg, setBgState] = useState<BgMode>(() => {
     const saved = localStorage.getItem('bss_bg') as BgMode;
-    return saved === 'grid' || saved === 'dots' || saved === 'gradient' || saved === 'waves' || saved === 'hex' || saved === 'aurora' || saved === 'carbon' || saved === 'custom' ? saved : 'grid';
+    const valid: BgMode[] = ['grid', 'dots', 'gradient', 'waves', 'solid', 'hex', 'aurora', 'carbon'];
+    return valid.includes(saved) ? saved : 'grid';
   });
 
   const [reduceMotion, setReduceMotion] = useState<boolean>(() => {

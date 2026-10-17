@@ -305,7 +305,13 @@ function renderBody(item, seo, url, altUrl) {
     </nav>
 
     <header class="hero">
-      ${item.image ? `<img class="icon" src="${esc(item.image)}" alt="${esc(en ? item.englishName : item.name)}" loading="eager" width="96" height="96">` : ''}
+      ${
+        item.image
+          ? `<div class="iconbox" style="--glow:${esc(item.glowColor || 'rgba(245,158,11,.25)')}">
+               <img class="icon" src="${esc(item.image)}" alt="${esc(en ? item.englishName : item.name)}" loading="eager" width="96" height="96">
+             </div>`
+          : ''
+      }
       <div>
         <h1>${esc(en ? item.englishName : item.name)}</h1>
         ${en
@@ -335,7 +341,7 @@ function renderBody(item, seo, url, altUrl) {
     </footer>
   </main>
 
-  <style></style>`;
+  <style>${ITEM_PAGE_CSS}</style>`;
 }
 
 /**
@@ -489,6 +495,25 @@ const ITEM_PAGE_CSS = `
         radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59,130,246,.10), transparent 55%),
         repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(255,255,255,.02) 48px, rgba(255,255,255,.02) 50px);
     }
+    html[data-bsbg="solid"] .wrap { --bg-img: none; }
+    html[data-bsbg="hex"] .wrap {
+      --bg-img:
+        repeating-linear-gradient(60deg, rgba(255,255,255,.022) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(-60deg, rgba(255,255,255,.022) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(120deg, rgba(255,255,255,.014) 0 1px, transparent 1px 22px);
+    }
+    html[data-bsbg="aurora"] .wrap {
+      --bg-img:
+        radial-gradient(ellipse 70% 45% at 15% 0%, rgba(168,85,247,.12), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 85% 15%, rgba(56,189,248,.10), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(245,158,11,.08), transparent 62%);
+    }
+    html[data-bsbg="carbon"] .wrap {
+      --bg-img:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 1px, transparent 1px 3px);
+    }
     /* Light theme needs darker pattern strokes, otherwise white-on-white. */
     html.light[data-bsbg="grid"] .wrap {
       --bg-img:
@@ -503,12 +528,49 @@ const ITEM_PAGE_CSS = `
         radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59,130,246,.10), transparent 55%),
         repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(15,23,42,.05) 48px, rgba(15,23,42,.05) 50px);
     }
+    html.light[data-bsbg="hex"] .wrap {
+      --bg-img:
+        repeating-linear-gradient(60deg, rgba(15,23,42,.05) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(-60deg, rgba(15,23,42,.05) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(0deg, rgba(15,23,42,.03) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(120deg, rgba(15,23,42,.03) 0 1px, transparent 1px 22px);
+    }
+    html.light[data-bsbg="carbon"] .wrap {
+      --bg-img:
+        repeating-linear-gradient(0deg, rgba(15,23,42,.04) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(90deg, rgba(15,23,42,.04) 0 1px, transparent 1px 3px);
+    }
 
     .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 24px; display: flex; gap: 8px; align-items: center; }
     .crumbs a { color: #fbbf24; text-decoration: none; font-weight: 700; }
     .crumbs a:hover { text-decoration: underline; }
     .hero { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
-    .hero .icon { width: 96px; height: 96px; object-fit: contain; background: var(--icon-bg); border-radius: 16px; padding: 10px; border: 1px solid var(--border); }
+    /* Every sticker gets the same hatched fill treatment, tinted per item. */
+    .iconbox {
+      position: relative;
+      width: 96px; height: 96px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--icon-bg);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .iconbox::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, var(--glow) 0 2px, transparent 2px 10px),
+        radial-gradient(circle at 50% 38%, var(--glow), transparent 72%);
+      opacity: .6;
+    }
+    .iconbox::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), transparent 55%);
+      pointer-events: none;
+    }
+    .icon { position: relative; width: 74px; height: 74px; object-fit: contain; }
     /* color is set explicitly because the app's global stylesheet forces a
        fixed dark colour on every h1-h6, which breaks the light theme. */
     h1 { margin: 0; color: var(--text); font-size: clamp(26px, 5vw, 40px); font-weight: 900; line-height: 1.1; text-transform: uppercase; }
