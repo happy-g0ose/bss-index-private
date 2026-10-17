@@ -56,7 +56,7 @@ export default function App() {
 
   const [bg, setBgState] = useState<BgMode>(() => {
     const saved = localStorage.getItem('bss_bg') as BgMode;
-    const valid: BgMode[] = ['grid', 'dots', 'gradient', 'waves', 'solid', 'hex', 'aurora', 'carbon'];
+    const valid: BgMode[] = ['dots', 'grid', 'solid', 'aurora'];
     return valid.includes(saved) ? saved : 'grid';
   });
 

@@ -44,34 +44,16 @@
   background-size: 26px 26px;
 }
 
-.bgmode-gradient {
-  background-color: #0b0f19;
-  background-image:
-    radial-gradient(ellipse 60% 50% at 20% 10%, rgba(245, 158, 11, 0.10), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(59, 130, 246, 0.08), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(168, 85, 247, 0.08), transparent 60%);
-}
 
-.bgmode-waves {
-  background-color: #0b0f19;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59, 130, 246, 0.10), transparent 55%),
-    repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(255, 255, 255, 0.02) 48px, rgba(255, 255, 255, 0.02) 50px);
-}
+
+
 
 .bgmode-solid {
   background-color: #0b0f19;
   background-image: none;
 }
 
-.bgmode-hex {
-  background-color: #0b0f19;
-  background-image:
-    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 22px),
-    repeating-linear-gradient(-60deg, rgba(255, 255, 255, 0.022) 0 1px, transparent 1px 22px),
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 22px),
-    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 22px);
-}
+
 
 .bgmode-aurora {
   background-color: #0b0f19;
@@ -81,12 +63,7 @@
     radial-gradient(ellipse 70% 50% at 50% 100%, rgba(245, 158, 11, 0.08), transparent 62%);
 }
 
-.bgmode-carbon {
-  background-color: #0b0f19;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 3px);
-}
+
 
 /* Noise overlay */
 .noise-overlay::before {
@@ -170,34 +147,16 @@ html.light .bgmode-dots {
   background-image: radial-gradient(rgba(15, 23, 42, 0.15) 1.5px, transparent 2px);
 }
 
-html.light .bgmode-gradient {
-  background-color: #f4f5f7 !important;
-  background-image:
-    radial-gradient(ellipse 60% 50% at 20% 10%, rgba(245, 158, 11, 0.10), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(59, 130, 246, 0.08), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(168, 85, 247, 0.08), transparent 60%);
-}
 
-html.light .bgmode-waves {
-  background-color: #f4f5f7 !important;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59, 130, 246, 0.08), transparent 55%),
-    repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(15, 23, 42, 0.05) 48px, rgba(15, 23, 42, 0.05) 50px);
-}
+
+
 
 html.light .bgmode-solid {
   background-color: #f4f5f7 !important;
   background-image: none !important;
 }
 
-html.light .bgmode-hex {
-  background-color: #f4f5f7 !important;
-  background-image:
-    repeating-linear-gradient(60deg, rgba(15, 23, 42, 0.05) 0 1px, transparent 1px 22px),
-    repeating-linear-gradient(-60deg, rgba(15, 23, 42, 0.05) 0 1px, transparent 1px 22px),
-    repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.03) 0 1px, transparent 1px 22px),
-    repeating-linear-gradient(120deg, rgba(15, 23, 42, 0.03) 0 1px, transparent 1px 22px);
-}
+
 
 html.light .bgmode-aurora {
   background-color: #f4f5f7 !important;
@@ -207,12 +166,7 @@ html.light .bgmode-aurora {
     radial-gradient(ellipse 70% 50% at 50% 100%, rgba(245, 158, 11, 0.08), transparent 62%);
 }
 
-html.light .bgmode-carbon {
-  background-color: #f4f5f7 !important;
-  background-image:
-    repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.04) 0 1px, transparent 1px 3px),
-    repeating-linear-gradient(90deg, rgba(15, 23, 42, 0.04) 0 1px, transparent 1px 3px);
-}
+
 
 html.light .bgmode-custom {
   background-color: #f4f5f7 !important;

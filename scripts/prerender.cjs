@@ -467,35 +467,12 @@ const ITEM_PAGE_CSS = `
       --bg-img: radial-gradient(rgba(255,255,255,.08) 1px, transparent 1.5px);
       background-size: 26px 26px;
     }
-    html[data-bsbg="gradient"] .wrap {
-      --bg-img:
-        radial-gradient(ellipse 60% 50% at 20% 10%, rgba(245,158,11,.10), transparent 60%),
-        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(59,130,246,.08), transparent 60%),
-        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(168,85,247,.08), transparent 60%);
-    }
-    html[data-bsbg="waves"] .wrap {
-      --bg-img:
-        radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59,130,246,.10), transparent 55%),
-        repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(255,255,255,.02) 48px, rgba(255,255,255,.02) 50px);
-    }
     html[data-bsbg="solid"] .wrap { --bg-img: none; }
-    html[data-bsbg="hex"] .wrap {
-      --bg-img:
-        repeating-linear-gradient(60deg, rgba(255,255,255,.022) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient(-60deg, rgba(255,255,255,.022) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient(120deg, rgba(255,255,255,.014) 0 1px, transparent 1px 22px);
-    }
     html[data-bsbg="aurora"] .wrap {
       --bg-img:
         radial-gradient(ellipse 70% 45% at 15% 0%, rgba(168,85,247,.12), transparent 60%),
         radial-gradient(ellipse 60% 40% at 85% 15%, rgba(56,189,248,.10), transparent 60%),
         radial-gradient(ellipse 70% 50% at 50% 100%, rgba(245,158,11,.08), transparent 62%);
-    }
-    html[data-bsbg="carbon"] .wrap {
-      --bg-img:
-        repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 1px, transparent 1px 3px);
     }
     /* Light theme needs darker pattern strokes, otherwise white-on-white. */
     html.light[data-bsbg="grid"] .wrap {
@@ -505,23 +482,6 @@ const ITEM_PAGE_CSS = `
     }
     html.light[data-bsbg="dots"] .wrap {
       --bg-img: radial-gradient(rgba(15,23,42,.16) 1px, transparent 1.5px);
-    }
-    html.light[data-bsbg="waves"] .wrap {
-      --bg-img:
-        radial-gradient(ellipse 80% 60% at 50% 120%, rgba(59,130,246,.10), transparent 55%),
-        repeating-radial-gradient(ellipse 120% 90% at 50% 130%, transparent 0px, transparent 48px, rgba(15,23,42,.05) 48px, rgba(15,23,42,.05) 50px);
-    }
-    html.light[data-bsbg="hex"] .wrap {
-      --bg-img:
-        repeating-linear-gradient(60deg, rgba(15,23,42,.05) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient(-60deg, rgba(15,23,42,.05) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient(0deg, rgba(15,23,42,.03) 0 1px, transparent 1px 22px),
-        repeating-linear-gradient(120deg, rgba(15,23,42,.03) 0 1px, transparent 1px 22px);
-    }
-    html.light[data-bsbg="carbon"] .wrap {
-      --bg-img:
-        repeating-linear-gradient(0deg, rgba(15,23,42,.04) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(90deg, rgba(15,23,42,.04) 0 1px, transparent 1px 3px);
     }
 
     .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 24px; display: flex; gap: 8px; align-items: center; }

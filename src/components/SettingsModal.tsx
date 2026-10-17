@@ -5,18 +5,14 @@ import type { Language } from '../locales';
 import { t } from '../locales';
 
 export type Theme = 'dark' | 'light';
-export type BgMode = 'grid' | 'dots' | 'gradient' | 'waves' | 'solid' | 'hex' | 'aurora' | 'carbon' | 'custom';
+export type BgMode = 'dots' | 'grid' | 'solid' | 'aurora';
 
-/** Background presets offered in the settings UI, with their i18n key + swatch. */
+/** Background presets offered in the settings UI, with their i18n key. */
 const BG_PRESETS: { id: BgMode; key: string }[] = [
-  { id: 'grid', key: 'settings.bg.grid' },
   { id: 'dots', key: 'settings.bg.dots' },
-  { id: 'gradient', key: 'settings.bg.gradient' },
-  { id: 'waves', key: 'settings.bg.waves' },
+  { id: 'grid', key: 'settings.bg.grid' },
   { id: 'solid', key: 'settings.bg.solid' },
-  { id: 'hex', key: 'settings.bg.hex' },
   { id: 'aurora', key: 'settings.bg.aurora' },
-  { id: 'carbon', key: 'settings.bg.carbon' },
 ];
 
 
@@ -142,7 +138,7 @@ export default function SettingsModal({
                     {t('settings.bg', lang)}
                   </span>
                 </div>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {BG_PRESETS.map((preset) => {
                     const active = bg === preset.id;
                     return (

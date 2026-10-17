@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792215316920,
-  "message": "style(seo): remove hatch lines from the item-page icon frame\n\nKeeps the tinted radial glow fill but drops the diagonal stripes, which read\nas noise on the page.",
+  "timestamp": 1792215585227,
+  "message": "refactor(data): drop the invented rarity tiers\n\nRarity was never an in-game concept for stickers — it was a price band applied\nby hand (Mythic simply meant top-3 by value), so labelling a 290-star cub skin\nas MYTHIC was noise in a value list. Removed the field from bot/items.json and\nsrc/data/items.ts, and every place that rendered it: item page subtitle,\nspecs table, JSON-LD, keywords and the unused translateRarity helper.",
   "author": "BSS Index Developer",
-  "sha": "8177a2ec97b670381ca23985904b5486c88bfbb0"
+  "sha": "2e7f1f8f17fa6e516ec51c075469672eee623188"
 }
