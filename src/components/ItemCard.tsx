@@ -166,18 +166,11 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
       style={{ '--hover-glow': item.glowColor } as any}
       className={`break-inside-avoid mb-4 group relative rounded-2xl p-5 md:p-6 flex flex-col justify-between overflow-hidden cursor-pointer glass-card glass-card-hover border ${item.borderColor} ring-1 ring-black/10 dark:ring-white/15`}
     >
-      {/* Category-tinted fill: always faintly visible, brightens under the cursor */}
+      {/* Dynamic mouse glow overlay */}
       <div
-        className="absolute -inset-px opacity-40 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0"
+        className="absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-0"
         style={{
           background: `radial-gradient(280px circle at ${coords.x}px ${coords.y}px, ${item.glowColor}, transparent 80%)`,
-        }}
-      />
-      {/* Static diagonal hatch so every sticker reads as a filled tile */}
-      <div
-        className="absolute -inset-px opacity-25 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none z-0 mix-blend-overlay"
-        style={{
-          backgroundImage: `repeating-linear-gradient(45deg, ${item.glowColor} 0 2px, transparent 2px 10px)`,
         }}
       />
 

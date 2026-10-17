@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792213558603,
-  "message": "fix(seo): restore item-page stylesheet + add solid background and sticker fills\n\n- FIX: the shared item-page stylesheet was being dropped (empty <style> block),\n  so all 660 prerendered pages rendered unstyled. Caused by a PowerShell \\$\n  interpolation eating the template placeholder.\n- BgMode now includes 'solid'; added missing .bgmode-hex / -aurora / -carbon\n  patterns with light-theme variants, and surfaced a real background picker in\n  the settings modal (live swatches, 8 presets) instead of no UI at all\n- settings modal gained the missing week-badges toggle\n- every sticker now carries a consistent hatched fill tinted by its glowColor:\n  always faintly visible on catalog cards, and as the icon frame on item pages\n- prerendered pages support all 8 background presets",
+  "timestamp": 1792214736146,
+  "message": "feat(i18n): make English the primary language of the site\n\n- app now defaults to English; only an explicit /ru/... path forces Russian\n- root item pages are now English (canonical); Russian mirror moved to\n  /ru/item/<slug>/, and the Russian landing page to /ru/\n- hreflang alternates and x-default updated accordingly (x-default -> English)\n- index.html: lang=en plus English title, description, keywords and OG tags\n- item-page share/link URLs respect the active language\n- 330 English pages at the root + 330 Russian under /ru/",
   "author": "BSS Index Developer",
-  "sha": "0418026dc60b85bb1fb5d8c8eebe0194ed2d76be"
+  "sha": "d04cdd861dd2ff05d869a20470fe7b4721df04ad"
 }
