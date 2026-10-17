@@ -81,7 +81,7 @@ export default function AuthorsModal({ isOpen, onClose, lang }: AuthorsModalProp
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-400 blur-md opacity-50 animate-pulse" />
                   <div className="relative h-20 w-20 rounded-full border-2 border-amber-500 bg-neutral-950 overflow-hidden flex items-center justify-center shadow-lg">
                     <img 
-                      src="./avatar.jpg" 
+                      src="/avatar.jpg" 
                       alt="happy goose avatar" 
                       className="h-full w-full object-cover"
                       onError={(e) => {

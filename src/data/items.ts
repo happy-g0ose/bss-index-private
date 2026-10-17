@@ -15,7 +15,7 @@ export interface BSSItem {
   id: string;
   name: string;
   englishName: string;
-  category: "Скины на каба" | "Скины на куба" | "Скины на улей" | "Ваучеры" | "Стикеры пчел" | "Стикеры медведей" | "Стикеры мобов" | "Искусство" | "Драгоценности" | "Иконки нектара" | "Цветы" | "Грибы" | "Листья" | "Инструменты" | "Марки" | "Стикеры Пчелождества" | "Разное" | "Звездные знаки" | "Биквипы";
+  category: "Скины на каба" | "Скины на каба" | "Скины на улей" | "Ваучеры" | "Стикеры пчел" | "Стикеры медведей" | "Стикеры мобов" | "Искусство" | "Драгоценности" | "Иконки нектара" | "Цветы" | "Грибы" | "Листья" | "Инструменты" | "Марки" | "Стикеры Пчелождества" | "Разное" | "Звездные знаки" | "Биквипы";
   value: number;
   valueLow: number;
   valueHigh: number;
@@ -37,7 +37,7 @@ const rawBssItemsData: any[] = [
     "id": "star-cub-0",
     "name": "Star Cub",
     "englishName": "Star Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 9.75,
     "valueLow": 9.5,
     "valueHigh": 10.0,
@@ -100,7 +100,7 @@ const rawBssItemsData: any[] = [
     "id": "robo-cub-0",
     "name": "Robo Cub",
     "englishName": "Robo Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 9.25,
     "valueLow": 9.0,
     "valueHigh": 9.5,
@@ -195,7 +195,7 @@ const rawBssItemsData: any[] = [
     "id": "stick-cub-0",
     "name": "Stick Cub",
     "englishName": "Stick Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 15.5,
     "valueLow": 15.0,
     "valueHigh": 16.0,
@@ -304,7 +304,7 @@ const rawBssItemsData: any[] = [
     "id": "brown-cub-0",
     "name": "Brown Cub",
     "englishName": "Brown Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 23.5,
     "valueLow": 23.0,
     "valueHigh": 24.0,
@@ -405,7 +405,7 @@ const rawBssItemsData: any[] = [
     "id": "doodle-cub-0",
     "name": "Doodle Cub (DDC)",
     "englishName": "Doodle Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 29.0,
     "valueLow": 28.0,
     "valueHigh": 30.0,
@@ -514,7 +514,7 @@ const rawBssItemsData: any[] = [
     "id": "petal-cub-0",
     "name": "Petal Cub",
     "englishName": "Petal Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 42.0,
     "valueLow": 41.0,
     "valueHigh": 43.0,
@@ -587,7 +587,7 @@ const rawBssItemsData: any[] = [
     "id": "gingerbread-cub-0",
     "name": "Gingerbread Cub (GGB)",
     "englishName": "Gingerbread Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 46.5,
     "valueLow": 45.0,
     "valueHigh": 48.0,
@@ -698,7 +698,7 @@ const rawBssItemsData: any[] = [
     "id": "gloomy-cub-0",
     "name": "Gloomy Cub",
     "englishName": "Gloomy Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 73.5,
     "valueLow": 71.0,
     "valueHigh": 76.0,
@@ -813,7 +813,7 @@ const rawBssItemsData: any[] = [
     "id": "noob-cub-0",
     "name": "Noob Cub",
     "englishName": "Noob Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 58.5,
     "valueLow": 57.0,
     "valueHigh": 60.0,
@@ -954,7 +954,7 @@ const rawBssItemsData: any[] = [
     "id": "peppermint-cub-0",
     "name": "Peppermint Cub (PPM)",
     "englishName": "Peppermint Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 165.0,
     "valueLow": 160.0,
     "valueHigh": 170.0,
@@ -1067,7 +1067,7 @@ const rawBssItemsData: any[] = [
     "id": "snow-cub-0",
     "name": "Snow Cub",
     "englishName": "Snow Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 175.0,
     "valueLow": 170.0,
     "valueHigh": 180.0,
@@ -1188,7 +1188,7 @@ const rawBssItemsData: any[] = [
     "id": "bee-cub-0",
     "name": "Bee Cub",
     "englishName": "Bee Cub",
-    "category": "Скины на куба",
+    "category": "Скины на каба",
     "value": 290.0,
     "valueLow": 280.0,
     "valueHigh": 300.0,
@@ -18334,7 +18334,7 @@ export interface CategoryStyle {
 export function getCategoryStyles(category: string): CategoryStyle {
   switch (category) {
     case "Скины на каба":
-    case "Скины на куба":
+    case "Скины на каба":
       return {
         glowColor: "rgba(245, 158, 11, 0.35)",
         borderColor: "border-amber-500/40 group-hover:border-amber-500/70",
@@ -18488,7 +18488,7 @@ export const bssItemsData: BSSItem[] = rawBssItemsData.map(item => {
   const valueLow = isSign ? 1.0 : item.valueLow;
   const valueHigh = isSign ? 1.0 : item.valueHigh;
   const historicalPrices = isSign ? item.historicalPrices.map(() => 1.0) : item.historicalPrices;
-  const category = item.category === "Скины на куба" ? "Скины на каба" : item.category;
+  const category = item.category === "Скины на каба" ? "Скины на каба" : item.category;
 
   const styles = getCategoryStyles(category);
 

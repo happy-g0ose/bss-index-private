@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792215585227,
-  "message": "refactor(data): drop the invented rarity tiers\n\nRarity was never an in-game concept for stickers — it was a price band applied\nby hand (Mythic simply meant top-3 by value), so labelling a 290-star cub skin\nas MYTHIC was noise in a value list. Removed the field from bot/items.json and\nsrc/data/items.ts, and every place that rendered it: item page subtitle,\nspecs table, JSON-LD, keywords and the unused translateRarity helper.",
+  "timestamp": 1792216018102,
+  "message": "style(settings): trim background presets down to four\n\nKeeps dots, grid, solid and aurora; drops gradient, waves, honeycomb and\ncarbon from the picker, the app stylesheet and the prerendered page\nstylesheet so the settings screen stops offering near-duplicates.",
   "author": "BSS Index Developer",
-  "sha": "2e7f1f8f17fa6e516ec51c075469672eee623188"
+  "sha": "57360b9e702fce891ebf43664765f4b428db0f0f"
 }
