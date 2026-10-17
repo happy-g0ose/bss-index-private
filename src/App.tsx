@@ -16,6 +16,7 @@ import type { BSSItem } from './data/items';
 import type { Language } from './locales';
 import { t, translateCategory } from './locales';
 import { transliterate } from './components/BeequipsPage';
+import { slugFromPath, slugify } from './itemSlug';
 
 type CategoryType = string;
 type SortType = 'value-desc' | 'value-asc' | 'demand-desc' | 'name-asc';
@@ -78,6 +79,25 @@ export default function App() {
     const root = document.documentElement;
     root.classList.toggle('light', theme === 'light');
   }, [theme]);
+
+  // Resolve /item/<slug> (the prerendered SEO pages) back to an item and open it.
+  // Opening the modal in place keeps the static page useful for crawlers while
+  // giving visitors the normal app experience.
+  useEffect(() => {
+    const openFromPath = () => {
+      const slug = slugFromPath(window.location.pathname);
+      if (!slug) return;
+      const item = bssItemsData.find((i) => slugify(i.englishName || i.id || i.name) === slug);
+      if (item) {
+        setSelectedItem(item);
+        setActiveTab('catalog');
+      }
+    };
+
+    openFromPath();
+    window.addEventListener('popstate', openFromPath);
+    return () => window.removeEventListener('popstate', openFromPath);
+  }, []);
 
   useEffect(() => {
     if (toast.show) {

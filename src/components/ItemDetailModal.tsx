@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Clock, SlidersHorizontal } from 'lucide-react';
+import { X, Clock, SlidersHorizontal, Share2 } from 'lucide-react';
+import { itemUrl } from '../itemSlug';
 import type { BSSItem } from '../data/items';
 import type { Language } from '../locales';
 import { t, translateDemand, translateStability, translateCategory } from '../locales';
@@ -473,6 +474,34 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
               </div>
             )}
 
+          </div>
+
+          {/* Standalone SEO page link + share */}
+          <div className="px-6 pb-2 flex items-center justify-between gap-3 text-[11px] z-10">
+            <a
+              href={itemUrl(item)}
+              className="text-neutral-500 hover:text-amber-400 transition-colors no-underline"
+            >
+              {lang === 'ru' ? 'Страница предмета' : 'Item page'}
+            </a>
+            <button
+              onClick={async () => {
+                const url = `${window.location.origin}${itemUrl(item)}`;
+                try {
+                  if (navigator.share) {
+                    await navigator.share({ title: item.name, url });
+                  } else {
+                    await navigator.clipboard.writeText(url);
+                  }
+                } catch {
+                  /* user cancelled or clipboard blocked */
+                }
+              }}
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-neutral-900/60 border border-white/5 text-neutral-400 hover:text-neutral-200 hover:border-white/15 transition-all cursor-pointer"
+            >
+              <Share2 className="h-3.5 w-3.5" />
+              {lang === 'ru' ? 'Поделиться' : 'Share'}
+            </button>
           </div>
 
           {/* Footer controls: Add directly to Trade side A/B */}
