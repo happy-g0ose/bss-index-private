@@ -72,8 +72,7 @@ export default function CommandMenu({ isOpen, setIsOpen, onSelectItem, lang }: C
       item.englishName.toLowerCase().includes(q) ||
       item.name.toLowerCase().includes(transQ) ||
       item.englishName.toLowerCase().includes(transQ) ||
-      item.category.toLowerCase().includes(q) ||
-      item.rarity.toLowerCase().includes(q)
+      item.category.toLowerCase().includes(q)
     );
   });
 

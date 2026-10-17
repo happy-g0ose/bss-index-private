@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792214937658,
-  "message": "revert(ui): drop the diagonal hatch fill from catalog cards\n\nThe pattern was meant for the item-page icon frame only; applying it to the\nwhole card made every sticker look striped and dirty. Cards are back to the\nsingle hover-only radial glow, the item-page icon keeps its tinted hatch.",
+  "timestamp": 1792215316920,
+  "message": "style(seo): remove hatch lines from the item-page icon frame\n\nKeeps the tinted radial glow fill but drops the diagonal stripes, which read\nas noise on the page.",
   "author": "BSS Index Developer",
-  "sha": "22355f84b15b163efefd8570cb1ecc3abd8367d6"
+  "sha": "8177a2ec97b670381ca23985904b5486c88bfbb0"
 }

@@ -26,14 +26,6 @@ const DEMAND_EN = {
   'Низкий': 'Low',
 };
 
-const RARITY_EN = {
-  'Обычный': 'Common',
-  'Редкий': 'Rare',
-  'Эпический': 'Epic',
-  'Легендарный': 'Legendary',
-  'Мифический': 'Mythic',
-};
-
 const CATEGORY_EN = {
   'Все': 'All',
   'Скины на куба': 'Cub Skins',
@@ -106,8 +98,6 @@ function buildSeoFields(item, lang) {
   const categoryEn = CATEGORY_EN[item.category] || item.category;
   const demandRu = item.demand;
   const demandEn = DEMAND_EN[item.demand] || item.demand;
-  const rarityRu = item.rarity;
-  const rarityEn = RARITY_EN[item.rarity] || item.rarity;
 
   const title = en
     ? isBeequip
@@ -133,11 +123,11 @@ function buildSeoFields(item, lang) {
   }
 
   const keywords = en
-    ? [item.englishName, item.name, 'Bee Swarm Simulator', 'BSS', isBeequip ? 'beequip value' : 'sticker price', categoryEn, rarityEn, isBeequip ? 'beequip rolls' : 'sticker prices', 'value list']
+    ? [item.englishName, item.name, 'Bee Swarm Simulator', 'BSS', isBeequip ? 'beequip value' : 'sticker price', categoryEn, isBeequip ? 'beequip rolls' : 'sticker prices', 'value list']
         .filter(Boolean)
         .filter((v, i, a) => a.indexOf(v) === i)
         .join(', ')
-    : [displayName, item.englishName, 'Bee Swarm Simulator', 'BSS', isBeequip ? 'биквип цена' : 'стикер цена', categoryRu, rarityRu, ...(isBeequip ? ['биквипы'] : ['стикеры', 'цены'])]
+    : [displayName, item.englishName, 'Bee Swarm Simulator', 'BSS', isBeequip ? 'биквип цена' : 'стикер цена', categoryRu, ...(isBeequip ? ['биквипы'] : ['стикеры', 'цены'])]
         .filter(Boolean)
         .filter((v, i, a) => a.indexOf(v) === i)
         .join(', ');
@@ -156,9 +146,6 @@ function buildSeoFields(item, lang) {
     demandRu,
     demandEn,
     demand: en ? demandEn : demandRu,
-    rarityRu,
-    rarityEn,
-    rarity: en ? rarityEn : rarityRu,
     stability: en ? ({ 'Растет': 'Rising', 'Падает': 'Falling', 'Стабильно': 'Stable' }[item.stability] || item.stability) : item.stability,
     valueLowText: item.valueLow !== item.valueHigh ? `${fmtValue(item.valueLow)} – ${fmtValue(item.valueHigh)}★` : '',
   };
@@ -191,12 +178,9 @@ function buildJsonLd(item, url, seo) {
     };
   }
 
-  if (item.rarity) {
-    payload.additionalProperty = [
-      { '@type': 'PropertyValue', name: 'Спрос / Demand', value: seo.demandEn },
-      { '@type': 'PropertyValue', name: 'Редкость / Rarity', value: seo.rarityEn },
-    ];
-  }
+  payload.additionalProperty = [
+    { '@type': 'PropertyValue', name: 'Спрос / Demand', value: seo.demandEn },
+  ];
 
   return payload;
 }
@@ -291,7 +275,6 @@ function renderBody(item, seo, url, altUrl) {
       </div>
       <table class="meta"><tbody>
         <tr><th>${en ? 'Category' : 'Категория'}</th><td>${esc(seo.category)}</td></tr>
-        <tr><th>${en ? 'Rarity' : 'Редкость'}</th><td>${esc(seo.rarity)}</td></tr>
       </tbody></table>
     </section>`;
 
@@ -317,7 +300,7 @@ function renderBody(item, seo, url, altUrl) {
         ${en
           ? (item.name && item.name !== item.englishName ? `<p class="alt">${esc(item.name)}</p>` : '')
           : (item.englishName && item.englishName !== item.name ? `<p class="alt">${esc(item.englishName)}</p>` : '')}
-        <p class="tag">${esc(seo.category)} · ${esc(seo.rarity)}</p>
+        <p class="tag">${esc(seo.category)}</p>
       </div>
     </header>
 

@@ -262,14 +262,3 @@ export function translateCategory(cat: string, lang: Language): string {
   }
 }
 
-export function translateRarity(rarity: string, lang: Language): string {
-  if (lang === 'ru') return rarity;
-  switch (rarity) {
-    case 'Обычный': return 'Common';
-    case 'Редкий': return 'Rare';
-    case 'Эпический': return 'Epic';
-    case 'Легендарный': return 'Legendary';
-    case 'Мифический': return 'Mythic';
-    default: return rarity;
-  }
-}
