@@ -27,3 +27,4 @@ dist-ssr
 bot/node_modules
 bot/.env
 values_live.json
+prev.*
