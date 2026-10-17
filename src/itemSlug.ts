@@ -29,18 +29,19 @@ export function slugify(str: string): string {
   return out || 'item';
 }
 
-/** Public URL for an item's standalone page. */
-export function itemUrl(item: { englishName?: string; id?: string; name?: string }): string {
-  return `/item/${slugify(item.englishName || item.id || item.name || '')}/`;
+/** Public URL for an item's standalone page (English lives at the root). */
+export function itemUrl(item: { englishName?: string; id?: string; name?: string }, lang: 'en' | 'ru' = 'en'): string {
+  const slug = slugify(item.englishName || item.id || item.name || '');
+  return lang === 'ru' ? `/ru/item/${slug}/` : `/item/${slug}/`;
 }
 
-/** Extract the slug from a /item/<slug> or /en/item/<slug> path, or null. */
+/** Extract the slug from a /item/<slug> or /ru/item/<slug> path, or null. */
 export function slugFromPath(pathname: string): string | null {
-  const m = pathname.match(/^\/(?:en\/)?item\/([^/]+)\/?$/);
+  const m = pathname.match(/^\/(?:ru\/)?item\/([^/]+)\/?$/);
   return m ? decodeURIComponent(m[1]) : null;
 }
 
-/** True when the current path belongs to the English mirror. */
-export function isEnglishPath(pathname: string): boolean {
-  return pathname === '/en' || pathname.startsWith('/en/');
+/** True when the current path belongs to the Russian mirror. */
+export function isRussianPath(pathname: string): boolean {
+  return pathname === '/ru' || pathname.startsWith('/ru/');
 }

@@ -298,7 +298,7 @@ function renderBody(item, seo, url, altUrl) {
   return `
   <main class="wrap">
     <nav class="crumbs">
-      <a href="${en ? '/en/' : '/'}">← BSS Index</a> <span>/</span> <a href="${en ? '/en/' : '/'}">${esc(seo.category)}</a>
+      <a href="${en ? '/' : '/ru/'}">← BSS Index</a> <span>/</span> <a href="${en ? '/' : '/ru/'}">${esc(seo.category)}</a>
       <span class="langswitch">
         ${en ? `<a href="${esc(altUrl)}">RU</a>` : `<a href="${esc(altUrl)}">EN</a>`}
       </span>
@@ -327,7 +327,7 @@ function renderBody(item, seo, url, altUrl) {
       <a href="#app">${en
         ? (seo.isBeequip ? 'Open beequip in the app' : 'Open in the trade calculator')
         : (seo.isBeequip ? 'Открыть биквип в приложении' : 'Открыть в калькуляторе обменов')} ↓</a>
-      <a href="${en ? '/en/' : '/'}" class="ghost">${en ? 'All items' : 'Все предметы'}</a>
+      <a href="${en ? '/' : '/ru/'}" class="ghost">${en ? 'All items' : 'Все предметы'}</a>
     </div>
 
     ${isBeequip ? '' : statsBlock}
@@ -337,7 +337,7 @@ function renderBody(item, seo, url, altUrl) {
 
     <footer class="foot">
       <p class="upd">${en ? 'Prices update daily' : 'Цены обновляются ежедневно'}</p>
-      <p><a href="${en ? '/en/' : '/'}">${en ? 'All items and the trade calculator →' : 'Все предметы и калькулятор обменов →'}</a></p>
+      <p><a href="${en ? '/' : '/ru/'}">${en ? 'All items and the trade calculator →' : 'Все предметы и калькулятор обменов →'}</a></p>
     </footer>
   </main>
 
@@ -379,7 +379,7 @@ function injectIntoTemplate(template, item, seo, url, altUrl) {
     <link rel="canonical" href="${esc(url)}" />
     <link rel="alternate" hreflang="ru" href="${esc(seo.en ? altUrl : url)}" />
     <link rel="alternate" hreflang="en" href="${esc(seo.en ? url : altUrl)}" />
-    <link rel="alternate" hreflang="x-default" href="${esc(seo.en ? altUrl : url)}" />
+    <link rel="alternate" hreflang="x-default" href="${esc(seo.en ? url : altUrl)}" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="BSS Index" />
@@ -624,8 +624,8 @@ function buildSitemap(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>`;
 }
 
-/** Build the English landing page at /en/. */
-function buildEnglishLanding(template, enList) {
+/** Build the Russian landing page at /ru/. */
+function buildRussianLanding(template, ruList) {
   const gtagLoader =
     (template.match(/<script async src="https:\/\/www\.googletagmanager\.com[^>]*><\/script>/i) || [])[0] || '';
   const gtagInline =
@@ -635,16 +635,16 @@ function buildEnglishLanding(template, enList) {
     (template.match(/<link rel="stylesheet"[^>]*href="\.\/assets\/[^"]*"[^>]*>/i) || [])[0] || '';
   const absolutise = (tag) => tag.replace(/(src|href)="\.\//g, '$1="/');
 
-  const title = 'BSS Index — Sticker, Voucher & Beequip Values in Bee Swarm Simulator';
+  const title = 'BSS Index — Ценность стикеров, ваучеров и биквипов в Bee Swarm Simulator';
   const description =
-    'Live prices for every sticker, voucher and beequip in Roblox Bee Swarm Simulator. Check values, compare demand and plan trades with the calculator.';
+    'Актуальные цены на все стикеры, ваучеры и биквипы в Roblox Bee Swarm Simulator. Проверяй ценность, сравнивай спрос и считай выгоду сделок в калькуляторе.';
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'BSS Index',
-    url: `${SITE_ORIGIN}/en/`,
-    inLanguage: 'en',
+    url: `${SITE_ORIGIN}/ru/`,
+    inLanguage: 'ru',
     description,
   };
 
@@ -656,16 +656,16 @@ function buildEnglishLanding(template, enList) {
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(description)}" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="${esc(`${SITE_ORIGIN}/en/`)}" />
-    <link rel="alternate" hreflang="ru" href="${esc(`${SITE_ORIGIN}/`)}" />
-    <link rel="alternate" hreflang="en" href="${esc(`${SITE_ORIGIN}/en/`)}" />
+    <link rel="canonical" href="${esc(`${SITE_ORIGIN}/ru/`)}" />
+    <link rel="alternate" hreflang="en" href="${esc(`${SITE_ORIGIN}/`)}" />
+    <link rel="alternate" hreflang="ru" href="${esc(`${SITE_ORIGIN}/ru/`)}" />
     <link rel="alternate" hreflang="x-default" href="${esc(`${SITE_ORIGIN}/`)}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="BSS Index" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="ru_RU" />
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(description)}" />
-    <meta property="og:url" content="${esc(`${SITE_ORIGIN}/en/`)}" />
+    <meta property="og:url" content="${esc(`${SITE_ORIGIN}/ru/`)}" />
     <meta property="og:image" content="${esc(`${SITE_ORIGIN}/logo.png`)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json">${escJson(jsonLd)}</script>
@@ -680,28 +680,28 @@ function buildEnglishLanding(template, enList) {
 
   const body = `
   <main class="wrap">
-    <nav class="crumbs"><a href="/">← BSS Index</a> <span class="langswitch"><a href="/">RU</a></span></nav>
-    <h1>BSS VALUES</h1>
-    <p class="tag">Stickers · Vouchers · Beequips</p>
+    <nav class="crumbs"><a href="/">← BSS Index</a> <span class="langswitch"><a href="/">EN</a></span></nav>
+    <h1>ЦЕННОСТИ BSS</h1>
+    <p class="tag">Стикеры · Ваучеры · Биквипы</p>
     <p class="lead">${esc(description)}</p>
     <div class="cta">
-      <a href="#app">Open the app ↓</a>
-      <a href="/" class="ghost">Русская версия</a>
+      <a href="#app">Открыть приложение ↓</a>
+      <a href="/" class="ghost">English version</a>
     </div>
     <section class="card">
-      <h2>Highest value items</h2>
-      <table><thead><tr><th>Item</th><th>Price</th></tr></thead><tbody>${enList}</tbody></table>
+      <h2>Самые дорогие предметы</h2>
+      <table><thead><tr><th>Предмет</th><th>Цена</th></tr></thead><tbody>${ruList}</tbody></table>
     </section>
     <footer class="foot">
-      <p class="upd">Prices update daily</p>
-      <p><a href="/">Полный каталог и калькулятор обменов →</a></p>
+      <p class="upd">Цены обновляются ежедневно</p>
+      <p><a href="/">Full catalogue and trade calculator →</a></p>
     </footer>
   </main>
 
   <style>${ITEM_PAGE_CSS}</style>`;
 
   return template
-    .replace(/<html lang="[a-z]{2}">/i, '<html lang="en">')
+    .replace(/<html lang="[a-z]{2}">/i, '<html lang="ru">')
     .replace(/<head>[\s\S]*?<\/head>/i, `<head>${head}  </head>`)
     .replace('<div id="app"></div>', `${body}\n<div id="app"></div>`);
 }
@@ -721,7 +721,7 @@ function main() {
 
   const urls = [
     { loc: `${SITE_ORIGIN}/`, changefreq: 'daily', priority: '1.0' },
-    { loc: `${SITE_ORIGIN}/en/`, changefreq: 'daily', priority: '1.0' },
+    { loc: `${SITE_ORIGIN}/ru/`, changefreq: 'daily', priority: '1.0' },
   ];
   const usedSlugs = new Map();
   let written = 0;
@@ -740,12 +740,12 @@ function main() {
       usedSlugs.set(slug, 0);
     }
 
-    const ruUrl = `${SITE_ORIGIN}/item/${slug}`;
-    const enUrl = `${SITE_ORIGIN}/en/item/${slug}`;
+    // English is the primary site and lives at the root; Russian mirrors under /ru/.
+    const enUrl = `${SITE_ORIGIN}/item/${slug}`;
+    const ruUrl = `${SITE_ORIGIN}/ru/item/${slug}`;
     const priority = item.category === 'Биквипы' ? '0.6' : '0.8';
 
-    // Russian is the default at /item/<slug>; English lives under /en/.
-    for (const lang of ['ru', 'en']) {
+    for (const lang of ['en', 'ru']) {
       const isEn = lang === 'en';
       const url = isEn ? enUrl : ruUrl;
       const altUrl = isEn ? ruUrl : enUrl;
@@ -754,7 +754,7 @@ function main() {
         // Match the document language so screen readers and Google agree.
         .replace(/<html lang="[a-z]{2}">/i, `<html lang="${isEn ? 'en' : 'ru'}">`);
 
-      const dir = isEn ? path.join(DIST, 'en', 'item', slug) : path.join(DIST, 'item', slug);
+      const dir = isEn ? path.join(DIST, 'item', slug) : path.join(DIST, 'ru', 'item', slug);
       fs.mkdirSync(dir, { recursive: true });
       fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
 
@@ -765,18 +765,18 @@ function main() {
 
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'), buildSitemap(urls), 'utf8');
 
-  // English landing page at /en/ — a short static entry point that mirrors the
-  // root page, points at the app and links into the English item pages.
-  const enDir = path.join(DIST, 'en');
-  fs.mkdirSync(enDir, { recursive: true });
+  // Russian landing page at /ru/ — a short static entry point that mirrors the
+  // root page, points at the app and links into the Russian item pages.
+  const ruDir = path.join(DIST, 'ru');
+  fs.mkdirSync(ruDir, { recursive: true });
   const topItems = [...items]
     .filter((i) => i.value > 0)
     .sort((a, b) => b.value - a.value)
     .slice(0, 24);
-  const enList = topItems
-    .map((i) => `<tr><td><a href="/en/item/${slugify(i.englishName || i.id || i.name)}/">${esc(i.englishName)}</a></td><td>${esc(fmtValue(i.value))}★</td></tr>`)
+  const ruList = topItems
+    .map((i) => `<tr><td><a href="/ru/item/${slugify(i.englishName || i.id || i.name)}/">${esc(i.name)}</a></td><td>${esc(fmtValue(i.value))}★</td></tr>`)
     .join('');
-  fs.writeFileSync(path.join(enDir, 'index.html'), buildEnglishLanding(template, enList), 'utf8');
+  fs.writeFileSync(path.join(ruDir, 'index.html'), buildRussianLanding(template, ruList), 'utf8');
 
   // Point robots.txt at the sitemap.
   const robotsPath = path.join(DIST, 'robots.txt');

@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792213162607,
-  "message": "feat(seo): English mirror pages + restore bright dark-theme text\n\n- item pages now generated in both languages: /item/<slug>/ (ru) and\n  /en/item/<slug>/ (en), with correct hreflang alternates and x-default\n- new English landing page at /en/ listing the 24 highest-value items\n- prerendered copy is fully translated (titles, labels, table headers, CTAs)\n- app forces English when loaded from an /en/... path\n- removed the blanket dark-theme text overrides that were dimming every\n  text-neutral-* colour; the dark theme is bright again\n- shared the item-page stylesheet and theme-boot script between all generated\n  pages instead of duplicating them per template",
+  "timestamp": 1792213558603,
+  "message": "fix(seo): restore item-page stylesheet + add solid background and sticker fills\n\n- FIX: the shared item-page stylesheet was being dropped (empty <style> block),\n  so all 660 prerendered pages rendered unstyled. Caused by a PowerShell \\$\n  interpolation eating the template placeholder.\n- BgMode now includes 'solid'; added missing .bgmode-hex / -aurora / -carbon\n  patterns with light-theme variants, and surfaced a real background picker in\n  the settings modal (live swatches, 8 presets) instead of no UI at all\n- settings modal gained the missing week-badges toggle\n- every sticker now carries a consistent hatched fill tinted by its glowColor:\n  always faintly visible on catalog cards, and as the icon frame on item pages\n- prerendered pages support all 8 background presets",
   "author": "BSS Index Developer",
-  "sha": "563ac7a0d835061d9e7133c8137ff5d6d628bab6"
+  "sha": "0418026dc60b85bb1fb5d8c8eebe0194ed2d76be"
 }

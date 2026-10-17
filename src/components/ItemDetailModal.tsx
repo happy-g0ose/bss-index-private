@@ -479,14 +479,14 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
           {/* Standalone SEO page link + share */}
           <div className="px-6 pb-2 flex items-center justify-between gap-3 text-[11px] z-10">
             <a
-              href={itemUrl(item)}
+              href={itemUrl(item, lang)}
               className="text-neutral-500 hover:text-amber-400 transition-colors no-underline"
             >
               {lang === 'ru' ? 'Страница предмета' : 'Item page'}
             </a>
             <button
               onClick={async () => {
-                const url = `${window.location.origin}${itemUrl(item)}`;
+                const url = `${window.location.origin}${itemUrl(item, lang)}`;
                 try {
                   if (navigator.share) {
                     await navigator.share({ title: item.name, url });
