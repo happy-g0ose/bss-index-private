@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792216018102,
-  "message": "style(settings): trim background presets down to four\n\nKeeps dots, grid, solid and aurora; drops gradient, waves, honeycomb and\ncarbon from the picker, the app stylesheet and the prerendered page\nstylesheet so the settings screen stops offering near-duplicates.",
+  "timestamp": 1792315400167,
+  "message": "fix(assets,data): absolute asset paths + rename cub-skin category\n\n- avatar.jpg and logo.png were referenced relatively (./avatar.jpg), which\n  resolved to /item/<slug>/avatar.jpg on item pages and 404'd, silently\n  falling back to the goose emoji. Both now use absolute paths.\n- category renamed 'Скины на куба' -> 'Скины на каба' to match how the\n  community actually says it; English label stays 'Cub Skins'.",
   "author": "BSS Index Developer",
-  "sha": "57360b9e702fce891ebf43664765f4b428db0f0f"
+  "sha": "54f5e0eefe0d283bebedbe6aa93cba45472beed1"
 }

@@ -106,9 +106,10 @@ export default function TradeCalculator({
   const handleCopyLink = async () => {
     if (sideA.length === 0 && sideB.length === 0) return;
 
-    // Generate trade URL
+    // Always share from the site root — the calculator is a tab there, and
+    // using the current pathname would point at an item page instead.
     const tradeParams = `${sideA.map(item => item.id).join(',')}|${sideB.map(item => item.id).join(',')}`;
-    const shareUrl = `${window.location.origin}${window.location.pathname}?trade=${encodeURIComponent(tradeParams)}`;
+    const shareUrl = `${window.location.origin}/?trade=${encodeURIComponent(tradeParams)}`;
 
     try {
       await navigator.clipboard.writeText(shareUrl);

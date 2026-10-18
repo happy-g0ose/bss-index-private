@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Filter, SlidersHorizontal, AlertCircle, Search } from 'lucide-react';
 import Navbar from './components/Navbar';
@@ -104,6 +104,61 @@ export default function App() {
     window.addEventListener('popstate', openFromPath);
     return () => window.removeEventListener('popstate', openFromPath);
   }, []);
+
+  // Restore a shared trade from ?trade=<sideA ids>|<sideB ids>, falling back to
+  // the last saved trade.
+  //
+  // These MUST live in one effect: previously the URL parser and the storage
+  // rehydration were separate mount effects, so the storage pass ran with the
+  // pre-parse state and overwrote whatever the link had just loaded.
+  const tradeRestored = useRef(false);
+  useEffect(() => {
+    if (tradeRestored.current) return;
+    tradeRestored.current = true;
+
+    const byId = new Map(bssItemsData.map((i) => [i.id, i]));
+    const resolve = (ids: string) =>
+      ids
+        .split(',')
+        .map((id) => byId.get(id))
+        .filter((i): i is BSSItem => Boolean(i));
+
+    const raw = new URLSearchParams(window.location.search).get('trade');
+    let a: BSSItem[] = [];
+    let b: BSSItem[] = [];
+
+    if (raw) {
+      const [aIds, bIds] = raw.split('|');
+      a = resolve(aIds || '');
+      b = resolve(bIds || '');
+    } else {
+      try {
+        const read = (key: string) => {
+          const parsed: string[] = JSON.parse(localStorage.getItem(key) || '[]');
+          return resolve(Array.isArray(parsed) ? parsed.join(',') : '');
+        };
+        a = read('bss-trade-sideA');
+        b = read('bss-trade-sideB');
+      } catch {
+        /* malformed storage — start empty */
+      }
+    }
+
+    if (a.length === 0 && b.length === 0) return;
+    setSideA(a);
+    setSideB(b);
+    setActiveTab('calculator');
+  }, []);
+
+  // Persist the trade so a refresh does not lose it.
+  useEffect(() => {
+    try {
+      localStorage.setItem('bss-trade-sideA', JSON.stringify(sideA.map((i) => i.id)));
+      localStorage.setItem('bss-trade-sideB', JSON.stringify(sideB.map((i) => i.id)));
+    } catch {
+      /* private mode / quota — sharing still works */
+    }
+  }, [sideA, sideB]);
 
   useEffect(() => {
     if (toast.show) {
