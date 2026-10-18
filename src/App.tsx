@@ -16,7 +16,7 @@ import type { BSSItem } from './data/items';
 import type { Language } from './locales';
 import { t, translateCategory } from './locales';
 import { transliterate } from './components/BeequipsPage';
-import { slugFromPath, slugify } from './itemSlug';
+import { slugFromPath } from './itemSlug';
 
 type CategoryType = string;
 type SortType = 'value-desc' | 'value-asc' | 'demand-desc' | 'name-asc';
@@ -86,23 +86,14 @@ export default function App() {
     root.setAttribute('data-bsbg', bg);
   }, [theme, bg]);
 
-  // Resolve /item/<slug> (the prerendered SEO pages) back to an item and open it.
-  // Opening the modal in place keeps the static page useful for crawlers while
-  // giving visitors the normal app experience.
+  // /item/<slug> pages are standalone: the prerendered block above the app is the
+  // page. We deliberately do NOT auto-open the item modal here — it would cover
+  // the very content the visitor came for. The catalog tab is set so the app
+  // below lands on the listing rather than the home screen.
   useEffect(() => {
-    const openFromPath = () => {
-      const slug = slugFromPath(window.location.pathname);
-      if (!slug) return;
-      const item = bssItemsData.find((i) => slugify(i.englishName || i.id || i.name) === slug);
-      if (item) {
-        setSelectedItem(item);
-        setActiveTab('catalog');
-      }
-    };
-
-    openFromPath();
-    window.addEventListener('popstate', openFromPath);
-    return () => window.removeEventListener('popstate', openFromPath);
+    if (slugFromPath(window.location.pathname)) {
+      setActiveTab('catalog');
+    }
   }, []);
 
   // Restore a shared trade from ?trade=<sideA ids>|<sideB ids>, falling back to

@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792315400167,
-  "message": "fix(assets,data): absolute asset paths + rename cub-skin category\n\n- avatar.jpg and logo.png were referenced relatively (./avatar.jpg), which\n  resolved to /item/<slug>/avatar.jpg on item pages and 404'd, silently\n  falling back to the goose emoji. Both now use absolute paths.\n- category renamed 'Скины на куба' -> 'Скины на каба' to match how the\n  community actually says it; English label stays 'Cub Skins'.",
+  "timestamp": 1792315669873,
+  "message": "feat(trades): make shared trade links actually work\n\nThe 'Link' button generated ?trade=<sideA>|<sideB> but nothing ever parsed it,\nso shared links opened an empty calculator.\n- parse the param on mount and load both sides, jumping to the calculator tab\n- share from the site root instead of the current pathname, so a link copied\n  from an item page no longer points at that item page\n- persist the trade to localStorage and rehydrate on load, so a refresh keeps\n  it (the existing 'clear' handler already assumed storage)\n- URL parsing and rehydration live in a single effect; as two mount effects the\n  storage pass ran with pre-parse state and clobbered the loaded trade",
   "author": "BSS Index Developer",
-  "sha": "54f5e0eefe0d283bebedbe6aa93cba45472beed1"
+  "sha": "7c44b0c28643cc5f3f64d11143188f2930678dae"
 }
