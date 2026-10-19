@@ -9,6 +9,7 @@ import ItemDetailModal from './components/ItemDetailModal';
 import CommandMenu from './components/CommandMenu';
 import AuthorsModal from './components/AuthorsModal';
 import BeequipsPage from './components/BeequipsPage';
+import ErrorBoundary from './components/ErrorBoundary';
 import SettingsModal from './components/SettingsModal';
 import type { BgMode, Theme } from './components/SettingsModal';
 import { bssItemsData } from './data/items';
@@ -239,6 +240,7 @@ export default function App() {
     });
 
   return (
+    <ErrorBoundary>
     <div className={`min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased bgmode-${bg}`}>
 
       {/* Keyboard Shortcut Announcement Banner */}
@@ -261,6 +263,7 @@ export default function App() {
         onLogoClick={() => setActiveTab('home')}
       />
 
+      <ErrorBoundary fallback={null}>
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-12">
         {/* Tabs Navigation */}
         <div className="flex items-center justify-center gap-2 md:gap-4 border-b border-white/5 pb-6 select-none">
@@ -442,6 +445,7 @@ export default function App() {
           </section>
         )}
       </main>
+      </ErrorBoundary>
 
       {/* Footer */}
       <footer className="w-full border-t border-white/5 py-10 bg-neutral-950/20 mt-20 select-none">
@@ -550,5 +554,6 @@ export default function App() {
         )}
       </AnimatePresence>
     </div>
+    </ErrorBoundary>
   );
 }

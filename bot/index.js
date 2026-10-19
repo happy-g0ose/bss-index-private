@@ -3,33 +3,20 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import { itemUrl, getItems } from './lib/items.js';
+import { parseItemList, logParsedTrade, verdictFor, allTrades, topTradedItems, tradeStats } from './lib/trades.js';
+import { getConfig, updateConfig, addBlocklistWord, removeBlocklistWord, inspectMessage, recordHit, recentLog, logStats } from './lib/moderation.js';
+import { bump, syncTierRoles, tierFor, grantStarterRole } from './lib/roles.js';
 
 dotenv.config();
+
+// Categories present in items.json, for the /top command
+const TOP_CATEGORIES = [...new Set(getItems().map(i => i.category))].sort((a, b) => a.localeCompare(b, 'ru'));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-// User Stats Database for auto-roles
-const statsPath = path.join(__dirname, 'user_stats.json');
-let userStats = {};
-try {
-  if (fs.existsSync(statsPath)) {
-    userStats = JSON.parse(fs.readFileSync(statsPath, 'utf-8'));
-  }
-} catch (e) {
-  console.error('Could not load user_stats.json:', e.message);
-}
-
-function saveUserStats() {
-  try {
-    fs.writeFileSync(statsPath, JSON.stringify(userStats, null, 2), 'utf-8');
-  } catch (e) {
-    console.error('Could not save user_stats.json:', e.message);
-  }
-}
-
-// Ensure the automatic BSS roles exist on the server
+// Poll the site's build-meta.json to announce new site updates
 const buildMetaDbPath = path.join(__dirname, 'last_build.json');
 
 async function startSiteUpdateDetector(client) {
@@ -104,100 +91,45 @@ async function startSiteUpdateDetector(client) {
 }
 
 
-async function ensureBssRoles(guild) {
-  const rolesConfig = [
-    { name: '🐝 Трейдер', color: '#f59e0b', reason: 'Начальная роль при входе на сервер BSS Index' },
-    { name: '🍯 Опытный Трейдер', color: '#eab308', reason: 'Выдается за 50 проверок цен на BSS Index' },
-    { name: '👑 Легендарный Трейдер', color: '#a855f7', reason: 'Выдается за 150 проверок цен на BSS Index' },
-    { name: '👑 Создатель BSS Index', color: '#06b6d4', reason: 'Особая роль создателя проекта BSS Index' }
-  ];
+// Record a qualifying activity and sync the member's tier roles (roles.js)
+async function updateUserActivity(userId, guild, channel, member) {
+  if (!guild || !userId) return;
 
-  const createdRoles = {};
-  for (const rConf of rolesConfig) {
-    let role = guild.roles.cache.find(r => r.name === rConf.name);
-    if (!role) {
-      try {
-        role = await guild.roles.create({
-          name: rConf.name,
-          color: rConf.color,
-          reason: rConf.reason
-        });
-        console.log(`[Roles] Создана роль: ${rConf.name}`);
-      } catch (err) {
-        console.error(`[Roles] Ошибка создания роли ${rConf.name}:`, err.message);
-      }
-    }
-    createdRoles[rConf.name] = role;
+  const prevTier = tierFor(userId);
+  const newCount = bump(userId, 1);
+  const newTier = tierFor(userId);
+
+  const target = member || await guild.members.fetch(userId).catch(() => null);
+  if (target) {
+    await syncTierRoles(target);
   }
-  return createdRoles;
-}
 
-// Update stats and assign roles based on command activity
-async function updateUserActivity(userId, guild, channel) {
-  if (!guild) return;
-  
-  if (!userStats[userId]) {
-    userStats[userId] = { count: 0 };
+  // Notify the channel when the member crosses into a new tier
+  if (channel && newTier && prevTier && newTier.need > prevTier.need) {
+    const isLegendary = newTier.key === 'legendary';
+    const tierEmbed = new EmbedBuilder()
+      .setTitle(isLegendary ? '👑 Легендарный Трейдер сервера!' : '🎉 Повышение ранга трейдера!')
+      .setDescription(isLegendary
+        ? `Невероятно! <@${userId}> совершил ${newCount} проверок цен/сделок и удостоен высшего звания **${newTier.role}**!`
+        : `Поздравляем <@${userId}>! Ты выполнил ${newCount} проверок цен/сделок и получаешь роль **${newTier.role}**!`)
+      .setColor(newTier.color)
+      .setFooter({ text: 'Продолжай использовать бота, чтобы расти дальше!' });
+    await channel.send({ embeds: [tierEmbed] }).catch(() => null);
   }
-  userStats[userId].count += 1;
-  saveUserStats();
 
-  const count = userStats[userId].count;
-  const roles = await ensureBssRoles(guild);
-  const member = await guild.members.fetch(userId).catch(() => null);
-  if (!member) return;
-
-  // Special Auto-Role for the Creator (User ID 1193225483932930159)
+  // Special auto-role for the Creator (User ID 1193225483932930159)
   if (userId === '1193225483932930159') {
-    const creatorRole = roles['👑 Создатель BSS Index'];
-    if (creatorRole && !member.roles.cache.has(creatorRole.id)) {
-      await member.roles.add(creatorRole).catch(() => null);
-      console.log(`[Roles] Успешно выдана роль Создателя пользователю happy goose (${userId})`);
+    let creatorRole = guild.roles.cache.find(r => r.name === '👑 Создатель BSS Index');
+    if (!creatorRole) {
+      creatorRole = await guild.roles.create({
+        name: '👑 Создатель BSS Index',
+        color: '#06b6d4',
+        reason: 'Особая роль создателя проекта BSS Index'
+      }).catch(() => null);
     }
-  }
-
-  // Fallback: If they don't have any BSS role yet and count is less than 50, assign them the starter role!
-  const starterRole = roles['🐝 Трейдер'];
-  const activeRole = roles['🍯 Опытный Трейдер'];
-  const legendaryRole = roles['👑 Легендарный Трейдер'];
-  
-  if (count < 50) {
-    if (starterRole && !member.roles.cache.has(starterRole.id) && 
-        (!activeRole || !member.roles.cache.has(activeRole.id)) && 
-        (!legendaryRole || !member.roles.cache.has(legendaryRole.id))) {
-      await member.roles.add(starterRole).catch(() => null);
-    }
-  }
-
-  // Level 1: 50 commands -> Opytny Trader
-  if (count === 50) {
-    if (activeRole) {
-      await member.roles.add(activeRole);
-      if (starterRole) await member.roles.remove(starterRole).catch(() => null);
-      
-      const levelEmbed = new EmbedBuilder()
-        .setTitle('🎉 Повышение ранга трейдера!')
-        .setDescription(`Поздравляем <@${userId}>! Ты выполнил 50 проверок цен/сделок и получаешь роль **🍯 Опытный Трейдер**!`)
-        .setColor('#eab308')
-        .setFooter({ text: 'Продолжай использовать бота, чтобы получить Легендарного Трейдера!' });
-      
-      await channel.send({ embeds: [levelEmbed] }).catch(() => null);
-    }
-  }
-  
-  // Level 2: 150 commands -> Legendary Trader
-  if (count === 150) {
-    if (legendaryRole) {
-      await member.roles.add(legendaryRole);
-      if (activeRole) await member.roles.remove(activeRole).catch(() => null);
-      
-      const levelEmbed = new EmbedBuilder()
-        .setTitle('👑 Легендарный Трейдер сервера!')
-        .setDescription(`Невероятно! <@${userId}> совершил 150 проверок цен/сделок и удостоен высшего звания **👑 Легендарный Трейдер**!`)
-        .setColor('#a855f7')
-        .setFooter({ text: 'Настоящий мастер обменов BSS Index!' });
-      
-      await channel.send({ embeds: [levelEmbed] }).catch(() => null);
+    if (creatorRole && target && !target.roles.cache.has(creatorRole.id)) {
+      await target.roles.add(creatorRole).catch(() => null);
+      console.log(`[Roles] Успешно выдана роль Создателя пользователю (${userId})`);
     }
   }
 }
@@ -445,6 +377,80 @@ const commands = [
     .setDescription('Ссылка на сайт BSS Index и информацию'),
 
   new SlashCommandBuilder()
+    .setName('logtrade')
+    .setDescription('Записать трейд в журнал BSS Index')
+    .addStringOption(option =>
+      option.setName('giving')
+        .setDescription('Что отдаете (пр. 2x Star Cub, 1x Nessie)')
+        .setRequired(true)
+    )
+    .addStringOption(option =>
+      option.setName('getting')
+        .setDescription('Что получаете (пр. 1x Bee Cub)')
+        .setRequired(true)
+    ),
+
+  new SlashCommandBuilder()
+    .setName('trades')
+    .setDescription('Журнал трейдов: последние, топ предметов или статистика')
+    .addStringOption(option =>
+      option.setName('mode')
+        .setDescription('Режим: recent, top или stats')
+        .setRequired(false)
+        .addChoices(
+          { name: 'Последние трейды', value: 'recent' },
+          { name: 'Топ предметов', value: 'top' },
+          { name: 'Статистика', value: 'stats' }
+        )
+    ),
+
+  new SlashCommandBuilder()
+    .setName('mod')
+    .setDescription('Управление автомодерацией (только для админов)')
+    .addStringOption(option =>
+      option.setName('action')
+        .setDescription('Действие')
+        .setRequired(true)
+        .addChoices(
+          { name: 'Статус', value: 'status' },
+          { name: 'Сменить режим (укажите значение)', value: 'mode' },
+          { name: 'Enforce', value: 'enforce' },
+          { name: 'Watch', value: 'watch' },
+          { name: 'Off', value: 'off' },
+          { name: 'Добавить стоп-слово', value: 'addword' },
+          { name: 'Убрать стоп-слово', value: 'removeword' },
+          { name: 'Журнал', value: 'log' },
+          { name: 'Статистика', value: 'stats' }
+        )
+    )
+    .addStringOption(option =>
+      option.setName('value')
+        .setDescription('Значение (режим или слово)')
+        .setRequired(false)
+    ),
+
+  new SlashCommandBuilder()
+    .setName('top')
+    .setDescription('Топ предметов BSS по цене')
+    .addStringOption(option =>
+      option.setName('category')
+        .setDescription('Категория предметов')
+        .setRequired(false)
+        .addChoices(...TOP_CATEGORIES.map(c => ({ name: c, value: c })))
+    )
+    .addIntegerOption(option =>
+      option.setName('limit')
+        .setDescription('Сколько предметов показать (1-20, по умолчанию 10)')
+        .setRequired(false)
+        .setMinValue(1)
+        .setMaxValue(20)
+    ),
+
+  new SlashCommandBuilder()
+    .setName('help')
+    .setDescription('Список всех команд бота'),
+
+  new SlashCommandBuilder()
     .setName('ban')
     .setDescription('Забанить участника сервера')
     .addUserOption(option => option.setName('user').setDescription('Пользователь для бана').setRequired(true))
@@ -481,13 +487,28 @@ const commands = [
     .addRoleOption(option => option.setName('role').setDescription('Роль для снятия').setRequired(true))
 ];
 
+// Message Content is a *privileged* intent that must be switched on in the
+// Discord Developer Portal (Bot → Privileged Gateway Intents). When it is not
+// enabled there, Discord rejects the whole gateway connection with
+// "Used disallowed intents" and the bot never reaches ready().
+//
+// So it is opt-in via env var. Leave it off and the bot runs normally, only
+// without automatic message moderation. Turn it on together with the portal
+// switch and moderation comes alive.
+const WANT_MESSAGE_CONTENT = process.env.BOT_MESSAGE_CONTENT === '1';
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.GuildMembers
+    GatewayIntentBits.GuildMembers,
+    ...(WANT_MESSAGE_CONTENT ? [GatewayIntentBits.MessageContent] : []),
   ]
 });
+
+// Whether we are actually allowed to read message content. Controls the
+// moderation handler so it never claims to work while blind.
+const canSeeMessageContent = WANT_MESSAGE_CONTENT;
 
 // Autocomplete handler
 client.on('interactionCreate', async interaction => {
@@ -558,18 +579,15 @@ client.on('interactionCreate', async interaction => {
       embed.addFields({ name: 'ℹ️ Описание', value: item.description.split('Индикаторы:')[0].trim() });
     }
 
-    const itemSlug = encodeURIComponent(item.id || item.englishName || item.name);
-    const itemUrl = `https://bss-index.vercel.app/?item=${itemSlug}`;
-
     const row = new ActionRowBuilder()
       .addComponents(
         new ButtonBuilder()
           .setLabel('Открыть в BSS Index')
           .setStyle(ButtonStyle.Link)
-          .setURL(itemUrl)
+          .setURL(itemUrl(item, 'en'))
       );
 
-    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel).catch(err => console.error("Error updating user activity:", err.message));
+    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel, interaction.member).catch(err => console.error("Error updating user activity:", err.message));
     await interaction.reply({ embeds: [embed], components: [row] }).catch(err => console.error("Price command reply error:", err.message));
   }
 
@@ -619,7 +637,7 @@ client.on('interactionCreate', async interaction => {
       )
       .setFooter({ text: 'BSS Index Trade Calculator' });
 
-    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel).catch(err => console.error("Error updating user activity:", err.message));
+    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel, interaction.member).catch(err => console.error("Error updating user activity:", err.message));
     await interaction.reply({ embeds: [embed] }).catch(err => console.error("Calc command reply error:", err.message));
   }
 
@@ -644,7 +662,7 @@ client.on('interactionCreate', async interaction => {
     
     embed.setFooter({ text: 'BSS Index Live Data', iconURL: 'https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png' });
     
-    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel).catch(err => console.error(err));
+    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel, interaction.member).catch(err => console.error(err));
     await interaction.reply({ embeds: [embed] }).catch(err => console.error(err));
   }
   
@@ -686,7 +704,7 @@ client.on('interactionCreate', async interaction => {
     
     embed.setFooter({ text: 'BSS Index Live Data', iconURL: 'https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png' });
     
-    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel).catch(err => console.error(err));
+    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel, interaction.member).catch(err => console.error(err));
     await interaction.reply({ embeds: [embed] }).catch(err => console.error(err));
   }
 
@@ -706,6 +724,221 @@ client.on('interactionCreate', async interaction => {
       );
 
     await interaction.reply({ embeds: [embed], components: [row] }).catch(err => console.error("Site command reply error:", err.message));
+  }
+
+  else if (commandName === 'logtrade') {
+    const givingRaw = interaction.options.getString('giving');
+    const gettingRaw = interaction.options.getString('getting');
+
+    const giving = parseItemList(givingRaw);
+    const getting = parseItemList(gettingRaw);
+
+    if (!giving || !getting) {
+      return interaction.reply({
+        content: '❌ Не удалось распознать предметы. Формат: `2x Star Cub, 1x Nessie` — предметы через запятую, количество через `Nx`.',
+        ephemeral: true
+      }).catch(() => {});
+    }
+
+    const givingTotal = giving.reduce((s, e) => s + e.value, 0);
+    const gettingTotal = getting.reduce((s, e) => s + e.value, 0);
+    const verdict = verdictFor(givingTotal, gettingTotal);
+    logParsedTrade({ giving, getting, givingTotal, gettingTotal }, interaction.user);
+
+    const fmt = (e) => `${e.qty > 1 ? `**${e.qty}x** ` : ''}${e.label} (${e.value} ★)`;
+
+    const embed = new EmbedBuilder()
+      .setTitle('📝 Трейд записан в журнал BSS Index')
+      .setColor(verdict.tone)
+      .addFields(
+        { name: '🔴 Вы отдаете:', value: giving.map(fmt).join('\n'), inline: true },
+        { name: '🟢 Вы получаете:', value: getting.map(fmt).join('\n'), inline: true },
+        { name: '📊 Итог сделки:', value: `Отдаете: **${givingTotal.toFixed(2)} ★**\nПолучаете: **${gettingTotal.toFixed(2)} ★**\nВердикт: **${verdict.label}** (${verdict.diffPct >= 0 ? '+' : ''}${verdict.diffPct.toFixed(1)}%)`, inline: false }
+      )
+      .setFooter({ text: 'BSS Index Trade Log' })
+      .setTimestamp();
+
+    updateUserActivity(interaction.user.id, interaction.guild, interaction.channel, interaction.member).catch(err => console.error("Error updating user activity:", err.message));
+    await interaction.reply({ embeds: [embed] }).catch(err => console.error("Logtrade command reply error:", err.message));
+  }
+
+  else if (commandName === 'trades') {
+    const mode = interaction.options.getString('mode') || 'recent';
+    const embed = new EmbedBuilder()
+      .setFooter({ text: 'BSS Index Trade Log' });
+
+    if (mode === 'recent') {
+      embed.setTitle('🕒 Последние трейды').setColor('#f59e0b');
+      const recent = allTrades().slice(-10).reverse();
+      if (recent.length === 0) {
+        embed.setDescription('Пока нет записанных трейдов. Будь первым — используй `/logtrade`!');
+      } else {
+        embed.setDescription(recent.map(t => {
+          const g = t.giving.map(e => `${e.qty > 1 ? `**${e.qty}x** ` : ''}${e.label}`).join(', ');
+          const ge = t.getting.map(e => `${e.qty > 1 ? `**${e.qty}x** ` : ''}${e.label}`).join(', ');
+          const v = t.verdict || verdictFor(t.givingTotal, t.gettingTotal).label;
+          return `**${t.user}**: ${g} ➡️ ${ge} — **${v}**`;
+        }).join('\n'));
+      }
+    } else if (mode === 'top') {
+      embed.setTitle('🔥 Топ предметов по популярности в трейдах').setColor('#f97316');
+      const top = topTradedItems(10);
+      if (top.length === 0) {
+        embed.setDescription('Статистика пока пуста — записанных трейдов нет.');
+      } else {
+        embed.addFields(top.map((t, i) => ({
+          name: `${i + 1}. ${t.label}`,
+          value: `Упоминаний в трейдах: **${t.count}**`,
+          inline: true
+        })));
+      }
+    } else if (mode === 'stats') {
+      embed.setTitle('📊 Статистика трейдов и модерации').setColor('#06b6d4');
+      const ts = tradeStats();
+      const ms = logStats();
+      embed.addFields(
+        { name: '📝 Трейдов всего', value: `${ts.total}`, inline: true },
+        { name: '🕒 За 24 часа', value: `${ts.last24h}`, inline: true },
+        { name: '📅 За 7 дней', value: `${ts.last7d}`, inline: true },
+        { name: '🛡 Срабатываний модерации', value: `${ms.total}`, inline: false }
+      );
+      if (Object.keys(ms.byRule).length > 0) {
+        embed.addFields({
+          name: '⚖️ По правилам',
+          value: Object.entries(ms.byRule).map(([r, c]) => `${r}: **${c}**`).join(', '),
+          inline: false
+        });
+      }
+    } else {
+      embed.setTitle('❓ Неизвестный режим').setDescription('Доступные режимы: `recent`, `top`, `stats`.');
+    }
+
+    await interaction.reply({ embeds: [embed] }).catch(err => console.error("Trades command reply error:", err.message));
+  }
+
+  else if (commandName === 'mod') {
+    const isAdmin = interaction.memberPermissions?.has(PermissionFlagsBits.Administrator)
+      || interaction.memberPermissions?.has(PermissionFlagsBits.ManageGuild)
+      || interaction.member?.permissions?.has(PermissionFlagsBits.Administrator)
+      || interaction.member?.permissions?.has(PermissionFlagsBits.ManageGuild);
+    if (!isAdmin) {
+      return interaction.reply({ content: '❌ Управлять модерацией могут только администраторы сервера!', ephemeral: true }).catch(() => {});
+    }
+
+    const action = interaction.options.getString('action');
+    const value = interaction.options.getString('value');
+    const cleanValue = value?.trim().toLowerCase() || '';
+
+    const embed = new EmbedBuilder()
+      .setTitle('🛡 Модерация BSS Index')
+      .setColor('#f59e0b')
+      .setFooter({ text: 'BSS Index Moderation' });
+
+    if (action === 'status') {
+      const cfg = getConfig();
+      embed.addFields(
+        { name: '🔧 Режим', value: `\`${cfg.mode}\``, inline: true },
+        { name: '📢 Канал логов', value: cfg.logChannelId ? `<#${cfg.logChannelId}>` : 'не задан', inline: true },
+        { name: '📝 Стоп-слова', value: cfg.blocklist.length ? cfg.blocklist.map(w => `\`${w}\``).join(', ') : 'список пуст', inline: false },
+        { name: '⚙️ Правила', value: Object.entries(cfg.rules).map(([k, v]) => `${v ? '✅' : '❌'} ${k}`).join('\n'), inline: false }
+      );
+    } else if (action === 'enforce' || action === 'watch' || action === 'off') {
+      updateConfig({ mode: action });
+      embed.setDescription(`✅ Режим модерации изменён на **${action}**${action === 'enforce' ? '.\n⚠️ Теперь нарушения удаляются автоматически!' : '.'}`);
+    } else if (action === 'mode') {
+      if (!cleanValue || !['enforce', 'watch', 'off'].includes(cleanValue)) {
+        return interaction.reply({ content: '❌ Укажите режим: `enforce`, `watch` или `off`.', ephemeral: true }).catch(() => {});
+      }
+      updateConfig({ mode: cleanValue });
+      embed.setDescription(`✅ Режим модерации изменён на **${cleanValue}**.`);
+    } else if (action === 'addword') {
+      if (!cleanValue) {
+        return interaction.reply({ content: '❌ Укажите слово для добавления.', ephemeral: true }).catch(() => {});
+      }
+      embed.setDescription(addBlocklistWord(value)
+        ? `✅ Слово \`${cleanValue}\` добавлено в стоп-лист.`
+        : `⚠️ Слово \`${cleanValue}\` уже есть в стоп-листе.`);
+    } else if (action === 'removeword') {
+      if (!cleanValue) {
+        return interaction.reply({ content: '❌ Укажите слово для удаления.', ephemeral: true }).catch(() => {});
+      }
+      embed.setDescription(removeBlocklistWord(value)
+        ? `✅ Слово \`${cleanValue}\` удалено из стоп-листа.`
+        : `⚠️ Слово \`${cleanValue}\` не найдено в стоп-листе.`);
+    } else if (action === 'log') {
+      const entries = recentLog(10);
+      if (entries.length === 0) {
+        embed.setDescription('Журнал пуст — нарушений не зафиксировано.');
+      } else {
+        embed.setDescription(entries.map(e => {
+          const time = new Date(e.at).toLocaleString('ru-RU');
+          const who = e.user || e.userId || 'unknown';
+          return `**${time}** — ${who}\n\`${e.rule}\` — ${e.detail}`;
+        }).join('\n\n'));
+      }
+    } else if (action === 'stats') {
+      const s = logStats();
+      const fields = [{ name: '🛡 Всего срабатываний', value: `${s.total}`, inline: true }];
+      for (const [rule, count] of Object.entries(s.byRule)) {
+        fields.push({ name: rule, value: `${count}`, inline: true });
+      }
+      if (Object.keys(s.byRule).length === 0) {
+        fields.push({ name: '📭 По правилам', value: 'пока ничего не срабатывало', inline: true });
+      }
+      embed.addFields(fields);
+    }
+
+    await interaction.reply({ embeds: [embed] }).catch(err => console.error("Mod command reply error:", err.message));
+  }
+
+  else if (commandName === 'top') {
+    const category = interaction.options.getString('category');
+    const limit = Math.min(Math.max(interaction.options.getInteger('limit') || 10, 1), 20);
+
+    let list = getItems();
+    if (category) list = list.filter(i => i.category === category);
+    list = [...list].sort((a, b) => b.value - a.value).slice(0, limit);
+
+    const embed = new EmbedBuilder()
+      .setTitle(`🏆 Топ предметов BSS${category ? ` — ${category}` : ''}`)
+      .setColor('#f59e0b')
+      .setFooter({ text: 'BSS Index Live Data' });
+
+    if (list.length === 0) {
+      embed.setDescription('Предметы в этой категории не найдены.');
+    } else {
+      embed.addFields(list.map((item, i) => ({
+        name: `${i + 1}. ${item.name}`,
+        value: `**${item.value} ★** | Спрос: ${item.demand} | ${item.category}`,
+        inline: false
+      })));
+    }
+
+    await interaction.reply({ embeds: [embed] }).catch(err => console.error("Top command reply error:", err.message));
+  }
+
+  else if (commandName === 'help') {
+    const embed = new EmbedBuilder()
+      .setTitle('📖 Команды бота BSS Index')
+      .setDescription('Все команды вводятся через слэш (/) в Discord.')
+      .setColor('#f59e0b')
+      .addFields(
+        { name: '/price <предмет>', value: 'Актуальная цена и информация о предмете', inline: false },
+        { name: '/calc <отдаю> <получаю>', value: 'Проверка выгоды трейда (Win/Fair/Loss)', inline: false },
+        { name: '/logtrade <отдаю> <получаю>', value: 'Записать трейд в журнал', inline: false },
+        { name: '/trades [recent|top|stats]', value: 'Журнал трейдов, топ предметов, статистика', inline: false },
+        { name: '/top [категория] [лимит]', value: 'Топ предметов по цене', inline: false },
+        { name: '/meta', value: 'Самые хайповые и востребованные предметы', inline: false },
+        { name: '/price-changes', value: 'Последние изменения цен', inline: false },
+        { name: '/site', value: 'Ссылка на сайт BSS Index', inline: false },
+        { name: '/mod <действие>', value: 'Управление автомодерацией (для админов)', inline: false },
+        { name: '/help', value: 'Это сообщение', inline: false },
+        { name: '/ban, /kick, /mute, /unmute', value: 'Модерация сервера (для админов)', inline: false },
+        { name: '/add-role, /remove-role', value: 'Выдача и снятие ролей (для админов)', inline: false }
+      )
+      .setFooter({ text: 'BSS Index • Актуальные цены Bee Swarm Simulator', iconURL: 'https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png' });
+
+    await interaction.reply({ embeds: [embed] }).catch(err => console.error("Help command reply error:", err.message));
   }
 
   else if (commandName === 'ban') {
@@ -842,10 +1075,62 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
+// Automatic moderation: inspect every non-bot guild message
+// Only inspect messages when Discord actually delivered their content
+// (privileged Message Content intent, enabled in the Developer Portal).
+if (canSeeMessageContent) {
+  client.on('messageCreate', async message => {
+    if (message.author?.bot) return;
+    if (!message.guild) return;
+
+    const { hits } = inspectMessage({ content: message.content, member: message.member });
+    if (!hits.length) return;
+
+  const cfg = getConfig();
+
+  for (const hit of hits) {
+    recordHit({
+      rule: hit.rule,
+      detail: hit.detail,
+      user: `${message.author.tag} (${message.author.id})`,
+      userId: message.author.id,
+      channel: message.channelId,
+      snippet: String(message.content || '').slice(0, 200)
+    });
+  }
+
+  if (cfg.mode === 'enforce') {
+    await message.delete().catch(() => null);
+    try {
+      await message.author.send({
+        content: `⚠️ Ваше сообщение на сервере **${message.guild.name}** было удалено автомодерацией (${hits.map(h => h.rule).join(', ')}).`
+      });
+    } catch { /* у пользователя закрыты ЛС */ }
+  }
+
+  if (cfg.logChannelId) {
+    const logChannel = message.guild.channels.cache.get(cfg.logChannelId);
+    if (logChannel) {
+      const embed = new EmbedBuilder()
+        .setTitle('🛡 Автомодерация: срабатывание')
+        .setColor('#ef4444')
+        .setDescription(`**Пользователь:** <@${message.author.id}> (${message.author.id})\n**Канал:** <#${message.channelId}>\n**Причина:** ${hits.map(h => `\`${h.rule}\` — ${h.detail}`).join('\n')}`)
+        .setTimestamp();
+      await logChannel.send({ embeds: [embed] }).catch(() => null);
+    }
+  }
+  });
+}
+
 // Register slash commands and start bot
 async function main() {
   const token = process.env.DISCORD_TOKEN;
   const clientId = process.env.CLIENT_ID;
+
+  if (!canSeeMessageContent) {
+    console.warn('⚠️  Message Content intent is not granted — automatic message moderation is DISABLED.');
+    console.warn('    Enable it in the Discord Developer Portal → Bot → Privileged Gateway Intents.');
+  }
 
   if (!token || token === 'YOUR_DISCORD_BOT_TOKEN_HERE') {
     console.error('❌ ОШИБКА: В файле bot/.env не указан DISCORD_TOKEN!');
@@ -872,12 +1157,8 @@ async function main() {
 client.on('guildMemberAdd', async member => {
   console.log(`[Join] Пользователь ${member.user.tag} зашел на сервер.`);
   try {
-    const roles = await ensureBssRoles(member.guild);
-    const starterRole = roles['🐝 Трейдер'];
-    if (starterRole) {
-      await member.roles.add(starterRole);
-      console.log(`[Join] Выдана роль '🐝 Трейдер' для ${member.user.tag}`);
-    }
+    await grantStarterRole(member);
+    console.log(`[Join] Выдана роль '🐝 Трейдер' для ${member.user.tag}`);
   } catch (err) {
     console.error(`[Join] Не удалось выдать роль при входе:`, err.message);
   }

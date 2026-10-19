@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792315669873,
-  "message": "feat(trades): make shared trade links actually work\n\nThe 'Link' button generated ?trade=<sideA>|<sideB> but nothing ever parsed it,\nso shared links opened an empty calculator.\n- parse the param on mount and load both sides, jumping to the calculator tab\n- share from the site root instead of the current pathname, so a link copied\n  from an item page no longer points at that item page\n- persist the trade to localStorage and rehydrate on load, so a refresh keeps\n  it (the existing 'clear' handler already assumed storage)\n- URL parsing and rehydration live in a single effect; as two mount effects the\n  storage pass ran with pre-parse state and clobbered the loaded trade",
+  "timestamp": 1792423081497,
+  "message": "fix(ui): stop auto-opening the item modal on /item/<slug> pages\n\nThe modal covered the prerendered page the visitor actually came for. Item\npages now stand on their own; the app below just lands on the catalog tab.",
   "author": "BSS Index Developer",
-  "sha": "7c44b0c28643cc5f3f64d11143188f2930678dae"
+  "sha": "82b3e8928d0562a2723a16443548d4effae33b2b"
 }
