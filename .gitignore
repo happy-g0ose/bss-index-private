@@ -31,3 +31,4 @@ prev.*
 
 # local scratch
 item-links.txt
+bot/probe-*.mjs

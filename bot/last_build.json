@@ -1,6 +1,7 @@
 {
-  "timestamp": 1791895508659,
-  "message": "fix(ui): repair toggles and make reduce motion actually work\n\n- Larger toggle switches with shrink-0 so text no longer squishes them\n- Proper role=switch and aria-checked for accessibility\n- Wrap app in MotionConfig reducedMotion so Reduce Motion disables\n  framer-motion animations (previously only CSS transitions reacted)\n- Smoother tab/section transitions and card entrances",
+  "timestamp": 1792478333335,
+  "version": "2.0.0",
+  "message": "feat(release): version 2.0.0\n\n- VERSION file is the single source of truth, injected into the bundle by\n  vite.config.ts and written into build-meta.json by the build script\n- the site shows the version in the top banner, the navbar badge and the\n  footer instead of the BETA label\n- the Discord bot's release announcement now includes the version\n- new admin-only /announce command to publish a release notice by hand",
   "author": "BSS Index Developer",
-  "sha": "46cf7eb80abe86d864ce508b696ea22853ef2c34"
+  "sha": "068a775480fbbe9534b8bec2eb829da1c1c542ce"
 }
