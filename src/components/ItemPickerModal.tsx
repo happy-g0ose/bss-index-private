@@ -1,9 +1,9 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Search, ChevronLeft } from 'lucide-react';
-import { bssItemsData } from '../data/items';
 import { transliterate } from './BeequipsPage';
 import type { BSSItem } from '../data/items';
+import { useItems } from '../data/itemsStore';
 import type { Language } from '../locales';
 import { t, translateCategory } from '../locales';
 
@@ -15,6 +15,7 @@ interface ItemPickerModalProps {
 }
 
 export default function ItemPickerModal({ isOpen, onClose, onSelect, lang }: ItemPickerModalProps) {
+  const items = useItems();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('Все');
   const [selectedBeequip, setSelectedBeequip] = useState<BSSItem | null>(null);
@@ -41,11 +42,11 @@ export default function ItemPickerModal({ isOpen, onClose, onSelect, lang }: Ite
   }, [isOpen]);
 
   const categories = useMemo(() => {
-    return ['Все', ...Array.from(new Set(bssItemsData.map(item => item.category)))];
-  }, []);
+    return ['Все', ...Array.from(new Set(items.map(item => item.category)))];
+  }, [items]);
 
   const filteredItems = useMemo(() => {
-    return bssItemsData.filter(item => {
+    return items.filter(item => {
       if (selectedCategory !== 'Все' && item.category !== selectedCategory) return false;
       const query = searchQuery.toLowerCase();
       if (!query) return true;
@@ -57,7 +58,7 @@ export default function ItemPickerModal({ isOpen, onClose, onSelect, lang }: Ite
         item.englishName.toLowerCase().includes(transQ)
       );
     });
-  }, [searchQuery, selectedCategory]);
+  }, [items, searchQuery, selectedCategory]);
 
   if (!isOpen) return null;
 

@@ -1,0 +1,67 @@
+name: Update prices
+
+# Pulls fresh values from bssmvalues.com once a day, updates the item data and
+# commits it. The commit triggers a Vercel redeploy, which in turn updates:
+#   - the 660 prerendered item pages
+#   - the JSON API
+#   - the embeddable widgets
+#   - public/data/items.json (the runtime payload)
+#
+# The Discord bot polls build-meta.json and announces the new build by itself.
+on:
+  schedule:
+    # 06:17 UTC every day. The odd minute avoids the busiest scheduling slot.
+    - cron: '17 6 * * *'
+  # Also runnable by hand from the Actions tab.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Never run two updates at once.
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Fetch and commit fresh values
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch live values
+        run: python scratch/fetch_live_values.py
+
+      - name: Apply the new values
+        run: python scratch/update_prices.py
+
+      - name: Refresh the site payload
+        run: node scripts/generate-runtime-items.cjs
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  'BSS Index Bot'
+          git config user.email 'bss-index-bot@users.noreply.github.com'
+          git add bot/items.json values.json
+          if git diff --cached --quiet; then
+            echo 'Prices are unchanged - nothing to commit.'
+          else
+            echo "Changed files:"
+            git diff --cached --stat
+            git commit -m 'chore(prices): refresh values from bssmvalues.com'
+            git push
+          fi

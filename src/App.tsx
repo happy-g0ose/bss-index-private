@@ -12,8 +12,8 @@ import BeequipsPage from './components/BeequipsPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import SettingsModal from './components/SettingsModal';
 import type { BgMode, Theme } from './components/SettingsModal';
-import { bssItemsData } from './data/items';
 import type { BSSItem } from './data/items';
+import { useItems } from './data/itemsStore';
 import type { Language } from './locales';
 import { t, translateCategory } from './locales';
 import { transliterate } from './components/BeequipsPage';
@@ -24,6 +24,27 @@ type SortType = 'value-desc' | 'value-asc' | 'demand-desc' | 'name-asc';
 type TabType = 'home' | 'catalog' | 'calculator' | 'beequips';
 
 export default function App() {
+  const items = useItems();
+
+  // The item data is fetched at runtime, so nothing can render before it
+  // arrives. A short skeleton avoids a flash of empty UI.
+  if (items.length === 0) {
+    return (
+      <div className="min-h-screen bg-[#0b0f19] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="h-8 w-8 rounded-full border-2 border-amber-500/25 border-t-amber-500 animate-spin" />
+          <span className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-600">
+            BSS Index
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  return <BssApp items={items} />;
+}
+
+function BssApp({ items }: { items: BSSItem[] }) {
   const [sideA, setSideA] = useState<BSSItem[]>([]);
   const [sideB, setSideB] = useState<BSSItem[]>([]);
   const [selectedItem, setSelectedItem] = useState<BSSItem | null>(null);
@@ -108,7 +129,7 @@ export default function App() {
     if (tradeRestored.current) return;
     tradeRestored.current = true;
 
-    const byId = new Map(bssItemsData.map((i) => [i.id, i]));
+    const byId = new Map(items.map((i) => [i.id, i]));
     const resolve = (ids: string) =>
       ids
         .split(',')
@@ -140,7 +161,9 @@ export default function App() {
     setSideA(a);
     setSideB(b);
     setActiveTab('calculator');
-  }, []);
+    // The data arrives at runtime, so this effect only ever runs once the
+    // items are actually available (BssApp is not mounted before then).
+  }, [items]);
 
   // Persist the trade so a refresh does not lose it.
   useEffect(() => {
@@ -193,7 +216,7 @@ export default function App() {
   // Categories list dynamically compiled from dataset
   const categories: CategoryType[] = [
     'Все',
-    ...Array.from(new Set(bssItemsData.map(item => item.category).filter(c => c !== 'Биквипы')))
+    ...Array.from(new Set(items.map(item => item.category).filter(c => c !== 'Биквипы')))
   ];
 
   // Demand ranking helper for sorting
@@ -205,7 +228,7 @@ export default function App() {
   };
 
   // Filter & Sort Items
-  const processedItems = bssItemsData
+  const processedItems = items
     .filter(item => {
       // Exclude Beequips from the main catalog since they have their own tab
       if (item.category === 'Биквипы') return false;

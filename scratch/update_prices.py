@@ -186,37 +186,10 @@ for name, old_v, new_v in sorted(price_changes, key=lambda x: abs(x[2]-x[1]), re
     except:
         pass
 
-# Save to bot/items.json
+# Save to bot/items.json — this is the single source of truth for the item data.
+# The site reads it at build time (scripts/generate-runtime-items.cjs writes
+# public/data/items.json) and the Discord bot keeps its own copy in sync.
 with open("bot/items.json", "w", encoding="utf-8") as f:
     json.dump(items, f, ensure_ascii=False, indent=2)
 
-# Update src/data/items.ts
-# Read existing items.ts to keep the interfaces and exports
-with open("src/data/items.ts", "r", encoding="utf-8") as f:
-    ts_content = f.read()
-
-array_start = ts_content.find("const rawBssItemsData: any[] = [")
-prefix = ts_content[:array_start]
-prefix += "const rawBssItemsData: any[] = "
-
-# Bracket-match to find the exact end of the array, keep everything after it as suffix
-bracket_idx = ts_content.find("[", ts_content.find("=", array_start))
-depth = 1
-i = bracket_idx + 1
-while depth > 0 and i < len(ts_content):
-    ch = ts_content[i]
-    if ch == '[':
-        depth += 1
-    elif ch == ']':
-        depth -= 1
-    i += 1
-
-suffix = "\n\n" + ts_content[i:]
-
-items_json_formatted = json.dumps(items, ensure_ascii=False, indent=2)
-new_ts_content = prefix + items_json_formatted + ";\n" + suffix
-
-with open("src/data/items.ts", "w", encoding="utf-8") as f:
-    f.write(new_ts_content)
-
-print("Successfully updated src/data/items.ts, bot/items.json, and values.json!")
+print("Successfully updated bot/items.json and values.json!")

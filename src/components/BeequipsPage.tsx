@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, SlidersHorizontal, Filter } from 'lucide-react';
-import { bssItemsData } from '../data/items';
 import type { BSSItem } from '../data/items';
+import { useItems } from '../data/itemsStore';
 import type { Language } from '../locales';
 import ItemCard from './ItemCard';
 
@@ -84,8 +84,6 @@ export const RU_ABBR_MAP: Record<string, string> = {
   'бап': 'BAP',
   'бар': 'BAR',
 };
-
-const allBeequips = bssItemsData.filter(item => item.category === 'Биквипы');
 
 export function getStatBadgesForGroup(groupName: string, rolls: any[] = []): string[] {
   const matches: string[] = [];
@@ -199,6 +197,7 @@ export function transliterate(text: string): string {
 }
 
 export default function BeequipsPage({ lang, onAddToSideA, onAddToSideB, onSelectItem }: BeequipsPageProps) {
+  const items = useItems();
   const [searchQuery, setSearchQuery] = useState('');
   const [sortingOption, setSortingOption] = useState<'value-desc' | 'value-asc' | 'demand-desc' | 'name-asc'>('value-desc');
 
@@ -213,6 +212,8 @@ export default function BeequipsPage({ lang, onAddToSideA, onAddToSideB, onSelec
     const raw = searchQuery.trim().toLowerCase();
     const transRaw = transliterate(raw);
     const { statAbbr } = resolveQuery(raw);
+
+    const allBeequips = items.filter(item => item.category === 'Биквипы');
 
     if (!raw) return allBeequips;
 
@@ -251,7 +252,7 @@ export default function BeequipsPage({ lang, onAddToSideA, onAddToSideB, onSelec
           return b.value - a.value;
       }
     });
-  }, [searchQuery, sortingOption]);
+  }, [items, searchQuery, sortingOption]);
 
   const { statAbbr: activeStatFilter } = resolveQuery(searchQuery);
 

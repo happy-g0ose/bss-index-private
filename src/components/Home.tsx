@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, TrendingUp, Calculator, Layers, Search, ArrowRight } from 'lucide-react';
 import type { Language } from '../locales';
 import { t, translateDemand } from '../locales';
-import { bssItemsData } from '../data/items';
+import { useItems } from '../data/itemsStore';
 
 interface HomeProps {
   onNavigate: (tab: 'catalog' | 'calculator') => void;
@@ -56,6 +56,7 @@ const floatingStickers = [
 ];
 
 export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
+  const items = useItems();
   const [stickers, setStickers] = useState(() =>
     floatingStickers.map((st, index) => ({
       ...st,
@@ -64,9 +65,9 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
   );
 
   const handleStickerClick = (index: number) => {
-    if (bssItemsData.length === 0) return;
-    const randomIndex = Math.floor(Math.random() * bssItemsData.length);
-    const randomItem = bssItemsData[randomIndex];
+    if (items.length === 0) return;
+    const randomIndex = Math.floor(Math.random() * items.length);
+    const randomItem = items[randomIndex];
 
     setStickers(prev => {
       const updated = [...prev];

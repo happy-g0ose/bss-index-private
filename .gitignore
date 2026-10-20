@@ -29,6 +29,9 @@ bot/.env
 values_live.json
 prev.*
 
+# Runtime item payload — regenerated from bot/items.json on every build
+public/data/items.json
+
 # local scratch
 item-links.txt
 bot/probe-*.mjs

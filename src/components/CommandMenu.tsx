@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Search, Command, ChevronRight, FileText, SlidersHorizontal, X } from 'lucide-react';
-import { bssItemsData } from '../data/items';
 import type { BSSItem } from '../data/items';
+import { useItems } from '../data/itemsStore';
 import type { Language } from '../locales';
 import { translateCategory } from '../locales';
 import { STAT_ABBR_LABELS, RU_ABBR_MAP, transliterate, getStatBadgesForGroup } from './BeequipsPage';
@@ -29,6 +29,7 @@ function parseAbbrQuery(raw: string): { abbr: string | null } {
 
 
 export default function CommandMenu({ isOpen, setIsOpen, onSelectItem, lang }: CommandMenuProps) {
+  const items = useItems();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -62,7 +63,7 @@ export default function CommandMenu({ isOpen, setIsOpen, onSelectItem, lang }: C
 
   const { abbr: statAbbr } = parseAbbrQuery(searchQuery);
 
-  const filteredItems = bssItemsData.filter(item => {
+  const filteredItems = items.filter(item => {
     if (item.category === 'Биквипы') return false;
     const q = searchQuery.toLowerCase();
     if (!q) return false;
@@ -77,12 +78,12 @@ export default function CommandMenu({ isOpen, setIsOpen, onSelectItem, lang }: C
   });
 
   const filteredBeequips = statAbbr
-    ? bssItemsData.filter(item => {
+    ? items.filter(item => {
         if (item.category !== 'Биквипы' || !item.beequipData) return false;
         return item.beequipData.some(g => getStatBadgesForGroup(g.groupName, g.rolls).includes(statAbbr));
       })
     : searchQuery.trim().length > 0
-      ? bssItemsData.filter(item => {
+      ? items.filter(item => {
           if (item.category !== 'Биквипы') return false;
           const q = searchQuery.toLowerCase();
           const transQ = transliterate(q);

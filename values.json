@@ -5774,7 +5774,7 @@
             "image": "/images/Hivesticker_drooping_stubborn_bee.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-06-24T22:49:01.179Z",
+            "last_updated": "2026-10-14T22:04:23.911Z",
             "history": [
               {
                 "date": "2026-02-21",
@@ -5793,10 +5793,16 @@
                 "demand": 3,
                 "value_min": "0.5",
                 "value_max": "0.66"
+              },
+              {
+                "date": "2026-10-14",
+                "demand": 3,
+                "value_min": "0.33",
+                "value_max": "0.5"
               }
             ],
-            "value_min": "0.5",
-            "value_max": "0.66"
+            "value_min": "0.33",
+            "value_max": "0.5"
           },
           "Flying Brave Bee": {
             "image": "/images/Hivesticker_flying_brave_bee.webp",
@@ -6078,7 +6084,7 @@
             "image": "/images/Hivesticker_round_basic_bee.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-09-29T21:01:37.178Z",
+            "last_updated": "2026-10-13T18:13:17.352Z",
             "history": [
               {
                 "date": "2025-05-31",
@@ -6181,10 +6187,16 @@
                 "demand": 3,
                 "value_min": "7.5",
                 "value_max": "8"
+              },
+              {
+                "date": "2026-10-13",
+                "demand": 3,
+                "value_min": "6.5",
+                "value_max": "7"
               }
             ],
-            "value_min": "7.5",
-            "value_max": "8"
+            "value_min": "6.5",
+            "value_max": "7"
           },
           "Round Rascal Bee": {
             "image": "/images/Hivesticker_round_rascal_bee.webp",
@@ -6368,7 +6380,7 @@
             "image": "/images/Hivesticker_wobbly_looker_bee.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-09-24T21:30:07.534Z",
+            "last_updated": "2026-10-14T22:04:29.196Z",
             "history": [
               {
                 "date": "2026-01-23",
@@ -6405,10 +6417,16 @@
                 "demand": 3,
                 "value_min": "0.5",
                 "value_max": "0.66"
+              },
+              {
+                "date": "2026-10-14",
+                "demand": 3,
+                "value_min": "0.33",
+                "value_max": "0.5"
               }
             ],
-            "value_min": "0.5",
-            "value_max": "0.66"
+            "value_min": "0.33",
+            "value_max": "0.5"
           }
         }
       },
@@ -8289,7 +8307,7 @@
             "image": "/images/Hivesticker_nessie.webp",
             "acronyms": null,
             "demand": 2,
-            "last_updated": "2026-08-23T21:02:43.551Z",
+            "last_updated": "2026-10-18T15:37:03.445Z",
             "history": [
               {
                 "date": "2025-05-29",
@@ -8428,10 +8446,16 @@
                 "demand": 2,
                 "value_min": "55",
                 "value_max": "60"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 2,
+                "value_min": "45",
+                "value_max": "50"
               }
             ],
-            "value_min": "55",
-            "value_max": "60"
+            "value_min": "45",
+            "value_max": "50"
           },
           "Orange Green Tri Deco": {
             "image": "/images/Hivesticker_orange_green_tri_deco.webp",
@@ -14335,7 +14359,7 @@
             "image": "/images/Hivesticker_cyan_hilted_sword.webp",
             "acronyms": null,
             "demand": 4,
-            "last_updated": "2026-07-21T16:16:27.476Z",
+            "last_updated": "2026-10-13T18:13:33.099Z",
             "history": [
               {
                 "date": "2025-06-19",
@@ -14396,10 +14420,16 @@
                 "demand": 4,
                 "value_min": "9.5",
                 "value_max": "10"
+              },
+              {
+                "date": "2026-10-13",
+                "demand": 4,
+                "value_min": "8.5",
+                "value_max": "9"
               }
             ],
-            "value_min": "9.5",
-            "value_max": "10"
+            "value_min": "8.5",
+            "value_max": "9"
           },
           "Cyan Star": {
             "image": "/images/Hivesticker_cyan_star.webp",
@@ -17413,7 +17443,7 @@
       "image": "/images/Bead_Lizard.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-13T01:49:43.615Z",
+      "last_updated": "2026-10-18T02:05:28.377Z",
       "stat_groups": {
         "Potential (Unwaxed)": {
           "3★ Pot": {
@@ -18284,10 +18314,16 @@
                 "demand": 4,
                 "value_min": "42",
                 "value_max": "43"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 4,
+                "value_min": "33",
+                "value_max": "34"
               }
             ],
-            "value_min": "42",
-            "value_max": "43"
+            "value_min": "33",
+            "value_max": "34"
           },
           "{+Ability from wax} Token Link + {HB} 2 Bp + 16 Gbc": {
             "demand": 3,
@@ -18315,10 +18351,16 @@
                 "demand": 3,
                 "value_min": "44",
                 "value_max": "45"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 3,
+                "value_min": "35",
+                "value_max": "36"
               }
             ],
-            "value_min": "44",
-            "value_max": "45"
+            "value_min": "35",
+            "value_max": "36"
           },
           "{+Ability from wax} Token Link + {HB} 2 Bp + 17 Gbc": {
             "demand": 3,
@@ -18346,13 +18388,19 @@
                 "demand": 3,
                 "value_min": "46",
                 "value_max": "47"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 3,
+                "value_min": "37",
+                "value_max": "38"
               }
             ],
-            "value_min": "46",
-            "value_max": "47"
+            "value_min": "37",
+            "value_max": "38"
           },
           "{+Ability from wax} Token Link + {HB} 2 Bp + 18 Gbc": {
-            "demand": 3,
+            "demand": 2,
             "history": [
               {
                 "date": "2026-04-02",
@@ -18377,10 +18425,16 @@
                 "demand": 3,
                 "value_min": "48",
                 "value_max": "50"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 2,
+                "value_min": "41",
+                "value_max": "42"
               }
             ],
-            "value_min": "48",
-            "value_max": "50"
+            "value_min": "41",
+            "value_max": "42"
           },
           "{+Ability from wax} Token Link + {HB} 2 Bp + ≤ 14 Gbc": {
             "demand": 4,
@@ -18408,10 +18462,16 @@
                 "demand": 4,
                 "value_min": "38",
                 "value_max": "41"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 4,
+                "value_min": "29",
+                "value_max": "32"
               }
             ],
-            "value_min": "38",
-            "value_max": "41"
+            "value_min": "29",
+            "value_max": "32"
           },
           "{+Ability from wax} Token Link + {HB} 3 Bp + ≤ 15 Gbc": {
             "demand": 5,
@@ -18445,9 +18505,15 @@
                 "demand": 5,
                 "value_min": ">= 100",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 5,
+                "value_min": ">= 80",
+                "value_max": null
               }
             ],
-            "value_min": ">= 100",
+            "value_min": ">= 80",
             "value_max": null
           }
         },
@@ -21384,7 +21450,7 @@
       "image": "/images/Candy_Ring.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-10T18:55:37.082Z",
+      "last_updated": "2026-10-16T23:16:53.135Z",
       "stat_groups": {
         "Honey At Hive (Full Waxed)": {
           "{HB} 10 HaH": {
@@ -21788,7 +21854,7 @@
         },
         "Honey At Hive (Unwaxed)": {
           "{HB} 4 HaH 4★ Pot": {
-            "demand": 3,
+            "demand": 2,
             "history": [
               {
                 "date": "2026-04-02",
@@ -21799,6 +21865,12 @@
               {
                 "date": "2026-06-05",
                 "demand": 3,
+                "value_min": "1",
+                "value_max": "2"
+              },
+              {
+                "date": "2026-10-16",
+                "demand": 2,
                 "value_min": "1",
                 "value_max": "2"
               }
@@ -21820,17 +21892,29 @@
                 "demand": 3,
                 "value_min": "15",
                 "value_max": "16"
+              },
+              {
+                "date": "2026-10-16",
+                "demand": 3,
+                "value_min": "11",
+                "value_max": "12"
               }
             ],
-            "value_min": "15",
-            "value_max": "16"
+            "value_min": "11",
+            "value_max": "12"
           },
           "{HB} 4 HaH ≤3★ Pot": {
-            "demand": 3,
+            "demand": 1,
             "history": [
               {
                 "date": "2026-04-02",
                 "demand": 0,
+                "value_min": "0.5",
+                "value_max": "0.75"
+              },
+              {
+                "date": "2026-10-16",
+                "demand": 1,
                 "value_min": "0.5",
                 "value_max": "0.75"
               }
@@ -21852,13 +21936,19 @@
                 "demand": 4,
                 "value_min": "16",
                 "value_max": "18"
+              },
+              {
+                "date": "2026-10-16",
+                "demand": 4,
+                "value_min": "13",
+                "value_max": "14"
               }
             ],
-            "value_min": "16",
-            "value_max": "18"
+            "value_min": "13",
+            "value_max": "14"
           },
           "{HB} 5 HaH 5★ Pot": {
-            "demand": 5,
+            "demand": 4,
             "history": [
               {
                 "date": "2026-06-05",
@@ -21877,13 +21967,19 @@
                 "demand": 5,
                 "value_min": "30",
                 "value_max": "32"
+              },
+              {
+                "date": "2026-10-16",
+                "demand": 4,
+                "value_min": "22",
+                "value_max": "24"
               }
             ],
-            "value_min": "30",
-            "value_max": "32"
+            "value_min": "22",
+            "value_max": "24"
           },
           "{HB} 5 HaH ≤3★ Pot": {
-            "demand": 3,
+            "demand": 1,
             "history": [
               {
                 "date": "2026-04-02",
@@ -21894,6 +21990,12 @@
               {
                 "date": "2026-06-05",
                 "demand": 3,
+                "value_min": "1",
+                "value_max": "1.5"
+              },
+              {
+                "date": "2026-10-16",
+                "demand": 1,
                 "value_min": "1",
                 "value_max": "1.5"
               }
@@ -21915,7 +22017,7 @@
             "value_max": "0.5"
           },
           "{HB} ≤ 3 HaH 5★ Pot": {
-            "demand": 3,
+            "demand": 2,
             "history": [
               {
                 "date": "2026-04-02",
@@ -21928,10 +22030,16 @@
                 "demand": 3,
                 "value_min": "2",
                 "value_max": "3"
+              },
+              {
+                "date": "2026-10-16",
+                "demand": 2,
+                "value_min": "1",
+                "value_max": "2"
               }
             ],
-            "value_min": "2",
-            "value_max": "3"
+            "value_min": "1",
+            "value_max": "2"
           }
         },
         "Honey From Token + Honey Per Goo (Full Waxed)": {
@@ -22970,7 +23078,7 @@
       "image": "/images/Elf_Cap.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-10-10T18:54:55.412Z",
+      "last_updated": "2026-10-18T02:02:55.780Z",
       "stat_groups": {
         "Honey At Hive (Full Waxed)": {
           "{HB} 2 HaH": {
@@ -23360,10 +23468,16 @@
                 "demand": 3,
                 "value_min": "0.25",
                 "value_max": "0.33"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 3,
+                "value_min": "0.33",
+                "value_max": "0.5"
               }
             ],
-            "value_min": "0.25",
-            "value_max": "0.33"
+            "value_min": "0.33",
+            "value_max": "0.5"
           },
           "5★ Pot": {
             "demand": 4,
@@ -23385,10 +23499,16 @@
                 "demand": 4,
                 "value_min": "0.5",
                 "value_max": "0.75"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 4,
+                "value_min": "0.75",
+                "value_max": "1"
               }
             ],
-            "value_min": "0.5",
-            "value_max": "0.75"
+            "value_min": "0.75",
+            "value_max": "1"
           }
         }
       }
@@ -26335,7 +26455,7 @@
       "image": "/images/Paperclip.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-10T00:43:29.424Z",
+      "last_updated": "2026-10-18T05:51:47.704Z",
       "stat_groups": {
         "Ability Token Lifespan (Full Waxed)": {
           "{HB} 3 Atl": {
@@ -26529,7 +26649,7 @@
         },
         "Token Link + Ability Token Lifespan (Full Waxed)": {
           "{+Ability from wax} Token Link + {HB} 1 Atl": {
-            "demand": 4,
+            "demand": 3,
             "history": [
               {
                 "date": "2026-07-13",
@@ -26542,13 +26662,19 @@
                 "demand": 4,
                 "value_min": "15",
                 "value_max": "17"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 3,
+                "value_min": "14",
+                "value_max": "16"
               }
             ],
-            "value_min": "15",
-            "value_max": "17"
+            "value_min": "14",
+            "value_max": "16"
           },
           "{+Ability from wax} Token Link + {HB} 2 Atl": {
-            "demand": 4,
+            "demand": 3,
             "history": [
               {
                 "date": "2026-07-13",
@@ -26561,10 +26687,16 @@
                 "demand": 4,
                 "value_min": "18",
                 "value_max": "20"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 3,
+                "value_min": "17",
+                "value_max": "19"
               }
             ],
-            "value_min": "18",
-            "value_max": "20"
+            "value_min": "17",
+            "value_max": "19"
           },
           "{+Ability from wax} Token Link + {HB} 3 Atl": {
             "demand": 4,
@@ -26686,7 +26818,7 @@
         },
         "Token Link + Bee Ability Pollen (Full Waxed)": {
           "{+Ability from wax} Token Link + {HB} 1 Atl + {HB} 1 Bap": {
-            "demand": 5,
+            "demand": 4,
             "history": [
               {
                 "date": "2026-06-07",
@@ -26735,10 +26867,16 @@
                 "demand": 5,
                 "value_min": "130",
                 "value_max": "135"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 4,
+                "value_min": "105",
+                "value_max": "110"
               }
             ],
-            "value_min": "130",
-            "value_max": "135"
+            "value_min": "105",
+            "value_max": "110"
           },
           "{+Ability from wax} Token Link + {HB} 1 Atl + {HB} 2 Bap": {
             "demand": 5,
@@ -26785,7 +26923,7 @@
             "value_max": null
           },
           "{+Ability from wax} Token Link + {HB} 2 Atl + {HB} 1 Bap (Full Waxed)": {
-            "demand": 5,
+            "demand": 4,
             "history": [
               {
                 "date": "2026-04-03",
@@ -26846,10 +26984,16 @@
                 "demand": 5,
                 "value_min": "155",
                 "value_max": "160"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 4,
+                "value_min": "130",
+                "value_max": "135"
               }
             ],
-            "value_min": "155",
-            "value_max": "160"
+            "value_min": "130",
+            "value_max": "135"
           },
           "{+Ability from wax} Token Link + {HB} 2 Atl + {HB} 2 Bap": {
             "demand": 5,
@@ -26883,7 +27027,7 @@
             "value_max": null
           },
           "{+Ability from wax} Token Link + {HB} 3 Atl + {HB} 1 Bap (Full Waxed)": {
-            "demand": 5,
+            "demand": 4,
             "history": [
               {
                 "date": "2026-04-03",
@@ -26944,10 +27088,16 @@
                 "demand": 5,
                 "value_min": "175",
                 "value_max": "180"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 4,
+                "value_min": "150",
+                "value_max": "155"
               }
             ],
-            "value_min": "175",
-            "value_max": "180"
+            "value_min": "150",
+            "value_max": "155"
           },
           "{+Ability from wax} Token Link + {HB} 3 Atl + {HB} 2 Bap": {
             "demand": 5,
@@ -27018,7 +27168,7 @@
       "image": "/images/Peppermint_Antennas.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-10-10T00:43:58.889Z",
+      "last_updated": "2026-10-18T02:02:17.563Z",
       "stat_groups": {
         "Ability Rate (Full Waxed)": {
           "3 Ar": {
@@ -27126,7 +27276,7 @@
         },
         "Potential (Unwaxed)": {
           "5★ Pot": {
-            "demand": 3,
+            "demand": 4,
             "history": [
               {
                 "date": "2026-03-26",
@@ -27149,6 +27299,12 @@
               {
                 "date": "2026-06-30",
                 "demand": 3,
+                "value_min": "0.33",
+                "value_max": "0.5"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 4,
                 "value_min": "0.33",
                 "value_max": "0.5"
               }
@@ -27243,10 +27399,16 @@
                 "demand": 4,
                 "value_min": "130",
                 "value_max": "135"
+              },
+              {
+                "date": "2026-10-14",
+                "demand": 4,
+                "value_min": "150",
+                "value_max": "155"
               }
             ],
-            "value_min": "130",
-            "value_max": "135"
+            "value_min": "150",
+            "value_max": "155"
           },
           "{HB} 1 Bar + 4 Ar": {
             "demand": 4,
@@ -33423,11 +33585,11 @@
       "image": "/images/Reindeer_Antlers.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-09-23T21:13:10.598Z",
+      "last_updated": "2026-10-18T02:02:34.332Z",
       "stat_groups": {
         "Baby Love (Full Waxed)": {
           "{+Ability from wax} Baby Love": {
-            "demand": 4,
+            "demand": 5,
             "history": [
               {
                 "date": "2026-03-09",
@@ -33491,6 +33653,12 @@
                 "demand": 4,
                 "value_min": ">=6*{Bee Cub}",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 5,
+                "value_min": ">=6*{Bee Cub}",
+                "value_max": null
               }
             ],
             "value_min": ">=6*{Bee Cub}",
@@ -33499,7 +33667,7 @@
         },
         "Bond From Treats (Full Waxed)": {
           "{HB} 1 Bond from Treats": {
-            "demand": 4,
+            "demand": 3,
             "history": [
               {
                 "date": "2026-03-09",
@@ -33528,6 +33696,12 @@
               {
                 "date": "2026-08-29",
                 "demand": 4,
+                "value_min": "140",
+                "value_max": "150"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 3,
                 "value_min": "140",
                 "value_max": "150"
               }
@@ -36076,21 +36250,27 @@
       "image": "/images/Snow_Globe.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-09-27T15:19:01.826Z",
+      "last_updated": "2026-10-15T22:22:15.654Z",
       "stat_groups": {
         "Potential (Unwaxed)": {
           "≤5★ Pot": {
-            "demand": 1,
+            "demand": 3,
             "history": [
               {
                 "date": "2026-06-22",
                 "demand": 1,
                 "value_min": "0.33",
                 "value_max": "0.5"
+              },
+              {
+                "date": "2026-10-15",
+                "demand": 3,
+                "value_min": "0.75",
+                "value_max": "1"
               }
             ],
-            "value_min": "0.33",
-            "value_max": "0.5"
+            "value_min": "0.75",
+            "value_max": "1"
           }
         }
       }
@@ -37878,7 +38058,7 @@
       "image": "/images/Thumbtack.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-08-28T02:10:58.966Z",
+      "last_updated": "2026-10-13T22:06:53.782Z",
       "stat_groups": {
         "Base Red Bee Attack (Unwaxed)": {
           "{HB} 2 Red Bee Attack 4★ Pot": {
@@ -38011,10 +38191,16 @@
                 "demand": 3,
                 "value_min": "23",
                 "value_max": "25"
+              },
+              {
+                "date": "2026-10-13",
+                "demand": 3,
+                "value_min": "24",
+                "value_max": "26"
               }
             ],
-            "value_min": "23",
-            "value_max": "25"
+            "value_min": "24",
+            "value_max": "26"
           },
           "{HB} 5 Red Bee Attack": {
             "demand": 1,
@@ -38047,9 +38233,15 @@
                 "demand": 1,
                 "value_min": ">=300",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-13",
+                "demand": 1,
+                "value_min": ">=290",
+                "value_max": null
               }
             ],
-            "value_min": ">=300",
+            "value_min": ">=290",
             "value_max": null
           }
         },
@@ -38093,10 +38285,16 @@
                 "demand": 3,
                 "value_min": "19",
                 "value_max": "22"
+              },
+              {
+                "date": "2026-10-13",
+                "demand": 3,
+                "value_min": "22",
+                "value_max": "24"
               }
             ],
-            "value_min": "19",
-            "value_max": "22"
+            "value_min": "22",
+            "value_max": "24"
           },
           "{HB} 4 Red Bee Attack + {HB} 1 Bee Attack": {
             "demand": 1,
@@ -38129,9 +38327,15 @@
                 "demand": 1,
                 "value_min": ">=275",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-13",
+                "demand": 1,
+                "value_min": ">=250",
+                "value_max": null
               }
             ],
-            "value_min": ">=275",
+            "value_min": ">=250",
             "value_max": null
           }
         }
@@ -39264,7 +39468,7 @@
       "image": "/images/Whistle.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-10T19:40:57.334Z",
+      "last_updated": "2026-10-18T02:03:14.440Z",
       "stat_groups": {
         "Bee Movespeed + Super Crit Power (Full Waxed)": {
           "{HB} 1 Bms + {HB} 1 Scp": {
@@ -39508,7 +39712,7 @@
         },
         "Melody (Full Waxed)": {
           "{+Ability from wax} Melody": {
-            "demand": 4,
+            "demand": 2,
             "history": [
               {
                 "date": "2026-03-09",
@@ -39537,6 +39741,12 @@
               {
                 "date": "2026-08-28",
                 "demand": 4,
+                "value_min": "155",
+                "value_max": "160"
+              },
+              {
+                "date": "2026-10-18",
+                "demand": 2,
                 "value_min": "155",
                 "value_max": "160"
               }

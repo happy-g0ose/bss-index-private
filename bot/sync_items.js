@@ -1,35 +1,25 @@
+/**
+ * Kept for backwards compatibility with `npm run sync`.
+ *
+ * The item data now lives in bot/items.json only — that file IS the source of
+ * truth. It is written by scratch/update_prices.py and turned into
+ * public/data/items.json for the site by scripts/generate-runtime-items.cjs.
+ *
+ * There is nothing to sync any more, so this just reports the current state.
+ */
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const itemsTsPath = path.join(__dirname, '..', 'src', 'data', 'items.ts');
-const outJsonPath = path.join(__dirname, 'items.json');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const itemsPath = path.join(__dirname, 'items.json');
 
 try {
-  const content = fs.readFileSync(itemsTsPath, 'utf-8');
-  
-  // Find rawBssItemsData array start after equals sign
-  const startIdx = content.indexOf("const rawBssItemsData");
-  const equalsIdx = content.indexOf("=", startIdx);
-  const arrayStart = content.indexOf("[", equalsIdx);
-  
-  let bracketCount = 1;
-  let currentIdx = arrayStart + 1;
-  while (bracketCount > 0 && currentIdx < content.length) {
-    if (content[currentIdx] === '[') bracketCount++;
-    else if (content[currentIdx] === ']') bracketCount--;
-    currentIdx++;
-  }
-  
-  const jsonText = content.substring(arrayStart, currentIdx);
-  // Parse and sanitize items JSON
-  const items = JSON.parse(jsonText);
-  
-  fs.writeFileSync(outJsonPath, JSON.stringify(items, null, 2), 'utf-8');
-  console.log(`✅ Successfully synced ${items.length} BSS items to bot/items.json!`);
+  const items = JSON.parse(fs.readFileSync(itemsPath, 'utf-8'));
+  const withValue = items.filter((i) => i.value > 0).length;
+  console.log(`✓ bot/items.json is up to date: ${items.length} items (${withValue} with a value).`);
+  console.log('  Run `node scripts/generate-runtime-items.cjs` to refresh the site payload.');
 } catch (err) {
-  console.error('❌ Error syncing items:', err);
+  console.error('✖ Error reading items.json:', err.message);
+  process.exitCode = 1;
 }
