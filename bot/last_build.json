@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792493683591,
+  "timestamp": 1792495311914,
   "version": "2.1.0",
-  "message": "fix(api): mount the search function under /api/v1 and document it\n\n- Vercel mounts api/<file> at /api/<file>, so the function has to live in\n  api/v1/ to answer at /api/v1/search\n- added the search endpoint to the discovery document, the OpenAPI spec and the\n  docs page\n- OpenAPI parameters were all marked in:path and required, which is wrong for\n  query parameters; path params are now distinguished from query params\n- category slugs are English now (vouchers, cub-skins) since the API is\n  English-first and categories have no pages of their own\n- fixed the stale category example URL in the docs",
+  "message": "feat(api): Russian documentation + English-first field names\n\nDocumentation:\n- scripts/lib/docs.cjs holds the page template for both languages; the English\n  output is byte-for-byte what the generator produced before, plus a language\n  switcher and hreflang links\n- /api/v1/docs.ru.html is a full Russian translation, with the endpoint\n  summaries, descriptions and parameter explanations translated as well\n- the site footer links to both versions\n\nField names are now English-first:\n  name       English name (always)\n  nameRu     Russian name, null when identical (41 of 330 items)\n  category   English category ('Cub Skins')\n  categoryRu Russian category ('Скины на каба')\nnameEn and categoryEn are gone - they were redundant.\n\nThe search function was updated to the new shape and still finds items by\ntheir Russian name and by the Russian category aliases.",
   "author": "BSS Index Developer",
-  "sha": "48b4abd93d7dc8340ada7ff5d334036654ec2a6e"
+  "sha": "47b5cc43391cd3ee2629deebca463d16d51492e7"
 }
