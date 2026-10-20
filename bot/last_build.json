@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792493383233,
+  "timestamp": 1792493683591,
   "version": "2.1.0",
-  "message": "feat(api): versioned v1 API with server-side search\n\nThe competitor's API is a single 498 KB file with no CORS header, string\nvalues, no per-item lookup, no search and no documentation. Ours:\n\n- /api/v1/ discovery document, versioned from the VERSION file\n- /api/v1/items.json - every item, numbers not strings, sorted by value\n- /api/v1/items/<slug>.json - one item with history, rolls and related items\n- /api/v1/items/<slug>/history.json - price series with 7d/30d change\n- /api/v1/categories.json + categories/<slug>/items.json - English slugs\n- /api/v1/changes.json - biggest gainers and losers\n- /api/v1/stats.json - market summary\n- /api/v1/search-index.json - 48 KB index for instant client-side search\n- /api/v1/openapi.json - OpenAPI 3.1 spec\n- /api/v1/docs.html - human readable reference\n- /api/v1/search - server-side search function (Vercel), with query\n  parameters, sorting, pagination and Russian category aliases\n\n687 files, 1.69 MB total. Single item fetch is 3.2 KB against the competitor's\n498 KB for an",
+  "message": "fix(api): mount the search function under /api/v1 and document it\n\n- Vercel mounts api/<file> at /api/<file>, so the function has to live in\n  api/v1/ to answer at /api/v1/search\n- added the search endpoint to the discovery document, the OpenAPI spec and the\n  docs page\n- OpenAPI parameters were all marked in:path and required, which is wrong for\n  query parameters; path params are now distinguished from query params\n- category slugs are English now (vouchers, cub-skins) since the API is\n  English-first and categories have no pages of their own\n- fixed the stale category example URL in the docs",
   "author": "BSS Index Developer",
-  "sha": "2d50e1f0915432a6069b98b102bfb6c025d22948"
+  "sha": "48b4abd93d7dc8340ada7ff5d334036654ec2a6e"
 }
