@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792492084566,
+  "timestamp": 1792493350471,
   "version": "2.1.0",
-  "message": "feat(bot): local command throttle + clearer rate-limit logging\n\nDiscord answers with 429 ('Квота превышена') when commands are spammed, which\nthe user only saw as a generic error dialog. Now a 1.5s per-user throttle\nturns that into a friendly 'слишком часто' message, and rate-limit errors are\nlogged explicitly instead of being swallowed.\n\nAlso adds scripts/link-table.mjs: checks every URL the site exposes and writes\nthe full table to site-links.md. All 1332 URLs return 200.",
+  "message": "feat(seo): IndexNow push for changed items\n\nGoogle Search Console's 'Request indexing' has a daily quota of roughly ten\nURLs, which cannot cover 660 pages — that is what the 'quota exceeded'\ndialog was. IndexNow is the quota-free alternative: changed URLs are pushed\nstraight to the participating engines.\n\n- scripts/indexnow.cjs posts the changed item URLs (page, RU page and widget)\n- scripts/generate-indexnow-key.cjs publishes the key at the site root, which\n  IndexNow requires for verification\n- scripts/changed-items.cjs works out which items moved by comparing against\n  git; a plain git diff cannot do this, because with unified=0 the unchanged\n  'id' lines never appear, so it reported zero changed items every time\n- the nightly workflow now pushes the changed URLs after every price update",
   "author": "BSS Index Developer",
-  "sha": "5a3291c5d03ff1746e723983a72aedf0a1722756"
+  "sha": "f962b4ef234faf64e3d2654e9e1b8e5a7a941e8b"
 }

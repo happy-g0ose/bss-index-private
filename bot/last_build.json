@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792491135730,
+  "timestamp": 1792492112024,
   "version": "2.1.0",
-  "message": "feat(seo): give the crawler a way into the item pages\n\nThe site was in Search Console for three months but only the home page was\never indexed. Reason: the catalog is rendered client-side, and the prerendered\nitem pages linked only back to the home page, so nothing in the HTML pointed at\nthe other 329. The sitemap was the only path to them.\n\n- every item page now links to 12 related items (same category first, then the\n  most valuable overall), in both languages\n- new static /items/ and /ru/items/ indexes listing all 330 items grouped by\n  category, linked from the site footer\n- both index pages are in the sitemap (664 URLs now)\n- scripts/check-links.cjs verifies the link graph after a build",
+  "message": "feat(seo): IndexNow push for changed items\n\nGoogle Search Console's 'Request indexing' has a daily quota of roughly ten\nURLs, which cannot cover 660 pages — that is what the 'quota exceeded'\ndialog was. IndexNow is the quota-free alternative: changed URLs are pushed\nstraight to the participating engines.\n\n- scripts/indexnow.cjs posts the changed item URLs (page, RU page and widget)\n- scripts/generate-indexnow-key.cjs publishes the key at the site root, which\n  IndexNow requires for verification\n- scripts/changed-items.cjs works out which items moved by comparing against\n  git; a plain git diff cannot do this, because with unified=0 the unchanged\n  'id' lines never appear, so it reported zero changed items every time\n- the nightly workflow now pushes the changed URLs after every price update",
   "author": "BSS Index Developer",
-  "sha": "2014510bb7c3ef42bbd75741f78dcd00bbc805db"
+  "sha": "f962b4ef234faf64e3d2654e9e1b8e5a7a941e8b"
 }
