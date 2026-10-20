@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { itemUrl, getItems, itemSlug, SITE_ORIGIN } from './lib/items.js';
+import { itemUrl, getItems, itemSlug, SITE_ORIGIN, categoryEmoji } from './lib/items.js';
 import { parseItemList, logParsedTrade, verdictFor, allTrades, topTradedItems, tradeStats } from './lib/trades.js';
 import { getConfig, updateConfig, addBlocklistWord, removeBlocklistWord, inspectMessage, recordHit, recentLog, logStats } from './lib/moderation.js';
 import { bump, syncTierRoles, tierFor, grantStarterRole } from './lib/roles.js';
@@ -536,8 +536,12 @@ client.on('interactionCreate', async interaction => {
           const valStr = item.valueLow !== item.valueHigh
             ? `${item.valueLow}-${item.valueHigh}`
             : `${item.value}`;
+          // Discord renders autocomplete suggestions as plain text (no images),
+          // so the list gets an emoji per category plus the value to stay
+          // scannable. The sticker itself shows in the reply embed.
+          const label = `${categoryEmoji(item.category)} ${item.name} — ${valStr}★`;
           return {
-            name: `${item.name} (${valStr} ★)`,
+            name: label.length > 100 ? label.slice(0, 97) + '…' : label,
             value: item.name
           };
         })
@@ -587,6 +591,7 @@ client.on('interactionCreate', async interaction => {
         { name: '🔥 Спрос', value: `\`${item.demand}\``, inline: true },
         { name: '📊 Стабильность', value: `${stabilityIcon} ${item.stability}`, inline: true }
       )
+      .setImage(item.image)
       .setFooter({ text: 'BSS Index • Актуальные цены Bee Swarm Simulator', iconURL: 'https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png' })
       .setTimestamp();
 
@@ -640,12 +645,12 @@ client.on('interactionCreate', async interaction => {
       .addFields(
         { 
           name: '🔴 Вы отдаете:', 
-          value: givingItems.length > 0 ? givingItems.map(i => `• ${i.name} (${i.value} ★)`).join('\n') : 'Ничего не выбрано', 
+          value: givingItems.length > 0 ? givingItems.map(i => `• ${categoryEmoji(i.category)} ${i.name} (${i.value} ★)`).join('\n') : 'Ничего не выбрано', 
           inline: true 
         },
         { 
           name: '🟢 Вы получаете:', 
-          value: gettingItems.length > 0 ? gettingItems.map(i => `• ${i.name} (${i.value} ★)`).join('\n') : 'Ничего не выбрано', 
+          value: gettingItems.length > 0 ? gettingItems.map(i => `• ${categoryEmoji(i.category)} ${i.name} (${i.value} ★)`).join('\n') : 'Ничего не выбрано', 
           inline: true 
         },
         { 
@@ -764,7 +769,7 @@ client.on('interactionCreate', async interaction => {
     const verdict = verdictFor(givingTotal, gettingTotal);
     logParsedTrade({ giving, getting, givingTotal, gettingTotal }, interaction.user);
 
-    const fmt = (e) => `${e.qty > 1 ? `**${e.qty}x** ` : ''}${e.label} (${e.value} ★)`;
+    const fmt = (e) => `${e.qty > 1 ? `**${e.qty}x** ` : ''}${categoryEmoji(e.category)} ${e.label} (${e.value} ★)`;
 
     const embed = new EmbedBuilder()
       .setTitle('📝 Трейд записан в журнал BSS Index')

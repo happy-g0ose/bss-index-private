@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792483594881,
+  "timestamp": 1792484300898,
   "version": "2.1.0",
-  "message": "feat(api,embed): v2.1.0 - public JSON API and embeddable item widgets\n\nAPI (static, generated at build, CORS-enabled via vercel.json):\n  /api/index.json          - API index with version, categories, endpoints\n  /api/values.json         - all 330 items, compact, sorted by value\n  /api/item/<slug>.json    - one item with history and beequip rolls\n  /api/history/<slug>.json - price history only\n  /api/category/<slug>.json - items of one category\n\nEmbeddable widgets:\n  /w/<slug>/               - self-contained card, no JS frameworks, <14 KB,\n                             embeddable in any iframe, light/dark aware,\n                             OG tags so it also works as a link preview\n  /w/<slug>/?embed=1       - same without the footer link\n  /w/                      - index of all widgets\n- item modal links to the page, the widget and the JSON\n- site footer links to the API index\n- Discord /price now offers a 'Виджет' button next to the site link",
+  "message": "style(embed): add BSS Index branding to the widget footer\n\nSmall amber wordmark linking back to the item page, always visible even in\nembed mode, so a widget dropped into someone else's site is never anonymous.",
   "author": "BSS Index Developer",
-  "sha": "756ed8b80561590a70dcbe8a7dba3c43babe2c71"
+  "sha": "87e78c5fd90550400744aba508eee90a8ac40f9c"
 }

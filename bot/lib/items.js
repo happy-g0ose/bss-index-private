@@ -78,6 +78,33 @@ export function getItemBySlug(slug) {
   return load().bySlug.get(slug) || null;
 }
 
+/** Category -> emoji, so the autocomplete list is visually scannable. */
+export const CATEGORY_EMOJI = {
+  'Скины на каба': '🧸',
+  'Скины на куба': '🧸',
+  'Скины на улей': '🏠',
+  'Ваучеры': '🎟️',
+  'Стикеры пчел': '🐝',
+  'Стикеры медведей': '🐻',
+  'Стикеры мобов': '🐍',
+  'Искусство': '🎨',
+  'Драгоценности': '💎',
+  'Иконки нектара': '🍯',
+  'Цветы': '🌸',
+  'Грибы': '🍄',
+  'Листья': '🍂',
+  'Инструменты': '🪄',
+  'Марки': '📮',
+  'Стикеры Пчелождества': '🎄',
+  'Разное': '✨',
+  'Звездные знаки': '⭐',
+  'Биквипы': '🧤',
+};
+
+export function categoryEmoji(category) {
+  return CATEGORY_EMOJI[category] || '📦';
+}
+
 export function isBeequip(item) {
   return item?.category === 'Биквипы';
 }

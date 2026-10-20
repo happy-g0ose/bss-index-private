@@ -76,14 +76,14 @@ export function parseItemList(text) {
     const cleaned = countMatch ? countMatch[2].trim() : raw;
     if (!cleaned) continue;
 
-    const push = (label, value) => {
+    const push = (label, value, category) => {
       const numeric = Number(value) || 0;
-      found.push({ label, value: numeric * qty, qty, unit: numeric });
+      found.push({ label, value: numeric * qty, qty, unit: numeric, category });
     };
 
     const item = resolveItem(cleaned);
     if (item) {
-      push(item.englishName, item.value);
+      push(item.englishName, item.value, item.category);
       continue;
     }
 
@@ -92,7 +92,7 @@ export function parseItemList(text) {
     if (rollMatch) {
       const base = resolveItem(rollMatch[1].trim());
       const roll = base ? resolveRoll(base, rollMatch[2].trim()) : null;
-      if (roll) push(`${roll.item.englishName} (${roll.roll.rollName})`, roll.roll.value);
+      if (roll) push(`${roll.item.englishName} (${roll.roll.rollName})`, roll.roll.value, roll.item.category);
     }
   }
 
@@ -120,8 +120,10 @@ export function parseTradeLine(line) {
   if (!givingTotal || !gettingTotal) return null;
 
   return {
-    giving: giving.map(({ label, value }) => ({ label, value })),
-    getting: getting.map(({ label, value }) => ({ label, value })),
+    // Keep every field (label, value, qty, unit, category) so the caller can
+    // render quantities and category icons.
+    giving: giving.map((e) => ({ ...e })),
+    getting: getting.map((e) => ({ ...e })),
     givingTotal,
     gettingTotal,
   };
@@ -136,6 +138,7 @@ export function logParsedTrade(parsed, user) {
       value: e.value,
       qty: e.qty || 1,
       unit: e.unit ?? e.value,
+      category: e.category || null,
     }));
 
   return addTrade({
