@@ -132,13 +132,17 @@ function change7d(item) {
 
 function toCompact(item) {
   const slug = slugify(item.englishName || item.id || item.name);
+  const nameRu = item.name && item.name !== item.englishName && /[\u0400-\u04FF]/.test(item.name)
+    ? item.name
+    : null;
   return {
     slug,
     id: item.id,
-    name: item.name,
-    nameEn: item.englishName,
-    category: item.category,
-    categoryEn: CATEGORY_EN[item.category] || item.category,
+    // English-first: `name` is the English name, `nameRu` the Russian one.
+    name: item.englishName,
+    nameRu,
+    category: CATEGORY_EN[item.category] || item.category,
+    categoryRu: item.category,
     categorySlug: CATEGORY_SLUG.get(item.category) || slugify(item.category),
     value: item.value,
     valueLow: item.valueLow,
@@ -195,9 +199,9 @@ export default function handler(req, res) {
     results = results.filter(
       (i) =>
         i.categorySlug.toLowerCase() === categoryFilter ||
-        i.category.toLowerCase() === categoryFilter ||
-        (i.categoryEn || '').toLowerCase() === categoryFilter ||
-        slugify(i.category) === categoryFilter
+        (i.category || '').toLowerCase() === categoryFilter ||
+        (i.categoryRu || '').toLowerCase() === categoryFilter ||
+        slugify(i.categoryRu || '') === categoryFilter
     );
   }
 
@@ -209,21 +213,33 @@ export default function handler(req, res) {
 
     results = results
       .map((item) => {
-        const name = item.name.toLowerCase();
-        const nameEn = (item.nameEn || '').toLowerCase();
-        const nameSlug = slugify(item.name);
-        const nameEnSlug = slugify(item.nameEn || '');
+        const name = (item.name || '').toLowerCase();
+        const nameRu = (item.nameRu || '').toLowerCase();
+        const nameSlug = slugify(item.name || '');
+        const nameRuSlug = slugify(item.nameRu || '');
         const slug = item.slug;
 
         let score = 0;
-        if (slug === transNeedle || nameSlug === transNeedle || nameEnSlug === transNeedle) score = 100;
-        else if (name === needle || nameEn === needle) score = 90;
-        else if (slug.startsWith(transNeedle) || nameSlug.startsWith(transNeedle) || nameEnSlug.startsWith(transNeedle)) score = 70;
-        else if (name.startsWith(needle) || nameEn.startsWith(needle)) score = 60;
-        else if (slug.includes(transNeedle) || nameSlug.includes(transNeedle) || nameEnSlug.includes(transNeedle)) score = 40;
-        else if (name.includes(needle) || nameEn.includes(needle)) score = 30;
-        else if ((item.category || '').toLowerCase().includes(needle)) score = 15;
-        else if (aliasCategory && item.category === aliasCategory) score = 12;
+        if (
+          slug === transNeedle ||
+          nameSlug === transNeedle ||
+          nameRuSlug === transNeedle
+        ) score = 100;
+        else if (name === needle || nameRu === needle) score = 90;
+        else if (
+          slug.startsWith(transNeedle) ||
+          nameSlug.startsWith(transNeedle) ||
+          nameRuSlug.startsWith(transNeedle)
+        ) score = 70;
+        else if (name.startsWith(needle) || nameRu.startsWith(needle)) score = 60;
+        else if (
+          slug.includes(transNeedle) ||
+          nameSlug.includes(transNeedle) ||
+          nameRuSlug.includes(transNeedle)
+        ) score = 40;
+        else if (name.includes(needle) || nameRu.includes(needle)) score = 30;
+        else if ((item.categoryRu || '').toLowerCase().includes(needle)) score = 15;
+        else if (aliasCategory && item.categoryRu === aliasCategory) score = 12;
         return { item, score };
       })
       .filter((r) => r.score > 0)
@@ -236,7 +252,7 @@ export default function handler(req, res) {
   } else if (sort === 'value-asc') {
     results = results.slice().sort((a, b) => a.value - b.value);
   } else if (sort === 'name') {
-    results = results.slice().sort((a, b) => (a.nameEn || '').localeCompare(b.nameEn || ''));
+    results = results.slice().sort((a, b) => (a.name || '').localeCompare(b.name || ''));
   } else if (sort === 'change') {
     results = results
       .slice()

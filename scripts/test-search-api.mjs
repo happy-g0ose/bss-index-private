@@ -61,9 +61,24 @@ for (const [query, name] of cases) {
     'status=' + r.status,
     'total=' + (parsed.total ?? '-'),
     'count=' + (parsed.count ?? '-'),
-    parsed.items?.length ? '| first: ' + parsed.items[0].nameEn + ' (' + parsed.items[0].value + '★)' : ''
+    parsed.items?.length ? '| first: ' + parsed.items[0].name + ' (' + parsed.items[0].value + '★)' : ''
   );
 }
+
+// The new shape: English-first names.
+const shape = call({ q: 'bee' });
+const sample = JSON.parse(shape.body).items[0];
+const shapeOk =
+  sample && typeof sample.name === 'string' && !('nameEn' in sample) &&
+  'nameRu' in sample && 'categoryRu' in sample && !('categoryEn' in sample);
+console.log('  ' + (shapeOk ? 'PASS' : 'FAIL'), 'english-first shape      ',
+  shapeOk ? `name="${sample.name}" nameRu=${JSON.stringify(sample.nameRu)} category="${sample.category}"` : 'wrong fields');
+
+// A Russian item must still be findable by its Russian name.
+const ru = call({ q: 'панама' });
+const ruHit = JSON.parse(ru.body).items[0];
+console.log('  ' + (ruHit ? 'PASS' : 'FAIL'), 'russian name lookup     ',
+  ruHit ? `name="${ruHit.name}" nameRu=${JSON.stringify(ruHit.nameRu)}` : 'not found');
 
 // error shape
 const bad = call({});

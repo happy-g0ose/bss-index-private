@@ -37,6 +37,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { buildDocsHtml } = require('./lib/docs.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
@@ -263,14 +264,57 @@ function absoluteImage(image) {
   return `${SITE_ORIGIN}/${url}`;
 }
 
+// ---------------------------------------------------------------------------
+// English-first naming
+//
+// The API is English-first: `name` and `category` always hold the English
+// value, the Russian one lives in `nameRu` / `categoryRu`. The old
+// English-suffixed fields are gone — they would only repeat `name` /
+// `category`.
+// ---------------------------------------------------------------------------
+
+/** Any Cyrillic letter — the test for "this value is a Russian name". */
+const CYRILLIC_RE = /[\u0400-\u04FF]/;
+
+/** The English name of an item (`englishName`, display name as fallback). */
+function englishName(item) {
+  const en = typeof item.englishName === 'string' ? item.englishName.trim() : '';
+  if (en) return en;
+  return typeof item.name === 'string' ? item.name.trim() : '';
+}
+
+/**
+ * The Russian name of an item, or null when the item has no separate Russian
+ * name.
+ *
+ * `bot/items.json` carries the display name in `name` and the English one in
+ * `englishName`. The two differ for the beequips — a real translation, e.g.
+ * "Осенняя панама" / "Autumn Sunhat" — and for a couple of dozen items that
+ * only append a Latin abbreviation ("Doodle Cub (DDC)"). Only the first kind
+ * is a Russian name, so `nameRu` stays null for everything else: the payload
+ * keeps its size and no field ever mixes two languages.
+ */
+function russianName(item) {
+  const display = typeof item.name === 'string' ? item.name.trim() : '';
+  if (!display || !CYRILLIC_RE.test(display)) return null;
+  if (display === englishName(item)) return null;
+  return display;
+}
+
+/** The English category name of an item (raw category as fallback). */
+function englishCategory(item) {
+  return CATEGORY_EN[item.category] || item.category;
+}
+
 /** The compact entry used by items.json and the per-category files. */
 function compactItem(item, slug, categorySlug, series) {
   return {
     slug,
     id: item.id,
-    name: item.name,
-    nameEn: item.englishName || item.name,
-    category: item.category,
+    name: englishName(item),
+    nameRu: russianName(item),
+    category: englishCategory(item),
+    categoryRu: item.category,
     categorySlug,
     value: num(item.value, 0),
     valueLow: num(item.valueLow, num(item.value, 0)),
@@ -326,8 +370,8 @@ function relatedItems(item, all, byCategory) {
   const pool = [...sameCategory, ...others].slice(0, 10);
   return pool.map((other) => ({
     slug: other.__slug,
-    name: other.name,
-    nameEn: other.englishName || other.name,
+    name: englishName(other),
+    nameRu: russianName(other),
     value: num(other.value, 0),
     url: `${SITE_ORIGIN}/item/${other.__slug}/`,
   }));
@@ -352,7 +396,7 @@ function historyDoc(compact, series) {
   return {
     slug: compact.slug,
     name: compact.name,
-    nameEn: compact.nameEn,
+    nameRu: compact.nameRu,
     dates: series.map((point) => point.d),
     prices,
     change7d: compact.change7d,
@@ -419,7 +463,7 @@ function buildEndpoints() {
       key: 'categories',
       summary: 'All categories',
       description:
-        'Every category with its slug, English name, item count and value statistics (min, max, average, total).',
+        'Every category with its slug, English name, Russian name, item count and value statistics (min, max, average, total).',
       params: [],
       example: `${SITE_ORIGIN}/api/v1/categories.json`,
     },
@@ -431,7 +475,7 @@ function buildEndpoints() {
       description:
         'All items of one category in the same compact shape as /api/v1/items.json, sorted by value descending.',
       params: [
-        { name: 'slug', type: 'string', required: true, description: 'Category slug, e.g. "stikery-pchel". See /api/v1/categories.json for the full list.' },
+        { name: 'slug', type: 'string', required: true, description: 'Category slug, e.g. "bee-stickers". See /api/v1/categories.json for the full list.' },
       ],
       example: `${SITE_ORIGIN}/api/v1/categories/bee-stickers/items.json`,
     },
@@ -477,7 +521,7 @@ function buildEndpoints() {
       key: 'searchIndex',
       summary: 'Lean search index',
       description:
-        'Small, lean index (slug, names, category, value) meant to be downloaded once and filtered client-side for instant search. No history, no colours.',
+        'Small, lean index (slug, English and Russian names, English category, value) meant to be downloaded once and filtered client-side for instant search. No history, no colours.',
       params: [],
       example: `${SITE_ORIGIN}/api/v1/search-index.json`,
     },
@@ -514,14 +558,15 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
     Item: {
       type: 'object',
       description: 'The compact item shape used by /items.json and the category files.',
-      required: ['slug', 'id', 'name', 'nameEn', 'category', 'categorySlug', 'value', 'valueLow', 'valueHigh', 'demand', 'demandEn', 'stability', 'stabilityEn', 'change7d', 'change30d', 'image', 'url', 'hasHistory'],
+      required: ['slug', 'id', 'name', 'nameRu', 'category', 'categoryRu', 'categorySlug', 'value', 'valueLow', 'valueHigh', 'demand', 'demandEn', 'stability', 'stabilityEn', 'change7d', 'change30d', 'image', 'url', 'hasHistory'],
       properties: {
         slug: { type: 'string', description: 'URL-safe identifier, identical to the /item/<slug>/ page.' },
         id: { type: 'string', description: 'Stable internal id of the item.' },
-        name: { type: 'string', description: 'Display name as published on the site.' },
-        nameEn: { type: 'string', description: 'English name.' },
-        category: { type: 'string', description: 'Category name.' },
-        categorySlug: { type: 'string', description: 'Slugified category name.' },
+        name: { type: 'string', description: 'English name of the item, e.g. "Autumn Sunhat".' },
+        nameRu: { type: ['string', 'null'], description: 'Russian name of the item, e.g. "Осенняя панама". Null when the item has no separate Russian name.' },
+        category: { type: 'string', description: 'English category name, e.g. "Cub Skins".' },
+        categoryRu: { type: 'string', description: 'Russian category name, e.g. "Скины на каба".' },
+        categorySlug: { type: 'string', description: 'Slugified English category name, e.g. "cub-skins".' },
         value: { type: 'number', description: 'Current value in honey/beeswax units.' },
         valueLow: { type: 'number', description: 'Lower bound of the accepted price range.' },
         valueHigh: { type: 'number', description: 'Upper bound of the accepted price range.' },
@@ -570,7 +615,7 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
                 properties: {
                   slug: { type: 'string' },
                   name: { type: 'string' },
-                  nameEn: { type: 'string' },
+                  nameRu: { type: ['string', 'null'] },
                   value: { type: 'number' },
                   url: { type: 'string', format: 'uri' },
                 },
@@ -582,11 +627,11 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
     },
     History: {
       type: 'object',
-      required: ['slug', 'name', 'nameEn', 'dates', 'prices', 'change7d', 'change30d', 'min', 'max', 'average'],
+      required: ['slug', 'name', 'nameRu', 'dates', 'prices', 'change7d', 'change30d', 'min', 'max', 'average'],
       properties: {
         slug: { type: 'string' },
-        name: { type: 'string' },
-        nameEn: { type: 'string' },
+        name: { type: 'string', description: 'English name of the item.' },
+        nameRu: { type: ['string', 'null'], description: 'Russian name of the item, null when there is none.' },
         dates: { type: 'array', items: { type: 'string', format: 'date' } },
         prices: { type: 'array', items: { type: 'number' } },
         change7d: { type: ['number', 'null'] },
@@ -598,11 +643,12 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
     },
     Category: {
       type: 'object',
-      required: ['slug', 'name', 'nameEn', 'count', 'minValue', 'maxValue', 'averageValue', 'totalValue'],
+      required: ['slug', 'name', 'nameRu', 'categoryRu', 'count', 'minValue', 'maxValue', 'averageValue', 'totalValue'],
       properties: {
         slug: { type: 'string' },
-        name: { type: 'string' },
-        nameEn: { type: 'string' },
+        name: { type: 'string', description: 'English category name, e.g. "Cub Skins".' },
+        nameRu: { type: 'string', description: 'Russian category name, e.g. "Скины на каба".' },
+        categoryRu: { type: 'string', description: 'Russian category name — same value as nameRu, kept so the key is the same on items and on categories.' },
         count: { type: 'integer' },
         minValue: { type: 'number' },
         maxValue: { type: 'number' },
@@ -612,11 +658,11 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
     },
     Mover: {
       type: 'object',
-      required: ['slug', 'name', 'nameEn', 'value', 'change7d', 'change30d'],
+      required: ['slug', 'name', 'nameRu', 'value', 'change7d', 'change30d'],
       properties: {
         slug: { type: 'string' },
-        name: { type: 'string' },
-        nameEn: { type: 'string' },
+        name: { type: 'string', description: 'English name of the item.' },
+        nameRu: { type: ['string', 'null'], description: 'Russian name of the item, null when there is none.' },
         value: { type: 'number' },
         change7d: { type: ['number', 'null'] },
         change30d: { type: ['number', 'null'] },
@@ -638,13 +684,13 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
     },
     SearchEntry: {
       type: 'object',
-      required: ['slug', 'name', 'nameEn', 'category', 'categorySlug', 'value'],
+      required: ['slug', 'name', 'nameRu', 'category', 'categorySlug', 'value'],
       properties: {
         slug: { type: 'string' },
-        name: { type: 'string' },
-        nameEn: { type: 'string' },
-        category: { type: 'string' },
-        categorySlug: { type: 'string' },
+        name: { type: 'string', description: 'English name of the item.' },
+        nameRu: { type: ['string', 'null'], description: 'Russian name of the item, null when there is none.' },
+        category: { type: 'string', description: 'English category name, e.g. "Cub Skins".' },
+        categorySlug: { type: 'string', description: 'Slugified English category name, e.g. "cub-skins".' },
         value: { type: 'number' },
       },
     },
@@ -793,309 +839,6 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
 // ---------------------------------------------------------------------------
 // HTML documentation
 // ---------------------------------------------------------------------------
-
-function buildDocsHtml(version, endpoints, categories, stats, generated, itemCount) {
-  const rows = endpoints.map((e) => `
-        <tr>
-          <td class="method">${esc(e.method)}</td>
-          <td class="path"><code>${esc(e.path)}</code></td>
-          <td class="desc">${esc(e.description)}</td>
-        </tr>`).join('');
-
-  const paramBlocks = endpoints
-    .filter((e) => e.params && e.params.length)
-    .map((e) => `
-        <h4 class="ep-title"><span class="method method--get">${esc(e.method)}</span><code>${esc(e.path)}</code></h4>
-        <p class="muted">${esc(e.description)}</p>
-        <table class="params">
-          <thead><tr><th>Parameter</th><th>In</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
-          <tbody>
-${e.params.map((p) => `            <tr><td><code>${esc(p.name)}</code></td><td>path</td><td>${esc(p.type)}</td><td>yes</td><td>${esc(p.description)}</td></tr>`).join('\n')}
-          </tbody>
-        </table>
-        <pre class="code"><code>curl "${esc(e.example)}"</code></pre>`)
-    .join('');
-
-  const exampleBlocks = endpoints
-    .filter((e) => ['item', 'history', 'categoryItems', 'items', 'changes', 'searchIndex'].includes(e.key))
-    .map((e) => `
-      <div class="example">
-        <div class="example-head"><span class="method method--get">GET</span><code>${esc(e.path)}</code></div>
-        <pre class="code"><code>curl "${esc(e.example)}"</code></pre>
-      </div>`)
-    .join('');
-
-  const demandRows = DEMAND_LEGEND.map((d) => `            <tr><td><code>${esc(d.value)}</code></td><td><code>${esc(d.valueEn)}</code></td><td>${d.rank}</td><td>${esc(d.description)}</td></tr>`).join('\n');
-  const stabilityRows = STABILITY_LEGEND.map((d) => `            <tr><td><code>${esc(d.value)}</code></td><td><code>${esc(d.valueEn)}</code></td><td>${d.rank}</td><td>${esc(d.description)}</td></tr>`).join('\n');
-  const categoryRows = categories.map((c) => `            <tr><td><code>${esc(c.slug)}</code></td><td>${esc(c.name)}</td><td>${esc(c.nameEn)}</td><td>${c.count}</td></tr>`).join('\n');
-
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BSS Index API v${esc(version)} — Bee Swarm Simulator value API</title>
-<meta name="description" content="Public, documented JSON API for Bee Swarm Simulator item values, price history and beequip rolls.">
-<link rel="canonical" href="${esc(SITE_ORIGIN)}/api/v1/docs.html">
-<style>
-  :root {
-    --bg: #0b0f19;
-    --surface: rgba(11, 15, 25, 0.65);
-    --surface-solid: #0e1220;
-    --border: rgba(255, 255, 255, 0.07);
-    --border-strong: rgba(255, 255, 255, 0.12);
-    --text: #f5f5f5;
-    --muted: #a1a1aa;
-    --dim: #71717a;
-    --amber: #f59e0b;
-    --amber-soft: #fbbf24;
-    --green: #10b981;
-    --red: #ef4444;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-    background-size: 44px 44px;
-    z-index: -1;
-  }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px 80px; }
-  header.top {
-    border-bottom: 1px solid var(--border);
-    background: rgba(11, 15, 25, 0.85);
-    backdrop-filter: blur(16px);
-    padding: 28px 0 24px;
-    margin-bottom: 32px;
-  }
-  header.top .wrap { padding-bottom: 0; }
-  .badge {
-    display: inline-block;
-    background: linear-gradient(90deg, var(--amber), #ca8a04);
-    color: #0b0f19;
-    font-weight: 800;
-    font-size: 11px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 999px;
-    margin-bottom: 14px;
-  }
-  h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: -0.02em; }
-  h1 span { color: var(--amber); }
-  h2 {
-    margin: 44px 0 14px;
-    font-size: 20px;
-    letter-spacing: -0.01em;
-    border-left: 3px solid var(--amber);
-    padding-left: 10px;
-  }
-  h3 { margin: 28px 0 10px; font-size: 16px; }
-  h4.ep-title { margin: 26px 0 8px; font-size: 15px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  p { margin: 0 0 12px; }
-  a { color: var(--amber-soft); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .muted { color: var(--muted); }
-  .dim { color: var(--dim); }
-  code {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-    font-size: .88em;
-    background: rgba(255, 255, 255, .05);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 1px 6px;
-    color: #fde68a;
-  }
-  pre.code {
-    background: #070a10;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 14px;
-    overflow-x: auto;
-    margin: 0 0 14px;
-  }
-  pre.code code { background: none; border: none; padding: 0; color: #d4d4d8; }
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
-  }
-  .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
-  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
-  .stat .k { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--dim); }
-  .stat .v { font-size: 21px; font-weight: 700; color: var(--amber-soft); margin-top: 2px; }
-  ul { margin: 0 0 12px; padding-left: 20px; }
-  li { margin: 4px 0; }
-  table { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 14px; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--dim); font-weight: 700; }
-  tbody tr:hover { background: rgba(255, 255, 255, .02); }
-  td.method { color: var(--green); font-weight: 700; white-space: nowrap; }
-  td.path { white-space: nowrap; }
-  td.desc { color: var(--muted); }
-  .method {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .06em;
-    padding: 2px 8px;
-    border-radius: 5px;
-  }
-  .method--get { background: rgba(16, 185, 129, .12); color: #34d399; border: 1px solid rgba(16, 185, 129, .25); }
-  .example { margin-bottom: 18px; }
-  .example-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
-  .up { color: var(--green); }
-  .down { color: var(--red); }
-  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--dim); font-size: 13px; }
-  @media (max-width: 640px) {
-    td.path, td.method { white-space: normal; }
-    table { font-size: 13px; }
-  }
-</style>
-</head>
-<body>
-<header class="top">
-  <div class="wrap">
-    <span class="badge">Public JSON API · v${esc(version)}</span>
-    <h1>BSS Index <span>API</span></h1>
-    <p class="muted" style="max-width: 70ch;">
-      Every item value, price history and beequip roll of <strong>Bee Swarm Simulator</strong> as clean JSON.
-      No key, no rate limit, CORS open to every origin. Built for price trackers, bots, fan sites and spreadsheets.
-    </p>
-  </div>
-</header>
-
-<div class="wrap">
-
-  <div class="grid">
-    <div class="stat"><div class="k">Version</div><div class="v">${esc(version)}</div></div>
-    <div class="stat"><div class="k">Items</div><div class="v">${itemCount}</div></div>
-    <div class="stat"><div class="k">Categories</div><div class="v">${categories.length}</div></div>
-    <div class="stat"><div class="k">Total value</div><div class="v">${esc(stats.totalValue)}</div></div>
-    <div class="stat"><div class="k">Average value</div><div class="v">${esc(stats.averageValue)}</div></div>
-    <div class="stat"><div class="k">Generated</div><div class="v" style="font-size:14px;">${esc(generated)}</div></div>
-  </div>
-
-  <h2>Why this API</h2>
-  <div class="card">
-    <ul>
-      <li><strong>Numbers, not strings.</strong> Every value is a real JSON number — no <code>"65"</code>.</li>
-      <li><strong>One file per item.</strong> Read a single price without downloading the whole catalogue.</li>
-      <li><strong>CORS enabled.</strong> <code>Access-Control-Allow-Origin: *</code> — fetch it from any website, any framework.</li>
-      <li><strong>Absolute image URLs.</strong> Nothing to rewrite on your side.</li>
-      <li><strong>Versioned &amp; documented.</strong> <code>/api/v1/</code> never breaks, plus an OpenAPI 3.1 description.</li>
-      <li><strong>Search ready.</strong> A tiny <a href="${esc(SITE_ORIGIN)}/api/v1/search-index.json">search-index.json</a> for instant client-side filtering.</li>
-    </ul>
-  </div>
-
-  <h2>Base URL</h2>
-  <pre class="code"><code>${esc(SITE_ORIGIN)}/api/v1</code></pre>
-  <p class="muted">All responses are <code>application/json</code> and served with an open CORS policy. Cache-Control is handled by the CDN.</p>
-
-  <h2>Endpoints</h2>
-  <table>
-    <thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead>
-    <tbody>${rows}
-    </tbody>
-  </table>
-
-  <h2>Parameters</h2>
-${paramBlocks}
-
-  <h2>Examples</h2>
-  <p class="muted">Copy-paste friendly. Every URL below returns JSON directly.</p>
-${exampleBlocks}
-  <h3>JavaScript (fetch, straight from a browser)</h3>
-  <pre class="code"><code>const items = await fetch('${esc(SITE_ORIGIN)}/api/v1/items.json').then(r =&gt; r.json());
-const bee = await fetch('${esc(SITE_ORIGIN)}/api/v1/items/star-cub.json').then(r =&gt; r.json());
-console.log(bee.value, bee.change7d, bee.rolls.length);</code></pre>
-
-  <h3>Python</h3>
-  <pre class="code"><code>import requests
-
-r = requests.get('${esc(SITE_ORIGIN)}/api/v1/items/star-cub.json').json()
-print(r['nameEn'], r['value'], r['change7d'])</code></pre>
-
-  <h2>Item shape</h2>
-  <p class="muted">The compact shape used by <code>items.json</code> and <code>categories/&lt;slug&gt;/items.json</code>. The per-item document adds <code>description</code>, <code>historicalDates</code>, <code>historicalPrices</code>, <code>rolls</code> and <code>related</code>.</p>
-  <table>
-    <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
-    <tbody>
-      <tr><td><code>slug</code></td><td>string</td><td>Identifier used by the website at <code>/item/&lt;slug&gt;/</code>.</td></tr>
-      <tr><td><code>id</code></td><td>string</td><td>Stable internal id.</td></tr>
-      <tr><td><code>name</code> / <code>nameEn</code></td><td>string</td><td>Display name and English name.</td></tr>
-      <tr><td><code>category</code> / <code>categorySlug</code></td><td>string</td><td>Category name and its slug.</td></tr>
-      <tr><td><code>value</code></td><td>number</td><td>Current value.</td></tr>
-      <tr><td><code>valueLow</code> / <code>valueHigh</code></td><td>number</td><td>Accepted price range.</td></tr>
-      <tr><td><code>demand</code> / <code>demandEn</code></td><td>string</td><td>Demand label (see legend below).</td></tr>
-      <tr><td><code>stability</code> / <code>stabilityEn</code></td><td>string</td><td>Price stability label (see legend below).</td></tr>
-      <tr><td><code>change7d</code> / <code>change30d</code></td><td>number | null</td><td>Percentage change over 7 / 30 days, <code>null</code> when the item has not enough history.</td></tr>
-      <tr><td><code>image</code></td><td>string</td><td>Absolute image URL.</td></tr>
-      <tr><td><code>url</code></td><td>string</td><td>Absolute URL of the item page.</td></tr>
-      <tr><td><code>hasHistory</code></td><td>boolean</td><td>Whether a price history exists for the item.</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Legends</h2>
-  <h3>Demand</h3>
-  <table>
-    <thead><tr><th>value</th><th>demandEn</th><th>Rank</th><th>Meaning</th></tr></thead>
-    <tbody>
-${demandRows}
-    </tbody>
-  </table>
-  <h3>Stability</h3>
-  <table>
-    <thead><tr><th>value</th><th>stabilityEn</th><th>Rank</th><th>Meaning</th></tr></thead>
-    <tbody>
-${stabilityRows}
-    </tbody>
-  </table>
-
-  <h2>Categories</h2>
-  <table>
-    <thead><tr><th>Slug</th><th>Name</th><th>English</th><th>Items</th></tr></thead>
-    <tbody>
-${categoryRows}
-    </tbody>
-  </table>
-
-  <h2>How changes are calculated</h2>
-  <div class="card">
-    <p class="muted" style="margin-bottom:0;">
-      Price history is an irregular series of dated snapshots. <code>change7d</code> compares the newest snapshot with the price
-      interpolated at 7 days earlier, <code>change30d</code> does the same for 30 days. When the recorded series does not reach
-      that far back, the change is <code>null</code> — never a guess. Percentages are rounded to one decimal.
-      Items without a usable change are skipped in <code>changes.json</code>.
-    </p>
-  </div>
-
-  <h2>OpenAPI</h2>
-  <p>Full machine readable description: <a href="${esc(SITE_ORIGIN)}/api/v1/openapi.json"><code>${esc(SITE_ORIGIN)}/api/v1/openapi.json</code></a> — point Swagger UI, Redoc, Postman or your own codegen at it.</p>
-
-  <footer>
-    <p>BSS Index API · version ${esc(version)} · generated ${esc(generated)} · <a href="${esc(SITE_ORIGIN)}/api/v1/index.json">index.json</a> · <a href="${esc(SITE_ORIGIN)}/">BSS Index</a></p>
-  </footer>
-</div>
-</body>
-</html>
-`;
-}
 
 // ---------------------------------------------------------------------------
 // Landing page for the bare /api/v1/ base URL
@@ -1271,8 +1014,12 @@ function main() {
     const total = values.reduce((a, b) => a + b, 0);
     categories.push({
       slug,
-      name,
-      nameEn: CATEGORY_EN[name] || name,
+      // English-first: `name` is the English category, `nameRu` the Russian
+      // original. `categoryRu` repeats it under the key the items use, so a
+      // consumer can read one key everywhere.
+      name: CATEGORY_EN[name] || name,
+      nameRu: name,
+      categoryRu: name,
       count: list.length,
       minValue: round2(values.length ? Math.min(...values) : 0),
       maxValue: round2(values.length ? Math.max(...values) : 0),
@@ -1285,7 +1032,7 @@ function main() {
       .sort((a, b) => b.value - a.value || String(a.name).localeCompare(String(b.name)));
     write(path.join('categories', slug, 'items.json'), listItems, false);
   }
-  categories.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'ru'));
+  categories.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'en'));
   write('categories.json', categories, true);
 
   // -- changes.json ----------------------------------------------------------
@@ -1295,7 +1042,7 @@ function main() {
     .map((item) => ({
       slug: item.slug,
       name: item.name,
-      nameEn: item.nameEn,
+      nameRu: item.nameRu,
       value: item.value,
       change7d: item.change7d,
       change30d: item.change30d,
@@ -1338,7 +1085,7 @@ function main() {
   const searchIndex = sortedItems.map((item) => ({
     slug: item.slug,
     name: item.name,
-    nameEn: item.nameEn,
+    nameRu: item.nameRu,
     category: item.category,
     categorySlug: item.categorySlug,
     value: item.value,
@@ -1358,7 +1105,7 @@ function main() {
     generated,
     itemCount: items.length,
     categoryCount: categories.length,
-    categories: categories.map((c) => ({ slug: c.slug, name: c.name, nameEn: c.nameEn, count: c.count })),
+    categories: categories.map((c) => ({ slug: c.slug, name: c.name, nameRu: c.nameRu, categoryRu: c.categoryRu, count: c.count })),
     endpoints: endpoints.map((e) => ({
       method: e.method,
       path: e.path,
@@ -1378,14 +1125,19 @@ function main() {
   // -- openapi.json ----------------------------------------------------------
   write('openapi.json', buildOpenApi(version, endpoints, categories, items.length), true);
 
-  // -- docs.html -------------------------------------------------------------
+  // -- docs.html (English) and docs.ru.html (Russian) ------------------------
   const statsForDocs = {
     totalValue: round2(totalValue),
     averageValue: round2(allValues.length ? totalValue / allValues.length : 0),
   };
   bytes += writeText(
     path.join(API_V1, 'docs.html'),
-    buildDocsHtml(version, endpoints, categories, statsForDocs, generated, items.length)
+    buildDocsHtml('en', version, endpoints, categories, statsForDocs, generated, items.length)
+  );
+  files++;
+  bytes += writeText(
+    path.join(API_V1, 'docs.ru.html'),
+    buildDocsHtml('ru', version, endpoints, categories, statsForDocs, generated, items.length)
   );
   files++;
 

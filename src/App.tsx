@@ -496,6 +496,14 @@ function BssApp({ items }: { items: BSSItem[] }) {
               API v1
             </a>
             <a
+              href="/api/v1/docs.ru.html"
+              target="_blank"
+              rel="noopener"
+              className="text-amber-500/80 hover:text-amber-400 font-bold transition-colors no-underline"
+            >
+              {lang === 'ru' ? 'API (доки)' : 'API (документация)'}
+            </a>
+            <a
               href="/api/index.json"
               target="_blank"
               rel="noopener"
