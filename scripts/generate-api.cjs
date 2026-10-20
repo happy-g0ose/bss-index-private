@@ -23,6 +23,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { getCategoryStyles } = require('./lib/category-styles.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
@@ -163,6 +164,7 @@ function cleanJsonDir(dir) {
 
 /** The compact entry used by values.json and the per-category files. */
 function compactItem(item, slug) {
+  const styles = getCategoryStyles(item.category);
   return {
     slug,
     id: item.id,
@@ -177,6 +179,9 @@ function compactItem(item, slug) {
     stability: item.stability,
     stabilityEn: STABILITY_EN[item.stability] || item.stability || null,
     image: item.image || null,
+    // Category colours, identical to what the site renders.
+    glowColor: styles.glowColor,
+    hexColor: styles.hexColor,
     url: `${SITE_ORIGIN}/item/${slug}/`,
   };
 }

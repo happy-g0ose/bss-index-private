@@ -11,6 +11,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { getCategoryStyles } = require('./lib/category-styles.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
@@ -290,7 +291,7 @@ function renderBody(item, seo, url, altUrl) {
     <header class="hero">
       ${
         item.image
-          ? `<div class="iconbox" style="--glow:${esc(item.glowColor || 'rgba(245,158,11,.25)')}">
+          ? `<div class="iconbox" style="--glow:${esc(getCategoryStyles(item.category).glowColor)}">
                <img class="icon" src="${esc(item.image)}" alt="${esc(en ? item.englishName : item.name)}" loading="eager" width="96" height="96">
              </div>`
           : ''

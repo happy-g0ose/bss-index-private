@@ -16,6 +16,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { getCategoryStyles } = require('./lib/category-styles.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
@@ -344,7 +345,7 @@ function renderWidget(item, slug) {
 
   const title = `${name} — ${titlePrice} in Bee Swarm Simulator`;
   const description = buildDescription(item, priceText, rangeText, change);
-  const glow = item.glowColor || (isBeequip ? 'rgba(139,92,246,.28)' : 'rgba(245,158,11,.25)');
+  const glow = getCategoryStyles(item.category).glowColor;
 
   const icon = item.image
     ? `<div class="iconbox" style="--glow:${esc(glow)}"><img class="icon" src="${esc(item.image)}" alt="${esc(name)}" width="96" height="96" loading="eager" decoding="async"></div>`

@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792486444658,
+  "timestamp": 1792489999240,
   "version": "2.1.0",
-  "message": "feat(bot): category icons in autocomplete and item lists, big sticker image\n\n- Discord cannot show images in autocomplete suggestions (plain text only), so\n  each suggestion now carries a per-category emoji plus the value:\n  '🧸 Star Cub — 9.5-10★' instead of 'Star Cub (9.5-10 ★)'\n- /price reply now embeds the sticker as a large image, not just a thumbnail\n- /calc and /logtrade list items with the same category icon\n- fixed parseTradeLine dropping qty and category, which made /logtrade render\n  'undefinedx Star Cub'",
+  "message": "chore: add live deployment check script",
   "author": "BSS Index Developer",
-  "sha": "1e3fdb6170aaa423bb051a130605858f1447285a"
+  "sha": "a1cda133a646855da22e2637fbb8980475df3aa0"
 }

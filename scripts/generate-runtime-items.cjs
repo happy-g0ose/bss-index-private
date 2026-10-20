@@ -23,6 +23,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { applyCategoryStyles } = require('./lib/category-styles.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const SOURCE = path.join(ROOT, 'bot', 'items.json');
@@ -39,13 +40,13 @@ function main() {
 
   const out = items.map((item) => {
     const isSign = item.category === 'Звездные знаки';
-    return {
+    return applyCategoryStyles({
       ...item,
       value: isSign ? 1.0 : item.value,
       valueLow: isSign ? 1.0 : item.valueLow,
       valueHigh: isSign ? 1.0 : item.valueHigh,
       historicalPrices: isSign ? item.historicalPrices.map(() => 1.0) : item.historicalPrices,
-    };
+    });
   });
 
   fs.mkdirSync(OUT_DIR, { recursive: true });

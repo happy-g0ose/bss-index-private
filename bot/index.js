@@ -507,23 +507,54 @@ const commands = [
 // enabled there, Discord rejects the whole gateway connection with
 // "Used disallowed intents" and the bot never reaches ready().
 //
-// So it is opt-in via env var. Leave it off and the bot runs normally, only
-// without automatic message moderation. Turn it on together with the portal
-// switch and moderation comes alive.
+// Rather than dying, the bot probes the intent with a throwaway client before
+// it connects for real. If Discord grants it, message moderation switches
+// itself on; if not, the bot simply starts without it and says so. Enable the
+// toggle in the portal and the very next restart picks it up — no code change.
 const WANT_MESSAGE_CONTENT = process.env.BOT_MESSAGE_CONTENT === '1';
 
-const client = new Client({
-  intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.GuildMembers,
-    ...(WANT_MESSAGE_CONTENT ? [GatewayIntentBits.MessageContent] : []),
-  ]
-});
+const BASE_INTENTS = [
+  GatewayIntentBits.Guilds,
+  GatewayIntentBits.GuildMessages,
+  GatewayIntentBits.GuildMembers,
+];
 
-// Whether we are actually allowed to read message content. Controls the
+function createClient(withMessageContent) {
+  return new Client({
+    intents: [
+      ...BASE_INTENTS,
+      ...(withMessageContent ? [GatewayIntentBits.MessageContent] : []),
+    ]
+  });
+}
+
+// Whether the bot is actually allowed to read message content. Controls the
 // moderation handler so it never claims to work while blind.
-const canSeeMessageContent = WANT_MESSAGE_CONTENT;
+let canSeeMessageContent = false;
+
+if (WANT_MESSAGE_CONTENT) {
+  const probeToken = process.env.DISCORD_TOKEN;
+  if (probeToken && probeToken !== 'YOUR_DISCORD_BOT_TOKEN_HERE') {
+    const probe = createClient(true);
+    try {
+      await probe.login(probeToken);
+      canSeeMessageContent = true;
+      console.log('✅ Message Content intent доступен — автомодерация включена.');
+    } catch (err) {
+      if (/disallowed intents/i.test(err.message)) {
+        console.warn('⚠️  Discord не выдал Message Content intent — автомодерация выключена.');
+        console.warn('    Включи Message Content Intent в Developer Portal → Bot → Privileged Gateway Intents,');
+        console.warn('    потом перезапусти бота — он подхватит intent сам.');
+      } else {
+        console.warn('⚠️  Не удалось проверить Message Content intent:', err.message);
+      }
+    } finally {
+      probe.destroy().catch(() => {});
+    }
+  }
+}
+
+const client = createClient(canSeeMessageContent);
 
 // Autocomplete handler
 client.on('interactionCreate', async interaction => {
