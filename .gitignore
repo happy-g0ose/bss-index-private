@@ -39,6 +39,9 @@ bot/mod_log.json
 bot/mod_config.json
 bot/user_stats.json
 
+# Temp file written by scripts/changed-items.cjs
+changed-ids.txt
+
 # local scratch
 item-links.txt
 bot/probe-*.mjs

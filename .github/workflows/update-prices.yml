@@ -62,6 +62,22 @@ jobs:
           else
             echo "Changed files:"
             git diff --cached --stat
+            # Work out which items actually moved. A plain git diff cannot do
+            # this: with unified=0 the unchanged "id" lines never appear.
+            node scripts/changed-items.cjs HEAD
             git commit -m 'chore(prices): refresh values from bssmvalues.com'
             git push
           fi
+
+      - name: Notify search engines (IndexNow)
+        # Search Console's "Request indexing" has a daily quota of ~10 URLs,
+        # which is useless for a site this size. IndexNow pushes the changed
+        # URLs straight to the participating engines with no quota at all.
+        if: hashFiles('changed-ids.txt') != ''
+        run: |
+          if [ -s changed-ids.txt ]; then
+            node scripts/indexnow.cjs $(cat changed-ids.txt)
+          else
+            echo "No changed items - nothing to push."
+          fi
+          rm -f changed-ids.txt

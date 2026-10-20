@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792491084414,
+  "timestamp": 1792492084566,
   "version": "2.1.0",
-  "message": "chore: move deployment checks into scripts/, drop scratch leftovers",
+  "message": "feat(bot): local command throttle + clearer rate-limit logging\n\nDiscord answers with 429 ('Квота превышена') when commands are spammed, which\nthe user only saw as a generic error dialog. Now a 1.5s per-user throttle\nturns that into a friendly 'слишком часто' message, and rate-limit errors are\nlogged explicitly instead of being swallowed.\n\nAlso adds scripts/link-table.mjs: checks every URL the site exposes and writes\nthe full table to site-links.md. All 1332 URLs return 200.",
   "author": "BSS Index Developer",
-  "sha": "a02b0d6c3c01113f0e354947ad06124d8ce3626a"
+  "sha": "5a3291c5d03ff1746e723983a72aedf0a1722756"
 }
