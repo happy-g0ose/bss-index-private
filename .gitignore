@@ -28,3 +28,6 @@ bot/node_modules
 bot/.env
 values_live.json
 prev.*
+
+# local scratch
+item-links.txt

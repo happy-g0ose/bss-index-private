@@ -1,6 +1,6 @@
 {
-  "timestamp": 1792423081497,
-  "message": "fix(ui): stop auto-opening the item modal on /item/<slug> pages\n\nThe modal covered the prerendered page the visitor actually came for. Item\npages now stand on their own; the app below just lands on the catalog tab.",
+  "timestamp": 1792477260090,
+  "message": "chore: drop the moderation scratch test (kept as evidence in history)",
   "author": "BSS Index Developer",
-  "sha": "82b3e8928d0562a2723a16443548d4effae33b2b"
+  "sha": "4ac24054feed3e19b9758792af712347fac8edca"
 }

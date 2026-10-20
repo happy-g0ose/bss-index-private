@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page not found — BSS Index</title>
+    <meta name="description" content="This page does not exist. Browse the sticker, voucher and beequip value list instead." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet" />
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #0b0f19;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 44px 44px;
+        color: #e5e5e5;
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+      }
+      .card {
+        width: 100%;
+        max-width: 460px;
+        text-align: center;
+        background: rgba(11, 15, 25, 0.65);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        padding: 40px 28px;
+      }
+      .code {
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #fbbf24;
+        margin: 0 0 10px;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(26px, 6vw, 38px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.05;
+      }
+      p {
+        margin: 0 0 26px;
+        font-size: 14px;
+        color: #a1a1aa;
+        line-height: 1.6;
+      }
+      .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+      a {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .primary { background: #f59e0b; color: #0b0f19; }
+      .primary:hover { background: #fbbf24; }
+      .ghost { border: 1px solid rgba(255, 255, 255, 0.14); color: #d4d4d8; }
+      .ghost:hover { border-color: #fbbf24; color: #fbbf24; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p class="code">Error 404</p>
+      <h1>Page not found</h1>
+      <p>This page does not exist. Every sticker, voucher and beequip has its own page &mdash; try the catalogue.</p>
+      <div class="actions">
+        <a class="primary" href="/">Open the catalogue</a>
+        <a class="ghost" href="/ru/">Русская версия</a>
+      </div>
+    </div>
+  </body>
+</html>
