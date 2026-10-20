@@ -32,6 +32,13 @@ prev.*
 # Runtime item payload — regenerated from bot/items.json on every build
 public/data/items.json
 
+# Bot runtime state (activity counters, trade log, moderation log)
+bot/activity.json
+bot/trades.json
+bot/mod_log.json
+bot/mod_config.json
+bot/user_stats.json
+
 # local scratch
 item-links.txt
 bot/probe-*.mjs
