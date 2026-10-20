@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792478300311,
-  "version": "2.0.0",
-  "message": "chore(release): add 404 page and drop leftover build artifacts\n\n- public/404.html: styled not-found page in the site's palette, so unknown\n  URLs do not fall back to the Vercel default\n- removed rendered_stickers.html (540 KB) and a stray photo from tracking;\n  neither was referenced by any script\n- item-links.txt moved out of tracking (local reference only)",
+  "timestamp": 1792483561924,
+  "version": "2.1.0",
+  "message": "chore: ignore local discord probe scripts",
   "author": "BSS Index Developer",
-  "sha": "22615dc6e5740a4831abdc0e1b57efabdd0b3468"
+  "sha": "c04aa928fb8c3d42c263a039e7e637c1ea608b6b"
 }

@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { itemUrl, getItems } from './lib/items.js';
+import { itemUrl, getItems, itemSlug, SITE_ORIGIN } from './lib/items.js';
 import { parseItemList, logParsedTrade, verdictFor, allTrades, topTradedItems, tradeStats } from './lib/trades.js';
 import { getConfig, updateConfig, addBlocklistWord, removeBlocklistWord, inspectMessage, recordHit, recentLog, logStats } from './lib/moderation.js';
 import { bump, syncTierRoles, tierFor, grantStarterRole } from './lib/roles.js';
@@ -599,7 +599,11 @@ client.on('interactionCreate', async interaction => {
         new ButtonBuilder()
           .setLabel('Открыть в BSS Index')
           .setStyle(ButtonStyle.Link)
-          .setURL(itemUrl(item, 'en'))
+          .setURL(itemUrl(item, 'en')),
+        new ButtonBuilder()
+          .setLabel('Виджет')
+          .setStyle(ButtonStyle.Link)
+          .setURL(`${SITE_ORIGIN}/w/${itemSlug(item)}/`)
       );
 
     updateUserActivity(interaction.user.id, interaction.guild, interaction.channel, interaction.member).catch(err => console.error("Error updating user activity:", err.message));

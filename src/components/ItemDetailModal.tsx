@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Clock, SlidersHorizontal, Share2 } from 'lucide-react';
-import { itemUrl } from '../itemSlug';
+import { itemUrl, slugify } from '../itemSlug';
 import type { BSSItem } from '../data/items';
 import type { Language } from '../locales';
 import { t, translateDemand, translateStability, translateCategory } from '../locales';
@@ -476,14 +476,32 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
 
           </div>
 
-          {/* Standalone SEO page link + share */}
-          <div className="px-6 pb-2 flex items-center justify-between gap-3 text-[11px] z-10">
-            <a
-              href={itemUrl(item, lang)}
-              className="text-neutral-500 hover:text-amber-400 transition-colors no-underline"
-            >
-              {lang === 'ru' ? 'Страница предмета' : 'Item page'}
-            </a>
+          {/* Standalone SEO page link, embeddable widget + share */}
+          <div className="px-6 pb-2 flex flex-wrap items-center justify-between gap-3 text-[11px] z-10">
+            <div className="flex items-center gap-3">
+              <a
+                href={itemUrl(item, lang)}
+                className="text-neutral-500 hover:text-amber-400 transition-colors no-underline"
+              >
+                {lang === 'ru' ? 'Страница предмета' : 'Item page'}
+              </a>
+              <a
+                href={`/w/${slugify(item.englishName || item.id || item.name)}/`}
+                target="_blank"
+                rel="noopener"
+                className="text-neutral-500 hover:text-amber-400 transition-colors no-underline"
+              >
+                {lang === 'ru' ? 'Виджет' : 'Widget'}
+              </a>
+              <a
+                href={`/api/item/${slugify(item.englishName || item.id || item.name)}.json`}
+                target="_blank"
+                rel="noopener"
+                className="text-neutral-500 hover:text-amber-400 transition-colors no-underline"
+              >
+                JSON
+              </a>
+            </div>
             <button
               onClick={async () => {
                 const url = `${window.location.origin}${itemUrl(item, lang)}`;

@@ -458,6 +458,14 @@ export default function App() {
             </div>
             <span className="font-extrabold tracking-widest text-neutral-400">BSS INDEX</span>
             <span>• {lang === 'ru' ? 'Валют лист стикеров и биквипов Bee Swarm Simulator' : 'Bee Swarm Simulator Sticker & Beequip Value List'}</span>
+            <a
+              href="/api/index.json"
+              target="_blank"
+              rel="noopener"
+              className="text-amber-500/80 hover:text-amber-400 font-bold transition-colors no-underline"
+            >
+              API
+            </a>
           </div>
           <div className="flex flex-col sm:items-end gap-1">
             <p className="flex items-center gap-1">
