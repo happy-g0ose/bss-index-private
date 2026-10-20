@@ -32,9 +32,21 @@ async function main() {
   console.log('\nsitemap:');
   const sm = await (await fetch(ORIGIN + '/sitemap.xml')).text();
   const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  check('url count', locs.length === 662, locs.length + ' urls');
+  // 330 items x2 languages + the two /items/ indexes + the root
+  check('url count', locs.length === 664, locs.length + ' urls');
   const bee = locs.filter((l) => l.includes('bee-cub'));
   check('bee-cub entries', bee.length === 2, bee.join(' | '));
+
+  console.log('\ncrawl paths into the item pages:');
+  const itemHtml = await (await fetch(ORIGIN + '/item/bee-cub/')).text();
+  const related = [...itemHtml.matchAll(/class="relitem" href="([^"]+)"/g)].map((m) => m[1]);
+  check('item page links onwards', related.length >= 8, related.length + ' related links');
+
+  const idxHtml = await (await fetch(ORIGIN + '/items/')).text();
+  const idxLinks = [...idxHtml.matchAll(/<li><a href="([^"]+)"/g)].map((m) => m[1]);
+  check('/items/ index lists items', idxLinks.length === 330, idxLinks.length + ' links');
+  const ruIdx = await fetch(ORIGIN + '/ru/items/');
+  check('/ru/items/ reachable', ruIdx.status === 200, 'status ' + ruIdx.status);
 
   // Do the sitemap URLs match the canonical URLs? A mismatch means Google sees
   // a redirect for every entry and devalues the sitemap.
