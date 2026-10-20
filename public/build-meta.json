@@ -1,6 +1,7 @@
 {
-  "timestamp": 1792477260090,
-  "message": "chore: drop the moderation scratch test (kept as evidence in history)",
+  "timestamp": 1792478300311,
+  "version": "2.0.0",
+  "message": "chore(release): add 404 page and drop leftover build artifacts\n\n- public/404.html: styled not-found page in the site's palette, so unknown\n  URLs do not fall back to the Vercel default\n- removed rendered_stickers.html (540 KB) and a stray photo from tracking;\n  neither was referenced by any script\n- item-links.txt moved out of tracking (local reference only)",
   "author": "BSS Index Developer",
-  "sha": "4ac24054feed3e19b9758792af712347fac8edca"
+  "sha": "22615dc6e5740a4831abdc0e1b57efabdd0b3468"
 }

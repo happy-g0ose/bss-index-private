@@ -17,8 +17,18 @@ if (!commitMessage || !commitSha) {
   }
 }
 
+// Release version, kept in a plain VERSION file so the site, the build meta
+// and the Discord bot all read the same single source of truth.
+let version = '0.0.0';
+try {
+  version = fs.readFileSync(path.join(__dirname, 'VERSION'), 'utf-8').trim() || version;
+} catch (e) {
+  // VERSION file missing - keep the fallback
+}
+
 const buildMeta = {
   timestamp: Date.now(),
+  version,
   message: commitMessage || 'Локальная сборка / Ручное обновление',
   author: commitAuthor || 'Разработчик',
   sha: commitSha || 'dev'

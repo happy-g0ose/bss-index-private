@@ -35,7 +35,7 @@ export default function Navbar({ onSearchClick, onAuthorsClick, onSettingsClick,
                 BSS INDEX
               </span>
               <span className="px-1 py-0.5 rounded text-[8px] font-black bg-amber-500/10 text-amber-400 border border-amber-500/25 uppercase tracking-wider select-none align-middle inline-block">
-                BETA
+                v{__APP_VERSION__}
               </span>
             </div>
             <span className="text-[10px] text-neutral-400 block font-bold tracking-tight">

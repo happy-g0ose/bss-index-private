@@ -57,13 +57,22 @@ async function startSiteUpdateDetector(client) {
           );
           
           if (updateChannel) {
+            const version = meta.version ? `v${meta.version}` : null;
             const embed = new EmbedBuilder()
-              .setTitle('📢 Обновление сайта BSS Index!')
-              .setDescription('Сайт [bss-index.vercel.app](https://bss-index.vercel.app/) был успешно обновлен!')
-              .setColor('#a855f7')
+              .setTitle(version ? `📢 BSS Index ${version} — релиз!` : '📢 Обновление сайта BSS Index!')
+              .setDescription(
+                version
+                  ? 'Вышло крупное обновление BSS Index: [bss-index.vercel.app](https://bss-index.vercel.app/)'
+                  : 'Сайт [bss-index.vercel.app](https://bss-index.vercel.app/) был успешно обновлен!'
+              )
+              .setColor('#f59e0b')
               .addFields(
-                { name: '📝 Описание изменений:', value: `\`\`\`${meta.message || 'Без описания коммита'}\`\`\`` },
-                { name: '⚡ Версия (SHA):', value: `\`${meta.sha.substring(0, 7)}\``, inline: true }
+                { name: '📝 Описание изменений:', value: `\`\`\`${(meta.message || 'Без описания коммита').slice(0, 900)}\`\`\`` },
+                {
+                  name: '⚡ Сборка:',
+                  value: `${version ? `**Версия ${version}**\n` : ''}\`${String(meta.sha || 'dev').substring(0, 7)}\``,
+                  inline: true
+                }
               )
               .setTimestamp(new Date(meta.timestamp))
               .setFooter({ text: 'BSS Index Live Updates', iconURL: 'https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png' });
@@ -449,6 +458,12 @@ const commands = [
   new SlashCommandBuilder()
     .setName('help')
     .setDescription('Список всех команд бота'),
+
+  new SlashCommandBuilder()
+    .setName('announce')
+    .setDescription('Опубликовать объявление об обновлении (только для админов)')
+    .addStringOption(option => option.setName('text').setDescription('Текст объявления').setRequired(true))
+    .addChannelOption(option => option.setName('channel').setDescription('Канал (по умолчанию — текущий)').setRequired(false)),
 
   new SlashCommandBuilder()
     .setName('ban')
@@ -932,6 +947,7 @@ client.on('interactionCreate', async interaction => {
         { name: '/price-changes', value: 'Последние изменения цен', inline: false },
         { name: '/site', value: 'Ссылка на сайт BSS Index', inline: false },
         { name: '/mod <действие>', value: 'Управление автомодерацией (для админов)', inline: false },
+        { name: '/announce <текст>', value: 'Объявление об обновлении (для админов)', inline: false },
         { name: '/help', value: 'Это сообщение', inline: false },
         { name: '/ban, /kick, /mute, /unmute', value: 'Модерация сервера (для админов)', inline: false },
         { name: '/add-role, /remove-role', value: 'Выдача и снятие ролей (для админов)', inline: false }
@@ -939,6 +955,46 @@ client.on('interactionCreate', async interaction => {
       .setFooter({ text: 'BSS Index • Актуальные цены Bee Swarm Simulator', iconURL: 'https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png' });
 
     await interaction.reply({ embeds: [embed] }).catch(err => console.error("Help command reply error:", err.message));
+  }
+
+  else if (commandName === 'announce') {
+    // Admin-only manual release announcement.
+    if (!interaction.memberPermissions?.has(PermissionFlagsBits.Administrator)) {
+      return interaction.reply({ content: '❌ Только для администраторов сервера.', ephemeral: true }).catch(() => {});
+    }
+
+    const text = interaction.options.getString('text');
+    const target = interaction.options.getChannel('channel') || interaction.channel;
+    if (!target || !('send' in target)) {
+      return interaction.reply({ content: '❌ Не могу отправить в этот канал.', ephemeral: true }).catch(() => {});
+    }
+
+    let version = null;
+    try {
+      const res = await fetch('https://bss-index.vercel.app/build-meta.json?t=' + Date.now());
+      if (res.ok) version = (await res.json()).version || null;
+    } catch (e) { /* offline is fine */ }
+
+    const embed = new EmbedBuilder()
+      .setTitle(version ? `📢 BSS Index v${version} — релиз!` : '📢 BSS Index — обновление!')
+      .setDescription(text)
+      .setColor('#f59e0b')
+      .setTimestamp()
+      .setFooter({ text: 'BSS Index • bss-index.vercel.app', iconURL: 'https://raw.githubusercontent.com/happy-g0ose/bss-index/main/public/favicon.png' });
+
+    const row = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        .setLabel('🌐 Открыть сайт BSS Index')
+        .setURL('https://bss-index.vercel.app/')
+        .setStyle(ButtonStyle.Link)
+    );
+
+    try {
+      await target.send({ embeds: [embed], components: [row] });
+      await interaction.reply({ content: '✅ Объявление отправлено.', ephemeral: true });
+    } catch (err) {
+      await interaction.reply({ content: `❌ Не удалось отправить: ${err.message}`, ephemeral: true });
+    }
   }
 
   else if (commandName === 'ban') {

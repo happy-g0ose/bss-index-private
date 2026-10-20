@@ -243,10 +243,10 @@ export default function App() {
     <ErrorBoundary>
     <div className={`min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased bgmode-${bg}`}>
 
-      {/* Keyboard Shortcut Announcement Banner */}
+      {/* Release banner */}
       <div className="bg-gradient-to-r from-amber-500/80 to-yellow-600/80 text-neutral-950 text-[10px] font-extrabold py-1.5 px-4 text-center tracking-wider uppercase select-none flex items-center justify-center gap-2 shadow-md border-b border-amber-500/10 flex-wrap">
         <span className="bg-neutral-950 text-amber-500 px-1.5 py-0.5 rounded text-[8px] font-black border border-amber-500/20 tracking-normal inline-block">
-          {lang === 'ru' ? 'БЕТА ТЕСТ' : 'BETA TEST'}
+          v{__APP_VERSION__}
         </span>
         <span className="opacity-95">
           {lang === 'ru' ? 'Открыть поиск:' : 'Open search:'}{' '}
@@ -461,7 +461,7 @@ export default function App() {
           </div>
           <div className="flex flex-col sm:items-end gap-1">
             <p className="flex items-center gap-1">
-              © {new Date().getFullYear()} BSS INDEX. {lang === 'ru' ? 'Создано для трейдеров Bee Swarm Simulator.' : 'Created for Bee Swarm Simulator traders.'}
+              © {new Date().getFullYear()} BSS INDEX v{__APP_VERSION__}. {lang === 'ru' ? 'Создано для трейдеров Bee Swarm Simulator.' : 'Created for Bee Swarm Simulator traders.'}
             </p>
             <p className="text-amber-500/80 font-bold flex items-center gap-1">
               {lang === 'ru' ? 'Автор проекта:' : 'Project Author:'} <span className="hover:text-amber-400 transition-colors cursor-pointer underline decoration-dotted" onClick={() => setIsAuthorsModalOpen(true)}>happy goose</span> 🪿
