@@ -14,8 +14,9 @@ import { createRequire } from 'module';
 
 // createRequire works both when Vercel bundles the function and when it runs
 // plain Node ESM, and it makes the bundler include the JSON file.
+// The path is resolved from the repo root so it survives a move of this file.
 const require = createRequire(import.meta.url);
-const items = require('../bot/items.json');
+const items = require('../../bot/items.json');
 
 const TRANSLIT = {
   а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', е: 'e', ё: 'e', ж: 'zh', з: 'z',

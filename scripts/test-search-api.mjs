@@ -2,7 +2,7 @@
  * Local test for the /api/search Vercel function.
  * Calls the handler directly with a mock req/res, so no server is needed.
  */
-import handler from '../api/search.js';
+import handler from '../api/v1/search.js';
 
 function call(query) {
   let status = 0;

@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792492112024,
+  "timestamp": 1792493383233,
   "version": "2.1.0",
-  "message": "feat(seo): IndexNow push for changed items\n\nGoogle Search Console's 'Request indexing' has a daily quota of roughly ten\nURLs, which cannot cover 660 pages — that is what the 'quota exceeded'\ndialog was. IndexNow is the quota-free alternative: changed URLs are pushed\nstraight to the participating engines.\n\n- scripts/indexnow.cjs posts the changed item URLs (page, RU page and widget)\n- scripts/generate-indexnow-key.cjs publishes the key at the site root, which\n  IndexNow requires for verification\n- scripts/changed-items.cjs works out which items moved by comparing against\n  git; a plain git diff cannot do this, because with unified=0 the unchanged\n  'id' lines never appear, so it reported zero changed items every time\n- the nightly workflow now pushes the changed URLs after every price update",
+  "message": "feat(api): versioned v1 API with server-side search\n\nThe competitor's API is a single 498 KB file with no CORS header, string\nvalues, no per-item lookup, no search and no documentation. Ours:\n\n- /api/v1/ discovery document, versioned from the VERSION file\n- /api/v1/items.json - every item, numbers not strings, sorted by value\n- /api/v1/items/<slug>.json - one item with history, rolls and related items\n- /api/v1/items/<slug>/history.json - price series with 7d/30d change\n- /api/v1/categories.json + categories/<slug>/items.json - English slugs\n- /api/v1/changes.json - biggest gainers and losers\n- /api/v1/stats.json - market summary\n- /api/v1/search-index.json - 48 KB index for instant client-side search\n- /api/v1/openapi.json - OpenAPI 3.1 spec\n- /api/v1/docs.html - human readable reference\n- /api/v1/search - server-side search function (Vercel), with query\n  parameters, sorting, pagination and Russian category aliases\n\n687 files, 1.69 MB total. Single item fetch is 3.2 KB against the competitor's\n498 KB for an",
   "author": "BSS Index Developer",
-  "sha": "f962b4ef234faf64e3d2654e9e1b8e5a7a941e8b"
+  "sha": "2d50e1f0915432a6069b98b102bfb6c025d22948"
 }

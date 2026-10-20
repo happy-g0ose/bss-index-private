@@ -148,7 +148,17 @@ const notListed = expected.filter((e) => !listed.has(e));
 ok(notListed.length === 0, 'every endpoint is documented in index.json', notListed.join(', '));
 ok(index.endpoints.every((e) => e.method && e.path && e.description), 'every endpoint entry has method/path/description');
 const withParams = index.endpoints.filter((e) => e.params && e.params.length);
-ok(withParams.length === 3, 'endpoints with path params document them', withParams.map((e) => e.path).join(', '));
+const withPathParams = withParams.filter((e) => /\{[a-z]+\}/.test(e.path));
+ok(
+  withPathParams.length === 3 && withPathParams.every((e) => e.params.some((p) => p.name === 'slug')),
+  'endpoints with path params document them',
+  withPathParams.map((e) => e.path).join(', ')
+);
+ok(
+  withParams.length >= 4,
+  'query endpoints document their parameters',
+  withParams.map((e) => e.path).join(', ')
+);
 
 console.log('\n=== 8. openapi.json ===');
 const oa = JSON.parse(fs.readFileSync(path.join(V1, 'openapi.json'), 'utf8'));

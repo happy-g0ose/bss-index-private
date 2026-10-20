@@ -433,7 +433,23 @@ function buildEndpoints() {
       params: [
         { name: 'slug', type: 'string', required: true, description: 'Category slug, e.g. "stikery-pchel". See /api/v1/categories.json for the full list.' },
       ],
-      example: `${SITE_ORIGIN}/api/v1/categories/stikery-pchel/items.json`,
+      example: `${SITE_ORIGIN}/api/v1/categories/bee-stickers/items.json`,
+    },
+    {
+      method: 'GET',
+      path: '/api/v1/search',
+      key: 'search',
+      summary: 'Search items',
+      description:
+        'Server-side search. Matches the name in either language, the slug, and the community slang for each category (so "куб" finds Cub Skins). Returns items ranked by relevance, then by value.',
+      params: [
+        { name: 'q', type: 'string', description: 'Search term, e.g. "bee", "star cub", "куб".' },
+        { name: 'category', type: 'string', description: 'Filter by category slug, e.g. "vouchers", "cub-skins".' },
+        { name: 'sort', type: 'string', description: 'relevance (default), value, value-asc, name, change.' },
+        { name: 'limit', type: 'integer', description: 'Items per page, 1-100, default 25.' },
+        { name: 'offset', type: 'integer', description: 'Offset for pagination, default 0.' },
+      ],
+      example: `${SITE_ORIGIN}/api/v1/search?q=bee&limit=10`,
     },
     {
       method: 'GET',
@@ -667,14 +683,18 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
 
   for (const endpoint of endpoints) {
     const rel = endpoint.path.replace(/^\/api\/v1/, '');
-    const params = (endpoint.params || []).map((p) => ({
-      name: p.name,
-      in: 'path',
-      required: true,
-      description: p.description,
-      schema: { type: p.type },
-      example: p.name === 'slug' ? 'star-cub' : undefined,
-    }));
+    // Path parameters (the slug) are required; query parameters are optional.
+    const params = (endpoint.params || []).map((p) => {
+      const isPath = p.name === 'slug' || p.name === 'category';
+      return {
+        name: p.name,
+        in: isPath && endpoint.path.includes('{' + p.name + '}') ? 'path' : 'query',
+        required: isPath && endpoint.path.includes('{' + p.name + '}'),
+        description: p.description,
+        schema: { type: p.type },
+        example: p.name === 'slug' ? 'star-cub' : undefined,
+      };
+    });
 
     let schema;
     let description = endpoint.description;
@@ -712,6 +732,21 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
         break;
       case 'searchIndex':
         schema = { type: 'array', items: { $ref: '#/components/schemas/SearchEntry' } };
+        break;
+      case 'search':
+        schema = {
+          type: 'object',
+          properties: {
+            query: { type: 'string', nullable: true },
+            category: { type: 'string', nullable: true },
+            sort: { type: 'string' },
+            total: { type: 'integer' },
+            count: { type: 'integer' },
+            limit: { type: 'integer' },
+            offset: { type: 'integer' },
+            items: { type: 'array', items: { $ref: '#/components/schemas/Item' } },
+          },
+        };
         break;
       case 'openapi':
         schema = { type: 'object', description: 'This OpenAPI 3.1 document.' };
