@@ -257,13 +257,19 @@ html.light body{
 .c-blue{background:rgba(96,165,250,.12);color:#60a5fa;border-color:rgba(96,165,250,.25)}
 .c-green{background:rgba(52,211,153,.12);color:#34d399;border-color:rgba(52,211,153,.25)}
 .c-gray{background:rgba(161,161,170,.12);color:#a1a1aa;border-color:rgba(161,161,170,.25)}
-.foot{width:100%;max-width:480px;display:flex;justify-content:flex-end}
+.foot{width:100%;max-width:480px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.brand{
+  font-size:clamp(8px,1.9vw,10px);font-weight:900;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);opacity:.9;white-space:nowrap;
+  text-decoration:none;
+}
+.brand:hover{opacity:1;text-decoration:underline}
 .more{
   font-size:clamp(9px,2.1vw,11px);font-weight:800;letter-spacing:.07em;
   text-transform:uppercase;color:var(--faint);text-decoration:none;
 }
 .more:hover{color:var(--accent)}
-html.embed .foot{display:none}
+html.embed .more{display:none}
 `;
 
 /** Inline bootstrap: restore the saved theme + detect ?embed=1 before first paint. */
@@ -386,7 +392,7 @@ ${rangeHtml}
 ${changeChip}
 </div>
 </main>
-<div class="foot"><a class="more" href="${esc(canonical)}" target="_blank" rel="noopener">Full price list →</a></div>
+<div class="foot"><a class="brand" href="${esc(canonical)}" target="_blank" rel="noopener">BSS Index</a><a class="more" href="${esc(canonical)}" target="_blank" rel="noopener">Full price list →</a></div>
 </body>
 </html>
 `;
