@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792486581309,
+  "timestamp": 1792490260749,
   "version": "2.1.0",
-  "message": "chore: keep bot runtime state out of git",
+  "message": "chore: move deployment checks into scripts/, drop scratch leftovers",
   "author": "BSS Index Developer",
-  "sha": "cfac91fa7de3c0ded6ebb392eac095ae164d9756"
+  "sha": "a02b0d6c3c01113f0e354947ad06124d8ce3626a"
 }

@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792489999240,
+  "timestamp": 1792491084414,
   "version": "2.1.0",
-  "message": "chore: add live deployment check script",
+  "message": "chore: move deployment checks into scripts/, drop scratch leftovers",
   "author": "BSS Index Developer",
-  "sha": "a1cda133a646855da22e2637fbb8980475df3aa0"
+  "sha": "a02b0d6c3c01113f0e354947ad06124d8ce3626a"
 }

@@ -482,6 +482,12 @@ function BssApp({ items }: { items: BSSItem[] }) {
             <span className="font-extrabold tracking-widest text-neutral-400">BSS INDEX</span>
             <span>• {lang === 'ru' ? 'Валют лист стикеров и биквипов Bee Swarm Simulator' : 'Bee Swarm Simulator Sticker & Beequip Value List'}</span>
             <a
+              href={lang === 'ru' ? '/ru/items/' : '/items/'}
+              className="text-amber-500/80 hover:text-amber-400 font-bold transition-colors no-underline"
+            >
+              {lang === 'ru' ? 'Все предметы' : 'All items'}
+            </a>
+            <a
               href="/api/index.json"
               target="_blank"
               rel="noopener"

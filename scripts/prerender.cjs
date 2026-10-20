@@ -192,7 +192,7 @@ function countRolls(item) {
 }
 
 /** Render the visible, indexable body content for an item page. */
-function renderBody(item, seo, url, altUrl) {
+function renderBody(item, seo, url, altUrl, related) {
   const isBeequip = item.category === 'Биквипы';
   const en = seo.en;
 
@@ -279,6 +279,19 @@ function renderBody(item, seo, url, altUrl) {
       </tbody></table>
     </section>`;
 
+  // Related items — this is what gives the crawler a way into the other 329
+  // pages. Without these links every item page was a dead end that only the
+  // sitemap pointed at, and Google only ever indexed the home page.
+  const relatedBlock = related && related.length
+    ? `
+      <section class="card">
+        <h2>${en ? 'Related items' : 'Похожие предметы'}</h2>
+        <div class="rel">
+          ${related.map((r) => `<a class="relitem" href="${esc(r.url)}">${esc(r.name)}<span>${esc(r.value)}★</span></a>`).join('')}
+        </div>
+      </section>`
+    : '';
+
   return `
   <main class="wrap">
     <nav class="crumbs">
@@ -318,6 +331,7 @@ function renderBody(item, seo, url, altUrl) {
     ${rollsBlock}
     ${isBeequip ? statsBlock : ''}
     ${historyBlock}
+    ${relatedBlock}
 
     <footer class="foot">
       <p class="upd">${en ? 'Prices update daily' : 'Цены обновляются ежедневно'}</p>
@@ -335,7 +349,7 @@ function renderBody(item, seo, url, altUrl) {
  * SPA still boots on item pages, but rewrite its asset paths to absolute ones:
  * `vite.config.ts` uses `base: './'` and item pages live one directory deeper.
  */
-function injectIntoTemplate(template, item, seo, url, altUrl) {
+function injectIntoTemplate(template, item, seo, url, altUrl, related) {
   const ogImage = item.image ? item.image : `${SITE_ORIGIN}/logo.png`;
   const jsonLd = buildJsonLd(item, url, seo);
 
@@ -397,7 +411,7 @@ function injectIntoTemplate(template, item, seo, url, altUrl) {
   // React wipes #app on mount, so content inside it would be erased for crawlers
   // that execute JS. Outside it, the <h1>, price tables and internal links survive
   // for both visitors and Google.
-  const body = renderBody(item, seo, url);
+  const body = renderBody(item, seo, url, altUrl, related);
   return html.replace('<div id="app"></div>', `${body}\n<div id="app"></div>`);
 }
 
@@ -557,6 +571,17 @@ const ITEM_PAGE_CSS = `
     .cta a.ghost:hover { background: rgba(255,255,255,.06); color: #fbbf24; }
     .upd { display: inline-flex; align-items: center; gap: 7px; color: #fbbf24; font-weight: 700; font-size: 12px; margin: 0; }
     .upd::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399; }
+
+    /* Related items */
+    .rel { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+    .relitem {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 9px 12px; border-radius: 10px; border: 1px solid var(--border);
+      background: rgba(255,255,255,.02); text-decoration: none; color: var(--text);
+      font-size: 13px; font-weight: 600; transition: border-color .2s, background .2s;
+    }
+    .relitem:hover { border-color: #fbbf24; background: rgba(245,158,11,.06); }
+    .relitem span { color: #fbbf24; font-family: ui-monospace, monospace; font-size: 12px; white-space: nowrap; }
 `;
 
 function buildSitemap(urls) {
@@ -687,12 +712,32 @@ function main() {
     const ruUrl = `${SITE_ORIGIN}/ru/item/${slug}`;
     const priority = item.category === 'Биквипы' ? '0.6' : '0.8';
 
+    // Related items: same category first (by value), then the priciest items
+    // overall so that every page has a way out towards the rest of the site.
+    const sameCategory = items
+      .filter((i) => i.id !== item.id && i.category === item.category)
+      .sort((a, b) => b.value - a.value);
+    const others = items
+      .filter((i) => i.id !== item.id && i.category !== item.category && i.value > 0)
+      .sort((a, b) => b.value - a.value);
+    const relatedPool = [...sameCategory, ...others].slice(0, 12);
+
     for (const lang of ['en', 'ru']) {
       const isEn = lang === 'en';
       const url = isEn ? enUrl : ruUrl;
       const altUrl = isEn ? ruUrl : enUrl;
       const seo = buildSeoFields(item, lang);
-      const html = injectIntoTemplate(template, item, seo, url, altUrl)
+
+      const related = relatedPool.map((r) => {
+        const rSlug = slugify(r.englishName || r.id || r.name);
+        return {
+          name: isEn ? r.englishName : r.name,
+          value: fmtValue(r.value),
+          url: isEn ? `/item/${rSlug}/` : `/ru/item/${rSlug}/`,
+        };
+      });
+
+      const html = injectIntoTemplate(template, item, seo, url, altUrl, related)
         // Match the document language so screen readers and Google agree.
         .replace(/<html lang="[a-z]{2}">/i, `<html lang="${isEn ? 'en' : 'ru'}">`);
 
@@ -705,6 +750,99 @@ function main() {
     }
   }
 
+  // Static item index at /items/ — a plain HTML list of every item, grouped by
+  // category. The catalog itself is rendered client-side, so without this page
+  // there was not a single crawlable link from the site to the 330 item pages.
+  const byCategory = new Map();
+  for (const item of items) {
+    if (!byCategory.has(item.category)) byCategory.set(item.category, []);
+    byCategory.get(item.category).push(item);
+  }
+
+  for (const lang of ['en', 'ru']) {
+    const isEn = lang === 'en';
+    const prefix = isEn ? '' : '/ru';
+    const sections = [...byCategory.entries()]
+      .map(([category, list]) => {
+        const rows = list
+          .slice()
+          .sort((a, b) => b.value - a.value)
+          .map((i) => {
+            const slug = slugify(i.englishName || i.id || i.name);
+            const label = isEn ? i.englishName : i.name;
+            return `<li><a href="${prefix}/item/${slug}/">${esc(label)}</a><span>${esc(fmtValue(i.value))}★</span></li>`;
+          })
+          .join('');
+        const catEn = CATEGORY_EN[category] || category;
+        const title = isEn ? catEn : category;
+        return `<section class="card"><h2>${esc(title)} <em>${list.length}</em></h2><ul>${rows}</ul></section>`;
+      })
+      .join('');
+
+    const pageTitle = isEn
+      ? 'All items — BSS Index value list'
+      : 'Все предметы — валют лист BSS Index';
+    const pageDesc = isEn
+      ? `Every sticker, voucher and beequip in Bee Swarm Simulator with its current value. ${items.length} items.`
+      : `Все стикеры, ваучеры и биквипы в Bee Swarm Simulator с актуальной ценностью. ${items.length} предметов.`;
+
+    const indexHtml = `<!doctype html>
+<html lang="${isEn ? 'en' : 'ru'}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(pageTitle)}</title>
+<meta name="description" content="${esc(pageDesc)}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="${SITE_ORIGIN}${prefix}/items/">
+<meta property="og:title" content="${esc(pageTitle)}">
+<meta property="og:description" content="${esc(pageDesc)}">
+<meta property="og:url" content="${SITE_ORIGIN}${prefix}/items/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BSS Index">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#0b0f19; color:#e5e5e5; font-family:Inter,system-ui,sans-serif; line-height:1.6; }
+  .wrap { max-width:860px; margin:0 auto; padding:32px 20px 64px; }
+  h1 { font-size:clamp(24px,5vw,36px); font-weight:900; text-transform:uppercase; margin:0 0 8px; }
+  .lead { color:#a1a1aa; font-size:15px; margin:0 0 28px; }
+  .card { background:rgba(11,15,25,.65); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:20px; margin:16px 0; }
+  .card h2 { margin:0 0 12px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:#fbbf24; }
+  .card h2 em { color:#52525b; font-style:normal; }
+  ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:4px; }
+  li { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:6px 10px; border-radius:8px; }
+  li:hover { background:rgba(245,158,11,.06); }
+  li a { color:#d4d4d8; text-decoration:none; font-size:13px; font-weight:600; }
+  li a:hover { color:#fbbf24; }
+  li span { color:#fbbf24; font-family:ui-monospace,monospace; font-size:12px; white-space:nowrap; }
+  .foot { margin-top:40px; padding-top:18px; border-top:1px solid rgba(255,255,255,.06); font-size:13px; color:#71717a; }
+  .foot a { color:#fbbf24; text-decoration:none; font-weight:700; }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>${isEn ? 'All items' : 'Все предметы'}</h1>
+  <p class="lead">${esc(pageDesc)}</p>
+  ${sections}
+  <footer class="foot">
+    <p><a href="${isEn ? '/' : '/ru/'}">← ${isEn ? 'BSS Index home' : 'На главную BSS Index'}</a></p>
+  </footer>
+</main>
+</body>
+</html>`;
+
+    const dir = isEn ? path.join(DIST, 'items') : path.join(DIST, 'ru', 'items');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), indexHtml, 'utf8');
+    urls.push({ loc: `${SITE_ORIGIN}${prefix}/items/`, changefreq: 'weekly', priority: '0.9' });
+  }
+
+  // Sitemap last, so it includes the item index pages added above.
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'), buildSitemap(urls), 'utf8');
 
   // Russian landing page at /ru/ — a short static entry point that mirrors the
