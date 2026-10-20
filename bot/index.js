@@ -586,11 +586,42 @@ client.on('interactionCreate', async interaction => {
 // Helper function to format all channels
 
 
+// --- local command throttle ---------------------------------------------
+// Discord's own limit is a few commands per user per couple of seconds.
+// This is a soft, friendlier version of the same thing.
+const COMMAND_COOLDOWN_MS = 1500;
+const lastCommandAt = new Map();
+
+function checkCommandThrottle(interaction) {
+  const key = interaction.user?.id || 'unknown';
+  const now = Date.now();
+  const last = lastCommandAt.get(key) || 0;
+
+  if (now - last < COMMAND_COOLDOWN_MS) {
+    interaction
+      .reply({
+        content: '⏳ Слишком часто. Подожди пару секунд перед следующей командой.',
+        ephemeral: true,
+      })
+      .catch(() => {});
+    return false;
+  }
+
+  lastCommandAt.set(key, now);
+  return true;
+}
+
+
 // Slash Command handler
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
   const { commandName } = interaction;
+
+  // Discord allows only a handful of slash commands per user per few seconds.
+  // Spamming them produces "Квота превышена" on the user's side, so a small
+  // local throttle turns that into a friendly message instead.
+  if (!checkCommandThrottle(interaction)) return;
 
   if (commandName === 'price') {
     const itemName = interaction.options.getString('item');
@@ -643,7 +674,17 @@ client.on('interactionCreate', async interaction => {
       );
 
     updateUserActivity(interaction.user.id, interaction.guild, interaction.channel, interaction.member).catch(err => console.error("Error updating user activity:", err.message));
-    await interaction.reply({ embeds: [embed], components: [row] }).catch(err => console.error("Price command reply error:", err.message));
+    await interaction.reply({ embeds: [embed], components: [row] }).catch(err => {
+      // 429 = Discord rate limit ("Квота превышена" on the user's side). It is
+      // transient, so log it clearly instead of letting it vanish.
+      const code = err?.code || err?.status;
+      console.error(
+        code === 429
+          ? '[Rate limit] Discord rejected the reply — too many commands at once.'
+          : 'Price command reply error:',
+        err.message
+      );
+    });
   }
 
   else if (commandName === 'calc') {
