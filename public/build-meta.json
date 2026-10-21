@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792550129984,
+  "timestamp": 1792550368601,
   "version": "2.1.0",
-  "message": "chore: add a live check for the English-first API and the RU docs",
+  "message": "chore: tidy the repo - reports to docs/, throwaway scripts out of git\n\n- docs/audit.md and docs/compare-features.md hold the competitive audit\n- the roll-value regression check moved to scripts/verify-rolls.mjs\n- scratch/ keeps only the Python scripts the nightly workflow depends on",
   "author": "BSS Index Developer",
-  "sha": "87b5c54e76607ee25601884de9fa039379d72041"
+  "sha": "8838be0416ba523209670be5465332ae7cbacbed"
 }
