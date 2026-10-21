@@ -45,3 +45,7 @@ changed-ids.txt
 # local scratch
 item-links.txt
 bot/probe-*.mjs
+
+# one-off analysis scripts (the Python ones in scratch/ are part of the build pipeline)
+scratch/*.mjs
+scratch/*.cjs
