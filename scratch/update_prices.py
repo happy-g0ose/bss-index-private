@@ -28,6 +28,69 @@ def clean_float(val):
     except:
         return 0.0
 
+# Rolls are not always plain numbers. The source uses expressions:
+#   ">=100"                 a floor
+#   ">= 80"                 a floor, with a space
+#   ">={Bee Cub}"           a floor expressed in another item
+#   ">={Bee Cub}+{Doodle Cub}"  a sum of two items
+#   null                    no data at all
+# clean_float() turned all of these into 0, which is how 131 of our 848 rolls
+# lost their value. These are resolved properly instead.
+ITEM_REF_RE = re.compile(r"\{([^}]+)\}")
+NUMBER_RE = re.compile(r"-?\d+(?:\.\d+)?")
+
+def resolve_value_expr(expr, value_lookup):
+    """Resolve a source value into (low, high, text, is_floor).
+
+    value_lookup maps a lowercase item name to its current value, so composite
+    expressions like ">={Bee Cub}" can be evaluated against live prices.
+    """
+    if expr is None:
+        return 0.0, 0.0, None, False
+
+    if isinstance(expr, (int, float)):
+        v = float(expr)
+        return v, v, None, False
+
+    text = str(expr).strip()
+    if not text:
+        return 0.0, 0.0, None, False
+
+    # Plain number, e.g. "0.5"
+    try:
+        v = float(text)
+        return v, v, None, False
+    except ValueError:
+        pass
+
+    is_floor = text.startswith(">=")
+    is_ceiling = text.startswith("<=")
+
+    # Sum of referenced items, e.g. ">={Bee Cub}+{Doodle Cub}"
+    refs = ITEM_REF_RE.findall(text)
+    if refs:
+        total = 0.0
+        resolved = True
+        for ref in refs:
+            val = value_lookup.get(ref.strip().lower())
+            if val is None or val <= 0:
+                resolved = False
+                break
+            total += val
+        if resolved and total > 0:
+            return total, total, text, is_floor
+
+    # A number with an operator, e.g. ">=100" or ">= 80"
+    m = NUMBER_RE.search(text)
+    if m:
+        v = float(m.group(0))
+        if is_ceiling:
+            # a ceiling means "at most this much"
+            return 0.0, v, text, False
+        return v, v, text, is_floor
+
+    return 0.0, 0.0, text, False
+
 def calc_stability(prices):
     if len(prices) >= 2:
         if prices[-1] > prices[-2]:
@@ -71,6 +134,15 @@ for our_key, live_key in NAME_ALIASES.items():
 updated_count = 0
 price_changes = []
 
+# Lookup of live sticker values, so composite roll expressions like
+# ">={Bee Cub}" can be resolved into a real number.
+LIVE_VALUE_LOOKUP = {}
+for _key, (_g, _name, _data) in live_stickers.items():
+    _low = clean_float(_data.get("value_min"))
+    _high = clean_float(_data.get("value_max"))
+    if _low or _high:
+        LIVE_VALUE_LOOKUP[_key] = (_low + _high) / 2.0 if _low != _high else _low
+
 for item in items:
     eng_name_key = item["englishName"].lower().strip()
     is_beequip = item.get("category") == "Биквипы" or "beequipData" in item
@@ -90,22 +162,34 @@ for item in items:
         for g_name, rolls_dict in stat_groups.items():
             rolls_list = []
             for roll_name, roll_data in rolls_dict.items():
-                r_low = clean_float(roll_data.get("value_min"))
-                r_high = clean_float(roll_data.get("value_max"))
+                r_low, r_high, r_text, r_is_floor = resolve_value_expr(
+                    roll_data.get("value_min"), LIVE_VALUE_LOOKUP
+                )
+                # value_max is only meaningful on its own; the source usually
+                # leaves it null when value_min carries the whole expression.
+                raw_max = roll_data.get("value_max")
+                if raw_max is not None and str(raw_max).strip():
+                    r_high = clean_float(raw_max)
                 r_val = round((r_low + r_high) / 2.0, 4) if (r_low != r_high) else r_low
                 r_demand_num = roll_data.get("demand", 1)
                 r_demand = DEMAND_MAP.get(r_demand_num, "Низкий")
-                
+
                 all_roll_lows.append(r_low)
                 all_roll_highs.append(r_high)
-                
-                rolls_list.append({
+
+                roll_entry = {
                     "rollName": roll_name,
                     "valueLow": r_low,
                     "valueHigh": r_high,
                     "value": r_val,
                     "demand": r_demand
-                })
+                }
+                # Keep the original expression so the UI can show ">=" rather
+                # than pretending the floor is an exact price.
+                if r_text:
+                    roll_entry["valueText"] = r_text
+                    roll_entry["isFloor"] = r_is_floor
+                rolls_list.append(roll_entry)
                 
                 if not primary_history and roll_data.get("history"):
                     primary_history = roll_data["history"]

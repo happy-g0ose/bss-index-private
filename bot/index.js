@@ -212,6 +212,8 @@ function getFlattenedItems() {
             value: roll.value,
             valueLow: roll.valueLow,
             valueHigh: roll.valueHigh,
+            valueText: roll.valueText,
+            isFloor: roll.isFloor,
             demand: roll.demand,
             image: item.image,
             stability: item.stability,
@@ -636,9 +638,13 @@ client.on('interactionCreate', async interaction => {
 
     const item = matches[0];
     const color = getCategoryColor(item.category);
-    const valueText = item.valueLow !== item.valueHigh 
-      ? `${item.valueLow} - ${item.valueHigh} ★`
-      : `${item.value} ★`;
+    // Some roll prices are floors (">=100") rather than exact prices, so they
+    // are marked with a "+" instead of pretending to be a fixed value.
+    const valueText = item.isFloor
+      ? `${item.value} + ★`
+      : item.valueLow !== item.valueHigh
+        ? `${item.valueLow} - ${item.valueHigh} ★`
+        : `${item.value} ★`;
 
     const stabilityIcon = item.stability === 'Растет' ? '📈' : item.stability === 'Падает' ? '📉' : '➡️';
 

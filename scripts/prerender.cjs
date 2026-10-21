@@ -223,7 +223,7 @@ function renderBody(item, seo, url, altUrl, related) {
       .map((g) => {
         const rolls = (g.rolls || [])
           .map(
-            (r) => `<tr><td>${esc(r.rollName)}</td><td>${esc(fmtValue(r.value))}★</td><td>${
+            (r) => `<tr><td>${esc(r.rollName)}</td><td>${esc(fmtValue(r.value))}${r.isFloor ? '+' : ''}★</td><td>${
               r.valueLow !== r.valueHigh
                 ? `${esc(fmtValue(r.valueLow))}–${esc(fmtValue(r.valueHigh))}★`
                 : ''
@@ -237,7 +237,7 @@ function renderBody(item, seo, url, altUrl, related) {
           </section>`;
       })
       .join('');
-    rollsBlock = rollsBlock || `<section class="card"><h2>${en ? 'Rolls' : 'Роллы'}</h2><p>${en ? 'No roll data available.' : 'Нет данных о роллах.'}</p></section>`;
+    rollsBlock = groups || `<section class="card"><h2>${en ? 'Rolls' : 'Роллы'}</h2><p>${en ? 'No roll data available.' : 'Нет данных о роллах.'}</p></section>`;
   }
 
   const demandChip = { 'Хайп': 'c-red', 'Высокий': 'c-amber', 'Средний': 'c-blue' }[item.demand] || 'c-green';

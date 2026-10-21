@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792495287414,
+  "timestamp": 1792550129984,
   "version": "2.1.0",
-  "message": "chore: add an API comparison script against the competitor",
+  "message": "chore: add a live check for the English-first API and the RU docs",
   "author": "BSS Index Developer",
-  "sha": "9260a5f3e150f8f338020224796aa0bcdd129548"
+  "sha": "87b5c54e76607ee25601884de9fa039379d72041"
 }

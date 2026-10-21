@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Search, ChevronLeft } from 'lucide-react';
 import { transliterate } from './BeequipsPage';
 import type { BSSItem } from '../data/items';
+import { formatRollValue } from '../data/rollValue';
 import { useItems } from '../data/itemsStore';
 import type { Language } from '../locales';
 import { t, translateCategory } from '../locales';
@@ -119,13 +120,7 @@ export default function ItemPickerModal({ isOpen, onClose, onSelect, lang }: Ite
                     </h5>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                       {group.rolls.map((roll, rIdx) => {
-                        const formatVal = (v: number) => v >= 1000 ? `${(v / 1000).toFixed(1)}k` : v.toString();
-                        let valueText = 'TBD';
-                        if (roll.valueLow !== 0 || roll.valueHigh !== 0) {
-                          valueText = roll.valueLow === roll.valueHigh 
-                            ? `${formatVal(roll.valueLow)} ★` 
-                            : `${formatVal(roll.valueLow)} - ${formatVal(roll.valueHigh)} ★`;
-                        }
+                        const valueText = formatRollValue(roll);
                         
                         let demandStyle = 'bg-neutral-800 text-neutral-400 border-neutral-700/20';
                         if (roll.demand === 'Хайп') demandStyle = 'bg-rose-500/10 text-rose-400 border-rose-500/20';

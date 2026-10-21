@@ -347,6 +347,11 @@ function rollsOf(item) {
         value: num(roll.value, 0),
         valueLow: num(roll.valueLow, num(roll.value, 0)),
         valueHigh: num(roll.valueHigh, num(roll.value, 0)),
+        // The source expresses some roll prices as a floor (">=100") or in
+        // terms of another item (">={Bee Cub}"). The updater resolves those into
+        // numbers; these fields keep the original expression and flag it.
+        valueText: roll.valueText || null,
+        isFloor: roll.isFloor === true,
         demand: roll.demand || null,
         demandEn: (roll.demand && DEMAND_EN[roll.demand]) || roll.demand || null,
       });

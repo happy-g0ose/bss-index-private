@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Clock, SlidersHorizontal, Share2 } from 'lucide-react';
 import { itemUrl, slugify } from '../itemSlug';
 import type { BSSItem } from '../data/items';
+import { formatRollValue } from '../data/rollValue';
 import type { Language } from '../locales';
 import { t, translateDemand, translateStability, translateCategory } from '../locales';
 
@@ -251,17 +252,7 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                             demandStyle = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
                           }
                           
-                          const formatVal = (v: number) => {
-                            if (v >= 1000) return `${(v / 1000).toFixed(1)}k`;
-                            return v.toString();
-                          };
-                          
-                          let valueText = 'TBD';
-                          if (roll.valueLow !== 0 || roll.valueHigh !== 0) {
-                            valueText = roll.valueLow === roll.valueHigh 
-                              ? `${formatVal(roll.valueLow)} ★` 
-                              : `${formatVal(roll.valueLow)} - ${formatVal(roll.valueHigh)} ★`;
-                          }
+                          const valueText = formatRollValue(roll);
 
                           return (
                             <div key={rIdx} className="flex items-center justify-between gap-3 text-xs p-2 rounded-lg bg-neutral-900/40 hover:bg-neutral-900/80 transition-colors border border-white/5">

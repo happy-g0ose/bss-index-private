@@ -4,6 +4,7 @@ import { motion, type Variants } from 'framer-motion';
 import { TrendingUp, TrendingDown, Minus, Plus } from 'lucide-react';
 import { transliterate, resolveQuery, getStatBadgesForGroup, RU_ABBR_MAP, STAT_ABBR_LABELS } from './BeequipsPage';
 import type { BSSItem } from '../data/items';
+import { formatRollValue } from '../data/rollValue';
 import type { Language } from '../locales';
 import { t, translateDemand, translateCategory } from '../locales';
 
@@ -313,13 +314,7 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
                   else if (roll.demand === 'Средний') demandStyle = 'bg-blue-500/10 text-blue-400 border-blue-500/20';
                   else demandStyle = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
 
-                  const formatVal = (v: number) => v >= 1000 ? `${(v / 1000).toFixed(1)}k` : v.toString();
-                  let valueText = 'TBD';
-                  if (roll.valueLow !== 0 || roll.valueHigh !== 0) {
-                    valueText = roll.valueLow === roll.valueHigh 
-                      ? `${formatVal(roll.valueLow)} ★` 
-                      : `${formatVal(roll.valueLow)} - ${formatVal(roll.valueHigh)} ★`;
-                  }
+                  const valueText = formatRollValue(roll);
 
                   return (
                     <div key={rIdx} className="flex items-center justify-between gap-2 text-xs p-1.5 rounded-lg bg-neutral-900/40 border border-white/5">

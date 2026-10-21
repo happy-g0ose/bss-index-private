@@ -14,6 +14,10 @@ export interface BeequipRoll {
   valueHigh: number;
   value: number;
   demand: "Низкий" | "Средний" | "Высокий" | "Хайп";
+  /** The original source expression, e.g. ">=100" or ">={Bee Cub}". */
+  valueText?: string;
+  /** True when the value is a lower bound rather than an exact price. */
+  isFloor?: boolean;
 }
 
 export interface BeequipStatGroup {
