@@ -43,30 +43,33 @@ function esc(str) {
 // byte-for-byte identical; the Russian variants translate the descriptions)
 // ---------------------------------------------------------------------------
 
+// The legend table shows the value in the page's own language first, with the
+// other language in the second column. So the English page lists "Low" and the
+// Russian page lists "Низкий".
 const DEMAND_LEGEND = [
-  { value: 'Низкий', valueEn: 'Low', rank: 1, description: 'Low demand — sells slowly and usually below the listed value.' },
-  { value: 'Средний', valueEn: 'Average', rank: 2, description: 'Average demand — takes a while to sell at the listed value.' },
-  { value: 'Высокий', valueEn: 'High', rank: 3, description: 'High demand — sells quickly, often above the listed value.' },
-  { value: 'Хайп', valueEn: 'Hype', rank: 4, description: 'Hype — everybody wants it, prices move fast and hard.' },
+  { value: 'Low', other: 'Низкий', rank: 1, description: 'Low demand — sells slowly and usually below the listed value.' },
+  { value: 'Average', other: 'Средний', rank: 2, description: 'Average demand — takes a while to sell at the listed value.' },
+  { value: 'High', other: 'Высокий', rank: 3, description: 'High demand — sells quickly, often above the listed value.' },
+  { value: 'Hype', other: 'Хайп', rank: 4, description: 'Hype — everybody wants it, prices move fast and hard.' },
 ];
 
 const STABILITY_LEGEND = [
-  { value: 'Растет', valueEn: 'Rising', rank: 1, description: 'The price is trending up over the recorded history.' },
-  { value: 'Стабильно', valueEn: 'Stable', rank: 2, description: 'The price is holding steady.' },
-  { value: 'Падает', valueEn: 'Falling', rank: 3, description: 'The price is trending down over the recorded history.' },
+  { value: 'Rising', other: 'Растет', rank: 1, description: 'The price is trending up over the recorded history.' },
+  { value: 'Stable', other: 'Стабильно', rank: 2, description: 'The price is holding steady.' },
+  { value: 'Falling', other: 'Падает', rank: 3, description: 'The price is trending down over the recorded history.' },
 ];
 
 const DEMAND_LEGEND_RU = [
-  { value: 'Низкий', valueEn: 'Low', rank: 1, description: 'Низкий спрос — предмет продаётся медленно и обычно дешевле указанной стоимости.' },
-  { value: 'Средний', valueEn: 'Average', rank: 2, description: 'Средний спрос — уходит по указанной стоимости не сразу.' },
-  { value: 'Высокий', valueEn: 'High', rank: 3, description: 'Высокий спрос — предмет продаётся быстро, часто дороже указанной стоимости.' },
-  { value: 'Хайп', valueEn: 'Hype', rank: 4, description: 'Хайп — предмет нужен всем, цены меняются быстро и резко.' },
+  { value: 'Низкий', other: 'Low', rank: 1, description: 'Низкий спрос — предмет продаётся медленно и обычно дешевле указанной стоимости.' },
+  { value: 'Средний', other: 'Average', rank: 2, description: 'Средний спрос — уходит по указанной стоимости не сразу.' },
+  { value: 'Высокий', other: 'High', rank: 3, description: 'Высокий спрос — предмет продаётся быстро, часто дороже указанной стоимости.' },
+  { value: 'Хайп', other: 'Hype', rank: 4, description: 'Хайп — предмет нужен всем, цены меняются быстро и резко.' },
 ];
 
 const STABILITY_LEGEND_RU = [
-  { value: 'Растет', valueEn: 'Rising', rank: 1, description: 'Цена растёт на протяжении всей записанной истории.' },
-  { value: 'Стабильно', valueEn: 'Stable', rank: 2, description: 'Цена держится ровно.' },
-  { value: 'Падает', valueEn: 'Falling', rank: 3, description: 'Цена снижается на протяжении всей записанной истории.' },
+  { value: 'Растет', other: 'Rising', rank: 1, description: 'Цена растёт на протяжении всей записанной истории.' },
+  { value: 'Стабильно', other: 'Stable', rank: 2, description: 'Цена держится ровно.' },
+  { value: 'Падает', other: 'Falling', rank: 3, description: 'Цена снижается на протяжении всей записанной истории.' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -197,8 +200,10 @@ const ITEM_SHAPE_ROWS = {
     ['<code>categorySlug</code>', 'string'],
     ['<code>value</code>', 'number'],
     ['<code>valueLow</code> / <code>valueHigh</code>', 'number'],
-    ['<code>demand</code> / <code>demandEn</code>', 'string'],
-    ['<code>stability</code> / <code>stabilityEn</code>', 'string'],
+    ['<code>demand</code>', 'string | null'],
+    ['<code>demandRu</code>', 'string | null'],
+    ['<code>stability</code>', 'string | null'],
+    ['<code>stabilityRu</code>', 'string | null'],
     ['<code>change7d</code> / <code>change30d</code>', 'number | null'],
     ['<code>image</code>', 'string'],
     ['<code>url</code>', 'string'],
@@ -285,7 +290,9 @@ const TEXT_EN = {
     'Current value.',
     'Accepted price range.',
     'Demand label (see legend below).',
+    'Russian demand label, <code>null</code> when the item has none.',
     'Price stability label (see legend below).',
+    'Russian stability label, <code>null</code> when the item has none.',
     'Percentage change over 7 / 30 days, <code>null</code> when the item has not enough history.',
     'Absolute image URL.',
     'Absolute URL of the item page.',
@@ -387,7 +394,9 @@ const TEXT_RU = {
     'Текущая стоимость.',
     'Диапазон принимаемых цен.',
     'Метка спроса (см. легенду ниже).',
+    'Русская метка спроса, <code>null</code>, если её нет.',
     'Метка стабильности цены (см. легенду ниже).',
+    'Русская метка стабильности, <code>null</code>, если её нет.',
     'Изменение в процентах за 7 / 30 дней, <code>null</code>, если истории предмета недостаточно.',
     'Абсолютный URL изображения.',
     'Абсолютный URL страницы предмета.',
@@ -496,8 +505,8 @@ ${e.params.map((p) => `            <tr><td><code>${esc(p.name)}</code></td><td>$
   const demandLegend = isRu ? DEMAND_LEGEND_RU : DEMAND_LEGEND;
   const stabilityLegend = isRu ? STABILITY_LEGEND_RU : STABILITY_LEGEND;
 
-  const demandRows = demandLegend.map((d) => `            <tr><td><code>${esc(d.value)}</code></td><td><code>${esc(d.valueEn)}</code></td><td>${d.rank}</td><td>${esc(d.description)}</td></tr>`).join('\n');
-  const stabilityRows = stabilityLegend.map((d) => `            <tr><td><code>${esc(d.value)}</code></td><td><code>${esc(d.valueEn)}</code></td><td>${d.rank}</td><td>${esc(d.description)}</td></tr>`).join('\n');
+  const demandRows = demandLegend.map((d) => `            <tr><td><code>${esc(d.value)}</code></td><td><code>${esc(d.other)}</code></td><td>${d.rank}</td><td>${esc(d.description)}</td></tr>`).join('\n');
+  const stabilityRows = stabilityLegend.map((d) => `            <tr><td><code>${esc(d.value)}</code></td><td><code>${esc(d.other)}</code></td><td>${d.rank}</td><td>${esc(d.description)}</td></tr>`).join('\n');
 
   // Category rows.
   //   legacy shape    `name` is the Russian name, `nameEn` the English one:
@@ -758,14 +767,14 @@ ${itemShapeRows}
   <h2>${esc(T.legendsTitle)}</h2>
   <h3>${esc(T.demandTitle)}</h3>
   <table>
-    <thead><tr><th>${esc(T.legendHeaders[0])}</th><th>${esc(T.legendHeaders[1].replace('{legend}', 'demandEn'))}</th><th>${esc(T.legendHeaders[2])}</th><th>${esc(T.legendHeaders[3])}</th></tr></thead>
+    <thead><tr><th>${esc(T.legendHeaders[0])}</th><th>${esc(T.legendHeaders[1].replace('{legend}', isRu ? 'English' : 'Russian'))}</th><th>${esc(T.legendHeaders[2])}</th><th>${esc(T.legendHeaders[3])}</th></tr></thead>
     <tbody>
 ${demandRows}
     </tbody>
   </table>
   <h3>${esc(T.stabilityTitle)}</h3>
   <table>
-    <thead><tr><th>${esc(T.legendHeaders[0])}</th><th>${esc(T.legendHeaders[1].replace('{legend}', 'stabilityEn'))}</th><th>${esc(T.legendHeaders[2])}</th><th>${esc(T.legendHeaders[3])}</th></tr></thead>
+    <thead><tr><th>${esc(T.legendHeaders[0])}</th><th>${esc(T.legendHeaders[1].replace('{legend}', isRu ? 'English' : 'Russian'))}</th><th>${esc(T.legendHeaders[2])}</th><th>${esc(T.legendHeaders[3])}</th></tr></thead>
     <tbody>
 ${stabilityRows}
     </tbody>

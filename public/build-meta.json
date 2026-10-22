@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792550368601,
+  "timestamp": 1792651258593,
   "version": "2.1.0",
-  "message": "chore: tidy the repo - reports to docs/, throwaway scripts out of git\n\n- docs/audit.md and docs/compare-features.md hold the competitive audit\n- the roll-value regression check moved to scripts/verify-rolls.mjs\n- scratch/ keeps only the Python scripts the nightly workflow depends on",
+  "message": "chore: add a live check for the roll prices",
   "author": "BSS Index Developer",
-  "sha": "8838be0416ba523209670be5465332ae7cbacbed"
+  "sha": "3f489e7cdc3264d2b020330ecd15a66b069a4c66"
 }

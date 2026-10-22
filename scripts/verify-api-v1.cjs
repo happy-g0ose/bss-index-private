@@ -93,10 +93,12 @@ const badUrl = itemsDoc.filter((i) => !/^https?:\/\/.+\/item\/[^/]+\/$/.test(i.u
 ok(badUrl.length === 0, 'every url is <origin>/item/<slug>/', badUrl.length ? JSON.stringify(badUrl.slice(0, 3)) : 'shape ok');
 const badChange = itemsDoc.filter((i) => !(i.change7d === null || (typeof i.change7d === 'number' && Math.round(i.change7d * 10) === i.change7d * 10)));
 ok(badChange.length === 0, 'change7d/change30d are numbers rounded to 1 decimal or null');
-const badDemand = itemsDoc.filter((i) => !['Low', 'Average', 'High', 'Hype'].includes(i.demandEn));
-ok(badDemand.length === 0, 'every demandEn is a known level');
-const badStab = itemsDoc.filter((i) => !['Rising', 'Stable', 'Falling'].includes(i.stabilityEn));
-ok(badStab.length === 0, 'every stabilityEn is a known level');
+const badDemand = itemsDoc.filter((i) => !['Low', 'Average', 'High', 'Hype'].includes(i.demand));
+ok(badDemand.length === 0, 'every demand is a known level');
+const badStab = itemsDoc.filter((i) => !['Rising', 'Stable', 'Falling'].includes(i.stability));
+ok(badStab.length === 0, 'every stability is a known level');
+const missingRu = itemsDoc.filter((i) => !('demandRu' in i) || !('stabilityRu' in i));
+ok(missingRu.length === 0, 'every item keeps demandRu and stabilityRu');
 const badCat = itemsDoc.filter((i) => !i.categorySlug || typeof i.categorySlug !== 'string');
 ok(badCat.length === 0, 'every item has a categorySlug');
 const noHistoryFlag = itemsDoc.filter((i) => typeof i.hasHistory !== 'boolean');
@@ -157,7 +159,7 @@ for (const entry of itemsDoc) {
 }
 ok(missingHistory.length === 0, 'every item has a matching items/<slug>/history.json', missingHistory.length ? missingHistory.slice(0, 5).join(', ') : `${itemsDoc.length} documents`);
 const sample = JSON.parse(fs.readFileSync(path.join(V1, 'items', `${itemsDoc[0].slug}.json`), 'utf8'));
-const detailKeys = ['slug', 'id', 'name', 'nameRu', 'category', 'categoryRu', 'categorySlug', 'value', 'valueLow', 'valueHigh', 'demand', 'demandEn', 'stability', 'stabilityEn', 'change7d', 'change30d', 'image', 'url', 'hasHistory', 'description', 'historicalDates', 'historicalPrices', 'rolls', 'related'];
+const detailKeys = ['slug', 'id', 'name', 'nameRu', 'category', 'categoryRu', 'categorySlug', 'value', 'valueLow', 'valueHigh', 'demand', 'demandRu', 'stability', 'stabilityRu', 'change7d', 'change30d', 'image', 'url', 'hasHistory', 'description', 'descriptionRu', 'historicalDates', 'historicalPrices', 'rolls', 'related'];
 const missingDetail = detailKeys.filter((k) => !(k in sample));
 ok(missingDetail.length === 0, 'detail document has every required field', missingDetail.join(', '));
 ok(!('nameEn' in sample) && !('categoryEn' in sample), 'detail document has no English-suffixed fields');
@@ -165,7 +167,7 @@ ok(Array.isArray(sample.rolls) && Array.isArray(sample.related), 'detail documen
 ok(sample.related.length <= 10 && sample.related.every((r) => r.slug !== sample.slug), 'related[] holds up to 10 items, excluding itself');
 ok(sample.related.every((r) => typeof r.name === 'string' && r.name.trim() !== '' && ('nameRu' in r)), 'related[] entries carry the English name and nameRu');
 const rollDoc = itemsDoc.map((i) => JSON.parse(fs.readFileSync(path.join(V1, 'items', `${i.slug}.json`), 'utf8'))).find((d) => d.rolls.length > 0);
-ok(!!rollDoc && rollDoc.rolls.every((r) => 'group' in r && 'rollName' in r && 'value' in r && 'demand' in r && 'demandEn' in r), 'rolls are flattened as {group, rollName, value, valueLow, valueHigh, demand, demandEn}');
+ok(!!rollDoc && rollDoc.rolls.every((r) => 'group' in r && 'rollName' in r && 'value' in r && 'demand' in r && 'demandRu' in r), 'rolls are flattened as {group, rollName, value, valueLow, valueHigh, demand, demandRu}');
 const histDoc = JSON.parse(fs.readFileSync(path.join(V1, 'items', itemsDoc[0].slug, 'history.json'), 'utf8'));
 const histKeys = ['slug', 'name', 'nameRu', 'dates', 'prices', 'change7d', 'change30d', 'min', 'max', 'average'];
 ok(histKeys.every((k) => k in histDoc), 'history.json has every required field');

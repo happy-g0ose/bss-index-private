@@ -319,10 +319,10 @@ function compactItem(item, slug, categorySlug, series) {
     value: num(item.value, 0),
     valueLow: num(item.valueLow, num(item.value, 0)),
     valueHigh: num(item.valueHigh, num(item.value, 0)),
-    demand: item.demand || null,
-    demandEn: (item.demand && DEMAND_EN[item.demand]) || item.demand || null,
-    stability: item.stability || null,
-    stabilityEn: (item.stability && STABILITY_EN[item.stability]) || item.stability || null,
+    demand: (item.demand && DEMAND_EN[item.demand]) || item.demand || null,
+    demandRu: item.demand || null,
+    stability: (item.stability && STABILITY_EN[item.stability]) || item.stability || null,
+    stabilityRu: item.stability || null,
     change7d: changeOver(series, 7),
     change30d: changeOver(series, 30),
     image: absoluteImage(item.image),
@@ -352,8 +352,8 @@ function rollsOf(item) {
         // numbers; these fields keep the original expression and flag it.
         valueText: roll.valueText || null,
         isFloor: roll.isFloor === true,
-        demand: roll.demand || null,
-        demandEn: (roll.demand && DEMAND_EN[roll.demand]) || roll.demand || null,
+        demand: (roll.demand && DEMAND_EN[roll.demand]) || roll.demand || null,
+        demandRu: roll.demand || null,
       });
     }
   }
@@ -382,14 +382,41 @@ function relatedItems(item, all, byCategory) {
   }));
 }
 
-/** The full per-item document. */
+/**
+ * The full per-item document.
+ *
+ * The source descriptions are written in Russian, so `description` is a factual
+ * English summary built from the structured data and the original text is kept
+ * in `descriptionRu`.
+ */
 function detailItem(item, compact, series, related) {
+  const rolls = rollsOf(item);
+  const original = item.description || '';
+  const categoryEn = CATEGORY_EN[item.category] || item.category;
+
+  const parts = [];
+  if (categoryEn) parts.push(`${categoryEn} in Bee Swarm Simulator.`);
+  if (rolls.length) {
+    parts.push(`${rolls.length} roll${rolls.length === 1 ? '' : 's'} with individual prices.`);
+  } else {
+    const low = num(item.valueLow, num(item.value, 0));
+    const high = num(item.valueHigh, num(item.value, 0));
+    parts.push(
+      low === high
+        ? `Current value ${low}★.`
+        : `Current value ${low}–${high}★.`
+    );
+  }
+  if (compact.demand) parts.push(`Demand: ${String(compact.demand).toLowerCase()}.`);
+  if (compact.stability) parts.push(`Trend: ${String(compact.stability).toLowerCase()}.`);
+
   return {
     ...compact,
-    description: item.description || '',
+    description: parts.join(' '),
+    descriptionRu: original,
     historicalDates: series.map((point) => point.d),
     historicalPrices: series.map((point) => point.p),
-    rolls: rollsOf(item),
+    rolls,
     related,
   };
 }
@@ -490,9 +517,9 @@ function buildEndpoints() {
       key: 'search',
       summary: 'Search items',
       description:
-        'Server-side search. Matches the name in either language, the slug, and the community slang for each category (so "куб" finds Cub Skins). Returns items ranked by relevance, then by value.',
+        'Server-side search. Matches the name in either language, the slug, and the community slang for each category (so a Russian query finds the right group too). Returns items ranked by relevance, then by value.',
       params: [
-        { name: 'q', type: 'string', description: 'Search term, e.g. "bee", "star cub", "куб".' },
+        { name: 'q', type: 'string', description: 'Search term, e.g. "bee", "star cub", "kub".' },
         { name: 'category', type: 'string', description: 'Filter by category slug, e.g. "vouchers", "cub-skins".' },
         { name: 'sort', type: 'string', description: 'relevance (default), value, value-asc, name, change.' },
         { name: 'limit', type: 'integer', description: 'Items per page, 1-100, default 25.' },
@@ -575,10 +602,10 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
         value: { type: 'number', description: 'Current value in honey/beeswax units.' },
         valueLow: { type: 'number', description: 'Lower bound of the accepted price range.' },
         valueHigh: { type: 'number', description: 'Upper bound of the accepted price range.' },
-        demand: { type: ['string', 'null'], enum: ['Низкий', 'Средний', 'Высокий', 'Хайп', null], description: 'Demand, Russian label.' },
-        demandEn: { type: ['string', 'null'], enum: ['Low', 'Average', 'High', 'Hype', null], description: 'Demand, English label.' },
-        stability: { type: ['string', 'null'], enum: ['Растет', 'Стабильно', 'Падает', null], description: 'Price stability, Russian label.' },
-        stabilityEn: { type: ['string', 'null'], enum: ['Rising', 'Stable', 'Falling', null], description: 'Price stability, English label.' },
+        demand: { type: ['string', 'null'], enum: ['Low', 'Average', 'High', 'Hype', null], description: 'Demand, English label.' },
+        demandRu: { type: ['string', 'null'], enum: ['Низкий', 'Средний', 'Высокий', 'Хайп', null], description: 'Demand, Russian label.' },
+        stability: { type: ['string', 'null'], enum: ['Rising', 'Stable', 'Falling', null], description: 'Price stability, English label.' },
+        stabilityRu: { type: ['string', 'null'], enum: ['Растет', 'Стабильно', 'Падает', null], description: 'Price stability, Russian label.' },
         change7d: { type: ['number', 'null'], description: 'Price change over the last 7 days in percent, null when there is not enough history.' },
         change30d: { type: ['number', 'null'], description: 'Price change over the last 30 days in percent, null when there is not enough history.' },
         image: { type: ['string', 'null'], description: 'Absolute image URL.' },
@@ -593,7 +620,8 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
           type: 'object',
           required: ['description', 'historicalDates', 'historicalPrices', 'rolls', 'related'],
           properties: {
-            description: { type: 'string', description: 'Human readable market description.' },
+            description: { type: 'string', description: 'Factual English summary of the item and its market state.' },
+            descriptionRu: { type: 'string', description: 'The original Russian market description from the source.' },
             historicalDates: { type: 'array', items: { type: 'string', format: 'date' }, description: 'Dates of the recorded price points, aligned with historicalPrices.' },
             historicalPrices: { type: 'array', items: { type: 'number' }, description: 'Recorded prices, aligned with historicalDates.' },
             rolls: {
@@ -607,8 +635,10 @@ function buildOpenApi(version, endpoints, categories, itemCount) {
                   value: { type: 'number' },
                   valueLow: { type: 'number' },
                   valueHigh: { type: 'number' },
-                  demand: { type: ['string', 'null'] },
-                  demandEn: { type: ['string', 'null'] },
+                  valueText: { type: ['string', 'null'], description: 'Original price expression, e.g. ">=100".' },
+                  isFloor: { type: 'boolean', description: 'True when the price is a lower bound rather than an exact value.' },
+                  demand: { type: ['string', 'null'], enum: ['Low', 'Average', 'High', 'Hype', null] },
+                  demandRu: { type: ['string', 'null'] },
                 },
               },
             },
@@ -913,16 +943,16 @@ function buildLandingHtml(version, itemCount, categoryCount) {
 // ---------------------------------------------------------------------------
 
 const DEMAND_LEGEND = [
-  { value: 'Низкий', valueEn: 'Low', rank: 1, description: 'Low demand — sells slowly and usually below the listed value.' },
-  { value: 'Средний', valueEn: 'Average', rank: 2, description: 'Average demand — takes a while to sell at the listed value.' },
-  { value: 'Высокий', valueEn: 'High', rank: 3, description: 'High demand — sells quickly, often above the listed value.' },
-  { value: 'Хайп', valueEn: 'Hype', rank: 4, description: 'Hype — everybody wants it, prices move fast and hard.' },
+  { value: 'Low', valueRu: 'Низкий', rank: 1, description: 'Low demand — sells slowly and usually below the listed value.' },
+  { value: 'Average', valueRu: 'Средний', rank: 2, description: 'Average demand — takes a while to sell at the listed value.' },
+  { value: 'High', valueRu: 'Высокий', rank: 3, description: 'High demand — sells quickly, often above the listed value.' },
+  { value: 'Hype', valueRu: 'Хайп', rank: 4, description: 'Hype — everybody wants it, prices move fast and hard.' },
 ];
 
 const STABILITY_LEGEND = [
-  { value: 'Растет', valueEn: 'Rising', rank: 1, description: 'The price is trending up over the recorded history.' },
-  { value: 'Стабильно', valueEn: 'Stable', rank: 2, description: 'The price is holding steady.' },
-  { value: 'Падает', valueEn: 'Falling', rank: 3, description: 'The price is trending down over the recorded history.' },
+  { value: 'Rising', valueRu: 'Растет', rank: 1, description: 'The price is trending up over the recorded history.' },
+  { value: 'Stable', valueRu: 'Стабильно', rank: 2, description: 'The price is holding steady.' },
+  { value: 'Falling', valueRu: 'Падает', rank: 3, description: 'The price is trending down over the recorded history.' },
 ];
 
 // ---------------------------------------------------------------------------
