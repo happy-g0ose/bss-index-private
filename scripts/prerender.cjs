@@ -12,6 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getCategoryStyles } = require('./lib/category-styles.cjs');
+const { buildIndexPage } = require('./lib/item-index-page.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
@@ -353,14 +354,7 @@ function injectIntoTemplate(template, item, seo, url, altUrl, related) {
   const ogImage = item.image ? item.image : `${SITE_ORIGIN}/logo.png`;
   const jsonLd = buildJsonLd(item, url, seo);
 
-  // Pull the parts of the original <head> that must survive.
-  const gtagLoader =
-    (template.match(/<script async src="https:\/\/www\.googletagmanager\.com[^>]*><\/script>/i) || [])[0] || '';
-  const gtagInline =
-    (template.match(/<script>\s*window\.dataLayer[\s\S]*?<\/script>/i) || [])[0] || '';
-  const moduleScript = (template.match(/<script type="module"[^>]*><\/script>/i) || [])[0] || '';
-  const cssLink =
-    (template.match(/<link rel="stylesheet"[^>]*href="\.\/assets\/[^"]*"[^>]*>/i) || [])[0] || '';
+  const { gtagLoader, gtagInline, moduleScript, cssLink } = headAssets(template);
 
   const absolutise = (tag) => tag.replace(/(src|href)="\.\//g, '$1="/');
 
@@ -369,6 +363,11 @@ function injectIntoTemplate(template, item, seo, url, altUrl, related) {
     ${gtagInline}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <title>${esc(seo.title)}</title>
     <meta name="description" content="${esc(seo.description)}" />
@@ -412,7 +411,10 @@ function injectIntoTemplate(template, item, seo, url, altUrl, related) {
   // that execute JS. Outside it, the <h1>, price tables and internal links survive
   // for both visitors and Google.
   const body = renderBody(item, seo, url, altUrl, related);
-  return html.replace('<div id="app"></div>', `${body}\n<div id="app"></div>`);
+  return html.replace(
+    '<div id="app"></div>',
+    `${STATIC_START}\n${body}\n${STATIC_END}\n<div id="app"></div>`
+  );
 }
 
 /** Restore the visitor's saved theme / background before first paint. */
@@ -569,6 +571,19 @@ const ITEM_PAGE_CSS = `
     .cta a:hover { background: #fbbf24; }
     .cta a.ghost { background: transparent; color: #d4d4d8; border: 1px solid rgba(255,255,255,.14); }
     .cta a.ghost:hover { background: rgba(255,255,255,.06); color: #fbbf24; }
+    html.light .cta a.ghost { color: #3f3f46; border-color: rgba(15,23,42,.16); }
+    html.light .cta a.ghost:hover { background: rgba(15,23,42,.04); color: #b45309; }
+
+    /* Category grid on the landing pages */
+    .cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+    .cats a {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      padding: 9px 12px; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--icon-bg); text-decoration: none; color: var(--text);
+      font-size: 13px; font-weight: 700; transition: border-color .15s, color .15s;
+    }
+    .cats a:hover { border-color: #fbbf24; color: #fbbf24; }
+    .cats a em { font-style: normal; font-size: 11px; color: var(--faint); font-family: ui-monospace, monospace; }
     .upd { display: inline-flex; align-items: center; gap: 7px; color: #fbbf24; font-weight: 700; font-size: 12px; margin: 0; }
     .upd::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399; }
 
@@ -591,28 +606,157 @@ function buildSitemap(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>`;
 }
 
-/** Build the Russian landing page at /ru/. */
-function buildRussianLanding(template, ruList) {
+/**
+ * Pull the parts of the built <head> that must survive: the analytics
+ * snippets, the stylesheet and the module script.
+ *
+ * The asset URLs are matched in both their relative and absolute form —
+ * the template is rewritten by this script, so on a second run the paths are
+ * already absolute, and a relative-only match would silently drop the
+ * stylesheet. If the template no longer has them, the files are looked up in
+ * dist/assets instead.
+ */
+function headAssets(template) {
   const gtagLoader =
     (template.match(/<script async src="https:\/\/www\.googletagmanager\.com[^>]*><\/script>/i) || [])[0] || '';
   const gtagInline =
     (template.match(/<script>\s*window\.dataLayer[\s\S]*?<\/script>/i) || [])[0] || '';
-  const moduleScript = (template.match(/<script type="module"[^>]*><\/script>/i) || [])[0] || '';
+  const moduleScript =
+    (template.match(/<script type="module"[^>]*><\/script>/i) || [])[0] || '';
   const cssLink =
-    (template.match(/<link rel="stylesheet"[^>]*href="\.\/assets\/[^"]*"[^>]*>/i) || [])[0] || '';
+    (template.match(/<link rel="stylesheet"[^>]*href="(?:\.\/|\/)assets\/[^"]*"[^>]*>/i) || [])[0] || '';
+
+  let css = cssLink;
+  let js = moduleScript;
+  const assetsDir = path.join(DIST, 'assets');
+  if (fs.existsSync(assetsDir)) {
+    const files = fs.readdirSync(assetsDir);
+    if (!css) {
+      const file = files.find((f) => f.endsWith('.css'));
+      if (file) css = `<link rel="stylesheet" href="/assets/${file}">`;
+    }
+    if (!js) {
+      const file = files.find((f) => f.endsWith('.js'));
+      if (file) js = `<script type="module" crossorigin src="/assets/${file}"></script>`;
+    }
+  }
+
+  return { gtagLoader, gtagInline, moduleScript: js, cssLink: css };
+}
+
+/**
+ * Build the landing page at / and /ru/.
+ *
+ * The app itself is a client-side rendered SPA, so without this block a
+ * crawler that does not run JavaScript sees a page with a <title> and nothing
+ * else — no heading, no links, no structured data. The static block below is
+ * a SIBLING of #app, so React replaces only the app area and this content
+ * stays in the document for both visitors and search engines.
+ */
+function buildLanding(template, items, isEn) {
+  const { gtagLoader, gtagInline, moduleScript, cssLink } = headAssets(template);
   const absolutise = (tag) => tag.replace(/(src|href)="\.\//g, '$1="/');
 
-  const title = 'BSS Index — Ценность стикеров, ваучеров и биквипов в Bee Swarm Simulator';
-  const description =
-    'Актуальные цены на все стикеры, ваучеры и биквипы в Roblox Bee Swarm Simulator. Проверяй ценность, сравнивай спрос и считай выгоду сделок в калькуляторе.';
+  const prefix = isEn ? '' : '/ru';
+  const origin = `${SITE_ORIGIN}${prefix}/`;
+
+  const copy = isEn
+    ? {
+        title: 'BSS Index — Sticker, Voucher & Beequip Values in Bee Swarm Simulator',
+        description:
+          'Live prices for every sticker, voucher and beequip in Roblox Bee Swarm Simulator. Check values, compare demand and plan trades with the calculator.',
+        h1: 'BSS VALUES',
+        tag: 'Stickers · Vouchers · Beequips',
+        open: 'Open the app ↓',
+        allItems: 'All items',
+        api: 'API',
+        demo: 'Live demo',
+        top: 'Most expensive items',
+        item: 'Item',
+        price: 'Price',
+        cats: 'Categories',
+        upd: 'Prices update daily',
+        home: 'BSS Index home',
+        lang: 'RU',
+        langHref: '/ru/',
+        itemCol: 'Item',
+      }
+    : {
+        title: 'BSS Index — Ценность стикеров, ваучеров и биквипов в Bee Swarm Simulator',
+        description:
+          'Актуальные цены на все стикеры, ваучеры и биквипы в Roblox Bee Swarm Simulator. Проверяй ценность, сравнивай спрос и считай выгоду сделок в калькуляторе.',
+        h1: 'ЦЕННОСТИ BSS',
+        tag: 'Стикеры · Ваучеры · Биквипы',
+        open: 'Открыть приложение ↓',
+        allItems: 'Все предметы',
+        api: 'API',
+        demo: 'Живое демо',
+        top: 'Самые дорогие предметы',
+        item: 'Предмет',
+        price: 'Цена',
+        cats: 'Категории',
+        upd: 'Цены обновляются ежедневно',
+        home: 'На главную BSS Index',
+        lang: 'EN',
+        langHref: '/',
+        itemCol: 'Предмет',
+      };
+
+  // Top items, most valuable first.
+  const topItems = [...items]
+    .filter((i) => i.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .slice(0, 24);
+
+  const topRows = topItems
+    .map((i) => {
+      const label = isEn ? i.englishName || i.name : i.name;
+      const slug = slugify(i.englishName || i.id || i.name);
+      return `<tr><td><a href="${prefix}/item/${slug}/">${esc(label)}</a></td><td>${esc(fmtValue(i.value))}★</td></tr>`;
+    })
+    .join('');
+
+  // Category links, pointing at the anchors of the static item index.
+  const byCategory = new Map();
+  for (const item of items) {
+    if (!byCategory.has(item.category)) byCategory.set(item.category, []);
+    byCategory.get(item.category).push(item);
+  }
+  const catLinks = [...byCategory.entries()]
+    .sort((a, b) => b[1].length - a[1].length)
+    .map(([category, list]) => {
+      const title = isEn ? CATEGORY_EN[category] || category : category;
+      return `<a href="${prefix}/items/#cat-${slugify(category)}">${esc(title)} <em>${list.length}</em></a>`;
+    })
+    .join('');
+
+  const totalValue = items.reduce((sum, i) => sum + (Number(i.value) || 0), 0);
+  const topItem = topItems[0];
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'BSS Index',
-    url: `${SITE_ORIGIN}/ru/`,
-    inLanguage: 'ru',
-    description,
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${origin}#website`,
+        name: 'BSS Index',
+        url: origin,
+        inLanguage: isEn ? 'en' : 'ru',
+        description: copy.description,
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${origin}#items`,
+        name: copy.top,
+        numberOfItems: topItems.length,
+        itemListElement: topItems.map((i, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: isEn ? i.englishName || i.name : i.name,
+          url: `${SITE_ORIGIN}${prefix}/item/${slugify(i.englishName || i.id || i.name)}/`,
+        })),
+      },
+    ],
   };
 
   const head = `
@@ -620,23 +764,31 @@ function buildRussianLanding(template, ruList) {
     ${gtagInline}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${esc(title)}</title>
-    <meta name="description" content="${esc(description)}" />
+    <title>${esc(copy.title)}</title>
+    <meta name="description" content="${esc(copy.description)}" />
+    <meta name="keywords" content="BSS, Bee Swarm Simulator, Roblox, trading, value list, sticker prices, trade calculator, beequips, beequip rolls, bee swarm values" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="${esc(`${SITE_ORIGIN}/ru/`)}" />
+    <link rel="canonical" href="${esc(origin)}" />
     <link rel="alternate" hreflang="en" href="${esc(`${SITE_ORIGIN}/`)}" />
     <link rel="alternate" hreflang="ru" href="${esc(`${SITE_ORIGIN}/ru/`)}" />
     <link rel="alternate" hreflang="x-default" href="${esc(`${SITE_ORIGIN}/`)}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="BSS Index" />
-    <meta property="og:locale" content="ru_RU" />
-    <meta property="og:title" content="${esc(title)}" />
-    <meta property="og:description" content="${esc(description)}" />
-    <meta property="og:url" content="${esc(`${SITE_ORIGIN}/ru/`)}" />
+    <meta property="og:locale" content="${isEn ? 'en_US' : 'ru_RU'}" />
+    <meta property="og:title" content="${esc(copy.title)}" />
+    <meta property="og:description" content="${esc(copy.description)}" />
+    <meta property="og:url" content="${esc(origin)}" />
     <meta property="og:image" content="${esc(`${SITE_ORIGIN}/logo.png`)}" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${esc(copy.title)}" />
+    <meta name="twitter:description" content="${esc(copy.description)}" />
+    <meta name="twitter:image" content="${esc(`${SITE_ORIGIN}/logo.png`)}" />
     <script type="application/ld+json">${escJson(jsonLd)}</script>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -647,30 +799,70 @@ function buildRussianLanding(template, ruList) {
 
   const body = `
   <main class="wrap">
-    <nav class="crumbs"><a href="/">← BSS Index</a> <span class="langswitch"><a href="/">EN</a></span></nav>
-    <h1>ЦЕННОСТИ BSS</h1>
-    <p class="tag">Стикеры · Ваучеры · Биквипы</p>
-    <p class="lead">${esc(description)}</p>
+    <nav class="crumbs">
+      <a href="${isEn ? '/' : '/ru/'}">${esc(copy.home)}</a>
+      <span class="langswitch"><a href="${copy.langHref}">${esc(copy.lang)}</a></span>
+    </nav>
+    <h1>${esc(copy.h1)}</h1>
+    <p class="tag">${esc(copy.tag)}</p>
+    <p class="lead">${esc(copy.description)}</p>
     <div class="cta">
-      <a href="#app">Открыть приложение ↓</a>
-      <a href="/" class="ghost">English version</a>
+      <a href="#app">${esc(copy.open)}</a>
+      <a href="${prefix}/items/" class="ghost">${esc(copy.allItems)}</a>
+      <a href="/api/" class="ghost">${esc(copy.api)}</a>
+      <a href="/demo/" class="ghost">${esc(copy.demo)}</a>
     </div>
+
+    <div class="stats">
+      <div><div class="stat-k">${isEn ? 'Items' : 'Предметов'}</div><div class="stat-v">${items.length}</div></div>
+      <div><div class="stat-k">${isEn ? 'Total value' : 'Общая ценность'}</div><div class="stat-v price">${esc(fmtValue(totalValue))}★</div></div>
+      <div><div class="stat-k">${isEn ? 'Most expensive' : 'Самый дорогой'}</div><div class="stat-v price">${esc(fmtValue(topItem.value))}★</div><div class="stat-n">${esc(isEn ? topItem.englishName || topItem.name : topItem.name)}</div></div>
+    </div>
+
     <section class="card">
-      <h2>Самые дорогие предметы</h2>
-      <table><thead><tr><th>Предмет</th><th>Цена</th></tr></thead><tbody>${ruList}</tbody></table>
+      <h2>${esc(copy.top)}</h2>
+      <table><thead><tr><th>${esc(copy.item)}</th><th>${esc(copy.price)}</th></tr></thead><tbody>${topRows}</tbody></table>
     </section>
+
+    <section class="card">
+      <h2>${esc(copy.cats)}</h2>
+      <div class="cats">${catLinks}</div>
+    </section>
+
     <footer class="foot">
-      <p class="upd">Цены обновляются ежедневно</p>
-      <p><a href="/">Full catalogue and trade calculator →</a></p>
+      <p class="upd">${esc(copy.upd)}</p>
+      <p><a href="${prefix}/items/">${esc(copy.allItems)} →</a></p>
     </footer>
   </main>
 
   <style>${ITEM_PAGE_CSS}</style>`;
 
   return template
-    .replace(/<html lang="[a-z]{2}">/i, '<html lang="ru">')
+    .replace(/<html lang="[a-z]{2}">/i, `<html lang="${isEn ? 'en' : 'ru'}">`)
     .replace(/<head>[\s\S]*?<\/head>/i, `<head>${head}  </head>`)
-    .replace('<div id="app"></div>', `${body}\n<div id="app"></div>`);
+    .replace(
+      '<div id="app"></div>',
+      `${STATIC_START}\n${body}\n${STATIC_END}\n<div id="app"></div>`
+    );
+}
+
+/**
+ * Markers around the static block that gets injected into a page.
+ *
+ * The script rewrites dist/index.html, which it also reads as its template.
+ * Without the markers a second run would inject a second copy of the block
+ * into the already-injected file — so the template is always stripped of any
+ * previous block before it is used.
+ */
+const STATIC_START = '<!--bss-static-->';
+const STATIC_END = '<!--/bss-static-->';
+
+/** Remove any previously injected static block from a template. */
+function stripStatic(html) {
+  return html.replace(
+    new RegExp(`${STATIC_START}[\\s\\S]*?${STATIC_END}\\s*`, 'g'),
+    ''
+  );
 }
 
 function main() {
@@ -683,7 +875,7 @@ function main() {
     return;
   }
 
-  const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
+  const template = stripStatic(fs.readFileSync(path.join(DIST, 'index.html'), 'utf8'));
   const items = JSON.parse(fs.readFileSync(ITEMS_SRC, 'utf8'));
 
   const urls = [
@@ -750,91 +942,14 @@ function main() {
     }
   }
 
-  // Static item index at /items/ — a plain HTML list of every item, grouped by
-  // category. The catalog itself is rendered client-side, so without this page
-  // there was not a single crawlable link from the site to the 330 item pages.
-  const byCategory = new Map();
-  for (const item of items) {
-    if (!byCategory.has(item.category)) byCategory.set(item.category, []);
-    byCategory.get(item.category).push(item);
-  }
-
+  // Static item index at /items/ and /ru/items/ — a searchable catalogue of
+  // every item, grouped by category. The catalog itself is rendered
+  // client-side, so without this page there was not a single crawlable link
+  // from the site to the 330 item pages.
   for (const lang of ['en', 'ru']) {
     const isEn = lang === 'en';
     const prefix = isEn ? '' : '/ru';
-    const sections = [...byCategory.entries()]
-      .map(([category, list]) => {
-        const rows = list
-          .slice()
-          .sort((a, b) => b.value - a.value)
-          .map((i) => {
-            const slug = slugify(i.englishName || i.id || i.name);
-            const label = isEn ? i.englishName : i.name;
-            return `<li><a href="${prefix}/item/${slug}/">${esc(label)}</a><span>${esc(fmtValue(i.value))}★</span></li>`;
-          })
-          .join('');
-        const catEn = CATEGORY_EN[category] || category;
-        const title = isEn ? catEn : category;
-        return `<section class="card"><h2>${esc(title)} <em>${list.length}</em></h2><ul>${rows}</ul></section>`;
-      })
-      .join('');
-
-    const pageTitle = isEn
-      ? 'All items — BSS Index value list'
-      : 'Все предметы — валют лист BSS Index';
-    const pageDesc = isEn
-      ? `Every sticker, voucher and beequip in Bee Swarm Simulator with its current value. ${items.length} items.`
-      : `Все стикеры, ваучеры и биквипы в Bee Swarm Simulator с актуальной ценностью. ${items.length} предметов.`;
-
-    const indexHtml = `<!doctype html>
-<html lang="${isEn ? 'en' : 'ru'}">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${esc(pageTitle)}</title>
-<meta name="description" content="${esc(pageDesc)}">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="${SITE_ORIGIN}${prefix}/items/">
-<meta property="og:title" content="${esc(pageTitle)}">
-<meta property="og:description" content="${esc(pageDesc)}">
-<meta property="og:url" content="${SITE_ORIGIN}${prefix}/items/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="BSS Index">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
-<style>
-  :root { color-scheme: dark; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:#0b0f19; color:#e5e5e5; font-family:Inter,system-ui,sans-serif; line-height:1.6; }
-  .wrap { max-width:860px; margin:0 auto; padding:32px 20px 64px; }
-  h1 { font-size:clamp(24px,5vw,36px); font-weight:900; text-transform:uppercase; margin:0 0 8px; }
-  .lead { color:#a1a1aa; font-size:15px; margin:0 0 28px; }
-  .card { background:rgba(11,15,25,.65); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:20px; margin:16px 0; }
-  .card h2 { margin:0 0 12px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:#fbbf24; }
-  .card h2 em { color:#52525b; font-style:normal; }
-  ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:4px; }
-  li { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:6px 10px; border-radius:8px; }
-  li:hover { background:rgba(245,158,11,.06); }
-  li a { color:#d4d4d8; text-decoration:none; font-size:13px; font-weight:600; }
-  li a:hover { color:#fbbf24; }
-  li span { color:#fbbf24; font-family:ui-monospace,monospace; font-size:12px; white-space:nowrap; }
-  .foot { margin-top:40px; padding-top:18px; border-top:1px solid rgba(255,255,255,.06); font-size:13px; color:#71717a; }
-  .foot a { color:#fbbf24; text-decoration:none; font-weight:700; }
-</style>
-</head>
-<body>
-<main class="wrap">
-  <h1>${isEn ? 'All items' : 'Все предметы'}</h1>
-  <p class="lead">${esc(pageDesc)}</p>
-  ${sections}
-  <footer class="foot">
-    <p><a href="${isEn ? '/' : '/ru/'}">← ${isEn ? 'BSS Index home' : 'На главную BSS Index'}</a></p>
-  </footer>
-</main>
-</body>
-</html>`;
+    const indexHtml = buildIndexPage(items, isEn, { slugify });
 
     const dir = isEn ? path.join(DIST, 'items') : path.join(DIST, 'ru', 'items');
     fs.mkdirSync(dir, { recursive: true });
@@ -845,18 +960,13 @@ function main() {
   // Sitemap last, so it includes the item index pages added above.
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'), buildSitemap(urls), 'utf8');
 
-  // Russian landing page at /ru/ — a short static entry point that mirrors the
-  // root page, points at the app and links into the Russian item pages.
+  // Landing pages at / and /ru/. The app is a client-side rendered SPA, so
+  // without the static block these pages are empty shells for any crawler
+  // that does not run JavaScript — no heading, no links, no structured data.
+  fs.writeFileSync(path.join(DIST, 'index.html'), buildLanding(template, items, true), 'utf8');
   const ruDir = path.join(DIST, 'ru');
   fs.mkdirSync(ruDir, { recursive: true });
-  const topItems = [...items]
-    .filter((i) => i.value > 0)
-    .sort((a, b) => b.value - a.value)
-    .slice(0, 24);
-  const ruList = topItems
-    .map((i) => `<tr><td><a href="/ru/item/${slugify(i.englishName || i.id || i.name)}/">${esc(i.name)}</a></td><td>${esc(fmtValue(i.value))}★</td></tr>`)
-    .join('');
-  fs.writeFileSync(path.join(ruDir, 'index.html'), buildRussianLanding(template, ruList), 'utf8');
+  fs.writeFileSync(path.join(ruDir, 'index.html'), buildLanding(template, items, false), 'utf8');
 
   // Point robots.txt at the sitemap.
   const robotsPath = path.join(DIST, 'robots.txt');

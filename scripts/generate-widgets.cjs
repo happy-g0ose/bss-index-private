@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getCategoryStyles } = require('./lib/category-styles.cjs');
+const { changeOver } = require('./lib/change.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
@@ -103,34 +104,16 @@ function fmtValue(v) {
 }
 
 /**
- * Week-over-week price change, identical to the rule used by the catalog
- * card in src/components/ItemCard.tsx: compare the newest price with the
- * history entry closest to (newest date - 7 days).
+ * Week-over-week price change.
+ *
+ * It used to take the history entry closest to (newest date - 7 days), which
+ * disagreed with the API — the API interpolates, and the two produced
+ * different numbers for the same item. The shared implementation in
+ * lib/change.cjs is the one rule now: the site, the API, the widgets and the
+ * static pages all report the same figure.
  */
 function getWeekChange(item) {
-  const prices = Array.isArray(item.historicalPrices) ? item.historicalPrices : [];
-  const dates = Array.isArray(item.historicalDates) ? item.historicalDates : [];
-  if (prices.length < 2 || dates.length < 2) return null;
-  const n = Math.min(prices.length, dates.length);
-  const lastDate = new Date(dates[n - 1]);
-  if (isNaN(lastDate.getTime())) return null;
-  const lastPrice = prices[n - 1];
-  const target = lastDate.getTime() - 7 * 86400000;
-  let bestIdx = -1;
-  let bestDiff = Infinity;
-  for (let i = 0; i < n - 1; i++) {
-    const d = new Date(dates[i]);
-    if (isNaN(d.getTime())) continue;
-    const diff = Math.abs(d.getTime() - target);
-    if (diff < bestDiff) {
-      bestDiff = diff;
-      bestIdx = i;
-    }
-  }
-  if (bestIdx === -1) return null;
-  const prev = prices[bestIdx];
-  if (!prev) return null;
-  return ((lastPrice - prev) / prev) * 100;
+  return changeOver(item, 7);
 }
 
 /** Flatten a beequip's groups/rolls into a single list. */

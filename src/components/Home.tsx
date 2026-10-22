@@ -12,57 +12,55 @@ interface HomeProps {
 }
 
 // Popular display stickers with real details
-const floatingStickers = [
-  {
-    name: 'Stick Cub',
-    value: '23.50',
-    demand: 'Высокий',
-    demandEn: 'High',
-    image: 'https://bssmvalues.com/images/Stick_Cub.webp',
-    glow: 'rgba(168, 85, 247, 0.3)',
-    borderColor: 'border-purple-500/35',
-    badge: 'bg-purple-500/10 text-purple-400 border-purple-500/25',
-  },
-  {
-    name: 'Robo Cub',
-    value: '15.50',
-    demand: 'Высокий',
-    demandEn: 'High',
-    image: 'https://bssmvalues.com/images/Robo_Cub.webp',
-    glow: 'rgba(59, 130, 246, 0.3)',
-    borderColor: 'border-blue-500/35',
-    badge: 'bg-blue-500/10 text-blue-400 border-blue-500/25',
-  },
-  {
-    name: 'Star Cub',
-    value: '10.25',
-    demand: 'Средний',
-    demandEn: 'Average',
-    image: 'https://bssmvalues.com/images/Star_Cub.webp',
-    glow: 'rgba(245, 158, 11, 0.3)',
-    borderColor: 'border-amber-500/35',
-    badge: 'bg-amber-500/10 text-amber-400 border-amber-500/25',
-  },
-  {
-    name: 'Leo Star Sign',
-    value: '1.00',
-    demand: 'Средний',
-    demandEn: 'Average',
-    image: 'https://bssmvalues.com/images/leo_star_sign.webp',
-    glow: 'rgba(16, 185, 129, 0.25)',
-    borderColor: 'border-emerald-500/35',
-    badge: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/25',
-  }
-];
+/**
+ * The four stickers featured on the home page.
+ *
+ * Only the names live here — the price, demand and colours are read from the
+ * live item data. They used to be hardcoded in this file, which meant the
+ * home page kept showing prices that no longer matched the catalogue
+ * (Stick Cub at 23.50 while the catalogue said 15.5).
+ */
+const FEATURED_STICKERS = ['Stick Cub', 'Robo Cub', 'Star Cub', 'Leo Star Sign'];
 
 export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
   const items = useItems();
   const [stickers, setStickers] = useState(() =>
-    floatingStickers.map((st, index) => ({
-      ...st,
-      keyId: `sticker-${index}`
+    FEATURED_STICKERS.map((name, index) => ({
+      name,
+      keyId: `sticker-${index}`,
     }))
   );
+
+  /**
+   * Merge a featured sticker with the live item data. A sticker whose name is
+   * not in the catalogue (or a catalogue that has not loaded yet) falls back
+   * to an empty card rather than showing a made-up price.
+   */
+  const resolveSticker = (sticker: { name: string; keyId: string }) => {
+    const live = items.find((i) => i.englishName === sticker.name || i.name === sticker.name);
+    if (!live) {
+      return {
+        ...sticker,
+        value: '—',
+        demand: '—',
+        demandEn: '—',
+        image: '',
+        glow: 'rgba(255,255,255,.06)',
+        borderColor: 'border-white/10',
+        badge: 'bg-white/5 text-neutral-300 border-white/10',
+      };
+    }
+    return {
+      ...sticker,
+      value: Number(live.value.toFixed(2)).toString(),
+      demand: live.demand,
+      demandEn: translateDemand(live.demand, 'en'),
+      image: live.image,
+      glow: live.glowColor,
+      borderColor: live.borderColor,
+      badge: live.badgeColor,
+    };
+  };
 
   const handleStickerClick = (index: number) => {
     if (items.length === 0) return;
@@ -73,14 +71,7 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
       const updated = [...prev];
       updated[index] = {
         ...updated[index],
-        name: randomItem.name,
-        value: Number(randomItem.value.toFixed(2)).toString(),
-        demand: randomItem.demand,
-        demandEn: translateDemand(randomItem.demand, 'en'),
-        image: randomItem.image,
-        glow: randomItem.glowColor,
-        borderColor: randomItem.borderColor,
-        badge: randomItem.badgeColor,
+        name: randomItem.englishName || randomItem.name,
       };
       return updated;
     });
@@ -134,7 +125,8 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
           {/* Animated Float Stickers Side */}
           <div className="lg:col-span-5 hidden lg:block relative min-h-[350px]">
             <div className="absolute inset-0 flex items-center justify-center">
-              {stickers.map((sticker, idx) => {
+              {stickers.map((raw, idx) => {
+                const sticker = resolveSticker(raw);
                 // Configure drift animations for floating feel
                 const xOffset = idx % 2 === 0 ? -30 : 30;
                 const yOffset = idx < 2 ? -60 : 60;
@@ -176,11 +168,15 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
                         }}
                         onClick={() => handleStickerClick(idx)}
                       >
-                        <img 
-                          src={sticker.image} 
-                          alt={sticker.name} 
-                          className="w-11 h-11 object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.15)]" 
-                        />
+                        {sticker.image ? (
+                          <img
+                            src={sticker.image}
+                            alt={sticker.name}
+                            className="w-11 h-11 object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.15)]"
+                          />
+                        ) : (
+                          <div className="w-11 h-11 rounded-lg bg-white/5" />
+                        )}
                         <div className="text-left leading-tight">
                           <div className="text-[10px] font-bold text-neutral-400 truncate w-32">{sticker.name}</div>
                           <div className="text-xs font-black text-white mt-0.5">{sticker.value} <span className="text-[9px] text-amber-500 font-bold">Val</span></div>
@@ -289,7 +285,9 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {floatingStickers.map((sticker) => (
+          {stickers.map((raw) => {
+            const sticker = resolveSticker(raw);
+            return (
             <div
               key={`pop-${sticker.name}`}
               onClick={() => onNavigate('catalog')}
@@ -304,11 +302,15 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
                 className="h-16 w-16 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105 duration-300"
                 style={{ background: sticker.glow }}
               >
-                <img 
-                  src={sticker.image} 
-                  alt={sticker.name} 
-                  className="h-12 w-12 object-contain drop-shadow-[_4px_10px_rgba(0,0,0,0.3)]" 
-                />
+                {sticker.image ? (
+                  <img
+                    src={sticker.image}
+                    alt={sticker.name}
+                    className="h-12 w-12 object-contain drop-shadow-[_4px_10px_rgba(0,0,0,0.3)]"
+                  />
+                ) : (
+                  <div className="h-12 w-12 rounded-lg bg-white/5" />
+                )}
               </div>
 
               <div>
@@ -324,7 +326,8 @@ export default function Home({ onNavigate, onSearchClick, lang }: HomeProps) {
                 {lang === 'ru' ? sticker.demand : sticker.demandEn}
               </span>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </div>

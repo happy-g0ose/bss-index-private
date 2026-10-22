@@ -38,6 +38,7 @@
 const fs = require('fs');
 const path = require('path');
 const { buildDocsHtml } = require('./lib/docs.cjs');
+const { priceAt: sharedPriceAt, changeOverPoints: sharedChangeOverPoints } = require('./lib/change.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
@@ -214,20 +215,12 @@ function buildSeries(item) {
 /**
  * Linear interpolation of the price at a given timestamp.
  * Returns null when the timestamp falls outside the recorded range.
+ *
+ * The implementation lives in lib/change.cjs, which the site build and the
+ * static pages use as well, so every surface reports the same change.
  */
 function priceAt(points, t) {
-  if (!points.length) return null;
-  if (t < points[0].t || t > points[points.length - 1].t) return null;
-  for (let i = 1; i < points.length; i++) {
-    if (points[i].t >= t) {
-      const a = points[i - 1];
-      const b = points[i];
-      if (b.t === a.t) return b.p;
-      const f = (t - a.t) / (b.t - a.t);
-      return a.p + (b.p - a.p) * f;
-    }
-  }
-  return points[points.length - 1].p;
+  return sharedPriceAt(points, t);
 }
 
 /**
@@ -243,12 +236,7 @@ function priceAt(points, t) {
  * percentages on stale series.
  */
 function changeOver(points, days) {
-  if (points.length < 2) return null;
-  const end = points[points.length - 1].t;
-  const base = priceAt(points, end - days * DAY_MS);
-  if (base === null || !Number.isFinite(base) || base === 0) return null;
-  const last = points[points.length - 1].p;
-  return round1(((last - base) / base) * 100);
+  return sharedChangeOverPoints(points, days);
 }
 
 // ---------------------------------------------------------------------------

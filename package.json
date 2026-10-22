@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "node generate-build-meta.cjs && node scripts/generate-indexnow-key.cjs && node scripts/generate-runtime-items.cjs && tsc && vite build && node scripts/prerender.cjs && node scripts/generate-api.cjs && node scripts/generate-api-v1.cjs && node scripts/generate-api-landing.cjs && node scripts/generate-widgets.cjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "verify": "node scripts/check-landing.cjs && node scripts/check-index-page.cjs && node scripts/verify-api-v1.cjs && node scripts/verify-widgets.cjs && node scripts/check-api-english.mjs && node scripts/check-docs.mjs && node scripts/check-indexing.mjs && node scripts/test-search-api.mjs && node scripts/verify-rolls.mjs"
   },
   "devDependencies": {
     "typescript": "~6.0.2",

@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792655587641,
-  "version": "2.1.0",
-  "message": "chore: add a live check for the English-first API",
+  "timestamp": 1792667483290,
+  "version": "2.2.0",
+  "message": "chore: add a live check for the API entry points",
   "author": "BSS Index Developer",
-  "sha": "b9af240317f83186052bdfb954874daed52be952"
+  "sha": "3a6cd00896785e20ef49c2523b33ea6793ff5807"
 }

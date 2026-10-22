@@ -88,34 +88,14 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, in
     },
   };
 
-  // Week-over-week price change derived from the item's history
-  const getWeekChange = (item: BSSItem): number | null => {
-    const prices = item.historicalPrices;
-    const dates = item.historicalDates;
-    if (!prices || prices.length < 2 || !dates || dates.length < 2) return null;
-    const n = Math.min(prices.length, dates.length);
-    const lastDate = new Date(dates[n - 1]);
-    if (isNaN(lastDate.getTime())) return null;
-    const lastPrice = prices[n - 1];
-    const target = lastDate.getTime() - 7 * 86400000;
-    let bestIdx = -1;
-    let bestDiff = Infinity;
-    for (let i = 0; i < n - 1; i++) {
-      const d = new Date(dates[i]);
-      if (isNaN(d.getTime())) continue;
-      const diff = Math.abs(d.getTime() - target);
-      if (diff < bestDiff) {
-        bestDiff = diff;
-        bestIdx = i;
-      }
-    }
-    if (bestIdx === -1) return null;
-    const prev = prices[bestIdx];
-    if (!prev) return null;
-    return ((lastPrice - prev) / prev) * 100;
-  };
-
-  const weekChange = showWeekBadge ? getWeekChange(item) : null;
+  // Week-over-week price change.
+  //
+  // It used to be derived here, from the raw history, by taking the *nearest*
+  // snapshot — which disagreed with the API (that one interpolates) and
+  // produced figures like +180% where the API said +12.7%. The change is now
+  // computed once at build time in scripts/lib/change.cjs and shipped with the
+  // data, so every surface shows the same number.
+  const weekChange = showWeekBadge ? (item.change7d ?? null) : null;
 
   // Custom vector background illustration matching categories
   const renderItemIllustration = () => {

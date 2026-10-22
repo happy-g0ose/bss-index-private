@@ -43,6 +43,13 @@ export interface BSSItem {
   description: string;
   historicalPrices: number[];
   historicalDates?: string[];
+  /**
+   * Price change over the last 7 / 30 days, computed at build time in
+   * scripts/lib/change.cjs so the site, the API and the static pages all
+   * report the same number. Null when the history is too short.
+   */
+  change7d?: number | null;
+  change30d?: number | null;
   image: string;
   beequipData?: BeequipStatGroup[];
 }
