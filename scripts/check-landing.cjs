@@ -1,8 +1,10 @@
 /**
- * Checks the static landing pages (/ and /ru/).
+ * Checks the landing pages (/ and /ru/).
  *
- * These are served to crawlers that do not run JavaScript, so they must carry
- * a heading, real links and structured data on their own.
+ * The Russian landing page is a real page: a heading, links and structured
+ * data of its own. The English home page is the app and nothing else — it
+ * only carries the metadata in its head, because a visible block there would
+ * just repeat what the app already shows.
  */
 const fs = require('fs');
 const path = require('path');
@@ -27,19 +29,16 @@ for (const [rel, isEn] of [
   }
   const h = fs.readFileSync(file, 'utf8');
 
-  const h1 = (h.match(/<h1[^>]*>([^<]*)/) || [])[1];
-  check('has an h1', !!h1, h1 || '');
-  check('h1 is not the app shell', /<div id="app"><\/div>/.test(h));
-
-  const links = [...h.matchAll(/<a\s[^>]*href="([^"]+)"/g)].map((m) => m[1]);
-  const internal = links.filter((u) => u.startsWith('/'));
-  check('has internal links', internal.length > 0, internal.length + ' internal');
-
-  const itemLinks = links.filter((u) => /^\/(ru\/)?item\/[^/]+\/$/.test(u));
-  check('links to item pages', itemLinks.length >= 20, itemLinks.length + ' item links');
-
-  check('links to the item index', links.some((u) => u === '/items/' || u === '/ru/items/'));
-  check('links to the API', links.some((u) => u === '/api/'));
+  // --- what both pages must have ---
+  check('has a title', /<title>[^<]+<\/title>/.test(h));
+  check('has a description', /name="description" content="[^"]+"/.test(h));
+  check('has canonical', /<link rel="canonical"/.test(h));
+  check('has hreflang alternates', (h.match(/hreflang/g) || []).length >= 3);
+  check('has Open Graph tags', (h.match(/property="og:/g) || []).length >= 4);
+  check('has the app mount point', /<div id="app"><\/div>/.test(h));
+  check('theme boot script present', /bss_theme/.test(h));
+  check('module script present', /<script type="module"/.test(h));
+  check('stylesheet present', /<link rel="stylesheet"[^>]*assets\/[^"]*\.css"/.test(h));
 
   const ld = h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   check('has JSON-LD', !!ld);
@@ -58,24 +57,22 @@ for (const [rel, isEn] of [
     }
   }
 
-  check('has canonical', /<link rel="canonical"/.test(h));
-  check('has hreflang alternates', (h.match(/hreflang/g) || []).length >= 3);
-  const appIdx = h.indexOf('<div id="app"></div>');
-  const mainIdx = h.indexOf('<main class="wrap">');
-  check('#app is empty', /<div id="app"><\/div>/.test(h));
-  check(
-    'static block sits outside #app',
-    appIdx > -1 && mainIdx > -1 && appIdx !== mainIdx,
-    appIdx > -1 ? '#app at ' + appIdx + ', main at ' + mainIdx : 'no #app found'
-  );
-  // The English home page must open with the app; the Russian landing page
-  // has always been a landing page with the app below it.
-  check(
-    isEn ? 'the app comes first' : 'the landing comes first',
-    isEn ? appIdx < mainIdx : mainIdx < appIdx
-  );
-  check('theme boot script present', /bss_theme/.test(h));
-  check('module script present', /<script type="module"/.test(h));
+  if (isEn) {
+    // The home page is the app — nothing else in the body.
+    check('no static block in the body', !/<!--bss-static-->/.test(h));
+    check('no duplicate heading in the body', !/<main class="wrap">/.test(h));
+  } else {
+    // The Russian landing page is a page of its own.
+    const h1 = (h.match(/<h1[^>]*>([^<]*)/) || [])[1];
+    check('has an h1', !!h1, h1 || '');
+    const links = [...h.matchAll(/<a\s[^>]*href="([^"]+)"/g)].map((m) => m[1]);
+    check('has internal links', links.filter((u) => u.startsWith('/')).length > 0);
+    check('links to the item index', links.some((u) => u === '/ru/items/'));
+    check('links to the API', links.some((u) => u === '/api/'));
+    check('links to item pages', links.filter((u) => /^\/ru\/item\/[^/]+\/$/.test(u)).length >= 20);
+    check('static block sits outside #app', h.indexOf('<main class="wrap">') < h.indexOf('<div id="app">'));
+    check('totals leave beequips out', /excluding beequips|без биквипов/.test(h));
+  }
   console.log('');
 }
 

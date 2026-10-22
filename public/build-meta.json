@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792670040520,
+  "timestamp": 1792670653073,
   "version": "2.2.0",
-  "message": "chore: keep the scratch commit messages out of the repo",
+  "message": "feat: no prices on beequips, and the app opens the home page again\n\nA beequip has no price of its own — what it is worth depends on the roll you\nhappened to get, so the number was noise. The catalogue at /items/ and\n/ru/items/ now shows the 41 beequips without a price, sorted by name, with a\nnote in the section header. Clicking one still leads to the item page where\nthe rolls and their buffs can be looked up.\n\nThe totals on the page leave beequips out too: \"total value\" was 9.6k, but\n8.3k of that was the sum of the beequip base values. It is 1.3k now, and the\nmost expensive item is Bee Cub at 290 instead of Pink Shades at 2.3k — which\nwas a beequip as well.\n\nThe English home page opens with the app again, the way it did before the\nstatic block was added on top. The block moved below the app, so it is still\nin the document for crawlers. The Russian landing page keeps its landing on\ntop — that page has always been a landing page.",
   "author": "BSS Index Developer",
-  "sha": "45e25bce7d1ad04d80547d6b6efb65b04fe0f86c"
+  "sha": "83fe2c9314e167fff0c69d0151e5eb0558ed4be0"
 }

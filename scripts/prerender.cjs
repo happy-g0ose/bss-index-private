@@ -703,8 +703,13 @@ function buildLanding(template, items, isEn) {
         itemCol: 'Предмет',
       };
 
+  // A beequip has no price of its own — what it is worth depends on the roll
+  // you got, so the totals and the "most expensive" list leave them out.
+  const isBeequip = (item) => item.category === 'Биквипы';
+  const priced = items.filter((i) => !isBeequip(i));
+
   // Top items, most valuable first.
-  const topItems = [...items]
+  const topItems = [...priced]
     .filter((i) => i.value > 0)
     .sort((a, b) => b.value - a.value)
     .slice(0, 24);
@@ -731,7 +736,7 @@ function buildLanding(template, items, isEn) {
     })
     .join('');
 
-  const totalValue = items.reduce((sum, i) => sum + (Number(i.value) || 0), 0);
+  const totalValue = priced.reduce((sum, i) => sum + (Number(i.value) || 0), 0);
   const topItem = topItems[0];
 
   const jsonLd = {
@@ -816,7 +821,7 @@ function buildLanding(template, items, isEn) {
 
     <div class="stats">
       <div><div class="stat-k">${isEn ? 'Items' : 'Предметов'}</div><div class="stat-v">${items.length}</div></div>
-      <div><div class="stat-k">${isEn ? 'Total value' : 'Общая ценность'}</div><div class="stat-v price">${esc(fmtValue(totalValue))}★</div></div>
+      <div><div class="stat-k">${isEn ? 'Total value' : 'Общая ценность'}</div><div class="stat-v price">${esc(fmtValue(totalValue))}★</div><div class="stat-n">${esc(isEn ? 'excluding beequips' : 'без биквипов')}</div></div>
       <div><div class="stat-k">${isEn ? 'Most expensive' : 'Самый дорогой'}</div><div class="stat-v price">${esc(fmtValue(topItem.value))}★</div><div class="stat-n">${esc(isEn ? topItem.englishName || topItem.name : topItem.name)}</div></div>
     </div>
 
@@ -838,19 +843,24 @@ function buildLanding(template, items, isEn) {
 
   <style>${ITEM_PAGE_CSS}</style>`;
 
-  // The English home page opens straight into the app, the way it always did —
-  // the static block goes below it so the first screen is unchanged. The
-  // Russian landing page has always been a landing page, so there the block
-  // stays on top.
-  const body_ =
-    isEn
-      ? `<div id="app"></div>\n${STATIC_START}\n${body}\n${STATIC_END}`
-      : `${STATIC_START}\n${body}\n${STATIC_END}\n<div id="app"></div>`;
+  // The English home page is the app and nothing else — no static block in
+  // the body at all. Everything a crawler needs (title, description,
+  // canonical, hreflang, Open Graph and the JSON-LD) lives in the head.
+  // The Russian landing page has always been a landing page, so its block
+  // stays on top of the app.
+  if (!isEn) {
+    return template
+      .replace(/<html lang="[a-z]{2}">/i, '<html lang="ru">')
+      .replace(/<head>[\s\S]*?<\/head>/i, `<head>${head}  </head>`)
+      .replace(
+        '<div id="app"></div>',
+        `${STATIC_START}\n${body}\n${STATIC_END}\n<div id="app"></div>`
+      );
+  }
 
   return template
-    .replace(/<html lang="[a-z]{2}">/i, `<html lang="${isEn ? 'en' : 'ru'}">`)
-    .replace(/<head>[\s\S]*?<\/head>/i, `<head>${head}  </head>`)
-    .replace('<div id="app"></div>', body_);
+    .replace(/<html lang="[a-z]{2}">/i, '<html lang="en">')
+    .replace(/<head>[\s\S]*?<\/head>/i, `<head>${head}  </head>`);
 }
 
 /**
