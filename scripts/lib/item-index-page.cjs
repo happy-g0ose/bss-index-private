@@ -87,74 +87,11 @@ function buildIndexPage(items, isEn, opts = {}) {
   }
   const groups = [...byCategory.entries()].sort((a, b) => b[1].length - a[1].length);
 
-  const navChips = groups
-    .map(([category, list]) => {
-      const id = `cat-${slug(category)}`;
-      const title = isEn ? CATEGORY_EN[category] || category : category;
-      return `<a class="chip" href="#${id}" data-target="${id}">${esc(title)} <span>${list.length}</span></a>`;
-    })
-    .join('\n        ');
-
-  // Every item, in a flat list, for the JSON-LD ItemList and for the sitemap.
-  const flat = [];
-  const sections = groups
-    .map(([category, list]) => {
-      const id = `cat-${slug(category)}`;
-      const title = isEn ? CATEGORY_EN[category] || category : category;
-
-      const cards = list
-        .slice()
-        .sort((a, b) => b.value - a.value)
-        .map((i) => {
-          const itemSlug = slug(i.englishName || i.id || i.name);
-          const label = isEn ? i.englishName : i.name;
-          const altLabel = isEn ? i.name : i.englishName;
-          const change = changeOver(i, 7);
-          const styles = getCategoryStyles(i.category);
-          const changeChip =
-            change === null
-              ? ''
-              : `<span class="chg ${change > 0 ? 'up' : change < 0 ? 'down' : ''}">${
-                  change > 0 ? '↗' : change < 0 ? '↘' : '→'
-                } ${change > 0 ? '+' : ''}${change.toFixed(0)}%</span>`;
-
-          flat.push({ slug: itemSlug, name: label, value: Number(i.value) || 0, category: title });
-
-          return `          <a class="card-item" href="${prefix}/item/${itemSlug}/"
-             data-name="${esc(label.toLowerCase())}"
-             data-alt="${esc(String(altLabel || '').toLowerCase())}"
-             data-category="${esc(title.toLowerCase())}"
-             data-value="${Number(i.value) || 0}"
-             data-change="${change === null ? '' : change}"
-             style="--glow:${esc(styles.glowColor)};--cat:${esc(styles.hexColor)}">
-            <span class="thumb">${
-              i.image
-                ? `<img src="${esc(i.image)}" alt="${esc(label)}" loading="lazy" decoding="async" width="36" height="36">`
-                : ''
-            }</span>
-            <span class="meta">
-              <span class="name">${esc(label)}</span>
-              <span class="sub">${esc(title)}</span>
-            </span>
-            <span class="price">
-              <span class="val">${esc(fmt(i.value))}<span class="star">★</span></span>
-              ${changeChip}
-            </span>
-          </a>`;
-        })
-        .join('\n');
-
-      return `      <section class="group" id="${id}">
-        <h2 class="ghead"><span class="gtitle">${esc(title)}</span><span class="gcount">${list.length}</span></h2>
-        <div class="grid">
-${cards}
-        </div>
-      </section>`;
-    })
-    .join('\n');
-
-  const totalValue = items.reduce((sum, i) => sum + (Number(i.value) || 0), 0);
-  const top = items.slice().sort((a, b) => (b.value || 0) - (a.value || 0))[0];
+  // A beequip has no meaningful price of its own — its worth is in the roll
+  // you happen to get. So the cards show no price at all, and the totals on
+  // the page leave them out.
+  const isBeequip = (item) => item.category === 'Биквипы';
+  const priced = items.filter((i) => !isBeequip(i));
 
   const pageTitle = isEn
     ? 'All items — BSS Index value list'
@@ -177,6 +114,8 @@ ${cards}
         reset: 'Reset',
         top: 'Most expensive',
         total: 'Total value',
+        noBeequips: 'excluding beequips',
+        rolls: 'no price — depends on the roll',
         count: 'Items',
         home: 'BSS Index home',
         api: 'API',
@@ -196,12 +135,92 @@ ${cards}
         reset: 'Сбросить',
         top: 'Самый дорогой',
         total: 'Общая ценность',
+        noBeequips: 'без биквипов',
+        rolls: 'цены нет — зависит от ролла',
         count: 'Предметов',
         home: 'На главную BSS Index',
         api: 'API',
         demo: 'Живое демо',
         brand: 'BSS Index',
       };
+
+  const navChips = groups
+    .map(([category, list]) => {
+      const id = `cat-${slug(category)}`;
+      const title = isEn ? CATEGORY_EN[category] || category : category;
+      return `<a class="chip" href="#${id}" data-target="${id}">${esc(title)} <span>${list.length}</span></a>`;
+    })
+    .join('\n        ');
+
+  // Every item, in a flat list, for the JSON-LD ItemList and for the sitemap.
+  const flat = [];
+  const sections = groups
+    .map(([category, list]) => {
+      const id = `cat-${slug(category)}`;
+      const title = isEn ? CATEGORY_EN[category] || category : category;
+
+      const cards = list
+        .slice()
+        .sort((a, b) => (isBeequip(a) ? a.name.localeCompare(b.name) : b.value - a.value))
+        .map((i) => {
+          const itemSlug = slug(i.englishName || i.id || i.name);
+          const label = isEn ? i.englishName : i.name;
+          const altLabel = isEn ? i.name : i.englishName;
+          const change = changeOver(i, 7);
+          const styles = getCategoryStyles(i.category);
+          const bq = isBeequip(i);
+          const changeChip =
+            change === null || bq
+              ? ''
+              : `<span class="chg ${change > 0 ? 'up' : change < 0 ? 'down' : ''}">${
+                  change > 0 ? '↗' : change < 0 ? '↘' : '→'
+                } ${change > 0 ? '+' : ''}${change.toFixed(0)}%</span>`;
+
+          flat.push({ slug: itemSlug, name: label, value: Number(i.value) || 0, category: title });
+
+          // No price on beequips — a roll decides what it is worth.
+          const priceBlock = bq
+            ? ''
+            : `<span class="price">
+              <span class="val">${esc(fmt(i.value))}<span class="star">★</span></span>
+              ${changeChip}
+            </span>`;
+
+          return `          <a class="card-item" href="${prefix}/item/${itemSlug}/"
+             data-name="${esc(label.toLowerCase())}"
+             data-alt="${esc(String(altLabel || '').toLowerCase())}"
+             data-category="${esc(title.toLowerCase())}"
+             data-value="${Number(i.value) || 0}"
+             data-change="${change === null ? '' : change}"
+             data-bq="${bq ? '1' : '0'}"
+             style="--glow:${esc(styles.glowColor)};--cat:${esc(styles.hexColor)}">
+            <span class="thumb">${
+              i.image
+                ? `<img src="${esc(i.image)}" alt="${esc(label)}" loading="lazy" decoding="async" width="36" height="36">`
+                : ''
+            }</span>
+            <span class="meta">
+              <span class="name">${esc(label)}</span>
+              <span class="sub">${esc(title)}</span>
+            </span>
+            ${priceBlock}
+          </a>`;
+        })
+        .join('\n');
+
+      return `      <section class="group" id="${id}">
+        <h2 class="ghead"><span class="gtitle">${esc(title)}</span><span class="gcount">${list.length}</span>${
+          list.some(isBeequip) ? `<span class="ghint">${esc(t.rolls)}</span>` : ''
+        }</h2>
+        <div class="grid">
+${cards}
+        </div>
+      </section>`;
+    })
+    .join('\n');
+
+  const totalValue = priced.reduce((sum, i) => sum + (Number(i.value) || 0), 0);
+  const top = priced.slice().sort((a, b) => (b.value || 0) - (a.value || 0))[0];
 
   const itemListJsonLd = {
     '@context': 'https://schema.org',
@@ -317,6 +336,7 @@ ${cards}
   .ghead { display: flex; align-items: baseline; gap: 9px; margin: 0 0 12px; }
   .gtitle { font-size: 12px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
   .gcount { font-size: 11px; color: var(--faint); font-weight: 700; }
+  .ghint { font-size: 11px; color: var(--faint); font-weight: 600; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px; }
   .card-item {
@@ -363,7 +383,11 @@ ${cards}
 
   <div class="stats">
     <div class="stat"><b>${esc(t.count)}</b><span>${items.length}</span></div>
-    <div class="stat"><b>${esc(t.total)}</b><span>${esc(fmt(totalValue))}★</span></div>
+    <div class="stat">
+      <b>${esc(t.total)}</b>
+      <span>${esc(fmt(totalValue))}★</span>
+      <i>${esc(t.noBeequips)}</i>
+    </div>
     <div class="stat">
       <b>${esc(t.top)}</b>
       <span>${esc(fmt(top ? top.value : 0))}★</span>
@@ -444,8 +468,14 @@ ${sections}
 
       // Sort inside the group.
       visible.sort(function (a, b) {
+        var na = a.getAttribute('data-name') || '';
+        var nb = b.getAttribute('data-name') || '';
+        // A beequip has no price, so sorting it by price would look random.
+        if (a.getAttribute('data-bq') === '1' && b.getAttribute('data-bq') === '1') {
+          return na.localeCompare(nb);
+        }
         if (mode === 'name') {
-          return (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
+          return na.localeCompare(nb);
         }
         if (mode === 'change') {
           var ca = a.getAttribute('data-change');

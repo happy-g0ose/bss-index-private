@@ -43,7 +43,7 @@ async function main() {
   check('item page links onwards', related.length >= 8, related.length + ' related links');
 
   const idxHtml = await (await fetch(ORIGIN + '/items/')).text();
-  const idxLinks = [...idxHtml.matchAll(/<li><a href="([^"]+)"/g)].map((m) => m[1]);
+  const idxLinks = [...idxHtml.matchAll(/class="card-item" href="([^"]+)"/g)].map((m) => m[1]);
   check('/items/ index lists items', idxLinks.length === 330, idxLinks.length + ' links');
   const ruIdx = await fetch(ORIGIN + '/ru/items/');
   check('/ru/items/ reachable', ruIdx.status === 200, 'status ' + ruIdx.status);

@@ -838,13 +838,19 @@ function buildLanding(template, items, isEn) {
 
   <style>${ITEM_PAGE_CSS}</style>`;
 
+  // The English home page opens straight into the app, the way it always did —
+  // the static block goes below it so the first screen is unchanged. The
+  // Russian landing page has always been a landing page, so there the block
+  // stays on top.
+  const body_ =
+    isEn
+      ? `<div id="app"></div>\n${STATIC_START}\n${body}\n${STATIC_END}`
+      : `${STATIC_START}\n${body}\n${STATIC_END}\n<div id="app"></div>`;
+
   return template
     .replace(/<html lang="[a-z]{2}">/i, `<html lang="${isEn ? 'en' : 'ru'}">`)
     .replace(/<head>[\s\S]*?<\/head>/i, `<head>${head}  </head>`)
-    .replace(
-      '<div id="app"></div>',
-      `${STATIC_START}\n${body}\n${STATIC_END}\n<div id="app"></div>`
-    );
+    .replace('<div id="app"></div>', body_);
 }
 
 /**

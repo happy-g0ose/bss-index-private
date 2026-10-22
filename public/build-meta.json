@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792669434892,
+  "timestamp": 1792670040520,
   "version": "2.2.0",
-  "message": "perf: shrink the images, make the motion setting real\n\nThe logo was shipped three times at 854 KB each (logo.png, favicon.png,\napple-touch-icon.png) and the author avatar at 362 KB. On the home page the\nlogo alone was three quarters of the page weight.\n\n- logo.png is now a 512x512 square crop at 277 KB, used for the Open Graph\n  image; the navbar loads a 6 KB 128px version instead\n- favicon.png is 2 KB, apple-touch-icon.png is 11 KB\n- avatar.jpg is 13 KB instead of 362 KB\n- deleted public/bee-logo.png, public/icons.svg and the three leftover Vite\n  template files in src/assets — none of them were referenced anywhere\n\nThe \"Reduce motion\" setting did nothing at all: the toggle was wired to the\nraw state setter, so the choice was forgotten on the next reload, and even\nwhile it was on nothing read it. It now persists, sets data-motion on <html>\nand switches framer-motion to reducedMotion=\"always\"; the operating system\nsetting is honoured as well.\n\nThe same applied to \"Show week badges\" — it was never saved either.",
+  "message": "chore: keep the scratch commit messages out of the repo",
   "author": "BSS Index Developer",
-  "sha": "99c1cd0e9903146a30ad9943bfe85d20535dfe59"
+  "sha": "45e25bce7d1ad04d80547d6b6efb65b04fe0f86c"
 }

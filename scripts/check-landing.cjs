@@ -62,10 +62,17 @@ for (const [rel, isEn] of [
   check('has hreflang alternates', (h.match(/hreflang/g) || []).length >= 3);
   const appIdx = h.indexOf('<div id="app"></div>');
   const mainIdx = h.indexOf('<main class="wrap">');
+  check('#app is empty', /<div id="app"><\/div>/.test(h));
   check(
     'static block sits outside #app',
-    appIdx > -1 && mainIdx > -1 && mainIdx < appIdx,
+    appIdx > -1 && mainIdx > -1 && appIdx !== mainIdx,
     appIdx > -1 ? '#app at ' + appIdx + ', main at ' + mainIdx : 'no #app found'
+  );
+  // The English home page must open with the app; the Russian landing page
+  // has always been a landing page with the app below it.
+  check(
+    isEn ? 'the app comes first' : 'the landing comes first',
+    isEn ? appIdx < mainIdx : mainIdx < appIdx
   );
   check('theme boot script present', /bss_theme/.test(h));
   check('module script present', /<script type="module"/.test(h));
