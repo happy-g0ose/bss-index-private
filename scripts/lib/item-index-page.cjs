@@ -273,8 +273,8 @@ ${cards}
     transition: background .2s ease, color .2s ease;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 28px 20px 72px; }
-  .brand { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; font-size: 11px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); text-decoration: none; }
-  .brand::before { content: ''; width: 16px; height: 16px; border-radius: 5px; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+  .brand { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 18px; font-size: 11px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); text-decoration: none; }
+  .brand img { width: auto; height: 26px; display: block; filter: drop-shadow(0 2px 8px rgba(245, 158, 11, .25)); }
   .brand:hover { color: var(--accent); }
   h1 { font-size: clamp(24px, 5vw, 38px); font-weight: 900; text-transform: uppercase; margin: 0 0 8px; letter-spacing: -.01em; }
   .lead { color: var(--muted); font-size: 15px; margin: 0 0 22px; max-width: 62ch; }
@@ -357,7 +357,7 @@ ${cards}
 </head>
 <body>
 <main class="wrap">
-  <a class="brand" href="${isEn ? '/' : '/ru/'}">${esc(t.brand)}</a>
+  <a class="brand" href="${isEn ? '/' : '/ru/'}"><img src="/logo-128.png" alt="${esc(t.brand)}" width="24" height="21">${esc(t.brand)}</a>
   <h1>${esc(t.h1)}</h1>
   <p class="lead">${esc(t.lead)}</p>
 

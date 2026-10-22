@@ -502,8 +502,9 @@ const ITEM_PAGE_CSS = `
     }
 
     .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 24px; display: flex; gap: 8px; align-items: center; }
-    .crumbs a { color: #fbbf24; text-decoration: none; font-weight: 700; }
+    .crumbs a { color: #fbbf24; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 7px; }
     .crumbs a:hover { text-decoration: underline; }
+    .crumbs .brandlogo { height: 20px; width: auto; display: block; filter: drop-shadow(0 2px 6px rgba(245,158,11,.22)); }
     .hero { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
     /* Every sticker gets the same hatched fill treatment, tinted per item. */
     .iconbox {
@@ -800,7 +801,7 @@ function buildLanding(template, items, isEn) {
   const body = `
   <main class="wrap">
     <nav class="crumbs">
-      <a href="${isEn ? '/' : '/ru/'}">${esc(copy.home)}</a>
+      <a href="${isEn ? '/' : '/ru/'}"><img src="/logo-128.png" alt="BSS Index" width="22" height="19" class="brandlogo" />${esc(copy.home)}</a>
       <span class="langswitch"><a href="${copy.langHref}">${esc(copy.lang)}</a></span>
     </nav>
     <h1>${esc(copy.h1)}</h1>
