@@ -27,7 +27,9 @@ async function main() {
   }
 
   const html = await (await fetch(ORIGIN + '/')).text();
-  const m = html.match(/src="\.\/assets\/(index-[^"]+\.js)"/);
+  // The prerendered pages use absolute asset paths ("/assets/…"), the plain
+  // Vite shell uses relative ones ("./assets/…") — accept both.
+  const m = html.match(/src="(?:\.\/|\/)assets\/(index-[^"]+\.js)"/);
   if (m) {
     const buf = Buffer.from(await (await fetch(ORIGIN + '/assets/' + m[1])).arrayBuffer());
     console.log('\nbundle: ' + (buf.length / 1024).toFixed(0) + ' KB raw / ' +
