@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792651258593,
+  "timestamp": 1792655587641,
   "version": "2.1.0",
-  "message": "chore: add a live check for the roll prices",
+  "message": "chore: add a live check for the English-first API",
   "author": "BSS Index Developer",
-  "sha": "3f489e7cdc3264d2b020330ecd15a66b069a4c66"
+  "sha": "b9af240317f83186052bdfb954874daed52be952"
 }

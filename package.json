@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node generate-build-meta.cjs && node scripts/generate-indexnow-key.cjs && node scripts/generate-runtime-items.cjs && tsc && vite build && node scripts/prerender.cjs && node scripts/generate-api.cjs && node scripts/generate-api-v1.cjs && node scripts/generate-widgets.cjs",
+    "build": "node generate-build-meta.cjs && node scripts/generate-indexnow-key.cjs && node scripts/generate-runtime-items.cjs && tsc && vite build && node scripts/prerender.cjs && node scripts/generate-api.cjs && node scripts/generate-api-v1.cjs && node scripts/generate-api-landing.cjs && node scripts/generate-widgets.cjs",
     "preview": "vite preview"
   },
   "devDependencies": {

@@ -512,7 +512,7 @@ function BssApp({ items }: { items: BSSItem[] }) {
               {lang === 'ru' ? 'API (доки)' : 'API (документация)'}
             </a>
             <a
-              href="/api/index.json"
+              href="/api/"
               target="_blank"
               rel="noopener"
               className="text-amber-500/80 hover:text-amber-400 font-bold transition-colors no-underline"

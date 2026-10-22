@@ -1026,6 +1026,8 @@ function main() {
 
   // -- items.json ------------------------------------------------------------
   write('items.json', sortedItems, false);
+  // Alias: partners coming from bssmvalues.com expect this name.
+  write('values.json', sortedItems, false);
 
   // -- items/<slug>.json + items/<slug>/history.json -------------------------
   for (const item of items) {

@@ -325,8 +325,19 @@ ok(!html.includes('nameEn') && !html.includes('categoryEn'), 'docs.html no longe
 ok(html.includes('nameRu') && html.includes('categoryRu'), 'docs.html documents the English-first fields');
 
 console.log('\n=== 13. legacy API untouched ===');
-const legacy = ['index.json', 'values.json', 'item', 'history', 'category'].map((n) => path.join(ROOT, 'dist', 'api', n));
-ok(legacy.every((f) => fs.existsSync(f)), 'legacy dist/api/* still in place');
+// The legacy shape moved to /api/v0/ so that /api/ can be the v1 entry point.
+const legacy = ['index.json', 'values.json', 'item', 'history', 'category'].map((n) => path.join(ROOT, 'dist', 'api', 'v0', n));
+ok(legacy.every((f) => fs.existsSync(f)), 'legacy API still in place under dist/api/v0/');
+
+console.log('\n=== 14. entry points ===');
+const landing = path.join(ROOT, 'dist', 'api', 'index.html');
+ok(fs.existsSync(landing), '/api/ landing page exists');
+const landingHtml = fs.existsSync(landing) ? fs.readFileSync(landing, 'utf8') : '';
+ok(landingHtml.includes('BSS Index API'), 'landing page is titled in English');
+ok(landingHtml.includes('/api/v1/docs.html') && landingHtml.includes('/api/v1/docs.ru.html'),
+  'landing page links both documentation versions');
+ok(fs.existsSync(path.join(ROOT, 'dist', 'api', 'v1', 'values.json')),
+  '/api/v1/values.json alias exists for partners coming from bssmvalues');
 
 console.log(`\n${failures === 0 ? 'ALL CHECKS PASSED' : failures + ' CHECK(S) FAILED'}\n`);
 process.exitCode = failures === 0 ? 0 : 1;

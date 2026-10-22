@@ -485,7 +485,7 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                 {lang === 'ru' ? 'Виджет' : 'Widget'}
               </a>
               <a
-                href={`/api/item/${slugify(item.englishName || item.id || item.name)}.json`}
+                href={`/api/v1/items/${slugify(item.englishName || item.id || item.name)}.json`}
                 target="_blank"
                 rel="noopener"
                 className="text-neutral-500 hover:text-amber-400 transition-colors no-underline"

@@ -27,7 +27,10 @@ const { getCategoryStyles } = require('./lib/category-styles.cjs');
 
 const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
-const API_DIR = path.join(DIST, 'api');
+// The legacy API is kept under /api/v0/ so that /api/ can be the entry point
+// of the current, English-first v1 API. Mixing two shapes under one prefix is
+// how partners end up reading the old one by accident.
+const API_DIR = path.join(DIST, 'api', 'v0');
 const ITEMS_SRC = path.join(ROOT, 'bot', 'items.json');
 const VERSION_SRC = path.join(ROOT, 'VERSION');
 
