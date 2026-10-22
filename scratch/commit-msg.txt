@@ -1,8 +1,0 @@
-fix: restore the logo and put it on the catalogue pages
-
-I had cropped the logo to a square to make the icons, which cut off the
-wings. The logo is back to the original artwork — the icons are now padded
-to a square instead of cropped, so the bee keeps its wings everywhere.
-
-The index pages and the landing pages now carry the logo next to the
-"BSS Index" wordmark, the same way the navbar does.
