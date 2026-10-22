@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792667483290,
+  "timestamp": 1792668430478,
   "version": "2.2.0",
-  "message": "chore: add a live check for the API entry points",
+  "message": "chore: accept absolute asset paths in the live check",
   "author": "BSS Index Developer",
-  "sha": "3a6cd00896785e20ef49c2523b33ea6793ff5807"
+  "sha": "0d054a77d7dd4dbce256f612ae21ffa988d5d356"
 }

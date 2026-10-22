@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import { Filter, SlidersHorizontal, AlertCircle, Search } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -82,13 +82,25 @@ function BssApp({ items }: { items: BSSItem[] }) {
     return valid.includes(saved) ? saved : 'grid';
   });
 
-  const [reduceMotion, setReduceMotion] = useState<boolean>(() => {
+  const [reduceMotion, setReduceMotionState] = useState<boolean>(() => {
     return localStorage.getItem('bss_motion') === 'reduced';
   });
 
-  const [showWeekBadges, setShowWeekBadges] = useState<boolean>(() => {
+  const [showWeekBadges, setShowWeekBadgesState] = useState<boolean>(() => {
     return localStorage.getItem('bss_badges') !== 'hidden';
   });
+
+  // These two used to be the raw state setters, so the choices were lost on
+  // every reload — the toggle looked like it worked and then forgot.
+  const setReduceMotion = (value: boolean) => {
+    localStorage.setItem('bss_motion', value ? 'reduced' : 'full');
+    setReduceMotionState(value);
+  };
+
+  const setShowWeekBadges = (value: boolean) => {
+    localStorage.setItem('bss_badges', value ? 'shown' : 'hidden');
+    setShowWeekBadgesState(value);
+  };
 
   const setTheme = (t: Theme) => {
     localStorage.setItem('bss_theme', t);
@@ -106,7 +118,10 @@ function BssApp({ items }: { items: BSSItem[] }) {
     // The prerendered block on /item/<slug> pages sits outside #app, so it reads
     // this attribute instead of the app's own bgmode-* class.
     root.setAttribute('data-bsbg', bg);
-  }, [theme, bg]);
+    // The "Reduce motion" setting: framer-motion is handled by <MotionConfig>,
+    // this attribute covers the plain CSS animations.
+    root.setAttribute('data-motion', reduceMotion ? 'reduced' : 'full');
+  }, [theme, bg, reduceMotion]);
 
   // /item/<slug> pages are standalone: the prerendered block above the app is the
   // page. We deliberately do NOT auto-open the item modal here — it would cover
@@ -264,6 +279,7 @@ function BssApp({ items }: { items: BSSItem[] }) {
 
   return (
     <ErrorBoundary>
+    <MotionConfig reducedMotion={reduceMotion ? 'always' : 'user'}>
     <div className={`min-h-screen bg-[#0b0f19] text-neutral-100 font-sans relative antialiased bgmode-${bg}`}>
 
       {/* Release banner */}
@@ -615,6 +631,7 @@ function BssApp({ items }: { items: BSSItem[] }) {
         )}
       </AnimatePresence>
     </div>
+    </MotionConfig>
     </ErrorBoundary>
   );
 }

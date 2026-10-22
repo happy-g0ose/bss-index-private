@@ -107,6 +107,32 @@
   color: inherit;
 }
 
+/* ============ Reduced motion ============
+   Two switches turn the animations off: the "Reduce motion" setting in the
+   app (which sets data-motion="reduced" on <html>) and the operating system
+   setting. The app's own animations are driven by framer-motion, which is
+   handled by <MotionConfig reducedMotion="always">; this covers everything
+   that is plain CSS. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html[data-motion="reduced"] *,
+html[data-motion="reduced"] *::before,
+html[data-motion="reduced"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
 /* ============ Light theme ============ */
 html.light body {
   background-color: #f4f5f7 !important;
