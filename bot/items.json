@@ -11133,23 +11133,23 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 1 Bap + {HB} 1 Fp",
-            "valueLow": 44.0,
-            "valueHigh": 48.0,
-            "value": 46.0,
-            "demand": "Высокий"
+            "valueLow": 38.0,
+            "valueHigh": 42.0,
+            "value": 40.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 1 Bap + {HB} 2 Fp",
-            "valueLow": 75.0,
-            "valueHigh": 80.0,
-            "value": 77.5,
-            "demand": "Высокий"
+            "valueLow": 65.0,
+            "valueHigh": 70.0,
+            "value": 67.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 1 Fp",
-            "valueLow": 5.0,
-            "valueHigh": 6.0,
-            "value": 5.5,
+            "valueLow": 4.0,
+            "valueHigh": 5.0,
+            "value": 4.5,
             "demand": "Средний"
           },
           {
@@ -11172,16 +11172,16 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 2 Fp",
-            "valueLow": 14.0,
-            "valueHigh": 16.0,
-            "value": 15.0,
+            "valueLow": 9.0,
+            "valueHigh": 11.0,
+            "value": 10.0,
             "demand": "Средний"
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 3 Fp",
-            "valueLow": 36.0,
-            "valueHigh": 40.0,
-            "value": 38.0,
+            "valueLow": 28.0,
+            "valueHigh": 32.0,
+            "value": 30.0,
             "demand": "Средний"
           }
         ]

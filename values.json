@@ -17443,7 +17443,7 @@
       "image": "/images/Bead_Lizard.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-18T02:05:28.377Z",
+      "last_updated": "2026-10-23T02:09:15.302Z",
       "stat_groups": {
         "Potential (Unwaxed)": {
           "3★ Pot": {
@@ -18018,30 +18018,42 @@
         },
         "Token Link + {HB} Bee Ability Pollen + {HB} Flame Pollen (Full Waxed)": {
           "{+Ability from wax} Token Link + {HB} 1 Bap + {HB} 1 Fp": {
-            "demand": 4,
+            "demand": 3,
             "history": [
               {
                 "date": "2026-07-03",
                 "demand": 4,
                 "value_min": "44",
                 "value_max": "48"
+              },
+              {
+                "date": "2026-10-23",
+                "demand": 3,
+                "value_min": "38",
+                "value_max": "42"
               }
             ],
-            "value_min": "44",
-            "value_max": "48"
+            "value_min": "38",
+            "value_max": "42"
           },
           "{+Ability from wax} Token Link + {HB} 1 Bap + {HB} 2 Fp": {
-            "demand": 4,
+            "demand": 3,
             "history": [
               {
                 "date": "2026-07-03",
                 "demand": 4,
                 "value_min": "75",
                 "value_max": "80"
+              },
+              {
+                "date": "2026-10-23",
+                "demand": 3,
+                "value_min": "65",
+                "value_max": "70"
               }
             ],
-            "value_min": "75",
-            "value_max": "80"
+            "value_min": "65",
+            "value_max": "70"
           },
           "{+Ability from wax} Token Link + {HB} 1 Fp": {
             "demand": 3,
@@ -18051,10 +18063,16 @@
                 "demand": 3,
                 "value_min": "5",
                 "value_max": "6"
+              },
+              {
+                "date": "2026-10-23",
+                "demand": 3,
+                "value_min": "4",
+                "value_max": "5"
               }
             ],
-            "value_min": "5",
-            "value_max": "6"
+            "value_min": "4",
+            "value_max": "5"
           },
           "{+Ability from wax} Token Link + {HB} 2 Bap + {HB} 1 Fp": {
             "demand": 5,
@@ -18096,9 +18114,16 @@
           },
           "{+Ability from wax} Token Link + {HB} 2 Fp": {
             "demand": 3,
-            "history": [],
-            "value_min": "14",
-            "value_max": "16"
+            "history": [
+              {
+                "date": "2026-10-23",
+                "demand": 3,
+                "value_min": "9",
+                "value_max": "11"
+              }
+            ],
+            "value_min": "9",
+            "value_max": "11"
           },
           "{+Ability from wax} Token Link + {HB} 3 Fp": {
             "demand": 3,
@@ -18108,10 +18133,16 @@
                 "demand": 3,
                 "value_min": "36",
                 "value_max": "40"
+              },
+              {
+                "date": "2026-10-23",
+                "demand": 3,
+                "value_min": "28",
+                "value_max": "32"
               }
             ],
-            "value_min": "36",
-            "value_max": "40"
+            "value_min": "28",
+            "value_max": "32"
           }
         },
         "Token Link + {HB} Bubble Pollen + Gathering Bubble Chance (Full Waxed)": {
