@@ -372,7 +372,7 @@
             "image": "/images/Brown_Cub.webp",
             "acronyms": null,
             "demand": 2,
-            "last_updated": "2026-09-24T21:33:17.156Z",
+            "last_updated": "2026-10-24T02:17:11.598Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -613,16 +613,22 @@
                 "demand": 2,
                 "value_min": "23",
                 "value_max": "24"
+              },
+              {
+                "date": "2026-10-24",
+                "demand": 2,
+                "value_min": "21",
+                "value_max": "22"
               }
             ],
-            "value_min": "23",
-            "value_max": "24"
+            "value_min": "21",
+            "value_max": "22"
           },
           "Doodle Cub": {
             "image": "/images/Doodle_Cub.webp",
             "acronyms": "DDC",
             "demand": 2,
-            "last_updated": "2026-09-28T03:41:12.013Z",
+            "last_updated": "2026-10-24T02:16:44.903Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -887,10 +893,16 @@
                 "demand": 2,
                 "value_min": "28",
                 "value_max": "30"
+              },
+              {
+                "date": "2026-10-24",
+                "demand": 2,
+                "value_min": "27",
+                "value_max": "29"
               }
             ],
-            "value_min": "28",
-            "value_max": "30"
+            "value_min": "27",
+            "value_max": "29"
           },
           "Gingerbread Cub": {
             "image": "/images/Gingerbread_Cub.webp",
@@ -2968,7 +2980,7 @@
             "image": "/images/Stick_Cub.webp",
             "acronyms": null,
             "demand": 2,
-            "last_updated": "2026-10-10T02:00:01.880Z",
+            "last_updated": "2026-10-24T02:16:59.848Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -3233,10 +3245,16 @@
                 "demand": 2,
                 "value_min": "15",
                 "value_max": "16"
+              },
+              {
+                "date": "2026-10-24",
+                "demand": 2,
+                "value_min": "13",
+                "value_max": "14"
               }
             ],
-            "value_min": "15",
-            "value_max": "16"
+            "value_min": "13",
+            "value_max": "14"
           }
         }
       },
@@ -3574,8 +3592,8 @@
           "Icy Crowned Hive Skin": {
             "image": "/images/Hive_model_icy_crowned.webp",
             "acronyms": null,
-            "demand": 4,
-            "last_updated": "2026-10-10T22:38:50.936Z",
+            "demand": 3,
+            "last_updated": "2026-10-24T03:30:12.186Z",
             "history": [
               {
                 "date": "2025-06-20",
@@ -3888,10 +3906,16 @@
                 "demand": 4,
                 "value_min": "48",
                 "value_max": "51"
+              },
+              {
+                "date": "2026-10-24",
+                "demand": 3,
+                "value_min": "46",
+                "value_max": "49"
               }
             ],
-            "value_min": "48",
-            "value_max": "51"
+            "value_min": "46",
+            "value_max": "49"
           },
           "Pink Hive Skin": {
             "image": "/images/Hive_model_basic_pink.webp",
@@ -17443,7 +17467,7 @@
       "image": "/images/Bead_Lizard.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-23T02:09:15.302Z",
+      "last_updated": "2026-10-24T02:16:12.338Z",
       "stat_groups": {
         "Potential (Unwaxed)": {
           "3★ Pot": {
@@ -18088,9 +18112,15 @@
                 "demand": 5,
                 "value_min": ">={Bee Cub}+{Doodle Cub}",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-24",
+                "demand": 5,
+                "value_min": ">={Bee Cub}+{Gingerbread Cub}",
+                "value_max": null
               }
             ],
-            "value_min": ">={Bee Cub}+{Doodle Cub}",
+            "value_min": ">={Bee Cub}+{Gingerbread Cub}",
             "value_max": null
           },
           "{+Ability from wax} Token Link + {HB} 2 Bap + {HB} 2 Fp": {
@@ -39499,7 +39529,7 @@
       "image": "/images/Whistle.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-18T02:03:14.440Z",
+      "last_updated": "2026-10-24T02:15:36.600Z",
       "stat_groups": {
         "Bee Movespeed + Super Crit Power (Full Waxed)": {
           "{HB} 1 Bms + {HB} 1 Scp": {
@@ -39780,10 +39810,16 @@
                 "demand": 2,
                 "value_min": "155",
                 "value_max": "160"
+              },
+              {
+                "date": "2026-10-24",
+                "demand": 2,
+                "value_min": "140",
+                "value_max": "150"
               }
             ],
-            "value_min": "155",
-            "value_max": "160"
+            "value_min": "140",
+            "value_max": "150"
           }
         },
         "Melody + Bee Movespeed (Full Waxed)": {

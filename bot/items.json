@@ -162,9 +162,9 @@
     "name": "Stick Cub",
     "englishName": "Stick Cub",
     "category": "Скины на каба",
-    "value": 15.5,
-    "valueLow": 15.0,
-    "valueHigh": 16.0,
+    "value": 13.5,
+    "valueLow": 13.0,
+    "valueHigh": 14.0,
     "demand": "Низкий",
     "stability": "Падает",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -216,7 +216,8 @@
       17.0,
       16.5,
       16.5,
-      15.5
+      15.5,
+      13.5
     ],
     "image": "https://bssmvalues.com/images/Stick_Cub.webp",
     "historicalDates": [
@@ -263,7 +264,8 @@
       "2026-08-28",
       "2026-09-22",
       "2026-09-24",
-      "2026-10-10"
+      "2026-10-10",
+      "2026-10-24"
     ]
   },
   {
@@ -271,11 +273,11 @@
     "name": "Brown Cub",
     "englishName": "Brown Cub",
     "category": "Скины на каба",
-    "value": 23.5,
-    "valueLow": 23.0,
-    "valueHigh": 24.0,
+    "value": 21.5,
+    "valueLow": 21.0,
+    "valueHigh": 22.0,
     "demand": "Низкий",
-    "stability": "Стабильно",
+    "stability": "Падает",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
@@ -321,7 +323,8 @@
       25.0,
       24.0,
       23.5,
-      23.5
+      23.5,
+      21.5
     ],
     "image": "https://bssmvalues.com/images/Brown_Cub.webp",
     "historicalDates": [
@@ -364,7 +367,8 @@
       "2026-09-19",
       "2026-09-21",
       "2026-09-22",
-      "2026-09-24"
+      "2026-09-24",
+      "2026-10-24"
     ]
   },
   {
@@ -372,9 +376,9 @@
     "name": "Doodle Cub (DDC)",
     "englishName": "Doodle Cub",
     "category": "Скины на каба",
-    "value": 29.0,
-    "valueLow": 28.0,
-    "valueHigh": 30.0,
+    "value": 28.0,
+    "valueLow": 27.0,
+    "valueHigh": 29.0,
     "demand": "Низкий",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -426,7 +430,8 @@
       34.0,
       34.0,
       31.0,
-      29.0
+      29.0,
+      28.0
     ],
     "image": "https://bssmvalues.com/images/Doodle_Cub.webp",
     "historicalDates": [
@@ -473,7 +478,8 @@
       "2026-09-15",
       "2026-09-16",
       "2026-09-19",
-      "2026-09-28"
+      "2026-09-28",
+      "2026-10-24"
     ]
   },
   {
@@ -1721,16 +1727,16 @@
     "name": "Icy Crowned Hive Skin",
     "englishName": "Icy Crowned Hive Skin",
     "category": "Скины на улей",
-    "value": 49.5,
-    "valueLow": 48.0,
-    "valueHigh": 51.0,
-    "demand": "Высокий",
+    "value": 47.5,
+    "valueLow": 46.0,
+    "valueHigh": 49.0,
+    "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
     "borderColor": "border-amber-500/30 group-hover:border-amber-500/60",
     "badgeColor": "bg-amber-500/10 text-amber-400 border-amber-500/25",
     "textColor": "text-amber-400",
-    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       3.75,
       3.75,
@@ -1783,7 +1789,8 @@
       56.0,
       53.5,
       50.5,
-      49.5
+      49.5,
+      47.5
     ],
     "image": "https://bssmvalues.com/images/Hive_model_icy_crowned.webp",
     "historicalDates": [
@@ -1838,7 +1845,8 @@
       "2026-08-24",
       "2026-09-23",
       "2026-10-02",
-      "2026-10-10"
+      "2026-10-10",
+      "2026-10-24"
     ]
   },
   {
@@ -11154,11 +11162,11 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 2 Bap + {HB} 1 Fp",
-            "valueLow": 319.0,
-            "valueHigh": 319.0,
-            "value": 319.0,
+            "valueLow": 336.5,
+            "valueHigh": 336.5,
+            "value": 336.5,
             "demand": "Хайп",
-            "valueText": ">={Bee Cub}+{Doodle Cub}",
+            "valueText": ">={Bee Cub}+{Gingerbread Cub}",
             "isFloor": true
           },
           {
@@ -18327,9 +18335,9 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody",
-            "valueLow": 155.0,
-            "valueHigh": 160.0,
-            "value": 157.5,
+            "valueLow": 140.0,
+            "valueHigh": 150.0,
+            "value": 145.0,
             "demand": "Низкий"
           }
         ]
@@ -18339,9 +18347,9 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + {HB} 1 Bee Movespeed",
-            "valueLow": 319.0,
-            "valueHigh": 319.0,
-            "value": 319.0,
+            "valueLow": 318.0,
+            "valueHigh": 318.0,
+            "value": 318.0,
             "demand": "Высокий",
             "valueText": ">={Bee Cub}+{Doodle Cub}",
             "isFloor": true
