@@ -224,7 +224,7 @@ function renderBody(item, seo, url, altUrl, related, selectedRoll) {
               const rollSlug = slugify(r.rollName);
               const rollUrl = `${en ? '/' : '/ru/'}item/${slugify(item.englishName || item.id || item.name)}/${rollSlug}/`;
               const isSelected = selectedRoll && selectedRoll.rollName === r.rollName;
-              const copyBtn = `<button class="copy-link" onclick="copyLink('${esc(rollUrl)}', this)" title="${en ? 'Copy link' : 'Скопировать ссылку'}">📋</button>`;
+              const copyBtn = `<button class="copy-link" data-url="${esc(rollUrl)}" data-text="${en ? 'Copy' : 'Копировать'}" data-copied="${en ? 'Copied!' : 'Скопировано!'}" title="${en ? 'Copy link' : 'Скопировать ссылку'}">${en ? 'Copy' : 'Копировать'}</button>`;
               return `<tr${isSelected ? ' style="background: rgba(245, 158, 11, .15)"' : ''}><td><a href="${esc(rollUrl)}">${esc(r.rollName)}</a> ${copyBtn}</td><td>${esc(fmtValue(r.value))}${r.isFloor ? '+' : ''}★</td><td>${
                 r.valueLow !== r.valueHigh
                   ? `${esc(fmtValue(r.valueLow))}–${esc(fmtValue(r.valueHigh))}★`
@@ -249,7 +249,7 @@ function renderBody(item, seo, url, altUrl, related, selectedRoll) {
     const rollDemandChip = { 'Хайп': 'c-red', 'Высокий': 'c-amber', 'Средний': 'c-blue' }[selectedRoll.demand] || 'c-gray';
     const rollSlug = slugify(selectedRoll.rollName);
     const rollUrl = `${en ? '/' : '/ru/'}item/${slugify(item.englishName || item.id || item.name)}/${rollSlug}/`;
-    const copyBtn = `<button class="copy-link" onclick="copyLink('${esc(rollUrl)}', this)" title="${en ? 'Copy link' : 'Скопировать ссылку'}">${en ? 'Copy link' : 'Скопировать ссылку'}</button>`;
+    const copyBtn = `<button class="copy-link" data-url="${esc(rollUrl)}" data-text="${en ? 'Copy link' : 'Скопировать ссылку'}" data-copied="${en ? 'Copied!' : 'Скопировано!'}" title="${en ? 'Copy link' : 'Скопировать ссылку'}">${en ? 'Copy link' : 'Скопировать ссылку'}</button>`;
     rollDetailBlock = `
       <section class="card">
         <h2>${en ? 'Roll details' : 'Детали ролла'}</h2>
@@ -479,6 +479,15 @@ const THEME_BOOT = `
           setTimeout(() => btn.classList.remove('copied'), 1500);
         });
       }
+      document.querySelectorAll('.copy-link').forEach(btn => {
+        btn.addEventListener('click', () => {
+          navigator.clipboard.writeText(btn.dataset.url).then(() => {
+            btn.classList.add('copied');
+            btn.textContent = btn.dataset.copied || '✓';
+            setTimeout(() => { btn.classList.remove('copied'); btn.textContent = btn.dataset.text || 'Copy'; }, 1500);
+          });
+        });
+      });
     <\/script>`;
 
 /** Stylesheet shared by item pages and the English landing page. */
@@ -668,14 +677,12 @@ const ITEM_PAGE_CSS = `
     /* Copy-link buttons on roll rows */
     .copy-link {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--border);
-      background: var(--icon-bg); color: var(--text); font-size: 14px;
-      cursor: pointer; transition: all .15s; margin-left: 6px; line-height: 1;
+      width: auto; min-width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--border);
+      background: var(--icon-bg); color: var(--text); font-size: 11px;
+      cursor: pointer; transition: all .15s; margin-left: 6px; line-height: 1; padding: 0 6px;
     }
     .copy-link:hover { border-color: #fbbf24; color: #fbbf24; background: rgba(245,158,11,.06); }
-    .copy-link.copied { border-color: #34d399; color: #34d399; }
-    .copy-link.copied::before { content: "✓"; }
-    .copy-link:not(.copied)::before { content: "📋"; }
+    .copy-link.copied { border-color: #34d399; color: #34d399; background: rgba(52,211,153,.1); }
   `;
 
 function buildSitemap(urls) {
