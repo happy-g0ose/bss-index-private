@@ -1,0 +1,6 @@
+feat: enhance Open Graph meta tags for Discord link previews
+
+- og:description now leads with price (e.g. "Bee Cub: 290★ (280–300). Спрос: Высокий. Категория: Скины на каба.")
+- Added product:price:amount, product:price:currency, product:availability for beequips
+- og:type is "product" for beequips, "website" for stickers
+- twitter:description mirrors og:description for Discord/Twitter previews

@@ -112,16 +112,12 @@ function buildSeoFields(item, lang) {
   let description;
   if (en) {
     description = isBeequip
-      ? `${item.englishName}: values for every roll of this beequip in Bee Swarm Simulator. Category: ${categoryEn}. Full roll list and prices.`
-      : `${item.englishName} price in Bee Swarm Simulator: ${fmtValue(item.value)}★${
-          item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''
-        }. Demand: ${demandEn}. Category: ${categoryEn}. 6-week price history.`;
+      ? `${item.englishName}: ${fmtValue(item.value)}★${item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''}. Demand: ${demandEn}. Category: ${categoryEn}.`
+      : `${item.englishName}: ${fmtValue(item.value)}★${item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''}. Demand: ${demandEn}. Category: ${categoryEn}.`;
   } else {
     description = isBeequip
-      ? `${displayName}: значения всех роллов биквипа в Bee Swarm Simulator. Категория: ${categoryRu}. Полный список роллов и их цен.`
-      : `${displayName}: цена ${fmtValue(item.value)}★${
-          item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''
-        } в Bee Swarm Simulator. Спрос: ${demandRu}. Категория: ${categoryRu}. Динамика цены за 6 недель.`;
+      ? `${displayName}: ${fmtValue(item.value)}★${item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''}. Спрос: ${demandRu}. Категория: ${categoryRu}.`
+      : `${displayName}: ${fmtValue(item.value)}★${item.valueLow !== item.valueHigh ? ` (${fmtValue(item.valueLow)}–${fmtValue(item.valueHigh)})` : ''}. Спрос: ${demandRu}. Категория: ${categoryRu}.`;
   }
 
   const keywords = en
@@ -414,7 +410,7 @@ function injectIntoTemplate(template, item, seo, url, altUrl, related, selectedR
     <link rel="alternate" hreflang="en" href="${esc(seo.en ? url : altUrl)}" />
     <link rel="alternate" hreflang="x-default" href="${esc(seo.en ? url : altUrl)}" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="${seo.isBeequip ? 'product' : 'website'}" />
     <meta property="og:site_name" content="BSS Index" />
     <meta property="og:locale" content="${seo.en ? 'en_US' : 'ru_RU'}" />
     <meta property="og:title" content="${esc(seo.title)}" />
@@ -423,6 +419,14 @@ function injectIntoTemplate(template, item, seo, url, altUrl, related, selectedR
     <meta property="og:image" content="${esc(ogImage)}" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
+    ${seo.isBeequip
+      ? `
+    <meta property="product:price:amount" content="${item.value}" />
+    <meta property="product:price:currency" content="BSS" />
+    <meta property="product:availability" content="https://schema.org/InStock" />
+      `
+      : ''
+    }
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${esc(seo.title)}" />

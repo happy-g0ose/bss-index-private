@@ -1,0 +1,12 @@
+const fs = require('fs');
+const html = fs.readFileSync('dist/ru/item/bee-cub/index.html', 'utf8');
+const ogDesc = html.match(/<meta property="og:description" content="([^"]*)"/);
+const ogType = html.match(/<meta property="og:type" content="([^"]*)"/);
+const ogPrice = html.match(/<meta property="product:price:amount" content="([^"]*)"/);
+const ogCurr = html.match(/<meta property="product:price:currency" content="([^"]*)"/);
+const twDesc = html.match(/<meta name="twitter:description" content="([^"]*)"/);
+console.log('og:type:', ogType ? ogType[1] : 'NOT FOUND');
+console.log('og:description:', ogDesc ? ogDesc[1] : 'NOT FOUND');
+console.log('product:price:amount:', ogPrice ? ogPrice[1] : 'NOT FOUND');
+console.log('product:price:currency:', ogCurr ? ogCurr[1] : 'NOT FOUND');
+console.log('twitter:description:', twDesc ? twDesc[1] : 'NOT FOUND');
