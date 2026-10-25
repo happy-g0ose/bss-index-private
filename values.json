@@ -2136,7 +2136,7 @@
             "image": "/images/Petal_Cub.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-10-10T02:06:44.573Z",
+            "last_updated": "2026-10-25T02:05:23.150Z",
             "history": [
               {
                 "date": "2026-05-12",
@@ -2293,10 +2293,16 @@
                 "demand": 3,
                 "value_min": "41",
                 "value_max": "43"
+              },
+              {
+                "date": "2026-10-25",
+                "demand": 3,
+                "value_min": "37",
+                "value_max": "39"
               }
             ],
-            "value_min": "41",
-            "value_max": "43"
+            "value_min": "37",
+            "value_max": "39"
           },
           "Robo Cub": {
             "image": "/images/Robo_Cub.webp",
@@ -33646,7 +33652,7 @@
       "image": "/images/Reindeer_Antlers.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-10-18T02:02:34.332Z",
+      "last_updated": "2026-10-24T20:42:35.403Z",
       "stat_groups": {
         "Baby Love (Full Waxed)": {
           "{+Ability from wax} Baby Love": {
@@ -33765,10 +33771,16 @@
                 "demand": 3,
                 "value_min": "140",
                 "value_max": "150"
+              },
+              {
+                "date": "2026-10-24",
+                "demand": 3,
+                "value_min": "110",
+                "value_max": "120"
               }
             ],
-            "value_min": "140",
-            "value_max": "150"
+            "value_min": "110",
+            "value_max": "120"
           }
         },
         "Capacity (Full Waxed)": {

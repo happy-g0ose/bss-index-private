@@ -487,9 +487,9 @@
     "name": "Petal Cub",
     "englishName": "Petal Cub",
     "category": "Скины на каба",
-    "value": 42.0,
-    "valueLow": 41.0,
-    "valueHigh": 43.0,
+    "value": 38.0,
+    "valueLow": 37.0,
+    "valueHigh": 39.0,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -523,7 +523,8 @@
       44.0,
       44.0,
       43.0,
-      42.0
+      42.0,
+      38.0
     ],
     "image": "https://bssmvalues.com/images/Petal_Cub.webp",
     "historicalDates": [
@@ -552,7 +553,8 @@
       "2026-09-15",
       "2026-09-29",
       "2026-10-09",
-      "2026-10-10"
+      "2026-10-10",
+      "2026-10-25"
     ]
   },
   {
@@ -16537,9 +16539,9 @@
         "rolls": [
           {
             "rollName": "{HB} 1 Bond from Treats",
-            "valueLow": 140.0,
-            "valueHigh": 150.0,
-            "value": 145.0,
+            "valueLow": 110.0,
+            "valueHigh": 120.0,
+            "value": 115.0,
             "demand": "Средний"
           }
         ]
