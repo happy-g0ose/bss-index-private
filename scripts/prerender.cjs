@@ -193,7 +193,7 @@ function countRolls(item) {
 }
 
 /** Render the visible, indexable body content for an item page. */
-function renderBody(item, seo, url, altUrl, related) {
+function renderBody(item, seo, url, altUrl, related, selectedRoll) {
   const isBeequip = item.category === 'Биквипы';
   const en = seo.en;
 
@@ -224,11 +224,16 @@ function renderBody(item, seo, url, altUrl, related) {
       .map((g) => {
         const rolls = (g.rolls || [])
           .map(
-            (r) => `<tr><td>${esc(r.rollName)}</td><td>${esc(fmtValue(r.value))}${r.isFloor ? '+' : ''}★</td><td>${
-              r.valueLow !== r.valueHigh
-                ? `${esc(fmtValue(r.valueLow))}–${esc(fmtValue(r.valueHigh))}★`
-                : ''
-            }</td><td>${esc(en ? DEMAND_EN[r.demand] || r.demand : r.demand)}</td></tr>`
+            (r) => {
+              const rollSlug = slugify(r.rollName);
+              const rollUrl = `${en ? '/' : '/ru/'}item/${slugify(item.englishName || item.id || item.name)}/${rollSlug}/`;
+              const isSelected = selectedRoll && selectedRoll.rollName === r.rollName;
+              return `<tr${isSelected ? ' style="background: rgba(245, 158, 11, .15)"' : ''}><td><a href="${esc(rollUrl)}">${esc(r.rollName)}</a></td><td>${esc(fmtValue(r.value))}${r.isFloor ? '+' : ''}★</td><td>${
+                r.valueLow !== r.valueHigh
+                  ? `${esc(fmtValue(r.valueLow))}–${esc(fmtValue(r.valueHigh))}★`
+                  : ''
+              }</td><td>${esc(en ? DEMAND_EN[r.demand] || r.demand : r.demand)}</td></tr>`
+            }
           )
           .join('');
         return `
@@ -239,6 +244,35 @@ function renderBody(item, seo, url, altUrl, related) {
       })
       .join('');
     rollsBlock = groups || `<section class="card"><h2>${en ? 'Rolls' : 'Роллы'}</h2><p>${en ? 'No roll data available.' : 'Нет данных о роллах.'}</p></section>`;
+  }
+
+  // Roll detail block — shown when a specific roll page is opened
+  let rollDetailBlock = '';
+  if (selectedRoll && isBeequip) {
+    const rollDemandChip = { 'Хайп': 'c-red', 'Высокий': 'c-amber', 'Средний': 'c-blue' }[selectedRoll.demand] || 'c-gray';
+    rollDetailBlock = `
+      <section class="card">
+        <h2>${en ? 'Roll details' : 'Детали ролла'}</h2>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-k">${en ? 'Roll' : 'Ролл'}</div>
+            <div class="stat-v">${esc(selectedRoll.rollName)}</div>
+            <div class="stat-n">${esc(selectedRoll.groupName || '')}</div>
+          </div>
+          <div class="stat">
+            <div class="stat-k">${en ? 'Price' : 'Цена'}</div>
+            <div class="stat-v price">${esc(fmtValue(selectedRoll.value))}${selectedRoll.isFloor ? '+' : ''}★</div>
+          </div>
+          <div class="stat">
+            <div class="stat-k">${en ? 'Range' : 'Диапазон'}</div>
+            <div class="stat-v">${selectedRoll.valueLow !== selectedRoll.valueHigh ? `${esc(fmtValue(selectedRoll.valueLow))}–${esc(fmtValue(selectedRoll.valueHigh))}★` : ''}</div>
+          </div>
+          <div class="stat">
+            <div class="stat-k">${en ? 'Demand' : 'Спрос'}</div>
+            <div class="stat-v"><span class="chip ${rollDemandChip}">${esc(en ? DEMAND_EN[selectedRoll.demand] || selectedRoll.demand : selectedRoll.demand)}</span></div>
+          </div>
+        </div>
+      </section>`;
   }
 
   const demandChip = { 'Хайп': 'c-red', 'Высокий': 'c-amber', 'Средний': 'c-blue' }[item.demand] || 'c-green';
@@ -311,11 +345,13 @@ function renderBody(item, seo, url, altUrl, related) {
           : ''
       }
       <div>
-        <h1>${esc(en ? item.englishName : item.name)}</h1>
-        ${en
-          ? (item.name && item.name !== item.englishName ? `<p class="alt">${esc(item.name)}</p>` : '')
-          : (item.englishName && item.englishName !== item.name ? `<p class="alt">${esc(item.englishName)}</p>` : '')}
-        <p class="tag">${esc(seo.category)}</p>
+        <h1>${esc(selectedRoll ? selectedRoll.rollName : (en ? item.englishName : item.name))}</h1>
+        ${selectedRoll
+          ? (en ? `<p class="alt">${esc(item.englishName || item.name)} — beequip</p>` : `<p class="alt">${esc(item.name || item.englishName)} — биквип</p>`)
+          : (en
+            ? (item.name && item.name !== item.englishName ? `<p class="alt">${esc(item.name)}</p>` : '')
+            : (item.englishName && item.englishName !== item.name ? `<p class="alt">${esc(item.englishName)}</p>` : ''))}
+        <p class="tag">${esc(selectedRoll ? (en ? 'Beequip roll' : 'Ролл биквипа') : seo.category)}</p>
       </div>
     </header>
 
@@ -350,7 +386,7 @@ function renderBody(item, seo, url, altUrl, related) {
  * SPA still boots on item pages, but rewrite its asset paths to absolute ones:
  * `vite.config.ts` uses `base: './'` and item pages live one directory deeper.
  */
-function injectIntoTemplate(template, item, seo, url, altUrl, related) {
+function injectIntoTemplate(template, item, seo, url, altUrl, related, selectedRoll) {
   const ogImage = item.image ? item.image : `${SITE_ORIGIN}/logo.png`;
   const jsonLd = buildJsonLd(item, url, seo);
 
@@ -410,7 +446,7 @@ function injectIntoTemplate(template, item, seo, url, altUrl, related) {
   // React wipes #app on mount, so content inside it would be erased for crawlers
   // that execute JS. Outside it, the <h1>, price tables and internal links survive
   // for both visitors and Google.
-  const body = renderBody(item, seo, url, altUrl, related);
+  const body = renderBody(item, seo, url, altUrl, related, selectedRoll);
   return html.replace(
     '<div id="app"></div>',
     `${STATIC_START}\n${body}\n${STATIC_END}\n<div id="app"></div>`
@@ -491,6 +527,14 @@ const ITEM_PAGE_CSS = `
         radial-gradient(ellipse 60% 40% at 85% 15%, rgba(56,189,248,.10), transparent 60%),
         radial-gradient(ellipse 70% 50% at 50% 100%, rgba(245,158,11,.08), transparent 62%);
     }
+    html[data-bsbg="halloween"] .wrap {
+      --bg-img:
+        radial-gradient(circle at 20% 30%, rgba(245,158,11,.15), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(245,158,11,.1), transparent 40%),
+        repeating-linear-gradient(45deg, rgba(245,158,11,.06) 0, rgba(245,158,11,.06) 4px, transparent 4px, transparent 8px),
+        repeating-linear-gradient(-45deg, rgba(245,158,11,.06) 0, rgba(245,158,11,.06) 4px, transparent 4px, transparent 8px);
+      background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+    }
     /* Light theme needs darker pattern strokes, otherwise white-on-white. */
     html.light[data-bsbg="grid"] .wrap {
       --bg-img:
@@ -499,6 +543,12 @@ const ITEM_PAGE_CSS = `
     }
     html.light[data-bsbg="dots"] .wrap {
       --bg-img: radial-gradient(rgba(15,23,42,.16) 1px, transparent 1.5px);
+    }
+    html.light[data-bsbg="halloween"] .wrap {
+      --bg-img:
+        repeating-linear-gradient(45deg, rgba(15,23,42,.05) 0, rgba(15,23,42,.05) 4px, transparent 4px, transparent 8px),
+        repeating-linear-gradient(-45deg, rgba(15,23,42,.05) 0, rgba(15,23,42,.05) 4px, transparent 4px, transparent 8px);
+      background-size: 24px 24px, 24px 24px;
     }
 
     .crumbs { font-size: 13px; color: var(--muted); margin-bottom: 24px; display: flex; gap: 8px; align-items: center; }
@@ -956,6 +1006,66 @@ function main() {
 
       urls.push({ loc: url, changefreq: 'weekly', priority });
       written++;
+
+      // Generate per-roll pages for beequips: /item/<slug>/<roll-slug>/
+      if (item.category === 'Биквипы' && Array.isArray(item.beequipData)) {
+        const itemSlug = slug;
+        for (const group of item.beequipData) {
+          for (const roll of group.rolls || []) {
+            const rollSlug = slugify(roll.rollName);
+            for (const lang of ['en', 'ru']) {
+              const isEn = lang === 'en';
+              const rollUrl = isEn
+                ? `${SITE_ORIGIN}/item/${itemSlug}/${rollSlug}/`
+                : `${SITE_ORIGIN}/ru/item/${itemSlug}/${rollSlug}/`;
+              const rollAltUrl = isEn
+                ? `${SITE_ORIGIN}/ru/item/${itemSlug}/${rollSlug}/`
+                : `${SITE_ORIGIN}/item/${itemSlug}/${rollSlug}/`;
+
+              const rollSeo = {
+                ...seo,
+                lang,
+                en: isEn,
+                title: isEn
+                  ? `${item.englishName} — ${roll.rollName} roll`
+                  : `${item.name} — ролл ${roll.rollName}`,
+                description: isEn
+                  ? `${item.englishName} roll "${roll.rollName}": ${fmtValue(roll.value)}★${
+                      roll.valueLow !== roll.valueHigh
+                        ? ` (${fmtValue(roll.valueLow)}–${fmtValue(roll.valueHigh)})`
+                        : ''
+                    }. Demand: ${isEn ? DEMAND_EN[roll.demand] || roll.demand : roll.demand}.`
+                  : `${item.name} ролл "${roll.rollName}": ${fmtValue(roll.value)}★${
+                      roll.valueLow !== roll.valueHigh
+                        ? ` (${fmtValue(roll.valueLow)}–${fmtValue(roll.valueHigh)})`
+                        : ''
+                    }. Спрос: ${roll.demand}.`,
+                valueLowText: roll.valueLow !== roll.valueHigh ? `${fmtValue(roll.valueLow)} – ${fmtValue(roll.valueHigh)}★` : '',
+              };
+
+              const rollHtml = injectIntoTemplate(
+                template,
+                item,
+                rollSeo,
+                rollUrl,
+                rollAltUrl,
+                related,
+                roll
+              )
+                .replace(/<html lang="[a-z]{2}">/i, `<html lang="${isEn ? 'en' : 'ru'}">`);
+
+              const rollDir = isEn
+                ? path.join(DIST, 'item', itemSlug, rollSlug)
+                : path.join(DIST, 'ru', 'item', itemSlug, rollSlug);
+              fs.mkdirSync(rollDir, { recursive: true });
+              fs.writeFileSync(path.join(rollDir, 'index.html'), rollHtml, 'utf8');
+
+              urls.push({ loc: rollUrl, changefreq: 'weekly', priority: '0.5' });
+              written++;
+            }
+          }
+        }
+      }
     }
   }
 

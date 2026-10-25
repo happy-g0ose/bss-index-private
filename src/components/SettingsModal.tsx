@@ -5,7 +5,7 @@ import type { Language } from '../locales';
 import { t } from '../locales';
 
 export type Theme = 'dark' | 'light';
-export type BgMode = 'dots' | 'grid' | 'solid' | 'aurora';
+export type BgMode = 'dots' | 'grid' | 'solid' | 'aurora' | 'halloween';
 
 /** Background presets offered in the settings UI, with their i18n key. */
 const BG_PRESETS: { id: BgMode; key: string }[] = [
@@ -13,6 +13,7 @@ const BG_PRESETS: { id: BgMode; key: string }[] = [
   { id: 'grid', key: 'settings.bg.grid' },
   { id: 'solid', key: 'settings.bg.solid' },
   { id: 'aurora', key: 'settings.bg.aurora' },
+  { id: 'halloween', key: 'settings.bg.halloween' },
 ];
 
 

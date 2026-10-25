@@ -78,7 +78,7 @@ function BssApp({ items }: { items: BSSItem[] }) {
 
   const [bg, setBgState] = useState<BgMode>(() => {
     const saved = localStorage.getItem('bss_bg') as BgMode;
-    const valid: BgMode[] = ['dots', 'grid', 'solid', 'aurora'];
+    const valid: BgMode[] = ['dots', 'grid', 'solid', 'aurora', 'halloween'];
     return valid.includes(saved) ? saved : 'grid';
   });
 
