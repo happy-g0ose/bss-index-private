@@ -480,10 +480,11 @@ const THEME_BOOT = `
         });
       }
       document.querySelectorAll('.copy-link').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation(); // prevent navigating to the roll link
           navigator.clipboard.writeText(btn.dataset.url).then(() => {
             btn.classList.add('copied');
-            btn.textContent = btn.dataset.copied || '✓';
+            btn.textContent = btn.dataset.copied || 'Copied!';
             setTimeout(() => { btn.classList.remove('copied'); btn.textContent = btn.dataset.text || 'Copy'; }, 1500);
           });
         });
