@@ -908,7 +908,7 @@
             "image": "/images/Gingerbread_Cub.webp",
             "acronyms": "GGB",
             "demand": 3,
-            "last_updated": "2026-10-02T23:40:17.956Z",
+            "last_updated": "2026-10-25T17:55:37.728Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -1179,10 +1179,16 @@
                 "demand": 3,
                 "value_min": "45",
                 "value_max": "48"
+              },
+              {
+                "date": "2026-10-25",
+                "demand": 3,
+                "value_min": "40",
+                "value_max": "43"
               }
             ],
-            "value_min": "45",
-            "value_max": "48"
+            "value_min": "40",
+            "value_max": "43"
           },
           "Gloomy Cub": {
             "image": "/images/Gloomy_Cub.webp",
@@ -2308,7 +2314,7 @@
             "image": "/images/Robo_Cub.webp",
             "acronyms": null,
             "demand": 2,
-            "last_updated": "2026-10-08T00:30:46.170Z",
+            "last_updated": "2026-10-25T17:55:22.601Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -2531,10 +2537,16 @@
                 "demand": 2,
                 "value_min": "9",
                 "value_max": "9.5"
+              },
+              {
+                "date": "2026-10-25",
+                "demand": 2,
+                "value_min": "8",
+                "value_max": "8.5"
               }
             ],
-            "value_min": "9",
-            "value_max": "9.5"
+            "value_min": "8",
+            "value_max": "8.5"
           },
           "Snow Cub": {
             "image": "/images/Snow_Cub.webp",

@@ -67,9 +67,9 @@
     "name": "Robo Cub",
     "englishName": "Robo Cub",
     "category": "Скины на каба",
-    "value": 9.25,
-    "valueLow": 9.0,
-    "valueHigh": 9.5,
+    "value": 8.25,
+    "valueLow": 8.0,
+    "valueHigh": 8.5,
     "demand": "Низкий",
     "stability": "Падает",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -114,7 +114,8 @@
       10.25,
       9.75,
       9.75,
-      9.25
+      9.25,
+      8.25
     ],
     "image": "https://bssmvalues.com/images/Robo_Cub.webp",
     "historicalDates": [
@@ -154,7 +155,8 @@
       "2026-08-24",
       "2026-09-15",
       "2026-10-02",
-      "2026-10-08"
+      "2026-10-08",
+      "2026-10-25"
     ]
   },
   {
@@ -562,9 +564,9 @@
     "name": "Gingerbread Cub (GGB)",
     "englishName": "Gingerbread Cub",
     "category": "Скины на каба",
-    "value": 46.5,
-    "valueLow": 45.0,
-    "valueHigh": 48.0,
+    "value": 41.5,
+    "valueLow": 40.0,
+    "valueHigh": 43.0,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -617,7 +619,8 @@
       58.5,
       50.5,
       50.5,
-      46.5
+      46.5,
+      41.5
     ],
     "image": "https://bssmvalues.com/images/Gingerbread_Cub.webp",
     "historicalDates": [
@@ -665,7 +668,8 @@
       "2026-07-10",
       "2026-08-24",
       "2026-09-29",
-      "2026-10-02"
+      "2026-10-02",
+      "2026-10-25"
     ]
   },
   {
@@ -11164,9 +11168,9 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 2 Bap + {HB} 1 Fp",
-            "valueLow": 336.5,
-            "valueHigh": 336.5,
-            "value": 336.5,
+            "valueLow": 331.5,
+            "valueHigh": 331.5,
+            "value": 331.5,
             "demand": "Хайп",
             "valueText": ">={Bee Cub}+{Gingerbread Cub}",
             "isFloor": true
@@ -16593,9 +16597,9 @@
           },
           {
             "rollName": "{HB} 7 Cap",
-            "valueLow": 336.5,
+            "valueLow": 331.5,
             "valueHigh": 0.0,
-            "value": 168.25,
+            "value": 165.75,
             "demand": "Высокий",
             "valueText": "{Bee Cub}+{Gingerbread Cub}",
             "isFloor": false
