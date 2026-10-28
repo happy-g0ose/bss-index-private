@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
-import { Filter, SlidersHorizontal, AlertCircle, Search } from 'lucide-react';
+import { Filter, SlidersHorizontal, AlertCircle, Search, Clipboard } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ItemCard from './components/ItemCard';
@@ -219,6 +219,14 @@ function BssApp({ items }: { items: BSSItem[] }) {
   const handleRemoveFromSideB = (idx: number) => {
     const updated = sideB.filter((_, i) => i !== idx);
     setSideB(updated);
+  };
+
+  const handleCopyLink = (item: BSSItem) => {
+    const slug = item.englishName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    const url = `${window.location.origin}/item/${slug}/`;
+    navigator.clipboard.writeText(url).then(() => {
+      setToast({ show: true, message: lang === 'ru' ? 'Ссылка скопирована!' : 'Link copied!', side: null });
+    });
   };
 
   const handleClearTrade = () => {
@@ -463,6 +471,7 @@ function BssApp({ items }: { items: BSSItem[] }) {
                       onClick={() => setSelectedItem(item)}
                       onAddToSideA={handleAddToSideA}
                       onAddToSideB={handleAddToSideB}
+                      onCopyLink={handleCopyLink}
                       lang={lang}
                       searchQuery={searchQuery}
                     />
@@ -597,23 +606,35 @@ function BssApp({ items }: { items: BSSItem[] }) {
             className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-2xl border bg-[#0b0f19]/95 backdrop-blur-md shadow-2xl min-w-[280px] max-w-sm pointer-events-auto ${
               toast.side === 'A'
                 ? 'border-violet-500/20 shadow-violet-500/10'
-                : 'border-emerald-500/20 shadow-emerald-500/10'
+                : toast.side === 'B'
+                ? 'border-emerald-500/20 shadow-emerald-500/10'
+                : 'border-amber-500/20 shadow-amber-500/10'
             }`}
           >
             <div className={`h-8 w-8 rounded-xl flex items-center justify-center shrink-0 ${
               toast.side === 'A'
                 ? 'bg-violet-500/10 text-violet-400'
-                : 'bg-emerald-500/10 text-emerald-400'
+                : toast.side === 'B'
+                ? 'bg-emerald-500/10 text-emerald-400'
+                : 'bg-amber-500/10 text-amber-400'
             }`}>
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
+              {toast.side === 'A' || toast.side === 'B' ? (
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              ) : (
+                <Clipboard className="h-5 w-5" />
+              )}
             </div>
             <div className="flex-1 text-left">
               <div className="text-xs font-black text-white uppercase tracking-wider">
                 {toast.side === 'A'
                   ? (lang === 'ru' ? 'Вы отдаете (Сторона А)' : 'You Give (Side A)')
-                  : (lang === 'ru' ? 'Вам отдают (Сторона Б)' : 'They Give (Side B)')}
+                  : toast.side === 'B'
+                  ? (lang === 'ru' ? 'Вам отдают (Сторона Б)' : 'They Give (Side B)')
+                  : lang === 'ru'
+                  ? 'Скопировано в буфер обмена!'
+                  : 'Link copied to clipboard!'}
               </div>
               <div className="text-[11px] text-neutral-300 font-bold mt-0.5 truncate max-w-[220px]">
                 {toast.message}

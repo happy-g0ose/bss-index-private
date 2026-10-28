@@ -1,7 +1,7 @@
 {
-  "timestamp": 1792958524706,
+  "timestamp": 1793115620866,
   "version": "2.2.0",
-  "message": "feat: enhance Open Graph meta tags for Discord link previews\n\n- og:description now leads with price (e.g. \"Bee Cub: 290★ (280–300). Спрос: Высокий. Категория: Скины на каба.\")\n- Added product:price:amount, product:price:currency, product:availability for beequips\n- og:type is \"product\" for beequips, \"website\" for stickers\n- twitter:description mirrors og:description for Discord/Twitter previews",
+  "message": "Merge branch 'main' of https://github.com/happy-g0ose/bss-index-private",
   "author": "BSS Index Developer",
-  "sha": "cdbeab85ed4c091babe0f55748f4c880d699649a"
+  "sha": "8b7ba6d2fe3ce62b0ab5d9bed3eabc4e802f7ec7"
 }
