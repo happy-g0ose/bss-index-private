@@ -614,7 +614,10 @@ function BssApp({ items }: { items: BSSItem[] }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               ) : (
-                <Clipboard className="h-5 w-5" />
+                <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002-2h2.097a2 2 0 012 2v12a2 2 0 01-2 2H8a2 2 0 01-2-2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 9a2 2 0 012-2h.01M15 9a2 2 0 01-2 2.01M15 12a2 2 0 01-2-2v1.01" />
+                </svg>
               )}
             </div>
             <div className="flex-1 text-left">

@@ -337,9 +337,14 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                   >
                     <defs>
                       <linearGradient id="gradient-glow" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.25" />
+                        <stop offset="0%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.35" />
+                        <stop offset="60%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.08" />
                         <stop offset="100%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.0" />
                       </linearGradient>
+                      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
                     </defs>
 
                     {/* Vertical Guide Line */}
@@ -364,12 +369,18 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                       transition={{ duration: 0.8, delay: 0.3 }}
                     />
 
-                    {/* Stroke Line */}
+                    {/* Stroke Line with glow */}
                     <motion.path 
                       d={sparkline.pathD} 
                       fill="none" 
                       stroke={item.hexColor || '#a855f7'} 
-                      strokeWidth="2.5" 
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      filter="url(#glow)"
+                      initial={{ strokeDasharray: `${sparkline.pathD.length} ${sparkline.pathD.length}`, strokeDashoffset: sparkline.pathD.length }}
+                      animate={{ strokeDashoffset: 0 }}
+                      transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                     />
 
                     {/* Interactive dots */}
@@ -378,11 +389,12 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                         <circle
                           cx={p.x}
                           cy={p.y}
-                          r={hoveredPointIndex === idx ? 6 : 4}
-                          className="transition-all duration-150 cursor-pointer"
+                          r={hoveredPointIndex === idx ? 5 : 3}
+                          className="transition-all duration-200 cursor-pointer"
                           fill={item.hexColor || '#a855f7'}
-                          stroke="rgba(11, 15, 25, 0.9)"
-                          strokeWidth="2"
+                          stroke="#0b0f19"
+                          strokeWidth="1.5"
+                          filter="url(#glow)"
                         />
                       </g>
                     ))}
