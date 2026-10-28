@@ -442,7 +442,7 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                       }
                       const formatDateStr = (d: string) => {
                         const parts = d.split('-');
-                        return parts.length === 3 ? `${parts[2]}.${parts[1]}.${parts[0]}` : d;
+                        return parts.length === 3 ? `${parts[2]}.${parts[1]}` : d;
                       };
                       const len = dates.length;
                       if (len < 4) {

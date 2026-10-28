@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
-import { Filter, SlidersHorizontal, AlertCircle, Search, Clipboard } from 'lucide-react';
+import { Filter, SlidersHorizontal, AlertCircle, Search } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ItemCard from './components/ItemCard';
@@ -219,14 +219,6 @@ function BssApp({ items }: { items: BSSItem[] }) {
   const handleRemoveFromSideB = (idx: number) => {
     const updated = sideB.filter((_, i) => i !== idx);
     setSideB(updated);
-  };
-
-  const handleCopyLink = (item: BSSItem) => {
-    const slug = item.englishName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-    const url = `${window.location.origin}/item/${slug}/`;
-    navigator.clipboard.writeText(url).then(() => {
-      setToast({ show: true, message: lang === 'ru' ? 'Ссылка скопирована!' : 'Link copied!', side: null });
-    });
   };
 
   const handleClearTrade = () => {
@@ -471,7 +463,6 @@ function BssApp({ items }: { items: BSSItem[] }) {
                       onClick={() => setSelectedItem(item)}
                       onAddToSideA={handleAddToSideA}
                       onAddToSideB={handleAddToSideB}
-                      onCopyLink={handleCopyLink}
                       lang={lang}
                       searchQuery={searchQuery}
                     />

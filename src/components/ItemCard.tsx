@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { MouseEvent } from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { TrendingUp, TrendingDown, Minus, Plus, Clipboard } from 'lucide-react';
+import { TrendingUp, TrendingDown, Minus, Plus } from 'lucide-react';
 import { transliterate, resolveQuery, getStatBadgesForGroup, RU_ABBR_MAP, STAT_ABBR_LABELS } from './BeequipsPage';
 import type { BSSItem } from '../data/items';
 import { formatRollValue } from '../data/rollValue';
@@ -13,14 +13,13 @@ interface ItemCardProps {
   onClick: () => void;
   onAddToSideA: (item: BSSItem) => void;
   onAddToSideB: (item: BSSItem) => void;
-  onCopyLink?: (item: BSSItem) => void;
   index: number;
   lang: Language;
   searchQuery?: string;
   showWeekBadge?: boolean;
 }
 
-export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, onCopyLink, index: _index, lang, searchQuery, showWeekBadge = true }: ItemCardProps) {
+export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, index: _index, lang, searchQuery, showWeekBadge = true }: ItemCardProps) {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -174,16 +173,6 @@ export default function ItemCard({ item, onClick, onAddToSideA, onAddToSideB, on
             {weekChange > 0 ? '+' : ''}{weekChange.toFixed(0)}%
           </span>
         )}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onCopyLink?.(item);
-          }}
-          className="w-5 h-5 flex items-center justify-center rounded bg-neutral-800/50 border border-white/10 text-neutral-400 hover:bg-neutral-700 hover:text-white transition-colors cursor-pointer"
-          title={lang === 'ru' ? 'Скопировать ссылку' : 'Copy link'}
-        >
-          <Clipboard className="h-3 w-3" />
-        </button>
       </div>
 
       {/* Center Layout: Visual SVG + Info */}

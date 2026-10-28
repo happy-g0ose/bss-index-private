@@ -1,7 +1,7 @@
 {
-  "timestamp": 1793115620866,
+  "timestamp": 1793168333035,
   "version": "2.2.0",
-  "message": "Merge branch 'main' of https://github.com/happy-g0ose/bss-index-private",
+  "message": "feat: copy link to clipboard with toast on item cards",
   "author": "BSS Index Developer",
-  "sha": "8b7ba6d2fe3ce62b0ab5d9bed3eabc4e802f7ec7"
+  "sha": "e1de4c51dcc228b5c918a4f1743f42a442f027dc"
 }
