@@ -8,7 +8,7 @@
             "image": "/images/Bee_Cub.webp",
             "acronyms": null,
             "demand": 4,
-            "last_updated": "2026-08-27T22:32:11.361Z",
+            "last_updated": "2026-10-28T03:46:41.753Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -363,10 +363,16 @@
                 "demand": 4,
                 "value_min": "280",
                 "value_max": "300"
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 4,
+                "value_min": "250",
+                "value_max": "260"
               }
             ],
-            "value_min": "280",
-            "value_max": "300"
+            "value_min": "250",
+            "value_max": "260"
           },
           "Brown Cub": {
             "image": "/images/Brown_Cub.webp",
@@ -1194,7 +1200,7 @@
             "image": "/images/Gloomy_Cub.webp",
             "acronyms": null,
             "demand": 4,
-            "last_updated": "2026-10-02T23:39:14.284Z",
+            "last_updated": "2026-10-28T11:47:47.182Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -1477,16 +1483,22 @@
                 "demand": 4,
                 "value_min": "71",
                 "value_max": "76"
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 4,
+                "value_min": "66",
+                "value_max": "70"
               }
             ],
-            "value_min": "71",
-            "value_max": "76"
+            "value_min": "66",
+            "value_max": "70"
           },
           "Noob Cub": {
             "image": "/images/Noob_Cub.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-10-11T18:56:09.355Z",
+            "last_updated": "2026-10-28T04:03:46.181Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -1847,16 +1859,22 @@
                 "demand": 3,
                 "value_min": "57",
                 "value_max": "60"
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 3,
+                "value_min": "47",
+                "value_max": "50"
               }
             ],
-            "value_min": "57",
-            "value_max": "60"
+            "value_min": "47",
+            "value_max": "50"
           },
           "Peppermint Cub": {
             "image": "/images/Peppermint_Robo_Cub.webp",
             "acronyms": "PPM",
             "demand": 4,
-            "last_updated": "2026-08-28T00:54:40.623Z",
+            "last_updated": "2026-10-28T03:47:15.204Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -2133,10 +2151,16 @@
                 "demand": 4,
                 "value_min": "160",
                 "value_max": "170"
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 4,
+                "value_min": "140",
+                "value_max": "150"
               }
             ],
-            "value_min": "160",
-            "value_max": "170"
+            "value_min": "140",
+            "value_max": "150"
           },
           "Petal Cub": {
             "image": "/images/Petal_Cub.webp",
@@ -2552,7 +2576,7 @@
             "image": "/images/Snow_Cub.webp",
             "acronyms": null,
             "demand": 4,
-            "last_updated": "2026-08-28T00:54:28.247Z",
+            "last_updated": "2026-10-28T03:47:07.526Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -2853,10 +2877,16 @@
                 "demand": 4,
                 "value_min": "170",
                 "value_max": "180"
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 4,
+                "value_min": "150",
+                "value_max": "160"
               }
             ],
-            "value_min": "170",
-            "value_max": "180"
+            "value_min": "150",
+            "value_max": "160"
           },
           "Star Cub": {
             "image": "/images/Star_Cub.webp",
@@ -25619,7 +25649,7 @@
       "image": "/images/Lei.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-13T01:47:36.445Z",
+      "last_updated": "2026-10-28T00:31:04.056Z",
       "stat_groups": {
         "Blue Boost (Full Waxed)": {
           "{+Ability from wax} Blue boost": {
@@ -25666,10 +25696,16 @@
                 "demand": 3,
                 "value_min": ">=60",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 3,
+                "value_min": "45",
+                "value_max": "50"
               }
             ],
-            "value_min": ">=60",
-            "value_max": null
+            "value_min": "45",
+            "value_max": "50"
           }
         },
         "Potential (Unwaxed)": {
@@ -25787,10 +25823,16 @@
                 "demand": 3,
                 "value_min": ">=60",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 3,
+                "value_min": "45",
+                "value_max": "50"
               }
             ],
-            "value_min": ">=60",
-            "value_max": null
+            "value_min": "45",
+            "value_max": "50"
           }
         }
       }
@@ -38430,7 +38472,7 @@
       "image": "/images/Toy_Drum.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-09-27T15:17:28.125Z",
+      "last_updated": "2026-10-28T02:02:42.621Z",
       "stat_groups": {
         "Bee Ability Pollen (Full Waxed)": {
           "{HB} 1 Bap": {
@@ -38794,9 +38836,15 @@
                 "demand": 5,
                 "value_min": ">={Bee Cub}",
                 "value_max": null
+              },
+              {
+                "date": "2026-10-28",
+                "demand": 5,
+                "value_min": ">={Bee Cub}+{Doodle Cub}",
+                "value_max": null
               }
             ],
-            "value_min": ">={Bee Cub}",
+            "value_min": ">={Bee Cub}+{Doodle Cub}",
             "value_max": null
           },
           "{HB} 7 Bap": {
