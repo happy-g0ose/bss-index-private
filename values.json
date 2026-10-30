@@ -8,7 +8,7 @@
             "image": "/images/Bee_Cub.webp",
             "acronyms": null,
             "demand": 4,
-            "last_updated": "2026-10-28T03:46:41.753Z",
+            "last_updated": "2026-10-30T01:43:35.798Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -369,10 +369,16 @@
                 "demand": 4,
                 "value_min": "250",
                 "value_max": "260"
+              },
+              {
+                "date": "2026-10-30",
+                "demand": 4,
+                "value_min": "250",
+                "value_max": "270"
               }
             ],
             "value_min": "250",
-            "value_max": "260"
+            "value_max": "270"
           },
           "Brown Cub": {
             "image": "/images/Brown_Cub.webp",
@@ -634,7 +640,7 @@
             "image": "/images/Doodle_Cub.webp",
             "acronyms": "DDC",
             "demand": 2,
-            "last_updated": "2026-10-24T02:16:44.903Z",
+            "last_updated": "2026-10-30T01:47:49.599Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -905,10 +911,16 @@
                 "demand": 2,
                 "value_min": "27",
                 "value_max": "29"
+              },
+              {
+                "date": "2026-10-30",
+                "demand": 2,
+                "value_min": "24",
+                "value_max": "26"
               }
             ],
-            "value_min": "27",
-            "value_max": "29"
+            "value_min": "24",
+            "value_max": "26"
           },
           "Gingerbread Cub": {
             "image": "/images/Gingerbread_Cub.webp",
@@ -2166,7 +2178,7 @@
             "image": "/images/Petal_Cub.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-10-25T02:05:23.150Z",
+            "last_updated": "2026-10-30T01:47:36.160Z",
             "history": [
               {
                 "date": "2026-05-12",
@@ -2329,10 +2341,16 @@
                 "demand": 3,
                 "value_min": "37",
                 "value_max": "39"
+              },
+              {
+                "date": "2026-10-30",
+                "demand": 3,
+                "value_min": "34",
+                "value_max": "36"
               }
             ],
-            "value_min": "37",
-            "value_max": "39"
+            "value_min": "34",
+            "value_max": "36"
           },
           "Robo Cub": {
             "image": "/images/Robo_Cub.webp",
@@ -3363,7 +3381,7 @@
             "image": "/images/Hive_model_wavy_doodle.webp",
             "acronyms": "DDH",
             "demand": 2,
-            "last_updated": "2026-09-23T21:07:10.058Z",
+            "last_updated": "2026-10-30T01:44:51.251Z",
             "history": [
               {
                 "date": "2025-05-31",
@@ -3610,10 +3628,16 @@
                 "demand": 2,
                 "value_min": "10",
                 "value_max": "11"
+              },
+              {
+                "date": "2026-10-30",
+                "demand": 2,
+                "value_min": "8",
+                "value_max": "9"
               }
             ],
-            "value_min": "10",
-            "value_max": "11"
+            "value_min": "8",
+            "value_max": "9"
           },
           "Green Hive Skin": {
             "image": "/images/Hive_model_basic_green.webp",
@@ -4018,7 +4042,7 @@
             "image": "/images/Hive_model_wavy_cyan.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-08-24T12:45:03.410Z",
+            "last_updated": "2026-10-30T01:45:05.874Z",
             "history": [
               {
                 "date": "2025-06-20",
@@ -4073,10 +4097,16 @@
                 "demand": 3,
                 "value_min": "2",
                 "value_max": "2.5"
+              },
+              {
+                "date": "2026-10-30",
+                "demand": 3,
+                "value_min": "1.5",
+                "value_max": "2"
               }
             ],
-            "value_min": "2",
-            "value_max": "2.5"
+            "value_min": "1.5",
+            "value_max": "2"
           },
           "Wavy Festive Hive Skin": {
             "image": "/images/Hive_model_wavy_festive.webp",
