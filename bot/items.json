@@ -1666,9 +1666,9 @@
     "name": "Wavy Purple Hive Skin",
     "englishName": "Wavy Purple Hive Skin",
     "category": "Скины на улей",
-    "value": 27.0,
-    "valueLow": 26.0,
-    "valueHigh": 28.0,
+    "value": 22.0,
+    "valueLow": 21.0,
+    "valueHigh": 23.0,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -1709,7 +1709,8 @@
       34.5,
       30.5,
       28.5,
-      27.0
+      27.0,
+      22.0
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_purple.webp",
     "historicalDates": [
@@ -1745,7 +1746,8 @@
       "2026-06-16",
       "2026-06-17",
       "2026-06-18",
-      "2026-08-21"
+      "2026-08-21",
+      "2026-11-04"
     ]
   },
   {
@@ -10338,16 +10340,16 @@
     "name": "Cyan Hilted Sword",
     "englishName": "Cyan Hilted Sword",
     "category": "Разное",
-    "value": 8.75,
-    "valueLow": 8.5,
-    "valueHigh": 9.0,
-    "demand": "Высокий",
+    "value": 7.75,
+    "valueLow": 7.5,
+    "valueHigh": 8.0,
+    "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(59, 130, 246, 0.25)",
     "borderColor": "border-blue-500/30 group-hover:border-blue-500/60",
     "badgeColor": "bg-blue-500/10 text-blue-400 border-blue-500/25",
     "textColor": "text-blue-400",
-    "description": "Обычно продаётся по своей цене или близко к ней. Быстрые продажи, честные предложения, заниженные цены редки.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       0.875,
       1.5,
@@ -10359,7 +10361,8 @@
       10.5,
       9.5,
       9.75,
-      8.75
+      8.75,
+      7.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cyan_hilted_sword.webp",
     "historicalDates": [
@@ -10373,7 +10376,8 @@
       "2026-06-13",
       "2026-07-19",
       "2026-07-21",
-      "2026-10-13"
+      "2026-10-13",
+      "2026-11-04"
     ]
   },
   {
@@ -13908,10 +13912,10 @@
           },
           {
             "rollName": "{HB} 3 Bap",
-            "valueLow": 280.0,
-            "valueHigh": 300.0,
-            "value": 290.0,
-            "demand": "Хайп"
+            "valueLow": 250.0,
+            "valueHigh": 270.0,
+            "value": 260.0,
+            "demand": "Высокий"
           }
         ]
       },
@@ -16928,9 +16932,9 @@
     "name": "Смайлик",
     "englishName": "Smiley Sticker",
     "category": "Биквипы",
-    "value": 155.0,
+    "value": 140.0,
     "valueLow": 0.0,
-    "valueHigh": 310.0,
+    "valueHigh": 280.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -17015,44 +17019,44 @@
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 10 Md",
-            "valueLow": 255.0,
-            "valueHigh": 262.0,
-            "value": 258.5,
+            "valueLow": 225.0,
+            "valueHigh": 232.0,
+            "value": 228.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 11 Md (Full Waxed)",
-            "valueLow": 275.0,
-            "valueHigh": 285.0,
-            "value": 280.0,
+            "valueLow": 245.0,
+            "valueHigh": 255.0,
+            "value": 250.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 12 Md",
-            "valueLow": 300.0,
-            "valueHigh": 310.0,
-            "value": 305.0,
+            "valueLow": 270.0,
+            "valueHigh": 280.0,
+            "value": 275.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 8 Md",
-            "valueLow": 230.0,
-            "valueHigh": 235.0,
-            "value": 232.5,
+            "valueLow": 200.0,
+            "valueHigh": 205.0,
+            "value": 202.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 9 Md",
-            "valueLow": 242.0,
-            "valueHigh": 248.0,
-            "value": 245.0,
+            "valueLow": 212.0,
+            "valueHigh": 218.0,
+            "value": 215.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + ≤ 7 Md",
-            "valueLow": 218.0,
-            "valueHigh": 223.0,
-            "value": 220.5,
+            "valueLow": 188.0,
+            "valueHigh": 193.0,
+            "value": 190.5,
             "demand": "Низкий"
           },
           {
@@ -17857,9 +17861,9 @@
     "name": "Кнопка",
     "englishName": "Thumbtack",
     "category": "Биквипы",
-    "value": 145.125,
+    "value": 130.125,
     "valueLow": 0.25,
-    "valueHigh": 290.0,
+    "valueHigh": 260.0,
     "demand": "Низкий",
     "stability": "Растет",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -17932,11 +17936,11 @@
           },
           {
             "rollName": "{HB} 5 Red Bee Attack",
-            "valueLow": 290.0,
-            "valueHigh": 290.0,
-            "value": 290.0,
+            "valueLow": 260.0,
+            "valueHigh": 260.0,
+            "value": 260.0,
             "demand": "Низкий",
-            "valueText": ">=290",
+            "valueText": ">=260",
             "isFloor": true
           }
         ]
@@ -17967,11 +17971,11 @@
           },
           {
             "rollName": "{HB} 4 Red Bee Attack + {HB} 1 Bee Attack",
-            "valueLow": 250.0,
-            "valueHigh": 250.0,
-            "value": 250.0,
+            "valueLow": 220.0,
+            "valueHigh": 220.0,
+            "value": 220.0,
             "demand": "Низкий",
-            "valueText": ">=250",
+            "valueText": ">=220",
             "isFloor": true
           }
         ]
@@ -18359,9 +18363,9 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody",
-            "valueLow": 140.0,
-            "valueHigh": 150.0,
-            "value": 145.0,
+            "valueLow": 120.0,
+            "valueHigh": 130.0,
+            "value": 125.0,
             "demand": "Низкий"
           }
         ]

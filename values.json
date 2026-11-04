@@ -4144,7 +4144,7 @@
             "image": "/images/Hive_model_wavy_purple.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-08-21T21:19:48.232Z",
+            "last_updated": "2026-11-04T02:12:47.417Z",
             "history": [
               {
                 "date": "2025-06-20",
@@ -4343,10 +4343,16 @@
                 "demand": 3,
                 "value_min": "26",
                 "value_max": "28"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 3,
+                "value_min": "21",
+                "value_max": "23"
               }
             ],
-            "value_min": "26",
-            "value_max": "28"
+            "value_min": "21",
+            "value_max": "23"
           },
           "White Hive Skin": {
             "image": "/images/Hive_model_basic_white.webp",
@@ -14460,8 +14466,8 @@
           "Cyan Hilted Sword": {
             "image": "/images/Hivesticker_cyan_hilted_sword.webp",
             "acronyms": null,
-            "demand": 4,
-            "last_updated": "2026-10-13T18:13:33.099Z",
+            "demand": 3,
+            "last_updated": "2026-11-04T02:12:06.340Z",
             "history": [
               {
                 "date": "2025-06-19",
@@ -14528,10 +14534,16 @@
                 "demand": 4,
                 "value_min": "8.5",
                 "value_max": "9"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 3,
+                "value_min": "7.5",
+                "value_max": "8"
               }
             ],
-            "value_min": "8.5",
-            "value_max": "9"
+            "value_min": "7.5",
+            "value_max": "8"
           },
           "Cyan Star": {
             "image": "/images/Hivesticker_cyan_star.webp",
@@ -25940,7 +25952,7 @@
       "image": "/images/Paper_Angel.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-10-10T00:43:42.580Z",
+      "last_updated": "2026-11-04T02:07:34.081Z",
       "stat_groups": {
         "Ability Token Lifespan (Full Waxed)": {
           "{HB} 2 Atl": {
@@ -26088,7 +26100,7 @@
             "value_max": "50"
           },
           "{HB} 3 Bap": {
-            "demand": 5,
+            "demand": 4,
             "history": [
               {
                 "date": "2026-03-09",
@@ -26147,10 +26159,16 @@
                 "demand": 5,
                 "value_min": "280",
                 "value_max": "300"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 4,
+                "value_min": "250",
+                "value_max": "270"
               }
             ],
-            "value_min": "280",
-            "value_max": "300"
+            "value_min": "250",
+            "value_max": "270"
           }
         },
         "Bee Ability Pollen + Ability Token Lifespan (Full Waxed)": {
@@ -34986,7 +35004,7 @@
       "image": "/images/Smiley_Sticker.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-03T20:14:01.099Z",
+      "last_updated": "2026-11-04T02:06:23.647Z",
       "stat_groups": {
         "Blue Bomb (Full Waxed)": {
           "{+Ability from wax} Blue Bomb": {
@@ -35740,10 +35758,16 @@
                 "demand": 2,
                 "value_min": "255",
                 "value_max": "262"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 2,
+                "value_min": "225",
+                "value_max": "232"
               }
             ],
-            "value_min": "255",
-            "value_max": "262"
+            "value_min": "225",
+            "value_max": "232"
           },
           "{+Ability from wax} Honey Mark + {HB} 1 Md + 11 Md (Full Waxed)": {
             "demand": 2,
@@ -35817,10 +35841,16 @@
                 "demand": 2,
                 "value_min": "275",
                 "value_max": "285"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 2,
+                "value_min": "245",
+                "value_max": "255"
               }
             ],
-            "value_min": "275",
-            "value_max": "285"
+            "value_min": "245",
+            "value_max": "255"
           },
           "{+Ability from wax} Honey Mark + {HB} 1 Md + 12 Md": {
             "demand": 2,
@@ -35854,10 +35884,16 @@
                 "demand": 2,
                 "value_min": "300",
                 "value_max": "310"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 2,
+                "value_min": "270",
+                "value_max": "280"
               }
             ],
-            "value_min": "300",
-            "value_max": "310"
+            "value_min": "270",
+            "value_max": "280"
           },
           "{+Ability from wax} Honey Mark + {HB} 1 Md + 8 Md": {
             "demand": 2,
@@ -35933,10 +35969,16 @@
                 "demand": 2,
                 "value_min": "230",
                 "value_max": "235"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 2,
+                "value_min": "200",
+                "value_max": "205"
               }
             ],
-            "value_min": "230",
-            "value_max": "235"
+            "value_min": "200",
+            "value_max": "205"
           },
           "{+Ability from wax} Honey Mark + {HB} 1 Md + 9 Md": {
             "demand": 2,
@@ -36012,10 +36054,16 @@
                 "demand": 2,
                 "value_min": "242",
                 "value_max": "248"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 2,
+                "value_min": "212",
+                "value_max": "218"
               }
             ],
-            "value_min": "242",
-            "value_max": "248"
+            "value_min": "212",
+            "value_max": "218"
           },
           "{+Ability from wax} Honey Mark + {HB} 1 Md + ≤ 7 Md": {
             "demand": 2,
@@ -36049,10 +36097,16 @@
                 "demand": 2,
                 "value_min": "218",
                 "value_max": "223"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 2,
+                "value_min": "188",
+                "value_max": "193"
               }
             ],
-            "value_min": "218",
-            "value_max": "223"
+            "value_min": "188",
+            "value_max": "193"
           },
           "{+Ability from wax} Honey Mark + {HB} 2 Mark Duration": {
             "demand": 5,
@@ -38215,7 +38269,7 @@
       "image": "/images/Thumbtack.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-13T22:06:53.782Z",
+      "last_updated": "2026-11-04T02:15:10.817Z",
       "stat_groups": {
         "Base Red Bee Attack (Unwaxed)": {
           "{HB} 2 Red Bee Attack 4★ Pot": {
@@ -38396,9 +38450,15 @@
                 "demand": 1,
                 "value_min": ">=290",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 1,
+                "value_min": ">=260",
+                "value_max": null
               }
             ],
-            "value_min": ">=290",
+            "value_min": ">=260",
             "value_max": null
           }
         },
@@ -38490,9 +38550,15 @@
                 "demand": 1,
                 "value_min": ">=250",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 1,
+                "value_min": ">=220",
+                "value_max": null
               }
             ],
-            "value_min": ">=250",
+            "value_min": ">=220",
             "value_max": null
           }
         }
@@ -39631,7 +39697,7 @@
       "image": "/images/Whistle.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-24T02:15:36.600Z",
+      "last_updated": "2026-11-04T02:04:11.960Z",
       "stat_groups": {
         "Bee Movespeed + Super Crit Power (Full Waxed)": {
           "{HB} 1 Bms + {HB} 1 Scp": {
@@ -39918,10 +39984,16 @@
                 "demand": 2,
                 "value_min": "140",
                 "value_max": "150"
+              },
+              {
+                "date": "2026-11-04",
+                "demand": 2,
+                "value_min": "120",
+                "value_max": "130"
               }
             ],
-            "value_min": "140",
-            "value_max": "150"
+            "value_min": "120",
+            "value_max": "130"
           }
         },
         "Melody + Bee Movespeed (Full Waxed)": {
