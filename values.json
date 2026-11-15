@@ -4144,7 +4144,7 @@
             "image": "/images/Hive_model_wavy_purple.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-11-04T02:12:47.417Z",
+            "last_updated": "2026-11-14T17:39:17.903Z",
             "history": [
               {
                 "date": "2025-06-20",
@@ -4349,10 +4349,16 @@
                 "demand": 3,
                 "value_min": "21",
                 "value_max": "23"
+              },
+              {
+                "date": "2026-11-14",
+                "demand": 3,
+                "value_min": "22",
+                "value_max": "24"
               }
             ],
-            "value_min": "21",
-            "value_max": "23"
+            "value_min": "22",
+            "value_max": "24"
           },
           "White Hive Skin": {
             "image": "/images/Hive_model_basic_white.webp",
@@ -26624,7 +26630,7 @@
       "image": "/images/Paperclip.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-18T05:51:47.704Z",
+      "last_updated": "2026-11-14T17:31:06.903Z",
       "stat_groups": {
         "Ability Token Lifespan (Full Waxed)": {
           "{HB} 3 Atl": {
@@ -27073,9 +27079,15 @@
                 "demand": 5,
                 "value_min": ">=600",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-14",
+                "demand": 5,
+                "value_min": ">=520",
+                "value_max": null
               }
             ],
-            "value_min": ">=600",
+            "value_min": ">=520",
             "value_max": null
           },
           "{+Ability from wax} Token Link + {HB} 1 Atl + {HB} 3 Bap": {
@@ -27190,9 +27202,15 @@
                 "demand": 5,
                 "value_min": ">=725",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-14",
+                "demand": 5,
+                "value_min": ">=625",
+                "value_max": null
               }
             ],
-            "value_min": ">=725",
+            "value_min": ">=625",
             "value_max": null
           },
           "{+Ability from wax} Token Link + {HB} 3 Atl + {HB} 1 Bap (Full Waxed)": {
@@ -27288,9 +27306,15 @@
                 "demand": 5,
                 "value_min": ">=900",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-14",
+                "demand": 5,
+                "value_min": ">=780",
+                "value_max": null
               }
             ],
-            "value_min": ">=900",
+            "value_min": ">=780",
             "value_max": null
           },
           "{+Ability from wax} Token Link + {HB} 4 Atl + {HB} 1 Bap": {

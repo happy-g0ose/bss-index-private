@@ -1666,11 +1666,11 @@
     "name": "Wavy Purple Hive Skin",
     "englishName": "Wavy Purple Hive Skin",
     "category": "Скины на улей",
-    "value": 22.0,
-    "valueLow": 21.0,
-    "valueHigh": 23.0,
+    "value": 23.0,
+    "valueLow": 22.0,
+    "valueHigh": 24.0,
     "demand": "Средний",
-    "stability": "Падает",
+    "stability": "Растет",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
@@ -1710,7 +1710,8 @@
       30.5,
       28.5,
       27.0,
-      22.0
+      22.0,
+      23.0
     ],
     "image": "https://bssmvalues.com/images/Hive_model_wavy_purple.webp",
     "historicalDates": [
@@ -1747,7 +1748,8 @@
       "2026-06-17",
       "2026-06-18",
       "2026-08-21",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-14"
     ]
   },
   {
@@ -14026,9 +14028,9 @@
     "name": "Скрепка",
     "englishName": "Paperclip",
     "category": "Биквипы",
-    "value": 450.0,
+    "value": 390.0,
     "valueLow": 0.0,
-    "valueHigh": 900.0,
+    "valueHigh": 780.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -14188,11 +14190,11 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 1 Atl + {HB} 2 Bap",
-            "valueLow": 600.0,
-            "valueHigh": 600.0,
-            "value": 600.0,
+            "valueLow": 520.0,
+            "valueHigh": 520.0,
+            "value": 520.0,
             "demand": "Хайп",
-            "valueText": ">=600",
+            "valueText": ">=520",
             "isFloor": true
           },
           {
@@ -14213,11 +14215,11 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 2 Atl + {HB} 2 Bap",
-            "valueLow": 725.0,
-            "valueHigh": 725.0,
-            "value": 725.0,
+            "valueLow": 625.0,
+            "valueHigh": 625.0,
+            "value": 625.0,
             "demand": "Хайп",
-            "valueText": ">=725",
+            "valueText": ">=625",
             "isFloor": true
           },
           {
@@ -14229,11 +14231,11 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 3 Atl + {HB} 2 Bap",
-            "valueLow": 900.0,
-            "valueHigh": 900.0,
-            "value": 900.0,
+            "valueLow": 780.0,
+            "valueHigh": 780.0,
+            "value": 780.0,
             "demand": "Хайп",
-            "valueText": ">=900",
+            "valueText": ">=780",
             "isFloor": true
           },
           {
