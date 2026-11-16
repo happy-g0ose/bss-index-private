@@ -10729,9 +10729,9 @@
           },
           {
             "rollName": "13 Wfc",
-            "valueLow": 20.0,
-            "valueHigh": 22.0,
-            "value": 21.0,
+            "valueLow": 22.0,
+            "valueHigh": 24.0,
+            "value": 23.0,
             "demand": "Средний"
           },
           {
@@ -10989,9 +10989,9 @@
     "name": "Ящерица из бисера",
     "englishName": "Bead Lizard",
     "category": "Биквипы",
-    "value": 475.0,
+    "value": 412.5,
     "valueLow": 0.0,
-    "valueHigh": 950.0,
+    "valueHigh": 825.0,
     "demand": "Низкий",
     "stability": "Растет",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -11141,29 +11141,29 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 1 Bap + {HB} 2 Bp",
-            "valueLow": 235.0,
-            "valueHigh": 235.0,
-            "value": 235.0,
+            "valueLow": 225.0,
+            "valueHigh": 225.0,
+            "value": 225.0,
             "demand": "Хайп",
-            "valueText": ">=235",
+            "valueText": ">=225",
             "isFloor": true
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 2 Bap + {HB} 1 Bp",
-            "valueLow": 450.0,
-            "valueHigh": 450.0,
-            "value": 450.0,
+            "valueLow": 400.0,
+            "valueHigh": 400.0,
+            "value": 400.0,
             "demand": "Хайп",
-            "valueText": ">=450",
+            "valueText": ">=400",
             "isFloor": true
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 2 Bap + {HB} 2 Bp",
-            "valueLow": 950.0,
-            "valueHigh": 950.0,
-            "value": 950.0,
+            "valueLow": 825.0,
+            "valueHigh": 825.0,
+            "value": 825.0,
             "demand": "Хайп",
-            "valueText": ">=950",
+            "valueText": ">=825",
             "isFloor": true
           }
         ]
@@ -12626,16 +12626,16 @@
         "rolls": [
           {
             "rollName": "{HB} x1.01 Hft + {HB} 1 Hpg",
-            "valueLow": 145.0,
-            "valueHigh": 150.0,
-            "value": 147.5,
+            "valueLow": 120.0,
+            "valueHigh": 125.0,
+            "value": 122.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} x1.01 Hft + {HB} 2 Hpg",
-            "valueLow": 200.0,
-            "valueHigh": 210.0,
-            "value": 205.0,
+            "valueLow": 170.0,
+            "valueHigh": 175.0,
+            "value": 172.5,
             "demand": "Низкий"
           },
           {
@@ -12684,9 +12684,9 @@
     "name": "Браслет с шармами",
     "englishName": "Charm Bracelet",
     "category": "Биквипы",
-    "value": 90.25,
+    "value": 77.75,
     "valueLow": 0.5,
-    "valueHigh": 180.0,
+    "valueHigh": 155.0,
     "demand": "Низкий",
     "stability": "Падает",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -12734,11 +12734,11 @@
           },
           {
             "rollName": "{+Ability from wax} Melody + 6 Ar",
-            "valueLow": 105.0,
-            "valueHigh": 105.0,
-            "value": 105.0,
-            "demand": "Низкий",
-            "valueText": ">=105",
+            "valueLow": 110.0,
+            "valueHigh": 110.0,
+            "value": 110.0,
+            "demand": "Средний",
+            "valueText": ">=110",
             "isFloor": true
           }
         ]
@@ -12748,25 +12748,25 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + 5 Ar",
-            "valueLow": 120.0,
-            "valueHigh": 125.0,
-            "value": 122.5,
-            "demand": "Низкий"
+            "valueLow": 100.0,
+            "valueHigh": 105.0,
+            "value": 102.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + 6 Ar",
-            "valueLow": 150.0,
-            "valueHigh": 150.0,
-            "value": 150.0,
-            "demand": "Низкий",
-            "valueText": ">=150",
+            "valueLow": 130.0,
+            "valueHigh": 130.0,
+            "value": 130.0,
+            "demand": "Средний",
+            "valueText": ">=130",
             "isFloor": true
           },
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + ≤ 4 Ar",
-            "valueLow": 105.0,
-            "valueHigh": 110.0,
-            "value": 107.5,
+            "valueLow": 85.0,
+            "valueHigh": 90.0,
+            "value": 87.5,
             "demand": "Низкий"
           }
         ]
@@ -12776,25 +12776,25 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + {HB} Crah + 5 Ar",
-            "valueLow": 145.0,
-            "valueHigh": 155.0,
-            "value": 150.0,
+            "valueLow": 120.0,
+            "valueHigh": 130.0,
+            "value": 125.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + {HB} Crah + 6 Ar",
-            "valueLow": 180.0,
-            "valueHigh": 180.0,
-            "value": 180.0,
+            "valueLow": 155.0,
+            "valueHigh": 155.0,
+            "value": 155.0,
             "demand": "Низкий",
-            "valueText": ">=180",
+            "valueText": ">=155",
             "isFloor": true
           },
           {
             "rollName": "{+Ability from wax} Melody + {HB} HaH + {HB} Crah ≤ + 4 Ar",
-            "valueLow": 125.0,
-            "valueHigh": 130.0,
-            "value": 127.5,
+            "valueLow": 100.0,
+            "valueHigh": 105.0,
+            "value": 102.5,
             "demand": "Низкий"
           }
         ]
@@ -12804,25 +12804,25 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + Hft + 5 Ar",
-            "valueLow": 120.0,
-            "valueHigh": 125.0,
-            "value": 122.5,
+            "valueLow": 105.0,
+            "valueHigh": 110.0,
+            "value": 107.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Melody + Hft + 6 Ar",
-            "valueLow": 150.0,
-            "valueHigh": 150.0,
-            "value": 150.0,
-            "demand": "Низкий",
-            "valueText": ">=150",
+            "valueLow": 130.0,
+            "valueHigh": 130.0,
+            "value": 130.0,
+            "demand": "Средний",
+            "valueText": ">=130",
             "isFloor": true
           },
           {
             "rollName": "{+Ability from wax} Melody + Hft + ≤ 4 Ar",
-            "valueLow": 105.0,
-            "valueHigh": 110.0,
-            "value": 107.5,
+            "valueLow": 90.0,
+            "valueHigh": 95.0,
+            "value": 92.5,
             "demand": "Низкий"
           }
         ]
@@ -12977,9 +12977,9 @@
     "name": "Колпак эльфа",
     "englishName": "Elf Cap",
     "category": "Биквипы",
-    "value": 225.125,
+    "value": 195.125,
     "valueLow": 0.25,
-    "valueHigh": 450.0,
+    "valueHigh": 390.0,
     "demand": "Низкий",
     "stability": "Падает",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -13030,25 +13030,25 @@
           },
           {
             "rollName": "{HB} 6 HaH",
-            "valueLow": 90.0,
-            "valueHigh": 95.0,
-            "value": 92.5,
+            "valueLow": 72.0,
+            "valueHigh": 76.0,
+            "value": 74.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 7 HaH",
-            "valueLow": 190.0,
-            "valueHigh": 200.0,
-            "value": 195.0,
+            "valueLow": 170.0,
+            "valueHigh": 185.0,
+            "value": 177.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 8 HaH",
-            "valueLow": 450.0,
-            "valueHigh": 450.0,
-            "value": 450.0,
+            "valueLow": 390.0,
+            "valueHigh": 390.0,
+            "value": 390.0,
             "demand": "Высокий",
-            "valueText": ">=450",
+            "valueText": ">=390",
             "isFloor": true
           }
         ]
@@ -13079,19 +13079,21 @@
     "name": "Праздничный венок",
     "englishName": "Festive Wreath",
     "category": "Биквипы",
-    "value": 100.0,
+    "value": 80.0,
     "valueLow": 0.0,
-    "valueHigh": 200.0,
+    "valueHigh": 160.0,
     "demand": "Низкий",
     "stability": "Падает",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
     "historicalPrices": [
       11.0,
-      10.0
+      10.0,
+      9.5
     ],
     "historicalDates": [
       "2026-06-16",
-      "2026-10-10"
+      "2026-10-10",
+      "2026-11-16"
     ],
     "image": "https://bssmvalues.com/images/Festive_Wreath.png",
     "beequipData": [
@@ -13101,23 +13103,23 @@
           {
             "rollName": "{HB} 1 HaH",
             "valueLow": 9.0,
-            "valueHigh": 11.0,
-            "value": 10.0,
+            "valueHigh": 10.0,
+            "value": 9.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 2 HaH",
-            "valueLow": 40.0,
-            "valueHigh": 45.0,
-            "value": 42.5,
+            "valueLow": 30.0,
+            "valueHigh": 35.0,
+            "value": 32.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 3 HaH",
-            "valueLow": 190.0,
-            "valueHigh": 200.0,
-            "value": 195.0,
-            "demand": "Средний"
+            "valueLow": 150.0,
+            "valueHigh": 160.0,
+            "value": 155.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 4 HaH",
@@ -15897,9 +15899,9 @@
         "rolls": [
           {
             "rollName": "{HB} 10 Rp",
-            "valueLow": 64.0,
-            "valueHigh": 68.0,
-            "value": 66.0,
+            "valueLow": 59.0,
+            "valueHigh": 63.0,
+            "value": 61.0,
             "demand": "Высокий"
           },
           {
@@ -15932,11 +15934,11 @@
           },
           {
             "rollName": "{HB} 15 Rp",
-            "valueLow": 260.0,
-            "valueHigh": 260.0,
-            "value": 260.0,
+            "valueLow": 308.5,
+            "valueHigh": 308.5,
+            "value": 308.5,
             "demand": "Хайп",
-            "valueText": ">={Bee Cub}",
+            "valueText": ">={Bee Cub}+{Noob Cub}",
             "isFloor": true
           },
           {
@@ -15982,30 +15984,30 @@
           },
           {
             "rollName": "{HB} 6 Rp",
-            "valueLow": 5.0,
-            "valueHigh": 6.0,
-            "value": 5.5,
-            "demand": "Средний"
+            "valueLow": 4.0,
+            "valueHigh": 5.0,
+            "value": 4.5,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 7 Rp",
-            "valueLow": 11.0,
-            "valueHigh": 12.0,
-            "value": 11.5,
-            "demand": "Высокий"
+            "valueLow": 9.0,
+            "valueHigh": 10.0,
+            "value": 9.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 8 Rp",
-            "valueLow": 22.0,
-            "valueHigh": 24.0,
-            "value": 23.0,
+            "valueLow": 18.0,
+            "valueHigh": 20.0,
+            "value": 19.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Rp",
-            "valueLow": 44.0,
-            "valueHigh": 47.0,
-            "value": 45.5,
+            "valueLow": 38.0,
+            "valueHigh": 40.0,
+            "value": 39.0,
             "demand": "Средний"
           }
         ]
@@ -16512,8 +16514,8 @@
     "name": "Оленьи рога",
     "englishName": "Reindeer Antlers",
     "category": "Биквипы",
-    "value": 131.25,
-    "valueLow": 2.5,
+    "value": 131.0,
+    "valueLow": 2.0,
     "valueHigh": 260.0,
     "demand": "Низкий",
     "stability": "Стабильно",
@@ -16567,9 +16569,9 @@
         "rolls": [
           {
             "rollName": "{HB} 1 Bond from Treats",
-            "valueLow": 110.0,
-            "valueHigh": 120.0,
-            "value": 115.0,
+            "valueLow": 100.0,
+            "valueHigh": 110.0,
+            "value": 105.0,
             "demand": "Средний"
           }
         ]
@@ -16644,23 +16646,23 @@
         "rolls": [
           {
             "rollName": "4★ Pot",
-            "valueLow": 6.5,
-            "valueHigh": 7.0,
-            "value": 6.75,
+            "valueLow": 5.5,
+            "valueHigh": 6.0,
+            "value": 5.75,
             "demand": "Высокий"
           },
           {
             "rollName": "5★ Pot",
-            "valueLow": 14.0,
-            "valueHigh": 15.0,
-            "value": 14.5,
+            "valueLow": 12.0,
+            "valueHigh": 13.0,
+            "value": 12.5,
             "demand": "Высокий"
           },
           {
             "rollName": "≤3★ Pot",
-            "valueLow": 2.5,
-            "valueHigh": 3.5,
-            "value": 3.0,
+            "valueLow": 2.0,
+            "valueHigh": 3.0,
+            "value": 2.5,
             "demand": "Средний"
           }
         ]
@@ -16934,9 +16936,9 @@
     "name": "Смайлик",
     "englishName": "Smiley Sticker",
     "category": "Биквипы",
-    "value": 140.0,
+    "value": 132.5,
     "valueLow": 0.0,
-    "valueHigh": 280.0,
+    "valueHigh": 265.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -17021,44 +17023,44 @@
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 10 Md",
-            "valueLow": 225.0,
-            "valueHigh": 232.0,
-            "value": 228.5,
+            "valueLow": 210.0,
+            "valueHigh": 217.0,
+            "value": 213.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 11 Md (Full Waxed)",
-            "valueLow": 245.0,
-            "valueHigh": 255.0,
-            "value": 250.0,
+            "valueLow": 230.0,
+            "valueHigh": 240.0,
+            "value": 235.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 12 Md",
-            "valueLow": 270.0,
-            "valueHigh": 280.0,
-            "value": 275.0,
+            "valueLow": 255.0,
+            "valueHigh": 265.0,
+            "value": 260.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 8 Md",
-            "valueLow": 200.0,
-            "valueHigh": 205.0,
-            "value": 202.5,
+            "valueLow": 185.0,
+            "valueHigh": 190.0,
+            "value": 187.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + 9 Md",
-            "valueLow": 212.0,
-            "valueHigh": 218.0,
-            "value": 215.0,
+            "valueLow": 197.0,
+            "valueHigh": 203.0,
+            "value": 200.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{+Ability from wax} Honey Mark + {HB} 1 Md + ≤ 7 Md",
-            "valueLow": 188.0,
-            "valueHigh": 193.0,
-            "value": 190.5,
+            "valueLow": 173.0,
+            "valueHigh": 178.0,
+            "value": 175.5,
             "demand": "Низкий"
           },
           {
@@ -17177,9 +17179,9 @@
     "name": "Снежная тиара",
     "englishName": "Snow Tiara",
     "category": "Биквипы",
-    "value": 190.25,
+    "value": 150.25,
     "valueLow": 0.5,
-    "valueHigh": 380.0,
+    "valueHigh": 300.0,
     "demand": "Низкий",
     "stability": "Растет",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -17213,116 +17215,116 @@
           },
           {
             "rollName": "{HB} 6 Bfc",
-            "valueLow": 24.0,
-            "valueHigh": 28.0,
-            "value": 26.0,
-            "demand": "Хайп"
+            "valueLow": 23.0,
+            "valueHigh": 26.0,
+            "value": 24.5,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6.1 Bfc",
-            "valueLow": 38.0,
-            "valueHigh": 42.0,
-            "value": 40.0,
-            "demand": "Хайп"
+            "valueLow": 32.0,
+            "valueHigh": 36.0,
+            "value": 34.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6.2 Bfc",
-            "valueLow": 50.0,
-            "valueHigh": 55.0,
-            "value": 52.5,
-            "demand": "Хайп"
+            "valueLow": 40.0,
+            "valueHigh": 45.0,
+            "value": 42.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 6.3 Bfc",
-            "valueLow": 65.0,
-            "valueHigh": 70.0,
-            "value": 67.5,
-            "demand": "Хайп"
+            "valueLow": 55.0,
+            "valueHigh": 60.0,
+            "value": 57.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 6.4 Bfc",
-            "valueLow": 80.0,
-            "valueHigh": 85.0,
-            "value": 82.5,
-            "demand": "Хайп"
+            "valueLow": 65.0,
+            "valueHigh": 70.0,
+            "value": 67.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 6.5 Bfc",
-            "valueLow": 100.0,
-            "valueHigh": 110.0,
-            "value": 105.0,
-            "demand": "Хайп"
+            "valueLow": 75.0,
+            "valueHigh": 80.0,
+            "value": 77.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 6.6 Bfc",
-            "valueLow": 120.0,
-            "valueHigh": 130.0,
-            "value": 125.0,
-            "demand": "Высокий"
+            "valueLow": 90.0,
+            "valueHigh": 95.0,
+            "value": 92.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 6.7 Bfc",
-            "valueLow": 140.0,
-            "valueHigh": 150.0,
-            "value": 145.0,
-            "demand": "Высокий"
+            "valueLow": 105.0,
+            "valueHigh": 110.0,
+            "value": 107.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 6.8 Bfc",
-            "valueLow": 165.0,
-            "valueHigh": 175.0,
-            "value": 170.0,
-            "demand": "Высокий"
+            "valueLow": 120.0,
+            "valueHigh": 125.0,
+            "value": 122.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 6.9 Bfc",
-            "valueLow": 185.0,
-            "valueHigh": 190.0,
-            "value": 187.5,
-            "demand": "Высокий"
+            "valueLow": 135.0,
+            "valueHigh": 145.0,
+            "value": 140.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 7 Bfc",
-            "valueLow": 200.0,
-            "valueHigh": 210.0,
-            "value": 205.0,
-            "demand": "Высокий"
+            "valueLow": 150.0,
+            "valueHigh": 160.0,
+            "value": 155.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 7.1 Bfc",
-            "valueLow": 225.0,
-            "valueHigh": 235.0,
-            "value": 230.0,
-            "demand": "Средний"
+            "valueLow": 170.0,
+            "valueHigh": 180.0,
+            "value": 175.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 7.2 Bfc",
-            "valueLow": 250.0,
-            "valueHigh": 260.0,
-            "value": 255.0,
-            "demand": "Средний"
+            "valueLow": 190.0,
+            "valueHigh": 200.0,
+            "value": 195.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 7.3 Bfc",
-            "valueLow": 280.0,
-            "valueHigh": 290.0,
-            "value": 285.0,
-            "demand": "Средний"
+            "valueLow": 215.0,
+            "valueHigh": 225.0,
+            "value": 220.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 7.4 Bfc",
-            "valueLow": 300.0,
-            "valueHigh": 320.0,
-            "value": 310.0,
-            "demand": "Средний"
+            "valueLow": 240.0,
+            "valueHigh": 250.0,
+            "value": 245.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 7.5 Bfc",
-            "valueLow": 380.0,
-            "valueHigh": 380.0,
-            "value": 380.0,
-            "demand": "Средний",
-            "valueText": ">=380",
+            "valueLow": 300.0,
+            "valueHigh": 300.0,
+            "value": 300.0,
+            "demand": "Низкий",
+            "valueText": ">=300",
             "isFloor": true
           }
         ]
@@ -17959,9 +17961,9 @@
           },
           {
             "rollName": "{HB} 2 Red Bee Attack + {HB} 1 Bee Attack",
-            "valueLow": 2.0,
-            "valueHigh": 3.0,
-            "value": 2.5,
+            "valueLow": 2.5,
+            "valueHigh": 3.5,
+            "value": 3.0,
             "demand": "Низкий"
           },
           {
@@ -18042,9 +18044,9 @@
           },
           {
             "rollName": "{HB} 5 Bap",
-            "valueLow": 155.0,
-            "valueHigh": 165.0,
-            "value": 160.0,
+            "valueLow": 150.0,
+            "valueHigh": 160.0,
+            "value": 155.0,
             "demand": "Высокий"
           },
           {
@@ -18151,9 +18153,9 @@
           },
           {
             "rollName": "{HB} 3 Bap",
-            "valueLow": 220.0,
-            "valueHigh": 230.0,
-            "value": 225.0,
+            "valueLow": 190.0,
+            "valueHigh": 200.0,
+            "value": 195.0,
             "demand": "Высокий"
           },
           {
@@ -18312,23 +18314,23 @@
           },
           {
             "rollName": "{HB} 1 Bms + {HB} 3 Scp",
-            "valueLow": 55.0,
-            "valueHigh": 60.0,
-            "value": 57.5,
+            "valueLow": 50.0,
+            "valueHigh": 55.0,
+            "value": 52.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Bms + {HB} 4 Scp",
-            "valueLow": 145.0,
-            "valueHigh": 155.0,
-            "value": 150.0,
+            "valueLow": 125.0,
+            "valueHigh": 130.0,
+            "value": 127.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Bms + {HB} 5 Scp",
-            "valueLow": 250.0,
-            "valueHigh": 260.0,
-            "value": 255.0,
+            "valueLow": 215.0,
+            "valueHigh": 225.0,
+            "value": 220.0,
             "demand": "Высокий"
           },
           {
@@ -18521,23 +18523,23 @@
           },
           {
             "rollName": "{HB} 4 Scp",
-            "valueLow": 27.0,
-            "valueHigh": 30.0,
-            "value": 28.5,
+            "valueLow": 24.0,
+            "valueHigh": 27.0,
+            "value": 25.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 5 Scp",
-            "valueLow": 64.0,
-            "valueHigh": 70.0,
-            "value": 67.0,
+            "valueLow": 56.0,
+            "valueHigh": 62.0,
+            "value": 59.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 6 Scp",
-            "valueLow": 165.0,
-            "valueHigh": 170.0,
-            "value": 167.5,
+            "valueLow": 135.0,
+            "valueHigh": 140.0,
+            "value": 137.5,
             "demand": "Высокий"
           },
           {
