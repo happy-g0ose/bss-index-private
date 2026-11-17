@@ -14164,18 +14164,18 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 4 Atl",
-            "valueLow": 80.0,
-            "valueHigh": 85.0,
-            "value": 82.5,
+            "valueLow": 110.0,
+            "valueHigh": 120.0,
+            "value": 115.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 5 Atl",
-            "valueLow": 225.0,
-            "valueHigh": 225.0,
-            "value": 225.0,
+            "valueLow": 260.0,
+            "valueHigh": 260.0,
+            "value": 260.0,
             "demand": "Хайп",
-            "valueText": ">=225",
+            "valueText": ">={Bee Cub}",
             "isFloor": true
           }
         ]
@@ -14329,7 +14329,7 @@
             "valueLow": 1.5,
             "valueHigh": 2.0,
             "value": 1.75,
-            "demand": "Низкий"
+            "demand": "Высокий"
           }
         ]
       },
@@ -14341,14 +14341,14 @@
             "valueLow": 2.5,
             "valueHigh": 3.0,
             "value": 2.75,
-            "demand": "Низкий"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Bar + 2 Ar",
             "valueLow": 11.0,
             "valueHigh": 13.0,
             "value": 12.0,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Bar + 3 Ar",
@@ -14384,9 +14384,9 @@
     "name": "Шишка",
     "englishName": "Pinecone",
     "category": "Биквипы",
-    "value": 167.5,
+    "value": 164.0,
     "valueLow": 0.0,
-    "valueHigh": 335.0,
+    "valueHigh": 328.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -14647,14 +14647,14 @@
             "valueLow": 1.5,
             "valueHigh": 2.0,
             "value": 1.75,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 15 Ptc",
             "valueLow": 5.5,
             "valueHigh": 6.5,
             "value": 6.0,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 16 Ptc",
@@ -14665,24 +14665,24 @@
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 17 Ptc",
-            "valueLow": 33.0,
-            "valueHigh": 35.0,
-            "value": 34.0,
+            "valueLow": 31.0,
+            "valueHigh": 33.0,
+            "value": 32.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 18 Ptc",
-            "valueLow": 72.0,
-            "valueHigh": 76.0,
-            "value": 74.0,
-            "demand": "Высокий"
+            "valueLow": 63.0,
+            "valueHigh": 66.0,
+            "value": 64.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 19 Ptc",
-            "valueLow": 150.0,
-            "valueHigh": 165.0,
-            "value": 157.5,
-            "demand": "Средний"
+            "valueLow": 125.0,
+            "valueHigh": 135.0,
+            "value": 130.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 20 Ptc",
@@ -14695,17 +14695,17 @@
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 14 Ptc",
-            "valueLow": 3.0,
+            "valueLow": 3.5,
             "valueHigh": 4.0,
-            "value": 3.5,
-            "demand": "Средний"
+            "value": 3.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 15 Ptc",
             "valueLow": 9.0,
             "valueHigh": 10.0,
             "value": 9.5,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 16 Ptc",
@@ -14716,24 +14716,24 @@
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 17 Ptc",
-            "valueLow": 41.0,
-            "valueHigh": 43.0,
-            "value": 42.0,
-            "demand": "Хайп"
-          },
-          {
-            "rollName": "{HB} 11 Ptp + {HB} 18 Ptc",
-            "valueLow": 87.0,
-            "valueHigh": 97.0,
-            "value": 92.0,
+            "valueLow": 37.0,
+            "valueHigh": 39.0,
+            "value": 38.0,
             "demand": "Высокий"
           },
           {
-            "rollName": "{HB} 11 Ptp + {HB} 19 Ptc",
-            "valueLow": 195.0,
-            "valueHigh": 210.0,
-            "value": 202.5,
+            "rollName": "{HB} 11 Ptp + {HB} 18 Ptc",
+            "valueLow": 75.0,
+            "valueHigh": 83.0,
+            "value": 79.0,
             "demand": "Средний"
+          },
+          {
+            "rollName": "{HB} 11 Ptp + {HB} 19 Ptc",
+            "valueLow": 160.0,
+            "valueHigh": 175.0,
+            "value": 167.5,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 20 Ptc",
@@ -14746,17 +14746,17 @@
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 14 Ptc",
-            "valueLow": 1.0,
-            "valueHigh": 1.5,
-            "value": 1.25,
-            "demand": "Низкий"
+            "valueLow": 1.5,
+            "valueHigh": 2.0,
+            "value": 1.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 15 Ptc",
             "valueLow": 4.0,
             "valueHigh": 4.5,
             "value": 4.25,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 16 Ptc",
@@ -14767,24 +14767,24 @@
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 17 Ptc",
-            "valueLow": 27.0,
-            "valueHigh": 29.0,
-            "value": 28.0,
+            "valueLow": 26.0,
+            "valueHigh": 28.0,
+            "value": 27.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 18 Ptc",
-            "valueLow": 60.0,
-            "valueHigh": 64.0,
-            "value": 62.0,
-            "demand": "Высокий"
+            "valueLow": 53.0,
+            "valueHigh": 56.0,
+            "value": 54.5,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 19 Ptc",
-            "valueLow": 120.0,
-            "valueHigh": 130.0,
-            "value": 125.0,
-            "demand": "Средний"
+            "valueLow": 100.0,
+            "valueHigh": 110.0,
+            "value": 105.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 20 Ptc",
@@ -14797,44 +14797,44 @@
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 14 Ptc",
-            "valueLow": 1.0,
-            "valueHigh": 1.25,
-            "value": 1.125,
-            "demand": "Низкий"
+            "valueLow": 1.5,
+            "valueHigh": 2.0,
+            "value": 1.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 15 Ptc",
             "valueLow": 3.0,
             "valueHigh": 3.5,
             "value": 3.25,
-            "demand": "Низкий"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 16 Ptc",
             "valueLow": 9.5,
             "valueHigh": 10.0,
             "value": 9.75,
-            "demand": "Низкий"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 17 Ptc",
-            "valueLow": 23.0,
-            "valueHigh": 25.0,
-            "value": 24.0,
-            "demand": "Средний"
+            "valueLow": 22.0,
+            "valueHigh": 24.0,
+            "value": 23.0,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 18 Ptc",
-            "valueLow": 52.0,
-            "valueHigh": 54.0,
-            "value": 53.0,
+            "valueLow": 46.0,
+            "valueHigh": 48.0,
+            "value": 47.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 19 Ptc",
-            "valueLow": 95.0,
-            "valueHigh": 105.0,
-            "value": 100.0,
+            "valueLow": 80.0,
+            "valueHigh": 90.0,
+            "value": 85.0,
             "demand": "Низкий"
           },
           {
@@ -14853,17 +14853,17 @@
         "rolls": [
           {
             "rollName": "{HB} 10 Ptp + {HB} 14 Ptc + 1 Ar",
-            "valueLow": 2.0,
+            "valueLow": 2.5,
             "valueHigh": 3.0,
-            "value": 2.5,
-            "demand": "Средний"
+            "value": 2.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 15 Ptc + 1 Ar",
             "valueLow": 7.0,
             "valueHigh": 8.0,
             "value": 7.5,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 16 Ptc + 1 Ar",
@@ -14874,40 +14874,40 @@
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 17 Ptc + 1 Ar",
-            "valueLow": 38.0,
-            "valueHigh": 41.0,
-            "value": 39.5,
-            "demand": "Хайп"
-          },
-          {
-            "rollName": "{HB} 10 Ptp + {HB} 18 Ptc + 1 Ar",
-            "valueLow": 85.0,
-            "valueHigh": 90.0,
-            "value": 87.5,
+            "valueLow": 34.0,
+            "valueHigh": 37.0,
+            "value": 35.5,
             "demand": "Высокий"
           },
           {
-            "rollName": "{HB} 10 Ptp + {HB} 19 Ptc + 1 Ar",
-            "valueLow": 180.0,
-            "valueHigh": 195.0,
-            "value": 187.5,
+            "rollName": "{HB} 10 Ptp + {HB} 18 Ptc + 1 Ar",
+            "valueLow": 73.0,
+            "valueHigh": 77.0,
+            "value": 75.0,
             "demand": "Средний"
+          },
+          {
+            "rollName": "{HB} 10 Ptp + {HB} 19 Ptc + 1 Ar",
+            "valueLow": 145.0,
+            "valueHigh": 160.0,
+            "value": 152.5,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 20 Ptc + 1 Ar",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп",
+            "demand": "Низкий",
             "valueText": "TBD",
             "isFloor": false
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 14 Ptc + 1 Ar",
-            "valueLow": 4.0,
+            "valueLow": 4.5,
             "valueHigh": 5.0,
-            "value": 4.5,
-            "demand": "Средний"
+            "value": 4.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 15 Ptc + 1 Ar",
@@ -14925,74 +14925,74 @@
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 17 Ptc + 1 Ar",
-            "valueLow": 49.0,
-            "valueHigh": 53.0,
-            "value": 51.0,
-            "demand": "Хайп"
+            "valueLow": 42.0,
+            "valueHigh": 46.0,
+            "value": 44.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 18 Ptc + 1 Ar",
-            "valueLow": 115.0,
-            "valueHigh": 125.0,
-            "value": 120.0,
-            "demand": "Высокий"
+            "valueLow": 98.0,
+            "valueHigh": 106.0,
+            "value": 102.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 19 Ptc + 1 Ar",
-            "valueLow": 230.0,
-            "valueHigh": 250.0,
-            "value": 240.0,
-            "demand": "Средний"
+            "valueLow": 180.0,
+            "valueHigh": 200.0,
+            "value": 190.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 20 Ptc + 1 Ar",
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп",
+            "demand": "Низкий",
             "valueText": "TBD",
             "isFloor": false
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 14 Ptc + 1 Ar",
-            "valueLow": 1.25,
-            "valueHigh": 1.5,
-            "value": 1.375,
-            "demand": "Низкий"
+            "valueLow": 1.5,
+            "valueHigh": 2.0,
+            "value": 1.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 15 Ptc + 1 Ar",
             "valueLow": 4.5,
             "valueHigh": 5.0,
             "value": 4.75,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 16 Ptc + 1 Ar",
             "valueLow": 11.0,
             "valueHigh": 11.5,
             "value": 11.25,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 17 Ptc + 1 Ar",
-            "valueLow": 30.0,
-            "valueHigh": 32.0,
-            "value": 31.0,
+            "valueLow": 28.0,
+            "valueHigh": 30.0,
+            "value": 29.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 18 Ptc + 1 Ar",
-            "valueLow": 68.0,
-            "valueHigh": 72.0,
-            "value": 70.0,
-            "demand": "Высокий"
+            "valueLow": 59.0,
+            "valueHigh": 63.0,
+            "value": 61.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 19 Ptc + 1 Ar",
-            "valueLow": 140.0,
-            "valueHigh": 150.0,
-            "value": 145.0,
+            "valueLow": 115.0,
+            "valueHigh": 125.0,
+            "value": 120.0,
             "demand": "Низкий"
           },
           {
@@ -15000,50 +15000,50 @@
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Хайп",
+            "demand": "Низкий",
             "valueText": "TBD",
             "isFloor": false
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 14 Ptc + 1 Ar",
-            "valueLow": 1.0,
-            "valueHigh": 1.5,
-            "value": 1.25,
-            "demand": "Низкий"
+            "valueLow": 1.5,
+            "valueHigh": 2.0,
+            "value": 1.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 15 Ptc + 1 Ar",
             "valueLow": 3.5,
             "valueHigh": 4.0,
             "value": 3.75,
-            "demand": "Низкий"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 16 Ptc + 1 Ar",
             "valueLow": 10.0,
             "valueHigh": 10.5,
             "value": 10.25,
-            "demand": "Низкий"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 17 Ptc + 1 Ar",
-            "valueLow": 24.0,
-            "valueHigh": 27.0,
-            "value": 25.5,
-            "demand": "Средний"
+            "valueLow": 23.0,
+            "valueHigh": 26.0,
+            "value": 24.5,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 18 Ptc + 1 Ar",
-            "valueLow": 56.0,
-            "valueHigh": 58.0,
-            "value": 57.0,
+            "valueLow": 49.0,
+            "valueHigh": 51.0,
+            "value": 50.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 19 Ptc + 1 Ar",
-            "valueLow": 120.0,
-            "valueHigh": 130.0,
-            "value": 125.0,
+            "valueLow": 95.0,
+            "valueHigh": 105.0,
+            "value": 100.0,
             "demand": "Низкий"
           },
           {
@@ -15051,7 +15051,7 @@
             "valueLow": 0.0,
             "valueHigh": 0.0,
             "value": 0.0,
-            "demand": "Высокий",
+            "demand": "Низкий",
             "valueText": "TBD",
             "isFloor": false
           }
@@ -15062,10 +15062,10 @@
         "rolls": [
           {
             "rollName": "{HB} 10 Ptp + {HB} 14 Ptc + 2 Ar",
-            "valueLow": 3.0,
-            "valueHigh": 3.5,
-            "value": 3.25,
-            "demand": "Средний"
+            "valueLow": 3.5,
+            "valueHigh": 4.0,
+            "value": 3.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 15 Ptc + 2 Ar",
@@ -15083,24 +15083,24 @@
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 17 Ptc + 2 Ar",
-            "valueLow": 46.0,
-            "valueHigh": 50.0,
-            "value": 48.0,
-            "demand": "Хайп"
+            "valueLow": 40.0,
+            "valueHigh": 44.0,
+            "value": 42.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 18 Ptc + 2 Ar",
-            "valueLow": 110.0,
-            "valueHigh": 120.0,
-            "value": 115.0,
-            "demand": "Высокий"
+            "valueLow": 94.0,
+            "valueHigh": 102.0,
+            "value": 98.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 19 Ptc + 2 Ar",
-            "valueLow": 230.0,
-            "valueHigh": 250.0,
-            "value": 240.0,
-            "demand": "Высокий"
+            "valueLow": 185.0,
+            "valueHigh": 205.0,
+            "value": 195.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 14 Ptc + 2 Ar",
@@ -15125,38 +15125,38 @@
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 17 Ptc + 2 Ar",
-            "valueLow": 64.0,
-            "valueHigh": 68.0,
-            "value": 66.0,
-            "demand": "Хайп"
+            "valueLow": 54.0,
+            "valueHigh": 58.0,
+            "value": 56.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 18 Ptc + 2 Ar",
-            "valueLow": 155.0,
-            "valueHigh": 165.0,
-            "value": 160.0,
-            "demand": "Высокий"
+            "valueLow": 125.0,
+            "valueHigh": 135.0,
+            "value": 130.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 19 Ptc + 2 Ar",
-            "valueLow": 315.0,
-            "valueHigh": 335.0,
-            "value": 325.0,
-            "demand": "Высокий"
+            "valueLow": 250.0,
+            "valueHigh": 270.0,
+            "value": 260.0,
+            "demand": "Низкий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 14 Ptc + 2 Ar",
-            "valueLow": 1.5,
-            "valueHigh": 2.0,
-            "value": 1.75,
-            "demand": "Средний"
+            "valueLow": 2.0,
+            "valueHigh": 2.5,
+            "value": 2.25,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 15 Ptc + 2 Ar",
             "valueLow": 5.5,
             "valueHigh": 6.0,
             "value": 5.75,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 16 Ptc + 2 Ar",
@@ -15167,66 +15167,66 @@
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 17 Ptc + 2 Ar",
-            "valueLow": 35.0,
-            "valueHigh": 38.0,
-            "value": 36.5,
+            "valueLow": 33.0,
+            "valueHigh": 36.0,
+            "value": 34.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 9 Ptp + {HB} 18 Ptc + 2 Ar",
-            "valueLow": 84.0,
-            "valueHigh": 88.0,
-            "value": 86.0,
-            "demand": "Высокий"
-          },
-          {
-            "rollName": "{HB} 9 Ptp + {HB} 19 Ptc + 2 Ar",
-            "valueLow": 170.0,
-            "valueHigh": 185.0,
-            "value": 177.5,
+            "valueLow": 72.0,
+            "valueHigh": 76.0,
+            "value": 74.0,
             "demand": "Средний"
           },
           {
-            "rollName": "{HB} ≤ 8 Ptp + {HB} 14 Ptc + 2 Ar",
-            "valueLow": 1.33,
-            "valueHigh": 1.5,
-            "value": 1.415,
+            "rollName": "{HB} 9 Ptp + {HB} 19 Ptc + 2 Ar",
+            "valueLow": 135.0,
+            "valueHigh": 150.0,
+            "value": 142.5,
             "demand": "Низкий"
+          },
+          {
+            "rollName": "{HB} ≤ 8 Ptp + {HB} 14 Ptc + 2 Ar",
+            "valueLow": 1.5,
+            "valueHigh": 2.0,
+            "value": 1.75,
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 15 Ptc + 2 Ar",
             "valueLow": 4.0,
             "valueHigh": 4.5,
             "value": 4.25,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 16 Ptc + 2 Ar",
             "valueLow": 11.0,
             "valueHigh": 12.0,
             "value": 11.5,
-            "demand": "Средний"
+            "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 17 Ptc + 2 Ar",
-            "valueLow": 28.0,
-            "valueHigh": 30.0,
-            "value": 29.0,
+            "valueLow": 27.0,
+            "valueHigh": 29.0,
+            "value": 28.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 18 Ptc + 2 Ar",
-            "valueLow": 66.0,
-            "valueHigh": 70.0,
-            "value": 68.0,
-            "demand": "Высокий"
+            "valueLow": 57.0,
+            "valueHigh": 61.0,
+            "value": 59.0,
+            "demand": "Средний"
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 19 Ptc + 2 Ar",
-            "valueLow": 140.0,
-            "valueHigh": 150.0,
-            "value": 145.0,
-            "demand": "Средний"
+            "valueLow": 115.0,
+            "valueHigh": 125.0,
+            "value": 120.0,
+            "demand": "Низкий"
           }
         ]
       }
@@ -15779,9 +15779,9 @@
     "name": "Пуансеттия",
     "englishName": "Poinsettia",
     "category": "Биквипы",
-    "value": 207.75,
+    "value": 232.0,
     "valueLow": 0.5,
-    "valueHigh": 415.0,
+    "valueHigh": 463.5,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -15927,9 +15927,9 @@
           },
           {
             "rollName": "{HB} 14 Rp",
-            "valueLow": 245.0,
-            "valueHigh": 255.0,
-            "value": 250.0,
+            "valueLow": 220.0,
+            "valueHigh": 230.0,
+            "value": 225.0,
             "demand": "Хайп"
           },
           {
@@ -15943,11 +15943,11 @@
           },
           {
             "rollName": "{HB} 16 Rp",
-            "valueLow": 415.0,
-            "valueHigh": 415.0,
-            "value": 415.0,
+            "valueLow": 463.5,
+            "valueHigh": 463.5,
+            "value": 463.5,
             "demand": "Хайп",
-            "valueText": ">={Bee Cub}+{Snow Cub}",
+            "valueText": ">={Bee Cub}+{Snow Cub}+{Noob Cub}",
             "isFloor": true
           },
           {
@@ -16674,9 +16674,9 @@
     "name": "Ободок с розами",
     "englishName": "Rose Headband",
     "category": "Биквипы",
-    "value": 95.05,
+    "value": 80.05,
     "valueLow": 0.1,
-    "valueHigh": 190.0,
+    "valueHigh": 160.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -16712,95 +16712,95 @@
         "rolls": [
           {
             "rollName": "60-64 Convert Amount",
-            "valueLow": 0.5,
-            "valueHigh": 1.0,
-            "value": 0.75,
+            "valueLow": 0.25,
+            "valueHigh": 0.5,
+            "value": 0.375,
             "demand": "Низкий"
           },
           {
             "rollName": "65-68 Convert Amount",
-            "valueLow": 3.0,
-            "valueHigh": 6.0,
-            "value": 4.5,
+            "valueLow": 1.5,
+            "valueHigh": 2.0,
+            "value": 1.75,
             "demand": "Низкий"
           },
           {
             "rollName": "69-70 Convert Amount",
-            "valueLow": 11.0,
-            "valueHigh": 14.0,
-            "value": 12.5,
+            "valueLow": 5.0,
+            "valueHigh": 6.0,
+            "value": 5.5,
             "demand": "Низкий"
           },
           {
             "rollName": "71 Convert Amount",
+            "valueLow": 10.0,
+            "valueHigh": 12.0,
+            "value": 11.0,
+            "demand": "Низкий"
+          },
+          {
+            "rollName": "72 Convert Amount",
             "valueLow": 16.0,
             "valueHigh": 19.0,
             "value": 17.5,
             "demand": "Низкий"
           },
           {
-            "rollName": "72 Convert Amount",
-            "valueLow": 25.0,
-            "valueHigh": 28.0,
-            "value": 26.5,
-            "demand": "Низкий"
-          },
-          {
             "rollName": "73 Convert Amount",
-            "valueLow": 36.0,
-            "valueHigh": 42.0,
-            "value": 39.0,
+            "valueLow": 22.0,
+            "valueHigh": 26.0,
+            "value": 24.0,
             "demand": "Низкий"
           },
           {
             "rollName": "74 Convert Amount",
-            "valueLow": 50.0,
-            "valueHigh": 58.0,
-            "value": 54.0,
+            "valueLow": 35.0,
+            "valueHigh": 42.0,
+            "value": 38.5,
             "demand": "Низкий"
           },
           {
             "rollName": "75 Convert Amount",
-            "valueLow": 70.0,
-            "valueHigh": 80.0,
-            "value": 75.0,
+            "valueLow": 50.0,
+            "valueHigh": 55.0,
+            "value": 52.5,
             "demand": "Средний"
           },
           {
             "rollName": "76 Convert Amount",
-            "valueLow": 90.0,
-            "valueHigh": 100.0,
-            "value": 95.0,
+            "valueLow": 65.0,
+            "valueHigh": 70.0,
+            "value": 67.5,
             "demand": "Средний"
           },
           {
             "rollName": "77 Convert Amount",
-            "valueLow": 115.0,
-            "valueHigh": 125.0,
-            "value": 120.0,
+            "valueLow": 85.0,
+            "valueHigh": 90.0,
+            "value": 87.5,
             "demand": "Средний"
           },
           {
             "rollName": "78 Convert Amount",
-            "valueLow": 135.0,
-            "valueHigh": 145.0,
-            "value": 140.0,
+            "valueLow": 105.0,
+            "valueHigh": 115.0,
+            "value": 110.0,
             "demand": "Высокий"
           },
           {
             "rollName": "79 Convert Amount",
-            "valueLow": 155.0,
-            "valueHigh": 165.0,
-            "value": 160.0,
+            "valueLow": 130.0,
+            "valueHigh": 140.0,
+            "value": 135.0,
             "demand": "Высокий"
           },
           {
             "rollName": "80 Convert Amount",
-            "valueLow": 190.0,
-            "valueHigh": 190.0,
-            "value": 190.0,
+            "valueLow": 160.0,
+            "valueHigh": 160.0,
+            "value": 160.0,
             "demand": "Высокий",
-            "valueText": ">=190",
+            "valueText": ">=160",
             "isFloor": true
           }
         ]
