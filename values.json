@@ -384,7 +384,7 @@
             "image": "/images/Brown_Cub.webp",
             "acronyms": null,
             "demand": 2,
-            "last_updated": "2026-10-24T02:17:11.598Z",
+            "last_updated": "2026-11-18T01:55:35.960Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -631,10 +631,16 @@
                 "demand": 2,
                 "value_min": "21",
                 "value_max": "22"
+              },
+              {
+                "date": "2026-11-18",
+                "demand": 2,
+                "value_min": "19",
+                "value_max": "20"
               }
             ],
-            "value_min": "21",
-            "value_max": "22"
+            "value_min": "19",
+            "value_max": "20"
           },
           "Doodle Cub": {
             "image": "/images/Doodle_Cub.webp",
@@ -926,7 +932,7 @@
             "image": "/images/Gingerbread_Cub.webp",
             "acronyms": "GGB",
             "demand": 3,
-            "last_updated": "2026-10-25T17:55:37.728Z",
+            "last_updated": "2026-11-18T01:56:09.915Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -1203,10 +1209,16 @@
                 "demand": 3,
                 "value_min": "40",
                 "value_max": "43"
+              },
+              {
+                "date": "2026-11-18",
+                "demand": 3,
+                "value_min": "39",
+                "value_max": "41"
               }
             ],
-            "value_min": "40",
-            "value_max": "43"
+            "value_min": "39",
+            "value_max": "41"
           },
           "Gloomy Cub": {
             "image": "/images/Gloomy_Cub.webp",
@@ -2178,7 +2190,7 @@
             "image": "/images/Petal_Cub.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-10-30T01:47:36.160Z",
+            "last_updated": "2026-11-18T01:55:46.462Z",
             "history": [
               {
                 "date": "2026-05-12",
@@ -2347,16 +2359,22 @@
                 "demand": 3,
                 "value_min": "34",
                 "value_max": "36"
+              },
+              {
+                "date": "2026-11-18",
+                "demand": 3,
+                "value_min": "32",
+                "value_max": "34"
               }
             ],
-            "value_min": "34",
-            "value_max": "36"
+            "value_min": "32",
+            "value_max": "34"
           },
           "Robo Cub": {
             "image": "/images/Robo_Cub.webp",
             "acronyms": null,
-            "demand": 2,
-            "last_updated": "2026-10-25T17:55:22.601Z",
+            "demand": 3,
+            "last_updated": "2026-11-18T01:55:54.383Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -2583,6 +2601,12 @@
               {
                 "date": "2026-10-25",
                 "demand": 2,
+                "value_min": "8",
+                "value_max": "8.5"
+              },
+              {
+                "date": "2026-11-18",
+                "demand": 3,
                 "value_min": "8",
                 "value_max": "8.5"
               }

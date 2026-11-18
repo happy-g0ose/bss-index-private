@@ -70,13 +70,13 @@
     "value": 8.25,
     "valueLow": 8.0,
     "valueHigh": 8.5,
-    "demand": "Низкий",
-    "stability": "Падает",
+    "demand": "Средний",
+    "stability": "Стабильно",
     "glowColor": "rgba(168, 85, 247, 0.25)",
     "borderColor": "border-purple-500/30 group-hover:border-purple-500/60",
     "badgeColor": "bg-purple-500/10 text-purple-400 border-purple-500/25",
     "textColor": "text-purple-400",
-    "description": "Продаётся медленно, часто предлагают меньше. Медленные продажи, в основном заниженные цены, мало реальных покупателей.",
+    "description": "Продаётся, но не быстро, цена принимается неохотно. Смешанные предложения — и честные, и заниженные, нужно терпение.",
     "historicalPrices": [
       6.0,
       5.25,
@@ -115,6 +115,7 @@
       9.75,
       9.75,
       9.25,
+      8.25,
       8.25
     ],
     "image": "https://bssmvalues.com/images/Robo_Cub.webp",
@@ -156,7 +157,8 @@
       "2026-09-15",
       "2026-10-02",
       "2026-10-08",
-      "2026-10-25"
+      "2026-10-25",
+      "2026-11-18"
     ]
   },
   {
@@ -275,9 +277,9 @@
     "name": "Brown Cub",
     "englishName": "Brown Cub",
     "category": "Скины на каба",
-    "value": 21.5,
-    "valueLow": 21.0,
-    "valueHigh": 22.0,
+    "value": 19.5,
+    "valueLow": 19.0,
+    "valueHigh": 20.0,
     "demand": "Низкий",
     "stability": "Падает",
     "glowColor": "rgba(168, 85, 247, 0.25)",
@@ -326,7 +328,8 @@
       24.0,
       23.5,
       23.5,
-      21.5
+      21.5,
+      19.5
     ],
     "image": "https://bssmvalues.com/images/Brown_Cub.webp",
     "historicalDates": [
@@ -370,7 +373,8 @@
       "2026-09-21",
       "2026-09-22",
       "2026-09-24",
-      "2026-10-24"
+      "2026-10-24",
+      "2026-11-18"
     ]
   },
   {
@@ -491,9 +495,9 @@
     "name": "Petal Cub",
     "englishName": "Petal Cub",
     "category": "Скины на каба",
-    "value": 35.0,
-    "valueLow": 34.0,
-    "valueHigh": 36.0,
+    "value": 33.0,
+    "valueLow": 32.0,
+    "valueHigh": 34.0,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -529,7 +533,8 @@
       43.0,
       42.0,
       38.0,
-      35.0
+      35.0,
+      33.0
     ],
     "image": "https://bssmvalues.com/images/Petal_Cub.webp",
     "historicalDates": [
@@ -560,7 +565,8 @@
       "2026-10-09",
       "2026-10-10",
       "2026-10-25",
-      "2026-10-30"
+      "2026-10-30",
+      "2026-11-18"
     ]
   },
   {
@@ -568,9 +574,9 @@
     "name": "Gingerbread Cub (GGB)",
     "englishName": "Gingerbread Cub",
     "category": "Скины на каба",
-    "value": 41.5,
-    "valueLow": 40.0,
-    "valueHigh": 43.0,
+    "value": 40.0,
+    "valueLow": 39.0,
+    "valueHigh": 41.0,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -624,7 +630,8 @@
       50.5,
       50.5,
       46.5,
-      41.5
+      41.5,
+      40.0
     ],
     "image": "https://bssmvalues.com/images/Gingerbread_Cub.webp",
     "historicalDates": [
@@ -673,7 +680,8 @@
       "2026-08-24",
       "2026-09-29",
       "2026-10-02",
-      "2026-10-25"
+      "2026-10-25",
+      "2026-11-18"
     ]
   },
   {
@@ -11194,9 +11202,9 @@
           },
           {
             "rollName": "{+Ability from wax} Token Link + {HB} 2 Bap + {HB} 1 Fp",
-            "valueLow": 301.5,
-            "valueHigh": 301.5,
-            "value": 301.5,
+            "valueLow": 300.0,
+            "valueHigh": 300.0,
+            "value": 300.0,
             "demand": "Хайп",
             "valueText": ">={Bee Cub}+{Gingerbread Cub}",
             "isFloor": true
@@ -16623,9 +16631,9 @@
           },
           {
             "rollName": "{HB} 7 Cap",
-            "valueLow": 301.5,
+            "valueLow": 300.0,
             "valueHigh": 0.0,
-            "value": 150.75,
+            "value": 150.0,
             "demand": "Высокий",
             "valueText": "{Bee Cub}+{Gingerbread Cub}",
             "isFloor": false
