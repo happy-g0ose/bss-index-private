@@ -382,9 +382,9 @@
     "name": "Doodle Cub (DDC)",
     "englishName": "Doodle Cub",
     "category": "Скины на каба",
-    "value": 25.0,
-    "valueLow": 24.0,
-    "valueHigh": 26.0,
+    "value": 24.0,
+    "valueLow": 23.0,
+    "valueHigh": 25.0,
     "demand": "Низкий",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -438,7 +438,8 @@
       31.0,
       29.0,
       28.0,
-      25.0
+      25.0,
+      24.0
     ],
     "image": "https://bssmvalues.com/images/Doodle_Cub.webp",
     "historicalDates": [
@@ -487,7 +488,8 @@
       "2026-09-19",
       "2026-09-28",
       "2026-10-24",
-      "2026-10-30"
+      "2026-10-30",
+      "2026-11-18"
     ]
   },
   {
@@ -10350,9 +10352,9 @@
     "name": "Cyan Hilted Sword",
     "englishName": "Cyan Hilted Sword",
     "category": "Разное",
-    "value": 7.75,
-    "valueLow": 7.5,
-    "valueHigh": 8.0,
+    "value": 5.25,
+    "valueLow": 5.0,
+    "valueHigh": 5.5,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(59, 130, 246, 0.25)",
@@ -10372,7 +10374,8 @@
       9.5,
       9.75,
       8.75,
-      7.75
+      7.75,
+      5.25
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_cyan_hilted_sword.webp",
     "historicalDates": [
@@ -10387,7 +10390,8 @@
       "2026-07-19",
       "2026-07-21",
       "2026-10-13",
-      "2026-11-04"
+      "2026-11-04",
+      "2026-11-18"
     ]
   },
   {
@@ -18059,9 +18063,9 @@
           },
           {
             "rollName": "{HB} 6 Bap",
-            "valueLow": 285.0,
-            "valueHigh": 285.0,
-            "value": 285.0,
+            "valueLow": 284.0,
+            "valueHigh": 284.0,
+            "value": 284.0,
             "demand": "Хайп",
             "valueText": ">={Bee Cub}+{Doodle Cub}",
             "isFloor": true
@@ -18387,9 +18391,9 @@
         "rolls": [
           {
             "rollName": "{+Ability from wax} Melody + {HB} 1 Bee Movespeed",
-            "valueLow": 285.0,
-            "valueHigh": 285.0,
-            "value": 285.0,
+            "valueLow": 284.0,
+            "valueHigh": 284.0,
+            "value": 284.0,
             "demand": "Высокий",
             "valueText": ">={Bee Cub}+{Doodle Cub}",
             "isFloor": true

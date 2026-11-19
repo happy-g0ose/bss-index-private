@@ -646,7 +646,7 @@
             "image": "/images/Doodle_Cub.webp",
             "acronyms": "DDC",
             "demand": 2,
-            "last_updated": "2026-10-30T01:47:49.599Z",
+            "last_updated": "2026-11-18T17:54:15.583Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -923,10 +923,16 @@
                 "demand": 2,
                 "value_min": "24",
                 "value_max": "26"
+              },
+              {
+                "date": "2026-11-18",
+                "demand": 2,
+                "value_min": "23",
+                "value_max": "25"
               }
             ],
-            "value_min": "24",
-            "value_max": "26"
+            "value_min": "23",
+            "value_max": "25"
           },
           "Gingerbread Cub": {
             "image": "/images/Gingerbread_Cub.webp",
@@ -14497,7 +14503,7 @@
             "image": "/images/Hivesticker_cyan_hilted_sword.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-11-04T02:12:06.340Z",
+            "last_updated": "2026-11-18T17:53:43.596Z",
             "history": [
               {
                 "date": "2025-06-19",
@@ -14570,10 +14576,16 @@
                 "demand": 3,
                 "value_min": "7.5",
                 "value_max": "8"
+              },
+              {
+                "date": "2026-11-18",
+                "demand": 3,
+                "value_min": "5",
+                "value_max": "5.5"
               }
             ],
-            "value_min": "7.5",
-            "value_max": "8"
+            "value_min": "5",
+            "value_max": "5.5"
           },
           "Cyan Star": {
             "image": "/images/Hivesticker_cyan_star.webp",
