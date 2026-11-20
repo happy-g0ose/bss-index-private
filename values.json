@@ -26126,7 +26126,7 @@
       "image": "/images/Paper_Angel.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-11-04T02:07:34.081Z",
+      "last_updated": "2026-11-20T03:14:30.693Z",
       "stat_groups": {
         "Ability Token Lifespan (Full Waxed)": {
           "{HB} 2 Atl": {
@@ -26489,10 +26489,16 @@
                 "demand": 5,
                 "value_min": "80",
                 "value_max": "85"
+              },
+              {
+                "date": "2026-11-20",
+                "demand": 5,
+                "value_min": "90",
+                "value_max": "95"
               }
             ],
-            "value_min": "80",
-            "value_max": "85"
+            "value_min": "90",
+            "value_max": "95"
           },
           "{HB} 2 Bap + 2 Atl": {
             "demand": 5,
@@ -27541,7 +27547,7 @@
       "image": "/images/Peppermint_Antennas.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-11-16T22:55:36.646Z",
+      "last_updated": "2026-11-20T02:39:59.152Z",
       "stat_groups": {
         "Ability Rate (Full Waxed)": {
           "3 Ar": {
@@ -27701,10 +27707,16 @@
                 "demand": 4,
                 "value_min": "1.5",
                 "value_max": "2"
+              },
+              {
+                "date": "2026-11-20",
+                "demand": 4,
+                "value_min": "2",
+                "value_max": "2.5"
               }
             ],
-            "value_min": "1.5",
-            "value_max": "2"
+            "value_min": "2",
+            "value_max": "2.5"
           }
         },
         "{HB} Bee Ability Rate + Ability Rate (Full Waxed)": {
@@ -27734,10 +27746,16 @@
                 "demand": 4,
                 "value_min": "2.5",
                 "value_max": "3"
+              },
+              {
+                "date": "2026-11-20",
+                "demand": 4,
+                "value_min": "4",
+                "value_max": "5"
               }
             ],
-            "value_min": "2.5",
-            "value_max": "3"
+            "value_min": "4",
+            "value_max": "5"
           },
           "{HB} 1 Bar + 2 Ar": {
             "demand": 4,
@@ -27759,13 +27777,19 @@
                 "demand": 4,
                 "value_min": "11",
                 "value_max": "13"
+              },
+              {
+                "date": "2026-11-20",
+                "demand": 4,
+                "value_min": "14",
+                "value_max": "16"
               }
             ],
-            "value_min": "11",
-            "value_max": "13"
+            "value_min": "14",
+            "value_max": "16"
           },
           "{HB} 1 Bar + 3 Ar": {
-            "demand": 4,
+            "demand": 5,
             "history": [
               {
                 "date": "2026-06-09",
@@ -27796,13 +27820,19 @@
                 "demand": 4,
                 "value_min": "150",
                 "value_max": "155"
+              },
+              {
+                "date": "2026-11-20",
+                "demand": 5,
+                "value_min": "150",
+                "value_max": "155"
               }
             ],
             "value_min": "150",
             "value_max": "155"
           },
           "{HB} 1 Bar + 4 Ar": {
-            "demand": 4,
+            "demand": 5,
             "history": [
               {
                 "date": "2026-03-26",
@@ -27829,6 +27859,12 @@
               {
                 "date": "2026-06-13",
                 "demand": 4,
+                "value_min": "{Bee Cub}+{Snow Cub}",
+                "value_max": "2*{Bee Cub}"
+              },
+              {
+                "date": "2026-11-20",
+                "demand": 5,
                 "value_min": "{Bee Cub}+{Snow Cub}",
                 "value_max": "2*{Bee Cub}"
               }

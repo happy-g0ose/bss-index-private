@@ -13961,9 +13961,9 @@
           },
           {
             "rollName": "{HB} 2 Bap + 1 Atl",
-            "valueLow": 80.0,
-            "valueHigh": 85.0,
-            "value": 82.5,
+            "valueLow": 90.0,
+            "valueHigh": 95.0,
+            "value": 92.5,
             "demand": "Хайп"
           },
           {
@@ -14338,9 +14338,9 @@
         "rolls": [
           {
             "rollName": "{HB} 1 Bar",
-            "valueLow": 1.5,
-            "valueHigh": 2.0,
-            "value": 1.75,
+            "valueLow": 2.0,
+            "valueHigh": 2.5,
+            "value": 2.25,
             "demand": "Высокий"
           }
         ]
@@ -14350,16 +14350,16 @@
         "rolls": [
           {
             "rollName": "{HB} 1 Bar + 1 Ar",
-            "valueLow": 2.5,
-            "valueHigh": 3.0,
-            "value": 2.75,
+            "valueLow": 4.0,
+            "valueHigh": 5.0,
+            "value": 4.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 1 Bar + 2 Ar",
-            "valueLow": 11.0,
-            "valueHigh": 13.0,
-            "value": 12.0,
+            "valueLow": 14.0,
+            "valueHigh": 16.0,
+            "value": 15.0,
             "demand": "Высокий"
           },
           {
@@ -14367,14 +14367,14 @@
             "valueLow": 150.0,
             "valueHigh": 155.0,
             "value": 152.5,
-            "demand": "Высокий"
+            "demand": "Хайп"
           },
           {
             "rollName": "{HB} 1 Bar + 4 Ar",
             "valueLow": 415.0,
             "valueHigh": 0.0,
             "value": 207.5,
-            "demand": "Высокий",
+            "demand": "Хайп",
             "valueText": "{Bee Cub}+{Snow Cub}",
             "isFloor": false
           },
