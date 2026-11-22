@@ -21667,7 +21667,7 @@
       "image": "/images/Candy_Ring.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-11-15T21:46:12.345Z",
+      "last_updated": "2026-11-21T20:32:55.594Z",
       "stat_groups": {
         "Honey At Hive (Full Waxed)": {
           "{HB} 10 HaH": {
@@ -21714,10 +21714,16 @@
                 "demand": 4,
                 "value_min": "72",
                 "value_max": "76"
+              },
+              {
+                "date": "2026-11-21",
+                "demand": 4,
+                "value_min": "64",
+                "value_max": "68"
               }
             ],
-            "value_min": "72",
-            "value_max": "76"
+            "value_min": "64",
+            "value_max": "68"
           },
           "{HB} 11 HaH": {
             "demand": 3,
@@ -21775,10 +21781,16 @@
                 "demand": 3,
                 "value_min": "165",
                 "value_max": "175"
+              },
+              {
+                "date": "2026-11-21",
+                "demand": 3,
+                "value_min": "140",
+                "value_max": "150"
               }
             ],
-            "value_min": "165",
-            "value_max": "175"
+            "value_min": "140",
+            "value_max": "150"
           },
           "{HB} 12 HaH": {
             "demand": 5,
@@ -22063,10 +22075,16 @@
                 "demand": 4,
                 "value_min": "32",
                 "value_max": "35"
+              },
+              {
+                "date": "2026-11-21",
+                "demand": 4,
+                "value_min": "29",
+                "value_max": "32"
               }
             ],
-            "value_min": "32",
-            "value_max": "35"
+            "value_min": "29",
+            "value_max": "32"
           }
         },
         "Honey At Hive (Unwaxed)": {
@@ -22090,10 +22108,16 @@
                 "demand": 2,
                 "value_min": "1",
                 "value_max": "2"
+              },
+              {
+                "date": "2026-11-21",
+                "demand": 2,
+                "value_min": "2.5",
+                "value_max": "3.5"
               }
             ],
-            "value_min": "1",
-            "value_max": "2"
+            "value_min": "2.5",
+            "value_max": "3.5"
           },
           "{HB} 4 HaH 5★ Pot": {
             "demand": 3,
@@ -22115,10 +22139,16 @@
                 "demand": 3,
                 "value_min": "11",
                 "value_max": "12"
+              },
+              {
+                "date": "2026-11-21",
+                "demand": 3,
+                "value_min": "9",
+                "value_max": "10"
               }
             ],
-            "value_min": "11",
-            "value_max": "12"
+            "value_min": "9",
+            "value_max": "10"
           },
           "{HB} 4 HaH ≤3★ Pot": {
             "demand": 1,
@@ -22159,10 +22189,16 @@
                 "demand": 4,
                 "value_min": "13",
                 "value_max": "14"
+              },
+              {
+                "date": "2026-11-21",
+                "demand": 4,
+                "value_min": "8",
+                "value_max": "9"
               }
             ],
-            "value_min": "13",
-            "value_max": "14"
+            "value_min": "8",
+            "value_max": "9"
           },
           "{HB} 5 HaH 5★ Pot": {
             "demand": 4,
@@ -22190,10 +22226,16 @@
                 "demand": 4,
                 "value_min": "22",
                 "value_max": "24"
+              },
+              {
+                "date": "2026-11-21",
+                "demand": 4,
+                "value_min": "18",
+                "value_max": "20"
               }
             ],
-            "value_min": "22",
-            "value_max": "24"
+            "value_min": "18",
+            "value_max": "20"
           },
           "{HB} 5 HaH ≤3★ Pot": {
             "demand": 1,

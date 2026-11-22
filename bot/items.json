@@ -12487,7 +12487,8 @@
       107.5,
       120.0,
       97.5,
-      74.0
+      74.0,
+      66.0
     ],
     "historicalDates": [
       "2026-03-21",
@@ -12496,7 +12497,8 @@
       "2026-05-24",
       "2026-06-02",
       "2026-06-27",
-      "2026-09-07"
+      "2026-09-07",
+      "2026-11-21"
     ],
     "image": "https://bssmvalues.com/images/Candy_Ring.png",
     "beequipData": [
@@ -12505,16 +12507,16 @@
         "rolls": [
           {
             "rollName": "{HB} 10 HaH",
-            "valueLow": 72.0,
-            "valueHigh": 76.0,
-            "value": 74.0,
+            "valueLow": 64.0,
+            "valueHigh": 68.0,
+            "value": 66.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 11 HaH",
-            "valueLow": 165.0,
-            "valueHigh": 175.0,
-            "value": 170.0,
+            "valueLow": 140.0,
+            "valueHigh": 150.0,
+            "value": 145.0,
             "demand": "Средний"
           },
           {
@@ -12565,9 +12567,9 @@
           },
           {
             "rollName": "{HB} 9 HaH",
-            "valueLow": 32.0,
-            "valueHigh": 35.0,
-            "value": 33.5,
+            "valueLow": 29.0,
+            "valueHigh": 32.0,
+            "value": 30.5,
             "demand": "Высокий"
           }
         ]
@@ -12577,16 +12579,16 @@
         "rolls": [
           {
             "rollName": "{HB} 4 HaH 4★ Pot",
-            "valueLow": 1.0,
-            "valueHigh": 2.0,
-            "value": 1.5,
+            "valueLow": 2.5,
+            "valueHigh": 3.5,
+            "value": 3.0,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 4 HaH 5★ Pot",
-            "valueLow": 11.0,
-            "valueHigh": 12.0,
-            "value": 11.5,
+            "valueLow": 9.0,
+            "valueHigh": 10.0,
+            "value": 9.5,
             "demand": "Средний"
           },
           {
@@ -12598,16 +12600,16 @@
           },
           {
             "rollName": "{HB} 5 HaH 4★ Pot",
-            "valueLow": 13.0,
-            "valueHigh": 14.0,
-            "value": 13.5,
+            "valueLow": 8.0,
+            "valueHigh": 9.0,
+            "value": 8.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 5 HaH 5★ Pot",
-            "valueLow": 22.0,
-            "valueHigh": 24.0,
-            "value": 23.0,
+            "valueLow": 18.0,
+            "valueHigh": 20.0,
+            "value": 19.0,
             "demand": "Высокий"
           },
           {
