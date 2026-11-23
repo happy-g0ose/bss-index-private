@@ -3,7 +3,11 @@
  * Verifies that the sitemap, canonical tags and hreflang agree with each other,
  * because Search Console rejects a sitemap whose URLs redirect.
  */
+import fs from 'node:fs';
+import path from 'node:path';
+
 const ORIGIN = 'https://bss-index.vercel.app';
+const LOCAL_SITEMAP = path.resolve('dist/sitemap.xml');
 
 const results = [];
 const check = (name, ok, detail) => {
@@ -32,8 +36,16 @@ async function main() {
   console.log('\nsitemap:');
   const sm = await (await fetch(ORIGIN + '/sitemap.xml')).text();
   const locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  // 330 items x2 languages + the two /items/ indexes + the root
-  check('url count', locs.length === 664, locs.length + ' urls');
+  // The sitemap grows as new page types are added (per-roll beequip pages),
+  // so compare against the locally generated one instead of a stale constant.
+  if (fs.existsSync(LOCAL_SITEMAP)) {
+    const local = fs.readFileSync(LOCAL_SITEMAP, 'utf8');
+    const localLocs = [...local.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+    check('url count matches build', locs.length === localLocs.length,
+      locs.length + ' live / ' + localLocs.length + ' built');
+  } else {
+    check('url count is non-empty', locs.length > 0, locs.length + ' urls');
+  }
   const bee = locs.filter((l) => l.includes('bee-cub'));
   check('bee-cub entries', bee.length === 2, bee.join(' | '));
 
