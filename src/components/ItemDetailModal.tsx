@@ -92,7 +92,6 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
     if (segment.length) demandSegments.push(segment);
 
     const pathD = `M ${pricePoints.map(p => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ')}`;
-    const areaD = `${pathD} L ${pricePoints[pricePoints.length - 1].x.toFixed(1)} ${(padT + plotH).toFixed(1)} L ${pricePoints[0].x.toFixed(1)} ${(padT + plotH).toFixed(1)} Z`;
     const demandPaths = demandSegments
       .filter((s) => s.length > 1)
       .map((s) => `M ${s.map(p => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ')}`);
@@ -104,13 +103,11 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
 
     return {
       pathD,
-      areaD,
       pricePoints,
       demandPaths,
       priceTicks,
       priceTickLabels,
       demandTicks: [5, 3, 1, 0],
-      priceY,
       demandY,
       padL, padR, padT, padB, plotW, plotH,
       width, height,
@@ -399,17 +396,6 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <defs>
-                      <linearGradient id="chart-area" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.30" />
-                        <stop offset="60%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.06" />
-                        <stop offset="100%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0" />
-                      </linearGradient>
-                      <filter id="chart-glow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="3" result="blur" />
-                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                      </filter>
-                    </defs>
 
                     {/* Horizontal grid + left price axis labels */}
                     {chart.priceTicks.map((y, i) => (
@@ -466,41 +452,27 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                       />
                     )}
 
-                    {/* Price: shaded area + solid line */}
-                    <motion.path
-                      d={chart.areaD}
-                      fill="url(#chart-area)"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.8, delay: 0.3 }}
-                    />
-                    <motion.path
+                    {/* Price: a single plain line, no fill and no glow */}
+                    <path
                       d={chart.pathD}
                       fill="none"
                       stroke={item.hexColor || '#a855f7'}
-                      strokeWidth="2.5"
+                      strokeWidth="1.75"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      filter="url(#chart-glow)"
-                      initial={{ strokeDasharray: `${chart.pathD.length} ${chart.pathD.length}`, strokeDashoffset: chart.pathD.length }}
-                      animate={{ strokeDashoffset: 0 }}
-                      transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                     />
 
-                    {/* Demand: dashed line, split where the source has no data */}
+                    {/* Demand: plain dashed line, split where the source has no data */}
                     {chart.demandPaths.map((d, i) => (
-                      <motion.path
+                      <path
                         key={`demand-${i}`}
                         d={d}
                         fill="none"
                         stroke="#34d399"
-                        strokeWidth="1.8"
-                        strokeDasharray="5 4"
+                        strokeWidth="1.5"
+                        strokeDasharray="4 4"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.9 }}
-                        transition={{ duration: 0.7, delay: 0.5 }}
                       />
                     ))}
 

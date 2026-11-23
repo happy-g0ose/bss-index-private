@@ -57,16 +57,15 @@ function BssApp({ items }: { items: BSSItem[] }) {
   const [toast, setToast] = useState<{ show: boolean; message: string; side: 'A' | 'B' | null }>({ show: false, message: '', side: null });
 
   const [lang, setLangState] = useState<Language>(() => {
-    // /ru/... pages are the Russian mirror, so they win over the stored default.
+    // The root is the English home page, always. Only the /ru/ mirror is
+    // Russian; a stored preference must never turn the root into /ru/.
     if (window.location.pathname === '/ru' || window.location.pathname.startsWith('/ru/')) {
       return 'ru';
     }
-    const saved = localStorage.getItem('bss_lang') as Language;
-    return saved === 'ru' || saved === 'en' ? saved : 'en';
+    return 'en';
   });
 
   const setLang = (newLang: Language) => {
-    localStorage.setItem('bss_lang', newLang);
     setLangState(newLang);
   };
   const [activeTab, setActiveTab] = useState<TabType>('home');
