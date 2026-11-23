@@ -44,6 +44,11 @@ export interface BSSItem {
   historicalPrices: number[];
   historicalDates?: string[];
   /**
+   * Source demand level (0..5) for each history snapshot. `null` means the
+   * source has no demand for that snapshot — never substituted with a guess.
+   */
+  historicalDemand?: (number | null)[];
+  /**
    * Price change over the last 7 / 30 days, computed at build time in
    * scripts/lib/change.cjs so the site, the API and the static pages all
    * report the same number. Null when the history is too short.

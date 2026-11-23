@@ -210,6 +210,7 @@ for item in items:
         if primary_history:
             h_prices = []
             h_dates = []
+            h_demand = []
             for h in primary_history:
                 h_low = clean_float(h.get("value_min"))
                 h_high = clean_float(h.get("value_max"))
@@ -217,9 +218,14 @@ for item in items:
                 h_prices.append(h_val)
                 if h.get("date"):
                     h_dates.append(h["date"])
+                # The source records demand per snapshot. Keep it verbatim,
+                # including None for "no data" — a made-up number here would
+                # put a fake demand line on the chart.
+                h_demand.append(h.get("demand"))
             item["historicalPrices"] = h_prices
             if h_dates:
                 item["historicalDates"] = h_dates
+            item["historicalDemand"] = h_demand
             item["stability"] = calc_stability(h_prices)
             
         if old_val != item["value"]:
@@ -245,6 +251,7 @@ for item in items:
         if history:
             h_prices = []
             h_dates = []
+            h_demand = []
             for h in history:
                 h_low = clean_float(h.get("value_min"))
                 h_high = clean_float(h.get("value_max"))
@@ -252,9 +259,13 @@ for item in items:
                 h_prices.append(h_val)
                 if h.get("date"):
                     h_dates.append(h["date"])
+                # Keep the source demand as-is (0..5 or None). Never invent a
+                # value for snapshots where the source has no demand.
+                h_demand.append(h.get("demand"))
             item["historicalPrices"] = h_prices
             if h_dates:
                 item["historicalDates"] = h_dates
+            item["historicalDemand"] = h_demand
             item["stability"] = calc_stability(h_prices)
             
         if old_val != item["value"]:

@@ -41,47 +41,100 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
 
   if (!item) return null;
 
-  // Custom SVG Sparkline Graph Math
-  const drawSparkline = () => {
+  // Chart geometry. Two series share the same X axis (the source snapshots):
+  //   - price on the left axis (the item's own colour)
+  //   - demand on the right axis 0..5 (source data, never invented)
+  // Both come straight from `values_live.json` -> bot/items.json, so nothing
+  // on this chart is generated on the client.
+  const drawChart = () => {
     const prices = item.historicalPrices;
+    const demand = item.historicalDemand || [];
     const width = 500;
-    const height = 150;
-    const padding = 20;
+    const height = 190;
+    const padL = 46; // room for the price axis labels
+    const padR = 38; // room for the demand axis labels
+    const padT = 14;
+    const padB = 24; // room for the axis title / baseline
+    const plotW = width - padL - padR;
+    const plotH = height - padT - padB;
+
     const minVal = Math.min(...prices);
     const maxVal = Math.max(...prices);
     const range = maxVal - minVal || 10;
+    // Pad the price axis a little so the line never sits on the frame.
+    const axisMin = Math.max(0, minVal - range * 0.08);
+    const axisMax = maxVal + range * 0.08;
+    const axisRange = axisMax - axisMin || 10;
 
-    // Build line coordinates
-    const points = prices.map((price, idx) => {
-      const x = padding + (idx * (width - padding * 2)) / (prices.length - 1);
-      const y = height - padding - ((price - minVal) / range) * (height - padding * 2);
-      return { x, y };
+    const xAt = (idx: number) => padL + (idx * plotW) / Math.max(1, prices.length - 1);
+    const priceY = (v: number) =>
+      padT + plotH - ((v - axisMin) / axisRange) * plotH;
+    const demandY = (d: number) =>
+      padT + plotH - (Math.max(0, Math.min(5, d)) / 5) * plotH;
+
+    const pricePoints = prices.map((price, idx) => ({
+      x: xAt(idx),
+      y: priceY(price),
+    }));
+
+    // Demand is a sequence of separate segments: where the source has null we
+    // break the line instead of drawing a fake value through the gap.
+    const demandSegments: { x: number; y: number }[][] = [];
+    let segment: { x: number; y: number }[] = [];
+    demand.forEach((d, idx) => {
+      if (d === null || d === undefined || !Number.isFinite(d)) {
+        if (segment.length) demandSegments.push(segment);
+        segment = [];
+      } else {
+        segment.push({ x: xAt(idx), y: demandY(d) });
+      }
     });
+    if (segment.length) demandSegments.push(segment);
 
-    const pathD = `M ${points.map(p => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ')}`;
-    const areaD = `${pathD} L ${points[points.length - 1].x.toFixed(1)} ${height} L ${points[0].x.toFixed(1)} ${height} Z`;
+    const pathD = `M ${pricePoints.map(p => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ')}`;
+    const areaD = `${pathD} L ${pricePoints[pricePoints.length - 1].x.toFixed(1)} ${(padT + plotH).toFixed(1)} L ${pricePoints[0].x.toFixed(1)} ${(padT + plotH).toFixed(1)} Z`;
+    const demandPaths = demandSegments
+      .filter((s) => s.length > 1)
+      .map((s) => `M ${s.map(p => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ')}`);
 
-    return { pathD, areaD, points, width, height };
+    const priceTicks = [axisMax, axisMin + axisRange / 2, axisMin];
+    const priceTickLabels = priceTicks.map((v) =>
+      v >= 1000 ? `${(v / 1000).toFixed(1)}k` : Number(v.toFixed(v < 10 ? 1 : 0)).toString()
+    );
+
+    return {
+      pathD,
+      areaD,
+      pricePoints,
+      demandPaths,
+      priceTicks,
+      priceTickLabels,
+      demandTicks: [5, 3, 1, 0],
+      priceY,
+      demandY,
+      padL, padR, padT, padB, plotW, plotH,
+      width, height,
+    };
   };
 
-  const sparkline = drawSparkline();
+  const chart = drawChart();
 
-  // Mouse event handlers for interactive sparkline
+  // Mouse event handlers for interactive chart
   const handleMouseMove = (e: React.MouseEvent<SVGSVGElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const clientX = e.clientX - rect.left;
-    const svgX = (clientX / rect.width) * sparkline.width;
-    
+    const svgX = (clientX / rect.width) * chart.width;
+
     let closestIdx = 0;
     let minDistance = Infinity;
-    sparkline.points.forEach((p, idx) => {
+    chart.pricePoints.forEach((p, idx) => {
       const dist = Math.abs(p.x - svgX);
       if (dist < minDistance) {
         minDistance = dist;
         closestIdx = idx;
       }
     });
-    
+
     setHoveredPointIndex(closestIdx);
   };
 
@@ -327,89 +380,169 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                 </h4>
                 
                 <div className="relative rounded-xl bg-neutral-950/60 border border-white/5 p-4 overflow-hidden">
-                  {/* SVG Area Sparkline */}
-                  <svg 
-                    className="w-full h-32 md:h-40 overflow-visible cursor-crosshair" 
-                    viewBox={`0 0 ${sparkline.width} ${sparkline.height}`} 
+                  {/* Legend — two series, both read straight from source data */}
+                  <div className="flex items-center justify-between gap-3 mb-2 text-[9px] font-mono font-bold uppercase tracking-wider">
+                    <span className="flex items-center gap-1.5" style={{ color: item.hexColor || '#a855f7' }}>
+                      <span className="inline-block w-3 h-0.5 rounded" style={{ background: item.hexColor || '#a855f7' }} />
+                      {lang === 'ru' ? 'Цена ★' : 'Price ★'}
+                    </span>
+                    <span className="flex items-center gap-1.5 text-emerald-400">
+                      <span className="inline-block w-3 border-t-2 border-dashed border-emerald-400" />
+                      {lang === 'ru' ? 'Спрос' : 'Demand'}
+                    </span>
+                  </div>
+
+                  <svg
+                    className="w-full overflow-visible cursor-crosshair"
+                    viewBox={`0 0 ${chart.width} ${chart.height}`}
                     preserveAspectRatio="none"
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
                   >
                     <defs>
-                      <linearGradient id="gradient-glow" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.35" />
-                        <stop offset="60%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.08" />
-                        <stop offset="100%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.0" />
+                      <linearGradient id="chart-area" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.30" />
+                        <stop offset="60%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0.06" />
+                        <stop offset="100%" stopColor={item.hexColor || '#a855f7'} stopOpacity="0" />
                       </linearGradient>
-                      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <filter id="chart-glow" x="-20%" y="-20%" width="140%" height="140%">
                         <feGaussianBlur stdDeviation="3" result="blur" />
                         <feComposite in="SourceGraphic" in2="blur" operator="over" />
                       </filter>
                     </defs>
 
-                    {/* Vertical Guide Line */}
+                    {/* Horizontal grid + left price axis labels */}
+                    {chart.priceTicks.map((y, i) => (
+                      <g key={`h-${i}`}>
+                        <line
+                          x1={chart.padL}
+                          y1={y}
+                          x2={chart.width - chart.padR}
+                          y2={y}
+                          stroke="rgba(255,255,255,0.06)"
+                          strokeWidth="1"
+                        />
+                        <text
+                          x={chart.padL - 6}
+                          y={y + 3}
+                          textAnchor="end"
+                          fill="#71717a"
+                          fontSize="9"
+                          fontFamily="ui-monospace, monospace"
+                        >
+                          {chart.priceTickLabels[i]}
+                        </text>
+                      </g>
+                    ))}
+
+                    {/* Right demand axis labels (0..5, from source scale) */}
+                    {chart.demandTicks.map((d) => {
+                      const y = chart.demandY(d);
+                      return (
+                        <text
+                          key={`d-${d}`}
+                          x={chart.width - chart.padR + 6}
+                          y={y + 3}
+                          textAnchor="start"
+                          fill="#34d399"
+                          fontSize="9"
+                          fontFamily="ui-monospace, monospace"
+                        >
+                          {d}
+                        </text>
+                      );
+                    })}
+
+                    {/* Vertical guide on hover */}
                     {hoveredPointIndex !== null && (
                       <line
-                        x1={sparkline.points[hoveredPointIndex].x}
-                        y1={0}
-                        x2={sparkline.points[hoveredPointIndex].x}
-                        y2={sparkline.height}
-                        stroke="rgba(255, 255, 255, 0.12)"
+                        x1={chart.pricePoints[hoveredPointIndex].x}
+                        y1={chart.padT}
+                        x2={chart.pricePoints[hoveredPointIndex].x}
+                        y2={chart.padT + chart.plotH}
+                        stroke="rgba(255, 255, 255, 0.14)"
                         strokeDasharray="4 4"
                         strokeWidth="1.5"
                       />
                     )}
 
-                    {/* Shaded Area */}
-                    <motion.path 
-                      d={sparkline.areaD} 
-                      fill="url(#gradient-glow)" 
+                    {/* Price: shaded area + solid line */}
+                    <motion.path
+                      d={chart.areaD}
+                      fill="url(#chart-area)"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.8, delay: 0.3 }}
                     />
-
-                    {/* Stroke Line with glow */}
-                    <motion.path 
-                      d={sparkline.pathD} 
-                      fill="none" 
-                      stroke={item.hexColor || '#a855f7'} 
+                    <motion.path
+                      d={chart.pathD}
+                      fill="none"
+                      stroke={item.hexColor || '#a855f7'}
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      filter="url(#glow)"
-                      initial={{ strokeDasharray: `${sparkline.pathD.length} ${sparkline.pathD.length}`, strokeDashoffset: sparkline.pathD.length }}
+                      filter="url(#chart-glow)"
+                      initial={{ strokeDasharray: `${chart.pathD.length} ${chart.pathD.length}`, strokeDashoffset: chart.pathD.length }}
                       animate={{ strokeDashoffset: 0 }}
                       transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                     />
 
-                    {/* Interactive dots */}
-                    {sparkline.points.map((p, idx) => (
-                      <g key={idx}>
+                    {/* Demand: dashed line, split where the source has no data */}
+                    {chart.demandPaths.map((d, i) => (
+                      <motion.path
+                        key={`demand-${i}`}
+                        d={d}
+                        fill="none"
+                        stroke="#34d399"
+                        strokeWidth="1.8"
+                        strokeDasharray="5 4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.9 }}
+                        transition={{ duration: 0.7, delay: 0.5 }}
+                      />
+                    ))}
+
+                    {/* Price dots */}
+                    {chart.pricePoints.map((p, idx) => (
+                      <circle
+                        key={idx}
+                        cx={p.x}
+                        cy={p.y}
+                        r={hoveredPointIndex === idx ? 5 : 2.5}
+                        className="transition-all duration-200"
+                        fill={item.hexColor || '#a855f7'}
+                        stroke="#0b0f19"
+                        strokeWidth="1.5"
+                      />
+                    ))}
+
+                    {/* Demand dot on the hovered snapshot (only when source has it) */}
+                    {hoveredPointIndex !== null &&
+                      item.historicalDemand?.[hoveredPointIndex] != null && (
                         <circle
-                          cx={p.x}
-                          cy={p.y}
-                          r={hoveredPointIndex === idx ? 5 : 3}
-                          className="transition-all duration-200 cursor-pointer"
-                          fill={item.hexColor || '#a855f7'}
+                          cx={chart.pricePoints[hoveredPointIndex].x}
+                          cy={chart.demandY(item.historicalDemand[hoveredPointIndex] as number)}
+                          r="4"
+                          fill="#34d399"
                           stroke="#0b0f19"
                           strokeWidth="1.5"
-                          filter="url(#glow)"
                         />
-                      </g>
-                    ))}
+                      )}
                   </svg>
 
-                  {/* Tooltip Overlay */}
+                  {/* Tooltip Overlay — exact values from the snapshot, no estimates */}
                   {(() => {
                     if (hoveredPointIndex === null) return null;
-                    const activePoint = sparkline.points[hoveredPointIndex];
+                    const activePoint = chart.pricePoints[hoveredPointIndex];
                     const rawVal = item.historicalPrices[hoveredPointIndex];
-                    
+                    const rawDemand = item.historicalDemand?.[hoveredPointIndex];
+
                     const priceValue = rawVal >= 1000 ? `${(rawVal / 1000).toFixed(1)}k` : rawVal.toFixed(2);
-                    const tooltipLeft = `${(activePoint.x / sparkline.width) * 100}%`;
-                    const tooltipTop = `${(activePoint.y / sparkline.height) * 100}%`;
-                    
+                    const tooltipLeft = `${(activePoint.x / chart.width) * 100}%`;
+                    const tooltipTop = `${(activePoint.y / chart.height) * 100}%`;
+
                     const lastIndex = item.historicalPrices.length - 1;
                     let transformStr = 'translateX(-50%)';
                     if (hoveredPointIndex === 0) {
@@ -417,7 +550,12 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                     } else if (hoveredPointIndex === lastIndex) {
                       transformStr = 'translateX(-105%)';
                     }
-                    
+
+                    const demandLabel =
+                      rawDemand === null || rawDemand === undefined
+                        ? (lang === 'ru' ? 'нет данных' : 'no data')
+                        : `${rawDemand}/5`;
+
                     return (
                       <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 5 }}
@@ -426,20 +564,23 @@ export default function ItemDetailModal({ item, onClose, onAddToSideA, onAddToSi
                         className="absolute z-30 pointer-events-none p-2 bg-neutral-900/90 backdrop-blur border border-white/10 rounded-lg shadow-xl text-[10px] font-mono leading-tight flex flex-col gap-0.5 whitespace-nowrap"
                         style={{
                           left: tooltipLeft,
-                          top: `calc(${tooltipTop} - 55px)`,
+                          top: `calc(${tooltipTop} - 62px)`,
                           transform: transformStr,
                         }}
                       >
                         <span className="text-neutral-400 font-bold">{getWeeksAgoText(hoveredPointIndex, lang)}</span>
-                        <span className="text-amber-400 font-black text-[11px] flex items-center gap-0.5 justify-center">
-                          {priceValue} <span className="text-[9px] text-amber-500 font-normal">★</span>
+                        <span className="font-black text-[11px] flex items-center gap-0.5 justify-center" style={{ color: item.hexColor || '#a855f7' }}>
+                          {priceValue} <span className="text-[9px] font-normal" style={{ color: item.hexColor || '#a855f7' }}>★</span>
+                        </span>
+                        <span className="text-emerald-400 font-bold flex items-center gap-0.5 justify-center">
+                          {lang === 'ru' ? 'Спрос' : 'Demand'}: {demandLabel}
                         </span>
                       </motion.div>
                     );
                   })()}
 
                   {/* X-Axis labels */}
-                  <div className="flex justify-between items-center text-[9px] text-neutral-500 font-mono font-bold mt-2 pt-2 border-t border-white/5">
+                  <div className="flex justify-between items-center text-[9px] text-neutral-500 font-mono font-bold mt-1 pt-2 border-t border-white/5">
                     {(() => {
                       const dates = item.historicalDates || [];
                       if (dates.length === 0) {
