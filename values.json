@@ -35853,7 +35853,7 @@
       "image": "/images/Smiley_Sticker.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-11-15T21:53:46.681Z",
+      "last_updated": "2026-11-23T19:29:15.162Z",
       "stat_groups": {
         "Blue Bomb (Full Waxed)": {
           "{+Ability from wax} Blue Bomb": {
@@ -37054,9 +37054,15 @@
                 "demand": 5,
                 "value_min": ">=4*{Bee Cub}",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-23",
+                "demand": 5,
+                "value_min": ">=3*{Bee Cub}",
+                "value_max": null
               }
             ],
-            "value_min": ">=4*{Bee Cub}",
+            "value_min": ">=3*{Bee Cub}",
             "value_max": null
           },
           "{+Ability from wax} Honey Mark + ≤ 6 Md": {

@@ -20119,7 +20119,7 @@
             "valueHigh": 260.0,
             "value": 260.0,
             "demand": "Хайп",
-            "valueText": ">=4*{Bee Cub}",
+            "valueText": ">=3*{Bee Cub}",
             "isFloor": true
           },
           {
