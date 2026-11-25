@@ -39561,7 +39561,7 @@
       "image": "/images/Toy_Drum.png",
       "acronyms": null,
       "is_beesmas": true,
-      "last_updated": "2026-11-15T21:36:28.683Z",
+      "last_updated": "2026-11-25T02:53:31.770Z",
       "stat_groups": {
         "Bee Ability Pollen (Full Waxed)": {
           "{HB} 1 Bap": {
@@ -40079,9 +40079,15 @@
                 "demand": 5,
                 "value_min": ">=6*{Bee Cub}+{Peppermint Cub}",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-25",
+                "demand": 5,
+                "value_min": ">=6*{Bee Cub}",
+                "value_max": null
               }
             ],
-            "value_min": ">=6*{Bee Cub}+{Peppermint Cub}",
+            "value_min": ">=6*{Bee Cub}",
             "value_max": null
           }
         },

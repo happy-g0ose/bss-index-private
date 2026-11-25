@@ -21067,9 +21067,9 @@
     "name": "Игрушечный барабан",
     "englishName": "Toy Drum",
     "category": "Биквипы",
-    "value": 202.75,
+    "value": 142.25,
     "valueLow": 0.5,
-    "valueHigh": 405.0,
+    "valueHigh": 284.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -21145,11 +21145,11 @@
           },
           {
             "rollName": "{HB} 8 Bap",
-            "valueLow": 405.0,
-            "valueHigh": 405.0,
-            "value": 405.0,
+            "valueLow": 260.0,
+            "valueHigh": 260.0,
+            "value": 260.0,
             "demand": "Хайп",
-            "valueText": ">=6*{Bee Cub}+{Peppermint Cub}",
+            "valueText": ">=6*{Bee Cub}",
             "isFloor": true
           }
         ]
