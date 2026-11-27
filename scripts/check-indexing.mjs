@@ -46,6 +46,11 @@ async function main() {
   } else {
     check('url count is non-empty', locs.length > 0, locs.length + ' urls');
   }
+  // A sitemap that lists the same URL twice is a quality signal against the
+  // site, and it made the count check pass while 42% of the entries were dupes.
+  const uniqueLocs = new Set(locs);
+  check('no duplicate urls', uniqueLocs.size === locs.length,
+    (locs.length - uniqueLocs.size) + ' duplicates');
   const bee = locs.filter((l) => l.includes('bee-cub'));
   check('bee-cub entries', bee.length === 2, bee.join(' | '));
 

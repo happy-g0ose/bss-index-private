@@ -686,11 +686,26 @@ const ITEM_PAGE_CSS = `
     .copy-link.copied { border-color: #34d399; color: #34d399; background: rgba(52,211,153,.1); }
   `;
 
+/**
+ * The sitemap.
+ *
+ * Duplicate <loc> entries are dropped here rather than at each call site: the
+ * item loop and the per-roll loop both enumerate the same beequip roll pages,
+ * which put every roll URL in the file twice. Search Console tolerates that,
+ * but a sitemap that claims more URLs than the site has is a quality signal
+ * against us, and the count is what the checks compare against.
+ */
 function buildSitemap(urls) {
-  const entries = urls
-    .map((u) => `  <url><loc>${esc(u.loc)}</loc><changefreq>daily</changefreq><priority>${u.priority}</priority></url>`)
-    .join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>`;
+  const seen = new Set();
+  const entries = [];
+  for (const u of urls) {
+    if (seen.has(u.loc)) continue;
+    seen.add(u.loc);
+    entries.push(
+      `  <url><loc>${esc(u.loc)}</loc><changefreq>daily</changefreq><priority>${u.priority}</priority></url>`,
+    );
+  }
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join('\n')}\n</urlset>`;
 }
 
 /**
