@@ -1230,7 +1230,7 @@
             "image": "/images/Gloomy_Cub.webp",
             "acronyms": null,
             "demand": 4,
-            "last_updated": "2026-10-28T11:47:47.182Z",
+            "last_updated": "2026-11-27T00:37:20.190Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -1519,16 +1519,22 @@
                 "demand": 4,
                 "value_min": "66",
                 "value_max": "70"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "64",
+                "value_max": "68"
               }
             ],
-            "value_min": "66",
-            "value_max": "70"
+            "value_min": "64",
+            "value_max": "68"
           },
           "Noob Cub": {
             "image": "/images/Noob_Cub.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-10-28T04:03:46.181Z",
+            "last_updated": "2026-11-27T00:38:53.670Z",
             "history": [
               {
                 "date": "2025-05-14",
@@ -1895,10 +1901,16 @@
                 "demand": 3,
                 "value_min": "47",
                 "value_max": "50"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 3,
+                "value_min": "45",
+                "value_max": "48"
               }
             ],
-            "value_min": "47",
-            "value_max": "50"
+            "value_min": "45",
+            "value_max": "48"
           },
           "Peppermint Cub": {
             "image": "/images/Peppermint_Robo_Cub.webp",
@@ -6228,7 +6240,7 @@
             "image": "/images/Hivesticker_round_basic_bee.webp",
             "acronyms": null,
             "demand": 3,
-            "last_updated": "2026-10-13T18:13:17.352Z",
+            "last_updated": "2026-11-26T22:48:04.859Z",
             "history": [
               {
                 "date": "2025-05-31",
@@ -6337,10 +6349,16 @@
                 "demand": 3,
                 "value_min": "6.5",
                 "value_max": "7"
+              },
+              {
+                "date": "2026-11-26",
+                "demand": 3,
+                "value_min": "5.5",
+                "value_max": "6"
               }
             ],
-            "value_min": "6.5",
-            "value_max": "7"
+            "value_min": "5.5",
+            "value_max": "6"
           },
           "Round Rascal Bee": {
             "image": "/images/Hivesticker_round_rascal_bee.webp",
@@ -6860,7 +6878,7 @@
             "image": "/images/Hivesticker_sideways_spirit_bear.webp",
             "acronyms": null,
             "demand": 2,
-            "last_updated": "2026-06-14T23:27:20.966Z",
+            "last_updated": "2026-11-26T22:47:49.215Z",
             "history": [
               {
                 "date": "2026-02-21",
@@ -6897,10 +6915,16 @@
                 "demand": 2,
                 "value_min": "0.15",
                 "value_max": "0.25"
+              },
+              {
+                "date": "2026-11-26",
+                "demand": 2,
+                "value_min": "0.33",
+                "value_max": "0.5"
               }
             ],
-            "value_min": "0.15",
-            "value_max": "0.25"
+            "value_min": "0.33",
+            "value_max": "0.5"
           },
           "Sitting Green Shirt Bear": {
             "image": "/images/Hivesticker_sitting_green_shirt_bear.webp",
@@ -13948,10 +13972,16 @@
             "image": "/images/nectar_shower_vial_1782328394911_c129c94e.webp",
             "acronyms": null,
             "demand": 2,
-            "last_updated": "2026-06-24T23:08:42.171Z",
+            "last_updated": "2026-11-26T20:13:28.235Z",
             "history": [
               {
                 "date": "2026-06-24",
+                "demand": 2,
+                "value_min": "1",
+                "value_max": null
+              },
+              {
+                "date": "2026-11-26",
                 "demand": 2,
                 "value_min": "1",
                 "value_max": null
@@ -20142,7 +20172,7 @@
       "image": "/images/Camphor_Lip_Balm.png",
       "acronyms": null,
       "is_beesmas": false,
-      "last_updated": "2026-10-10T16:10:39.672Z",
+      "last_updated": "2026-11-27T07:16:49.485Z",
       "stat_groups": {
         "Bubble Pollen (Full Waxed)": {
           "{HB} 15 Bp": {
@@ -20318,10 +20348,16 @@
                 "demand": 3,
                 "value_min": "8",
                 "value_max": "10"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 3,
+                "value_min": "7",
+                "value_max": "9"
               }
             ],
-            "value_min": "8",
-            "value_max": "10"
+            "value_min": "7",
+            "value_max": "9"
           },
           "{HB} 14 Bp + 4 Gbp": {
             "demand": 3,
@@ -20343,10 +20379,16 @@
                 "demand": 3,
                 "value_min": "19",
                 "value_max": "21"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 3,
+                "value_min": "17",
+                "value_max": "18"
               }
             ],
-            "value_min": "19",
-            "value_max": "21"
+            "value_min": "17",
+            "value_max": "18"
           },
           "{HB} 14 Bp + 5 Gbp": {
             "demand": 4,
@@ -20368,10 +20410,16 @@
                 "demand": 4,
                 "value_min": "40",
                 "value_max": "43"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "34",
+                "value_max": "36"
               }
             ],
-            "value_min": "40",
-            "value_max": "43"
+            "value_min": "34",
+            "value_max": "36"
           },
           "{HB} 14 Bp + 6 Gbp": {
             "demand": 5,
@@ -20387,10 +20435,16 @@
                 "demand": 5,
                 "value_min": "87",
                 "value_max": "92"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "70",
+                "value_max": "75"
               }
             ],
-            "value_min": "87",
-            "value_max": "92"
+            "value_min": "70",
+            "value_max": "75"
           },
           "{HB} 15 Bp + 2 Gbp": {
             "demand": 2,
@@ -20412,10 +20466,16 @@
                 "demand": 2,
                 "value_min": "5",
                 "value_max": "6"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 2,
+                "value_min": "4",
+                "value_max": "5"
               }
             ],
-            "value_min": "5",
-            "value_max": "6"
+            "value_min": "4",
+            "value_max": "5"
           },
           "{HB} 15 Bp + 3 Gbp": {
             "demand": 3,
@@ -20449,10 +20509,16 @@
                 "demand": 3,
                 "value_min": "14",
                 "value_max": "16"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 3,
+                "value_min": "12",
+                "value_max": "14"
               }
             ],
-            "value_min": "14",
-            "value_max": "16"
+            "value_min": "12",
+            "value_max": "14"
           },
           "{HB} 15 Bp + 4 Gbp": {
             "demand": 4,
@@ -20480,10 +20546,16 @@
                 "demand": 4,
                 "value_min": "35",
                 "value_max": "38"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "30",
+                "value_max": "33"
               }
             ],
-            "value_min": "35",
-            "value_max": "38"
+            "value_min": "30",
+            "value_max": "33"
           },
           "{HB} 15 Bp + 5 Gbp": {
             "demand": 5,
@@ -20511,10 +20583,16 @@
                 "demand": 5,
                 "value_min": "72",
                 "value_max": "76"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "60",
+                "value_max": "63"
               }
             ],
-            "value_min": "72",
-            "value_max": "76"
+            "value_min": "60",
+            "value_max": "63"
           },
           "{HB} 15 Bp + 6 Gbp": {
             "demand": 5,
@@ -20536,10 +20614,16 @@
                 "demand": 5,
                 "value_min": "165",
                 "value_max": "175"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "130",
+                "value_max": "140"
               }
             ],
-            "value_min": "165",
-            "value_max": "175"
+            "value_min": "130",
+            "value_max": "140"
           },
           "{HB} 16 Bp + 2 Gbp": {
             "demand": 3,
@@ -20567,10 +20651,16 @@
                 "demand": 3,
                 "value_min": "12",
                 "value_max": "14"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 3,
+                "value_min": "10",
+                "value_max": "12"
               }
             ],
-            "value_min": "12",
-            "value_max": "14"
+            "value_min": "10",
+            "value_max": "12"
           },
           "{HB} 16 Bp + 3 Gbp": {
             "demand": 4,
@@ -20598,10 +20688,16 @@
                 "demand": 4,
                 "value_min": "26",
                 "value_max": "28"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "24",
+                "value_max": "26"
               }
             ],
-            "value_min": "26",
-            "value_max": "28"
+            "value_min": "24",
+            "value_max": "26"
           },
           "{HB} 16 Bp + 4 Gbp": {
             "demand": 4,
@@ -20629,10 +20725,16 @@
                 "demand": 4,
                 "value_min": "66",
                 "value_max": "70"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "58",
+                "value_max": "64"
               }
             ],
-            "value_min": "66",
-            "value_max": "70"
+            "value_min": "58",
+            "value_max": "64"
           },
           "{HB} 16 Bp + 5 Gbp": {
             "demand": 5,
@@ -20654,10 +20756,16 @@
                 "demand": 5,
                 "value_min": "150",
                 "value_max": "155"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "120",
+                "value_max": "135"
               }
             ],
-            "value_min": "150",
-            "value_max": "155"
+            "value_min": "120",
+            "value_max": "135"
           },
           "{HB} 16 Bp + 6 Gbp": {
             "demand": 5,
@@ -20685,10 +20793,16 @@
                 "demand": 5,
                 "value_min": "280",
                 "value_max": "290"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "240",
+                "value_max": "250"
               }
             ],
-            "value_min": "280",
-            "value_max": "290"
+            "value_min": "240",
+            "value_max": "250"
           },
           "{HB} 17 Bp + 2 Gbp": {
             "demand": 3,
@@ -20716,10 +20830,16 @@
                 "demand": 3,
                 "value_min": "26",
                 "value_max": "28"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 3,
+                "value_min": "23",
+                "value_max": "25"
               }
             ],
-            "value_min": "26",
-            "value_max": "28"
+            "value_min": "23",
+            "value_max": "25"
           },
           "{HB} 17 Bp + 3 Gbp": {
             "demand": 4,
@@ -20741,10 +20861,16 @@
                 "demand": 4,
                 "value_min": "54",
                 "value_max": "58"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "46",
+                "value_max": "48"
               }
             ],
-            "value_min": "54",
-            "value_max": "58"
+            "value_min": "46",
+            "value_max": "48"
           },
           "{HB} 17 Bp + 4 Gbp": {
             "demand": 4,
@@ -20766,10 +20892,16 @@
                 "demand": 4,
                 "value_min": "125",
                 "value_max": "130"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "100",
+                "value_max": "105"
               }
             ],
-            "value_min": "125",
-            "value_max": "130"
+            "value_min": "100",
+            "value_max": "105"
           },
           "{HB} 17 Bp + 5 Gbp": {
             "demand": 5,
@@ -20797,10 +20929,16 @@
                 "demand": 5,
                 "value_min": "250",
                 "value_max": "260"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "200",
+                "value_max": "210"
               }
             ],
-            "value_min": "250",
-            "value_max": "260"
+            "value_min": "200",
+            "value_max": "210"
           },
           "{HB} 17 Bp + 6 Gbp": {
             "demand": 5,
@@ -20827,9 +20965,15 @@
                 "demand": 5,
                 "value_min": ">=500",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": ">=400",
+                "value_max": null
               }
             ],
-            "value_min": ">=500",
+            "value_min": ">=400",
             "value_max": null
           },
           "{HB} 18 Bp + 2 Gbp": {
@@ -20852,10 +20996,16 @@
                 "demand": 4,
                 "value_min": "46",
                 "value_max": "50"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "39",
+                "value_max": "43"
               }
             ],
-            "value_min": "46",
-            "value_max": "50"
+            "value_min": "39",
+            "value_max": "43"
           },
           "{HB} 18 Bp + 3 Gbp": {
             "demand": 5,
@@ -20871,10 +21021,16 @@
                 "demand": 5,
                 "value_min": "105",
                 "value_max": "115"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "85",
+                "value_max": "95"
               }
             ],
-            "value_min": "105",
-            "value_max": "115"
+            "value_min": "85",
+            "value_max": "95"
           },
           "{HB} 18 Bp + 4 Gbp": {
             "demand": 5,
@@ -20902,10 +21058,16 @@
                 "demand": 5,
                 "value_min": "235",
                 "value_max": "245"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "195",
+                "value_max": "205"
               }
             ],
-            "value_min": "235",
-            "value_max": "245"
+            "value_min": "195",
+            "value_max": "205"
           },
           "{HB} 18 Bp + 5 Gbp": {
             "demand": 5,
@@ -20933,10 +21095,16 @@
                 "demand": 5,
                 "value_min": "375",
                 "value_max": "400"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "300",
+                "value_max": "320"
               }
             ],
-            "value_min": "375",
-            "value_max": "400"
+            "value_min": "300",
+            "value_max": "320"
           },
           "{HB} 18 Bp + 6 Gbp": {
             "demand": 5,
@@ -20963,9 +21131,15 @@
                 "demand": 5,
                 "value_min": ">=750",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": ">=600",
+                "value_max": null
               }
             ],
-            "value_min": ">=750",
+            "value_min": ">=600",
             "value_max": null
           },
           "{HB} 19 Bp + 2 Gbp": {
@@ -20988,10 +21162,16 @@
                 "demand": 4,
                 "value_min": "70",
                 "value_max": "75"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 4,
+                "value_min": "60",
+                "value_max": "64"
               }
             ],
-            "value_min": "70",
-            "value_max": "75"
+            "value_min": "60",
+            "value_max": "64"
           },
           "{HB} 19 Bp + 3 Gbp": {
             "demand": 5,
@@ -21019,10 +21199,16 @@
                 "demand": 5,
                 "value_min": "180",
                 "value_max": "190"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "140",
+                "value_max": "150"
               }
             ],
-            "value_min": "180",
-            "value_max": "190"
+            "value_min": "140",
+            "value_max": "150"
           },
           "{HB} 19 Bp + 4 Gbp": {
             "demand": 5,
@@ -21056,10 +21242,16 @@
                 "demand": 5,
                 "value_min": "320",
                 "value_max": "340"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "260",
+                "value_max": "280"
               }
             ],
-            "value_min": "320",
-            "value_max": "340"
+            "value_min": "260",
+            "value_max": "280"
           },
           "{HB} 19 Bp + 5 Gbp": {
             "demand": 5,
@@ -21086,10 +21278,16 @@
                 "demand": 5,
                 "value_min": "650",
                 "value_max": "700"
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": "550",
+                "value_max": "600"
               }
             ],
-            "value_min": "650",
-            "value_max": "700"
+            "value_min": "550",
+            "value_max": "600"
           },
           "{HB} 19 Bp + 6 Gbp": {
             "demand": 5,
@@ -21116,9 +21314,15 @@
                 "demand": 5,
                 "value_min": ">=1200",
                 "value_max": null
+              },
+              {
+                "date": "2026-11-27",
+                "demand": 5,
+                "value_min": ">=1000",
+                "value_max": null
               }
             ],
-            "value_min": ">=1200",
+            "value_min": ">=1000",
             "value_max": null
           }
         },

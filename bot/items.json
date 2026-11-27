@@ -975,9 +975,9 @@
     "name": "Gloomy Cub",
     "englishName": "Gloomy Cub",
     "category": "Скины на каба",
-    "value": 68.0,
-    "valueLow": 66.0,
-    "valueHigh": 70.0,
+    "value": 66.0,
+    "valueLow": 64.0,
+    "valueHigh": 68.0,
     "demand": "Высокий",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -1033,7 +1033,8 @@
       77.5,
       75.5,
       73.5,
-      68.0
+      68.0,
+      66.0
     ],
     "image": "https://bssmvalues.com/images/Gloomy_Cub.webp",
     "historicalDates": [
@@ -1084,7 +1085,8 @@
       "2026-08-24",
       "2026-09-03",
       "2026-10-02",
-      "2026-10-28"
+      "2026-10-28",
+      "2026-11-27"
     ],
     "historicalDemand": [
       null,
@@ -1134,6 +1136,7 @@
       4,
       4,
       4,
+      4,
       4
     ]
   },
@@ -1142,9 +1145,9 @@
     "name": "Noob Cub",
     "englishName": "Noob Cub",
     "category": "Скины на каба",
-    "value": 48.5,
-    "valueLow": 47.0,
-    "valueHigh": 50.0,
+    "value": 46.5,
+    "valueLow": 45.0,
+    "valueHigh": 48.0,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(245, 158, 11, 0.25)",
@@ -1213,7 +1216,8 @@
       60.5,
       60.5,
       58.5,
-      48.5
+      48.5,
+      46.5
     ],
     "image": "https://bssmvalues.com/images/Noob_Cub.webp",
     "historicalDates": [
@@ -1277,7 +1281,8 @@
       "2026-10-02",
       "2026-10-10",
       "2026-10-11",
-      "2026-10-28"
+      "2026-10-28",
+      "2026-11-27"
     ],
     "historicalDemand": [
       null,
@@ -1338,6 +1343,7 @@
       3,
       4,
       4,
+      3,
       3,
       3,
       3
@@ -4050,9 +4056,9 @@
     "name": "Round Basic Bee",
     "englishName": "Round Basic Bee",
     "category": "Стикеры пчел",
-    "value": 6.75,
-    "valueLow": 6.5,
-    "valueHigh": 7.0,
+    "value": 5.75,
+    "valueLow": 5.5,
+    "valueHigh": 6.0,
     "demand": "Средний",
     "stability": "Падает",
     "glowColor": "rgba(59, 130, 246, 0.25)",
@@ -4078,7 +4084,8 @@
       10.0,
       8.75,
       7.75,
-      6.75
+      6.75,
+      5.75
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_round_basic_bee.webp",
     "historicalDates": [
@@ -4099,7 +4106,8 @@
       "2026-07-21",
       "2026-08-20",
       "2026-09-29",
-      "2026-10-13"
+      "2026-10-13",
+      "2026-11-26"
     ],
     "historicalDemand": [
       null,
@@ -4114,6 +4122,7 @@
       5,
       5,
       5,
+      3,
       3,
       3,
       3,
@@ -4362,11 +4371,11 @@
     "name": "Sideways Spirit Bear",
     "englishName": "Sideways Spirit Bear",
     "category": "Стикеры медведей",
-    "value": 0.2,
-    "valueLow": 0.15,
-    "valueHigh": 0.25,
+    "value": 0.415,
+    "valueLow": 0.33,
+    "valueHigh": 0.5,
     "demand": "Низкий",
-    "stability": "Стабильно",
+    "stability": "Растет",
     "glowColor": "rgba(16, 185, 129, 0.2)",
     "borderColor": "border-emerald-500/20 group-hover:border-emerald-500/50",
     "badgeColor": "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
@@ -4378,7 +4387,8 @@
       0.29,
       0.175,
       0.2,
-      0.2
+      0.2,
+      0.415
     ],
     "image": "https://bssmvalues.com/images/Hivesticker_sideways_spirit_bear.webp",
     "historicalDates": [
@@ -4387,7 +4397,8 @@
       "2026-04-09",
       "2026-04-12",
       "2026-06-07",
-      "2026-06-14"
+      "2026-06-14",
+      "2026-11-26"
     ],
     "historicalDemand": [
       1,
@@ -4395,6 +4406,7 @@
       1,
       1,
       3,
+      2,
       2
     ]
   },
@@ -14784,9 +14796,9 @@
     "name": "Пузырьковый фонарик",
     "englishName": "Bubble Light",
     "category": "Биквипы",
-    "value": 24.325,
+    "value": 23.325,
     "valueLow": 0.15,
-    "valueHigh": 48.5,
+    "valueHigh": 46.5,
     "demand": "Низкий",
     "stability": "Растет",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -14814,9 +14826,9 @@
           },
           {
             "rollName": "{HB} 2 Bee Movespeed",
-            "valueLow": 48.5,
-            "valueHigh": 48.5,
-            "value": 48.5,
+            "valueLow": 46.5,
+            "valueHigh": 46.5,
+            "value": 46.5,
             "demand": "Низкий",
             "valueText": ">=2*{Noob Cub}",
             "isFloor": true
@@ -14918,9 +14930,9 @@
     "name": "Камфорный бальзам",
     "englishName": "Camphor Lip Balm",
     "category": "Биквипы",
-    "value": 600.05,
+    "value": 500.05,
     "valueLow": 0.1,
-    "valueHigh": 1200.0,
+    "valueHigh": 1000.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -15028,211 +15040,211 @@
           },
           {
             "rollName": "{HB} 14 Bp + 3 Gbp",
-            "valueLow": 8.0,
-            "valueHigh": 10.0,
-            "value": 9.0,
+            "valueLow": 7.0,
+            "valueHigh": 9.0,
+            "value": 8.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 14 Bp + 4 Gbp",
-            "valueLow": 19.0,
-            "valueHigh": 21.0,
-            "value": 20.0,
+            "valueLow": 17.0,
+            "valueHigh": 18.0,
+            "value": 17.5,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 14 Bp + 5 Gbp",
-            "valueLow": 40.0,
-            "valueHigh": 43.0,
-            "value": 41.5,
+            "valueLow": 34.0,
+            "valueHigh": 36.0,
+            "value": 35.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 14 Bp + 6 Gbp",
-            "valueLow": 87.0,
-            "valueHigh": 92.0,
-            "value": 89.5,
+            "valueLow": 70.0,
+            "valueHigh": 75.0,
+            "value": 72.5,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 15 Bp + 2 Gbp",
-            "valueLow": 5.0,
-            "valueHigh": 6.0,
-            "value": 5.5,
+            "valueLow": 4.0,
+            "valueHigh": 5.0,
+            "value": 4.5,
             "demand": "Низкий"
           },
           {
             "rollName": "{HB} 15 Bp + 3 Gbp",
-            "valueLow": 14.0,
-            "valueHigh": 16.0,
-            "value": 15.0,
-            "demand": "Средний"
-          },
-          {
-            "rollName": "{HB} 15 Bp + 4 Gbp",
-            "valueLow": 35.0,
-            "valueHigh": 38.0,
-            "value": 36.5,
-            "demand": "Высокий"
-          },
-          {
-            "rollName": "{HB} 15 Bp + 5 Gbp",
-            "valueLow": 72.0,
-            "valueHigh": 76.0,
-            "value": 74.0,
-            "demand": "Хайп"
-          },
-          {
-            "rollName": "{HB} 15 Bp + 6 Gbp",
-            "valueLow": 165.0,
-            "valueHigh": 175.0,
-            "value": 170.0,
-            "demand": "Хайп"
-          },
-          {
-            "rollName": "{HB} 16 Bp + 2 Gbp",
             "valueLow": 12.0,
             "valueHigh": 14.0,
             "value": 13.0,
             "demand": "Средний"
           },
           {
+            "rollName": "{HB} 15 Bp + 4 Gbp",
+            "valueLow": 30.0,
+            "valueHigh": 33.0,
+            "value": 31.5,
+            "demand": "Высокий"
+          },
+          {
+            "rollName": "{HB} 15 Bp + 5 Gbp",
+            "valueLow": 60.0,
+            "valueHigh": 63.0,
+            "value": 61.5,
+            "demand": "Хайп"
+          },
+          {
+            "rollName": "{HB} 15 Bp + 6 Gbp",
+            "valueLow": 130.0,
+            "valueHigh": 140.0,
+            "value": 135.0,
+            "demand": "Хайп"
+          },
+          {
+            "rollName": "{HB} 16 Bp + 2 Gbp",
+            "valueLow": 10.0,
+            "valueHigh": 12.0,
+            "value": 11.0,
+            "demand": "Средний"
+          },
+          {
             "rollName": "{HB} 16 Bp + 3 Gbp",
-            "valueLow": 26.0,
-            "valueHigh": 28.0,
-            "value": 27.0,
+            "valueLow": 24.0,
+            "valueHigh": 26.0,
+            "value": 25.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 16 Bp + 4 Gbp",
-            "valueLow": 66.0,
-            "valueHigh": 70.0,
-            "value": 68.0,
+            "valueLow": 58.0,
+            "valueHigh": 64.0,
+            "value": 61.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 16 Bp + 5 Gbp",
-            "valueLow": 150.0,
-            "valueHigh": 155.0,
-            "value": 152.5,
+            "valueLow": 120.0,
+            "valueHigh": 135.0,
+            "value": 127.5,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 16 Bp + 6 Gbp",
-            "valueLow": 280.0,
-            "valueHigh": 290.0,
-            "value": 285.0,
+            "valueLow": 240.0,
+            "valueHigh": 250.0,
+            "value": 245.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 17 Bp + 2 Gbp",
-            "valueLow": 26.0,
-            "valueHigh": 28.0,
-            "value": 27.0,
+            "valueLow": 23.0,
+            "valueHigh": 25.0,
+            "value": 24.0,
             "demand": "Средний"
           },
           {
             "rollName": "{HB} 17 Bp + 3 Gbp",
-            "valueLow": 54.0,
-            "valueHigh": 58.0,
-            "value": 56.0,
+            "valueLow": 46.0,
+            "valueHigh": 48.0,
+            "value": 47.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 17 Bp + 4 Gbp",
-            "valueLow": 125.0,
-            "valueHigh": 130.0,
-            "value": 127.5,
+            "valueLow": 100.0,
+            "valueHigh": 105.0,
+            "value": 102.5,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 17 Bp + 5 Gbp",
-            "valueLow": 250.0,
-            "valueHigh": 260.0,
-            "value": 255.0,
+            "valueLow": 200.0,
+            "valueHigh": 210.0,
+            "value": 205.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 17 Bp + 6 Gbp",
-            "valueLow": 500.0,
-            "valueHigh": 500.0,
-            "value": 500.0,
+            "valueLow": 400.0,
+            "valueHigh": 400.0,
+            "value": 400.0,
             "demand": "Хайп",
-            "valueText": ">=500",
+            "valueText": ">=400",
             "isFloor": true
           },
           {
             "rollName": "{HB} 18 Bp + 2 Gbp",
-            "valueLow": 46.0,
-            "valueHigh": 50.0,
-            "value": 48.0,
+            "valueLow": 39.0,
+            "valueHigh": 43.0,
+            "value": 41.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 18 Bp + 3 Gbp",
-            "valueLow": 105.0,
-            "valueHigh": 115.0,
-            "value": 110.0,
+            "valueLow": 85.0,
+            "valueHigh": 95.0,
+            "value": 90.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 18 Bp + 4 Gbp",
-            "valueLow": 235.0,
-            "valueHigh": 245.0,
-            "value": 240.0,
+            "valueLow": 195.0,
+            "valueHigh": 205.0,
+            "value": 200.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 18 Bp + 5 Gbp",
-            "valueLow": 375.0,
-            "valueHigh": 400.0,
-            "value": 387.5,
+            "valueLow": 300.0,
+            "valueHigh": 320.0,
+            "value": 310.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 18 Bp + 6 Gbp",
-            "valueLow": 750.0,
-            "valueHigh": 750.0,
-            "value": 750.0,
+            "valueLow": 600.0,
+            "valueHigh": 600.0,
+            "value": 600.0,
             "demand": "Хайп",
-            "valueText": ">=750",
+            "valueText": ">=600",
             "isFloor": true
           },
           {
             "rollName": "{HB} 19 Bp + 2 Gbp",
-            "valueLow": 70.0,
-            "valueHigh": 75.0,
-            "value": 72.5,
+            "valueLow": 60.0,
+            "valueHigh": 64.0,
+            "value": 62.0,
             "demand": "Высокий"
           },
           {
             "rollName": "{HB} 19 Bp + 3 Gbp",
-            "valueLow": 180.0,
-            "valueHigh": 190.0,
-            "value": 185.0,
+            "valueLow": 140.0,
+            "valueHigh": 150.0,
+            "value": 145.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 19 Bp + 4 Gbp",
-            "valueLow": 320.0,
-            "valueHigh": 340.0,
-            "value": 330.0,
+            "valueLow": 260.0,
+            "valueHigh": 280.0,
+            "value": 270.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 19 Bp + 5 Gbp",
-            "valueLow": 650.0,
-            "valueHigh": 700.0,
-            "value": 675.0,
+            "valueLow": 550.0,
+            "valueHigh": 600.0,
+            "value": 575.0,
             "demand": "Хайп"
           },
           {
             "rollName": "{HB} 19 Bp + 6 Gbp",
-            "valueLow": 1200.0,
-            "valueHigh": 1200.0,
-            "value": 1200.0,
+            "valueLow": 1000.0,
+            "valueHigh": 1000.0,
+            "value": 1000.0,
             "demand": "Хайп",
-            "valueText": ">=1200",
+            "valueText": ">=1000",
             "isFloor": true
           }
         ]
@@ -15411,9 +15423,9 @@
     "name": "Конфетное кольцо",
     "englishName": "Candy Ring",
     "category": "Биквипы",
-    "value": 154.375,
+    "value": 153.375,
     "valueLow": 0.25,
-    "valueHigh": 308.5,
+    "valueHigh": 306.5,
     "demand": "Низкий",
     "stability": "Падает",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -15458,9 +15470,9 @@
           },
           {
             "rollName": "{HB} 12 HaH",
-            "valueLow": 308.5,
-            "valueHigh": 308.5,
-            "value": 308.5,
+            "valueLow": 306.5,
+            "valueHigh": 306.5,
+            "value": 306.5,
             "demand": "Хайп",
             "valueText": ">={Bee Cub}+{Noob Cub}",
             "isFloor": true
@@ -17402,9 +17414,9 @@
     "name": "Шишка",
     "englishName": "Pinecone",
     "category": "Биквипы",
-    "value": 164.0,
+    "value": 163.0,
     "valueLow": 0.0,
-    "valueHigh": 328.0,
+    "valueHigh": 326.0,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -17704,9 +17716,9 @@
           },
           {
             "rollName": "{HB} 10 Ptp + {HB} 20 Ptc",
-            "valueLow": 308.5,
-            "valueHigh": 308.5,
-            "value": 308.5,
+            "valueLow": 306.5,
+            "valueHigh": 306.5,
+            "value": 306.5,
             "demand": "Низкий",
             "valueText": ">={Bee Cub}+{Noob Cub}",
             "isFloor": true
@@ -17755,9 +17767,9 @@
           },
           {
             "rollName": "{HB} 11 Ptp + {HB} 20 Ptc",
-            "valueLow": 328.0,
-            "valueHigh": 328.0,
-            "value": 328.0,
+            "valueLow": 326.0,
+            "valueHigh": 326.0,
+            "value": 326.0,
             "demand": "Низкий",
             "valueText": ">={Bee Cub}+2*{Gloomy Cub}",
             "isFloor": true
@@ -17857,9 +17869,9 @@
           },
           {
             "rollName": "{HB} ≤ 8 Ptp + {HB} 20 Ptc",
-            "valueLow": 203.5,
-            "valueHigh": 203.5,
-            "value": 203.5,
+            "valueLow": 201.5,
+            "valueHigh": 201.5,
+            "value": 201.5,
             "demand": "Низкий",
             "valueText": ">={Snow Cub}+{Noob Cub}",
             "isFloor": true
@@ -18806,9 +18818,9 @@
     "name": "Пуансеттия",
     "englishName": "Poinsettia",
     "category": "Биквипы",
-    "value": 232.0,
+    "value": 231.0,
     "valueLow": 0.5,
-    "valueHigh": 463.5,
+    "valueHigh": 461.5,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -18961,27 +18973,27 @@
           },
           {
             "rollName": "{HB} 15 Rp",
-            "valueLow": 308.5,
-            "valueHigh": 308.5,
-            "value": 308.5,
+            "valueLow": 306.5,
+            "valueHigh": 306.5,
+            "value": 306.5,
             "demand": "Хайп",
             "valueText": ">={Bee Cub}+{Noob Cub}",
             "isFloor": true
           },
           {
             "rollName": "{HB} 16 Rp",
-            "valueLow": 463.5,
-            "valueHigh": 463.5,
-            "value": 463.5,
+            "valueLow": 461.5,
+            "valueHigh": 461.5,
+            "value": 461.5,
             "demand": "Хайп",
             "valueText": ">={Bee Cub}+{Snow Cub}+{Noob Cub}",
             "isFloor": true
           },
           {
             "rollName": "{HB} 17 Rp",
-            "valueLow": 308.5,
-            "valueHigh": 308.5,
-            "value": 308.5,
+            "valueLow": 306.5,
+            "valueHigh": 306.5,
+            "value": 306.5,
             "demand": "Хайп",
             "valueText": ">=2*{Bee Cub}+2*{Noob Cub}",
             "isFloor": true
@@ -20490,9 +20502,9 @@
     "name": "Повязка от пота",
     "englishName": "Sweatband",
     "category": "Биквипы",
-    "value": 154.325,
+    "value": 153.325,
     "valueLow": 0.15,
-    "valueHigh": 308.5,
+    "valueHigh": 306.5,
     "demand": "Низкий",
     "stability": "Стабильно",
     "description": "Экипировка для пчелы. Нажмите для подробного просмотра всех роллов и их стоимости.",
@@ -20684,9 +20696,9 @@
           },
           {
             "rollName": "30 Red Gather Amount + {HB} 1 Red Pollen",
-            "valueLow": 308.5,
-            "valueHigh": 308.5,
-            "value": 308.5,
+            "valueLow": 306.5,
+            "valueHigh": 306.5,
+            "value": 306.5,
             "demand": "Хайп",
             "valueText": ">=2*{Bee Cub}+{Noob Cub}",
             "isFloor": true
